@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SurvivalTime : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     [SerializeField] private UIController _uIController;
 
