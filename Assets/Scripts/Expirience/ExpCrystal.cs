@@ -9,7 +9,7 @@ public class ExpCrystal : PickableObject, IPoolable
     public void Initialize(CrystalParam param)
     {
         _expirience = new Expirience(param.ExpValue);
-        _renderer.material = param.Material;
+        _renderer.material.color = param.Color;
     }
 
     public void ResetObject()

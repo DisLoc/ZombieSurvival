@@ -17,8 +17,8 @@ public class CrystalStats : ScriptableObject
 public class CrystalParam
 {
     [SerializeField] private int _expValue;
-    [SerializeField] private Material _material;
+    [SerializeField] private Color _color;
 
     public int ExpValue => _expValue;
-    public Material Material => _material;
+    public Color Color => _color;
 }

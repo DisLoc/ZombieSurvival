@@ -4,6 +4,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
 {
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
+    [SerializeField] protected HPControl _healthBar;
 
     public abstract CharacterStats Stats { get; }
 

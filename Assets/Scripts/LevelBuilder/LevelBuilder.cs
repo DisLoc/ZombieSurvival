@@ -14,7 +14,7 @@ public class LevelBuilder : MonoBehaviour
     [Header("Mobs")]
     [SerializeField] private Transform _player;
 
-    [SerializeField]private int _generatedCountMinusX = 0;
+    [SerializeField] private int _generatedCountMinusX = 0;
     [SerializeField] private int _generatedCountPlusX = 0;
 
     [SerializeField] private int _generatedCountMinusZ = 0;
