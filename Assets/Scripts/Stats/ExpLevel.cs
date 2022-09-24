@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct ExpLevel : IStat, IUpgradeable
+public struct ExpLevel : IStat
 {
     public int Value { get; }
 

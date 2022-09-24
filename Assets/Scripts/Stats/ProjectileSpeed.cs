@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct ProjectileSpeed : IStat, IUpgradeable
+public struct ProjectileSpeed : IStat
 {
     private int _projectileSpeed;
     public int Value { get; }

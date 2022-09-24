@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct AttackRange : IStat, IUpgradeable
+public struct AttackRange : IStat
 {
     public int Value { get; }
 

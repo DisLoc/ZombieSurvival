@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct HealthPoint : IStat, IUpgradeable
+public struct HealthPoint : IStat
 {
     public int Value { get; }
 
