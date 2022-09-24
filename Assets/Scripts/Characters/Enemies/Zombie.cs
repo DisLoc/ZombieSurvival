@@ -22,6 +22,7 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
 
     void Start()
     {
+        _enemiesList = GameObject.FindGameObjectWithTag("EnemiesList").GetComponent<EnemiesList>();
         _enemiesList.enemies.Add(this);
         _player = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
     }
