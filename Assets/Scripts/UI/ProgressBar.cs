@@ -9,12 +9,14 @@ public class ProgressBar : MonoBehaviour, IGameStartHandler, IEnemyKilledHandler
     [Header("Settings")]
     [SerializeField] private Image _progressBar;
 
+
     [Header("Progression settings")]
     [SerializeField] private int _maxProgress = 100;
     [SerializeField][Range(1, 100)] private int _progressPerMinute = 5;
     [SerializeField][Range(1, 1000)] private int _enemiesForProgress = 75;
     [Tooltip("Additional progress each X enemies")]
-    [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1; 
+    [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1;
+    [SerializeField] private EnemiesList _enemiesList;
 
     private int _killed;
     private int _progress;
@@ -61,6 +63,11 @@ public class ProgressBar : MonoBehaviour, IGameStartHandler, IEnemyKilledHandler
 
             _killed = 0;
             _progress += _progressPerEnemies;
+            for (int i = 0; i < _enemiesList.enemies.Count; i++)
+            {
+                var zombie = _enemiesList.enemies[i].GetComponent<Zombie>();
+                zombie.PlusHP(_progressPerEnemies);
+            }
         }
 
         UpdateUI();

@@ -10,6 +10,8 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
     [SerializeField] private int speed = 3;
     private Transform _player;
 
+    public EnemiesList _enemiesList;
+
     [SerializeField] private GameObject crystal;
 
     [SerializeField] private Slider _hpBar;
@@ -18,6 +20,7 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
 
     void Start()
     {
+        _enemiesList.enemies.Add(this);
         _player = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
     }
 
@@ -48,6 +51,12 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
         }
     }
 
+    public void PlusHP(int factor)
+    {
+        _hpCount += (_hpCount + _hpCount) * factor;
+        _hpBar.value = _hpCount;
+    }
+
     public int ReturnDamage()
     {
         return damageToPlayer;
@@ -57,5 +66,10 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
     {
         Instantiate(crystal, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        _enemiesList.enemies.Remove(this);
     }
 }

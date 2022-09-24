@@ -204,8 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToPlayer: 0
   speed: 3
-  crystal: {fileID: 0}
-  _hpBar: {fileID: 0}
+  crystal: {fileID: 7472448845819442868, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
+  _hpBar: {fileID: 4708533436616068587}
   _hpCount: 100
 --- !u!1 &3795547789749117954
 GameObject:

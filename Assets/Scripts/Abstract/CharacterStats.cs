@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CharacterStats : MonoBehaviour
+public class CharacterStats
 {
     [SerializeField] protected int _maxHP;
     [SerializeField] protected int _baseDamage;
@@ -15,6 +15,7 @@ public class CharacterStats : MonoBehaviour
     public int AttackRange => _attackRange;
     public int AttackCooldown => _attackCooldown;
     public int Velocity => _velocity;
+
 
     public virtual void Initialize()
     {
