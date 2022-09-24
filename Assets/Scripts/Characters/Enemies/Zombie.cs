@@ -12,6 +12,8 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
 
     public EnemiesList _enemiesList;
 
+ //   private GameObject test;
+
     [SerializeField] private GameObject crystal;
 
     [SerializeField] private Slider _hpBar;
