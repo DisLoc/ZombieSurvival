@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct Damage : IStat, IUpgradeable
+public struct Damage : IStat
 {
     public int Value { get; }
 

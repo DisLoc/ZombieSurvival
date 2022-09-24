@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct MoveSpeed : IStat, IUpgradeable
+public struct MoveSpeed : IStat
 {
     public int Value { get; }
 
