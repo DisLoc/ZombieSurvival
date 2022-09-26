@@ -22,11 +22,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         _objects.Add(obj);
     }
 
-    public override void Add(TObject obj)
+    public override void Release(TObject obj)
     {
         obj.gameObject.SetActive(false);
 
-        base.Add(obj);
+        base.Release(obj);
     }
 
     public override TObject Pull()

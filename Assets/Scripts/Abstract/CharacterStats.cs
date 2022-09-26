@@ -1,19 +1,14 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CharacterStats : MonoBehaviour
+public class CharacterStats
 {
-    [SerializeField] protected HealthPoint _healthPoints;
-    [SerializeField] protected Damage _baseDamage;
-    [SerializeField] protected AttackRange _attackRange;
-    [SerializeField] protected Cooldown _attackCooldown;
-    [SerializeField] protected MoveSpeed _velocity;
     [SerializeField] protected Weapon _weapon;
+    [SerializeField] protected HealthPoint _healthPoints;
+    [SerializeField] protected MoveSpeed _velocity;
 
     public HealthPoint HP => _healthPoints;
-    public float BaseDamage => _baseDamage.Value;
-    public float AttackRange => _attackRange.Value;
-    public float AttackCooldown => _attackCooldown.Value;
+    public Weapon Weapon => _weapon;
     public float Velocity => _velocity.Value;
 
     public virtual void Initialize()

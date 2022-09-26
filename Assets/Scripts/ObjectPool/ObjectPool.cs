@@ -21,7 +21,7 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
         return obj;
     }
 
-    public virtual void Add(TObject obj)
+    public virtual void Release(TObject obj)
     {
         obj.ResetObject();
         _objects.Add(obj);

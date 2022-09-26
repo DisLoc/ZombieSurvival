@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct ProjectileNumber : IStat
+public struct PickUpRange : IStat
 {
-    [SerializeField] private int _projectileNumber;
+    [SerializeField] private float _pickUpRange;
     [SerializeField] private Level _level;
 
-    public float Value => _projectileNumber;
+    public float Value => _pickUpRange;
     public Level Lvl => _level;
 
     public void Upgrade(Upgrade upgrade)

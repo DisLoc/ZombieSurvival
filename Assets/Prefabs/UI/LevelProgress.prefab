@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 1
-  _fillBar: {fileID: 0}
+  _fillBar: {fileID: 9126398035109511831}
   _minFillValue: 0
   _maxFillValue: 100
   _progressPerMinute: 5
