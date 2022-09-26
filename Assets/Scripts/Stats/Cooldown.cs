@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct MoveSpeed : IStat
+public struct Cooldown : IStat
 {
-    [SerializeField] private float _moveSpeed;
-    public float Value => _moveSpeed;
+    [SerializeField] private float _cooldown;
+    public float Value => _cooldown;
 
     [SerializeField] private Level _level;
     public Level Lvl => _level;

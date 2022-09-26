@@ -1,6 +1,6 @@
 public interface IStat : IUpgradeable
 {
-    public int Value { get; }
+    public float Value { get; }
 }
 
 

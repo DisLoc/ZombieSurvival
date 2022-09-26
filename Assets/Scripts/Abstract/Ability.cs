@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Ability : CharacterStats
 {
     [SerializeField] protected int plusState;
-
+    /*
     public virtual void PlusMaxHP()
     {
         _maxHP += plusState;
@@ -29,5 +29,5 @@ public abstract class Ability : CharacterStats
     public virtual void PlusVelocity()
     {
         _velocity += plusState;
-    }
+    }*/
 }

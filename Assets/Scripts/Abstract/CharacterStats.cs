@@ -3,21 +3,20 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterStats : MonoBehaviour
 {
-    [SerializeField] protected int _maxHP;
-    [SerializeField] protected int _baseDamage;
-    [SerializeField] protected int _attackRange;
-    [SerializeField] protected int _attackCooldown;
-    [SerializeField] protected int _velocity;
+    [SerializeField] protected HealthPoint _healthPoints;
+    [SerializeField] protected Damage _baseDamage;
+    [SerializeField] protected AttackRange _attackRange;
+    [SerializeField] protected Cooldown _attackCooldown;
+    [SerializeField] protected MoveSpeed _velocity;
 
-    [HideInInspector] public int HP = 0;
-    public int MaxHP => _maxHP;
-    public int BaseDamage => _baseDamage;
-    public int AttackRange => _attackRange;
-    public int AttackCooldown => _attackCooldown;
-    public int Velocity => _velocity;
+    public HealthPoint HP => _healthPoints;
+    public float BaseDamage => _baseDamage.Value;
+    public float AttackRange => _attackRange.Value;
+    public float AttackCooldown => _attackCooldown.Value;
+    public float Velocity => _velocity.Value;
 
     public virtual void Initialize()
     {
-        HP = _maxHP;
+        _healthPoints.Initialize();
     }
 }

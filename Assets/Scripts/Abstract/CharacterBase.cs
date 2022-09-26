@@ -8,8 +8,8 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
 
     public abstract CharacterStats Stats { get; }
 
-    public int HP => Stats.HP;
-    public int MaxHP => Stats.MaxHP;
+    public int HP => (int)Stats.HP.Value;
+    public int MaxHP => (int)Stats.HP.MaxHP;
 
     public abstract void Move(Vector3 direction);
 
@@ -19,7 +19,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
     {
         if (_isDebug) Debug.Log(name + " take " + damage + " damage");
 
-        Stats.HP -= damage;
+        Stats.HP.TakeDamage(damage);
 
         if (HP <= 0)
         {
