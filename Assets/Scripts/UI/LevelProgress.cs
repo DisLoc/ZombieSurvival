@@ -1,26 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour, IGameStartHandler, IEnemyKilledHandler, IMinuteLeftHandler
+public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHandler, IMinuteLeftHandler
 {
-    [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
-
-    [Header("Settings")]
-    [SerializeField] private Image _progressBar;
-
-    [Header("Progression settings")]
-    [SerializeField] private int _maxProgress = 100;
     [SerializeField][Range(1, 100)] private int _progressPerMinute = 5;
     [SerializeField][Range(1, 1000)] private int _enemiesForProgress = 75;
     [Tooltip("Additional progress each X enemies")]
     [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1; 
 
     private int _killed;
-    private int _progress;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         EventBus.Subscribe(this);
     }
 
@@ -37,17 +29,17 @@ public class ProgressBar : MonoBehaviour, IGameStartHandler, IEnemyKilledHandler
     public void OnGameStart()
     {
         _killed = 0;
-        _progress = 0;
+        _value = 0;
 
-        UpdateUI();
+        UpdateBar();
     }
 
     public void OnMinuteLeft()
     {
         if (_isDebug) Debug.Log("Minute left, add progress: " + _progressPerMinute);
 
-        _progress += _progressPerMinute;
-        UpdateUI();
+        _value += _progressPerMinute;
+        UpdateBar();
     }
 
     public void OnEnemyKilled()
@@ -60,19 +52,19 @@ public class ProgressBar : MonoBehaviour, IGameStartHandler, IEnemyKilledHandler
             Debug.Log("Enemies killed, add progress: " + _progressPerEnemies);
 
             _killed = 0;
-            _progress += _progressPerEnemies;
+            _value += _progressPerEnemies;
         }
 
-        UpdateUI();
+        UpdateBar();
     }
 
-    private void UpdateUI()
+    protected override void UpdateBar()
     {
         if (_isDebug) Debug.Log("Update progress bar");
 
-        _progressBar.fillAmount = (float)_progress / _maxProgress;
+        base.UpdateBar();
         
-        if (_progress >= _maxProgress)
+        if (_value >= _maxFillValue)
         {
             if (_isDebug) Debug.Log("Level complete!");
 

@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public struct HealthPoint : IStat
 {
-    [SerializeField] private float _maxHP;
-    private float _hp;
+    [SerializeField] private int _maxHP;
+    private int _hp;
 
     public float Value => _hp;
     public float MaxHP => _maxHP;
@@ -19,7 +19,7 @@ public struct HealthPoint : IStat
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 
     public void TakeDamage(int damage)

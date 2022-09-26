@@ -11,6 +11,6 @@ public struct ProjectileSpeed : IStat
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }

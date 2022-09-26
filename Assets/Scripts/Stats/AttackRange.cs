@@ -11,6 +11,6 @@ public struct AttackRange : IStat
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }

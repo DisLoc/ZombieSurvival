@@ -6,11 +6,10 @@ public struct Level
     [SerializeField] private int _maxLevel;
     private int _level;
 
-    public int Value => _level;
-    public Level Lvl => this;
+    public int Lvl => _level;
 
     public void LevelUp()
     {
-
+        _level++;
     }
 }

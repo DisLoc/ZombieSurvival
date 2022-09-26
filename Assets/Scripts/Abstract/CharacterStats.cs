@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] protected AttackRange _attackRange;
     [SerializeField] protected Cooldown _attackCooldown;
     [SerializeField] protected MoveSpeed _velocity;
+    [SerializeField] protected Weapon _weapon;
 
     public HealthPoint HP => _healthPoints;
     public float BaseDamage => _baseDamage.Value;

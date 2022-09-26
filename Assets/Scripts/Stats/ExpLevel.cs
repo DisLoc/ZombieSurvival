@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ExpLevel
+public class ExpLevel : IStat
 {
     [SerializeField] private int _expForLevel;
     [SerializeField] private int _expLevelMultiplier;
@@ -10,10 +10,10 @@ public class ExpLevel
     private Expirience _expirience = new Expirience();
 
     public Level Lvl => _level;
-    public int Value => _expirience.Value;
+    public float Value => _expirience.Value;
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }

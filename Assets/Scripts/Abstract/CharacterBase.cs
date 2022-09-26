@@ -4,7 +4,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
 {
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
-    [SerializeField] protected HPControl _healthBar;
+    [SerializeField] protected HPBar _healthBar;
 
     public abstract CharacterStats Stats { get; }
 
@@ -20,6 +20,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
         if (_isDebug) Debug.Log(name + " take " + damage + " damage");
 
         Stats.HP.TakeDamage(damage);
+        _healthBar.UpdateHealth(HP);
 
         if (HP <= 0)
         {

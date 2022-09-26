@@ -11,6 +11,6 @@ public struct MoveSpeed : IStat
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }
