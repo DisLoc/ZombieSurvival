@@ -8,80 +8,43 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
-    [SerializeField] private List<GameObject> _groundPrefabs;
+    public GroundGrid groundGrid;
 
-    
-    [Header("Mobs")]
-    [SerializeField] private Transform _player;
+    [Header("Generation settings")]
+    [Tooltip("Level height in y axis")]
+    [SerializeField] private float _gridHeight;
 
-    [SerializeField] private int _generatedCountMinusX = 0;
-    [SerializeField] private int _generatedCountPlusX = 0;
+    public float GridHeight => _gridHeight;
 
-    [SerializeField] private int _generatedCountMinusZ = 0;
-    [SerializeField] private int _generatedCountPlusZ = 0;
+    private GridXZ _grid;
 
-    private void OnEnable()
+    [ContextMenu("Init")]
+    public void Init()
     {
+        _grid = new GridXZ(groundGrid, transform);
         
+        for (int i = -5; i <= 5; i++)
+            for (int j = -5; j <= 5; j++)
+            {
+                Vector3 pos = new Vector3
+                    (
+                        groundGrid.CellSize * i * 2,
+                        _gridHeight,
+                        groundGrid.CellSize * j * 2
+                    );
+
+                Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity,  transform);
+                cell.Initialize(i, j, _grid);
+            }
     }
 
-    private void Start()
+    public void Construct(GroundGrid grid)
     {
-        StartCoroutine(SetZero());
+        _grid = new GridXZ(grid, transform);
     }
 
-    private void Update()
+    public void Create()
     {
-        //if (_player.position.x % 3f != 0 || _player.position.x % -3 != 0)
-        //{
-        //    if (_player.position.x / 3f > _generatedCountPlusX)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountPlusX++;
-        //        _generatedCountPlusZ = 1;
 
-        //    }
-
-        //    if (_player.position.x / -3f > _generatedCountMinusX)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountMinusX++;
-        //        _generatedCountMinusZ = 1;
-
-
-        //    }
-        //}
-
-        //if (_player.position.z % 3 != 0 || _player.position.z % -3 != 0)
-        //{
-        //    if (_player.position.z / 3 > _generatedCountPlusZ)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountPlusZ++;
-        //        _generatedCountPlusX = 1;
-
-        //    }
-
-        //    if (_player.position.z / -3 > _generatedCountMinusZ)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountMinusZ++;
-        //        _generatedCountMinusX = 1;
-
-        //    }
-        //}
-    }
-
-
-    private IEnumerator SetZero()
-    {
-        yield return new WaitForSeconds(0.1f);
-        _generatedCountPlusX = 0;
-    }
-
-
-    private void OnDisable()
-    {
-        
     }
 }
