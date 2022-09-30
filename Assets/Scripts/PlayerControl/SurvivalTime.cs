@@ -1,14 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SurvivalTime : MonoBehaviour, IGameStartHandler
 {
-
-    [SerializeField] private UIController _uIController;
-
-    private Text _survivalTimeCountText;
+    [SerializeField] private Text _survivalTimeCountText;
 
     private int _survivalTimeCount;
     private int _seconds;
@@ -22,7 +18,6 @@ public class SurvivalTime : MonoBehaviour, IGameStartHandler
     {
         StopAllCoroutines();
 
-        _survivalTimeCountText = _uIController.SurvivalTimeCountText;
         StartCoroutine(PlusTimeCount());
     }
 

@@ -4,17 +4,15 @@ using UnityEngine;
 public class GridXZ
 {
     private int _gridSize;
-    private int _cellSize;
 
     private CellMatrix _cellMatrix;
-    private Vector2 _zeroCellIndex; // indexes of cell in position (0; 0)
-    private Transform _gridParent;
+    private Vector2 _zeroCellIndex; // indexes of cell in position (0; y; 0)
+    private LevelBuilder _builder;
 
-    public GridXZ(GroundGrid groundGrid, Transform gridParent)
+    public GridXZ(GroundGrid groundGrid, LevelBuilder builder)
     {
         _gridSize = groundGrid.GridSize;
-        _cellSize = groundGrid.CellSize;
-        _gridParent = gridParent;
+        _builder = builder;
 
         if (groundGrid.Grid.Count != _gridSize * _gridSize)
         {
@@ -23,16 +21,16 @@ public class GridXZ
         else
         {
             _cellMatrix = new CellMatrix(_gridSize);
+            int index = 0;
 
             for (int i = 0; i < _gridSize; i++)
             {
                 for (int j = 0; j < _gridSize; j++)
                 {
-                    _cellMatrix[i].Add(groundGrid.Grid[j]);
+                    _cellMatrix[i].Add(groundGrid.Grid[index]);
+                    index++;
                 }
             }
-
-            _gridParent = new GameObject("GroundGrid").transform;
 
             int x = Random.Range(0, _gridSize);
             int z = Random.Range(0, _gridSize);
@@ -48,10 +46,10 @@ public class GridXZ
     
     public void OnPlayerEnter(Cell cell)
     {
-
+        _builder.UpdateGrid(cell);
     }
 
-    public class CellMatrix 
+    private class CellMatrix 
     {
         private List<List<Cell>> _matrix;
 
