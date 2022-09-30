@@ -7,8 +7,11 @@ public class AxeShootAbility : MonoBehaviour
 
     [SerializeField] protected GameObject projectile;
 
+    [SerializeField] private Transform shootPosition;
+
+
     public void UseState()
     {
-       // Instantiate 
+        Instantiate(projectile, shootPosition.position, Quaternion.identity);
     }
 }

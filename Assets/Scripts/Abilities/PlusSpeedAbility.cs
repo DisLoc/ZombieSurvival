@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlusMaxHpAbility : MonoBehaviour
+public class PlusSpeedAbility : MonoBehaviour
 {
-    private HealthPoint _healthpoint;
+    private MoveSpeed _moveSpeed;
     Upgrade upgrade;
 
     public void UseAbility()
     {
-        _healthpoint.Upgrade(upgrade);
- 
+        _moveSpeed.Upgrade(upgrade);
     }
 
 }
