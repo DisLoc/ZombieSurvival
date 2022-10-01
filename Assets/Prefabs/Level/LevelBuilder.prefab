@@ -47,4 +47,4 @@ MonoBehaviour:
   _isDebug: 0
   groundGrid: {fileID: 11400000, guid: 504acedb9a6646443971268d3696f78e, type: 2}
   _gridHeight: 0
-  _visionRange: 20
+  _visionRange: 40
