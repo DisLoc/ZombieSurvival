@@ -22,6 +22,7 @@ public class LevelBuilder : MonoBehaviour
     private int _maxDeltaIndex;
 
     private Dictionary<Vector2, Cell> _cells;
+    private int _maxX, _minX, _maxZ, _minZ;
 
     [ContextMenu("Init")]
     public void Init()
@@ -31,6 +32,7 @@ public class LevelBuilder : MonoBehaviour
         _groundGrid = groundGrid;
 
         _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxX = _maxZ = _minX = _minZ = 0;
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
@@ -50,6 +52,7 @@ public class LevelBuilder : MonoBehaviour
         _groundGrid = groundGrid;
 
         _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxX = _maxZ = _minX = _minZ = 0;
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
@@ -65,29 +68,55 @@ public class LevelBuilder : MonoBehaviour
     {
         if (_isDebug) Debug.Log("Update grid");
 
-        for(int i = enterCell.X - _maxDeltaIndex; i <= enterCell.X + _maxDeltaIndex; i++)
+        int maxX = enterCell.X + _maxDeltaIndex, minX = enterCell.X - _maxDeltaIndex;
+        int maxZ = enterCell.Z + _maxDeltaIndex, minZ = enterCell.Z - _maxDeltaIndex;
+
+        if (minX < _minX) _minX = minX;
+        if (maxX > _maxX) _maxX = maxX;
+        if (minZ < _minZ) _minZ = minZ;
+        if (maxZ > _maxZ) _maxZ = maxZ;
+
+        for (int i = _minX; i <= _maxX; i++)
         {
-            for (int j = enterCell.Z - _maxDeltaIndex; j <= enterCell.Z + _maxDeltaIndex; j++)
+            for (int j = _minZ; j <= _maxZ; j++)
             {
                 Vector2 index = new Vector2(i, j);
 
-                if (_cells.ContainsKey(index))
+                Vector3 pos = new Vector3
+                        (
+                            groundGrid.CellSize * i * 2,
+                            _gridHeight,
+                            groundGrid.CellSize * j * 2
+                        );
+
+                if (index.x < minX || index.x > maxX || index.y < minZ || index.y > maxZ)
                 {
-                    continue;
+                    if (_cells.ContainsKey(index))
+                    {
+                        _cells[index].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        cell.Initialize(i, j, _grid);
+                        cell.gameObject.SetActive(false);
+
+                        _cells.Add(index, cell);
+                    }
                 }
                 else
                 {
-                    Vector3 pos = new Vector3
-                    (
-                        groundGrid.CellSize * i * 2,
-                        _gridHeight,
-                        groundGrid.CellSize * j * 2
-                    );
+                    if (_cells.ContainsKey(index))
+                    {
+                        _cells[index].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        cell.Initialize(i, j, _grid);
 
-                    Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
-                    cell.Initialize(i, j, _grid);
-
-                    _cells.Add(index, cell);
+                        _cells.Add(index, cell);
+                    }
                 }
             }
         }

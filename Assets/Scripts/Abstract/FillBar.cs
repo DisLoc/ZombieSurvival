@@ -22,6 +22,7 @@ public abstract class FillBar : MonoBehaviour
         _fillBar.maxValue = _maxFillValue;
 
         _fillBar.value = _minFillValue;
+        _fillBar.interactable = false;
     }
 
     public void SetMaxValue(int value, bool saveFillPercent = false)
