@@ -11,6 +11,7 @@ public class CharacterStats
     public Weapon Weapon => _weapon;
     public float Velocity => _velocity.Value;
 
+
     public virtual void Initialize()
     {
         _healthPoints.Initialize();

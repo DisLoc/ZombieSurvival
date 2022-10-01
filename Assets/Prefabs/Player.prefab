@@ -301,7 +301,7 @@ MonoBehaviour:
       _level:
         _maxLevel: 0
     _velocity:
-      _moveSpeed: 0
+      _moveSpeed: 5
       _level:
         _maxLevel: 0
     _expirience:
