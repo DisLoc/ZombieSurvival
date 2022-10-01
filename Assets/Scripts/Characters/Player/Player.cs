@@ -17,7 +17,10 @@ public sealed class Player : CharacterBase
 
     public override void Move(Vector3 direction)
     {
-        throw new System.NotImplementedException();
+        Vector3 pos = transform.position;
+
+        transform.LookAt(pos + direction);
+        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity, _stats.Velocity * Time.fixedDeltaTime);
     }
 
     public override void Attack()
