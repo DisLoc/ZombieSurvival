@@ -1,13 +1,16 @@
+using UnityEngine;
+
 [System.Serializable]
 public struct Damage : IStat
 {
-    public int Value { get; }
+    [SerializeField] private float _damage;
+    public float Value => _damage;
 
-    private Level _level;
+    [SerializeField] private Level _level;
     public Level Lvl => _level;
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }

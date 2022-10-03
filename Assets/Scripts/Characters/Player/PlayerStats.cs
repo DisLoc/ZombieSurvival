@@ -3,10 +3,13 @@ using UnityEngine;
 [System.Serializable]
 public sealed class PlayerStats : CharacterStats
 {
-    [SerializeField] private float _pickUpRange;
     [SerializeField] private ExpLevel _expirience;
+    [SerializeField] private PickUpRange _pickUpRange;
 
-   // public int Exp => _expirience.Exp;
-  //  public int Level => _expirience.Level;
-   // public float LevelProgress => _expirience.LevelProgress;
+    public float PickUpRange => _pickUpRange.Value;
+
+    public int Exp => (int)_expirience.Value;
+    public int Level => _expirience.Lvl.Lvl;
+
+    //public float LevelProgress => _expirience.LevelProgress;
 }

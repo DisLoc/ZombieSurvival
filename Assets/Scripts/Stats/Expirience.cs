@@ -1,13 +1,17 @@
-[System.Serializable]
-public struct Expirience : IStat
+using UnityEngine;
+
+public struct Expirience
 {
-    public int Value { get; }
+    private int _expirience;
+    public int Value => _expirience;
 
-    private Level _level;
-    public Level Lvl => _level;
-
-    public void Upgrade(Upgrade upgrade)
+    public Expirience(int exp = 0)
     {
+        _expirience = exp;
+    }
 
+    public void Add(int exp)
+    {
+        _expirience += exp;
     }
 }

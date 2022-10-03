@@ -1,13 +1,16 @@
+using UnityEngine;
+
 [System.Serializable]
 public struct MoveSpeed : IStat
 {
-    public int Value { get; }
+    [SerializeField] private float _moveSpeed;
+    public float Value => _moveSpeed;
 
-    private Level _level;
+    [SerializeField] private Level _level;
     public Level Lvl => _level;
 
     public void Upgrade(Upgrade upgrade)
     {
-
+        _level.LevelUp();
     }
 }

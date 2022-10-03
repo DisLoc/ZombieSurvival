@@ -1,12 +1,15 @@
+using UnityEngine;
+
 [System.Serializable]
-public struct Level : IStat
+public struct Level
 {
-    public int Value { get; }
+    [SerializeField] private int _maxLevel;
+    private int _level;
 
-    public Level Lvl => this;
+    public int Lvl => _level;
 
-    public void Upgrade(Upgrade upgrade)
+    public void LevelUp()
     {
-
+        _level++;
     }
 }

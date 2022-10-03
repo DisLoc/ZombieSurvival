@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -8,80 +8,117 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
-    [SerializeField] private List<GameObject> _groundPrefabs;
+    public GroundGrid groundGrid;
 
-    
-    [Header("Mobs")]
-    [SerializeField] private Transform _player;
+    [Header("Generation settings")]
+    [Tooltip("Level height in y axis")]
+    [SerializeField] private float _gridHeight;
+    [SerializeField] private int _visionRange;
 
-    [SerializeField] private int _generatedCountMinusX = 0;
-    [SerializeField] private int _generatedCountPlusX = 0;
+    public float GridHeight => _gridHeight;
 
-    [SerializeField] private int _generatedCountMinusZ = 0;
-    [SerializeField] private int _generatedCountPlusZ = 0;
+    private GridXZ _grid;
+    private GroundGrid _groundGrid;
+    private int _maxDeltaIndex;
 
-    private void OnEnable()
+    private Dictionary<Vector2, Cell> _cells;
+    private int _maxX, _minX, _maxZ, _minZ;
+
+    [ContextMenu("Init")]
+    public void Init()
     {
-       
+        _grid = new GridXZ(groundGrid, this);
+        _cells = new Dictionary<Vector2, Cell>();
+        _groundGrid = groundGrid;
+
+        _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxX = _maxZ = _minX = _minZ = 0;
+
+        Vector3 pos = new Vector3(0, _gridHeight, 0);
+
+        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        cell.Initialize(0, 0, _grid);
+
+        _cells.Add(new Vector2(0, 0), cell);
+
+        UpdateGrid(cell);
     }
 
-    private void Start()
+    [Inject]
+    public void Construct(GroundGrid grid)
     {
-        StartCoroutine(SetZero());
+        _grid = new GridXZ(groundGrid, this);
+        _cells = new Dictionary<Vector2, Cell>();
+        _groundGrid = groundGrid;
+
+        _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxX = _maxZ = _minX = _minZ = 0;
+
+        Vector3 pos = new Vector3(0, _gridHeight, 0);
+
+        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        cell.Initialize(0, 0, _grid);
+
+        _cells.Add(new Vector2(0, 0), cell);
+
+        UpdateGrid(cell);
     }
 
-    private void Update()
+    public void UpdateGrid(Cell enterCell)
     {
-        //if (_player.position.x % 3f != 0 || _player.position.x % -3 != 0)
-        //{
-        //    if (_player.position.x / 3f > _generatedCountPlusX)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountPlusX++;
-        //        _generatedCountPlusZ = 1;
+        if (_isDebug) Debug.Log("Update grid");
 
-        //    }
+        int maxX = enterCell.X + _maxDeltaIndex, minX = enterCell.X - _maxDeltaIndex;
+        int maxZ = enterCell.Z + _maxDeltaIndex, minZ = enterCell.Z - _maxDeltaIndex;
 
-        //    if (_player.position.x / -3f > _generatedCountMinusX)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountMinusX++;
-        //        _generatedCountMinusZ = 1;
+        if (minX < _minX) _minX = minX;
+        if (maxX > _maxX) _maxX = maxX;
+        if (minZ < _minZ) _minZ = minZ;
+        if (maxZ > _maxZ) _maxZ = maxZ;
 
+        for (int i = _minX; i <= _maxX; i++)
+        {
+            for (int j = _minZ; j <= _maxZ; j++)
+            {
+                Vector2 index = new Vector2(i, j);
 
-        //    }
-        //}
+                Vector3 pos = new Vector3
+                        (
+                            groundGrid.CellSize * i * 2,
+                            _gridHeight,
+                            groundGrid.CellSize * j * 2
+                        );
 
-        //if (_player.position.z % 3 != 0 || _player.position.z % -3 != 0)
-        //{
-        //    if (_player.position.z / 3 > _generatedCountPlusZ)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountPlusZ++;
-        //        _generatedCountPlusX = 1;
+                if (index.x < minX || index.x > maxX || index.y < minZ || index.y > maxZ)
+                {
+                    if (_cells.ContainsKey(index))
+                    {
+                        _cells[index].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        cell.Initialize(i, j, _grid);
+                        cell.gameObject.SetActive(false);
 
-        //    }
+                        _cells.Add(index, cell);
+                    }
+                }
+                else
+                {
+                    if (_cells.ContainsKey(index))
+                    {
+                        _cells[index].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        cell.Initialize(i, j, _grid);
 
-        //    if (_player.position.z / -3 > _generatedCountMinusZ)
-        //    {
-        //        Instantiate(_groundPrefabs[Random.Range(0, _groundPrefabs.Count)], _player.position - new Vector3(0, 1.48f, 0), Quaternion.identity);
-        //        _generatedCountMinusZ++;
-        //        _generatedCountMinusX = 1;
-
-        //    }
-        //}
-    }
-
-
-    private IEnumerator SetZero()
-    {
-        yield return new WaitForSeconds(0.1f);
-        _generatedCountPlusX = 0;
-    }
-
-
-    private void OnDisable()
-    {
-        
+                        _cells.Add(index, cell);
+                    }
+                }
+            }
+        }
     }
 }
