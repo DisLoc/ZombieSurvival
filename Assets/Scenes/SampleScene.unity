@@ -712,6 +712,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._healthPoints
+      value: 
+      objectReference: {fileID: 11400000, guid: 41424347f74f8074c9abe33ef3e7fba9, type: 2}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -811,6 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _bossEventFence: {fileID: 0}
 --- !u!4 &1792548709
 Transform:
   m_ObjectHideFlags: 0

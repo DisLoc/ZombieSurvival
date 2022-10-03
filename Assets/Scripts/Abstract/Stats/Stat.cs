@@ -4,6 +4,8 @@ using UnityEngine;
 public abstract class Stat : ScriptableObject, IStat, IUpgradeable
 {
     [SerializeField] protected float _baseValue;
+    [Tooltip("Set -1 for infinite value")]
+    [SerializeField] protected float _maxValue;
     [SerializeField] protected Level _level;
 
     protected float _value;
@@ -11,6 +13,7 @@ public abstract class Stat : ScriptableObject, IStat, IUpgradeable
 
     public float BaseValue => _baseValue;
     public float Value => _value;
+    public float MaxValue => _maxValue;
     public Level Level => _level;
     public List<Upgrade> Upgrades => _upgrades;
 
@@ -23,6 +26,24 @@ public abstract class Stat : ScriptableObject, IStat, IUpgradeable
 
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        return GetType().IsAssignableFrom(upgrade.GetUpgradeType());
+        if (upgrade.GetUpgradeType().IsAssignableFrom(GetType()))
+        {
+            _upgrades.Add(upgrade);
+
+            return true;
+        }
+        else return false;
     }
+
+    public void SetValue(float value)
+    {
+        _value = value;
+    }
+
+    public void SetMaxValue(float value)
+    {
+        _maxValue = value;
+    }
+
+    protected abstract void CalculateValue();
 }

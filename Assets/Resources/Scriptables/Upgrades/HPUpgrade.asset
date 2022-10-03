@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5de8807d29d4664089d4baf6dd8c38c, type: 3}
-  m_Name: PlayerHP
+  m_Script: {fileID: 11500000, guid: 83f575fac709bfb4685683852e55e003, type: 3}
+  m_Name: HPUpgrade
   m_EditorClassIdentifier: 
-  _baseValue: 500
-  _maxValue: 0
-  _level:
-    _baseValue: 0
-    _maxValue: 0
+  _upgradingStatMarker: {fileID: 11400000, guid: c94a451cc9a939b49b9e78f1625df4b8, type: 2}
+  _upgradeValue: 50
+  _upgradeMultiplier: 1.1
