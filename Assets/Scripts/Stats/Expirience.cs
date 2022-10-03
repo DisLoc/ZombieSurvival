@@ -1,13 +1,17 @@
 using UnityEngine;
 
-public struct Expirience
+[System.Serializable]
+public class Expirience : IStat
 {
+    [SerializeField] private int _baseValue;
     private int _expirience;
-    public int Value => _expirience;
 
-    public Expirience(int exp = 0)
+    public float BaseValue => _baseValue;
+    public float Value => _expirience;
+
+    public void SetValue(int value = 0)
     {
-        _expirience = exp;
+        _expirience = value;
     }
 
     public void Add(int exp)

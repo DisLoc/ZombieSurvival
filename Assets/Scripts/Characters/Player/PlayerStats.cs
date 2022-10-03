@@ -8,8 +8,8 @@ public sealed class PlayerStats : CharacterStats
 
     public float PickUpRange => _pickUpRange.Value;
 
-    public int Exp => (int)_expirience.Value;
-    public int Level => _expirience.Lvl.Lvl;
+    //public int Exp => (int)_expirience.Value;
+    //public int Level => (int)_expirience.Level.Value;
 
     //public float LevelProgress => _expirience.LevelProgress;
 }
