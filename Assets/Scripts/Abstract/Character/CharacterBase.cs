@@ -17,4 +17,14 @@ public abstract class CharacterBase : DamageableObject
 
         base.TakeDamage(damage);
     }
+
+    public override void Die()
+    {
+        base.Die();
+    }
+
+    public virtual void GetUpgrade(Upgrade upgrade)
+    {
+
+    }
 }

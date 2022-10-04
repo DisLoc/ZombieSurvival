@@ -14,5 +14,6 @@ public class CharacterStats
     public virtual void Initialize()
     {
         _healthPoints.Initialize();
+        _velocity.Initialize();
     }
 }

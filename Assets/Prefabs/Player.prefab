@@ -296,24 +296,12 @@ MonoBehaviour:
   _healthBar: {fileID: 6053825508757198442}
   _stats:
     _weapon: {fileID: 0}
-    _healthPoints:
-      _maxHP: 500
-      _level:
-        _maxLevel: 0
-    _velocity:
-      _moveSpeed: 5
-      _level:
-        _maxLevel: 0
-    _expirience:
-      _expForLevel: 0
-      _expLevelMultiplier: 0
-      _level:
-        _maxLevel: 0
-    _pickUpRange:
-      _pickUpRange: 0
-      _level:
-        _maxLevel: 0
+    _healthPoints: {fileID: 11400000, guid: f38d1296e833ccd4a873d169ce0b77de, type: 2}
+    _velocity: {fileID: 11400000, guid: 30e2c79562dc80748b04d31a88ac857d, type: 2}
+    _expirience: {fileID: 11400000, guid: abcfddbb6ebd1964aa20131e4dd15609, type: 2}
+    _pickUpRange: {fileID: 11400000, guid: 86e186efb54900b40bbbf30fdd483bee, type: 2}
   _catcher: {fileID: 4806763617484522634}
+  _expirience: {fileID: 11400000, guid: 7dbf923b7944fb5409a1a50b5ae1e0fe, type: 2}
 --- !u!1001 &1091634638874702766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7863421260061623213}
     m_Modifications:
+    - target: {fileID: 3134178944655273856, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4082740703810666481, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
       propertyPath: m_Name
       value: HPBar

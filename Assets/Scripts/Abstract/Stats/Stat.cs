@@ -1,32 +1,33 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Stat : ScriptableObject, IStat, IUpgradeable
+[System.Serializable]
+public abstract class Stat : IStat, IUpgradeable
 {
-    [SerializeField] protected float _baseValue;
-    [Tooltip("Set -1 for infinite value")]
-    [SerializeField] protected float _maxValue;
-    [SerializeField] protected Level _level;
+    [Header("Debug settings")]
+    [SerializeField] protected bool _isDebug;
+
+    [Header("Stat settings")]
+    [SerializeField] protected StatData _statData;
 
     protected float _value;
-    protected List<Upgrade> _upgrades;
+    protected float _maxValue;
+    protected UpgradeList _upgrades;
 
-    public float BaseValue => _baseValue;
+    public float BaseValue => _statData.BaseValue;
     public float Value => _value;
-    public float MaxValue => _maxValue;
-    public Level Level => _level;
-    public List<Upgrade> Upgrades => _upgrades;
+    public float MaxValue => _statData.MaxValue;
+    public Level Level => _statData.Level;
+    public UpgradeList Upgrades => _upgrades;
 
     public virtual void Initialize()
     {
-        _upgrades = new List<Upgrade>();
-        _value = _baseValue;
-        _level.SetValue();
+        _upgrades = new UpgradeList();
+        _value = _statData.BaseValue;
     }
 
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        if (upgrade.GetUpgradeType().IsAssignableFrom(GetType()))
+        if (_statData.Marker.name.Equals(upgrade.GetUpgradeMarker()))
         {
             _upgrades.Add(upgrade);
 
@@ -44,6 +45,4 @@ public abstract class Stat : ScriptableObject, IStat, IUpgradeable
     {
         _maxValue = value;
     }
-
-    protected abstract void CalculateValue();
 }

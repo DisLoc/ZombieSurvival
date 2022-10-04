@@ -5,15 +5,16 @@ public class Level : IStat
 {
     [SerializeField] private int _baseValue;
     [Tooltip("Set -1 for infinite level")]
-    [SerializeField][Range(-1, 1000)] private int _maxValue;
+    [SerializeField] private int _maxValue;
     private int _level;
 
     public float BaseValue => _baseValue;
     public float Value => _level;
+    public float MaxValue => _maxValue;
 
-    public void SetValue(int value = 1)
+    public void SetValue(float value = 1)
     {
-        _level = value;
+        _level = (int)value;
 
         if (_level > _maxValue && _maxValue != -1) 
             _level = _maxValue;
@@ -26,8 +27,8 @@ public class Level : IStat
         else return;
     }
 
-    public void SetMaxLevel(int value)
+    public void SetMaxValue(float value)
     {
-        _maxValue = value;
+        _maxValue = (int)value;
     }
 }
