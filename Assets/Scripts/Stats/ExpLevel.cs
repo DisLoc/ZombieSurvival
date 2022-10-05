@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class ExpLevel : Stat
 {
-    [SerializeField] protected Expirience _expirience;
+    [SerializeField] protected Expirience _expLevel;
 
     public float LevelProgress { get; }
 

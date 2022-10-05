@@ -3,8 +3,8 @@ using UnityEngine;
 public sealed class Player : CharacterBase
 {
     [SerializeField] private PlayerStats _stats;
+    [SerializeField] private ExpLevel _expLevel;
     [SerializeField] private ObjectCatcher _catcher;
-    [SerializeField] private ExpLevel _expirience;
 
     public override CharacterStats Stats => _stats;
 
@@ -33,6 +33,6 @@ public sealed class Player : CharacterBase
 
     public override void GetUpgrade(Upgrade upgrade)
     {
-
+        _stats.GetUpgrade(upgrade);
     }
 }

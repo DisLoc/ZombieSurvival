@@ -6,31 +6,33 @@ public abstract class Weapon : MonoBehaviour
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
-    [Header("Weapon settings")]
-    [SerializeField] protected Damage _baseDamage;
-    [SerializeField] protected AttackRange _attackRange;
-    [SerializeField] protected Cooldown _attackCooldown;
-
-    [SerializeField] protected Tags _targetTag;
-
-    protected DamageableObject _target;
+    [Header("Stats settings")]
+    [SerializeField] protected WeaponStats _stats;
+    public WeaponStats Stats => _stats;
+   
     protected bool _isReady;
-
-    public int Damage => (int)_baseDamage.Value;
-    public float Cooldown => _attackCooldown.Value;
-    public string TargetTag => _targetTag.ToString();
 
     public virtual void Initialize()
     {
-
+        _stats.Initialize();
     }
 
-    public abstract void Attack();
+    public virtual void Attack(DamageableObject target)
+    {
+        if (_isDebug) Debug.Log(name + " attacks " + target.name);
+    }
 
-    protected IEnumerator WaitReload()
+    protected virtual IEnumerator WaitReload()
     {
         _isReady = false;
-        yield return new WaitForSeconds(Cooldown);
+        yield return new WaitForSeconds(_stats.AttackInterval.Value);
         _isReady = true;
+
+        if (_isDebug) Debug.Log(name + " can attack");
+    }
+
+    public void UpdateTimer()
+    {
+
     }
 }
