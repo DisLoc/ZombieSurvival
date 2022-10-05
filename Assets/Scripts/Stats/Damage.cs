@@ -1,16 +1,14 @@
-using UnityEngine;
-
 [System.Serializable]
-public struct Damage : IStat
+public class Damage : Stat
 {
-    [SerializeField] private float _damage;
-    public float Value => _damage;
-
-    [SerializeField] private Level _level;
-    public Level Lvl => _level;
-
-    public void Upgrade(Upgrade upgrade)
+    public override bool Upgrade(Upgrade upgrade)
     {
-        _level.LevelUp();
+        if (base.Upgrade(upgrade))
+        {
+            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+            return true;
+        }
+        else return false;
     }
 }

@@ -1,6 +1,10 @@
+using System.Collections.Generic;
+
 public interface IUpgradeable
 {
-    public Level Lvl { get; }
+    public Level Level { get; }
 
-    public void Upgrade(Upgrade upgrade);
+    public UpgradeList Upgrades { get; }
+
+    public bool Upgrade(Upgrade upgrade);
 }

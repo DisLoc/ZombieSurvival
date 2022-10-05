@@ -1,16 +1,14 @@
-using UnityEngine;
-
 [System.Serializable]
-public struct AttackRange : IStat
+public class AttackRange : Stat
 {
-    [SerializeField] private float _attackRange;
-    public float Value => _attackRange;
-
-    [SerializeField] private Level _level;
-    public Level Lvl => _level;
-
-    public void Upgrade(Upgrade upgrade)
+    public override bool Upgrade(Upgrade upgrade)
     {
-        _level.LevelUp();
+        if (base.Upgrade(upgrade))
+        {
+            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+            return true;
+        }
+        else return false;
     }
 }

@@ -1,16 +1,14 @@
-using UnityEngine;
-
 [System.Serializable]
-public struct ProjectileSpeed : IStat
+public class ProjectileSpeed : Stat
 {
-    [SerializeField] private float _projectileSpeed;
-    public float Value => _projectileSpeed;
-
-    [SerializeField] private Level _level;
-    public Level Lvl => _level; 
-
-    public void Upgrade(Upgrade upgrade)
+    public override bool Upgrade(Upgrade upgrade)
     {
-        _level.LevelUp();
+        if (base.Upgrade(upgrade))
+        {
+            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+            return true;
+        }
+        else return false;
     }
 }

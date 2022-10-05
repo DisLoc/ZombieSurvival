@@ -1,19 +1,14 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ExpLevel : IStat
+public class ExpLevel : Stat
 {
-    [SerializeField] private int _expForLevel;
-    [SerializeField] private int _expLevelMultiplier;
-    [SerializeField] private Level _level;
+    [SerializeField] protected Expirience _expLevel;
 
-    private Expirience _expirience = new Expirience();
+    public float LevelProgress { get; }
 
-    public Level Lvl => _level;
-    public float Value => _expirience.Value;
-
-    public void Upgrade(Upgrade upgrade)
+    public void AddExp(int exp)
     {
-        _level.LevelUp();
+        _value += (exp + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
     }
 }

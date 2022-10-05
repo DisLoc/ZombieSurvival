@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62cef517fe906d4389c6140a3cd7d23, type: 3}
   m_Name: CrystalStats
   m_EditorClassIdentifier: 
-  _crystalPrefab: {fileID: 7076442739810739986, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
+  _crystalPrefab: {fileID: 8038103952488939020, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
   _crystalParams:
   - _expValue: 50
-    _material: {fileID: 2100000, guid: 49c45cb22f3785b49a993d75ddd4f476, type: 2}
+    _color: {r: 0, g: 1, b: 0.11571956, a: 1}
   - _expValue: 150
-    _material: {fileID: 2100000, guid: df0a06cc1f663474d9c6edabb4b33ab1, type: 2}
+    _color: {r: 0, g: 0.25260973, b: 1, a: 1}
   - _expValue: 300
-    _material: {fileID: 2100000, guid: 1fed6ae6016772d4fb7b55cb923fbd42, type: 2}
+    _color: {r: 1, g: 0.95696914, b: 0, a: 1}

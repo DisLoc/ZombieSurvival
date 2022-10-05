@@ -1,36 +1,33 @@
-using UnityEngine;
-
 [System.Serializable]
-public struct HealthPoint : IStat
+public class HealthPoint : Stat
 {
-    [SerializeField] private int _maxHP;
-    private int _hp;
-
-    public float Value => _hp;
-    public float MaxHP => _maxHP;
-
-    [SerializeField] private Level _level;
-    public Level Lvl => _level;
-
-    public void Initialize()
+    public override void Initialize()
     {
-        _hp = _maxHP;
-    }
+        base.Initialize();
 
-    public void Upgrade(Upgrade upgrade)
-    {
-        _level.LevelUp();
+        _maxValue = _value;
     }
 
     public void TakeDamage(int damage)
     {
-        _hp -= damage;
+        _value -= damage;
+
+        if (_value < _minValue) _value = _minValue;
+        else if (_value > _maxValue) _value = _maxValue;
     }
 
-    public void Heal(int heal)
+    public override bool Upgrade(Upgrade upgrade)
     {
-        _hp += heal;
+        if (base.Upgrade(upgrade))
+        {
+            float percent = _value / _maxValue;
 
-        if (_hp > _maxHP) _hp = _maxHP;
+            _maxValue = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+            _value = _maxValue * percent;
+
+            return true;
+        }
+        else return false;
     }
 }
