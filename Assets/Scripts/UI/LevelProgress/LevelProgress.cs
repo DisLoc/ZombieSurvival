@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHandler, IMinuteLeftHandler
 {
@@ -10,9 +9,8 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
 
     private int _killed;
 
-    protected override void OnEnable()
+    private void OnEnable()
     {
-        base.OnEnable();
         EventBus.Subscribe(this);
     }
 
@@ -21,8 +19,16 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         EventBus.Unsubscribe(this);
     }
 
+    public override void Initialize()
+    {
+        _value = _minFillValue;
+
+        base.Initialize();
+    }
+
     public void Start()
     {
+        Initialize();
         OnGameStart();
     }
 

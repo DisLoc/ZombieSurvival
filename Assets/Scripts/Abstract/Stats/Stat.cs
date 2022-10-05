@@ -10,12 +10,14 @@ public abstract class Stat : IStat, IUpgradeable
     [SerializeField] protected StatData _statData;
 
     protected float _value;
+    protected float _minValue;
+    protected float _maxValue;
     protected UpgradeList _upgrades;
 
     public float BaseValue => _statData.BaseValue;
     public float Value => _value;
-    public float MinValue => _statData.MinValue;
-    public float MaxValue => _statData.MaxValue;
+    public float MinValue => _minValue;
+    public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _statData.MaxValueIsInfinite;
     public Level Level => _statData.Level;
     public UpgradeList Upgrades => _upgrades;
@@ -23,7 +25,10 @@ public abstract class Stat : IStat, IUpgradeable
     public virtual void Initialize()
     {
         _upgrades = new UpgradeList();
+
         _value = _statData.BaseValue;
+        _minValue = _statData.MinValue;
+        _maxValue = _statData.MaxValue;
 
         if (_isDebug) Debug.Log(_statData.name + " initialized");
     }

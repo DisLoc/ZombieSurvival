@@ -1,5 +1,3 @@
-using UnityEngine;
-
 [System.Serializable]
 public class MoveSpeed : Stat
 {
@@ -7,7 +5,7 @@ public class MoveSpeed : Stat
     {
         if (base.Upgrade(upgrade))
         {
-
+            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
 
             return true;
         }

@@ -15,10 +15,10 @@ MonoBehaviour:
   _baseValue: 500
   _minValue: 0
   _maxValue: 0
-  _maxValueIsInfinite: 0
+  _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: dc340090bd1bb9d46844d1cca45edb29, type: 2}
   _level:
     _baseValue: 0
     _minValue: 0
-    _maxValue: 0
+    _maxValue: 5
     _maxValueIsInfinite: 0

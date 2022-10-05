@@ -16,35 +16,14 @@ public abstract class FillBar : MonoBehaviour
 
     protected int _value;
 
-    protected virtual void OnEnable()
+    public virtual void Initialize()
     {
         _fillBar.minValue = _minFillValue;
         _fillBar.maxValue = _maxFillValue;
 
-        _fillBar.value = _minFillValue;
         _fillBar.interactable = false;
-    }
 
-    public void SetMaxValue(int value, bool saveFillPercent = false)
-    {
-        if (saveFillPercent)
-        {
-            float percent = (float)(_value - _minFillValue) / (_maxFillValue - _minFillValue);
-        }
-
-        _fillBar.maxValue = value;
-        _maxFillValue = value;
-    }
-
-    public void SetMinValue(int value, bool saveFillPercent = false)
-    {
-        _fillBar.minValue = value;
-        _minFillValue = value;
-
-        if (saveFillPercent)
-        {
-
-        }
+        UpdateBar();
     }
 
     protected virtual void UpdateBar()

@@ -8,14 +8,14 @@ public sealed class Player : CharacterBase
 
     public override CharacterStats Stats => _stats;
 
-    private void OnEnable()
+    //private AbilityInventory<Ability> _abilities;
+
+    public void Initialize()
     {
         _stats.Initialize();
+
         _catcher.Initialize(_stats.PickUpRange);
-
-        _healthBar.UpdateHealth(HP);
-
-        Debug.Log(_stats.Velocity);
+        _healthBar.Initialize(_stats.HP);
     }
 
     public override void Move(Vector3 direction)
@@ -33,6 +33,13 @@ public sealed class Player : CharacterBase
 
     public override void GetUpgrade(Upgrade upgrade)
     {
-        _stats.GetUpgrade(upgrade);
+        if (upgrade as AbilityUpgrade != null)
+        {
+
+        }
+        else
+        {
+            _stats.GetUpgrade(upgrade);
+        }
     }
 }

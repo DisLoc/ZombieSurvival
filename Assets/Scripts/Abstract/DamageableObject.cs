@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public abstract class DamageableObject : MonoBehaviour, IDamageable
@@ -18,7 +15,7 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
     {
         if (_isDebug) Debug.Log(name + " take " + damage + " damage");
 
-        _healthBar.UpdateHealth(HP);
+        _healthBar.UpdateHealth();
 
         if (HP <= 0)
         {

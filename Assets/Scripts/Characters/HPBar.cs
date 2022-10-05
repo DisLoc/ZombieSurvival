@@ -1,13 +1,22 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class HPBar : FillBar, IGameOverHandler
-{  
-    protected override void OnEnable()
-    {
-        base.OnEnable();
+{
+    private HealthPoint _health;
 
+    public void Initialize(HealthPoint health)
+    {
+        _maxFillValue = (int)health.MaxValue;
+        _minFillValue = (int)health.MinValue;
+        _value = _maxFillValue;
+
+        _health = health;
+
+        base.Initialize();
+    }
+
+    protected void OnEnable()
+    {
         EventBus.Subscribe(this);
     }
 
@@ -16,15 +25,15 @@ public class HPBar : FillBar, IGameOverHandler
         EventBus.Unsubscribe(this);
     }
 
-    public void UpdateHealth(int value)
+    public void UpdateHealth()
     {
-        _value = value;
+        _value = (int)_health.Value;
+
         UpdateBar();
     }
 
     public void OnGameOver()
     {
-        //Поставил как заглушку
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (_isDebug) Debug.Log(name + " game over");
     }
 }

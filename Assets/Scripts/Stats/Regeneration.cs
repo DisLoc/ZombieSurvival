@@ -1,5 +1,5 @@
 [System.Serializable]
-public class ProjectileSpeed : Stat
+public class Regeneration : Stat
 {
     public override bool Upgrade(Upgrade upgrade)
     {

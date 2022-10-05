@@ -305,7 +305,7 @@ MonoBehaviour:
       _statData: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
     _expLevel:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 181c1ebad5cadab42a102fb4113b5568, type: 2}
       _expLevel:
         _baseValue: 0
         _minValue: 0

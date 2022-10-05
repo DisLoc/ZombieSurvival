@@ -38,6 +38,18 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         return obj;
     }
 
+    public override List<TObject> PullObjects(int count)
+    {
+        List<TObject> objects = base.PullObjects(count);
+
+        foreach (TObject obj in objects)
+        {
+            obj.gameObject.SetActive(true);
+        }
+
+        return objects;
+    }
+
     public override void ClearPool()
     {
         foreach(TObject obj in _objects)

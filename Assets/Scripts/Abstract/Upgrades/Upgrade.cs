@@ -3,9 +3,9 @@ using UnityEngine;
 
 public abstract class Upgrade : ScriptableObject
 {
-    [SerializeField] protected StatMarker _upgradingStatMarker;
+    [SerializeField] protected UpgradeMarker _upgradingStatMarker;
     [SerializeField] protected float _upgradeValue = 0;
-    [SerializeField][Range(0.001f, 10)] protected float _upgradeMultiplier = 1;
+    [SerializeField][Range(0, 10)] protected float _upgradeMultiplier = 1;
 
     public float UpgradeValue => _upgradeValue;
     public float UpgradeMultiplier => _upgradeMultiplier;
@@ -15,7 +15,7 @@ public abstract class Upgrade : ScriptableObject
         return _upgradingStatMarker.name;
     }
 
-    public virtual List<string> GetUpgradeTypes()
+    public virtual List<string> GetUpgradeMarkers()
     {
         List<string> types = new List<string>();
         types.Add(_upgradingStatMarker.name);

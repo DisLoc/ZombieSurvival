@@ -15,10 +15,22 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
             CreateObject();
         }
 
-        TObject obj = _objects[0];
-        _objects.RemoveAt(0);
+        TObject obj = _objects[_objects.Count - 1];
+        _objects.RemoveAt(_objects.Count - 1);
 
         return obj;
+    }
+
+    public virtual List<TObject> PullObjects(int count)
+    {
+        List<TObject> objects = new List<TObject>();
+        
+        for (int i = 0; i < count; i++)
+        {
+            objects.Add(Pull());
+        }
+
+        return objects;
     }
 
     public virtual void Release(TObject obj)

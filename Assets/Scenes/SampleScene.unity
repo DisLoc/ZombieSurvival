@@ -598,26 +598,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._velocity._statData
-      value: 
-      objectReference: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._expirience._statData
-      value: 
-      objectReference: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._healthPoints._isDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._pickUpRange._statData
-      value: 
-      objectReference: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._healthPoints._statData
-      value: 
-      objectReference: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 2
