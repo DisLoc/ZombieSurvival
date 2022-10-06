@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class ExpCrystal : PickableObject, IPoolable
 {
-    //Expirience _expirience;
-
     [SerializeField] MeshRenderer _renderer;
+    private int _expValue;
+
+    public int ExpValue => _expValue;
 
     public void Initialize(CrystalParam param)
     {
-        //_expirience = new Expirience(param.ExpValue);
+        _expValue = param.ExpValue;
         _renderer.material.color = param.Color;
     }
 
     public void ResetObject()
     {
-        //_expirience = null;
+        _expValue = 0;
         _renderer.material = null;
     }
 
