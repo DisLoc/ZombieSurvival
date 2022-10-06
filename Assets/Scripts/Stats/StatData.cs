@@ -11,12 +11,10 @@ public class StatData : ScriptableObject
 
     [Header("Upgrade settings")]
     [SerializeField] private UpgradeMarker _upgradeMarker;
-    [SerializeField] private Level _level;
 
     public float BaseValue => _baseValue;
     public float MinValue => _minValue;
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _maxValueIsInfinite;
-    public Level Level => _level;
     public UpgradeMarker Marker => _upgradeMarker;
 }

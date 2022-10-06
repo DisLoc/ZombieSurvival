@@ -22,12 +22,16 @@ public class UpgradeList
         CalculateUpgrades();
     }
 
-    /*
     public bool Remove(Upgrade upgrade)
     {
-        return true;
+        if (_upgrades.Remove(upgrade))
+        {
+            CalculateUpgrades();
+
+            return true;
+        }
+        else return false;
     }
-    */
 
     private void CalculateUpgrades()
     {

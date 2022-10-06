@@ -19,7 +19,6 @@ public abstract class Stat : IStat, IUpgradeable
     public float MinValue => _minValue;
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _statData.MaxValueIsInfinite;
-    public Level Level => _statData.Level;
     public UpgradeList Upgrades => _upgrades;
 
     public virtual void Initialize()
