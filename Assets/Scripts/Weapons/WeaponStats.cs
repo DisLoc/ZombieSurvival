@@ -7,16 +7,16 @@ public class WeaponStats
     [SerializeField] protected Damage _damage;
     [SerializeField] protected Cooldown _attackInterval;
 
+    public AttackRange AttackRange => _attackRange;
+    public Damage Damage => _damage;
+    public Cooldown AttackInterval => _attackInterval;
+
     [Space(10)]
     [SerializeField] private bool _useProjectiles;
     [SerializeField] private Projectile _projectile;
     [SerializeField] private ProjectileSpeed _projectileSpeed;
     [SerializeField] private ProjectileNumber _projectileNumber;
     [SerializeField] private Duration _throwDuration;
-
-    public AttackRange AttackRange => _attackRange;
-    public Damage Damage => _damage;
-    public Cooldown AttackInterval => _attackInterval;
 
     public bool UseProjectiles => _useProjectiles;
     public Projectile Projectile => _useProjectiles ? _projectile : null;

@@ -18,7 +18,9 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     protected override void CreateObject()
     {
         TObject obj = Object.Instantiate(_prefab, _parent);
-        
+
+        obj.gameObject.SetActive(false);
+
         _objects.Add(obj);
     }
 

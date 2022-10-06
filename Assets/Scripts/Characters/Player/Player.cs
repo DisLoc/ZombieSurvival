@@ -10,12 +10,22 @@ public sealed class Player : CharacterBase
 
     //private AbilityInventory<Ability> _abilities;
 
+    public PassiveAbilityData MoveSpeedAbility; // test
+
     public void Initialize()
     {
         _stats.Initialize();
 
         _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+    }
+
+    private void Update() // test
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            GetUpgrade(MoveSpeedAbility.PassiveAbility.CurrentUpgrade.Upgrade);
+        }
     }
 
     public override void Move(Vector3 direction)
@@ -33,13 +43,6 @@ public sealed class Player : CharacterBase
 
     public override void GetUpgrade(Upgrade upgrade)
     {
-        if (upgrade as AbilityUpgrade != null)
-        {
-
-        }
-        else
-        {
-            _stats.GetUpgrade(upgrade);
-        }
+        _stats.GetUpgrade(upgrade);
     }
 }
