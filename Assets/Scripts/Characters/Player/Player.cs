@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public sealed class Player : CharacterBase
@@ -10,12 +11,38 @@ public sealed class Player : CharacterBase
 
     //private AbilityInventory<Ability> _abilities;
 
+    [Header("Test")]
+    public PassiveAbilityData moveSpeedAbility;
+    public KeyCode shootKey;
+    public Projectile projectile;
+
+    private MonoPool<Projectile> _pool;
+
     public void Initialize()
     {
         _stats.Initialize();
 
         _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+
+        _pool = new MonoPool<Projectile>(projectile, 10);
+    }
+
+    private void Update() // test
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            GetUpgrade(moveSpeedAbility.PassiveAbility.CurrentUpgrade.Upgrade);
+        }
+
+        if (Input.GetKeyDown(shootKey))
+        {
+            Projectile p = _pool.Pull();
+            p.transform.position = transform.position;
+
+            p.Initialize(_pool, 5f, 5f, 100);
+            p.Throw(transform.TransformDirection(Vector3.forward));
+        }
     }
 
     public override void Move(Vector3 direction)
@@ -33,13 +60,6 @@ public sealed class Player : CharacterBase
 
     public override void GetUpgrade(Upgrade upgrade)
     {
-        if (upgrade as AbilityUpgrade != null)
-        {
-
-        }
-        else
-        {
-            _stats.GetUpgrade(upgrade);
-        }
+        _stats.GetUpgrade(upgrade);
     }
 }

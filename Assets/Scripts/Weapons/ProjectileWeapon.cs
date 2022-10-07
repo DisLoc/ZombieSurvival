@@ -9,7 +9,10 @@ public class ProjectileWeapon : Weapon
         base.Initialize();
 
         if (_stats.UseProjectiles)
-            _pool = new MonoPool<Projectile>(_stats.Projectile, (int)(_stats.AttackInterval.Value / _stats.ThrowDuration.Value * _stats.ProjectileNumber.Value));
+        {
+            int x = (int)(_stats.AttackInterval.Value / _stats.ThrowDuration.Value);
+            _pool = new MonoPool<Projectile>(_stats.Projectile, (int)(x == 0 ? 1 : x * _stats.ProjectileNumber.Value));
+        }
         else 
         {
             if (_isDebug) Debug.Log("Projectiles error!");
