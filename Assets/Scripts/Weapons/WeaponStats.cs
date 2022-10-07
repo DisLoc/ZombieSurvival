@@ -25,7 +25,7 @@ public class WeaponStats
     public Duration ThrowDuration => _useProjectiles ? _throwDuration : null;
 
     public void Initialize()
-    {
+    {/*
         _attackRange.Initialize();
         _damage.Initialize();
         _attackInterval.Initialize();
@@ -35,11 +35,11 @@ public class WeaponStats
             _projectileSpeed.Initialize();
             _projectileNumber.Initialize();
             _throwDuration.Initialize();
-        }
+        }*/
     }
 
     public virtual void GetUpgrade(Upgrade upgrade)
-    {
+    {/*
         _attackRange.Upgrade(upgrade);
         _damage.Upgrade(upgrade);
         _attackInterval.Upgrade(upgrade);
@@ -49,6 +49,6 @@ public class WeaponStats
             _projectileSpeed.Upgrade(upgrade);
             _projectileNumber.Upgrade(upgrade);
             _throwDuration.Upgrade(upgrade);
-        }
+        }*/
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public sealed class Player : CharacterBase
@@ -10,7 +11,12 @@ public sealed class Player : CharacterBase
 
     //private AbilityInventory<Ability> _abilities;
 
-    public PassiveAbilityData MoveSpeedAbility; // test
+    [Header("Test")]
+    public PassiveAbilityData moveSpeedAbility;
+    public KeyCode shootKey;
+    public Projectile projectile;
+
+    private MonoPool<Projectile> _pool;
 
     public void Initialize()
     {
@@ -18,13 +24,24 @@ public sealed class Player : CharacterBase
 
         _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+
+        _pool = new MonoPool<Projectile>(projectile, 10);
     }
 
     private void Update() // test
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            GetUpgrade(MoveSpeedAbility.PassiveAbility.CurrentUpgrade.Upgrade);
+            GetUpgrade(moveSpeedAbility.PassiveAbility.CurrentUpgrade.Upgrade);
+        }
+
+        if (Input.GetKeyDown(shootKey))
+        {
+            Projectile p = _pool.Pull();
+            p.transform.position = transform.position;
+
+            p.Initialize(_pool, 5f, 5f, 100);
+            p.Throw(transform.TransformDirection(Vector3.forward));
         }
     }
 
