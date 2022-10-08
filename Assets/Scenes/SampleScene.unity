@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _cameraPos: {x: 0, y: 13, z: -5}
+  _cameraPos: {x: 0, y: 17, z: -7}
 --- !u!1 &971739376
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +659,10 @@ PrefabInstance:
       propertyPath: moveSpeedAbility
       value: 
       objectReference: {fileID: 11400000, guid: 31e6785c5bd20ac44bcfde0dc89f5bd2, type: 2}
+    - target: {fileID: 3073332135091399405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._useProjectiles
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -717,7 +721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_Name
