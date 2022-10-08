@@ -8,7 +8,7 @@ public class ZombieSpavner : MonoBehaviour
 
     void Start()
     {
-        Invoke(nameof(Spavn), 5);
+        InvokeRepeating(nameof(Spavn), 5, 5);
     }
     
     private void Spavn()
@@ -17,7 +17,7 @@ public class ZombieSpavner : MonoBehaviour
         {
             Instantiate(zombies[Random.Range(0, zombies.Count)], transform.position - new Vector3(15, 4, 0), Quaternion.identity);
         }
-        Invoke(nameof(Spavn), 5);
+
 
     }
 }
