@@ -6,12 +6,12 @@ public class ExpBar : FillBar
     [Header("Settings")]
     [SerializeField] private Text _levelText;
     private ExpLevel _expirience;
-    
 
     public void Initialize(ExpLevel expLevel)
     {
         _expirience = expLevel;
 
+        UpdateLevel();
         UpdateExp();
     }
 
@@ -25,6 +25,7 @@ public class ExpBar : FillBar
     public void UpdateLevel()
     {
         _maxFillValue = _expirience.ExpForLevel;
+        _fillBar.maxValue = _maxFillValue;
         _levelText.text = ((int)_expirience.Value).ToString();
     }
 }

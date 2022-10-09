@@ -29,7 +29,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 
     public void OnPlayerLevelUp()
     {
-        _menuGO.SetActive(true);
+        //_menuGO.SetActive(true);
 
         foreach (AbilityUI ability in _abilitiesUI)
         {

@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400769, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_Name
-      value: BirdZombie
+      value: BirdZombie Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400774, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_RootOrder
@@ -25,15 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400774, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.341236
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400774, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48044157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400774, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.03250885
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2817904043961400774, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       propertyPath: m_LocalRotation.w

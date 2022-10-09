@@ -15,7 +15,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         for (int i = 0; i < zombies.Count; i++)
         {
-            Instantiate(zombies[Random.Range(0, zombies.Count)], transform.position - new Vector3(15, 4, 0), Quaternion.identity);
+            Instantiate(zombies[Random.Range(0, zombies.Count)], new Vector3(0, 5, 0), Quaternion.identity);
         }
 
 

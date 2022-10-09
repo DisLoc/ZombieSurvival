@@ -4,14 +4,18 @@ using Zenject;
 public class ExpCrystal : PickableObject, IPoolable
 {
     [SerializeField] private MeshRenderer _renderer;
-    private int _expValue;
 
     [Inject] private Player _player;
 
-    public void Initialize(CrystalParam param)
+    private int _expValue;
+    private FactoryPool<ExpCrystal, Factory> _pool;
+
+    public void Initialize(CrystalParam param, FactoryPool<ExpCrystal, Factory> pool)
     {
         _expValue = param.ExpValue;
         _renderer.material.color = param.Color;
+
+        _pool = pool;
     }
 
     public void ResetObject()
@@ -27,8 +31,10 @@ public class ExpCrystal : PickableObject, IPoolable
             (_player.Stats as PlayerStats).AddExpirience(_expValue);
         else if (_isDebug) Debug.Log("Missing player!");
 
+        _pool.Release(this);
+
         return base.PickUp();
     }
 
-    public class Factory<ExpCrystal> : PlaceholderFactory<ExpCrystal> { }
+    public class Factory : PlaceholderFactory<ExpCrystal> { }
 }
