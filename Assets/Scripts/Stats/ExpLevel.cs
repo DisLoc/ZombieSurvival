@@ -26,9 +26,17 @@ public class ExpLevel : Stat
 
             if (_expBar != null)
             {
-                _expBar.UpdateExp();
+                _expBar.UpdateLevel();
             }
             else if (_isDebug) Debug.Log("Missing ExpBar!");
+
+            EventBus.Publish<IPlayerLevelUp>(handler => handler.OnPlayerLevelUp());
         }
+
+        if (_expBar != null)
+        {
+            _expBar.UpdateExp();
+        }
+        else if (_isDebug) Debug.Log("Missing ExpBar!");
     }
 }

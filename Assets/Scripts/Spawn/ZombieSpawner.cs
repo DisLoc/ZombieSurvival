@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieSpavner : MonoBehaviour
+public class ZombieSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> zombies = new List<GameObject>();
 
     void Start()
     {
-        InvokeRepeating(nameof(Spavn), 5, 5);
+        InvokeRepeating(nameof(Spawn), 5, 5);
     }
     
-    private void Spavn()
+    private void Spawn()
     {
         for (int i = 0; i < zombies.Count; i++)
         {
