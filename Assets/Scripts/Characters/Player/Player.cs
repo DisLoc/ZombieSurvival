@@ -15,7 +15,6 @@ public sealed class Player : CharacterBase
     public PassiveAbilityData moveSpeedAbility;
     public KeyCode shootKey;
     public Projectile projectile;
-
     private MonoPool<Projectile> _pool;
 
     public void Initialize()

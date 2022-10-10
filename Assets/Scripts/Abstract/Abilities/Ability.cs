@@ -2,15 +2,16 @@
 
 public abstract class Ability : IUpgradeable
 {
-    [SerializeField] protected Sprite _icon;
+    [SerializeField] protected Sprite _inventoryIcon;
+    [SerializeField] protected Sprite _upgradeIcon;
 
-    protected Level _level;
     protected UpgradeList _upgrades;
 
-    public Level Level => _level;
     public UpgradeList Upgrades => _upgrades;
+    public Sprite InventoryIcon => _inventoryIcon;
+    public Sprite UpgradeIcon => _upgradeIcon;
+    public abstract AbilityStats Stats { get; }
     public abstract CurrentUpgrade CurrentUpgrade { get; }
-    public Sprite Icon => _icon;
 
     public virtual void Initialize()
     {

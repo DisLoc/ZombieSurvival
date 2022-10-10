@@ -10,7 +10,7 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
     [SerializeField] private CrystalStats _crystalStats;
     [SerializeField] private int _poolSize;
 
-    private FactoryPool<ExpCrystal, ExpCrystal.Factory> _pool;
+    private FactoryMonoPool<ExpCrystal, ExpCrystal.Factory> _pool;
 
     [Inject] private ExpCrystal.Factory _crystalFactory;
 
@@ -32,7 +32,7 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
 
     public void OnGameStart()
     {
-        _pool = new FactoryPool<ExpCrystal, ExpCrystal.Factory>(_crystalStats.CrystalPrefab, _crystalFactory, _poolSize);
+        _pool = new FactoryMonoPool<ExpCrystal, ExpCrystal.Factory>(_crystalStats.CrystalPrefab, _crystalFactory, _poolSize);
     }
 
     public void OnEnemyKilled(Zombie zombie)

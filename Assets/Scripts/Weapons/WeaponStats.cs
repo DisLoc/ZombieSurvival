@@ -3,11 +3,11 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponStats
 {
-    [SerializeField] protected AttackRange _attackRange;
+    [SerializeField] protected Radius _attackRange;
     [SerializeField] protected Damage _damage;
     [SerializeField] protected Cooldown _attackInterval;
 
-    public AttackRange AttackRange => _attackRange;
+    public Radius AttackRange => _attackRange;
     public Damage Damage => _damage;
     public Cooldown AttackInterval => _attackInterval;
 

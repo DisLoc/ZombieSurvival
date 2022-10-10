@@ -6,5 +6,5 @@ public abstract class WeaponAbility : Ability
     [Tooltip("Upgrades for each ability level")]
     [SerializeField] protected List<CurrentUpgrade> _levelUpgrades;
 
-    public override CurrentUpgrade CurrentUpgrade => _levelUpgrades[(int)_level.Value];
+    public override CurrentUpgrade CurrentUpgrade => _levelUpgrades[(int)Stats.Level.Value];
 }

@@ -8,9 +8,9 @@ public class ExpCrystal : PickableObject, IPoolable
     [Inject] private Player _player;
 
     private int _expValue;
-    private FactoryPool<ExpCrystal, Factory> _pool;
+    private FactoryMonoPool<ExpCrystal, Factory> _pool;
 
-    public void Initialize(CrystalParam param, FactoryPool<ExpCrystal, Factory> pool)
+    public void Initialize(CrystalParam param, FactoryMonoPool<ExpCrystal, Factory> pool)
     {
         _expValue = param.ExpValue;
         _renderer.material.color = param.Color;
