@@ -9,13 +9,12 @@ public sealed class Player : CharacterBase
 
     public override CharacterStats Stats => _stats;
 
-    //private AbilityInventory<Ability> _abilities;
+    private AbilityInventory _abilities;
 
     [Header("Test")]
     public PassiveAbilityData moveSpeedAbility;
     public KeyCode shootKey;
     public Projectile projectile;
-
     private MonoPool<Projectile> _pool;
 
     public void Initialize()
@@ -26,6 +25,7 @@ public sealed class Player : CharacterBase
         _healthBar.Initialize(_stats.HP);
 
         _pool = new MonoPool<Projectile>(projectile, 10);
+        _abilities = new AbilityInventory();
     }
 
     private void Update() // test
@@ -61,5 +61,10 @@ public sealed class Player : CharacterBase
     public override void GetUpgrade(Upgrade upgrade)
     {
         _stats.GetUpgrade(upgrade);
+    }
+
+    public void GetAbility(Ability ability)
+    {
+        _abilities.Add(ability);
     }
 }

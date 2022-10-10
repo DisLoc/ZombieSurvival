@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CharacterStats
+public class CharacterStats : IObjectStats
 {
     [SerializeField] protected Weapon _weapon;
     [SerializeField] protected HealthPoint _healthPoints;

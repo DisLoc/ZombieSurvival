@@ -13,6 +13,9 @@ public class UpgradeList
     public UpgradeList()
     {
         _upgrades = new List<UpgradeData>();
+
+        _upgradesValue = 0;
+        _upgradesMultiplier = 1;
     }
 
     public void Add(UpgradeData upgrade)

@@ -30,5 +30,11 @@ public class Expirience : IStat
     public void Add(float exp)
     {
         _expirience += exp;
+
+        if (!_maxValueIsInfinite && _expirience > _maxValue)
+            _expirience = _maxValue;
+
+        if (_expirience < _minValue)
+            _expirience = _minValue;
     }
 }

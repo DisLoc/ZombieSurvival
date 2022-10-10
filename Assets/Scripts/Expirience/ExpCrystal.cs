@@ -1,16 +1,21 @@
 using UnityEngine;
+using Zenject;
 
 public class ExpCrystal : PickableObject, IPoolable
 {
-    [SerializeField] MeshRenderer _renderer;
+    [SerializeField] private MeshRenderer _renderer;
+
+    [Inject] private Player _player;
+
     private int _expValue;
+    private FactoryMonoPool<ExpCrystal, Factory> _pool;
 
-    public int ExpValue => _expValue;
-
-    public void Initialize(CrystalParam param)
+    public void Initialize(CrystalParam param, FactoryMonoPool<ExpCrystal, Factory> pool)
     {
         _expValue = param.ExpValue;
         _renderer.material.color = param.Color;
+
+        _pool = pool;
     }
 
     public void ResetObject()
@@ -22,6 +27,14 @@ public class ExpCrystal : PickableObject, IPoolable
 
     public override PickableObject PickUp()
     {
+        if (_player != null)
+            (_player.Stats as PlayerStats).AddExpirience(_expValue);
+        else if (_isDebug) Debug.Log("Missing player!");
+
+        _pool.Release(this);
+
         return base.PickUp();
     }
+
+    public class Factory : PlaceholderFactory<ExpCrystal> { }
 }

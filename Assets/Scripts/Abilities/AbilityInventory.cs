@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityInventory<T> where T : MonoBehaviour
+public class AbilityInventory
 {
-    public List<T> activeAbilities = new List<T>(5);
-    public List<T> passiveAbilities = new List<T>(5);
+    private List<Ability> _abilities;
 
-    public List<int> activeAbilityLevel = new List<int>(5);
-    public List<int> passiveAbilityLevel = new List<int>(5);
+    public List<Ability> Abilities => _abilities;
 
-
-    public void AddActiveAbility(T ability)
+    public AbilityInventory()
     {
-        activeAbilities.Add(ability);
+        _abilities = new List<Ability>();
     }
 
-    public void AddPassiveAbility(T ability)
+    public void Add(Ability ability)
     {
-        passiveAbilities.Add(ability);
+        _abilities.Add(ability);
+    }
+
+    public bool Remove(Ability ability)
+    {
+        return _abilities.Remove(ability);
     }
 }
