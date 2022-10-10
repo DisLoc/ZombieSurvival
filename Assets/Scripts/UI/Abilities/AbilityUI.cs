@@ -19,11 +19,18 @@ public class AbilityUI : MonoBehaviour
 
     public void Initialize(Ability ability)
     {
+        if (ability == null)
+        {
+            if (_isDebug) Debug.Log("Missing ability!");
+
+            return;
+        }
+
         _ability = ability;
 
-        _abilityIcon.sprite = ability.UpgradeIcon;
+        _abilityIcon.sprite = _ability.UpgradeIcon;
 
-        for (int i = 0; i < (int)ability.Stats.Level.MaxValue; i++)
+        for (int i = 0; i < (int)_ability.Stats.Level.MaxValue; i++)
         {
             LevelUI lvl = Instantiate(_levelPrefab, _abilityLevelParent);
 
@@ -34,7 +41,7 @@ public class AbilityUI : MonoBehaviour
             lvl.Initialize(type);
         }
 
-        _upgradeDescriptionText.text = ability.CurrentUpgrade.Description;
+        _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
     }
 
     public void ChooseUpgrade()
