@@ -6,15 +6,13 @@ public abstract class Weapon : MonoBehaviour
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
-    [Header("Stats settings")]
-    [SerializeField] protected WeaponStats _stats;
-    public WeaponStats Stats => _stats;
-   
     protected bool _isReady;
+
+    public virtual Ability Ability { get; }
 
     public virtual void Initialize()
     {
-        _stats.Initialize();
+        
     }
 
     public virtual void Attack(DamageableObject target)
@@ -25,7 +23,7 @@ public abstract class Weapon : MonoBehaviour
     protected virtual IEnumerator WaitReload()
     {
         _isReady = false;
-        yield return new WaitForSeconds(_stats.AttackInterval.Value);
+        yield return new WaitForSeconds(0);
         _isReady = true;
 
         if (_isDebug) Debug.Log(name + " can attack");

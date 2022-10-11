@@ -265,7 +265,7 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: b6726b3e8e4dab847b54276521665750, type: 2}
     _expLevel:
-      _isDebug: 0
+      _isDebug: 1
       _statData: {fileID: 11400000, guid: 181c1ebad5cadab42a102fb4113b5568, type: 2}
       _exp:
         _baseValue: 0
@@ -285,11 +285,14 @@ MonoBehaviour:
       _baseValue: 0
       _minValue: 0
       _maxValue: 0
-      _maxValueIsInfinite: 0
+      _maxValueIsInfinite: 1
     _expBar: {fileID: 0}
-    _baseExpForLevelUp: 0
-    _levelMultiplier: 0
+    _baseExpForLevelUp: 1000
+    _levelMultiplier: 1
   _catcher: {fileID: 4806763617484522634}
+  moveSpeedAbility: {fileID: 11400000, guid: 31e6785c5bd20ac44bcfde0dc89f5bd2, type: 2}
+  shootKey: 32
+  projectile: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
 --- !u!1001 &1091634638874702766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -470,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+      propertyPath: _ability._weapon
+      value: 
+      objectReference: {fileID: 3073332135091399405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
 --- !u!114 &3073332135091399405 stripped

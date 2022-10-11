@@ -158,27 +158,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _stats:
-    _attackRange:
-      _isDebug: 0
-      _statData: {fileID: 0}
-    _damage:
-      _isDebug: 0
-      _statData: {fileID: 0}
-    _attackInterval:
-      _isDebug: 0
-      _statData: {fileID: 0}
-    _useProjectiles: 0
-    _projectile: {fileID: 0}
-    _projectileSpeed:
-      _isDebug: 0
-      _statData: {fileID: 0}
-    _projectileNumber:
-      _isDebug: 0
-      _statData: {fileID: 0}
-    _throwDuration:
-      _isDebug: 0
-      _statData: {fileID: 0}
+  _ability:
+    _name: StatsAbility
+    _inventoryIcon: {fileID: 0}
+    _upgradeIcon: {fileID: 0}
+    _weapon: {fileID: 4042616769725583797}
+    _levelUpgrades: []
+    _stats:
+      _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 0
+        _maxValueIsInfinite: 1
+      _damage:
+        _isDebug: 0
+        _statData: {fileID: 0}
+      _attackInterval:
+        _isDebug: 0
+        _statData: {fileID: 0}
+      _attackRange:
+        _isDebug: 0
+        _statData: {fileID: 0}
 --- !u!1 &8513920188493465561
 GameObject:
   m_ObjectHideFlags: 0

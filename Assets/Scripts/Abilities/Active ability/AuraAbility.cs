@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -7,4 +8,19 @@ public class AuraAbility : WeaponAbility
 
     public override AbilityStats Stats => _stats;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+    }
+
+    public override bool Upgrade(Upgrade upgrade)
+    {
+        if (base.Upgrade(upgrade))
+        {
+            _stats.GetUpgrade(upgrade);
+
+            return true;
+        }
+        else return false;
+    }
 }

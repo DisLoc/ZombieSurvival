@@ -834,61 +834,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: shootKey
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: MoveSpeedAbility
-      value: 
-      objectReference: {fileID: 11400000, guid: 31e6785c5bd20ac44bcfde0dc89f5bd2, type: 2}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: moveSpeedAbility
-      value: 
-      objectReference: {fileID: 11400000, guid: 31e6785c5bd20ac44bcfde0dc89f5bd2, type: 2}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._expBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._isDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._expLevel._expBar
       value: 
       objectReference: {fileID: 31687799}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._exp._baseValue
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._expLevel._isDebug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._levelMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._baseExpForLevelUp
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._expLevel._exp._baseValue
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _expLevel._exp._maxValueIsInfinite
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3073332135091399405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._useProjectiles
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: _ability._stats._abilityMarker
+      value: 
+      objectReference: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -939,14 +891,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7764750604290027405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}

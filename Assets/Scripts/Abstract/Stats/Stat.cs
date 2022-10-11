@@ -48,6 +48,11 @@ public abstract class Stat : IStat, IUpgradeable
             }
         }
 
+        if (_statData.MaxValueIsInfinite)
+        {
+            _maxValue = (_statData.MaxValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+        }
+
         return upgrades > 0;
     }
 

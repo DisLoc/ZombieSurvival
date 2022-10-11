@@ -2,11 +2,13 @@
 
 public abstract class Ability : IUpgradeable
 {
+    [SerializeField] protected string _name;
     [SerializeField] protected Sprite _inventoryIcon;
     [SerializeField] protected Sprite _upgradeIcon;
 
     protected UpgradeList _upgrades;
 
+    public string Name => _name;
     public UpgradeList Upgrades => _upgrades;
     public Sprite InventoryIcon => _inventoryIcon;
     public Sprite UpgradeIcon => _upgradeIcon;
@@ -20,6 +22,10 @@ public abstract class Ability : IUpgradeable
 
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        throw new System.NotImplementedException();
+        int level = (int)Stats.Level.Value;
+
+        Stats.GetUpgrade(upgrade);
+
+        return level == (int)Stats.Level.Value;
     }
 }

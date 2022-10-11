@@ -23,7 +23,7 @@ public class CharacterStats : IObjectStats
 
     public virtual void GetUpgrade(Upgrade upgrade)
     {
-        _weapon.Stats.GetUpgrade(upgrade);
+        _weapon.Ability.Upgrade(upgrade);
         _healthPoints.Upgrade(upgrade);
         _velocity.Upgrade(upgrade);
         _regeneration.Upgrade(upgrade);
