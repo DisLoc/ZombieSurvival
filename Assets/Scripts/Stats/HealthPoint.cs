@@ -13,7 +13,7 @@ public class HealthPoint : Stat
         _value -= damage;
 
         if (_value < _minValue) _value = _minValue;
-        else if (_value > _maxValue) _value = _maxValue;
+        if (_value > _maxValue) _value = _maxValue;
     }
 
     public override bool Upgrade(Upgrade upgrade)

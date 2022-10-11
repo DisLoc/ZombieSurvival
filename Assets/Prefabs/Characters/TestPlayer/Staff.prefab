@@ -45,24 +45,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _stats:
-    _attackRange:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: f4146b15179ab1b4cbb59e513bf1dd80, type: 2}
-    _damage:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 46354eb0e80bbb14c8a7fa2cbb5a71ef, type: 2}
-    _attackInterval:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: d1e41883ab1717e438a295b3918c4792, type: 2}
-    _useProjectiles: 1
-    _projectile: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
-    _projectileSpeed:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: a55e735ebdc5ee6419c1e2a1b5fa5d71, type: 2}
-    _projectileNumber:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 32765e064b2ddee488cdd0a89413d506, type: 2}
-    _throwDuration:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: b39afa7b87fd55c47b4c14701fd2f909, type: 2}
+  _ability:
+    _name: Staff ability
+    _inventoryIcon: {fileID: 0}
+    _upgradeIcon: {fileID: 0}
+    _weapon: {fileID: 5428066420773141150}
+    _levelUpgrades: []
+    _stats:
+      _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
+      _level:
+        _baseValue: 0
+        _minValue: 1
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _damage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: d501e72fc66845940b66a29aba104371, type: 2}
+      _attackInterval:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 32d602f4bc6d5b84282da2032b55bf42, type: 2}
+      _attackRange:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 5e77ea228b051ff45a9065a1ef0dfa55, type: 2}
+      _projectilePrefab: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
+      _projectileSize:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: ba7f0511e7507b443b0363646ac7514c, type: 2}
+      _projectileNumber:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: b5c3d44e030a95245abdd61ea64b8bfe, type: 2}
+      _projectileSpeed:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 963187abb1752624e92e3d9bc3d877fc, type: 2}
+      _penetrationNumber:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 1909be1c8b8750146bc505209432e033, type: 2}
+    _aimType: 3

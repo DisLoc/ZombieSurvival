@@ -7,6 +7,9 @@ public class PickUpRange : Stat
         {
             _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
 
+            if (_value < _minValue) _value = _minValue;
+            if (!_statData.MaxValueIsInfinite && _value > _maxValue) _value = _maxValue;
+
             return true;
         }
         else return false;

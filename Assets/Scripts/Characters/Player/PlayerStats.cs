@@ -25,4 +25,9 @@ public sealed class PlayerStats : CharacterStats
         _expLevel.Upgrade(upgrade);
         _pickUpRange.Upgrade(upgrade);
     }
+
+    public void AddExpirience(int exp)
+    {
+        _expLevel.AddExp(exp);
+    }
 }

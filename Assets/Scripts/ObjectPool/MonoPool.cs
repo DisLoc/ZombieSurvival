@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehaviour, IPoolable
 {
-    private readonly TObject _prefab;
-    private readonly Transform _parent;
+    protected TObject _prefab;
+    protected Transform _parent;
 
     public MonoPool(TObject prefab, int capacity)
     {
@@ -12,7 +12,6 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         _parent = new GameObject(prefab.name + " pool").transform;
 
         _objects = new List<TObject>(capacity);
-        for (int i = 0; i < capacity; i++) CreateObject();
     }
 
     protected override void CreateObject()

@@ -1,18 +1,51 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class AbilityGiver : MonoBehaviour
+public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Debug settings")]
+    [SerializeField] private bool _isDebug;
+
+    [Header("Settings")]
+    [SerializeField] private GameObject _menuGO;
+    [SerializeField] private List<AbilityUI> _abilitiesUI;
+
+    private Ability _ability;
+
+    [Inject] private Player _player;
+
+    private void OnEnable()
     {
+        EventBus.Subscribe(this);
         
+        _menuGO.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        EventBus.Unsubscribe(this);
+    }
+
+    public void OnPlayerLevelUp()
+    {
+        //_menuGO.SetActive(true);
+
+        foreach (AbilityUI ability in _abilitiesUI)
+        {
+            ability.Initialize(GetRandomAbility());
+        }
+    }
+
+    private Ability GetRandomAbility()
+    {
+        return _ability;
+    }
+
+    public void GetAbility(Ability ability)
+    {
+        _menuGO.SetActive(false);
+
+        _player.GetAbility(ability);
     }
 }
