@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 1
-  _catchTag: 2
   _pickUpCollider: {fileID: 1904523937}
+  _triggerTag: 2
 --- !u!1 &7951927491095428404
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5275130782484521481, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
       propertyPath: m_Name
-      value: Staff
+      value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
       propertyPath: _ability._weapon

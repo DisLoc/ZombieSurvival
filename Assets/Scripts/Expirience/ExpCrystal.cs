@@ -21,7 +21,6 @@ public class ExpCrystal : PickableObject, IPoolable
     public void ResetObject()
     {
         _expValue = 0;
-        _renderer.material = null;
     }
 
 
