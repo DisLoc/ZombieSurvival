@@ -7,12 +7,12 @@ public sealed class Player : CharacterBase
     [SerializeField] private ExpLevel _expLevel;
     [SerializeField] private ObjectCatcher _catcher;
 
+    private AbilityInventory _abilities;
+    private List<Upgrade> _upgrades;
+
     public override CharacterStats Stats => _stats;
 
-    private AbilityInventory _abilities;
-
     [Header("Test")]
-    public PassiveAbilityData moveSpeedAbility;
     public KeyCode shootKey;
     public Projectile projectile;
     private MonoPool<Projectile> _pool;
@@ -25,16 +25,11 @@ public sealed class Player : CharacterBase
         _healthBar.Initialize(_stats.HP);
 
         _pool = new MonoPool<Projectile>(projectile, 10);
-        _abilities = new AbilityInventory();
+        _abilities = new AbilityInventory(transform);
     }
 
     private void Update() // test
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            GetUpgrade(moveSpeedAbility.PassiveAbility.CurrentUpgrade.Upgrade);
-        }
-
         if (Input.GetKeyDown(shootKey))
         {
             Projectile p = _pool.Pull();
@@ -55,16 +50,42 @@ public sealed class Player : CharacterBase
 
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        _stats.Weapon.Attack();
+
+        foreach(Weapon weapon in _abilities.Weapons)
+        {
+            weapon.Attack();
+        }
     }
 
     public override void GetUpgrade(Upgrade upgrade)
     {
+        _upgrades.Add(upgrade);
+
         _stats.GetUpgrade(upgrade);
+
+        /*
+        foreach(AbilityData ability in _abilities.Abilities)
+        {
+            ability.Upgrade(upgrade);
+        }
+        */
     }
 
-    public void GetAbility(Ability ability)
+    public void GetAbility(AbilityData ability)
     {
-        _abilities.Add(ability);
+        /*
+        if (!_abilities.Abilities.Contains(ability))
+        {
+            foreach (Upgrade upgrade in _upgrades)
+            {
+                ability.Upgrade(upgrade);
+            }
+
+            _abilities.Add(ability);
+        }
+
+        GetUpgrade(ability.CurrentUpgrade.Upgrade);
+        */
     }
 }

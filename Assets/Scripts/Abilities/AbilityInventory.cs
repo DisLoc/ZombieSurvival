@@ -1,25 +1,38 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityInventory
 {
-    private List<Ability> _abilities;
+    private List<Weapon> _weapons;
+    private List<AbilityData> _abilities;
+    private Transform _parent;
 
-    public List<Ability> Abilities => _abilities;
+    public List<Weapon> Weapons => _weapons;
+    public List<AbilityData> Abilities => _abilities;
 
-    public AbilityInventory()
+    public AbilityInventory(Transform parent)
     {
-        _abilities = new List<Ability>();
+        /*
+        _weapons = new List<Weapon>();
+        _abilities = new List<AbilityData>();
+
+        _parent = parent;
+        */
     }
 
-    public void Add(Ability ability)
+    public void Add(AbilityData ability)
     {
+        /*
+        ability.Initialize();
+
         _abilities.Add(ability);
-    }
 
-    public bool Remove(Ability ability)
-    {
-        return _abilities.Remove(ability);
+        if (ability as WeaponAbilityData != null)
+        {
+            Weapon weapon = Object.Instantiate((ability as WeaponAbilityData).Weapon, _parent.position, Quaternion.identity, _parent);
+
+            _weapons.Add(weapon);
+        }
+        */
     }
 }

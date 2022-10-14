@@ -8,25 +8,16 @@ public abstract class Weapon : MonoBehaviour
 
     protected bool _isReady;
 
-    public virtual Ability Ability { get; }
+    public virtual AbilityData Ability { get; }
 
     public virtual void Initialize()
     {
         
     }
 
-    public virtual void Attack(DamageableObject target)
+    public virtual void Attack()
     {
-        if (_isDebug) Debug.Log(name + " attacks " + target.name);
-    }
-
-    protected virtual IEnumerator WaitReload()
-    {
-        _isReady = false;
-        yield return new WaitForSeconds(0);
-        _isReady = true;
-
-        if (_isDebug) Debug.Log(name + " can attack");
+        if (_isDebug) Debug.Log(name + " attacks");
     }
 
     public void UpdateTimer()

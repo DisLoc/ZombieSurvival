@@ -3,11 +3,11 @@ using UnityEngine;
 public class ProjectileWeapon : Weapon
 {
     [Header("Ability settings")]
-    [SerializeField] TargetAbility _ability;
+    [SerializeField] TargetAbilityData _ability;
 
     private MonoPool<Projectile> _pool;
 
-    public override Ability Ability => _ability;
+    public override AbilityData Ability => _ability;
 
     public override void Initialize()
     {
@@ -17,13 +17,8 @@ public class ProjectileWeapon : Weapon
         //_pool = new MonoPool<Projectile>(_stats.Projectile, (int)(x == 0 ? 1 : x * _stats.ProjectileNumber.Value));
     }
 
-    public override void Attack(DamageableObject target)
+    public override void Attack()
     {
-        base.Attack(target);
-
-        if (_isReady)
-        {
-            if (_isDebug) Debug.Log(name + " attack " + target.name);
-        }
+        base.Attack();
     }
 }

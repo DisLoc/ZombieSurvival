@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ColliderWeapon : Weapon
 {
-    [SerializeField] protected AuraAbility _ability;
+    [SerializeField] protected ColliderAbilityData _ability;
 
-    public override Ability Ability => _ability;
+    public override AbilityData Ability => _ability;
 
-    public override void Attack(DamageableObject target)
+    public override void Attack()
     {
-        base.Attack(target);
+        base.Attack();
     }
 }

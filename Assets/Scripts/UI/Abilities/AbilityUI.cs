@@ -15,9 +15,9 @@ public class AbilityUI : MonoBehaviour
 
     [Inject] private AbilityGiver _abilityGiver;
 
-    private Ability _ability;
+    private AbilityData _ability;
 
-    public void Initialize(Ability ability)
+    public void Initialize(AbilityData ability)
     {
         if (ability == null)
         {
@@ -41,7 +41,7 @@ public class AbilityUI : MonoBehaviour
             lvl.Initialize(type);
         }
 
-        _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
+        //_upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
     }
 
     public void ChooseUpgrade()

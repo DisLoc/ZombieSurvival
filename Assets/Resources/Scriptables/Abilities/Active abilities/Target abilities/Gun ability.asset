@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58448f35fb7111d438c0225f68006cb0, type: 3}
+  m_Name: Gun ability
+  m_EditorClassIdentifier: 
+  _name: Gun ability
+  _inventoryIcon: {fileID: 0}
+  _upgradeIcon: {fileID: 0}
+  _weapon: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+  _levelUpgrades:
+  - _description: Projectiles +1
+    _upgrade: {fileID: 11400000, guid: 3970a68de471bb34ebc69baad1bd70f0, type: 2}
+    _level: 1
+  - _description: Reduce attack interval, projectiles +1
+    _upgrade: {fileID: 11400000, guid: ce26f3329f2825f4db0bbb83092e7244, type: 2}
+    _level: 2
+  - _description: Increase projectile damage and speed
+    _upgrade: {fileID: 11400000, guid: 79d7593cbf97edf48995b2a3e1cecbed, type: 2}
+    _level: 3
+  - _description: Penetration +1
+    _upgrade: {fileID: 11400000, guid: 1a2fc6825b07a4847b84e744e0580437, type: 2}
+    _level: 4
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 0
+      _maxValue: 0
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: d501e72fc66845940b66a29aba104371, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 32d602f4bc6d5b84282da2032b55bf42, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 5e77ea228b051ff45a9065a1ef0dfa55, type: 2}
+    _projectilePrefab: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: ba7f0511e7507b443b0363646ac7514c, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: b5c3d44e030a95245abdd61ea64b8bfe, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 963187abb1752624e92e3d9bc3d877fc, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 1909be1c8b8750146bc505209432e033, type: 2}
+  _aimType: 3

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _ability:
-    _name: Staff ability
+    _name: Gun ability
     _inventoryIcon: {fileID: 0}
     _upgradeIcon: {fileID: 0}
     _weapon: {fileID: 5428066420773141150}
