@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZombieSurvival/Abilities/Collider ability data", fileName = "New stats collider data")]
+[CreateAssetMenu(menuName = "ZombieSurvival/Abilities/Collider ability data", fileName = "New collider ability data")]
 public class ColliderAbilityData : WeaponAbilityData
 {
     [SerializeField] protected WeaponAbilityStats _stats;
