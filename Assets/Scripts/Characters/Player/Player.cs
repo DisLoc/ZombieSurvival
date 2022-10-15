@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public sealed class Player : CharacterBase
@@ -6,9 +7,15 @@ public sealed class Player : CharacterBase
     [SerializeField] private ExpLevel _expLevel;
     [SerializeField] private ObjectCatcher _catcher;
 
+    private AbilityInventory _abilities;
+    private List<Upgrade> _upgrades;
+
     public override CharacterStats Stats => _stats;
 
-    //private AbilityInventory<Ability> _abilities;
+    [Header("Test")]
+    public KeyCode shootKey;
+    public Projectile projectile;
+    private MonoPool<Projectile> _pool;
 
     public void Initialize()
     {
@@ -16,6 +23,21 @@ public sealed class Player : CharacterBase
 
         _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+
+        _pool = new MonoPool<Projectile>(projectile, 10);
+        _abilities = new AbilityInventory(transform);
+    }
+
+    private void Update() // test
+    {
+        if (Input.GetKeyDown(shootKey))
+        {
+            Projectile p = _pool.Pull();
+            p.transform.position = transform.position;
+
+            p.Initialize(_pool, 5f, 5f, 100);
+            p.Throw(transform.TransformDirection(Vector3.forward));
+        }
     }
 
     public override void Move(Vector3 direction)
@@ -28,18 +50,42 @@ public sealed class Player : CharacterBase
 
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        _stats.Weapon.Attack();
+
+        foreach(Weapon weapon in _abilities.Weapons)
+        {
+            weapon.Attack();
+        }
     }
 
     public override void GetUpgrade(Upgrade upgrade)
     {
-        if (upgrade as AbilityUpgrade != null)
-        {
+        _upgrades.Add(upgrade);
 
-        }
-        else
+        _stats.GetUpgrade(upgrade);
+
+        /*
+        foreach(AbilityData ability in _abilities.Abilities)
         {
-            _stats.GetUpgrade(upgrade);
+            ability.Upgrade(upgrade);
         }
+        */
+    }
+
+    public void GetAbility(AbilityContainer ability)
+    {
+        /*
+        if (!_abilities.Abilities.Contains(ability))
+        {
+            foreach (Upgrade upgrade in _upgrades)
+            {
+                ability.Upgrade(upgrade);
+            }
+
+            _abilities.Add(ability);
+        }
+
+        GetUpgrade(ability.CurrentUpgrade.Upgrade);
+        */
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CharacterStats
+public class CharacterStats : IObjectStats
 {
     [SerializeField] protected Weapon _weapon;
     [SerializeField] protected HealthPoint _healthPoints;
@@ -23,7 +23,7 @@ public class CharacterStats
 
     public virtual void GetUpgrade(Upgrade upgrade)
     {
-        _weapon.Stats.GetUpgrade(upgrade);
+        //_weapon.Ability.Upgrade(upgrade);
         _healthPoints.Upgrade(upgrade);
         _velocity.Upgrade(upgrade);
         _regeneration.Upgrade(upgrade);

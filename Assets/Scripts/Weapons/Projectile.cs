@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour, IPoolable
     private float _releaseDelay;
     private float _speed;
     private float _damage;
-    private Transform _target;
+
     private MonoPool<Projectile> _pool;
 
     public void ResetObject()
@@ -17,12 +17,11 @@ public class Projectile : MonoBehaviour, IPoolable
         StopAllCoroutines();
     }
 
-    public void Initialize(MonoPool<Projectile> pool, float releaseDelay, float speed, float damage, Transform target)
+    public void Initialize(MonoPool<Projectile> pool, float releaseDelay, float speed, float damage)
     {
         _pool = pool;
         _releaseDelay = releaseDelay;
         _speed = speed;
-        _target = target;
         _damage = damage;
     }
 
@@ -50,11 +49,13 @@ public class Projectile : MonoBehaviour, IPoolable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform == _target)
+        DamageableObject obj = other.GetComponent<Zombie>();
+
+        if (obj != null)
         {
             if (_isDebug) Debug.Log(name + " find target");
 
-            other.GetComponent<DamageableObject>().TakeDamage((int)_damage);
+            obj.TakeDamage((int)_damage);
             _pool.Release(this);
         }
     }

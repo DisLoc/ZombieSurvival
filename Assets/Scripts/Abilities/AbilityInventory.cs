@@ -1,23 +1,38 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityInventory<T> where T : MonoBehaviour
+public class AbilityInventory
 {
-    public List<T> activeAbilities = new List<T>(5);
-    public List<T> passiveAbilities = new List<T>(5);
+    private List<Weapon> _weapons;
+    private List<AbilityUpgradeData> _abilities;
+    private Transform _parent;
 
-    public List<int> activeAbilityLevel = new List<int>(5);
-    public List<int> passiveAbilityLevel = new List<int>(5);
+    public List<Weapon> Weapons => _weapons;
+    public List<AbilityUpgradeData> Abilities => _abilities;
 
-
-    public void AddActiveAbility(T ability)
+    public AbilityInventory(Transform parent)
     {
-        activeAbilities.Add(ability);
+        /*
+        _weapons = new List<Weapon>();
+        _abilities = new List<AbilityData>();
+
+        _parent = parent;
+        */
     }
 
-    public void AddPassiveAbility(T ability)
+    public void Add(AbilityUpgradeData ability)
     {
-        passiveAbilities.Add(ability);
+        /*
+        ability.Initialize();
+
+        _abilities.Add(ability);
+
+        if (ability as WeaponAbilityData != null)
+        {
+            Weapon weapon = Object.Instantiate((ability as WeaponAbilityData).Weapon, _parent.position, Quaternion.identity, _parent);
+
+            _weapons.Add(weapon);
+        }
+        */
     }
 }

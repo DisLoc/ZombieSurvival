@@ -1,37 +1,21 @@
-using System.Collections;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class Weapon : AbilityContainer, IUpdatable
 {
-    [Header("Debug settings")]
-    [SerializeField] protected bool _isDebug;
-
-    [Header("Stats settings")]
-    [SerializeField] protected WeaponStats _stats;
-    public WeaponStats Stats => _stats;
-   
+    [Header("Ability settings")]
+    [SerializeField] protected TargetDetector _targetDetector;
+    [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
+ 
     protected bool _isReady;
 
-    public virtual void Initialize()
+    public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
+
+    public virtual void Attack()
     {
-        _stats.Initialize();
+        if (_isDebug) Debug.Log(name + " attacks");
     }
 
-    public virtual void Attack(DamageableObject target)
-    {
-        if (_isDebug) Debug.Log(name + " attacks " + target.name);
-    }
-
-    protected virtual IEnumerator WaitReload()
-    {
-        _isReady = false;
-        yield return new WaitForSeconds(_stats.AttackInterval.Value);
-        _isReady = true;
-
-        if (_isDebug) Debug.Log(name + " can attack");
-    }
-
-    public void UpdateTimer()
+    public virtual void OnUpdate()
     {
 
     }

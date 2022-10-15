@@ -1,27 +1,25 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
-public sealed class ObjectCatcher : MonoBehaviour
+public sealed class ObjectCatcher : TriggerDetector
 {
-    [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
-
-    [Header("Settings")]
-    [SerializeField] private Tags _catchTag;
-    [SerializeField] private SphereCollider _pickUpCollider;
-
     public void Initialize(float pickUpRange)
     {
-        _pickUpCollider.radius = pickUpRange;
+        Initialize();
+
+        _collider.radius = pickUpRange;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (other.tag == _catchTag.ToString())
+        if (other.CompareTag(_triggerTag.ToString()))
         {
-            if (_isDebug) Debug.Log("Pick up " + other.name);
-            
-            other.GetComponent<PickableObject>().PickUp();
+            PickableObject obj = other.GetComponent<PickableObject>();
+
+            if (obj != null)
+            {
+                obj.PickUp();
+            }
+            else if (_isDebug) Debug.Log("Missing pickable object!");
         }
     }
 }

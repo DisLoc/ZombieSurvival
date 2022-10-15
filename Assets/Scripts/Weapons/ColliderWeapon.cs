@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class ColliderWeapon : Weapon
 {
-    public override void Attack(DamageableObject target)
+    [SerializeField] protected WeaponAbilityStats _stats;
+
+    public override AbilityStats Stats => _stats;
+
+    public override void Attack()
     {
-        base.Attack(target);
+        base.Attack();
     }
 }

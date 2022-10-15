@@ -1,32 +1,23 @@
 using UnityEngine;
 
-public class ProjectileWeapon : Weapon
+public abstract class ProjectileWeapon : Weapon
 {
-    private MonoPool<Projectile> _pool;
+    [SerializeField] protected ProjectileAbilityStats _stats;
+
+    protected MonoPool<Projectile> _pool;
+
+    public override AbilityStats Stats => _stats;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        if (_stats.UseProjectiles)
-            _pool = new MonoPool<Projectile>(_stats.Projectile, (int)(_stats.AttackInterval.Value / _stats.ThrowDuration.Value * _stats.ProjectileNumber.Value));
-        else 
-        {
-            if (_isDebug) Debug.Log("Projectiles error!");
-
-            _pool = new MonoPool<Projectile>(_stats.Projectile, 0);
-        }
+        //int x = (int)(_stats.AttackInterval.Value / _stats.ThrowDuration.Value);
+        //_pool = new MonoPool<Projectile>(_stats.Projectile, (int)(x == 0 ? 1 : x * _stats.ProjectileNumber.Value));
     }
 
-    public override void Attack(DamageableObject target)
+    public override void Attack()
     {
-        base.Attack(target);
-
-        if (_isReady)
-        {
-            if (_isDebug) Debug.Log(name + " attack " + target.name);
-            
-
-        }
+        base.Attack();
     }
 }

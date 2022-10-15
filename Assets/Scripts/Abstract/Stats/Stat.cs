@@ -36,15 +36,24 @@ public abstract class Stat : IStat, IUpgradeable
     {
         if (_isDebug) Debug.Log(_statData.name + " try upgrade: " + upgrade.name);
 
-        if (_statData.Marker.name.Equals(upgrade.GetUpgradeMarker()))
+        int upgrades = 0;
+
+        foreach(UpgradeData data in upgrade.Upgrades)
         {
-            _upgrades.Add(upgrade);
+            if (data.UpgradingStatMarker.Equals(_statData.Marker))
+            {
+                upgrades++;
 
-            if (_isDebug) Debug.Log(_statData.name + " get upgrade: " + upgrade.name);
-
-            return true;
+                _upgrades.Add(data);
+            }
         }
-        else return false;
+
+        if (_statData.MaxValueIsInfinite)
+        {
+            _maxValue = (_statData.MaxValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+        }
+
+        return upgrades > 0;
     }
 
     public void SetValue(float value)

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Zombie : MonoBehaviour, IEnemyKilledHandler
+public class Zombie : CharacterBase
 {
-    [SerializeField] private int damageToPlayer;
-
-    [SerializeField] private int speed = 3;
+    [SerializeField] protected CharacterStats _stats;
+    
     private Transform _player;
 
     public EnemiesList _enemiesList;
@@ -16,24 +15,25 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
 
     [SerializeField] private GameObject crystal;
 
-    [SerializeField] private Slider _hpBar;
-    [SerializeField] private int _hpCount = 100;
-
+    public override CharacterStats Stats => _stats;
 
     void Start()
     {
-        _enemiesList = GameObject.FindGameObjectWithTag("EnemiesList").GetComponent<EnemiesList>();
-        _enemiesList.enemies.Add(this);
         _player = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
+        _stats.Initialize();
+        _healthBar.Initialize(_stats.HP);
+
+
+        //_enemiesList.enemies.Add(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
-        transform.LookAt(_player);
+        Move(new Vector3(0, 0, 0));
     }
-
+    
+    /*
     private void GetDamage(int damage)
     {
         _hpCount -= damage;
@@ -73,6 +73,28 @@ public class Zombie : MonoBehaviour, IEnemyKilledHandler
 
     private void OnDisable()
     {
-        _enemiesList.enemies.Remove(this);
+        //_enemiesList.enemies.Remove(this);
     }
+    */
+
+    public override void Die()
+    {
+        base.Die();
+
+        EventBus.Publish<IEnemyKilledHandler>(handler => handler.OnEnemyKilled(this));
+
+        Destroy(gameObject);
+    }
+
+    public override void Move(Vector3 direction)
+    {
+        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, _stats.Velocity * Time.deltaTime);
+        transform.LookAt(_player);
+    }
+
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
+    }
+
 }
