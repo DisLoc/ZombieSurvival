@@ -1,66 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &217781382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 217781383}
-  - component: {fileID: 217781385}
-  - component: {fileID: 217781384}
-  m_Layer: 0
-  m_Name: TargetDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &217781383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217781382}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4441788838641939132}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &217781385
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217781382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 25
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &217781384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217781382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 1
-  _collider: {fileID: 217781385}
-  _triggerTag: 1
 --- !u!1 &1904523934
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +198,6 @@ Transform:
   - {fileID: 1904523935}
   - {fileID: 8870995157999382854}
   - {fileID: 8242624282807339694}
-  - {fileID: 217781383}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,7 +254,7 @@ MonoBehaviour:
   _isDebug: 0
   _healthBar: {fileID: 6053825508757198442}
   _stats:
-    _weapon: {fileID: 3073332135091399405}
+    _weapon: {fileID: 8476468625277722311}
     _healthPoints:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8fbd4a5ae8ae8dd4cb1a9c39ac963f45, type: 2}
@@ -534,29 +472,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
-    - target: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
-      propertyPath: _ability
-      value: 
-      objectReference: {fileID: 11400000, guid: 303fbf2be36c2084d96f4ac62206da43, type: 2}
-    - target: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
-      propertyPath: _ability._name
-      value: Gun ability
-      objectReference: {fileID: 0}
-    - target: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
-      propertyPath: _ability._weapon
-      value: 
-      objectReference: {fileID: 3073332135091399405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
---- !u!114 &3073332135091399405 stripped
+--- !u!114 &8476468625277722311 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5428066420773141150, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
   m_PrefabInstance: {fileID: 7057975066621038707}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4c68bbc999dcd418ebf2ca248279bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 88312d861be5ebf448157d63ff6a5a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &8870995157999382854 stripped

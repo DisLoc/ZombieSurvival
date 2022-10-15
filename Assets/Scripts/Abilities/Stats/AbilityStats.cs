@@ -6,6 +6,7 @@ public class AbilityStats : IObjectStats
     [SerializeField] protected UpgradeMarker _abilityMarker;
     [SerializeField] protected Level _level;
 
+    public UpgradeMarker AbilityMarker => _abilityMarker;
     public Level Level => _level;
 
     public virtual void Initialize()
@@ -15,9 +16,6 @@ public class AbilityStats : IObjectStats
 
     public virtual void GetUpgrade(Upgrade upgrade) 
     {
-        if (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(_abilityMarker))
-        {
-            _level.LevelUp();
-        }
+
     }
 }

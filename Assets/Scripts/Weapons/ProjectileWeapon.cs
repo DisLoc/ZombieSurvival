@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class ProjectileWeapon : Weapon
+public abstract class ProjectileWeapon : Weapon
 {
-    [Header("Ability settings")]
-    [SerializeField] TargetAbilityData _ability;
+    [SerializeField] protected ProjectileAbilityStats _stats;
 
-    private MonoPool<Projectile> _pool;
+    protected MonoPool<Projectile> _pool;
 
-    public override AbilityData Ability => _ability;
+    public override AbilityStats Stats => _stats;
 
     public override void Initialize()
     {

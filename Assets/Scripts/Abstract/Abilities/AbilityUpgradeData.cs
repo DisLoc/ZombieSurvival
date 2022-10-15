@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class AbilityData : ScriptableObject
+public abstract class AbilityUpgradeData : ScriptableObject
 {
     [SerializeField] protected string _name;
     [SerializeField] protected Sprite _inventoryIcon;
@@ -9,5 +9,4 @@ public abstract class AbilityData : ScriptableObject
     public string Name => _name;
     public Sprite InventoryIcon => _inventoryIcon;
     public Sprite UpgradeIcon => _upgradeIcon;
-    public abstract AbilityStats Stats { get; }
 }

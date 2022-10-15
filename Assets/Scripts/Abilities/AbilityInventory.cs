@@ -4,11 +4,11 @@ using UnityEngine;
 public class AbilityInventory
 {
     private List<Weapon> _weapons;
-    private List<AbilityData> _abilities;
+    private List<AbilityUpgradeData> _abilities;
     private Transform _parent;
 
     public List<Weapon> Weapons => _weapons;
-    public List<AbilityData> Abilities => _abilities;
+    public List<AbilityUpgradeData> Abilities => _abilities;
 
     public AbilityInventory(Transform parent)
     {
@@ -20,7 +20,7 @@ public class AbilityInventory
         */
     }
 
-    public void Add(AbilityData ability)
+    public void Add(AbilityUpgradeData ability)
     {
         /*
         ability.Initialize();

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ColliderWeapon : Weapon
 {
-    [SerializeField] protected ColliderAbilityData _ability;
+    [SerializeField] protected WeaponAbilityStats _stats;
 
-    public override AbilityData Ability => _ability;
+    public override AbilityStats Stats => _stats;
 
     public override void Attack()
     {

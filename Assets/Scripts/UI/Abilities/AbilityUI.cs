@@ -15,9 +15,9 @@ public class AbilityUI : MonoBehaviour
 
     [Inject] private AbilityGiver _abilityGiver;
 
-    private AbilityData _ability;
+    private AbilityContainer _ability;
 
-    public void Initialize(AbilityData ability)
+    public void Initialize(AbilityContainer ability)
     {
         if (ability == null)
         {
@@ -28,7 +28,7 @@ public class AbilityUI : MonoBehaviour
 
         _ability = ability;
 
-        _abilityIcon.sprite = _ability.UpgradeIcon;
+        _abilityIcon.sprite = _ability.UpgradeData.UpgradeIcon;
 
         for (int i = 0; i < (int)_ability.Stats.Level.MaxValue; i++)
         {

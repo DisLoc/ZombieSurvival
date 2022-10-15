@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponAbilityData : AbilityData
+[CreateAssetMenu(menuName = "ZombieSurvival/Abilities/Weapon ability upgrade data", fileName = "New weapon ability upgrade data")]
+public class WeaponAbilityUpgradeData : AbilityUpgradeData
 {
     [SerializeField] protected Weapon _weapon;
 

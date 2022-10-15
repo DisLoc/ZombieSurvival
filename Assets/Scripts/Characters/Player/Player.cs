@@ -72,7 +72,7 @@ public sealed class Player : CharacterBase
         */
     }
 
-    public void GetAbility(AbilityData ability)
+    public void GetAbility(AbilityContainer ability)
     {
         /*
         if (!_abilities.Abilities.Contains(ability))

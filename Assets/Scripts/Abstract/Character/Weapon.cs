@@ -1,26 +1,21 @@
-using System.Collections;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class Weapon : AbilityContainer, IUpdatable
 {
-    [Header("Debug settings")]
-    [SerializeField] protected bool _isDebug;
-
+    [Header("Ability settings")]
+    [SerializeField] protected TargetDetector _targetDetector;
+    [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
+ 
     protected bool _isReady;
 
-    public virtual AbilityData Ability { get; }
-
-    public virtual void Initialize()
-    {
-        
-    }
+    public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
 
     public virtual void Attack()
     {
         if (_isDebug) Debug.Log(name + " attacks");
     }
 
-    public void UpdateTimer()
+    public virtual void OnUpdate()
     {
 
     }

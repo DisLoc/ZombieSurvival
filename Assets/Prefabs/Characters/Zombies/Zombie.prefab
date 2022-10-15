@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2817904043961400771}
   - component: {fileID: 2817904043961400770}
   - component: {fileID: 2817904043961400775}
-  - component: {fileID: 4042616769725583797}
+  - component: {fileID: 5512361925152601609}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8624211132213441051}
+  - {fileID: 5281316822555801647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,7 +134,7 @@ MonoBehaviour:
   _isDebug: 0
   _healthBar: {fileID: 1478002839978605878}
   _stats:
-    _weapon: {fileID: 4042616769725583797}
+    _weapon: {fileID: 5512361925152601609}
     _healthPoints:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: db3ef8f3aac09d9449477a1be677e226, type: 2}
@@ -145,7 +146,7 @@ MonoBehaviour:
       _statData: {fileID: 11400000, guid: 19be71896351ec24ba6a2f8d251fe21b, type: 2}
   _enemiesList: {fileID: 0}
   crystal: {fileID: 7472448845819442868, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
---- !u!114 &4042616769725583797
+--- !u!114 &5512361925152601609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,28 +159,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _ability:
-    _name: StatsAbility
-    _inventoryIcon: {fileID: 0}
-    _upgradeIcon: {fileID: 0}
-    _weapon: {fileID: 4042616769725583797}
-    _levelUpgrades: []
-    _stats:
-      _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
-      _level:
-        _baseValue: 0
-        _minValue: 0
-        _maxValue: 0
-        _maxValueIsInfinite: 1
-      _damage:
-        _isDebug: 0
-        _statData: {fileID: 0}
-      _attackInterval:
-        _isDebug: 0
-        _statData: {fileID: 0}
-      _attackRange:
-        _isDebug: 0
-        _statData: {fileID: 0}
+  _targetDetector: {fileID: 1577825861537638417}
+  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+    _level:
+      _baseValue: 1
+      _minValue: 1
+      _maxValue: 0
+      _maxValueIsInfinite: 1
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 0}
+--- !u!1 &4706998651521119472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5281316822555801647}
+  - component: {fileID: 8632883831247114022}
+  - component: {fileID: 1577825861537638417}
+  m_Layer: 0
+  m_Name: TargetDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5281316822555801647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706998651521119472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2817904043961400774}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8632883831247114022
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706998651521119472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1577825861537638417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706998651521119472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 1
+  _collider: {fileID: 8632883831247114022}
+  _triggerTag: 0
 --- !u!1 &8513920188493465561
 GameObject:
   m_ObjectHideFlags: 0
