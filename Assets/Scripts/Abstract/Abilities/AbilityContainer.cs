@@ -21,7 +21,13 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
     {
         if (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(Stats.AbilityMarker))
         {
+            foreach (UpgradeData data in upgrade.Upgrades)
+            {
+                _upgrades.Add(data);
+            }
+
             Stats.Level.LevelUp();
+            
             return true;
         }
 

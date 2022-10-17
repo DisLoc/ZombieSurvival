@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
-  m_Name: Cooldown
+  m_Name: Gun projectile life duration
   m_EditorClassIdentifier: 
-  _baseValue: 1
-  _minValue: 0
-  _maxValue: 2
+  _baseValue: 5
+  _minValue: 1
+  _maxValue: 10
   _maxValueIsInfinite: 0
-  _upgradeMarker: {fileID: 11400000, guid: f3c8f963f6c44cc4ca5ab968921a7da1, type: 2}
-  _level:
-    _baseValue: 0
-    _minValue: 0
-    _maxValue: 5
-    _maxValueIsInfinite: 0
+  _upgradeMarker: {fileID: 11400000, guid: 48d7ea21aa7e9d64c991705a9874d0ac, type: 2}

@@ -11,7 +11,8 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     [SerializeField] private GameObject _menuGO;
     [SerializeField] private List<AbilityUI> _abilitiesUI;
 
-    private AbilityContainer _ability;
+    [Space(5)]
+    [SerializeField] private AvailableAbilities _abilities;
 
     [Inject] private Player _player;
 
@@ -39,7 +40,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 
     private AbilityContainer GetRandomAbility()
     {
-        return _ability;
+        return _abilities.Abilities[0];
     }
 
     public void GetAbility(AbilityContainer ability)

@@ -290,6 +290,10 @@ MonoBehaviour:
     _baseExpForLevelUp: 1000
     _levelMultiplier: 1
   _catcher: {fileID: 4806763617484522634}
+  _abilities:
+    _maxActiveAbilitiesCount: 5
+    _maxPassiveAbilitiesCount: 5
+    _abilitiesParent: {fileID: 4441788838641939132}
   shootKey: 32
   projectile: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
 --- !u!1001 &1091634638874702766

@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class Player : CharacterBase
+public class Player : CharacterBase
 {
-    [SerializeField] private PlayerStats _stats;
-    [SerializeField] private PlayerExpLevel _expLevel;
-    [SerializeField] private ObjectCatcher _catcher;
+    [SerializeField] protected PlayerStats _stats;
+    [SerializeField] protected PlayerExpLevel _expLevel;
+    [SerializeField] protected ObjectCatcher _catcher;
 
-    private AbilityInventory _abilities;
-    private List<Upgrade> _upgrades;
+    [Header("Ability inventory settings")]
+    [SerializeField] protected AbilityInventory _abilities;
+
+    protected List<Upgrade> _upgrades;
 
     public override CharacterStats Stats => _stats;
 
@@ -21,11 +23,12 @@ public sealed class Player : CharacterBase
     {
         _stats.Initialize();
 
-        _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+        _catcher.Initialize(_stats.PickUpRange);
+        _abilities.Initialize();
 
         _pool = new MonoPool<Projectile>(projectile, 10);
-        _abilities = new AbilityInventory(transform);
+        _upgrades = new List<Upgrade>();
     }
 
     private void Update() // test
@@ -63,10 +66,25 @@ public sealed class Player : CharacterBase
         _upgrades.Add(upgrade);
 
         _stats.GetUpgrade(upgrade);
+
+        foreach (AbilityContainer ability in _abilities.Abilities)
+        {
+            ability.Upgrade(upgrade);
+        }
     }
 
     public void GetAbility(AbilityContainer ability)
     {
-        
+        if (ability as PassiveAbility != null)
+        {
+            GetUpgrade(ability.CurrentUpgrade.Upgrade);
+        }
+
+        _abilities.Add(ability);
+
+        foreach(Upgrade upgrade in _upgrades)
+        {
+            ability.Upgrade(upgrade);
+        }
     }
 }
