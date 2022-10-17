@@ -170,13 +170,13 @@ MonoBehaviour:
       _maxValueIsInfinite: 1
     _damage:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 879dd7bf1558cc84f841a3e86436e223, type: 2}
     _attackInterval:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 54c551ae1d62b514c9ed825b0e81e3f0, type: 2}
     _attackRange:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: e3902d031a6d5e94c8a1d07a08ba9527, type: 2}
 --- !u!1 &4706998651521119472
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +349,14 @@ PrefabInstance:
     - target: {fileID: 2290593030402000469, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488003003791003135, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488003003791003135, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3134178944655273856, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
       propertyPath: m_Interactable

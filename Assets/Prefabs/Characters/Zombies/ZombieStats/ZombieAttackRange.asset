@@ -9,6 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38a50fd84bea774ea926bcb838ae746, type: 3}
-  m_Name: GunAbilityMarker
+  m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
+  m_Name: ZombieAttackRange
   m_EditorClassIdentifier: 
+  _baseValue: 0
+  _minValue: 0
+  _maxValue: 0
+  _maxValueIsInfinite: 0
+  _upgradeMarker: {fileID: 0}

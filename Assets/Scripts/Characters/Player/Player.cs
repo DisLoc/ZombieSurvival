@@ -4,7 +4,7 @@ using UnityEngine;
 public sealed class Player : CharacterBase
 {
     [SerializeField] private PlayerStats _stats;
-    [SerializeField] private ExpLevel _expLevel;
+    [SerializeField] private PlayerExpLevel _expLevel;
     [SerializeField] private ObjectCatcher _catcher;
 
     private AbilityInventory _abilities;
@@ -63,29 +63,10 @@ public sealed class Player : CharacterBase
         _upgrades.Add(upgrade);
 
         _stats.GetUpgrade(upgrade);
-
-        /*
-        foreach(AbilityData ability in _abilities.Abilities)
-        {
-            ability.Upgrade(upgrade);
-        }
-        */
     }
 
     public void GetAbility(AbilityContainer ability)
     {
-        /*
-        if (!_abilities.Abilities.Contains(ability))
-        {
-            foreach (Upgrade upgrade in _upgrades)
-            {
-                ability.Upgrade(upgrade);
-            }
-
-            _abilities.Add(ability);
-        }
-
-        GetUpgrade(ability.CurrentUpgrade.Upgrade);
-        */
+        
     }
 }

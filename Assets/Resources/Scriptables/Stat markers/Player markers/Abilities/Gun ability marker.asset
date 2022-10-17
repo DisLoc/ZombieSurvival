@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
-  m_Name: ATK upgrade
+  m_Script: {fileID: 11500000, guid: c38a50fd84bea774ea926bcb838ae746, type: 3}
+  m_Name: Gun ability marker
   m_EditorClassIdentifier: 
-  _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 8b105f42f207aef468b76047ebe6ba26, type: 2}
-  _upgrades:
-  - {fileID: 11400000, guid: d6cf0e6812d2f76479e6169cad8da436, type: 2}

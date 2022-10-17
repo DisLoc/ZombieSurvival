@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public sealed class PlayerStats : CharacterStats
 {
-    [SerializeField] private ExpLevel _expLevel;
+    [SerializeField] private PlayerExpLevel _expLevel;
     [SerializeField] private PickUpRange _pickUpRange;
 
     public float PickUpRange => _pickUpRange.Value;

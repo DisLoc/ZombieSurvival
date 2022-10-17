@@ -41,7 +41,7 @@ public class AbilityUI : MonoBehaviour
             lvl.Initialize(type);
         }
 
-        //_upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
+        _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
     }
 
     public void ChooseUpgrade()

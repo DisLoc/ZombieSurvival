@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Expirience/Crystal stats", fileName = "New crystal stats")]
+[CreateAssetMenu(menuName = "ZombieSurvival/Expirience/Crystal stats", fileName = "New crystal stats")]
 public class CrystalStats : ScriptableObject
 {
     [Header("Settings")]

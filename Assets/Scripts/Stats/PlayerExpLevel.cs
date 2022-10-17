@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ExpLevel : Stat
+public class PlayerExpLevel : Stat
 {
     [SerializeField] protected Expirience _exp;
     [SerializeField] protected ExpBar _expBar;
