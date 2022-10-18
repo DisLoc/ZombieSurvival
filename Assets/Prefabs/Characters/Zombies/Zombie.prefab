@@ -171,6 +171,12 @@ MonoBehaviour:
     _damage:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 879dd7bf1558cc84f841a3e86436e223, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: beeef6869f33e3449a344190e84018dd, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: f050634d129aa6341b3febea2d212122, type: 2}
     _attackInterval:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 54c551ae1d62b514c9ed825b0e81e3f0, type: 2}

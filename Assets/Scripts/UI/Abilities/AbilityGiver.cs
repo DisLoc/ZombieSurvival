@@ -12,7 +12,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     [SerializeField] private List<AbilityUI> _abilitiesUI;
 
     [Space(5)]
-    [SerializeField] private AvailableAbilities _abilities;
+    [SerializeField] private AvailableAbilities _availableAbilities;
+
+    private List<AbilityContainer> _abilities;
 
     [Inject] private Player _player;
 
@@ -21,6 +23,13 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         EventBus.Subscribe(this);
         
         _menuGO.SetActive(false);
+
+        _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
+
+        foreach(AbilityUI abilityUI in _abilitiesUI)
+        {
+            abilityUI.Initialize();
+        }
     }
 
     private void OnDisable()
@@ -30,17 +39,24 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 
     public void OnPlayerLevelUp()
     {
-        //_menuGO.SetActive(true);
+        _menuGO.SetActive(true);
+
+        int i = 0; // test
 
         foreach (AbilityUI ability in _abilitiesUI)
         {
-            ability.Initialize(GetRandomAbility());
+            ability.SetAbility(GetRandomAbility(i++));
         }
     }
 
     private AbilityContainer GetRandomAbility()
     {
-        return _abilities.Abilities[0];
+        return _abilities[0];
+    }
+    
+    private AbilityContainer GetRandomAbility(int index) // test
+    {
+        return _abilities[index];
     }
 
     public void GetAbility(AbilityContainer ability)
@@ -48,5 +64,12 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         _menuGO.SetActive(false);
 
         _player.GetAbility(ability);
+    }
+
+    public void GetAbilityUpgrade(Upgrade upgrade)
+    {
+        _menuGO.SetActive(false);
+
+        _player.GetUpgrade(upgrade);
     }
 }

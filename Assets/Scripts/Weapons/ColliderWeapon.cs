@@ -18,4 +18,11 @@ public class ColliderWeapon : Weapon
     {
         base.Attack();
     }
+
+    public override bool Upgrade(Upgrade upgrade)
+    {
+        _stats.GetUpgrade(upgrade);
+
+        return base.Upgrade(upgrade);
+    }
 }

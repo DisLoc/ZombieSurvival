@@ -13,6 +13,7 @@ public class Player : CharacterBase
     protected List<Upgrade> _upgrades;
 
     public override CharacterStats Stats => _stats;
+    public List<AbilityContainer> Abilities => _abilities.Abilities;
 
     [Header("Test")]
     public KeyCode shootKey;
@@ -80,11 +81,14 @@ public class Player : CharacterBase
             GetUpgrade(ability.CurrentUpgrade.Upgrade);
         }
 
-        _abilities.Add(ability);
+        AbilityContainer newAbility = _abilities.Add(ability);
 
-        foreach(Upgrade upgrade in _upgrades)
+        if (newAbility != null)
         {
-            ability.Upgrade(upgrade);
+            foreach(Upgrade upgrade in _upgrades)
+            {
+                newAbility.Upgrade(upgrade);
+            }
         }
     }
 }

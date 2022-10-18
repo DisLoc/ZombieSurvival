@@ -17,15 +17,18 @@ MonoBehaviour:
   _upgradeIcon: {fileID: 0}
   _weapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
   _levelUpgrades:
+  - _description: New ability
+    _upgrade: {fileID: 11400000, guid: 45083323727e4cd49a06315812909219, type: 2}
+    _requiredLevel: 0
   - _description: Projectiles +1
     _upgrade: {fileID: 11400000, guid: 3970a68de471bb34ebc69baad1bd70f0, type: 2}
-    _level: 1
+    _requiredLevel: 1
   - _description: Reduce attack interval and projectiles +1
     _upgrade: {fileID: 11400000, guid: ce26f3329f2825f4db0bbb83092e7244, type: 2}
-    _level: 2
+    _requiredLevel: 2
   - _description: Increase projectile damage and speed
     _upgrade: {fileID: 11400000, guid: 79d7593cbf97edf48995b2a3e1cecbed, type: 2}
-    _level: 3
+    _requiredLevel: 3
   - _description: Penetration +1
     _upgrade: {fileID: 11400000, guid: 1a2fc6825b07a4847b84e744e0580437, type: 2}
-    _level: 4
+    _requiredLevel: 4

@@ -23,31 +23,35 @@ public sealed class AbilityInventory
         _abilities = new List<AbilityContainer>();
     }
 
-    public void Add(AbilityContainer ability)
+    public AbilityContainer Add(AbilityContainer ability)
     {
         if (ability as PassiveAbility != null && PassiveAbilitiesCount >= _maxPassiveAbilitiesCount)
         {
             Debug.Log("Add ability error! Max passive abilities count reached");
 
-            return;
+            return null;
         } 
 
         if (ability as Weapon != null && ActiveAbilitiesCount >= _maxActiveAbilitiesCount)
         {
             Debug.Log("Add ability error! Max active abilities count reached");
 
-            return;
+            return null;
         }
 
-        ability.Initialize();
+        AbilityContainer newAbility = Object.Instantiate(ability, _abilitiesParent.position, Quaternion.identity, _abilitiesParent);
 
-        _abilities.Add(ability);
+        newAbility.Initialize();
 
-        if (ability as Weapon != null)
+        _abilities.Add(newAbility);
+
+        if (newAbility as Weapon != null)
         {
-            Weapon weapon = Object.Instantiate(ability as Weapon, _abilitiesParent.position, Quaternion.identity, _abilitiesParent);
+            _weapons.Add(newAbility as Weapon);
 
-            _weapons.Add(weapon);
+            Debug.Log("Add new weapon");
         }
+
+        return newAbility;
     }
 }

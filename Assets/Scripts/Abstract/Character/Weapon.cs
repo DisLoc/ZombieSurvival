@@ -9,7 +9,7 @@ public abstract class Weapon : AbilityContainer, IUpdatable
     protected bool _isReady;
 
     public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
-    public override CurrentUpgrade CurrentUpgrade => _abilityUpgradeData.Upgrades[(int)Stats.Level.Value - 1];
+    public override CurrentUpgrade CurrentUpgrade => _abilityUpgradeData.Upgrades[(int)Stats.Level.Value];
 
     public override void Initialize()
     {

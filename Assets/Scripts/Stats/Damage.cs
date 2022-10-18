@@ -9,6 +9,13 @@ public class Damage : Stat
     public float CritRate => _criticalDamage.CritRate;
     public float CriticalDamage => _criticalDamage.Value;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _criticalDamage.Initialize();
+    }
+
     public override bool Upgrade(Upgrade upgrade)
     {
         _criticalDamage.Upgrade(upgrade);

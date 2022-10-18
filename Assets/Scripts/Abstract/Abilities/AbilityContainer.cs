@@ -15,6 +15,8 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
     public virtual void Initialize()
     {
         Stats.Initialize();
+
+        _upgrades = new UpgradeList();
     }
 
     public virtual bool Upgrade(Upgrade upgrade)

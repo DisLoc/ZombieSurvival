@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -16,8 +17,14 @@ public class AbilityUI : MonoBehaviour
     [Inject] private AbilityGiver _abilityGiver;
 
     private AbilityContainer _ability;
+    private List<LevelUI> _levels;
 
-    public void Initialize(AbilityContainer ability)
+    public void Initialize()
+    {
+        _levels = new List<LevelUI>();
+    }
+
+    public void SetAbility(AbilityContainer ability)
     {
         if (ability == null)
         {
@@ -30,6 +37,16 @@ public class AbilityUI : MonoBehaviour
 
         _abilityIcon.sprite = _ability.UpgradeData.UpgradeIcon;
 
+        if (_levels.Count > 0)
+        {
+            foreach(LevelUI level in _levels)
+            {
+                Destroy(level);
+            }
+
+            _levels.Clear();
+        }
+
         for (int i = 0; i < (int)_ability.Stats.Level.MaxValue; i++)
         {
             LevelUI lvl = Instantiate(_levelPrefab, _abilityLevelParent);
@@ -39,6 +56,8 @@ public class AbilityUI : MonoBehaviour
                                      LevelUI.LevelType.Current;
 
             lvl.Initialize(type);
+
+            _levels.Add(lvl);
         }
 
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
