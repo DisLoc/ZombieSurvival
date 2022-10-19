@@ -16,6 +16,11 @@ public class Level : IStat
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _maxValueIsInfinite;
 
+    public void Initialize()
+    {
+        _level = _baseValue;
+    }
+
     public void SetValue(float value = 1)
     {
         _level = (int)value;

@@ -16,6 +16,11 @@ public class Expirience : IStat
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _maxValueIsInfinite;
 
+    public void Initialize()
+    {
+        _expirience = _baseValue;
+    }
+
     public void SetValue(float value = 0)
     {
         _expirience = value;

@@ -5,9 +5,14 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
+    [Header("Settings")]
+    [SerializeField] protected string _name;
+
     protected UpgradeList _upgrades;
 
+    public string Name => _name;
     public UpgradeList Upgrades => _upgrades;
+    public bool IsMaxLevel => !Stats.Level.MaxValueIsInfinite && Stats.Level.Value == Stats.Level.MaxValue;
     public abstract CurrentUpgrade CurrentUpgrade { get; }
     public abstract AbilityStats Stats { get; }
     public abstract AbilityUpgradeData UpgradeData { get; }

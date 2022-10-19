@@ -27,15 +27,11 @@ public sealed class AbilityInventory
     {
         if (ability as PassiveAbility != null && PassiveAbilitiesCount >= _maxPassiveAbilitiesCount)
         {
-            Debug.Log("Add ability error! Max passive abilities count reached");
-
             return null;
         } 
 
         if (ability as Weapon != null && ActiveAbilitiesCount >= _maxActiveAbilitiesCount)
         {
-            Debug.Log("Add ability error! Max active abilities count reached");
-
             return null;
         }
 
@@ -48,10 +44,13 @@ public sealed class AbilityInventory
         if (newAbility as Weapon != null)
         {
             _weapons.Add(newAbility as Weapon);
-
-            Debug.Log("Add new weapon");
         }
 
         return newAbility;
+    }
+
+    public AbilityContainer Find(AbilityContainer ability)
+    {
+        return _abilities.Find(item => item.Name == ability.Name);
     }
 }

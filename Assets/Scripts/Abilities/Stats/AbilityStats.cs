@@ -11,7 +11,7 @@ public class AbilityStats : IObjectStats
 
     public virtual void Initialize()
     {
-        _level.SetValue(1);
+        _level.Initialize();
     }
 
     public virtual void GetUpgrade(Upgrade upgrade) 

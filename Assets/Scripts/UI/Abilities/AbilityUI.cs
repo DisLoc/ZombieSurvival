@@ -41,7 +41,7 @@ public class AbilityUI : MonoBehaviour
         {
             foreach(LevelUI level in _levels)
             {
-                Destroy(level);
+                Destroy(level.gameObject);
             }
 
             _levels.Clear();
@@ -51,8 +51,8 @@ public class AbilityUI : MonoBehaviour
         {
             LevelUI lvl = Instantiate(_levelPrefab, _abilityLevelParent);
 
-            LevelUI.LevelType type = i <= (int)ability.Stats.Level.Value ? LevelUI.LevelType.Unlocked : 
-                                     i > (int)ability.Stats.Level.Value + 1 ? LevelUI.LevelType.Locked : 
+            LevelUI.LevelType type = i < (int)ability.Stats.Level.Value ? LevelUI.LevelType.Unlocked : 
+                                     i > (int)ability.Stats.Level.Value ? LevelUI.LevelType.Locked : 
                                      LevelUI.LevelType.Current;
 
             lvl.Initialize(type);

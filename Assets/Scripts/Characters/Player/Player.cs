@@ -4,7 +4,6 @@ using UnityEngine;
 public class Player : CharacterBase
 {
     [SerializeField] protected PlayerStats _stats;
-    [SerializeField] protected PlayerExpLevel _expLevel;
     [SerializeField] protected ObjectCatcher _catcher;
 
     [Header("Ability inventory settings")]
@@ -30,6 +29,8 @@ public class Player : CharacterBase
 
         _pool = new MonoPool<Projectile>(projectile, 10);
         _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
     }
 
     private void Update() // test
@@ -54,8 +55,6 @@ public class Player : CharacterBase
 
     public override void Attack()
     {
-        _stats.Weapon.Attack();
-
         foreach(Weapon weapon in _abilities.Weapons)
         {
             weapon.Attack();
@@ -68,27 +67,53 @@ public class Player : CharacterBase
 
         _stats.GetUpgrade(upgrade);
 
-        foreach (AbilityContainer ability in _abilities.Abilities)
+        for (int index = 0; index < _abilities.Abilities.Count; index++)
         {
-            ability.Upgrade(upgrade);
+            _abilities.Abilities[index].Upgrade(upgrade);
         }
     }
 
     public void GetAbility(AbilityContainer ability)
     {
-        if (ability as PassiveAbility != null)
-        {
-            GetUpgrade(ability.CurrentUpgrade.Upgrade);
-        }
+        AbilityContainer abilityContainer = _abilities.Find(ability);
 
-        AbilityContainer newAbility = _abilities.Add(ability);
-
-        if (newAbility != null)
+        if (abilityContainer != null)
         {
-            foreach(Upgrade upgrade in _upgrades)
+            if (abilityContainer.IsMaxLevel)
             {
-                newAbility.Upgrade(upgrade);
+                if (_isDebug) Debug.Log("This ability is max level!");
+
+                return;
             }
+
+            if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
+
+            if (abilityContainer as PassiveAbility != null)
+            {
+                GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (abilityContainer as Weapon != null)
+            {
+                abilityContainer.Upgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Missing ability!");
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Add new ability");
+
+            AbilityContainer newAbility = _abilities.Add(ability);
+
+            if (newAbility != null)
+            {
+                foreach (Upgrade upgrade in _upgrades)
+                {
+                    newAbility.Upgrade(upgrade);
+                }
+
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Adding ability error!");
         }
     }
 }

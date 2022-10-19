@@ -7,13 +7,6 @@ public class ColliderWeapon : Weapon
 
     public override AbilityStats Stats => _stats;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        _stats.Initialize();
-    }
-
     public override void Attack()
     {
         base.Attack();

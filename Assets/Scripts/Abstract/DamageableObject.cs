@@ -7,7 +7,9 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
 
     [Header("Settings")]
     [SerializeField] protected HPBar _healthBar;
+    [SerializeField] protected bool _isImmortal;
 
+    public bool IsImmortal => _isImmortal;
     public abstract int HP { get; }
     public abstract int MaxHP { get; }
 
@@ -17,7 +19,7 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
 
         _healthBar.UpdateHealth();
 
-        if (HP <= 0)
+        if (HP <= 0 && !_isImmortal)
         {
             Die();
         }

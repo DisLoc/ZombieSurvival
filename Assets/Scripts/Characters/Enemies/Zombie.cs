@@ -22,60 +22,16 @@ public class Zombie : CharacterBase
         _player = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
         _stats.Initialize();
         _healthBar.Initialize(_stats.HP);
+        _stats.BaseWeapon.Initialize();
 
 
         //_enemiesList.enemies.Add(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move(new Vector3(0, 0, 0));
     }
-    
-    /*
-    private void GetDamage(int damage)
-    {
-        _hpCount -= damage;
-        _hpBar.value = _hpCount;
-
-        if(_hpCount < 0)
-        {
-            OnEnemyKilled();
-            
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "SomeWeapon")
-        {
-            GetDamage(1);
-        }
-    }
-
-    public void PlusHP(int factor)
-    {
-        _hpCount += (_hpCount + _hpCount) * factor;
-        _hpBar.value = _hpCount;
-    }
-
-    public int ReturnDamage()
-    {
-        return damageToPlayer;
-    }
-
-    public void OnEnemyKilled()
-    {
-        Instantiate(crystal, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
-
-    private void OnDisable()
-    {
-        //_enemiesList.enemies.Remove(this);
-    }
-    */
 
     public override void Die()
     {
