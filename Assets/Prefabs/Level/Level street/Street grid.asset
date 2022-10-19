@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Street grid
   m_EditorClassIdentifier: 
   _gridSize: 2
-  _cellSize: 5
+  _cellSize: 15
   _grid:
   - {fileID: 7900278313227665657, guid: 0c2b7ca573f904c419d5428e7c85d19e, type: 3}
   - {fileID: 804808447766016132, guid: 72d96f68af88983439e716d3da9f69d6, type: 3}
