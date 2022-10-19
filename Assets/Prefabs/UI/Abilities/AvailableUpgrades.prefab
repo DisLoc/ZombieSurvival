@@ -96,6 +96,7 @@ MonoBehaviour:
   - {fileID: 3994855276988694509}
   - {fileID: 2438823318990914781}
   - {fileID: 3197222727483015836}
+  _abilities: {fileID: 11400000, guid: 11f280753d047934da207201617365ea, type: 2}
 --- !u!1 &3143801185558457810
 GameObject:
   m_ObjectHideFlags: 0

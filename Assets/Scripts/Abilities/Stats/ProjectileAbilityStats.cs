@@ -5,12 +5,14 @@ public class ProjectileAbilityStats : WeaponAbilityStats
 {
     [SerializeField] protected Projectile _projectilePrefab;
     [SerializeField] protected Radius _projectileSize;
+    [SerializeField] protected Duration _projectileLifeDuration;
     [SerializeField] protected ProjectileNumber _projectileNumber;
     [SerializeField] protected ProjectileSpeed _projectileSpeed;
     [SerializeField] protected PenetrationNumber _penetrationNumber;
 
     public Projectile Projectile => _projectilePrefab;
     public Radius ProjectileSize => _projectileSize;
+    public Duration ProjectileLifeDuration => _projectileLifeDuration;
     public ProjectileNumber ProjectileNumber => _projectileNumber;
     public ProjectileSpeed ProjectileSpeed => _projectileSpeed;
     public PenetrationNumber PenetrationNumber => _penetrationNumber;
@@ -20,6 +22,7 @@ public class ProjectileAbilityStats : WeaponAbilityStats
         base.Initialize();
 
         _projectileSize.Initialize();
+        _projectileLifeDuration.Initialize();
         _projectileNumber.Initialize();
         _projectileSpeed.Initialize();
         _penetrationNumber.Initialize();
@@ -30,6 +33,7 @@ public class ProjectileAbilityStats : WeaponAbilityStats
         base.GetUpgrade(upgrade);
 
         _projectileSize.Upgrade(upgrade);
+        _projectileLifeDuration.Upgrade(upgrade);
         _projectileNumber.Upgrade(upgrade);
         _projectileSpeed.Upgrade(upgrade);
         _penetrationNumber.Upgrade(upgrade);

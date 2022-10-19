@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IPoolable
+public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -45,6 +45,11 @@ public class Projectile : MonoBehaviour, IPoolable
         if (_isDebug) Debug.Log(name + " released to pool");
 
         _pool.Release(this);
+    }
+
+    public void OnFixedUpdate()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other)

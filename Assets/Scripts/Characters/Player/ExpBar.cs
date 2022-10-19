@@ -5,9 +5,9 @@ public class ExpBar : FillBar
 {
     [Header("Settings")]
     [SerializeField] private Text _levelText;
-    private ExpLevel _expirience;
+    private PlayerExpLevel _expirience;
 
-    public void Initialize(ExpLevel expLevel)
+    public void Initialize(PlayerExpLevel expLevel)
     {
         _expirience = expLevel;
 

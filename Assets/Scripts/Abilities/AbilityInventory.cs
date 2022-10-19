@@ -1,38 +1,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityInventory
+[System.Serializable]
+public sealed class AbilityInventory
 {
+    [SerializeField] private int _maxActiveAbilitiesCount;
+    [SerializeField] private int _maxPassiveAbilitiesCount;
+
+    [SerializeField] private Transform _abilitiesParent;
+
     private List<Weapon> _weapons;
-    private List<AbilityUpgradeData> _abilities;
-    private Transform _parent;
+    private List<AbilityContainer> _abilities;
 
     public List<Weapon> Weapons => _weapons;
-    public List<AbilityUpgradeData> Abilities => _abilities;
+    public List<AbilityContainer> Abilities => _abilities;
+    public int PassiveAbilitiesCount => _abilities.FindAll(item => item as PassiveAbility != null).Count;
+    public int ActiveAbilitiesCount => _weapons.Count;
 
-    public AbilityInventory(Transform parent)
+    public void Initialize()
     {
-        /*
         _weapons = new List<Weapon>();
-        _abilities = new List<AbilityData>();
-
-        _parent = parent;
-        */
+        _abilities = new List<AbilityContainer>();
     }
 
-    public void Add(AbilityUpgradeData ability)
+    public AbilityContainer Add(AbilityContainer ability)
     {
-        /*
-        ability.Initialize();
-
-        _abilities.Add(ability);
-
-        if (ability as WeaponAbilityData != null)
+        if (ability as PassiveAbility != null && PassiveAbilitiesCount >= _maxPassiveAbilitiesCount)
         {
-            Weapon weapon = Object.Instantiate((ability as WeaponAbilityData).Weapon, _parent.position, Quaternion.identity, _parent);
+            return null;
+        } 
 
-            _weapons.Add(weapon);
+        if (ability as Weapon != null && ActiveAbilitiesCount >= _maxActiveAbilitiesCount)
+        {
+            return null;
         }
-        */
+
+        AbilityContainer newAbility = Object.Instantiate(ability, _abilitiesParent.position, Quaternion.identity, _abilitiesParent);
+
+        newAbility.Initialize();
+
+        _abilities.Add(newAbility);
+
+        if (newAbility as Weapon != null)
+        {
+            _weapons.Add(newAbility as Weapon);
+        }
+
+        return newAbility;
+    }
+
+    public AbilityContainer Find(AbilityContainer ability)
+    {
+        return _abilities.Find(item => item.Name == ability.Name);
     }
 }

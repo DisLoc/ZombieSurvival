@@ -5,10 +5,19 @@ public abstract class Weapon : AbilityContainer, IUpdatable
     [Header("Ability settings")]
     [SerializeField] protected TargetDetector _targetDetector;
     [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
- 
+
+    protected float _timer;
     protected bool _isReady;
 
     public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
+    public override CurrentUpgrade CurrentUpgrade => _abilityUpgradeData.Upgrades[(int)Stats.Level.Value];
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _targetDetector.Initialize();
+    }
 
     public virtual void Attack()
     {
@@ -17,6 +26,10 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
     public virtual void OnUpdate()
     {
+        if (_isReady) return;
 
+        _timer -= Time.deltaTime;
+
+        if (_timer <= 0) _isReady = true;
     }
 }

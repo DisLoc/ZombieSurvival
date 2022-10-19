@@ -12,12 +12,19 @@ public abstract class ProjectileWeapon : Weapon
     {
         base.Initialize();
 
-        //int x = (int)(_stats.AttackInterval.Value / _stats.ThrowDuration.Value);
-        //_pool = new MonoPool<Projectile>(_stats.Projectile, (int)(x == 0 ? 1 : x * _stats.ProjectileNumber.Value));
+        int x = (int)(_stats.AttackInterval.Value / _stats.ProjectileLifeDuration.Value);
+        _pool = new MonoPool<Projectile>(_stats.Projectile, (x == 0 ? 1 : x) * (int)_stats.ProjectileNumber.Value);
     }
 
     public override void Attack()
     {
         base.Attack();
+    }
+
+    public override bool Upgrade(Upgrade upgrade)
+    {
+        _stats.GetUpgrade(upgrade);
+
+        return base.Upgrade(upgrade);
     }
 }

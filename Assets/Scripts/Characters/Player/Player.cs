@@ -1,16 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class Player : CharacterBase
+public class Player : CharacterBase
 {
-    [SerializeField] private PlayerStats _stats;
-    [SerializeField] private ExpLevel _expLevel;
-    [SerializeField] private ObjectCatcher _catcher;
+    [SerializeField] protected PlayerStats _stats;
+    [SerializeField] protected ObjectCatcher _catcher;
 
-    private AbilityInventory _abilities;
-    private List<Upgrade> _upgrades;
+    [Header("Ability inventory settings")]
+    [SerializeField] protected AbilityInventory _abilities;
+
+    protected List<Upgrade> _upgrades;
 
     public override CharacterStats Stats => _stats;
+    public List<AbilityContainer> Abilities => _abilities.Abilities;
 
     [Header("Test")]
     public KeyCode shootKey;
@@ -21,11 +23,14 @@ public sealed class Player : CharacterBase
     {
         _stats.Initialize();
 
-        _catcher.Initialize(_stats.PickUpRange);
         _healthBar.Initialize(_stats.HP);
+        _catcher.Initialize(_stats.PickUpRange);
+        _abilities.Initialize();
 
         _pool = new MonoPool<Projectile>(projectile, 10);
-        _abilities = new AbilityInventory(transform);
+        _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
     }
 
     private void Update() // test
@@ -50,8 +55,6 @@ public sealed class Player : CharacterBase
 
     public override void Attack()
     {
-        _stats.Weapon.Attack();
-
         foreach(Weapon weapon in _abilities.Weapons)
         {
             weapon.Attack();
@@ -64,28 +67,53 @@ public sealed class Player : CharacterBase
 
         _stats.GetUpgrade(upgrade);
 
-        /*
-        foreach(AbilityData ability in _abilities.Abilities)
+        for (int index = 0; index < _abilities.Abilities.Count; index++)
         {
-            ability.Upgrade(upgrade);
+            _abilities.Abilities[index].Upgrade(upgrade);
         }
-        */
     }
 
     public void GetAbility(AbilityContainer ability)
     {
-        /*
-        if (!_abilities.Abilities.Contains(ability))
+        AbilityContainer abilityContainer = _abilities.Find(ability);
+
+        if (abilityContainer != null)
         {
-            foreach (Upgrade upgrade in _upgrades)
+            if (abilityContainer.IsMaxLevel)
             {
-                ability.Upgrade(upgrade);
+                if (_isDebug) Debug.Log("This ability is max level!");
+
+                return;
             }
 
-            _abilities.Add(ability);
-        }
+            if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
 
-        GetUpgrade(ability.CurrentUpgrade.Upgrade);
-        */
+            if (abilityContainer as PassiveAbility != null)
+            {
+                GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (abilityContainer as Weapon != null)
+            {
+                abilityContainer.Upgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Missing ability!");
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Add new ability");
+
+            AbilityContainer newAbility = _abilities.Add(ability);
+
+            if (newAbility != null)
+            {
+                foreach (Upgrade upgrade in _upgrades)
+                {
+                    newAbility.Upgrade(upgrade);
+                }
+
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Adding ability error!");
+        }
     }
 }
