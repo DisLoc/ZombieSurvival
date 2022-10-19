@@ -37,7 +37,8 @@ public class PlayerMoveController : MonoBehaviour
                         );
 
                     _player.Move(moveDirection);
-                        
+
+                    _player.isMoving = true;
                 }
                 else
                 {
@@ -48,6 +49,8 @@ public class PlayerMoveController : MonoBehaviour
             else
             {
                 _onTouch = false;
+
+                _player.isMoving = false;
             }
         }
         else
@@ -55,18 +58,22 @@ public class PlayerMoveController : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 _player.Move(Vector3.forward);
+                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 _player.Move(Vector3.back);
+                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 _player.Move(Vector3.left);
+                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 _player.Move(Vector3.right);
+                _player.isMoving = true;
             }
 
             if (Input.GetMouseButton(0))
@@ -84,6 +91,7 @@ public class PlayerMoveController : MonoBehaviour
 
                     _player.Move(moveDirection);
 
+                    _player.isMoving = true;
                 }
                 else
                 {
@@ -96,6 +104,8 @@ public class PlayerMoveController : MonoBehaviour
             else
             {
                 _onTouch = false;
+
+                _player.isMoving = false;
             }
         }
 

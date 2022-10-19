@@ -6,6 +6,11 @@ public class Player : CharacterBase
     [SerializeField] protected PlayerStats _stats;
     [SerializeField] protected ObjectCatcher _catcher;
 
+    [Header("Animations settings")]
+    [SerializeField] protected Animator _animator;
+
+    public bool isMoving;
+
     [Header("Ability inventory settings")]
     [SerializeField] protected AbilityInventory _abilities;
 
@@ -43,6 +48,8 @@ public class Player : CharacterBase
             p.Initialize(_pool, 5f, 5f, 100);
             p.Throw(transform.TransformDirection(Vector3.forward));
         }
+
+        _animator.SetBool("IsMoving", isMoving);
     }
 
     public override void Move(Vector3 direction)
