@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6634640359151922155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.128881, y: 0.08174126, z: -0.15002748}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  groundGrid: {fileID: 11400000, guid: 504acedb9a6646443971268d3696f78e, type: 2}
+  groundGrid: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
   _gridHeight: 0
   _visionRange: 40

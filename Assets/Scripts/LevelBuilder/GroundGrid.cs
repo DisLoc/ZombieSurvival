@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ZombieSurvival/LevelBuilder/GroundGrid", fileName = "New ground grid")]
 public class GroundGrid : ScriptableObject
 {
-    [Tooltip("")]
+    [Tooltip("Must be sqrt(CellSize)")]
     [SerializeField] private int _gridSize;
     [SerializeField] private int _cellSize;
     [SerializeField] List<Cell> _grid;

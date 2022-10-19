@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _healthBar: {fileID: 1478002839978605878}
+  _isImmortal: 0
   _stats:
     _baseWeapon: {fileID: 5512361925152601609}
     _healthPoints:
@@ -161,7 +162,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: 
   _targetDetector: {fileID: 1577825861537638417}
-  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
+  _abilityUpgradeData: {fileID: 0}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
     _level:

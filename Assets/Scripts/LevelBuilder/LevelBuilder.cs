@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+using static UnityEditor.PlayerSettings;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class LevelBuilder : MonoBehaviour
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
-        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        Cell cell = GetCell(0, 0, pos);
         cell.Initialize(0, 0, _grid);
 
         _cells.Add(new Vector2(0, 0), cell);
@@ -56,7 +57,7 @@ public class LevelBuilder : MonoBehaviour
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
-        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        Cell cell = GetCell(0, 0, pos);
         cell.Initialize(0, 0, _grid);
 
         _cells.Add(new Vector2(0, 0), cell);
@@ -97,7 +98,8 @@ public class LevelBuilder : MonoBehaviour
                     }
                     else
                     {
-                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        Cell cell = GetCell(i, j, pos);
+
                         cell.Initialize(i, j, _grid);
                         cell.gameObject.SetActive(false);
 
@@ -112,7 +114,7 @@ public class LevelBuilder : MonoBehaviour
                     }
                     else
                     {
-                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        Cell cell = GetCell(i, j, pos);
                         cell.Initialize(i, j, _grid);
 
                         _cells.Add(index, cell);
@@ -120,5 +122,13 @@ public class LevelBuilder : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Cell GetCell(int xIndex, int zIndex, Vector3 pos)
+    {
+        Cell cell = _grid.GetCell(xIndex, zIndex);
+        cell = Instantiate(cell, pos, cell.RotationQuaternion, transform);
+
+        return cell;
     }
 }

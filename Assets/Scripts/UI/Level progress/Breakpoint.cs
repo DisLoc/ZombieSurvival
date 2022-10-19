@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Breakpoint : MonoBehaviour
+[System.Serializable]
+public class Breakpoint
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] protected int _requiredProgress;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int RequiredProgress => _requiredProgress;
 }
