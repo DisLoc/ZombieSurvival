@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: MoveSpeed upgrade
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 1
+  _abilityMarker: {fileID: 11400000, guid: bdbbb8f9ac32c0943be813000391862b, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: 57c9f1a087be8094b8e76583ef0c3f43, type: 2}

@@ -19,7 +19,7 @@ public class Zombie : CharacterBase, IPoolable
         //_player = GameObject.FindGameObjectWithTag("Player").gameObject.transform; (not needed)
 
         _stats.Initialize();
-        _healthBar.Initialize(_stats.HP);
+        _healthBar.Initialize(_stats.Health);
 
         _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
         // they have collider and projectile weapons

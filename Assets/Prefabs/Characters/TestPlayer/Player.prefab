@@ -252,11 +252,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _healthBar: {fileID: 6053825508757198442}
+  _isImmortal: 0
   _stats:
     _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
-    _healthPoints:
+    _health:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 8fbd4a5ae8ae8dd4cb1a9c39ac963f45, type: 2}
+      _statData: {fileID: 11400000, guid: 8a6dd93761d83924ab08bc3b7ef0bca9, type: 2}
+      _maxHP:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 8fbd4a5ae8ae8dd4cb1a9c39ac963f45, type: 2}
     _velocity:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: c4e470e64f99a89409bff0edcdb8a27d, type: 2}
@@ -277,18 +281,9 @@ MonoBehaviour:
     _pickUpRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 231373b3ec40f5d44bb254f56008db8e, type: 2}
-  _expLevel:
-    _isDebug: 0
-    _statData: {fileID: 11400000, guid: 7dbf923b7944fb5409a1a50b5ae1e0fe, type: 2}
-    _exp:
-      _baseValue: 0
-      _minValue: 0
-      _maxValue: 0
-      _maxValueIsInfinite: 1
-    _expBar: {fileID: 0}
-    _baseExpForLevelUp: 1000
-    _levelMultiplier: 1
   _catcher: {fileID: 4806763617484522634}
+  _animator: {fileID: 1413743868}
+  isMoving: 0
   _abilities:
     _maxActiveAbilitiesCount: 5
     _maxPassiveAbilitiesCount: 5
@@ -494,3 +489,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86124c81e3a1b7740896a09c551fdf1b, type: 3}
   m_PrefabInstance: {fileID: 8496346775043501381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8730368278847672340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86124c81e3a1b7740896a09c551fdf1b, type: 3}
+  m_PrefabInstance: {fileID: 8496346775043501381}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1413743868
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730368278847672340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73a08ceb8dba80b4e9c2d0b1b565fb04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
