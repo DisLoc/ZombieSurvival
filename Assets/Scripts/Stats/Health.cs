@@ -29,7 +29,7 @@ public class Health : Stat
 
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _value -= damage;
 
@@ -37,7 +37,7 @@ public class Health : Stat
         if (_value > _maxHP.Value) _value = _maxHP.Value;
     }
 
-    public void Heal(int heal)
+    public void Heal(float heal)
     {
         _value += heal;
 
@@ -46,9 +46,9 @@ public class Health : Stat
     }
 
     /// <summary>
-    /// Upgrades dispel after updating value. Also upgrade MaxHP
+    /// Upgrades dispel after updating value (heal/take damage). Also upgrade MaxHP.
     /// </summary>
-    /// <param name="upgrade"></param>
+    /// <param name="upgrade">If use upgrades for healing/taking damage: UpgradeMultiplier = percent of MaxHP heal/take damage</param>
     /// <returns></returns>
     public override bool Upgrade(Upgrade upgrade)
     {
@@ -59,7 +59,7 @@ public class Health : Stat
         
         if (isUpgade)
         {
-            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+            _value += _upgrades.UpgradesValue + _upgrades.UpgradesMultiplier * _maxHP.Value;
 
             _upgrades.DispelAll();
         }
@@ -77,6 +77,11 @@ public class Health : Stat
             if (_isDebug) Debug.Log("HP > MaxHP! Fixing...");
 
             _value = _maxHP.Value;
+        }
+
+        if (_value < _minValue)
+        {
+            _value = _minValue;
         }
 
         return isMaxUpgrade || isUpgade;

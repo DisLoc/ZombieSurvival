@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class CharacterBase : DamageableObject
+public abstract class CharacterBase : DamageableObject, IFixedUpdatable
 {
     /// <summary>
     /// Object stats
@@ -9,6 +9,14 @@ public abstract class CharacterBase : DamageableObject
 
     public override int HP => (int)Stats.Health.Value;
     public override int MaxHP => Stats.Health.MaxHP;
+
+    /// <summary>
+    /// Heal character based on fixedDeltaTime and regeneration value
+    /// </summary>
+    public virtual void OnFixedUpdate()
+    {
+        Stats.Health.Heal(Stats.Regeneration * Time.fixedDeltaTime);
+    }
 
     /// <summary>
     /// Moving with current speed in direction
