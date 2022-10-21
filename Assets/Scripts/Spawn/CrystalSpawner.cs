@@ -35,6 +35,10 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
         _pool = new FactoryMonoPool<ExpCrystal, ExpCrystal.Factory>(_crystalStats.CrystalPrefab, _crystalFactory, _poolSize);
     }
 
+    /// <summary>
+    /// Create ExpCrystal in position that Zombie dies
+    /// </summary>
+    /// <param name="zombie"></param>
     public void OnEnemyKilled(Zombie zombie)
     {
         ExpCrystal crystal = _pool.Pull();

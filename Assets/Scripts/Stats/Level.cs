@@ -32,6 +32,9 @@ public class Level : IStat
             _level = _minValue;
     }
 
+    /// <summary>
+    /// Add one level
+    /// </summary>
     public void LevelUp()
     {
         if (_maxValueIsInfinite || _level < _maxValue)

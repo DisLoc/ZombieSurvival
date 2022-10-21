@@ -5,6 +5,9 @@ public class TargetDetector : TriggerDetector
 {
     private List<GameObject> _targets;
 
+    /// <summary>
+    /// Detected objects
+    /// </summary>
     public List<GameObject> Targets
     {
         get
@@ -42,6 +45,9 @@ public class TargetDetector : TriggerDetector
         }
     }
 
+    /// <summary>
+    /// Remove all missing objects
+    /// </summary>
     protected void Cleanup()
     {
         _targets.RemoveAll(item => item == null || item.activeSelf == false);

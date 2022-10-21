@@ -7,13 +7,20 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
+    [Tooltip("Camera always follow player")]
     [SerializeField] private Vector3 _cameraPos;
 
     [Inject] private Player _player;
 
     private bool _isMobile;
 
+    /// <summary>
+    /// Position of the first touch on screen
+    /// </summary>
     private Vector2 _touchPosition;
+    /// <summary>
+    /// Equals true while TouchCount > 0
+    /// </summary>
     private bool _onTouch;
 
     private void OnEnable()
@@ -23,11 +30,12 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isMobile)
+        if (_isMobile) // Mobile control (need test)
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0) 
             {
-                if (_onTouch)
+                // Move if already touch screen
+                if (_onTouch) 
                 {
                     Vector3 moveDirection = new Vector3
                         (
@@ -40,13 +48,14 @@ public class PlayerMoveController : MonoBehaviour
 
                     _player.isMoving = true;
                 }
+                // Set new touch position
                 else
                 {
                     _onTouch = true;
                     _touchPosition = Input.GetTouch(0).position;
                 }
             }
-            else
+            else // Reset flags
             {
                 _onTouch = false;
 
@@ -55,6 +64,7 @@ public class PlayerMoveController : MonoBehaviour
         }
         else
         {
+            #region WASD control
             if (Input.GetKey(KeyCode.W))
             {
                 _player.Move(Vector3.forward);
@@ -75,8 +85,10 @@ public class PlayerMoveController : MonoBehaviour
                 _player.Move(Vector3.right);
                 _player.isMoving = true;
             }
+            #endregion
 
-            if (Input.GetMouseButton(0))
+            #region Mouse control (Equals mobile control)
+            if (Input.GetMouseButton(0)) 
             {
                 if (_onTouch)
                 {
@@ -107,8 +119,9 @@ public class PlayerMoveController : MonoBehaviour
 
                 _player.isMoving = false;
             }
+            #endregion
         }
 
-        transform.position = _player.transform.position + _cameraPos;
+        transform.position = _player.transform.position + _cameraPos; // Follow player
     }
 }

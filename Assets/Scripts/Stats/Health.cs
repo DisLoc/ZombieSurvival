@@ -6,7 +6,7 @@ public class Health : Stat
     [SerializeField] private MaxHP _maxHP;
 
     /// <summary>
-    /// Override MaxValue of this stat
+    /// Means MaxValue of this stat
     /// </summary>
     public int MaxHP => (int)_maxHP.Value;
 

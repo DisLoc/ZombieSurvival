@@ -12,9 +12,21 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
 
     public string Name => _name;
     public UpgradeList Upgrades => _upgrades;
+    /// <summary>
+    /// Return false if ability not reached MaxLevel or MaxLevel is infinite
+    /// </summary>
     public bool IsMaxLevel => !Stats.Level.MaxValueIsInfinite && Stats.Level.Value == Stats.Level.MaxValue;
+    /// <summary>
+    /// Current upgrade of this ability
+    /// </summary>
     public abstract CurrentUpgrade CurrentUpgrade { get; }
+    /// <summary>
+    /// Stats of this ability
+    /// </summary>
     public abstract AbilityStats Stats { get; }
+    /// <summary>
+    /// All ability upgrades
+    /// </summary>
     public abstract AbilityUpgradeData UpgradeData { get; }
 
     public virtual void Initialize()
@@ -24,9 +36,14 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
         _upgrades = new UpgradeList();
     }
 
+    /// <summary>
+    /// Upgrade ability
+    /// </summary>
+    /// <param name="upgrade"></param>
+    /// <returns>Return true if level up</returns>
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        if (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(Stats.AbilityMarker))
+        if (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(Stats.AbilityMarker) && upgrade.Equals(CurrentUpgrade.Upgrade))
         {
             foreach (UpgradeData data in upgrade.Upgrades)
             {

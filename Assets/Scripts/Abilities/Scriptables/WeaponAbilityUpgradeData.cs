@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponAbilityUpgradeData : AbilityUpgradeData
 {
     [SerializeField] protected Weapon _weapon;
-
+    [Tooltip("Upgrades for each ability level. Require upgrade at level 0")]
     [SerializeField] protected List<CurrentUpgrade> _levelUpgrades;
 
     public List<CurrentUpgrade> Upgrades => _levelUpgrades;

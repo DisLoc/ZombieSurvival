@@ -19,11 +19,17 @@ public abstract class Weapon : AbilityContainer, IUpdatable
         _targetDetector.Initialize();
     }
 
-    public virtual void Attack()
+    /// <summary>
+    /// Attack target if ready based on self rules
+    /// </summary>
+    public virtual void Attack() // need override
     {
         if (_isDebug) Debug.Log(name + " attacks");
     }
 
+    /// <summary>
+    /// Update cooldown timer
+    /// </summary>
     public virtual void OnUpdate()
     {
         if (_isReady) return;

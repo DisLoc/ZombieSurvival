@@ -15,6 +15,9 @@ public class ExpBar : FillBar
         UpdateExp();
     }
 
+    /// <summary>
+    /// Update Slider Value
+    /// </summary>
     public void UpdateExp()
     {
         _value = (int)_expirience.Exp.Value;
@@ -22,6 +25,9 @@ public class ExpBar : FillBar
         UpdateBar();
     }
 
+    /// <summary>
+    /// Update Slider MaxFillValue
+    /// </summary>
     public void UpdateLevel()
     {
         _maxFillValue = _expirience.ExpForLevel;

@@ -24,6 +24,10 @@ public class AbilityUI : MonoBehaviour
         _levels = new List<LevelUI>();
     }
 
+    /// <summary>
+    /// Set ability description, icon and level
+    /// </summary>
+    /// <param name="ability"></param>
     public void SetAbility(AbilityContainer ability)
     {
         if (ability == null)
@@ -63,6 +67,9 @@ public class AbilityUI : MonoBehaviour
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
     }
 
+    /// <summary>
+    /// Invokes by button
+    /// </summary>
     public void ChooseUpgrade()
     {
         _abilityGiver.GetAbility(_ability);

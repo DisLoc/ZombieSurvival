@@ -12,9 +12,21 @@ public sealed class AbilityInventory
     private List<Weapon> _weapons;
     private List<AbilityContainer> _abilities;
 
+    /// <summary>
+    /// Weapons that player getted in game
+    /// </summary>
     public List<Weapon> Weapons => _weapons;
+    /// <summary>
+    /// All abilities player getted in game
+    /// </summary>
     public List<AbilityContainer> Abilities => _abilities;
+    /// <summary>
+    /// Count of passive abilities in inventory
+    /// </summary>
     public int PassiveAbilitiesCount => _abilities.FindAll(item => item as PassiveAbility != null).Count;
+    /// <summary>
+    /// Count of weapons in inventory
+    /// </summary>
     public int ActiveAbilitiesCount => _weapons.Count;
 
     public void Initialize()
@@ -23,16 +35,21 @@ public sealed class AbilityInventory
         _abilities = new List<AbilityContainer>();
     }
 
+    /// <summary>
+    /// Try add ability to inventory
+    /// </summary>
+    /// <param name="ability">Ability need to add</param>
+    /// <returns>Return added ability or null if cant add</returns>
     public AbilityContainer Add(AbilityContainer ability)
     {
         if (ability as PassiveAbility != null && PassiveAbilitiesCount >= _maxPassiveAbilitiesCount)
         {
-            return null;
+            return null; // cant have too much abilities
         } 
 
         if (ability as Weapon != null && ActiveAbilitiesCount >= _maxActiveAbilitiesCount)
         {
-            return null;
+            return null; // cant have too much abilities
         }
 
         AbilityContainer newAbility = Object.Instantiate(ability, _abilitiesParent.position, Quaternion.identity, _abilitiesParent);
@@ -41,14 +58,19 @@ public sealed class AbilityInventory
 
         _abilities.Add(newAbility);
 
-        if (newAbility as Weapon != null)
+        if (newAbility as Weapon != null) // add to weapon list
         {
-            _weapons.Add(newAbility as Weapon);
+            _weapons.Add(newAbility as Weapon); 
         }
 
         return newAbility;
     }
 
+    /// <summary>
+    /// Find ability in inventory by name
+    /// </summary>
+    /// <param name="ability">Ability need to find</param>
+    /// <returns>Return existing ability or null if ability not in inventory</returns>
     public AbilityContainer Find(AbilityContainer ability)
     {
         return _abilities.Find(item => item.Name == ability.Name);

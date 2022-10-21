@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HPBar : FillBar, IGameOverHandler
+public class HPBar : FillBar
 {
     private Health _health;
 
@@ -13,16 +13,6 @@ public class HPBar : FillBar, IGameOverHandler
         _health = health;
 
         base.Initialize();
-    }
-
-    protected void OnEnable()
-    {
-        EventBus.Subscribe(this);
-    }
-
-    private void OnDisable()
-    {
-        EventBus.Unsubscribe(this);
     }
 
     public void UpdateHealth()

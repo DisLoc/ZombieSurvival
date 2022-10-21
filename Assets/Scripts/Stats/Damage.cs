@@ -6,7 +6,13 @@ public class Damage : Stat
     [Header("CriticalDamage settings")]
     [SerializeField] protected CriticalDamage _criticalDamage;
 
+    /// <summary>
+    /// Chance to deal critical damage
+    /// </summary>
     public float CritRate => _criticalDamage.CritRate;
+    /// <summary>
+    /// Critical damage multiplier
+    /// </summary>
     public float CriticalDamage => _criticalDamage.Value;
 
     public override void Initialize()

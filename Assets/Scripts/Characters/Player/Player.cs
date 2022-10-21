@@ -8,7 +8,9 @@ public class Player : CharacterBase
 
     [Header("Animations settings")]
     [SerializeField] protected Animator _animator;
-
+    /// <summary>
+    /// Current animation bool
+    /// </summary>
     [HideInInspector] public bool isMoving;
 
     [Header("Ability inventory settings")]

@@ -18,6 +18,10 @@ public abstract class PickableObject : MonoBehaviour
         gameObject.tag = Tags.PickableObject.ToString();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>Return self</returns>
     public virtual PickableObject PickUp()
     {
         if (_isDebug) Debug.Log("Pick up " + name);
