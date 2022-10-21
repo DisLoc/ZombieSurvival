@@ -26,6 +26,9 @@ public abstract class FillBar : MonoBehaviour
         UpdateBar();
     }
 
+    /// <summary>
+    /// Update Slider value
+    /// </summary>
     protected virtual void UpdateBar()
     {
         _fillBar.value = _value;

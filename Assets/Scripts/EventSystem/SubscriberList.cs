@@ -13,6 +13,10 @@ public class SubscriberList
         _needCleanup = false;
     }
 
+    /// <summary>
+    /// Add new subscriber
+    /// </summary>
+    /// <param name="subscriber">Subscriber need to add</param>
     public void Add(ISubscriber subscriber)
     {
         if (_subscribers.Contains(subscriber)) return;
@@ -20,6 +24,12 @@ public class SubscriberList
         _subscribers.Add(subscriber);
     }
 
+    /// <summary>
+    /// Remove subscriber from list. If onPublish equals true, subscriber will be set null value
+    /// </summary>
+    /// <param name="subscriber">Subscriber need to remove</param>
+    /// <param name="onPublish">Is there raise event in progress?</param>
+    /// <returns>Return true if remove subscriber or this sub setted null</returns>
     public bool Remove(ISubscriber subscriber, bool onPublish)
     {
         if (_subscribers.Contains(subscriber))
@@ -41,6 +51,11 @@ public class SubscriberList
         }
     }
 
+    /// <summary>
+    /// Raising event for all subscribers
+    /// </summary>
+    /// <typeparam name="TSubscriber">Event interface</typeparam>
+    /// <param name="action">Action lambda</param>
     public void RaiseEvent<TSubscriber>(Action<TSubscriber> action) where TSubscriber : ISubscriber
     {
         foreach(ISubscriber subscriber in _subscribers)
@@ -49,6 +64,9 @@ public class SubscriberList
         }
     }
 
+    /// <summary>
+    /// Remove all null subscribers
+    /// </summary>
     public void Cleanup()
     {
         if (_needCleanup)

@@ -27,29 +27,39 @@ public class GridXZ
             {
                 for (int j = 0; j < _gridSize; j++)
                 {
-                    _cellMatrix[i].Add(groundGrid.Grid[index]);
+                    _cellMatrix[i].Add(groundGrid.Grid[index]); // fill matrix from grid prefabs
                     index++;
                 }
             }
 
-            int x = Random.Range(0, _gridSize);
+            int x = Random.Range(0, _gridSize); 
             int z = Random.Range(0, _gridSize);
 
-            _zeroCellIndex = new Vector2(x, z);
+            _zeroCellIndex = new Vector2(x, z); // Set random cell as start cell
         }
     }
 
+    /// <summary>
+    /// Get cell prefab in (X, Z) grid coordinates
+    /// </summary>
+    /// <param name="xIndex">X matrix index</param>
+    /// <param name="zIndex">Z matrix index</param>
+    /// <returns>Return cell prefab based on ZeroCell</returns>
     public Cell GetCell(int xIndex, int zIndex)
     {
         return _cellMatrix[Mathf.Abs(((int)_zeroCellIndex.x - xIndex) % _gridSize)][Mathf.Abs(((int)_zeroCellIndex.y) - zIndex) % _gridSize];
     }
     
+    /// <summary>
+    /// Use when player moves into other cell
+    /// </summary>
+    /// <param name="cell">Sender cell that start collide with player</param>
     public void OnPlayerEnter(Cell cell)
     {
         _builder.UpdateGrid(cell);
     }
 
-    private class CellMatrix 
+    private class CellMatrix // matrix of cells
     {
         private List<List<Cell>> _matrix;
 

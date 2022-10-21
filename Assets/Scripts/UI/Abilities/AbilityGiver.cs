@@ -37,6 +37,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         EventBus.Unsubscribe(this);
     }
 
+    /// <summary>
+    /// Enable ability menu for choosing new ability or upgrade
+    /// </summary>
     public void OnPlayerLevelUp()
     {
         _menuGO.SetActive(true);
@@ -49,6 +52,10 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         }
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <returns>Return random ability based on abilities that player getted</returns>
     private AbilityContainer GetRandomAbility()
     {
         return _abilities[0];
@@ -59,6 +66,10 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         return _abilities[index];
     }
 
+    /// <summary>
+    /// Add ability to player
+    /// </summary>
+    /// <param name="ability">Ability need to add</param>
     public void GetAbility(AbilityContainer ability)
     {
         _menuGO.SetActive(false);

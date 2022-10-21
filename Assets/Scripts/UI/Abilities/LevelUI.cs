@@ -14,6 +14,10 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Sprite _lockedLevel;
     [SerializeField] private Sprite _currentLevel;
 
+    /// <summary>
+    /// Set level sprite based on type
+    /// </summary>
+    /// <param name="type"></param>
     public void Initialize(LevelType type)
     {
         Sprite sprite;

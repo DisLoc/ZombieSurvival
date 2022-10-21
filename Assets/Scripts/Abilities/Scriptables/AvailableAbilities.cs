@@ -6,6 +6,8 @@ public sealed class AvailableAbilities : ScriptableObject
 {
     [SerializeField] private List<PassiveAbility> _passiveAbilities;
     [SerializeField] private List<Weapon> _activeAbilities;
+    [Tooltip("Abilities displays when ability inventory cant add new abilities")]
+    [SerializeField] private List<AbilityContainer> _additionalAbilities;
 
     public List<AbilityContainer> Abilities
     {
@@ -19,4 +21,6 @@ public sealed class AvailableAbilities : ScriptableObject
             return abilities;
         }
     }
+
+    public List<AbilityContainer> AdditionalAbilities => _additionalAbilities;
 }

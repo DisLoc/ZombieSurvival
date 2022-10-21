@@ -6,12 +6,22 @@ public class Player : CharacterBase
     [SerializeField] protected PlayerStats _stats;
     [SerializeField] protected ObjectCatcher _catcher;
 
+    [Header("Animations settings")]
+    [SerializeField] protected Animator _animator;
+    /// <summary>
+    /// Current animation bool
+    /// </summary>
+    [HideInInspector] public bool isMoving;
+
     [Header("Ability inventory settings")]
     [SerializeField] protected AbilityInventory _abilities;
 
     protected List<Upgrade> _upgrades;
 
     public override CharacterStats Stats => _stats;
+    /// <summary>
+    /// All abilities player getted in game
+    /// </summary>
     public List<AbilityContainer> Abilities => _abilities.Abilities;
 
     [Header("Test")]
@@ -23,7 +33,7 @@ public class Player : CharacterBase
     {
         _stats.Initialize();
 
-        _healthBar.Initialize(_stats.HP);
+        _healthBar.Initialize(_stats.Health);
         _catcher.Initialize(_stats.PickUpRange);
         _abilities.Initialize();
 
@@ -43,6 +53,8 @@ public class Player : CharacterBase
             p.Initialize(_pool, 5f, 5f, 100);
             p.Throw(transform.TransformDirection(Vector3.forward));
         }
+
+        _animator.SetBool("IsMoving", isMoving);
     }
 
     public override void Move(Vector3 direction)
@@ -61,11 +73,15 @@ public class Player : CharacterBase
         }
     }
 
+    /// <summary>
+    /// Upgrade player stats and all weapons he has
+    /// </summary>
+    /// <param name="upgrade"></param>
     public override void GetUpgrade(Upgrade upgrade)
     {
-        _upgrades.Add(upgrade);
+        base.GetUpgrade(upgrade);
 
-        _stats.GetUpgrade(upgrade);
+        _upgrades.Add(upgrade);
 
         for (int index = 0; index < _abilities.Abilities.Count; index++)
         {
@@ -73,6 +89,10 @@ public class Player : CharacterBase
         }
     }
 
+    /// <summary>
+    /// Get new ability or upgrade existing
+    /// </summary>
+    /// <param name="ability"></param>
     public void GetAbility(AbilityContainer ability)
     {
         AbilityContainer abilityContainer = _abilities.Find(ability);

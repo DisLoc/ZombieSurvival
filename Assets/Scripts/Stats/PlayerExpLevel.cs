@@ -12,7 +12,13 @@ public class PlayerExpLevel : Stat
     [SerializeField] protected float _levelMultiplier;
 
     public Expirience Exp => _exp;
+    /// <summary>
+    /// Expirience value required for level up
+    /// </summary>
     public int ExpForLevel => (int)(_baseExpForLevelUp * _levelMultiplier * _value);
+    /// <summary>
+    /// Can be in range [0, 1]
+    /// </summary>
     public float LevelProgress => _exp.Value / ExpForLevel;
 
     public override void Initialize()
@@ -24,6 +30,10 @@ public class PlayerExpLevel : Stat
         _expBar.Initialize(this);
     }
 
+    /// <summary>
+    /// Add expirience to player
+    /// </summary>
+    /// <param name="exp">Value need to add</param>
     public void AddExp(int exp)
     {
         if (_isDebug) Debug.Log("Add " + exp + " expirience. Total: " + (exp + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier);

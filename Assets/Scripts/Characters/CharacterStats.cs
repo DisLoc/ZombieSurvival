@@ -4,25 +4,25 @@ using UnityEngine;
 public class CharacterStats : IObjectStats
 {
     [SerializeField] protected Weapon _baseWeapon;
-    [SerializeField] protected HealthPoint _healthPoints;
+    [SerializeField] protected Health _health;
     [SerializeField] protected MoveSpeed _velocity;
     [SerializeField] protected Regeneration _regeneration;
 
-    public HealthPoint HP => _healthPoints;
     public Weapon BaseWeapon => _baseWeapon;
+    public Health Health => _health;
     public float Velocity => _velocity.Value;
     public float Regeneration => _regeneration.Value;
 
     public virtual void Initialize()
     {
-        _healthPoints.Initialize();
+        _health.Initialize();
         _velocity.Initialize();
         _regeneration.Initialize();
     }
 
     public virtual void GetUpgrade(Upgrade upgrade)
     {
-        _healthPoints.Upgrade(upgrade);
+        _health.Upgrade(upgrade);
         _velocity.Upgrade(upgrade);
         _regeneration.Upgrade(upgrade);
     }

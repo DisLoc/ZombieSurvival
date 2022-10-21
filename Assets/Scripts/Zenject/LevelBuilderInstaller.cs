@@ -8,7 +8,7 @@ public class LevelBuilderInstaller : MonoInstaller
     {
         LevelBuilder builder = Instantiate(_builderPrefab);
         builder.transform.position = Vector3.zero;
-        builder.Init();
+        builder.Initialize();
 
         Container.Bind<LevelBuilder>().FromInstance(builder).AsSingle();
     }

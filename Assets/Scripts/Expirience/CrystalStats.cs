@@ -11,13 +11,3 @@ public class CrystalStats : ScriptableObject
     public ExpCrystal CrystalPrefab => _crystalPrefab;
     public List<CrystalParam> CrystalParams => _crystalParams;
 }
-
-[System.Serializable]
-public class CrystalParam
-{
-    [SerializeField] private int _expValue;
-    [SerializeField] private Color _color;
-
-    public int ExpValue => _expValue;
-    public Color Color => _color;
-}
