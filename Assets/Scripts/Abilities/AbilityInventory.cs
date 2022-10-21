@@ -67,6 +67,27 @@ public sealed class AbilityInventory
     }
 
     /// <summary>
+    /// Remove ability from inventory
+    /// </summary>
+    /// <param name="ability">Ability need to remove</param>
+    /// <returns>Return true if ability removed successfully</returns>
+    public bool Remove(AbilityContainer ability)
+    {
+        AbilityContainer removingAbility = Find(ability);
+
+        if (removingAbility != null)
+        {
+            if (removingAbility as Weapon != null)
+            {
+                _weapons.Remove(removingAbility as Weapon);
+            }
+
+            return _abilities.Remove(removingAbility);
+        }
+        else return false;
+    }
+
+    /// <summary>
     /// Find ability in inventory by name
     /// </summary>
     /// <param name="ability">Ability need to find</param>
