@@ -38,4 +38,9 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
         if (_timer <= 0) _isReady = true;
     }
+
+    public virtual void UpgradeToSuper(Weapon super)
+    {
+
+    }
 }

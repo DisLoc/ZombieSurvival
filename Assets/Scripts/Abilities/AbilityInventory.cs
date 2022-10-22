@@ -28,6 +28,14 @@ public sealed class AbilityInventory
     /// Count of weapons in inventory
     /// </summary>
     public int ActiveAbilitiesCount => _weapons.Count;
+    /// <summary>
+    /// Inventory capacity for passive abilities
+    /// </summary>
+    public int MaxPassiveAbilitiesCount => _maxPassiveAbilitiesCount;
+    /// <summary>
+    /// Inventory capacity for weapons
+    /// </summary>
+    public int MaxActiveAbilitiesCount => _maxActiveAbilitiesCount;
 
     public void Initialize()
     {

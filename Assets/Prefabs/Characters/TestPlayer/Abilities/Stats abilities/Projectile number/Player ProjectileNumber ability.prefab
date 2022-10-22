@@ -54,3 +54,7 @@ MonoBehaviour:
       _minValue: 1
       _maxValue: 3
       _maxValueIsInfinite: 0
+  _combinedAbilities:
+  - _combinedWeapon: {fileID: 0}
+    _superWeapon: {fileID: 0}
+    _unlockUpgradeLevel: 5
