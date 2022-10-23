@@ -5,7 +5,7 @@ public class Zombie : CharacterBase, IPoolable
 {
     [SerializeField] protected CharacterStats _stats;
 
-    [Inject] protected Transform _player; 
+    [Inject] protected Player _player; 
     // use factory for injection (end of script)
     // example in ExpCrystal, CrystalSpawner and CrystalFactoryInstaller
     // also use FactoryMonoPool for spawning
@@ -18,19 +18,27 @@ public class Zombie : CharacterBase, IPoolable
         // player automatically injected 
         //_player = GameObject.FindGameObjectWithTag("Player").gameObject.transform; (not needed)
 
-        _stats.Initialize();
-        _healthBar.Initialize(_stats.Health);
 
-        _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
         // they have collider and projectile weapons
         // or make ZombieBossStats : CharacterStats
         // and add more weapons instead of ability inventory
+
+       
     }
 
     // Need initialize every time when spawn
     public void Initialize(FactoryMonoPool<Zombie, Factory> pool)
     {
         _pool = pool;
+
+        _stats.Initialize();
+        _healthBar.Initialize(_stats.Health);
+
+        _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
+
+        Debug.Log(pool);
+        Debug.Log(Stats.Velocity);
+        Debug.Log(_player);
     }
 
     public void ResetObject()
@@ -57,8 +65,8 @@ public class Zombie : CharacterBase, IPoolable
 
     public override void Move(Vector3 direction)
     {
-        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, _stats.Velocity * Time.deltaTime);
-        transform.LookAt(_player);
+        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, 10 * Time.deltaTime);
+        transform.LookAt(_player.transform);
     }
 
     public override void Attack()
