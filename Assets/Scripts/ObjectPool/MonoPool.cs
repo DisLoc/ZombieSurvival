@@ -6,12 +6,22 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     protected TObject _prefab;
     protected Transform _parent;
 
-    public MonoPool(TObject prefab, int capacity)
+    public MonoPool(TObject prefab, int capacity, Transform poolParent = null)
     {
         _prefab = prefab;
         _parent = new GameObject(prefab.name + " pool").transform;
 
+        if (poolParent != null)
+        {
+            _parent.transform.parent = poolParent;
+        }
+
         _objects = new List<TObject>(capacity);
+
+        for (int i = 0; i < capacity; i++)
+        {
+            CreateObject();
+        }
     }
 
     protected override void CreateObject()

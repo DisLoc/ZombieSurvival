@@ -14,14 +14,20 @@ public class AbilityUI : MonoBehaviour
     [SerializeField] private LevelUI _levelPrefab;
     [SerializeField] private Text _upgradeDescriptionText;
 
+    [Space(5)]
+    [SerializeField] private CombineAbilityUI _combineAbilityPrefab;
+    [SerializeField] private RectTransform _combineAbilitiesParent;
+
     [Inject] private AbilityGiver _abilityGiver;
 
     private AbilityContainer _ability;
     private List<LevelUI> _levels;
+    private List<CombineAbilityUI> _combines;
 
     public void Initialize()
     {
         _levels = new List<LevelUI>();
+        _combines = new List<CombineAbilityUI>();
     }
 
     /// <summary>
@@ -39,7 +45,7 @@ public class AbilityUI : MonoBehaviour
 
         _ability = ability;
 
-        _abilityIcon.sprite = _ability.UpgradeData.UpgradeIcon;
+        _abilityIcon.sprite = _ability.UpgradeIcon;
 
         if (_levels.Count > 0)
         {
@@ -65,6 +71,28 @@ public class AbilityUI : MonoBehaviour
         }
 
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
+        /*
+        if (ability as PassiveAbility != null)
+        {
+            if (_combines.Count > 0)
+            {
+                foreach(CombineAbilityUI combine in _combines)
+                {
+                    Destroy(combine.gameObject);
+                }
+
+                _combines.Clear();
+            }
+
+            foreach(CombineAbility combineAbility in (ability as PassiveAbility).CombinedAbilities)
+            {
+                CombineAbilityUI combine = Instantiate(_combineAbilityPrefab, _combineAbilitiesParent);
+
+                combine.Initialize(combineAbility.CombinedWeapon.InventoryIcon);
+
+                _combines.Add(combine);
+            }
+        }*/
     }
 
     /// <summary>

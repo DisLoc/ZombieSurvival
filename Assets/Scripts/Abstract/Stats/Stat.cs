@@ -18,7 +18,7 @@ public abstract class Stat : IStat, IUpgradeable
     /// <summary>
     /// Current value of stat
     /// </summary>
-    public float Value => _value;
+    public virtual float Value => _value;
     public float MinValue => _minValue;
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _statData.MaxValueIsInfinite;

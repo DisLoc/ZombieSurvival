@@ -10,8 +10,8 @@ public class CharacterStats : IObjectStats
 
     public Weapon BaseWeapon => _baseWeapon;
     public Health Health => _health;
-    public float Velocity => _velocity.Value;
-    public float Regeneration => _regeneration.Value;
+    public MoveSpeed Velocity => _velocity;
+    public Regeneration Regeneration => _regeneration;
 
     public virtual void Initialize()
     {

@@ -10,12 +10,17 @@ public sealed class AbilityInventory
     [SerializeField] private Transform _abilitiesParent;
 
     private List<Weapon> _weapons;
+    private List<ProjectileWeapon> _projectileWeapons;
     private List<AbilityContainer> _abilities;
 
     /// <summary>
     /// Weapons that player getted in game
     /// </summary>
     public List<Weapon> Weapons => _weapons;
+    /// <summary>
+    /// Projectile weapons that player getted in game
+    /// </summary>
+    public List<ProjectileWeapon> ProjectileWeapons => _projectileWeapons;
     /// <summary>
     /// All abilities player getted in game
     /// </summary>
@@ -40,6 +45,7 @@ public sealed class AbilityInventory
     public void Initialize()
     {
         _weapons = new List<Weapon>();
+        _projectileWeapons = new List<ProjectileWeapon>();
         _abilities = new List<AbilityContainer>();
     }
 
@@ -69,6 +75,11 @@ public sealed class AbilityInventory
         if (newAbility as Weapon != null) // add to weapon list
         {
             _weapons.Add(newAbility as Weapon); 
+
+            if (newAbility as ProjectileWeapon != null)
+            {
+                _projectileWeapons.Add(newAbility as ProjectileWeapon);
+            }
         }
 
         return newAbility;

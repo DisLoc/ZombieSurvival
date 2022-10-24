@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
-using static UnityEngine.Rendering.DebugUI;
-using UnityEditor.Experimental.GraphView;
 
 public static class EventBus
 {
-    static Dictionary<Type, SubscriberList> _subscribers = new Dictionary<Type, SubscriberList>();
+    static Dictionary<Type, SubscriberList<ISubscriber>> _subscribers = new Dictionary<Type, SubscriberList<ISubscriber>>();
 
     static bool _onPublish;
 
@@ -21,7 +19,7 @@ public static class EventBus
         {
             if (!_subscribers.ContainsKey(interfaceType)) // if that event hasnt subscribers create new list
             {
-                _subscribers[interfaceType] = new SubscriberList();
+                _subscribers[interfaceType] = new SubscriberList<ISubscriber>();
             }
 
             _subscribers[interfaceType].Add(subscriber);

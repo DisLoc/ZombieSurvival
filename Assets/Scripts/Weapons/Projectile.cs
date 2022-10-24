@@ -4,36 +4,39 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 {
     [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
+    [SerializeField] protected bool _isDebug;
 
-    private Vector3 _moveDirection;
+    protected Vector3 _moveDirection;
 
-    private float _timer;
-    private float _releaseDelay;
+    protected float _releaseTimer;
+    protected bool _onThrow;
 
-    private float _speed;
-    private float _damage;
+    protected Duration _releaseDelay;
+    protected ProjectileSpeed _speed;
+    protected Damage _damage;
 
-    private MonoPool<Projectile> _pool;
+    protected MonoPool<Projectile> _pool;
+    protected ProjectileWeapon _weapon;
 
     public void ResetObject()
     {
         _pool = null;
         _moveDirection = Vector3.zero;
-        _timer = 0;
-        _releaseDelay = 0;
-        _speed = 0;
-        _damage = 0;
 
-        StopAllCoroutines(); // test
+        _releaseTimer = 0;
+        _onThrow = false;
+        _releaseDelay = null;
+        _speed = null;
+        _damage = null;
     }
 
-    public void Initialize(MonoPool<Projectile> pool, float releaseDelay, float speed, float damage)
+    public void Initialize(MonoPool<Projectile> pool, Duration releaseDelay, ProjectileSpeed speed, Damage damage, ProjectileWeapon weapon)
     {
         _pool = pool;
         _releaseDelay = releaseDelay;
         _speed = speed;
         _damage = damage;
+        _weapon = weapon;
     }
 
     /// <summary>
@@ -43,35 +46,21 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     public void Throw(Vector3 direction)
     {
         _moveDirection = direction.normalized;
-        _timer = _releaseDelay;
-
-        StartCoroutine(WaitRelease()); // test
-        StartCoroutine(Move(direction)); // test
-    }
-
-    public IEnumerator Move(Vector3 direction) // test
-    {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, _speed * Time.fixedDeltaTime);
-        yield return new WaitForFixedUpdate();
-        StartCoroutine(Move(direction));
-    }
-
-    private IEnumerator WaitRelease() // test
-    {
-        yield return new WaitForSeconds(_releaseDelay);
-
-        if (_isDebug) Debug.Log(name + " released to pool");
-
-        _pool.Release(this);
+        _releaseTimer = _releaseDelay.Value;
+        _onThrow = true;
     }
 
     public void OnFixedUpdate()
     {
-        Move();
-        UpdateTimer();
-
-        if (_timer <= 0f)
+        if (_onThrow)
         {
+            Move();
+            UpdateTimer();
+        }
+
+        if (_releaseTimer <= 0f)
+        {
+            _weapon.OnProjectileRelease(this);
             _pool.Release(this);
         }
     }
@@ -79,9 +68,9 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     /// <summary>
     /// Move into direction with current speed
     /// </summary>
-    private void Move()
+    protected void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + _moveDirection * _speed, _speed * Time.fixedDeltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + _moveDirection * _speed.Value, _speed.Value * Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -89,7 +78,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     /// </summary>
     private void UpdateTimer()
     {
-        _timer -= Time.fixedDeltaTime;
+        _releaseTimer -= Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,7 +89,8 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         {
             if (_isDebug) Debug.Log(name + " find target");
 
-            obj.TakeDamage((int)_damage);
+            obj.TakeDamage((int)_damage.Value);
+            _weapon.OnProjectileRelease(this);
             _pool.Release(this);
         }
     }

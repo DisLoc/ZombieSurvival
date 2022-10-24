@@ -6,7 +6,7 @@ public abstract class Weapon : AbilityContainer, IUpdatable
     [SerializeField] protected TargetDetector _targetDetector;
     [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
 
-    protected float _timer;
+    protected float _attackIntervalTimer;
     protected bool _isReady;
 
     public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
@@ -15,6 +15,8 @@ public abstract class Weapon : AbilityContainer, IUpdatable
     public override void Initialize()
     {
         base.Initialize();
+
+        _isReady = true;
 
         _targetDetector.Initialize();
     }
@@ -34,9 +36,13 @@ public abstract class Weapon : AbilityContainer, IUpdatable
     {
         if (_isReady) return;
 
-        _timer -= Time.deltaTime;
+        _attackIntervalTimer -= Time.deltaTime;
 
-        if (_timer <= 0) _isReady = true;
+        if (_attackIntervalTimer <= 0f)
+        {
+            _isReady = true;
+        } 
+
     }
 
     public virtual void UpgradeToSuper(Weapon super)

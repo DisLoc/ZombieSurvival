@@ -7,8 +7,6 @@ public class PlayerInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        _player.Initialize();
-
         Container.Bind<Player>().FromInstance(_player).AsSingle();
     }
 }

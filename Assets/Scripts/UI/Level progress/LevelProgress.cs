@@ -7,8 +7,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     [Tooltip("Additional progress each X enemies")]
     [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1;
 
-
-
+    public float Value => _value;
 
     private int _killed;
 
@@ -41,11 +40,6 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         _value = 0;
 
         UpdateBar();
-    }
-
-    public int ReturnValue()
-    {
-        return _value;
     }
 
     public void OnMinuteLeft()

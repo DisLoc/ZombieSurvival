@@ -10,4 +10,5 @@ public class PassiveAbility : AbilityContainer
     public override AbilityUpgradeData UpgradeData => _upgradeData;
     public override AbilityStats Stats => _stats;
     public override CurrentUpgrade CurrentUpgrade => _upgradeData.RepeatingUpgrade;
+    public List<CombineAbility> CombinedAbilities => _combinedAbilities;
 }

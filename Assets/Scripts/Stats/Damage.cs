@@ -6,6 +6,18 @@ public class Damage : Stat
     [Header("CriticalDamage settings")]
     [SerializeField] protected CriticalDamage _criticalDamage;
 
+    public override float Value
+    {
+        get
+        {
+            if (Random.Range(0f, 1f) <= _criticalDamage.CritRate)
+            {
+                return _value * _criticalDamage.Value;
+            }
+            else return _value;
+        }
+    }
+
     /// <summary>
     /// Chance to deal critical damage
     /// </summary>
