@@ -45,6 +45,8 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     /// <param name="direction">Direction need to move</param>
     public void Throw(Vector3 direction)
     {
+        transform.LookAt(transform.position + direction);
+
         _moveDirection = direction.normalized;
         _releaseTimer = _releaseDelay.Value;
         _onThrow = true;

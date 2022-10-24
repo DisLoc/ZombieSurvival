@@ -73,6 +73,8 @@ public class AbilityUI : MonoBehaviour
 
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
 
+        _combineText.gameObject.SetActive(false);
+        /*
         if (ability as PassiveAbility != null)
         {
             _combineText.gameObject.SetActive(true);
@@ -98,8 +100,8 @@ public class AbilityUI : MonoBehaviour
         }
         else
         {
-            _combineText.gameObject.SetActive(false);
-        }
+            
+        }*/
     }
 
     /// <summary>
