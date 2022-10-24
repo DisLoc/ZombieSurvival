@@ -469,6 +469,7 @@ MonoBehaviour:
   _levelPrefab: {fileID: 4106979141780154968, guid: 01dcb33c19a772047aaf0b657e899876, type: 3}
   _upgradeDescriptionText: {fileID: 4154938432909806289}
   _combineAbilityPrefab: {fileID: 2697447725799030311, guid: 7b99c4940465e1744bf78dc611f312c2, type: 3}
+  _combineText: {fileID: 7846115429237228257}
   _combineAbilitiesParent: {fileID: 2019707730945479671}
 --- !u!1 &7311888282706624005
 GameObject:

@@ -16,6 +16,7 @@ public class AbilityUI : MonoBehaviour
 
     [Space(5)]
     [SerializeField] private CombineAbilityUI _combineAbilityPrefab;
+    [SerializeField] private Text _combineText;
     [SerializeField] private RectTransform _combineAbilitiesParent;
 
     [Inject] private AbilityGiver _abilityGiver;
@@ -71,12 +72,14 @@ public class AbilityUI : MonoBehaviour
         }
 
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
-        /*
+
         if (ability as PassiveAbility != null)
         {
+            _combineText.gameObject.SetActive(true);
+
             if (_combines.Count > 0)
             {
-                foreach(CombineAbilityUI combine in _combines)
+                foreach (CombineAbilityUI combine in _combines)
                 {
                     Destroy(combine.gameObject);
                 }
@@ -84,7 +87,7 @@ public class AbilityUI : MonoBehaviour
                 _combines.Clear();
             }
 
-            foreach(CombineAbility combineAbility in (ability as PassiveAbility).CombinedAbilities)
+            foreach (CombineAbility combineAbility in (ability as PassiveAbility).CombinedAbilities)
             {
                 CombineAbilityUI combine = Instantiate(_combineAbilityPrefab, _combineAbilitiesParent);
 
@@ -92,7 +95,11 @@ public class AbilityUI : MonoBehaviour
 
                 _combines.Add(combine);
             }
-        }*/
+        }
+        else
+        {
+            _combineText.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>
