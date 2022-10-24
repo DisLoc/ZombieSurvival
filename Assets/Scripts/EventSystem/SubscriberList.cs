@@ -1,80 +1,32 @@
 using System;
 using System.Collections.Generic;
 
-public class SubscriberList
+public class SubscriberList<TSubscriber> : CleanupableList<TSubscriber> where TSubscriber : class, ISubscriber
 {
-    List<ISubscriber> _subscribers;
-
-    bool _needCleanup;
-
-    public SubscriberList()
-    {
-        _subscribers = new List<ISubscriber>();
-        _needCleanup = false;
-    }
+    public SubscriberList() : base() { }
 
     /// <summary>
     /// Add new subscriber
     /// </summary>
     /// <param name="subscriber">Subscriber need to add</param>
-    public void Add(ISubscriber subscriber)
+    public override void Add(TSubscriber item)
     {
-        if (_subscribers.Contains(subscriber)) return;
-        
-        _subscribers.Add(subscriber);
+        if (_list.Contains(item)) return;
+
+        _list.Add(item);
     }
 
-    /// <summary>
-    /// Remove subscriber from list. If onPublish equals true, subscriber will be set null value
-    /// </summary>
-    /// <param name="subscriber">Subscriber need to remove</param>
-    /// <param name="onPublish">Is there raise event in progress?</param>
-    /// <returns>Return true if remove subscriber or this sub setted null</returns>
-    public bool Remove(ISubscriber subscriber, bool onPublish)
-    {
-        if (_subscribers.Contains(subscriber))
-        {
-            if (onPublish)
-            {
-                _needCleanup = true;
-                _subscribers[_subscribers.IndexOf(subscriber)] = null;
-                return true;
-            }
-            else
-            {
-                return _subscribers.Remove(subscriber);
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
 
     /// <summary>
     /// Raising event for all subscribers
     /// </summary>
     /// <typeparam name="TSubscriber">Event interface</typeparam>
     /// <param name="action">Action lambda</param>
-    public void RaiseEvent<TSubscriber>(Action<TSubscriber> action) where TSubscriber : ISubscriber
+    public void RaiseEvent<TSub>(Action<TSub> action) where TSub : ISubscriber
     {
-        foreach(ISubscriber subscriber in _subscribers)
+        foreach(ISubscriber subscriber in _list)
         {
-            action.Invoke((TSubscriber)subscriber);
+            action.Invoke((TSub)subscriber);
         }
-    }
-
-    /// <summary>
-    /// Remove all null subscribers
-    /// </summary>
-    public void Cleanup()
-    {
-        if (_needCleanup)
-        {
-            _subscribers.RemoveAll(sub => sub == null);
-            _needCleanup = false;
-        }
-
-        else return;
     }
 }

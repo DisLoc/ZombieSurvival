@@ -15,7 +15,7 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
     /// </summary>
     public virtual void OnFixedUpdate()
     {
-        Stats.Health.Heal(Stats.Regeneration * Time.fixedDeltaTime);
+        Stats.Health.Heal(Stats.Regeneration.Value * Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
     /// <summary>
     /// Character attacks with all Weapons it has
     /// </summary>
-    public abstract void Attack();
+    protected abstract void Attack();
 
     public override void TakeDamage(int damage)
     {

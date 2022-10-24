@@ -35,10 +35,6 @@ public class Zombie : CharacterBase, IPoolable
         _healthBar.Initialize(_stats.Health);
 
         _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
-
-        Debug.Log(pool);
-        Debug.Log(Stats.Velocity);
-        Debug.Log(_player);
     }
 
     public void ResetObject()
@@ -65,11 +61,11 @@ public class Zombie : CharacterBase, IPoolable
 
     public override void Move(Vector3 direction)
     {
-        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, 10 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, _stats.Velocity.Value * Time.deltaTime);
         transform.LookAt(_player.transform);
     }
 
-    public override void Attack()
+    protected override void Attack()
     {
         _stats.BaseWeapon.Attack();
     }

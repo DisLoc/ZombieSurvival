@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2642892104634478681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8908571152348456577}
+  - component: {fileID: 249438275924464763}
+  m_Layer: 6
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8908571152348456577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642892104634478681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2817904043961400774}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &249438275924464763
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642892104634478681}
+  m_Material: {fileID: 13400000, guid: fa77ba82c72223f499c6b7a021b6cd0e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2817904043961400769
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +58,7 @@ GameObject:
   - component: {fileID: 2817904043961400773}
   - component: {fileID: 2817904043961400772}
   - component: {fileID: 2817904043961400771}
-  - component: {fileID: 2817904043961400770}
+  - component: {fileID: 2281845291444769187}
   - component: {fileID: 2817904043961400775}
   - component: {fileID: 5512361925152601609}
   m_Layer: 0
@@ -36,6 +82,7 @@ Transform:
   m_Children:
   - {fileID: 8624211132213441051}
   - {fileID: 5281316822555801647}
+  - {fileID: 8908571152348456577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,14 +143,14 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817904043961400769}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fa77ba82c72223f499c6b7a021b6cd0e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2817904043961400770
+--- !u!54 &2281845291444769187
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,14 +158,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817904043961400769}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2817904043961400775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +208,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _name: 
+  _name: Zombie collider
+  _inventoryIcon: {fileID: 0}
+  _upgradeIcon: {fileID: 0}
   _targetDetector: {fileID: 1577825861537638417}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
   _stats:

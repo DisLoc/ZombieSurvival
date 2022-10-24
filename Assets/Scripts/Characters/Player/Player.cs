@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Player : CharacterBase
 {
     [SerializeField] protected PlayerStats _stats;
     [SerializeField] protected ObjectCatcher _catcher;
+
+    [Tooltip("Self collider")]
+    [SerializeField] protected CapsuleCollider _collider;
 
     [Header("Animations settings")]
     [SerializeField] protected Animator _animator;
@@ -18,26 +22,24 @@ public class Player : CharacterBase
 
     protected List<Upgrade> _upgrades;
 
+    [Inject] protected LevelBuilder _levelBuilder;
+
     public override CharacterStats Stats => _stats;
     /// <summary>
     /// All abilities player getted in game
     /// </summary>
     public List<AbilityContainer> Abilities => _abilities.Abilities;
 
-    [Header("Test")]
-    public KeyCode shootKey;
-    public Projectile projectile;
-    private MonoPool<Projectile> _pool;
-
     public void Initialize()
     {
+        transform.position = new Vector3(0, _levelBuilder.GridHeight + _collider.height * 0.5f, 0);
+
         _stats.Initialize();
 
         _healthBar.Initialize(_stats.Health);
-        _catcher.Initialize(_stats.PickUpRange);
+        _catcher.Initialize(_stats.PickUpRange.Value);
         _abilities.Initialize();
 
-        _pool = new MonoPool<Projectile>(projectile, 10);
         _upgrades = new List<Upgrade>();
 
         GetAbility(_stats.BaseWeapon);
@@ -45,16 +47,17 @@ public class Player : CharacterBase
 
     private void Update() // test
     {
-        if (Input.GetKeyDown(shootKey))
-        {
-            Projectile p = _pool.Pull();
-            p.transform.position = transform.position;
-
-            p.Initialize(_pool, 5f, 5f, 100);
-            p.Throw(transform.TransformDirection(Vector3.forward));
-        }
+        Attack();
 
         _animator.SetBool("IsMoving", isMoving);
+    }
+
+    private void FixedUpdate()
+    {
+        foreach (ProjectileWeapon weapon in _abilities.ProjectileWeapons)
+        {
+            weapon.OnFixedUpdate();
+        }
     }
 
     public override void Move(Vector3 direction)
@@ -62,19 +65,20 @@ public class Player : CharacterBase
         Vector3 pos = transform.position;
 
         transform.LookAt(pos + direction);
-        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity, _stats.Velocity * Time.fixedDeltaTime);
+        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
     }
 
-    public override void Attack()
+    protected override void Attack()
     {
         foreach(Weapon weapon in _abilities.Weapons)
         {
+            weapon.OnUpdate();
             weapon.Attack();
         }
     }
 
     /// <summary>
-    /// Upgrade player stats and all weapons he has
+    /// Upgrade player stats and all abilities he has
     /// </summary>
     /// <param name="upgrade"></param>
     public override void GetUpgrade(Upgrade upgrade)

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -7,6 +6,8 @@ public class ZombieSpawner : MonoBehaviour
 {
     [SerializeField] private List<Zombie> zombies = new List<Zombie>();
     [Inject] private Zombie.Factory factory;
+
+    [Inject] public LevelBuilder levelBuilder;
 
     [SerializeField] HordeBreakpoint hordeBreakpoint;
 
@@ -26,7 +27,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private void Update()
     {
-        if(levelProgress.ReturnValue() > hordeBreakpoint.RequiredProgress && spawned == false)
+        if(levelProgress.Value > hordeBreakpoint.RequiredProgress && spawned == false)
         {
             spawnHorde.SetZombie(zombies[Random.Range(0, zombies.Count)]);
             EventBus.Publish<IStartHorde>(handler => handler.OnHordeSpawn());
@@ -41,7 +42,7 @@ public class ZombieSpawner : MonoBehaviour
             //Instantiate(zombies[Random.Range(0, zombies.Count)], new Vector3(0, 5, 0), Quaternion.identity, transform);
             var zombie = pool.Pull();
             zombie.Initialize(pool);
-            zombie.gameObject.transform.position = transform.position;
+            zombie.gameObject.transform.position = new Vector3(0, levelBuilder.GridHeight + 1f, 0);
         }
 
 

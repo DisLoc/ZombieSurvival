@@ -44,11 +44,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     {
         _menuGO.SetActive(true);
 
-        int i = 0; // test
-
         foreach (AbilityUI ability in _abilitiesUI)
         {
-            ability.SetAbility(GetRandomAbility(i++));
+            ability.SetAbility(GetRandomAbility());
         }
     }
 
@@ -58,12 +56,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     /// <returns>Return random ability based on abilities that player getted</returns>
     private AbilityContainer GetRandomAbility()
     {
-        return _abilities[0];
-    }
-    
-    private AbilityContainer GetRandomAbility(int index) // test
-    {
-        return _abilities[index];
+        return _abilities[Random.Range(0, _abilities.Count)];
     }
 
     /// <summary>

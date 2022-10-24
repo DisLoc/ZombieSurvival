@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Crit rate upgrade data
   m_EditorClassIdentifier: 
   _upgradingStatMarker: {fileID: 11400000, guid: cbee7ac601bf1fc49a6c9e90b19f0bbc, type: 2}
-  _upgradeValue: 0
-  _upgradeMultiplier: 1.05
+  _upgradeValue: 0.05
+  _upgradeMultiplier: 1
