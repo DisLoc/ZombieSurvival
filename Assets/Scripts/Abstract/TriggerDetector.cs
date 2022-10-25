@@ -10,9 +10,19 @@ public abstract class TriggerDetector : MonoBehaviour
     [SerializeField] protected SphereCollider _collider;
     [SerializeField] protected Tags _triggerTag;
 
-    public virtual void Initialize()
+    protected Radius _radius;
+
+    public virtual void Initialize(Radius raduis)
     {
         _collider.isTrigger = true;
+
+        _radius = raduis;
+        UpdateRadius();
+    }
+
+    public virtual void UpdateRadius()
+    {
+        _collider.radius = _radius.Value;
     }
 
     protected virtual void OnTriggerEnter(Collider other)

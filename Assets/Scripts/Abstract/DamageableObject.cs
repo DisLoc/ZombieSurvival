@@ -5,7 +5,7 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
-    [Header("Settings")]
+    [Header("Health settings")]
     [Tooltip("Field can be null if needed")]
     [SerializeField] protected HPBar _healthBar;
     [Tooltip("If object is immortal it takes damage but cant die")]

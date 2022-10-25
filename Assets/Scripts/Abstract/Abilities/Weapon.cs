@@ -18,7 +18,7 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
         _isReady = true;
 
-        _targetDetector.Initialize();
+        _targetDetector.Initialize((Stats as WeaponAbilityStats).AttackRange);
     }
 
     /// <summary>
@@ -43,6 +43,15 @@ public abstract class Weapon : AbilityContainer, IUpdatable
             _isReady = true;
         } 
 
+    }
+
+    public override bool Upgrade(Upgrade upgrade)
+    {
+        bool isLevelUp = base.Upgrade(upgrade);
+
+        _targetDetector.UpdateRadius();
+
+        return isLevelUp;
     }
 
     public virtual void UpgradeToSuper(Weapon super)
