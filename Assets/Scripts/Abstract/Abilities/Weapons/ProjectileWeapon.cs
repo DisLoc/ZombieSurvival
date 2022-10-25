@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 {
+    [Header("Projectile settings")]
+    [SerializeField] protected float _scatterMultiplier;
     [SerializeField] protected ProjectileAbilityStats _stats;
 
     protected MonoPool<Projectile> _pool;

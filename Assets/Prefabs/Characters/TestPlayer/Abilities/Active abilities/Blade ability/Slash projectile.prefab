@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8162076670152734965}
+  - component: {fileID: 3238057420645593580}
+  - component: {fileID: -9048139581476611238}
   - component: {fileID: 8162076670152734966}
   m_Layer: 0
   m_Name: Slash projectile
@@ -26,13 +28,35 @@ Transform:
   m_GameObject: {fileID: 8162076670152734967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 150, z: 110}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2757266653047282824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3238057420645593580
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162076670152734967}
+  m_Mesh: {fileID: 6099800089077584851, guid: 4f0791d37023ed041a4af535fe071278, type: 3}
+--- !u!64 &-9048139581476611238
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162076670152734967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6099800089077584851, guid: 4f0791d37023ed041a4af535fe071278, type: 3}
 --- !u!114 &8162076670152734966
 MonoBehaviour:
   m_ObjectHideFlags: 0

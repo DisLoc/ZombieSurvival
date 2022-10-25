@@ -2,9 +2,6 @@ using UnityEngine;
 
 public sealed class PlayerGun : ProjectileWeapon
 {
-    [Header("Projectile settings")]
-    [SerializeField] private float _scatterMultiplier;
-
     protected override Vector3 GetProjectileMoveDirection()
     {
         return _targetDetector.GetDirectionToNearestTarget() + GetDeltaMoveDirection();

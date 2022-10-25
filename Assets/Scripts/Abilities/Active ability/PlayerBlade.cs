@@ -2,9 +2,6 @@ using UnityEngine;
 
 public sealed class PlayerBlade : ProjectileWeapon
 {
-    [Header("Projectile settings")]
-    [SerializeField] private float _scatterMultiplier;
-
     protected override Vector3 GetProjectileMoveDirection()
     {
         return transform.TransformDirection(Vector3.forward) + GetDeltaMoveDirection();

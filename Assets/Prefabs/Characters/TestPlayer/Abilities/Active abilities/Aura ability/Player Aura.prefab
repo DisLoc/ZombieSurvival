@@ -49,7 +49,7 @@ MonoBehaviour:
   _name: Aura
   _inventoryIcon: {fileID: 0}
   _upgradeIcon: {fileID: 0}
-  _targetDetector: {fileID: 0}
+  _targetDetector: {fileID: 3934090384101506498}
   _abilityUpgradeData: {fileID: 11400000, guid: 91e89e03209f8e145a410e5dec99dacd, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: e17e5c7e039fafb478a759122d5d0968, type: 2}
