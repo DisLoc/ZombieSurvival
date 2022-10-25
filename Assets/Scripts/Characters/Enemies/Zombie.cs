@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class Zombie : CharacterBase, IPoolable
+public class Zombie : CharacterBase, IPoolable, IUpdatable
 {
     [SerializeField] protected CharacterStats _stats;
 
@@ -15,26 +15,19 @@ public class Zombie : CharacterBase, IPoolable
 
     void Start()
     {
-        // player automatically injected 
-        //_player = GameObject.FindGameObjectWithTag("Player").gameObject.transform; (not needed)
-
-
-        // they have collider and projectile weapons
-        // or make ZombieBossStats : CharacterStats
-        // and add more weapons instead of ability inventory
-
-       
-    }
-
-    // Need initialize every time when spawn
-    public void Initialize(FactoryMonoPool<Zombie, Factory> pool)
-    {
-        _pool = pool;
-
         _stats.Initialize();
         _healthBar.Initialize(_stats.Health);
 
         _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
+    }
+
+    /// <summary>
+    /// Need initialization every time when pull object
+    /// </summary>
+    /// <param name="pool"></param>
+    public void Initialize(FactoryMonoPool<Zombie, Factory> pool)
+    {
+        _pool = pool;
     }
 
     public void ResetObject()
@@ -42,9 +35,27 @@ public class Zombie : CharacterBase, IPoolable
         _pool = null;
     }
 
+    //test
     void Update()
     {
-        Move(new Vector3(0, 0, 0));
+        OnUpdate();
+    }
+
+    void FixedUpdate()
+    {
+        OnFixedUpdate();
+    }
+
+    public void OnUpdate()
+    {
+        Attack();
+    }
+
+    public override void OnFixedUpdate()
+    {
+        base.OnFixedUpdate();
+
+        Move(_player.transform.position - transform.position);
     }
 
     public override void Die()
@@ -53,20 +64,20 @@ public class Zombie : CharacterBase, IPoolable
 
         EventBus.Publish<IEnemyKilledHandler>(handler => handler.OnEnemyKilled(this));
 
-        // not needed destroy with pool
-        //Destroy(gameObject);
-
         _pool.Release(this);
     }
 
     public override void Move(Vector3 direction)
     {
-        transform.position = Vector3.MoveTowards(transform.position,  _player.transform.position, _stats.Velocity.Value * Time.deltaTime);
-        transform.LookAt(_player.transform);
+        Vector3 pos = transform.position;
+
+        transform.LookAt(new Vector3(pos.x + direction.x, transform.position.y, pos.z + direction.z));
+        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
     }
 
     protected override void Attack()
     {
+        _stats.BaseWeapon.OnUpdate();
         _stats.BaseWeapon.Attack();
     }
 

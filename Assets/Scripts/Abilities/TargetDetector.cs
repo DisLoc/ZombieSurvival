@@ -4,6 +4,7 @@ using UnityEngine;
 public class TargetDetector : TriggerDetector
 {
     private List<GameObject> _targets;
+    private const float MAX_DELTA_POS = 1f;
 
     /// <summary>
     /// Detected objects
@@ -50,7 +51,11 @@ public class TargetDetector : TriggerDetector
     /// </summary>
     protected void Cleanup()
     {
-        _targets.RemoveAll(item => item == null || item.activeSelf == false);
+        _targets.RemoveAll(item =>
+                            item == null ||
+                            item.activeSelf == false ||
+                            (item.transform.position - transform.position).magnitude > _radius.Value + MAX_DELTA_POS
+                          );
     }
 
 

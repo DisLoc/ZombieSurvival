@@ -56,6 +56,8 @@ public class Player : CharacterBase
 
     private void FixedUpdate()
     {
+        OnFixedUpdate();
+
         foreach (ProjectileWeapon weapon in _abilities.ProjectileWeapons)
         {
             weapon.OnFixedUpdate();
