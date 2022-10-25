@@ -3,28 +3,26 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterStats : IObjectStats
 {
-    [SerializeField] protected Weapon _weapon;
-    [SerializeField] protected HealthPoint _healthPoints;
+    [SerializeField] protected Weapon _baseWeapon;
+    [SerializeField] protected Health _health;
     [SerializeField] protected MoveSpeed _velocity;
     [SerializeField] protected Regeneration _regeneration;
 
-    public HealthPoint HP => _healthPoints;
-    public Weapon Weapon => _weapon;
-    public float Velocity => _velocity.Value;
-    public float Regeneration => _regeneration.Value;
+    public Weapon BaseWeapon => _baseWeapon;
+    public Health Health => _health;
+    public MoveSpeed Velocity => _velocity;
+    public Regeneration Regeneration => _regeneration;
 
     public virtual void Initialize()
     {
-        _weapon.Initialize();
-        _healthPoints.Initialize();
+        _health.Initialize();
         _velocity.Initialize();
         _regeneration.Initialize();
     }
 
     public virtual void GetUpgrade(Upgrade upgrade)
     {
-        //_weapon.Ability.Upgrade(upgrade);
-        _healthPoints.Upgrade(upgrade);
+        _health.Upgrade(upgrade);
         _velocity.Upgrade(upgrade);
         _regeneration.Upgrade(upgrade);
     }

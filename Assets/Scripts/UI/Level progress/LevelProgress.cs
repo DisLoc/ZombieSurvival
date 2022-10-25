@@ -5,7 +5,9 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     [SerializeField][Range(1, 100)] private int _progressPerMinute = 5;
     [SerializeField][Range(1, 1000)] private int _enemiesForProgress = 75;
     [Tooltip("Additional progress each X enemies")]
-    [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1; 
+    [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1;
+
+    public float Value => _value;
 
     private int _killed;
 
@@ -69,6 +71,8 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         if (_isDebug) Debug.Log("Update progress bar");
 
         base.UpdateBar();
+
+       // EventBus.Publish<IStartHorde>(handler => handler.OnHordeSpawn());
         
         if (_value >= _maxFillValue)
         {

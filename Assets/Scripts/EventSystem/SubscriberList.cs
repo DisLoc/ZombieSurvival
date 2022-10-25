@@ -1,62 +1,32 @@
 using System;
 using System.Collections.Generic;
 
-public class SubscriberList
+public class SubscriberList<TSubscriber> : CleanupableList<TSubscriber> where TSubscriber : class, ISubscriber
 {
-    List<ISubscriber> _subscribers;
+    public SubscriberList() : base() { }
 
-    bool _needCleanup;
-
-    public SubscriberList()
+    /// <summary>
+    /// Add new subscriber
+    /// </summary>
+    /// <param name="subscriber">Subscriber need to add</param>
+    public override void Add(TSubscriber item)
     {
-        _subscribers = new List<ISubscriber>();
-        _needCleanup = false;
+        if (_list.Contains(item)) return;
+
+        _list.Add(item);
     }
 
-    public void Add(ISubscriber subscriber)
-    {
-        if (_subscribers.Contains(subscriber)) return;
-        
-        _subscribers.Add(subscriber);
-    }
 
-    public bool Remove(ISubscriber subscriber, bool onPublish)
+    /// <summary>
+    /// Raising event for all subscribers
+    /// </summary>
+    /// <typeparam name="TSubscriber">Event interface</typeparam>
+    /// <param name="action">Action lambda</param>
+    public void RaiseEvent<TSub>(Action<TSub> action) where TSub : ISubscriber
     {
-        if (_subscribers.Contains(subscriber))
+        foreach(ISubscriber subscriber in _list)
         {
-            if (onPublish)
-            {
-                _needCleanup = true;
-                _subscribers[_subscribers.IndexOf(subscriber)] = null;
-                return true;
-            }
-            else
-            {
-                return _subscribers.Remove(subscriber);
-            }
+            action.Invoke((TSub)subscriber);
         }
-        else
-        {
-            return false;
-        }
-    }
-
-    public void RaiseEvent<TSubscriber>(Action<TSubscriber> action) where TSubscriber : ISubscriber
-    {
-        foreach(ISubscriber subscriber in _subscribers)
-        {
-            action.Invoke((TSubscriber)subscriber);
-        }
-    }
-
-    public void Cleanup()
-    {
-        if (_needCleanup)
-        {
-            _subscribers.RemoveAll(sub => sub == null);
-            _needCleanup = false;
-        }
-
-        else return;
     }
 }

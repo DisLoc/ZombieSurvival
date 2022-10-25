@@ -8,11 +8,12 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
-    public GroundGrid groundGrid;
+    public GroundGrid groundGrid; // test
 
     [Header("Generation settings")]
     [Tooltip("Level height in y axis")]
     [SerializeField] private float _gridHeight;
+    [Tooltip("Distance from player for level following")]
     [SerializeField] private int _visionRange;
 
     public float GridHeight => _gridHeight;
@@ -21,22 +22,28 @@ public class LevelBuilder : MonoBehaviour
     private GroundGrid _groundGrid;
     private int _maxDeltaIndex;
 
+    /// <summary>
+    /// Existing cells on scene
+    /// </summary>
     private Dictionary<Vector2, Cell> _cells;
+    /// <summary>
+    /// Extreme index of grid
+    /// </summary>
     private int _maxX, _minX, _maxZ, _minZ;
 
     [ContextMenu("Init")]
-    public void Init()
+    public void Initialize()
     {
         _grid = new GridXZ(groundGrid, this);
         _cells = new Dictionary<Vector2, Cell>();
         _groundGrid = groundGrid;
 
-        _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxDeltaIndex = Mathf.RoundToInt((float)_visionRange / _groundGrid.CellSize);
         _maxX = _maxZ = _minX = _minZ = 0;
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
-        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        Cell cell = GetCell(0, 0, pos); // create only ZeroCell
         cell.Initialize(0, 0, _grid);
 
         _cells.Add(new Vector2(0, 0), cell);
@@ -51,12 +58,12 @@ public class LevelBuilder : MonoBehaviour
         _cells = new Dictionary<Vector2, Cell>();
         _groundGrid = groundGrid;
 
-        _maxDeltaIndex = _visionRange / _groundGrid.CellSize;
+        _maxDeltaIndex = Mathf.RoundToInt((float)_visionRange / _groundGrid.CellSize);
         _maxX = _maxZ = _minX = _minZ = 0;
 
         Vector3 pos = new Vector3(0, _gridHeight, 0);
 
-        Cell cell = Instantiate(_grid.GetCell(0, 0), pos, Quaternion.identity, transform);
+        Cell cell = GetCell(0, 0, pos);
         cell.Initialize(0, 0, _grid);
 
         _cells.Add(new Vector2(0, 0), cell);
@@ -64,6 +71,10 @@ public class LevelBuilder : MonoBehaviour
         UpdateGrid(cell);
     }
 
+    /// <summary>
+    /// Move level following the player
+    /// </summary>
+    /// <param name="enterCell">Cell that player enter</param>
     public void UpdateGrid(Cell enterCell)
     {
         if (_isDebug) Debug.Log("Update grid");
@@ -71,6 +82,7 @@ public class LevelBuilder : MonoBehaviour
         int maxX = enterCell.X + _maxDeltaIndex, minX = enterCell.X - _maxDeltaIndex;
         int maxZ = enterCell.Z + _maxDeltaIndex, minZ = enterCell.Z - _maxDeltaIndex;
 
+        // calculate new extreme indexes
         if (minX < _minX) _minX = minX;
         if (maxX > _maxX) _maxX = maxX;
         if (minZ < _minZ) _minZ = minZ;
@@ -80,8 +92,10 @@ public class LevelBuilder : MonoBehaviour
         {
             for (int j = _minZ; j <= _maxZ; j++)
             {
+                // current cell index
                 Vector2 index = new Vector2(i, j);
 
+                // current cell position
                 Vector3 pos = new Vector3
                         (
                             groundGrid.CellSize * i * 2,
@@ -91,13 +105,16 @@ public class LevelBuilder : MonoBehaviour
 
                 if (index.x < minX || index.x > maxX || index.y < minZ || index.y > maxZ)
                 {
+                    // level always must be a square (including disabled cells)
+
                     if (_cells.ContainsKey(index))
                     {
                         _cells[index].gameObject.SetActive(false);
                     }
                     else
                     {
-                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        Cell cell = GetCell(i, j, pos); 
+
                         cell.Initialize(i, j, _grid);
                         cell.gameObject.SetActive(false);
 
@@ -106,13 +123,15 @@ public class LevelBuilder : MonoBehaviour
                 }
                 else
                 {
+                    // level always must be a square (including enabled cells)
+
                     if (_cells.ContainsKey(index))
                     {
                         _cells[index].gameObject.SetActive(true);
                     }
                     else
                     {
-                        Cell cell = Instantiate(_grid.GetCell(i, j), pos, Quaternion.identity, transform);
+                        Cell cell = GetCell(i, j, pos);
                         cell.Initialize(i, j, _grid);
 
                         _cells.Add(index, cell);
@@ -120,5 +139,20 @@ public class LevelBuilder : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Get cell from matrix and add to scene
+    /// </summary>
+    /// <param name="xIndex">X index in grid</param>
+    /// <param name="zIndex">Z index in grid</param>
+    /// <param name="pos">Position need to place this cell</param>
+    /// <returns>Return placed cell</returns>
+    private Cell GetCell(int xIndex, int zIndex, Vector3 pos)
+    {
+        Cell cell = _grid.GetCell(xIndex, zIndex);
+        cell = Instantiate(cell, pos, cell.RotationQuaternion, transform);
+
+        return cell;
     }
 }

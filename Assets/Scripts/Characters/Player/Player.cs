@@ -1,42 +1,66 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public sealed class Player : CharacterBase
+public class Player : CharacterBase
 {
-    [SerializeField] private PlayerStats _stats;
-    [SerializeField] private ExpLevel _expLevel;
-    [SerializeField] private ObjectCatcher _catcher;
+    [Header("Colliders")]
+    [SerializeField] protected ObjectCatcher _catcher;
+    [Tooltip("Self collider")]
+    [SerializeField] protected CapsuleCollider _collider;
+    
+    [Header("Stats settings")]
+    [SerializeField] protected PlayerStats _stats;
 
-    private AbilityInventory _abilities;
-    private List<Upgrade> _upgrades;
+    [Header("Animations settings")]
+    [SerializeField] protected Animator _animator;
+    /// <summary>
+    /// Current animation bool
+    /// </summary>
+    [HideInInspector] public bool isMoving;
+
+    [Header("Ability inventory settings")]
+    [SerializeField] protected AbilityInventory _abilities;
+
+    protected List<Upgrade> _upgrades;
+
+    [Inject] protected LevelBuilder _levelBuilder;
 
     public override CharacterStats Stats => _stats;
-
-    [Header("Test")]
-    public KeyCode shootKey;
-    public Projectile projectile;
-    private MonoPool<Projectile> _pool;
+    /// <summary>
+    /// All abilities player getted in game
+    /// </summary>
+    public List<AbilityContainer> Abilities => _abilities.Abilities;
 
     public void Initialize()
     {
+        transform.position = new Vector3(0, _levelBuilder.GridHeight + _collider.height * 0.5f, 0);
+
         _stats.Initialize();
 
+        _healthBar.Initialize(_stats.Health);
         _catcher.Initialize(_stats.PickUpRange);
-        _healthBar.Initialize(_stats.HP);
+        _abilities.Initialize();
 
-        _pool = new MonoPool<Projectile>(projectile, 10);
-        _abilities = new AbilityInventory(transform);
+        _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
     }
 
     private void Update() // test
     {
-        if (Input.GetKeyDown(shootKey))
-        {
-            Projectile p = _pool.Pull();
-            p.transform.position = transform.position;
+        Attack();
 
-            p.Initialize(_pool, 5f, 5f, 100);
-            p.Throw(transform.TransformDirection(Vector3.forward));
+        _animator.SetBool("IsMoving", isMoving);
+    }
+
+    private void FixedUpdate()
+    {
+        OnFixedUpdate();
+
+        foreach (ProjectileWeapon weapon in _abilities.ProjectileWeapons)
+        {
+            weapon.OnFixedUpdate();
         }
     }
 
@@ -45,47 +69,81 @@ public sealed class Player : CharacterBase
         Vector3 pos = transform.position;
 
         transform.LookAt(pos + direction);
-        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity, _stats.Velocity * Time.fixedDeltaTime);
+        transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
     }
 
-    public override void Attack()
+    protected override void Attack()
     {
-        _stats.Weapon.Attack();
-
         foreach(Weapon weapon in _abilities.Weapons)
         {
+            weapon.OnUpdate();
             weapon.Attack();
         }
     }
 
+    /// <summary>
+    /// Upgrade player stats and all abilities he has
+    /// </summary>
+    /// <param name="upgrade"></param>
     public override void GetUpgrade(Upgrade upgrade)
     {
+        base.GetUpgrade(upgrade);
+
         _upgrades.Add(upgrade);
 
-        _stats.GetUpgrade(upgrade);
+        _catcher.UpdateRadius();
 
-        /*
-        foreach(AbilityData ability in _abilities.Abilities)
+        for (int index = 0; index < _abilities.Abilities.Count; index++)
         {
-            ability.Upgrade(upgrade);
+            _abilities.Abilities[index].Upgrade(upgrade);
         }
-        */
     }
 
+    /// <summary>
+    /// Get new ability or upgrade existing
+    /// </summary>
+    /// <param name="ability"></param>
     public void GetAbility(AbilityContainer ability)
     {
-        /*
-        if (!_abilities.Abilities.Contains(ability))
+        AbilityContainer abilityContainer = _abilities.Find(ability);
+
+        if (abilityContainer != null)
         {
-            foreach (Upgrade upgrade in _upgrades)
+            if (abilityContainer.IsMaxLevel)
             {
-                ability.Upgrade(upgrade);
+                if (_isDebug) Debug.Log("This ability is max level!");
+
+                return;
             }
 
-            _abilities.Add(ability);
-        }
+            if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
 
-        GetUpgrade(ability.CurrentUpgrade.Upgrade);
-        */
+            if (abilityContainer as PassiveAbility != null)
+            {
+                GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (abilityContainer as Weapon != null)
+            {
+                abilityContainer.Upgrade(abilityContainer.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Missing ability!");
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Add new ability");
+
+            AbilityContainer newAbility = _abilities.Add(ability);
+
+            if (newAbility != null)
+            {
+                foreach (Upgrade upgrade in _upgrades)
+                {
+                    newAbility.Upgrade(upgrade);
+                }
+
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
+            }
+            else if (_isDebug) Debug.Log("Adding ability error!");
+        }
     }
 }

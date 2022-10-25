@@ -6,12 +6,22 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     protected TObject _prefab;
     protected Transform _parent;
 
-    public MonoPool(TObject prefab, int capacity)
+    public MonoPool(TObject prefab, int capacity, Transform poolParent = null)
     {
         _prefab = prefab;
         _parent = new GameObject(prefab.name + " pool").transform;
 
+        if (poolParent != null)
+        {
+            _parent.transform.parent = poolParent;
+        }
+
         _objects = new List<TObject>(capacity);
+
+        for (int i = 0; i < capacity; i++)
+        {
+            CreateObject();
+        }
     }
 
     protected override void CreateObject()
@@ -39,6 +49,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         return obj;
     }
 
+    public TObject PullDisabled()
+    {
+        return base.Pull();
+    }
+
     public override List<TObject> PullObjects(int count)
     {
         List<TObject> objects = base.PullObjects(count);
@@ -49,6 +64,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         }
 
         return objects;
+    }
+
+    public List<TObject> PullObjectsDisabled(int count)
+    {
+        return base.PullObjects(count);
     }
 
     public override void ClearPool()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2817904043961400773}
   - component: {fileID: 2817904043961400772}
   - component: {fileID: 2817904043961400771}
-  - component: {fileID: 2817904043961400770}
+  - component: {fileID: 2281845291444769187}
   - component: {fileID: 2817904043961400775}
   - component: {fileID: 5512361925152601609}
   m_Layer: 0
@@ -96,14 +96,14 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817904043961400769}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fa77ba82c72223f499c6b7a021b6cd0e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2817904043961400770
+--- !u!54 &2281845291444769187
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,14 +111,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817904043961400769}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2817904043961400775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,19 +133,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _healthBar: {fileID: 1478002839978605878}
+  _isImmortal: 0
   _stats:
-    _weapon: {fileID: 5512361925152601609}
-    _healthPoints:
+    _baseWeapon: {fileID: 5512361925152601609}
+    _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: db3ef8f3aac09d9449477a1be677e226, type: 2}
+      _maxHP:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 49284dcdfc870fd45aabf6261005aee3, type: 2}
     _velocity:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: ff33887a9236b2c4a9be4d310c73cd67, type: 2}
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 19be71896351ec24ba6a2f8d251fe21b, type: 2}
-  _enemiesList: {fileID: 0}
-  crystal: {fileID: 7472448845819442868, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
 --- !u!114 &5512361925152601609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,10 +157,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2817904043961400769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 427a8a2d1321f9d49ad15018599b89e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e3ab3279ca16a84f96a5f1d068fef79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _name: Zombie collider
+  _inventoryIcon: {fileID: 0}
+  _upgradeIcon: {fileID: 0}
   _targetDetector: {fileID: 1577825861537638417}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
   _stats:
@@ -170,13 +175,19 @@ MonoBehaviour:
       _maxValueIsInfinite: 1
     _damage:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 879dd7bf1558cc84f841a3e86436e223, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: beeef6869f33e3449a344190e84018dd, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: f050634d129aa6341b3febea2d212122, type: 2}
     _attackInterval:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 54c551ae1d62b514c9ed825b0e81e3f0, type: 2}
     _attackRange:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: e3902d031a6d5e94c8a1d07a08ba9527, type: 2}
 --- !u!1 &4706998651521119472
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +232,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.51
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1577825861537638417
 MonoBehaviour:
@@ -235,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _collider: {fileID: 8632883831247114022}
   _triggerTag: 0
 --- !u!1 &8513920188493465561
@@ -349,6 +360,14 @@ PrefabInstance:
     - target: {fileID: 2290593030402000469, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488003003791003135, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488003003791003135, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3134178944655273856, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
       propertyPath: m_Interactable

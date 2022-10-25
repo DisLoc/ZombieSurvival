@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Expirience/Crystal stats", fileName = "New crystal stats")]
+[CreateAssetMenu(menuName = "ZombieSurvival/Expirience/Crystal stats", fileName = "New crystal stats")]
 public class CrystalStats : ScriptableObject
 {
     [Header("Settings")]
@@ -10,14 +10,4 @@ public class CrystalStats : ScriptableObject
 
     public ExpCrystal CrystalPrefab => _crystalPrefab;
     public List<CrystalParam> CrystalParams => _crystalParams;
-}
-
-[System.Serializable]
-public class CrystalParam
-{
-    [SerializeField] private int _expValue;
-    [SerializeField] private Color _color;
-
-    public int ExpValue => _expValue;
-    public Color Color => _color;
 }

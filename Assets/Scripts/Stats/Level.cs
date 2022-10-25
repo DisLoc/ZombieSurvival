@@ -16,6 +16,11 @@ public class Level : IStat
     public float MaxValue => _maxValue;
     public bool MaxValueIsInfinite => _maxValueIsInfinite;
 
+    public void Initialize()
+    {
+        _level = _baseValue;
+    }
+
     public void SetValue(float value = 1)
     {
         _level = (int)value;
@@ -27,6 +32,9 @@ public class Level : IStat
             _level = _minValue;
     }
 
+    /// <summary>
+    /// Add one level
+    /// </summary>
     public void LevelUp()
     {
         if (_maxValueIsInfinite || _level < _maxValue)

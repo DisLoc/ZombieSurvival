@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
+  m_Name: Radius ability upgrade data
+  m_EditorClassIdentifier: 
+  _name: AttackRange
+  _inventoryIcon: {fileID: 0}
+  _upgradeIcon: {fileID: 0}
+  _repeatingUpgrade:
+    _description: +10% attack range
+    _upgrade: {fileID: 11400000, guid: ae63a110395fb884dbb80ca896d70351, type: 2}
+    _requiredLevel: 0

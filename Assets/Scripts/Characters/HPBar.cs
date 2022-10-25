@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class HPBar : FillBar, IGameOverHandler
+public class HPBar : FillBar
 {
-    private HealthPoint _health;
+    private Health _health;
 
-    public void Initialize(HealthPoint health)
+    public void Initialize(Health health)
     {
-        _maxFillValue = (int)health.MaxValue;
+        _maxFillValue = health.MaxHP;
         _minFillValue = (int)health.MinValue;
         _value = _maxFillValue;
 
@@ -15,19 +15,10 @@ public class HPBar : FillBar, IGameOverHandler
         base.Initialize();
     }
 
-    protected void OnEnable()
-    {
-        EventBus.Subscribe(this);
-    }
-
-    private void OnDisable()
-    {
-        EventBus.Unsubscribe(this);
-    }
-
     public void UpdateHealth()
     {
         _value = (int)_health.Value;
+        _maxFillValue = _health.MaxHP;
 
         UpdateBar();
     }
