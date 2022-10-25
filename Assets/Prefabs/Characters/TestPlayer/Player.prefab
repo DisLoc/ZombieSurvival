@@ -253,6 +253,8 @@ MonoBehaviour:
   _isDebug: 0
   _healthBar: {fileID: 6053825508757198442}
   _isImmortal: 0
+  _catcher: {fileID: 4806763617484522634}
+  _collider: {fileID: 8953109175079049454}
   _stats:
     _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
     _health:
@@ -276,21 +278,17 @@ MonoBehaviour:
         _maxValue: 0
         _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
-      _baseExpForLevelUp: 1000
+      _baseExpForLevelUp: 100
       _levelMultiplier: 0.5
     _pickUpRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 231373b3ec40f5d44bb254f56008db8e, type: 2}
-  _catcher: {fileID: 4806763617484522634}
-  _collider: {fileID: 8953109175079049454}
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilities:
     _maxActiveAbilitiesCount: 5
     _maxPassiveAbilitiesCount: 5
     _abilitiesParent: {fileID: 4441788838641939132}
-  shootKey: 32
-  projectile: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
 --- !u!1001 &1091634638874702766
 PrefabInstance:
   m_ObjectHideFlags: 0

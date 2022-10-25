@@ -4,11 +4,13 @@ using Zenject;
 
 public class Player : CharacterBase
 {
-    [SerializeField] protected PlayerStats _stats;
+    [Header("Colliders")]
     [SerializeField] protected ObjectCatcher _catcher;
-
     [Tooltip("Self collider")]
     [SerializeField] protected CapsuleCollider _collider;
+    
+    [Header("Stats settings")]
+    [SerializeField] protected PlayerStats _stats;
 
     [Header("Animations settings")]
     [SerializeField] protected Animator _animator;
@@ -37,7 +39,7 @@ public class Player : CharacterBase
         _stats.Initialize();
 
         _healthBar.Initialize(_stats.Health);
-        _catcher.Initialize(_stats.PickUpRange.Value);
+        _catcher.Initialize(_stats.PickUpRange);
         _abilities.Initialize();
 
         _upgrades = new List<Upgrade>();
@@ -54,6 +56,8 @@ public class Player : CharacterBase
 
     private void FixedUpdate()
     {
+        OnFixedUpdate();
+
         foreach (ProjectileWeapon weapon in _abilities.ProjectileWeapons)
         {
             weapon.OnFixedUpdate();
@@ -86,6 +90,8 @@ public class Player : CharacterBase
         base.GetUpgrade(upgrade);
 
         _upgrades.Add(upgrade);
+
+        _catcher.UpdateRadius();
 
         for (int index = 0; index < _abilities.Abilities.Count; index++)
         {

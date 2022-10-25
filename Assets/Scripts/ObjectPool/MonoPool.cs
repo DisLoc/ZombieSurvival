@@ -49,6 +49,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         return obj;
     }
 
+    public TObject PullDisabled()
+    {
+        return base.Pull();
+    }
+
     public override List<TObject> PullObjects(int count)
     {
         List<TObject> objects = base.PullObjects(count);
@@ -59,6 +64,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         }
 
         return objects;
+    }
+
+    public List<TObject> PullObjectsDisabled(int count)
+    {
+        return base.PullObjects(count);
     }
 
     public override void ClearPool()

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 {
+    [Header("Projectile settings")]
+    [SerializeField] protected float _scatterMultiplier;
     [SerializeField] protected ProjectileAbilityStats _stats;
 
     protected MonoPool<Projectile> _pool;
@@ -82,11 +84,12 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
     protected virtual void SpawnProjectile()
     {
-        Projectile projectile = _pool.Pull();
-
+        Projectile projectile = _pool.PullDisabled();
+        
         projectile.transform.position = transform.position;
         projectile.Initialize(_pool, _stats.ProjectileLifeDuration, _stats.ProjectileSpeed, _stats.Damage, this);
         projectile.Throw(GetProjectileMoveDirection());
+        projectile.gameObject.SetActive(true);
 
         _spawnIntervalTimer = _stats.ProjectilesSpawnInterval.Value;
         _spawnCount++;
@@ -111,6 +114,8 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     public override bool Upgrade(Upgrade upgrade)
     {
         _stats.GetUpgrade(upgrade);
+
+        _targetDetector.UpdateRadius();
 
         return base.Upgrade(upgrade);
     }

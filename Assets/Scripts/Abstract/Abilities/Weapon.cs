@@ -18,7 +18,7 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
         _isReady = true;
 
-        _targetDetector.Initialize();
+        _targetDetector.Initialize((Stats as WeaponAbilityStats).AttackRange);
     }
 
     /// <summary>
