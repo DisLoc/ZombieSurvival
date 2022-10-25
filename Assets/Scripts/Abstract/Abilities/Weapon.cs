@@ -45,15 +45,6 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
     }
 
-    public override bool Upgrade(Upgrade upgrade)
-    {
-        bool isLevelUp = base.Upgrade(upgrade);
-
-        _targetDetector.UpdateRadius();
-
-        return isLevelUp;
-    }
-
     public virtual void UpgradeToSuper(Weapon super)
     {
 

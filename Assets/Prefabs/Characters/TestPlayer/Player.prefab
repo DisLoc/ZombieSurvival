@@ -253,6 +253,8 @@ MonoBehaviour:
   _isDebug: 0
   _healthBar: {fileID: 6053825508757198442}
   _isImmortal: 0
+  _catcher: {fileID: 4806763617484522634}
+  _collider: {fileID: 8953109175079049454}
   _stats:
     _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
     _health:
@@ -281,8 +283,6 @@ MonoBehaviour:
     _pickUpRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 231373b3ec40f5d44bb254f56008db8e, type: 2}
-  _catcher: {fileID: 4806763617484522634}
-  _collider: {fileID: 8953109175079049454}
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilities:

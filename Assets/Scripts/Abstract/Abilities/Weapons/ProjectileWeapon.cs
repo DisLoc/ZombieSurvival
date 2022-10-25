@@ -113,6 +113,8 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     {
         _stats.GetUpgrade(upgrade);
 
+        _targetDetector.UpdateRadius();
+
         return base.Upgrade(upgrade);
     }
 }

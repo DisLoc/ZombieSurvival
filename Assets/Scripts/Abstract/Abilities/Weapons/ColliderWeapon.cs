@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public abstract class ColliderWeapon : Weapon
 {
     [SerializeField] protected WeaponAbilityStats _stats;
