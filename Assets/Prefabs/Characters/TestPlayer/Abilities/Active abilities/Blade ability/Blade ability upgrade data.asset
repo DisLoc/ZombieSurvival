@@ -18,15 +18,15 @@ MonoBehaviour:
   - _description: New ability
     _upgrade: {fileID: 11400000, guid: c01d0d713a3107b4b859a44f5c751376, type: 2}
     _requiredLevel: 0
-  - _description: Increase projectile speed & damage
+  - _description: +1 projectile
     _upgrade: {fileID: 11400000, guid: d01a9f4175d67cd479424e025d2081e6, type: 2}
     _requiredLevel: 1
-  - _description: +1 projectile & increase projectile speed
+  - _description: +50% damage & +25% life duration
     _upgrade: {fileID: 11400000, guid: 634b46848a0a62a41bd1aa2a2e199418, type: 2}
     _requiredLevel: 2
-  - _description: Reduce attack interval  & +1 projectile
+  - _description: +1 projectile
     _upgrade: {fileID: 11400000, guid: abe0dc02c8ce4f44cbda6c05d43a8349, type: 2}
     _requiredLevel: 3
-  - _description: Reduce attack interval & increase damage
+  - _description: +50% damage & + 25% life duration
     _upgrade: {fileID: 11400000, guid: 087176a00a7fdb74db792a5d8ca0d962, type: 2}
     _requiredLevel: 4
