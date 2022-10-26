@@ -117,8 +117,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Constraints: 80
+  m_CollisionDetection: 3
 --- !u!114 &2817904043961400775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   _name: Zombie collider
   _inventoryIcon: {fileID: 0}
   _upgradeIcon: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 1577825861537638417}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
   _stats:

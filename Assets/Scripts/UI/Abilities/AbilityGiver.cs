@@ -18,13 +18,14 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     [SerializeField] private AbilitiesPerLevel _abilitiesPerLevel;
     [SerializeField] private AbilityChooseCount _abilityChooseCount;
 
-    private List<AbilityUI> _abilitiesUI;
-
     [Space(5)]
     [SerializeField] private AvailableAbilities _availableAbilities;
 
+
+    private List<AbilityUI> _abilitiesUI;
     private List<AbilityContainer> _abilities;
-    private int _levelUps = 0;
+    private int _levelUps;
+    private bool _onChoice;
 
     [Inject] private Player _player;
 
@@ -41,6 +42,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         InitializeAbilitiesUI();
 
         _menuGO.SetActive(false);
+
+        _levelUps = 0;
+        _onChoice = false;
     }
 
     private void OnDisable()
@@ -51,8 +55,13 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     public void OnPlayerLevelUp()
     {
         _levelUps += (int)_abilityChooseCount.Value;
+        
+        if (!_onChoice)
+        {
+            SetAbilities();
+        }
 
-        SetAbilities();
+        _onChoice = true;
     }
 
     /// <summary>
@@ -119,13 +128,13 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     {
         AbilityInventory playerInventory = _player.AbilityInventory;
 
-        foreach(AbilityContainer abilityContainer in playerInventory.Abilities)
+        foreach(AbilityContainer abilityContainer in playerInventory.Abilities) // add abilities that player have in inventory
         {
             if (!abilityContainer.IsMaxLevel) _abilities.Add(abilityContainer);
 
             else
             {
-                if (abilityContainer.IsMaxLevel && abilityContainer as Weapon != null)
+                if (abilityContainer.IsMaxLevel && abilityContainer as Weapon != null) // weapons at max level can upgrade to super
                 {
                     Weapon super = playerInventory.FindCombine(abilityContainer as Weapon);
 
@@ -143,21 +152,20 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         {
             AbilityContainer randomAbility;
 
-            if (_abilities.Count <= randomAbilities.Count)
+            if (_abilities.Count <= randomAbilities.Count) // add additional abilities (like more gold or heal)
             {
                 randomAbility = _availableAbilities.AdditionalAbilities[Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
             }
             else
             {
-                do
+                do 
                 {
                     randomAbility = _abilities[Random.Range(0, _abilities.Count)];
-                } while (randomAbilities.Contains(randomAbility));
+                } while (randomAbilities.Contains(randomAbility)); // get random ability without repeating
             }
 
             randomAbilities.Add(randomAbility);
         }
-
 
         return randomAbilities;
     }
@@ -179,6 +187,10 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         if (_levelUps > 0)
         {
             SetAbilities();
+        }
+        else
+        {
+            _onChoice = false;
         }
     }
 

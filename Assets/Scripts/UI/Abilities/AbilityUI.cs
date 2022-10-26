@@ -9,6 +9,7 @@ public class AbilityUI : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
+    [SerializeField] private Text _abilityName;
     [SerializeField] private Image _abilityIcon;
     [SerializeField] private RectTransform _abilityLevelParent;
     [SerializeField] private LevelUI _levelPrefab;
@@ -47,6 +48,7 @@ public class AbilityUI : MonoBehaviour
 
         _ability = ability;
 
+        _abilityName.text = _ability.Name;
         _abilityIcon.sprite = _ability.UpgradeIcon;
 
         if (_levels.Count > 0)
@@ -74,8 +76,7 @@ public class AbilityUI : MonoBehaviour
 
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
 
-        _combineText.gameObject.SetActive(false);
-        /*
+
         if (ability as PassiveAbility != null)
         {
             _combineText.gameObject.SetActive(true);
@@ -92,17 +93,27 @@ public class AbilityUI : MonoBehaviour
 
             foreach (CombineAbility combineAbility in (ability as PassiveAbility).CombinedAbilities)
             {
+                if (combineAbility.CombinedWeapon == null)
+                {
+                    if (_isDebug) Debug.Log("Missing combine!");
+
+                    return;
+                }
+
                 CombineAbilityUI combine = Instantiate(_combineAbilityPrefab, _combineAbilitiesParent);
 
-                combine.Initialize(combineAbility.CombinedWeapon.InventoryIcon);
+                if (combineAbility.CombinedWeapon.InventoryIcon != null)
+                {
+                    combine.Initialize(combineAbility.CombinedWeapon.InventoryIcon);
+                }
 
                 _combines.Add(combine);
             }
         }
         else
         {
-            
-        }*/
+            _combineText.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>

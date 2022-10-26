@@ -49,6 +49,7 @@ MonoBehaviour:
   _name: Blade
   _inventoryIcon: {fileID: 0}
   _upgradeIcon: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 87203292017648079, guid: 306d1bfc0d0a18041bda8f6c8506a3d3, type: 3}
   _targetDetector: {fileID: 7218241782557838940}
   _abilityUpgradeData: {fileID: 11400000, guid: d9443f27aad8a6046a059d29ca75e7ac, type: 2}
   _scatterMultiplier: 0.2
