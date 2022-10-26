@@ -11,7 +11,7 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
     public bool IsEmpty => _objects.Count == 0;
 
     /// <summary>
-    /// Create new object
+    /// Create and add to pool new object
     /// </summary>
     protected abstract void CreateObject();
 
