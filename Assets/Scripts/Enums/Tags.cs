@@ -2,5 +2,7 @@ public enum Tags
 {
     Player,
     Enemy,
-    PickableObject
+    PickableObject,
+    TargetDetector,
+    Weapon
 }
