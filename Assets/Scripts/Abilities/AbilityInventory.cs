@@ -115,4 +115,19 @@ public sealed class AbilityInventory
     {
         return _abilities.Find(item => item.Name == ability.Name);
     }
+
+    public Weapon FindCombine(Weapon weapon)
+    {
+        AbilityContainer ability = Find(weapon);
+
+        if (ability != null)
+        {
+            if (ability.IsMaxLevel && Find((ability as Weapon).RequiredAbilityToUpgradeToSuper) != null)
+            {
+                return (ability as Weapon).RequiredAbilityToUpgradeToSuper.FindCombine(ability as Weapon);
+            }
+            else return null;
+        }
+        else return null;
+    }
 }

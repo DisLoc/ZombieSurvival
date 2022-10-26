@@ -3,12 +3,16 @@ using UnityEngine;
 public abstract class Weapon : AbilityContainer, IUpdatable
 {
     [Header("Ability settings")]
+    [SerializeField] protected PassiveAbility _requiredAbilityToUpgradeToSuper;
     [SerializeField] protected TargetDetector _targetDetector;
     [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
 
     protected float _attackIntervalTimer;
     protected bool _isReady;
+    protected bool _isSuper;
 
+    public bool IsSuper => _isSuper;
+    public PassiveAbility RequiredAbilityToUpgradeToSuper => _requiredAbilityToUpgradeToSuper;
     public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
     public override CurrentUpgrade CurrentUpgrade => _abilityUpgradeData.Upgrades[(int)Stats.Level.Value];
 
@@ -47,6 +51,9 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
     public virtual void UpgradeToSuper(Weapon super)
     {
-
+        if (IsMaxLevel && super.CurrentUpgrade.Upgrade.Equals(CurrentUpgrade.Upgrade))
+        {
+            _isSuper = true;
+        }
     }
 }

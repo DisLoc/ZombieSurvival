@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _crystalDeltaYAxis: 0.1
   _crystalStats: {fileID: 11400000, guid: 473707120e735be488c2fc4d99531ca0, type: 2}
   _poolSize: 10
 --- !u!1 &607390655
@@ -456,7 +457,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &732430336
 GameObject:
@@ -591,7 +592,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -835,6 +836,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.04626465
       objectReference: {fileID: 0}
+    - target: {fileID: 8067071064196850642, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: _isDebug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8393804646509847491, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.04626465
@@ -876,16 +881,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._baseWeapon
-      value: 
-      objectReference: {fileID: 7494275413525525377, guid: 6f683db9e81f4ba46b85e11a1855c481, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._expLevel._expBar
       value: 
       objectReference: {fileID: 1310616645}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_LocalPosition.x

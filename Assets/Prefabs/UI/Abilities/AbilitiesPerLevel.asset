@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
-  m_Name: UpgradeData 3.2
+  m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
+  m_Name: AbilitiesPerLevel
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: a7686d67e0d3f7342a14eb33d86b47ee, type: 2}
-  _upgradeValue: 0
-  _upgradeMultiplier: 1.1
+  _baseValue: 3
+  _minValue: 1
+  _maxValue: 0
+  _maxValueIsInfinite: 1
+  _upgradeMarker: {fileID: 11400000, guid: d87d7b16a777c4a4f95f75dfcc111cc2, type: 2}

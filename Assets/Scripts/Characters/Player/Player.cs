@@ -20,7 +20,7 @@ public class Player : CharacterBase
     [HideInInspector] public bool isMoving;
 
     [Header("Ability inventory settings")]
-    [SerializeField] protected AbilityInventory _abilities;
+    [SerializeField] protected AbilityInventory _abilityInventory;
 
     protected List<Upgrade> _upgrades;
 
@@ -30,7 +30,8 @@ public class Player : CharacterBase
     /// <summary>
     /// All abilities player getted in game
     /// </summary>
-    public List<AbilityContainer> Abilities => _abilities.Abilities;
+    public List<AbilityContainer> Abilities => _abilityInventory.Abilities;
+    public AbilityInventory AbilityInventory => _abilityInventory;
 
     public void Initialize()
     {
@@ -40,7 +41,7 @@ public class Player : CharacterBase
 
         _healthBar.Initialize(_stats.Health);
         _catcher.Initialize(_stats.PickUpRange);
-        _abilities.Initialize();
+        _abilityInventory.Initialize();
 
         _upgrades = new List<Upgrade>();
 
@@ -58,7 +59,7 @@ public class Player : CharacterBase
     {
         OnFixedUpdate();
 
-        foreach (ProjectileWeapon weapon in _abilities.ProjectileWeapons)
+        foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
             weapon.OnFixedUpdate();
         }
@@ -74,7 +75,7 @@ public class Player : CharacterBase
 
     protected override void Attack()
     {
-        foreach(Weapon weapon in _abilities.Weapons)
+        foreach(Weapon weapon in _abilityInventory.Weapons)
         {
             weapon.OnUpdate();
             weapon.Attack();
@@ -93,9 +94,9 @@ public class Player : CharacterBase
 
         _catcher.UpdateRadius();
 
-        for (int index = 0; index < _abilities.Abilities.Count; index++)
+        for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
         {
-            _abilities.Abilities[index].Upgrade(upgrade);
+            _abilityInventory.Abilities[index].Upgrade(upgrade);
         }
     }
 
@@ -103,9 +104,10 @@ public class Player : CharacterBase
     /// Get new ability or upgrade existing
     /// </summary>
     /// <param name="ability"></param>
-    public void GetAbility(AbilityContainer ability)
+    /// <returns>Return added or upgraded ability</returns>
+    public AbilityContainer GetAbility(AbilityContainer ability)
     {
-        AbilityContainer abilityContainer = _abilities.Find(ability);
+        AbilityContainer abilityContainer = _abilityInventory.Find(ability);
 
         if (abilityContainer != null)
         {
@@ -113,7 +115,7 @@ public class Player : CharacterBase
             {
                 if (_isDebug) Debug.Log("This ability is max level!");
 
-                return;
+                return abilityContainer;
             }
 
             if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
@@ -127,12 +129,14 @@ public class Player : CharacterBase
                 abilityContainer.Upgrade(abilityContainer.CurrentUpgrade.Upgrade);
             }
             else if (_isDebug) Debug.Log("Missing ability!");
+
+            return abilityContainer;
         }
         else
         {
             if (_isDebug) Debug.Log("Add new ability");
 
-            AbilityContainer newAbility = _abilities.Add(ability);
+            AbilityContainer newAbility = _abilityInventory.Add(ability);
 
             if (newAbility != null)
             {
@@ -144,6 +148,8 @@ public class Player : CharacterBase
                 GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
             }
             else if (_isDebug) Debug.Log("Adding ability error!");
+
+            return newAbility;
         }
     }
 }

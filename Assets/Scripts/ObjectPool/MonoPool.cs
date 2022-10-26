@@ -49,6 +49,10 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         return obj;
     }
 
+    /// <summary>
+    /// Pull object without enabling
+    /// </summary>
+    /// <returns>Return last object of pool</returns>
     public TObject PullDisabled()
     {
         return base.Pull();
@@ -66,6 +70,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         return objects;
     }
 
+    /// <summary>
+    /// Pull X objects from pool without enabling
+    /// </summary>
+    /// <param name="count">Object count need to pull</param>
+    /// <returns>Return X last objects of pool</returns>
     public List<TObject> PullObjectsDisabled(int count)
     {
         return base.PullObjects(count);

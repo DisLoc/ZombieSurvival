@@ -110,8 +110,10 @@ MonoBehaviour:
   _name: Player gun
   _inventoryIcon: {fileID: 0}
   _upgradeIcon: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 1142227134379360519, guid: 81315c25cd2b06d4285a10d363f46bfb, type: 3}
   _targetDetector: {fileID: 8948671830434654073}
   _abilityUpgradeData: {fileID: 11400000, guid: bd3419453c51db74a92e4d3bbc84a152, type: 2}
+  _scatterMultiplier: 0.1
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
     _level:
@@ -154,4 +156,4 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 1909be1c8b8750146bc505209432e033, type: 2}
-  _scatterMultiplier: 0.1
+      _valueIsInfinite: 0

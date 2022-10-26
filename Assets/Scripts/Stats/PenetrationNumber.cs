@@ -1,6 +1,12 @@
+using UnityEngine;
+
 [System.Serializable]
 public class PenetrationNumber : Stat
 {
+    [SerializeField] protected bool _valueIsInfinite;
+
+    public bool ValueIsInfinite => _valueIsInfinite;
+
     public override bool Upgrade(Upgrade upgrade)
     {
         if (base.Upgrade(upgrade))

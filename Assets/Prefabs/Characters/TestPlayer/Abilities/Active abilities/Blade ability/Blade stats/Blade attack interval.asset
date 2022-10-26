@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: Blade attack interval
   m_EditorClassIdentifier: 
-  _baseValue: 3
+  _baseValue: 5
   _minValue: 0.1
   _maxValue: 5
-  _maxValueIsInfinite: 0
+  _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: f3c8f963f6c44cc4ca5ab968921a7da1, type: 2}

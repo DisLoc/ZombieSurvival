@@ -49,7 +49,7 @@ MonoBehaviour:
   _name: Aura
   _inventoryIcon: {fileID: 0}
   _upgradeIcon: {fileID: 0}
-  _targetDetector: {fileID: 3934090384101506498}
+  _targetDetector: {fileID: 6171383288110930489}
   _abilityUpgradeData: {fileID: 11400000, guid: 91e89e03209f8e145a410e5dec99dacd, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: e17e5c7e039fafb478a759122d5d0968, type: 2}
@@ -81,49 +81,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7978409642536597299}
     m_Modifications:
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.exit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.enter
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.inside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.primitives.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: TriggerModule.primitives.Array.data[0]
-      value: 
-      objectReference: {fileID: 5911952345267381724}
     - target: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,39 +131,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668312dde3490224281f136f30c1989e, type: 3}
---- !u!1 &3008528342277566736 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5403733156734047979, guid: 668312dde3490224281f136f30c1989e, type: 3}
-  m_PrefabInstance: {fileID: 7151041363239512059}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &5911952345267381724
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3008528342277566736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3934090384101506498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3008528342277566736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 5911952345267381724}
-  _triggerTag: 1
 --- !u!4 &3008528342277566829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5403733156734047894, guid: 668312dde3490224281f136f30c1989e, type: 3}
@@ -214,3 +141,14 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5403733156734047893, guid: 668312dde3490224281f136f30c1989e, type: 3}
   m_PrefabInstance: {fileID: 7151041363239512059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6171383288110930489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3934090384101506498, guid: 668312dde3490224281f136f30c1989e, type: 3}
+  m_PrefabInstance: {fileID: 7151041363239512059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
