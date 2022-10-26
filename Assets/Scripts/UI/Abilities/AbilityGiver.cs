@@ -119,7 +119,47 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     {
         AbilityInventory playerInventory = _player.AbilityInventory;
 
-        return _abilities.GetRange(0, count);
+        foreach(AbilityContainer abilityContainer in playerInventory.Abilities)
+        {
+            if (!abilityContainer.IsMaxLevel) _abilities.Add(abilityContainer);
+
+            else
+            {
+                if (abilityContainer.IsMaxLevel && abilityContainer as Weapon != null)
+                {
+                    Weapon super = playerInventory.FindCombine(abilityContainer as Weapon);
+
+                    if (super != null)
+                    {
+                        _abilities.Add(super);
+                    }
+                }
+            }
+        }
+
+        List<AbilityContainer> randomAbilities = new List<AbilityContainer>(count);
+
+        for (int currentCount = 0; currentCount < count; currentCount++)
+        {
+            AbilityContainer randomAbility;
+
+            if (_abilities.Count <= randomAbilities.Count)
+            {
+                randomAbility = _availableAbilities.AdditionalAbilities[Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+            }
+            else
+            {
+                do
+                {
+                    randomAbility = _abilities[Random.Range(0, _abilities.Count)];
+                } while (randomAbilities.Contains(randomAbility));
+            }
+
+            randomAbilities.Add(randomAbility);
+        }
+
+
+        return randomAbilities;
     }
 
     /// <summary>
