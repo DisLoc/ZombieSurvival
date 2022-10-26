@@ -6,10 +6,10 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
     [SerializeField] protected bool _isDebug;
 
     [Header("Health settings")]
-    [Tooltip("Field can be null if needed")]
-    [SerializeField] protected HPBar _healthBar;
     [Tooltip("If object is immortal it takes damage but cant die")]
     [SerializeField] protected bool _isImmortal;
+    [Tooltip("Field can be null if needed")]
+    [SerializeField] protected HPBar _healthBar;
 
     public bool IsImmortal => _isImmortal;
     /// <summary>

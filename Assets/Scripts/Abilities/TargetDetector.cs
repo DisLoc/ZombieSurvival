@@ -4,7 +4,6 @@ using UnityEngine;
 public class TargetDetector : TriggerDetector
 {
     private List<GameObject> _targets;
-    private const float MAX_DELTA_POS = 1f;
 
     /// <summary>
     /// Detected objects
@@ -49,9 +48,27 @@ public class TargetDetector : TriggerDetector
     /// <summary>
     /// Remove all missing objects
     /// </summary>
-    protected void Cleanup()
+    public void Cleanup()
     {
-        _targets.RemoveAll(item => item == null || item.activeSelf == false);
+        _targets.RemoveAll(item => item == null || item.activeSelf == false || (CheckDistance(item) == false));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    private bool CheckDistance(GameObject obj)
+    {
+        foreach(RaycastHit hit in Physics.RaycastAll(transform.position, obj.transform.position - transform.position, _collider.radius * transform.localScale.magnitude))
+        {
+            if (hit.collider.gameObject.Equals(obj))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 
