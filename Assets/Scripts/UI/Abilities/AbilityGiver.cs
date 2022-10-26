@@ -52,6 +52,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         EventBus.Unsubscribe(this);
     }
 
+    [ContextMenu("Get ability")]
     public void OnPlayerLevelUp()
     {
         _levelUps += (int)_abilityChooseCount.Value;
@@ -140,6 +141,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 
                     if (super != null)
                     {
+                        if (_isDebug) Debug.Log("Add super to pool: " + super.Name);
                         _abilities.Add(super);
                     }
                 }

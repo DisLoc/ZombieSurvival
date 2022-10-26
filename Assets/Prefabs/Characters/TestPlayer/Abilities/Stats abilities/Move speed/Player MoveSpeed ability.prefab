@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _name: Player MS
+  _name: Move speed
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 6dc978cdfba35644f9969dd8e68e6b8f, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: bdbbb8f9ac32c0943be813000391862b, type: 2}

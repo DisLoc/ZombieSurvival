@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: PickUpRange ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Pick up range
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +10% pick up range
+    _description: +50% pick up range
     _upgrade: {fileID: 11400000, guid: fcfb6e6a574f7f646b0346fe2a66a5f0, type: 2}
     _requiredLevel: 0

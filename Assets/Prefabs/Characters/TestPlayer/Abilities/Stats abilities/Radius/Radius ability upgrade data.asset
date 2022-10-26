@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: Radius ability upgrade data
   m_EditorClassIdentifier: 
-  _name: AttackRange
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +10% attack range
+    _description: +15% attack range
     _upgrade: {fileID: 11400000, guid: ae63a110395fb884dbb80ca896d70351, type: 2}
     _requiredLevel: 0

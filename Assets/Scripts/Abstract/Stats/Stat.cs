@@ -49,6 +49,8 @@ public abstract class Stat : IStat, IUpgradeable
 
         foreach(UpgradeData data in upgrade.Upgrades)
         {
+            if (data == null) continue;
+
             if (data.UpgradingStatMarker.Equals(_statData.Marker))
             {
                 upgrades++;

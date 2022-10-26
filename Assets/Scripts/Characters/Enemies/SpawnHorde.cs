@@ -1,20 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 public class SpawnHorde : MonoBehaviour, IStartHorde
-{
-    //[SerializeField] private List<>
-
+{ 
     private Zombie zombie;
 
     [SerializeField] private ZombieSpawner zombieSpawner;
+
+    [Inject] private Player _player;
 
 
     private void OnEnable()
     {
         EventBus.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe(this);
     }
 
     public void SetZombie(Zombie zombieNew)
@@ -23,19 +26,15 @@ public class SpawnHorde : MonoBehaviour, IStartHorde
     }
 
     public void OnHordeSpawn()
-    {
+    {/*
         for (int i = 0; i < 20; i++)
         {
             //  Instantiate(zombie, transform);
-            var pool = zombieSpawner.ReturnPool();
+            var pool = zombieSpawner.Pool;
             var zombie = pool.Pull();
             zombie.Initialize(pool);
             zombie.gameObject.transform.position = new Vector3(0, zombieSpawner.levelBuilder.GridHeight + 1f, 0);
-        }
+        }*/
     }
 
-    private void OnDisable()
-    {
-        EventBus.Unsubscribe(this);
-    }
 }

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: ProjectileSpeed ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Projectile speed
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +10% projectile speed
+    _description: +12% projectile speed
     _upgrade: {fileID: 11400000, guid: 73e2dc7ea76a40f42969ae64b24a4a1e, type: 2}
     _requiredLevel: 0
