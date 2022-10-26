@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 public class AbilityUI : MonoBehaviour
 {
@@ -49,7 +48,7 @@ public class AbilityUI : MonoBehaviour
         _ability = ability;
 
         _abilityName.text = _ability.Name;
-        _abilityIcon.sprite = _ability.UpgradeIcon;
+        _abilityIcon.sprite = _ability.Icon;
 
         if (_levels.Count > 0)
         {
@@ -102,9 +101,9 @@ public class AbilityUI : MonoBehaviour
 
                 CombineAbilityUI combine = Instantiate(_combineAbilityPrefab, _combineAbilitiesParent);
 
-                if (combineAbility.CombinedWeapon.InventoryIcon != null)
+                if (combineAbility.CombinedWeapon.Icon != null)
                 {
-                    combine.Initialize(combineAbility.CombinedWeapon.InventoryIcon);
+                    combine.Initialize(combineAbility.CombinedWeapon.Icon);
                 }
 
                 _combines.Add(combine);

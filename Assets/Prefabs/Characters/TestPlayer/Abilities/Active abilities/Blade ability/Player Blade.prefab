@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2618570239982194877}
   m_Layer: 0
   m_Name: Player Blade
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,9 +107,9 @@ GameObject:
   - component: {fileID: 6820349348918774805}
   - component: {fileID: 2458274235636608188}
   - component: {fileID: 7218241782557838940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target detector
-  m_TagString: Untagged
+  m_TagString: TargetDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
