@@ -28,11 +28,19 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
     public void Initialize(FactoryMonoPool<Zombie, Factory> pool)
     {
         _pool = pool;
+
+        _stats.Health.SetValue(_stats.Health.MaxHP);
+        _healthBar.Initialize(_stats.Health);
     }
 
     public void ResetObject()
     {
         _pool = null;
+
+        if (_stats.BaseWeapon as ZombieCollider != null)
+        {
+            (_stats.BaseWeapon as ZombieCollider).OnReset();
+        }
     }
 
     //test
@@ -64,7 +72,14 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
 
         EventBus.Publish<IEnemyKilledHandler>(handler => handler.OnEnemyKilled(this));
 
-        _pool.Release(this);
+        if (_pool != null)
+        {
+            _pool.Release(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public override void Move(Vector3 direction)

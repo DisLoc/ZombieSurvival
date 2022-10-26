@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5403733156734047892}
   - component: {fileID: 5911952345267381724}
   - component: {fileID: 3934090384101506498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sild
-  m_TagString: Untagged
+  m_TagString: TargetDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

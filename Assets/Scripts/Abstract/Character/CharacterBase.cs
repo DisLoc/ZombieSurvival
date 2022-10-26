@@ -2,6 +2,9 @@ using UnityEngine;
 
 public abstract class CharacterBase : DamageableObject, IFixedUpdatable
 {
+    [Tooltip("Can be null if HealthBar is null")]
+    [SerializeField] protected HPBarCanvas _hpCanvas;
+
     /// <summary>
     /// Object stats
     /// </summary>
@@ -16,6 +19,8 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
     public virtual void OnFixedUpdate()
     {
         Stats.Health.Heal(Stats.Regeneration.Value * Time.fixedDeltaTime);
+
+        if (_hpCanvas != null) _hpCanvas.OnFixedUpdate();
     }
 
     /// <summary>

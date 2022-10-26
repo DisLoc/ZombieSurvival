@@ -7,10 +7,8 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
 
     [Header("Settings")]
     [SerializeField] protected string _name;
-    [Tooltip("Icon displays in inventory")]
-    [SerializeField] protected Sprite _inventoryIcon;
-    [Tooltip("Icon displays when choose abilities")]
-    [SerializeField] protected Sprite _upgradeIcon;
+    [Tooltip("Icon displays in inventory and on choice")]
+    [SerializeField] protected Sprite _icon;
 
     protected UpgradeList _upgrades;
 
@@ -20,8 +18,7 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
     /// Return false if ability not reached MaxLevel or MaxLevel is infinite
     /// </summary>
     public bool IsMaxLevel => !Stats.Level.MaxValueIsInfinite && Stats.Level.Value == Stats.Level.MaxValue;
-    public Sprite InventoryIcon => _inventoryIcon;
-    public Sprite UpgradeIcon => _upgradeIcon;
+    public Sprite Icon => _icon;
     /// <summary>
     /// Current upgrade of this ability
     /// </summary>
