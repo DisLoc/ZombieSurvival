@@ -51,6 +51,7 @@ MonoBehaviour:
   _upgradeIcon: {fileID: 0}
   _targetDetector: {fileID: 7218241782557838940}
   _abilityUpgradeData: {fileID: 11400000, guid: d9443f27aad8a6046a059d29ca75e7ac, type: 2}
+  _scatterMultiplier: 0.2
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 583b085b0496a514fa09dd337994674c, type: 2}
     _level:
@@ -93,7 +94,7 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 2e831ae3c3352fe4eb3c95baaa0d32ec, type: 2}
-  _scatterMultiplier: 0.2
+      _valueIsInfinite: 1
 --- !u!1 &8377134415609558725
 GameObject:
   m_ObjectHideFlags: 0

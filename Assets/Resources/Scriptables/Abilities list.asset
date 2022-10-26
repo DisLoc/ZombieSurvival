@@ -25,3 +25,6 @@ MonoBehaviour:
   - {fileID: 87203292017648079, guid: 306d1bfc0d0a18041bda8f6c8506a3d3, type: 3}
   _activeAbilities:
   - {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+  - {fileID: 7494275413525525377, guid: 6f683db9e81f4ba46b85e11a1855c481, type: 3}
+  - {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
+  _additionalAbilities: []

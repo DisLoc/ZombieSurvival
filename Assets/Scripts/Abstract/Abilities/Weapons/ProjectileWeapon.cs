@@ -87,7 +87,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         Projectile projectile = _pool.PullDisabled();
         
         projectile.transform.position = transform.position;
-        projectile.Initialize(_pool, _stats.ProjectileLifeDuration, _stats.ProjectileSpeed, _stats.Damage, this);
+        projectile.Initialize(_pool, _stats, this);
         projectile.Throw(GetProjectileMoveDirection());
         projectile.gameObject.SetActive(true);
 

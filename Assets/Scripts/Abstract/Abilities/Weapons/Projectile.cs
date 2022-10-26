@@ -8,12 +8,14 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 
     protected Vector3 _moveDirection;
 
+    protected int _penetrations;
     protected float _releaseTimer;
     protected bool _onThrow;
 
     protected Duration _releaseDelay;
     protected ProjectileSpeed _speed;
     protected Damage _damage;
+    protected PenetrationNumber _penetrationNumber;
 
     protected MonoPool<Projectile> _pool;
     protected ProjectileWeapon _weapon;
@@ -23,19 +25,24 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _pool = null;
         _moveDirection = Vector3.zero;
 
+        transform.position = _weapon.transform.position;
+
+        _penetrations = 0;
         _releaseTimer = 0;
         _onThrow = false;
         _releaseDelay = null;
         _speed = null;
         _damage = null;
+        _penetrationNumber = null;
     }
 
-    public void Initialize(MonoPool<Projectile> pool, Duration releaseDelay, ProjectileSpeed speed, Damage damage, ProjectileWeapon weapon)
+    public void Initialize(MonoPool<Projectile> pool, ProjectileAbilityStats stats, ProjectileWeapon weapon)
     {
         _pool = pool;
-        _releaseDelay = releaseDelay;
-        _speed = speed;
-        _damage = damage;
+        _releaseDelay = stats.ProjectileLifeDuration;
+        _speed = stats.ProjectileSpeed;
+        _damage = stats.Damage;
+        _penetrationNumber = stats.PenetrationNumber;
         _weapon = weapon;
     }
 
@@ -92,8 +99,14 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
             if (_isDebug) Debug.Log(name + " find target");
 
             obj.TakeDamage((int)_damage.Value);
-            _weapon.OnProjectileRelease(this);
-            _pool.Release(this);
+
+            _penetrations++;
+            
+            if (!_penetrationNumber.ValueIsInfinite && _penetrations >= (int)_penetrationNumber.Value)
+            {
+                _weapon.OnProjectileRelease(this);
+                _pool.Release(this);
+            }
         }
     }
 }

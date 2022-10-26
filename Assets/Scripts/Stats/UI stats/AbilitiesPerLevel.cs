@@ -1,12 +1,6 @@
-using UnityEngine;
-
 [System.Serializable]
-public class PenetrationNumber : Stat
+public class AbilitiesPerLevel : Stat
 {
-    [SerializeField] protected bool _valueIsInfinite;
-
-    public bool ValueIsInfinite => _valueIsInfinite;
-
     public override bool Upgrade(Upgrade upgrade)
     {
         if (base.Upgrade(upgrade))
@@ -14,7 +8,7 @@ public class PenetrationNumber : Stat
             _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
 
             if (_value < _minValue) _value = _minValue;
-            if (!_statData.MaxValueIsInfinite && _value > _maxValue) _value = _maxValue;
+            if (_value > _maxValue) _value = _maxValue;
 
             return true;
         }

@@ -19,16 +19,17 @@ public class AbilityUI : MonoBehaviour
     [SerializeField] private Text _combineText;
     [SerializeField] private RectTransform _combineAbilitiesParent;
 
-    [Inject] private AbilityGiver _abilityGiver;
-
+    private AbilityGiver _abilityGiver;
     private AbilityContainer _ability;
     private List<LevelUI> _levels;
     private List<CombineAbilityUI> _combines;
 
-    public void Initialize()
+    public void Initialize(AbilityGiver abilityGiver)
     {
         _levels = new List<LevelUI>();
         _combines = new List<CombineAbilityUI>();
+
+        _abilityGiver = abilityGiver;
     }
 
     /// <summary>
