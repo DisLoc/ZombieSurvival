@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
+public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZombieSurvival/LevelBuilder/GroundGrid", fileName = "New ground grid")]
+[CreateAssetMenu(menuName = "ZombieSurvival/Level/GroundGrid", fileName = "New ground grid")]
 public class GroundGrid : ScriptableObject
 {
     [SerializeField] private int _cellSize;

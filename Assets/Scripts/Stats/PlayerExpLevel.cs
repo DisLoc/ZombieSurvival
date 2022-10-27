@@ -51,7 +51,7 @@ public class PlayerExpLevel : Stat
             }
             else if (_isDebug) Debug.Log("Missing ExpBar!");
 
-            EventBus.Publish<IPlayerLevelUp>(handler => handler.OnPlayerLevelUp());
+            EventBus.Publish<IPlayerLevelUpHandler>(handler => handler.OnPlayerLevelUp());
         }
 
         if (_expBar != null)

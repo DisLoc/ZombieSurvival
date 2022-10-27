@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6efe390ed7d7444e8c7f2c041c25368, type: 3}
+  m_Name: Test level context
+  m_EditorClassIdentifier: 
+  _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
+  _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
+  _enemyBreakpoints:
+    _breakpoints:
+    - _name: 
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningEnemies: []
+      _maxUnitsOnScene: 0
+    - _name: 
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningEnemies:
+      - _objectPrefab: {fileID: 0}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 0}
+      _maxUnitsOnScene: 0
+    - _name: 
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningEnemies: []
+      _maxUnitsOnScene: 0
+    - _name: 
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningEnemies: []
+      _maxUnitsOnScene: 0
+  _hordeBreakpoints:
+    _breakpoints:
+    - _name: 10% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 10
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 20
+    - _name: 20% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 20
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 25
+    - _name: 40% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 40
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 40
+    - _name: 55% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 55
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 40
+    - _name: 80% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 80
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 40
+    - _name: 90% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 90
+      _enemyToSpawnPrefab: {fileID: 0}
+      _spawnCount: 50
+  _bossBreakpoints:
+    _breakpoints:
+    - _name: 30% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 30
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+    - _name: 65% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 65
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+    - _name: 100% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 100
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+  _playerUpgrades: []
+  _enemiesUpgrades: []

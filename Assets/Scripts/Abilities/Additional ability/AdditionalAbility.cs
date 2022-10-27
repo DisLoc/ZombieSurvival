@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class AdditionalAbility : AbilityContainer
 {
-    public override CurrentUpgrade CurrentUpgrade => throw new System.NotImplementedException();
-    public override AbilityStats Stats => throw new System.NotImplementedException();
-    public override AbilityUpgradeData UpgradeData => throw new System.NotImplementedException();
+    [SerializeField] protected AbilityStats _stats;
+    [SerializeField] protected StatsAbilityUpgradeData _upgradeData;
+
+    public override CurrentUpgrade CurrentUpgrade => _upgradeData.RepeatingUpgrade;
+    public override AbilityStats Stats => _stats;
+    public override AbilityUpgradeData UpgradeData => _upgradeData;
+
+    public virtual void MakeEffect()
+    {
+
+    }
 }
