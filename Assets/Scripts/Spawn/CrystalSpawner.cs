@@ -14,9 +14,8 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
     private ObjectSpawner<ExpCrystal, ExpCrystal.Factory> _pool;
 
     [Inject] private ExpCrystal.Factory _crystalFactory;
-    [Inject] private LevelBuilder _levelBuilder;
-
     [Inject] private LevelContext _levelContext;
+    [Inject] private LevelBuilder _levelBuilder;
 
     private void OnEnable()
     {

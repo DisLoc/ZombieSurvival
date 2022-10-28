@@ -18,7 +18,7 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
     /// </summary>
     public virtual void OnFixedUpdate()
     {
-        Stats.Health.Heal(Stats.Regeneration.Value * Time.fixedDeltaTime);
+        Stats.Health.TakeDamage(Stats.Regeneration.Value * Time.fixedDeltaTime);
 
         if (_hpCanvas != null) _hpCanvas.OnFixedUpdate();
     }

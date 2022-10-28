@@ -140,4 +140,5 @@ MonoBehaviour:
       _bossPrefab: {fileID: 0}
       _bossEventFence: {fileID: 0}
   _playerUpgrades: []
-  _enemiesUpgrades: []
+  _enemiesUpgrades:
+  - {fileID: 0}

@@ -8,6 +8,8 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
 
     public override void InstallBindings()
     {
+        _levelContext.Initialize();
+
         Container.Bind<LevelContext>().FromScriptableObject(_levelContext).AsSingle();
     }
 }
