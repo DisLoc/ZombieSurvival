@@ -30,6 +30,16 @@ public class PlayerExpLevel : Stat
         _expBar.Initialize(this);
     }
 
+    public PlayerExpLevel(StatData statData, int baseExpForLevel, float levelMuliplier, ExpirienceData expirienceData, ExpBar expBar = null,
+                          UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug)
+    {
+        _baseExpForLevelUp = baseExpForLevel;
+        _levelMultiplier = levelMuliplier;
+
+        _exp = new Expirience(expirienceData);
+        _expBar = expBar;
+    }
+
     /// <summary>
     /// Add expirience to player
     /// </summary>

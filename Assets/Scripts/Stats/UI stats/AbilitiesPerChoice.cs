@@ -1,7 +1,7 @@
 [System.Serializable]
-public class ProjectileNumber : Stat
+public class AbilitiesPerChoice : Stat
 {
-    public ProjectileNumber(StatData statData, UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug) 
+    public AbilitiesPerChoice(StatData statData, UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug)
     {
         _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
 
@@ -16,7 +16,7 @@ public class ProjectileNumber : Stat
             _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
 
             if (_value < _minValue) _value = _minValue;
-            if (!_statData.MaxValueIsInfinite && _value > _maxValue) _value = _maxValue;
+            if (_value > _maxValue) _value = _maxValue;
 
             return true;
         }

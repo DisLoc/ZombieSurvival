@@ -7,6 +7,7 @@ public class UpgradeList
     private float _upgradesValue;
     private float _upgradesMultiplier;
 
+    public List<UpgradeData> Upgrades => _upgrades;
     /// <summary>
     /// Total value of the improvements
     /// </summary>

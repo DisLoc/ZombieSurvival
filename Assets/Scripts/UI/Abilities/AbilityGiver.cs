@@ -15,7 +15,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     [SerializeField] private AbilityUI _abilityUIPrefab;
 
     [Header("Stats settings")]
-    [SerializeField] private AbilitiesPerLevel _abilitiesPerLevel;
+    [SerializeField] private AbilitiesPerChoice _abilitiesPerLevel;
     [SerializeField] private AbilityChooseCount _abilityChooseCount;
 
     [Space(5)]
