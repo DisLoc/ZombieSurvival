@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upgradeName: 
   _repeatingUpgrade:
-    _description: +15% attack range
+    _description: +10% attack range
     _upgrade: {fileID: 11400000, guid: ae63a110395fb884dbb80ca896d70351, type: 2}
     _requiredLevel: 0
