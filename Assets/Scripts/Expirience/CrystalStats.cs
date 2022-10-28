@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZombieSurvival/Expirience/Crystal stats", fileName = "New crystal stats")]
+[CreateAssetMenu(menuName = "ZombieSurvival/Level/Crystal spawning stats", fileName = "New crystal stats")]
 public class CrystalStats : ScriptableObject
 {
     [Header("Settings")]
     [SerializeField] private ExpCrystal _crystalPrefab;
-    [SerializeField] private List<CrystalParam> _crystalParams;
-
+    [SerializeField] private List<ObjectChanceSpawn<CrystalParam>> _crystalSpawnParams;
+    
     public ExpCrystal CrystalPrefab => _crystalPrefab;
-    public List<CrystalParam> CrystalParams => _crystalParams;
+    public List<ObjectChanceSpawn<CrystalParam>> CrystalSpawnParams => _crystalSpawnParams;
 }

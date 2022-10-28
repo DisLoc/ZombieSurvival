@@ -16,6 +16,8 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
     [Inject] private ExpCrystal.Factory _crystalFactory;
     [Inject] private LevelBuilder _levelBuilder;
 
+    [Inject] private LevelContext _levelContext;
+
     private void OnEnable()
     {
         EventBus.Subscribe(this);
@@ -43,6 +45,6 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
 
         ExpCrystal crystal = _pool.Spawn(pos);
 
-        crystal.Initialize(_crystalStats.CrystalParams[0], _pool);
+        //crystal.Initialize(_levelContext. _crystalStats.CrystalParams[0], _pool);
     }
 }
