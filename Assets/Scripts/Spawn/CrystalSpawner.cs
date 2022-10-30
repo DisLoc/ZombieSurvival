@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHandler, ILevelProgressUpdateHandler
+public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, ILevelProgressUpdateHandler
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -30,11 +30,6 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
         ClearPool();
     }
 
-    public void OnGameStart()
-    {
-        //ClearPool();
-    }
-
     public void OnLevelProgressUpdate(int progress)
     {
         Breakpoint breakpoint = _breakpoints.CheckReaching(progress);
@@ -45,7 +40,7 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
         }
     }
 
-    public void OnCrystalBreakpoint(CrystalBreakpoint breakpoint)
+    private void OnCrystalBreakpoint(CrystalBreakpoint breakpoint)
     {
         if (_isDebug) Debug.Log("Get breakpoint: " + breakpoint.Name);
 

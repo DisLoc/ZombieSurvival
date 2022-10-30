@@ -23,6 +23,7 @@ public class LevelContext : ScriptableObject
     public GroundGrid LevelEnvironment => _levelEnvironment;
 
     public BreakpointList<CrystalBreakpoint> CrystalSpawnBreakpoints => _crystalSpawnBreakpoints;
+    public BreakpointList<EnemyBreakpoint> EnemyBreakpoints => _enemyBreakpoints;
     public BreakpointList<HordeBreakpoint> HordeBreakpoints => _hordeBreakpoints;
     public BreakpointList<BossBreakpoint> BossBreakpoints => _bossBreakpoints;
 
@@ -43,11 +44,21 @@ public class LevelContext : ScriptableObject
         for (int i = 0; i < _crystalSpawnBreakpoints.Breakpoints.Count; i++)
         {
             _crystalSpawnBreakpoints.Breakpoints[i].SetReached(false);
+
+            for (int j = 0; j < _crystalSpawnBreakpoints.Breakpoints[i].SpawningCrystalsStats.CrystalSpawnParams.Count; j++)
+            {
+                _crystalSpawnBreakpoints.Breakpoints[i].SpawningCrystalsStats.CrystalSpawnParams[j].SpawnChance.Initialize();
+            }
         }
 
         for (int i = 0; i < _enemyBreakpoints.Breakpoints.Count; i++)
         {
             _enemyBreakpoints.Breakpoints[i].SetReached(false);
+
+            for (int j = 0; j < _enemyBreakpoints.Breakpoints[i].SpawningEnemies.Count; j++)
+            {
+                _enemyBreakpoints.Breakpoints[i].SpawningEnemies[j].SpawnChance.Initialize();
+            }
         }
 
         for (int i = 0; i < _hordeBreakpoints.Breakpoints.Count; i++)

@@ -4,6 +4,10 @@ using UnityEngine;
 public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactory> where TObject : MonoBehaviour, IPoolable
                                                                                             where TFactory: Zenject.PlaceholderFactory<TObject>
 {
+    private int _spawned;
+
+    public int SpawnCount => _spawned;
+
     public ObjectSpawner(TObject prefab, TFactory factory, int capacity, Transform parent = null) : base(prefab, factory, capacity, parent)
     {
 
@@ -14,6 +18,8 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
         TObject obj = Pull();
 
         obj.transform.position = position;
+
+        _spawned++;
 
         return obj;
     }
@@ -27,6 +33,8 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
             objects.Add(Spawn(GetRandomPosition(position, deltaPositionXZ)));
         }
 
+        _spawned += count;
+
         return objects;
     }
 
@@ -37,5 +45,12 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
             position.y,
             position.z + Random.Range(-deltaPositionXZ, deltaPositionXZ)
             );
+    }
+
+    public override void Release(TObject obj)
+    {
+        base.Release(obj);
+
+        _spawned--;
     }
 }

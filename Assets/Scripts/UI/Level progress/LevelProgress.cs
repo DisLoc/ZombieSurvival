@@ -32,11 +32,6 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         base.Initialize();
     }
 
-    public void Start()
-    {
-        
-    }
-
     public void OnGameStart()
     {
         Initialize();

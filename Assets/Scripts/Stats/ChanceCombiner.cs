@@ -14,7 +14,12 @@ public class ChanceCombiner<T> where T : class
 
     public ChanceCombiner(List<ObjectChanceSpawn<T>> spawnChances)
     {
-        _spawnChances = new List<ObjectChanceSpawn<T>>(spawnChances);
+        _spawnChances = new List<ObjectChanceSpawn<T>>();
+
+        foreach(ObjectChanceSpawn<T> spawnChance in spawnChances)
+        {
+            Add(spawnChance);
+        }
     }
 
     /// <summary>
