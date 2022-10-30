@@ -310,6 +310,51 @@ MonoBehaviour:
   _crystalDeltaYAxis: 0.2
   _crystalStats: {fileID: 11400000, guid: 473707120e735be488c2fc4d99531ca0, type: 2}
   _poolSize: 10
+--- !u!1 &355862568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355862569}
+  - component: {fileID: 355862570}
+  m_Layer: 0
+  m_Name: HerdSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &355862569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355862568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 934876922}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355862570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355862568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46413ef29480099479747003b623aa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieSpawner: {fileID: 1524730406}
 --- !u!1 &607390655
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +570,7 @@ Transform:
   - {fileID: 1524730405}
   - {fileID: 316591963}
   - {fileID: 607390657}
+  - {fileID: 355862569}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1073,6 +1119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombies: []
   _hordeBreakpoints: []
+  _herdBreakpoints: []
   _levelProgress: {fileID: 0}
   _spawnHorde: {fileID: 0}
   _levelBuilder: {fileID: 0}

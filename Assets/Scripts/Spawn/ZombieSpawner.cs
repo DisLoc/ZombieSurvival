@@ -6,6 +6,7 @@ public class ZombieSpawner : MonoBehaviour
 {
     [SerializeField] private List<Zombie> _zombies = new List<Zombie>();
     [SerializeField] private List<HordeBreakpoint> _hordeBreakpoints;
+    [SerializeField] private List<HordeBreakpoint> _herdBreakpoints;
 
     [SerializeField] private LevelProgress _levelProgress;
     [SerializeField] private SpawnHorde _spawnHorde;
@@ -33,6 +34,12 @@ public class ZombieSpawner : MonoBehaviour
             _spawnHorde.SetZombie(_zombies[Random.Range(0, _zombies.Count)]);
             EventBus.Publish<IStartHorde>(handler => handler.OnHordeSpawn());
             _spawned = true;
+        }
+        if(_levelProgress.Value > _herdBreakpoints[0].RequiredProgress && _spawned == false)
+        {
+            _spawnHorde.SetZombie(_zombies[Random.Range(0, _zombies.Count)]);
+            EventBus.Publish<IStartHerd>(handler => handler.OnHerdSpawn());
+   
         }*/
     }
 
