@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHandler, IMinuteLeftHandler
 {
@@ -6,6 +7,8 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     [SerializeField][Range(1, 1000)] private int _enemiesForProgress = 75;
     [Tooltip("Additional progress each X enemies")]
     [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1;
+
+    [Inject] private LevelContext _levelContext;
 
     public float Value => _value;
 
@@ -24,22 +27,19 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     public override void Initialize()
     {
         _value = _minFillValue;
+        _killed = 0;
 
         base.Initialize();
     }
 
     public void Start()
     {
-        Initialize();
-        OnGameStart();
+        
     }
 
     public void OnGameStart()
     {
-        _killed = 0;
-        _value = 0;
-
-        UpdateBar();
+        Initialize();
     }
 
     public void OnMinuteLeft()
@@ -72,7 +72,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
 
         base.UpdateBar();
 
-       // EventBus.Publish<IStartHorde>(handler => handler.OnHordeSpawn());
+        EventBus.Publish<ILevelProgressUpdateHandler>(handler => handler.OnLevelProgressUpdate(_value));
         
         if (_value >= _maxFillValue)
         {

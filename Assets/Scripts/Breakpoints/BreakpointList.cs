@@ -8,6 +8,21 @@ public class BreakpointList<T> where T : Breakpoint
 
     public List<T> Breakpoints => _breakpoints;
 
+    public BreakpointList()
+    {
+        _breakpoints = new List<T>();
+    }
+
+    public BreakpointList(List<T> breakpoints)
+    {
+        _breakpoints = breakpoints;
+    }
+
+    public void Add(T breakpoint)
+    {
+        _breakpoints.Add(breakpoint);
+    }
+
     public Breakpoint CheckReaching(int progress)
     {
         foreach(Breakpoint breakpoint in _breakpoints)
@@ -16,6 +31,8 @@ public class BreakpointList<T> where T : Breakpoint
 
             else if (breakpoint.RequiredProgress <= progress)
             {
+                breakpoint.SetReached(true);
+
                 return breakpoint;
             }
         }

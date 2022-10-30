@@ -10,7 +10,7 @@ public class SpawnHerd : MonoBehaviour, IStartHerd
     {
         var zombie = zombieSpawner.Pool.Pull();
         zombie.Initialize(zombieSpawner.Pool);
-        zombie.gameObject.transform.position = new Vector3(0, zombieSpawner._levelBuilder.GridHeight + 1f, 0);
+        zombie.gameObject.transform.position = new Vector3(0, zombieSpawner.LevelBuilder.GridHeight + 1f, 0);
 
         Invoke(nameof(OnStartHerd), 45);
     }

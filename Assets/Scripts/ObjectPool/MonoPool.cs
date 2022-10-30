@@ -6,6 +6,8 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     protected TObject _prefab;
     protected Transform _parent;
 
+    public TObject Prefab => _prefab;
+
     public MonoPool(TObject prefab, int capacity, Transform poolParent = null)
     {
         _prefab = prefab;

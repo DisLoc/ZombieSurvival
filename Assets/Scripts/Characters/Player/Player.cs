@@ -24,7 +24,7 @@ public class Player : CharacterBase
 
     protected List<Upgrade> _upgrades;
 
-    [Inject] protected LevelBuilder _levelBuilder;
+    [Inject] protected LevelContext _levelContext;
 
     public override CharacterStats Stats => _stats;
     /// <summary>
@@ -35,7 +35,7 @@ public class Player : CharacterBase
 
     public void Initialize()
     {
-        transform.position = new Vector3(0, _levelBuilder.GridHeight + _collider.height * 0.5f, 0);
+        transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
         _stats.Initialize();
 

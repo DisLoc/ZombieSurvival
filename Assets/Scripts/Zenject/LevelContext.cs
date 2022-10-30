@@ -34,5 +34,30 @@ public class LevelContext : ScriptableObject
         LevelBuilder = Instantiate(_levelBuilderPrefab);
 
         LevelBuilder.Construct(_levelEnvironment);
+
+        ResetBreakpoints();
+    }
+
+    private void ResetBreakpoints()
+    {
+        for (int i = 0; i < _crystalSpawnBreakpoints.Breakpoints.Count; i++)
+        {
+            _crystalSpawnBreakpoints.Breakpoints[i].SetReached(false);
+        }
+
+        for (int i = 0; i < _enemyBreakpoints.Breakpoints.Count; i++)
+        {
+            _enemyBreakpoints.Breakpoints[i].SetReached(false);
+        }
+
+        for (int i = 0; i < _hordeBreakpoints.Breakpoints.Count; i++)
+        {
+            _hordeBreakpoints.Breakpoints[i].SetReached(false);
+        }
+
+        for (int i = 0; i < _bossBreakpoints.Breakpoints.Count; i++)
+        {
+            _bossBreakpoints.Breakpoints[i].SetReached(false);
+        }
     }
 }

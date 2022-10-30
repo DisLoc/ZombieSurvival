@@ -16,7 +16,8 @@ public class ZombieSpawner : MonoBehaviour
 
 
     [Inject] private Zombie.Factory _factory;
-    [Inject] public LevelBuilder _levelBuilder;
+    [Inject] private LevelContext _levelContext;
+    public LevelBuilder LevelBuilder => _levelContext.LevelBuilder;
 
     private bool _spawned;
 
@@ -50,7 +51,7 @@ public class ZombieSpawner : MonoBehaviour
             //Instantiate(zombies[Random.Range(0, zombies.Count)], new Vector3(0, 5, 0), Quaternion.identity, transform);
             var zombie = _pool.Pull();
             zombie.Initialize(_pool);
-            zombie.gameObject.transform.position = new Vector3(0, _levelBuilder.GridHeight + 1f, 0);
+            zombie.gameObject.transform.position = new Vector3(0, LevelBuilder.GridHeight + 1f, 0);
         }
     }
 }

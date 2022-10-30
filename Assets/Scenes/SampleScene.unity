@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 105156162}
   - component: {fileID: 105156161}
-  - component: {fileID: 105156160}
   - component: {fileID: 105156159}
   - component: {fileID: 105156164}
   - component: {fileID: 105156163}
@@ -158,19 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1507853164}
---- !u!114 &105156160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105156158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5d49bd1a165ad44865fcb5b69c40c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _builderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
 --- !u!114 &105156161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +172,6 @@ MonoBehaviour:
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
   _monoInstallers:
-  - {fileID: 105156160}
   - {fileID: 105156159}
   - {fileID: 105156164}
   - {fileID: 105156163}
@@ -306,9 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee43c2693c4cbb419cbf0b94f10346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _crystalDeltaYAxis: 0.2
-  _crystalStats: {fileID: 11400000, guid: 473707120e735be488c2fc4d99531ca0, type: 2}
   _poolSize: 10
 --- !u!1 &355862568
 GameObject:
@@ -970,6 +954,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8773999759855668602, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773999760326087460, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: _isDebug
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8789453174973195650, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}

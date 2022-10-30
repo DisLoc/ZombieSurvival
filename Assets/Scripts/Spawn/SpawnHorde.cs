@@ -8,7 +8,6 @@ public class SpawnHorde : MonoBehaviour, IStartHorde
     [SerializeField] private ZombieSpawner zombieSpawner;
 
     [Inject] private Player _player;
-    [Inject] private LevelBuilder _levelBuilder;
 
 
     private void OnEnable()
@@ -34,7 +33,7 @@ public class SpawnHorde : MonoBehaviour, IStartHorde
             var pool = zombieSpawner.Pool;
             var zombie = pool.Pull();
             zombie.Initialize(pool);
-            zombie.gameObject.transform.position = new Vector3(0, zombieSpawner._levelBuilder.GridHeight + 1f, 0);
+            zombie.gameObject.transform.position = new Vector3(0, zombieSpawner.LevelBuilder.GridHeight + 1f, 0);
         }
     }
 

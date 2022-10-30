@@ -3,6 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Chance : Stat
 {
+    public float Probability => _value / _maxValue;
+
     public Chance(StatData statData, UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug) 
     {
         _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
