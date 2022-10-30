@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upgradingStatMarker: {fileID: 11400000, guid: 48d7ea21aa7e9d64c991705a9874d0ac, type: 2}
   _upgradeValue: 0
-  _upgradeMultiplier: 1.05
+  _upgradeMultiplier: 1.1

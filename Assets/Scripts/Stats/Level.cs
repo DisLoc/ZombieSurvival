@@ -21,6 +21,16 @@ public class Level : IStat
         _level = _baseValue;
     }
 
+    public Level (int baseValue, int minValue, int maxValue, bool maxValueIsInfinite = false)
+    {
+        _baseValue = baseValue;
+        _minValue = minValue;
+        _maxValue = maxValue;
+        _maxValueIsInfinite = maxValueIsInfinite;
+
+        _level = _baseValue;
+    }
+
     public void SetValue(float value = 1)
     {
         _level = (int)value;

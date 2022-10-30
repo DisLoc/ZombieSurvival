@@ -113,6 +113,7 @@ public sealed class AbilityInventory
     /// <returns>Return existing ability or null if ability not in inventory</returns>
     public AbilityContainer Find(AbilityContainer ability)
     {
+        if (ability == null) return null;
         return _abilities.Find(item => item.Name == ability.Name);
     }
 

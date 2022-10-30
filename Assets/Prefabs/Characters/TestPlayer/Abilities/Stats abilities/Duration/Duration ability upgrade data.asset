@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: Duration ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Duration
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +5% duration
+    _description: +10% duration
     _upgrade: {fileID: 11400000, guid: dce60a756e62a974faaa7dda2d48dc5b, type: 2}
     _requiredLevel: 0

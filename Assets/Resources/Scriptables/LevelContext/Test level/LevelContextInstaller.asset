@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db63436ebe554b849bb08c5bf605e5fa, type: 3}
+  m_Name: LevelContextInstaller
+  m_EditorClassIdentifier: 
+  _levelContext: {fileID: 11400000, guid: 0b0a064a571b97f429e0089c7f16140f, type: 2}

@@ -26,7 +26,23 @@ public class Health : Stat
         {
             if (_isDebug) Debug.Log("HP < MaxHP ???");
         }
+    }
 
+    public Health(StatData hpStatData, StatData maxHPStatData, UpgradeList maxHPUpgradeList = null, UpgradeList hpUpgradeList = null, 
+                  bool isDebug = false) : base(hpStatData, hpUpgradeList, isDebug) 
+    {
+        _maxHP = new MaxHP(maxHPStatData, maxHPUpgradeList, isDebug);
+
+        if (_value > _maxHP.Value)
+        {
+            if (_isDebug) Debug.Log("HP > MaxHP! Fixing...");
+
+            _value = _maxHP.Value;
+        }
+        else if (_value < _maxHP.Value)
+        {
+            if (_isDebug) Debug.Log("HP < MaxHP ???");
+        }
     }
 
     public void TakeDamage(float damage)

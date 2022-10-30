@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: ExpAccumulation ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Exp accumulation
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +7% exp accumulation
+    _description: +8% exp accumulation
     _upgrade: {fileID: 11400000, guid: 43a21389aed63354b988a724d0c6ef13, type: 2}
     _requiredLevel: 0

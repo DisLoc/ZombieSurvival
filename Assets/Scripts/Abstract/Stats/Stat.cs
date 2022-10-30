@@ -41,14 +41,49 @@ public abstract class Stat : IStat, IUpgradeable
         if (_isDebug) Debug.Log(_statData.name + " initialized");
     }
 
+    public Stat (StatData statData, UpgradeList upgradeList = null, bool isDebug = false)
+    {
+        _statData = statData;
+
+        _upgrades = new UpgradeList();
+
+        _value = _statData.BaseValue;
+        _minValue = _statData.MinValue;
+        _maxValue = _statData.MaxValue;
+
+        if (upgradeList != null)
+        {
+            foreach (UpgradeData data in upgradeList.Upgrades)
+            {
+                if (data == null) continue;
+
+                if (data.UpgradingStatMarker.Equals(_statData.Marker))
+                {
+                    _upgrades.Add(data);
+                }
+            }
+
+            if (_statData.MaxValueIsInfinite)
+            {
+                _maxValue = (_statData.MaxValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+            }
+        }
+
+        _isDebug = isDebug;
+
+        if (_isDebug) Debug.Log(_statData.name + " initialized");
+    }
+
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        if (_isDebug) Debug.Log(_statData.name + " try upgrade: " + upgrade.name);
+        if (_isDebug) Debug.Log(_statData.name + " try get upgrade: " + upgrade.name);
 
         int upgrades = 0;
 
         foreach(UpgradeData data in upgrade.Upgrades)
         {
+            if (data == null) continue;
+
             if (data.UpgradingStatMarker.Equals(_statData.Marker))
             {
                 upgrades++;

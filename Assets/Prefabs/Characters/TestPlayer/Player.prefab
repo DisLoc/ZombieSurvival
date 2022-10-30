@@ -173,10 +173,11 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 181c1ebad5cadab42a102fb4113b5568, type: 2}
       _exp:
-        _baseValue: 0
-        _minValue: 0
-        _maxValue: 0
-        _maxValueIsInfinite: 1
+        _data:
+          _baseValue: 0
+          _minValue: 0
+          _maxValue: 0
+          _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
       _baseExpForLevelUp: 100
       _levelMultiplier: 0.5

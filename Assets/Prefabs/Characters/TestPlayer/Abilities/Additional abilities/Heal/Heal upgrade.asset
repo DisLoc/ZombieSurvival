@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heal upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: dc340090bd1bb9d46844d1cca45edb29, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 79ac725181c5fbb4d9ec2b1f216ed495, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: c2297b1e14ad7a54abda5ad169439ca7, type: 2}

@@ -107,9 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _name: Player gun
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _name: Gun
+  _icon: {fileID: 0}
   _requiredAbilityToUpgradeToSuper: {fileID: 1142227134379360519, guid: 81315c25cd2b06d4285a10d363f46bfb, type: 3}
   _targetDetector: {fileID: 8948671830434654073}
   _abilityUpgradeData: {fileID: 11400000, guid: bd3419453c51db74a92e4d3bbc84a152, type: 2}

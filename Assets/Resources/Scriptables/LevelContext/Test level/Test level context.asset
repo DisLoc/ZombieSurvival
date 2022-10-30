@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6efe390ed7d7444e8c7f2c041c25368, type: 3}
+  m_Name: Test level context
+  m_EditorClassIdentifier: 
+  _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
+  _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
+  _crystalSpawnBreakpoints:
+    _breakpoints:
+    - _name: 0-30%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningCrystalStats: {fileID: 11400000, guid: 374a29a7dcf360c40b5c6d2d80d53528, type: 2}
+    - _name: 31-65%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 31
+      _spawningCrystalStats: {fileID: 11400000, guid: 666fd299b67264443af06179764716ec, type: 2}
+    - _name: 66-100%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 66
+      _spawningCrystalStats: {fileID: 11400000, guid: 591e8bf598388ce4ba7f620463e81a83, type: 2}
+  _enemyBreakpoints:
+    _breakpoints:
+    - _name: 0-10
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 0
+      _spawningEnemies:
+      - _objectPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 93b7c7bc19ce8af48a598ee71d5408c2, type: 2}
+      _maxUnitsOnScene: 10
+    - _name: 11-30
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 11
+      _spawningEnemies:
+      - _objectPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 14ca53d81e42e9a499ec143279697cbf, type: 2}
+      - _objectPrefab: {fileID: 9149633951450587483, guid: 880da363d97cff246ade94d7f6bb8367, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+      _maxUnitsOnScene: 15
+    - _name: 31-65
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 31
+      _spawningEnemies:
+      - _objectPrefab: {fileID: 7792329058486118259, guid: 5169744fde5784c4cb3dc4970c2b8fb1, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 14ca53d81e42e9a499ec143279697cbf, type: 2}
+      - _objectPrefab: {fileID: 9149633951450587483, guid: 880da363d97cff246ade94d7f6bb8367, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+      - _objectPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+      _maxUnitsOnScene: 20
+    - _name: 66-100
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 66
+      _spawningEnemies:
+      - _objectPrefab: {fileID: 7462393546294912117, guid: dbee250daa2f4ea41a19aefe726cade9, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+      - _objectPrefab: {fileID: 9149633951450587483, guid: 880da363d97cff246ade94d7f6bb8367, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+      - _objectPrefab: {fileID: 7792329058486118259, guid: 5169744fde5784c4cb3dc4970c2b8fb1, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
+      - _objectPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+        _spawnChance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+      _maxUnitsOnScene: 30
+  _hordeBreakpoints:
+    _breakpoints:
+    - _name: 10% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 10
+      _enemyToSpawnPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+      _spawnCount: 20
+    - _name: 20% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 20
+      _enemyToSpawnPrefab: {fileID: 2817904043961400775, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
+      _spawnCount: 25
+    - _name: 40% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 40
+      _enemyToSpawnPrefab: {fileID: 9149633951450587483, guid: 880da363d97cff246ade94d7f6bb8367, type: 3}
+      _spawnCount: 25
+    - _name: 55% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 55
+      _enemyToSpawnPrefab: {fileID: 7792329058486118259, guid: 5169744fde5784c4cb3dc4970c2b8fb1, type: 3}
+      _spawnCount: 30
+    - _name: 80% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 80
+      _enemyToSpawnPrefab: {fileID: 7462393546294912117, guid: dbee250daa2f4ea41a19aefe726cade9, type: 3}
+      _spawnCount: 30
+    - _name: 90% horde
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 90
+      _enemyToSpawnPrefab: {fileID: 7462393546294912117, guid: dbee250daa2f4ea41a19aefe726cade9, type: 3}
+      _spawnCount: 40
+  _bossBreakpoints:
+    _breakpoints:
+    - _name: 30% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 30
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+    - _name: 65% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 65
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+    - _name: 100% boss
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 100
+      _bossPrefab: {fileID: 0}
+      _bossEventFence: {fileID: 0}
+  _playerUpgrades: []
+  _enemiesUpgrades:
+  - {fileID: 0}

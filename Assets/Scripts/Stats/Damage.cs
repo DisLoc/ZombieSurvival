@@ -10,7 +10,7 @@ public class Damage : Stat
     {
         get
         {
-            if (Random.Range(0f, 1f) <= _criticalDamage.CritRate)
+            if (_criticalDamage.CritRate.IsStrike)
             {
                 return _value * _criticalDamage.Value;
             }
@@ -21,17 +21,29 @@ public class Damage : Stat
     /// <summary>
     /// Chance to deal critical damage
     /// </summary>
-    public float CritRate => _criticalDamage.CritRate;
+    public Chance CritRate => _criticalDamage.CritRate;
     /// <summary>
     /// Critical damage multiplier
     /// </summary>
-    public float CriticalDamage => _criticalDamage.Value;
+    public CriticalDamage CriticalDamage => _criticalDamage;
 
     public override void Initialize()
     {
         base.Initialize();
 
         _criticalDamage.Initialize();
+    }
+
+    public Damage(StatData damageStatData, StatData critStatData, StatData chanceStatData,
+                  UpgradeList damageUpgradeList = null, UpgradeList critUpgradeList = null, UpgradeList chanceUpgradeList = null,
+                  bool isDebug = false) : base(damageStatData, damageUpgradeList, isDebug)
+    {
+        _criticalDamage = new CriticalDamage(critStatData, chanceStatData, critUpgradeList, chanceUpgradeList, isDebug);
+
+        _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+        if (_value < _minValue) _value = _minValue;
+        if (!_statData.MaxValueIsInfinite && _value > _maxValue) _value = _maxValue;
     }
 
     public override bool Upgrade(Upgrade upgrade)

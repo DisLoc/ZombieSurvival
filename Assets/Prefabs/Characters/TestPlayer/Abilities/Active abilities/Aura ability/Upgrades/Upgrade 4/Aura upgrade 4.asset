@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
   m_Name: Aura upgrade 4
   m_EditorClassIdentifier: 
-  _isAbilityUpgrade: 0
-  _abilityMarker: {fileID: 0}
-  _upgrades: []
+  _isAbilityUpgrade: 1
+  _abilityMarker: {fileID: 11400000, guid: e17e5c7e039fafb478a759122d5d0968, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: 7e4959f9514f8ad4d82c00f7982d3d2f, type: 2}
+  - {fileID: 11400000, guid: 8fca95cf00ee3f444834f4603d13d03a, type: 2}

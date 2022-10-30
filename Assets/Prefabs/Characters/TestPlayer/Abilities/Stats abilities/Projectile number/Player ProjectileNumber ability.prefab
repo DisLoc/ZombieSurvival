@@ -46,13 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Projectile number
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 3af21defc75d4824a85b97f780ade517, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 19173b6684668d64abd467e93492a4fa, type: 2}
     _level:
       _baseValue: 0
       _minValue: 1
-      _maxValue: 3
+      _maxValue: 2
       _maxValueIsInfinite: 0
   _combinedAbilities:
   - _combinedWeapon: {fileID: 0}

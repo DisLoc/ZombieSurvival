@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
+public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -15,7 +15,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
     [SerializeField] private AbilityUI _abilityUIPrefab;
 
     [Header("Stats settings")]
-    [SerializeField] private AbilitiesPerLevel _abilitiesPerLevel;
+    [SerializeField] private AbilitiesPerChoice _abilitiesPerLevel;
     [SerializeField] private AbilityChooseCount _abilityChooseCount;
 
     [Space(5)]
@@ -52,6 +52,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
         EventBus.Unsubscribe(this);
     }
 
+    [ContextMenu("Get ability")]
     public void OnPlayerLevelUp()
     {
         _levelUps += (int)_abilityChooseCount.Value;
@@ -140,6 +141,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUp
 
                     if (super != null)
                     {
+                        if (_isDebug) Debug.Log("Add super to pool: " + super.Name);
                         _abilities.Add(super);
                     }
                 }

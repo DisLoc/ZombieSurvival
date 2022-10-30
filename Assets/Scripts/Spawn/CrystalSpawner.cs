@@ -7,13 +7,14 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
-    [SerializeField][Range(0, 2)] private float _crystalDeltaYAxis = 0.1f;
+    [SerializeField][Range(0, 2)] private float _crystalDeltaYAxis = 0.2f;
     [SerializeField] private CrystalStats _crystalStats;
     [SerializeField] private int _poolSize;
 
-    private FactoryMonoPool<ExpCrystal, ExpCrystal.Factory> _pool;
+    private ObjectSpawner<ExpCrystal, ExpCrystal.Factory> _pool;
 
     [Inject] private ExpCrystal.Factory _crystalFactory;
+    [Inject] private LevelContext _levelContext;
     [Inject] private LevelBuilder _levelBuilder;
 
     private void OnEnable()
@@ -29,7 +30,8 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
 
     public void OnGameStart()
     {
-        _pool = new FactoryMonoPool<ExpCrystal, ExpCrystal.Factory>(_crystalStats.CrystalPrefab, _crystalFactory, _poolSize, transform);
+        if (_pool != null) _pool.ClearPool();
+        _pool = new ObjectSpawner<ExpCrystal, ExpCrystal.Factory>(_crystalStats.CrystalPrefab, _crystalFactory, _poolSize, transform);
     }
 
     /// <summary>
@@ -38,12 +40,10 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, IGameStartHand
     /// <param name="zombie"></param>
     public void OnEnemyKilled(Zombie zombie)
     {
-        ExpCrystal crystal = _pool.Pull();
+        Vector3 pos = new Vector3(zombie.transform.position.x, _levelBuilder.GridHeight + _crystalDeltaYAxis, zombie.transform.position.z);
 
-        crystal.Initialize(_crystalStats.CrystalParams[0], _pool);
+        ExpCrystal crystal = _pool.Spawn(pos);
 
-        Vector3 pos = zombie.transform.position;
-
-        crystal.transform.position = new Vector3(pos.x, _levelBuilder.GridHeight + _crystalDeltaYAxis, pos.z);
+        //crystal.Initialize(_levelContext. _crystalStats.CrystalParams[0], _pool);
     }
 }
