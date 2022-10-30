@@ -1110,4 +1110,3 @@ MonoBehaviour:
   _herdBreakpoints: []
   _levelProgress: {fileID: 0}
   _spawnHorde: {fileID: 0}
-  _levelBuilder: {fileID: 0}
