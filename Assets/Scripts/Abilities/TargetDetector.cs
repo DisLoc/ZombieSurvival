@@ -50,7 +50,7 @@ public class TargetDetector : TriggerDetector
     /// </summary>
     public void Cleanup()
     {
-        _targets.RemoveAll(item => item == null || item.activeSelf == false || (CheckDistance(item) == false));
+        _targets?.RemoveAll(item => item == null || item.activeSelf == false || (CheckDistance(item) == false));
     }
 
     /// <summary>

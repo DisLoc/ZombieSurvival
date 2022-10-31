@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
-  m_Name: MoveSpeed
+  m_Name: BossCrit
   m_EditorClassIdentifier: 
-  _baseValue: 7
-  _minValue: 0
-  _maxValue: 0
+  _baseValue: 1
+  _minValue: 1
+  _maxValue: 1
   _maxValueIsInfinite: 1
-  _upgradeMarker: {fileID: 11400000, guid: c7f82875a7c10b24ba58911fba63cf47, type: 2}
+  _upgradeMarker: {fileID: 11400000, guid: cc506a4fe91ed4f498cc0763ee7748a2, type: 2}

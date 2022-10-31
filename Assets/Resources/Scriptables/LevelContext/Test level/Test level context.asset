@@ -22,7 +22,7 @@ MonoBehaviour:
       _spawningCrystalStats: {fileID: 11400000, guid: 374a29a7dcf360c40b5c6d2d80d53528, type: 2}
     - _name: 31-65%
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 31
+      _requiredProgress: 30
       _spawningCrystalStats: {fileID: 11400000, guid: 666fd299b67264443af06179764716ec, type: 2}
     - _name: 66-100%
       _breakpointIcon: {fileID: 0}
@@ -38,7 +38,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 93b7c7bc19ce8af48a598ee71d5408c2, type: 2}
-      _maxUnitsOnScene: 10
+      _maxUnitsOnScene: 7
     - _name: 11-30
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 11
@@ -127,17 +127,17 @@ MonoBehaviour:
     - _name: 30% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 30
-      _bossPrefab: {fileID: 3191088361921500472, guid: 0157807f130689142b0f7a11926345a1, type: 3}
+      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 0}
     - _name: 65% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 65
-      _bossPrefab: {fileID: 7462393546294912117, guid: dbee250daa2f4ea41a19aefe726cade9, type: 3}
+      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 0}
     - _name: 100% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 100
-      _bossPrefab: {fileID: 7792329058486118259, guid: 5169744fde5784c4cb3dc4970c2b8fb1, type: 3}
+      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 0}
   _playerUpgrades: []
   _enemiesUpgrades: []

@@ -63,10 +63,21 @@ public class BossSpawner : Spawner
         }
     }
 
+    public void OnBossDies()
+    {
+        _spawner.ClearPool();
+        _spawner = null;
+
+        if (_isDebug) Debug.Log("Boss event ended");
+
+        EventBus.Publish<IBossEventEndedHandler>(handler => handler.OnBossEventEnd());
+    }
+
     protected override void Spawn(Vector3 position)
     {
-        Zombie boss = _spawner.Spawn(position + Vector3.forward * _spawnDeltaDistance);
+        Zombie boss = _spawner.Spawn(position + Vector3.forward * _spawnDeltaDistance + Vector3.up);
         boss.Initialize(_player, _spawner);
+        (boss as Boss).InitializeSpawner(this);
     }
 
     private void SpawnFence(Vector3 position, GameObject fence)

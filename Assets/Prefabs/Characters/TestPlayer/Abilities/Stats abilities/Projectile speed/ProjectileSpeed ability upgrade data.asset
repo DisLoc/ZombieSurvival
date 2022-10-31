@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upgradeName: 
   _repeatingUpgrade:
-    _description: +12% projectile speed
+    _description: +10% projectile speed
     _upgrade: {fileID: 11400000, guid: 73e2dc7ea76a40f42969ae64b24a4a1e, type: 2}
     _requiredLevel: 0

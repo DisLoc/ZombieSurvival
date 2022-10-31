@@ -51,6 +51,10 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     {
         TObject obj = base.Pull();
 
+        if (obj == null)
+        {
+            return null;
+        }
         obj.gameObject.SetActive(true);
 
         return obj;

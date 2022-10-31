@@ -5,7 +5,7 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
 {
     [SerializeField] protected CharacterStats _stats;
 
-    [Inject] protected Player _player; 
+    protected Player _player; 
     // use factory for injection (end of script)
     // example in ExpCrystal, CrystalSpawner and CrystalFactoryInstaller
     // also use FactoryMonoPool for spawning
@@ -13,7 +13,7 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
 
     public override CharacterStats Stats => _stats;
 
-    void Start()
+    protected void Awake()
     {
         _stats.Initialize();
         _healthBar.Initialize(_stats.Health);
@@ -42,17 +42,6 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
         {
             (_stats.BaseWeapon as ZombieCollider).OnReset();
         }
-    }
-
-    //test
-    void Update()
-    {
-        OnUpdate();
-    }
-
-    void FixedUpdate()
-    {
-        OnFixedUpdate();
     }
 
     public void OnUpdate()

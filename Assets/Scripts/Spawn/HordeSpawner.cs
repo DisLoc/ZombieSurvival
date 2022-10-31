@@ -2,12 +2,13 @@ using UnityEngine;
 using Zenject;
 using static UnityEngine.Mathf;
 
-public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler
+public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler, IBossEventEndedHandler
 {
     protected ObjectSpawner<Zombie> _spawner;
     protected BreakpointList<HordeBreakpoint> _breakpoints;
 
     private int _spawned;
+    private bool _onBossEvent;
 
     [Inject] private Player _player;
     [Inject] private LevelContext _levelContext;
@@ -22,7 +23,7 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
     public override void OnUpdate()
     {
-        if (_spawner == null || _spawner.SpawnCount == 0) return;
+        if (_onBossEvent || _spawner == null || _spawner.SpawnCount == 0) return;
 
         for (int i = 0; i < _spawner.SpawnCount; i++)
         {
@@ -33,7 +34,7 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
     public override void OnFixedUpdate()
     {
-        if (_spawner == null || _spawner.SpawnCount == 0) return;
+        if (_onBossEvent || _spawner == null || _spawner.SpawnCount == 0) return;
 
         for (int i = 0; i < _spawner.SpawnCount; i++)
         {
@@ -48,7 +49,7 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
         if (breakpoint != null)
         {
-            if (_isDebug) Debug.Log("Horde event incoming!");
+            if (_isDebug) Debug.Log("Horde incoming!");
 
             _spawned = 0;
 
@@ -102,5 +103,11 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
         }
 
         _spawner.SpawnedObjects.Cleanup();
+        _onBossEvent = true;
+    }
+
+    public void OnBossEventEnd()
+    {
+        _onBossEvent = false;
     }
 }

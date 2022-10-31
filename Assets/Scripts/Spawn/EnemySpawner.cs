@@ -3,10 +3,12 @@ using UnityEngine;
 using Zenject;
 using static UnityEngine.Mathf;
 
-public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler
+public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler, IBossEventEndedHandler
 {
     protected int _maxUnitsOnScene;
     protected int _totalSpawned;
+
+    private bool _onBossEvent;
 
     private BreakpointList<EnemyBreakpoint> _breakpoints;
 
@@ -28,7 +30,9 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
     public override void OnUpdate()
     {
-        if (_spawners == null || _spawners.Count == 0) return;
+        if (_onBossEvent || _spawners == null || _spawners.Count == 0) return;
+
+        Spawn(GetSpawnPosition());
 
         foreach (var spawner in _spawners)
         {
@@ -44,9 +48,7 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
     public override void OnFixedUpdate()
     {
-        Spawn(GetSpawnPosition());
-
-        if (_spawners == null || _spawners.Count == 0) return;
+        if (_onBossEvent || _spawners == null || _spawners.Count == 0) return;
 
         foreach (var spawner in _spawners)
         {
@@ -98,6 +100,13 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
             spawner.SpawnedObjects.Cleanup();
         }
+
+        _onBossEvent = true;
+    }
+
+    public void OnBossEventEnd()
+    {
+        _onBossEvent = false;
     }
 
     protected override void Spawn(Vector3 position)
