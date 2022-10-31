@@ -28,6 +28,8 @@ public class ChanceCombiner<T> where T : class
     /// <param name="spawnChance"></param>
     public void Add(ObjectChanceSpawn<T> spawnChance)
     {
+        spawnChance.SpawnChance.Initialize();
+
         if (_spawnChances.Count == 0) 
         {
             _spawnChances.Add(spawnChance);
@@ -37,11 +39,31 @@ public class ChanceCombiner<T> where T : class
 
         for (int i = 0; i < _spawnChances.Count; i++)
         {
-            if (_spawnChances[i].SpawnChance.Probability <= spawnChance.SpawnChance.Probability)
+            if (_spawnChances[i].SpawnChance.Probability > spawnChance.SpawnChance.Probability)
             {
-                _spawnChances.Insert(i + 1, spawnChance);
-
-                return;
+                if (i != _spawnChances.Count - 1 && _spawnChances[i + 1].SpawnChance.Probability <= spawnChance.SpawnChance.Probability) 
+                {
+                    _spawnChances.Insert(i + 1, spawnChance);
+                    return;
+                }
+                else if (i == _spawnChances.Count - 1)
+                {
+                    _spawnChances.Add(spawnChance);
+                    return;
+                }
+            }
+            else if (_spawnChances[i].SpawnChance.Probability <= spawnChance.SpawnChance.Probability)
+            {
+                if (i > 0)
+                {
+                    _spawnChances.Insert(i - 1, spawnChance);
+                    return;
+                }
+                else
+                {
+                    _spawnChances.Insert(0, spawnChance);
+                    return;
+                }
             }
         }
     }

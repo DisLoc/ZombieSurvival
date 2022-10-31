@@ -9,6 +9,7 @@ public class CleanupableList<T> where T : class
     protected int _currentIndex = 0;
 
     public List<T> List => _list;
+    public int Count => _list.Count;
 
     public CleanupableList()
     {

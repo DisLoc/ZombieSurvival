@@ -107,6 +107,12 @@ public class Player : CharacterBase
     /// <returns>Return added or upgraded ability</returns>
     public AbilityContainer GetAbility(AbilityContainer ability)
     {
+        if (ability as AdditionalAbility != null)
+        {
+            GetUpgrade((ability as AdditionalAbility).CurrentUpgrade.Upgrade);
+            return ability;
+        }
+
         AbilityContainer abilityContainer = _abilityInventory.Find(ability);
 
         if (abilityContainer != null)

@@ -20,7 +20,7 @@ public class HPBar : FillBar
         _value = (int)_health.Value;
         _maxFillValue = _health.MaxHP;
 
-        UpdateBar();
+        base.Initialize();
     }
 
     public void OnGameOver()

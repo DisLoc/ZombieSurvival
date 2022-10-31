@@ -28,6 +28,11 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
 
     protected override void CreateObject()
     {
+        if (_parent == null)
+        {
+            _parent = new GameObject(_prefab.name + " pool").transform;
+        }
+
         TObject obj = Object.Instantiate(_prefab, _parent);
 
         obj.gameObject.SetActive(false);
@@ -84,10 +89,9 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
 
     public override void ClearPool()
     {
-        foreach(TObject obj in _objects)
-        {
-            Object.Destroy(obj.gameObject);
-        }
+        Object.Destroy(_parent.gameObject);
+
+        _parent = null;
 
         base.ClearPool();
     }

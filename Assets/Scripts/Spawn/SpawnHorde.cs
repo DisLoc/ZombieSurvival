@@ -32,7 +32,7 @@ public class SpawnHorde : MonoBehaviour, IStartHorde
             //  Instantiate(zombie, transform);
             var pool = zombieSpawner.Pool;
             var zombie = pool.Pull();
-            zombie.Initialize(pool);
+            zombie.Initialize(_player, pool);
             zombie.gameObject.transform.position = new Vector3(0, zombieSpawner.LevelBuilder.GridHeight + 1f, 0);
         }
     }

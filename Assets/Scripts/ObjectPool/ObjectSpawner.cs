@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactory> where TObject : MonoBehaviour, IPoolable
-                                                                                            where TFactory: Zenject.PlaceholderFactory<TObject>
+public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBehaviour, IPoolable
 {
-    private int _spawned;
+    private CleanupableList<TObject> _spawnedObjects;
 
-    public int SpawnCount => _spawned;
+    public CleanupableList<TObject> SpawnedObjects => _spawnedObjects;
+    public int SpawnCount => _spawnedObjects.Count;
 
-    public ObjectSpawner(TObject prefab, TFactory factory, int capacity, Transform parent = null) : base(prefab, factory, capacity, parent)
+    public ObjectSpawner(TObject prefab, int capacity, Transform parent = null) : base(prefab, capacity, parent)
     {
-
+        _spawnedObjects = new CleanupableList<TObject>(capacity);
     }
 
     public TObject Spawn(Vector3 position)
@@ -19,7 +19,7 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
 
         obj.transform.position = position;
 
-        _spawned++;
+        _spawnedObjects.Add(obj);
 
         return obj;
     }
@@ -33,7 +33,7 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
             objects.Add(Spawn(GetRandomPosition(position, deltaPositionXZ)));
         }
 
-        _spawned += count;
+        _spawnedObjects.List.AddRange(objects);
 
         return objects;
     }
@@ -51,6 +51,6 @@ public class ObjectSpawner<TObject, TFactory> : FactoryMonoPool<TObject, TFactor
     {
         base.Release(obj);
 
-        _spawned--;
+        _spawnedObjects.Remove(obj, true);
     }
 }

@@ -1,36 +1,32 @@
 using UnityEngine;
 using Zenject;
 
-public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, ILevelProgressUpdateHandler
+public class CrystalSpawner : Spawner, IEnemyKilledHandler
 {
-    [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
-
-    [Header("Settings")]
-    [SerializeField][Range(0, 2)] private float _crystalDeltaYAxis = 0.2f;
     [SerializeField] private int _poolSize;
 
-    private ObjectSpawner<ExpCrystal, ExpCrystal.Factory> _pool;
+    private ObjectSpawner<ExpCrystal> _pool;
     private ChanceCombiner<CrystalParam> _spawnCombiner;
     private BreakpointList<CrystalBreakpoint> _breakpoints;
 
-    [Inject] private ExpCrystal.Factory _crystalFactory;
     [Inject] private LevelContext _levelContext;
+    [Inject] private Player _player;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        EventBus.Subscribe(this);
+        base.OnEnable();
 
-        _breakpoints = new BreakpointList<CrystalBreakpoint>(_levelContext.CrystalSpawnBreakpoints.Breakpoints);
+        _breakpoints = _levelContext.CrystalSpawnBreakpoints;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        EventBus.Unsubscribe(this);
+        base.OnDisable();
+
         ClearPool();
     }
 
-    public void OnLevelProgressUpdate(int progress)
+    public override void OnLevelProgressUpdate(int progress)
     {
         Breakpoint breakpoint = _breakpoints.CheckReaching(progress);
 
@@ -46,7 +42,7 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, ILevelProgress
 
         ClearPool();
         
-        _pool = new ObjectSpawner<ExpCrystal, ExpCrystal.Factory>(breakpoint.SpawningCrystalsStats.CrystalPrefab, _crystalFactory, _poolSize, transform);
+        _pool = new ObjectSpawner<ExpCrystal>(breakpoint.SpawningCrystalsStats.CrystalPrefab, _poolSize, transform);
         _spawnCombiner = new ChanceCombiner<CrystalParam>(breakpoint.SpawningCrystalsStats.CrystalSpawnParams);
     }
 
@@ -64,10 +60,20 @@ public class CrystalSpawner : MonoBehaviour, IEnemyKilledHandler, ILevelProgress
     /// <param name="zombie"></param>
     public void OnEnemyKilled(Zombie zombie)
     {
-        Vector3 pos = new Vector3(zombie.transform.position.x, _levelContext.LevelBuilder.GridHeight + _crystalDeltaYAxis, zombie.transform.position.z);
+        Vector3 position = new Vector3
+            (
+                zombie.transform.position.x,
+                _levelContext.LevelBuilder.GridHeight + _spawnDeltaDistance,
+                zombie.transform.position.z
+            );
 
-        ExpCrystal crystal = _pool.Spawn(pos);
+        Spawn(position);
+    }
 
-        crystal.Initialize(_spawnCombiner.GetStrikedObject(), _pool);
+    protected override void Spawn(Vector3 position)
+    {
+        ExpCrystal crystal = _pool.Spawn(position);
+
+        crystal.Initialize(_spawnCombiner.GetStrikedObject(), _pool, _player);
     }
 }

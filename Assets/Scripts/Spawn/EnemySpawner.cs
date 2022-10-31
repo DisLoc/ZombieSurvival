@@ -3,93 +3,104 @@ using UnityEngine;
 using Zenject;
 using static UnityEngine.Mathf;
 
-public class EnemySpawner : MonoBehaviour, IFixedUpdatable, ILevelProgressUpdateHandler, IBossEventHandler
+public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler
 {
-    [Header("Debug settings")]
-    [SerializeField] protected bool _isDebug;
-
-    [Header("Settings")]
-    [SerializeField][Range(1, 30)] private float _spawnDistance;
-
     protected int _maxUnitsOnScene;
-    private int _totalSpawned;
+    protected int _totalSpawned;
 
-    private BreakpointList<EnemyBreakpoint> _enemyBreakpoints;
-    private BreakpointList<HordeBreakpoint> _hordeBreakpoints;
-    private BreakpointList<BossBreakpoint> _bossBreakpoints;
+    private BreakpointList<EnemyBreakpoint> _breakpoints;
 
-    private List<ObjectSpawner<Zombie, Zombie.Factory>> _spawners;
+    private List<ObjectSpawner<Zombie>> _spawners;
     private ChanceCombiner<Zombie> _combiner;
 
     #region Inject
-    [Inject] private Zombie.Factory _factory;
     [Inject] private Player _player;
     [Inject] private LevelContext _levelContext;
     #endregion
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        EventBus.Subscribe(this);
+        base.OnEnable();
 
-        _enemyBreakpoints = _levelContext.EnemyBreakpoints;
-        _hordeBreakpoints = _levelContext.HordeBreakpoints;
-        _bossBreakpoints = _levelContext.BossBreakpoints;
-
-        _spawners = new List<ObjectSpawner<Zombie, Zombie.Factory>>();
+        _breakpoints = _levelContext.EnemyBreakpoints;
+        _spawners = new List<ObjectSpawner<Zombie>>();
     }
 
-    private void OnDisable()
+    public override void OnUpdate()
     {
-        EventBus.Unsubscribe(this);
-    }
+        if (_spawners == null || _spawners.Count == 0) return;
 
-    public void OnLevelProgressUpdate(int progress)
-    {
-        Breakpoint enemyBreakpoint = _enemyBreakpoints.CheckReaching(progress);
-        Breakpoint hordeBreakpoint = _hordeBreakpoints.CheckReaching(progress);
-        Breakpoint bossBreakpoint = _bossBreakpoints.CheckReaching(progress);
-
-        if (enemyBreakpoint != null)
+        foreach (var spawner in _spawners)
         {
-            _combiner = new ChanceCombiner<Zombie>((enemyBreakpoint as EnemyBreakpoint).SpawningEnemies);
-            _maxUnitsOnScene = (enemyBreakpoint as EnemyBreakpoint).MaxUnitsOnScene;
+            if (spawner.SpawnCount == 0) continue;
+
+            for (int i = 0; i < spawner.SpawnCount; i++)
+            { 
+                spawner.SpawnedObjects[i]?.OnUpdate();
+            }
+            spawner.SpawnedObjects.Cleanup();
+        }
+    }
+
+    public override void OnFixedUpdate()
+    {
+        Spawn(GetSpawnPosition());
+
+        if (_spawners == null || _spawners.Count == 0) return;
+
+        foreach (var spawner in _spawners)
+        {
+            if (spawner.SpawnCount == 0) continue;
+
+            for (int i = 0; i < spawner.SpawnCount; i++)
+            {
+                spawner.SpawnedObjects[i]?.OnFixedUpdate();
+            }
+            spawner.SpawnedObjects.Cleanup();
+        }
+    }
+
+    public override void OnLevelProgressUpdate(int progress)
+    {
+        Breakpoint breakpoint = _breakpoints.CheckReaching(progress);
+
+        if (breakpoint != null)
+        {
+            if (_isDebug) Debug.Log("Enemy strike!");
+
+            _combiner = new ChanceCombiner<Zombie>((breakpoint as EnemyBreakpoint).SpawningEnemies);
+            _maxUnitsOnScene = (breakpoint as EnemyBreakpoint).MaxUnitsOnScene;
 
             ClearPools();
 
-            foreach(ObjectChanceSpawn<Zombie> spawnChance in (enemyBreakpoint as EnemyBreakpoint).SpawningEnemies)
+            foreach (ObjectChanceSpawn<Zombie> spawnChance in (breakpoint as EnemyBreakpoint).SpawningEnemies)
             {
-                _spawners.Add(new ObjectSpawner<Zombie, Zombie.Factory>(spawnChance.Object, _factory, _maxUnitsOnScene, transform));
+                _spawners.Add(new ObjectSpawner<Zombie>(spawnChance.Object, _maxUnitsOnScene, transform));
             }
-            
         }
-
-        if (hordeBreakpoint != null)
-        {
-            SpawnHorde(hordeBreakpoint as HordeBreakpoint);
-        }
-
-        if (bossBreakpoint != null)
-        {
-            SpawnBoss(bossBreakpoint as BossBreakpoint);
-        }
-    }
-
-    private void FixedUpdate() // test
-    {
-        OnFixedUpdate();
-    }
-
-    public void OnFixedUpdate()
-    {
-        Spawn();
     }
 
     public void OnBossEvent()
     {
+        if (_spawners == null || _spawners.Count == 0) return;
 
+        foreach (var spawner in _spawners)
+        {
+            if (spawner.SpawnCount == 0) continue;
+
+            for (int i = 0; i < spawner.SpawnCount; i++)
+            {
+                if(spawner.SpawnedObjects[i] != null)
+                {
+                    spawner.Release(spawner.SpawnedObjects[i]);
+                }
+            }
+
+            spawner.SpawnedObjects.Cleanup();
+        }
     }
 
-    public virtual void Spawn()
+    protected override void Spawn(Vector3 position)
     {
         Zombie enemy = _combiner.GetStrikedObject();
 
@@ -97,7 +108,7 @@ public class EnemySpawner : MonoBehaviour, IFixedUpdatable, ILevelProgressUpdate
 
         int unitsOnScene = 0;
 
-        foreach(ObjectSpawner<Zombie, Zombie.Factory> pool in _spawners)
+        foreach(ObjectSpawner<Zombie> pool in _spawners)
         {
             unitsOnScene += pool.SpawnCount;
         }
@@ -107,9 +118,9 @@ public class EnemySpawner : MonoBehaviour, IFixedUpdatable, ILevelProgressUpdate
             return;
         }
 
-        ObjectSpawner<Zombie, Zombie.Factory> spawner = null;
+        ObjectSpawner<Zombie> spawner = null;
 
-        foreach (ObjectSpawner<Zombie, Zombie.Factory> pool in _spawners)
+        foreach (ObjectSpawner<Zombie> pool in _spawners)
         {
             if (pool.Prefab.Equals(enemy))
             {
@@ -120,16 +131,13 @@ public class EnemySpawner : MonoBehaviour, IFixedUpdatable, ILevelProgressUpdate
 
         if (spawner == null) return;
 
-
-
-        Zombie spawnedEnemy = spawner.Spawn(GetSpawnPosition());
+        Zombie spawnedEnemy = spawner.Spawn(position);
 
         if (spawnedEnemy != null)
         {
-            spawnedEnemy.Initialize(spawner);
+            spawnedEnemy.Initialize(_player, spawner);
             _totalSpawned++;
         }
-
     }
 
     private Vector3 GetSpawnPosition()
@@ -137,34 +145,24 @@ public class EnemySpawner : MonoBehaviour, IFixedUpdatable, ILevelProgressUpdate
         Vector3 playerPos = _player.transform.position;
         int unitsOnScene = 0;
 
-        foreach (ObjectSpawner<Zombie, Zombie.Factory> pool in _spawners)
+        foreach (ObjectSpawner<Zombie> pool in _spawners)
         {
             unitsOnScene += pool.SpawnCount;
         }
 
         return new Vector3
             (
-                Cos(_totalSpawned % _maxUnitsOnScene) * _spawnDistance + playerPos.x, 
+                Cos(_totalSpawned % _maxUnitsOnScene) * _spawnDeltaDistance + playerPos.x, 
                 playerPos.y, 
-                Sin(_totalSpawned % _maxUnitsOnScene) * _spawnDistance + playerPos.z
+                Sin(_totalSpawned % _maxUnitsOnScene) * _spawnDeltaDistance + playerPos.z
             );
-    }
-
-    public virtual void SpawnHorde(HordeBreakpoint breakpoint)
-    {
-
-    }
-
-    public virtual void SpawnBoss(BossBreakpoint breakpoint)
-    {
-
     }
 
     private void ClearPools()
     {
         if (_spawners != null)
         {
-            foreach(ObjectSpawner<Zombie, Zombie.Factory> pool in _spawners)
+            foreach(ObjectSpawner<Zombie> pool in _spawners)
             {
                 pool.ClearPool();
             }

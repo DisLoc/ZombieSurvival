@@ -5,10 +5,10 @@ public class ExpCrystal : PickableObject, IPoolable
 {
     [SerializeField] private MeshRenderer _renderer;
 
-    [Inject] private Player _player;
+    private Player _player;
 
     private int _expValue;
-    private FactoryMonoPool<ExpCrystal, Factory> _pool;
+    private MonoPool<ExpCrystal> _pool;
 
     /// <summary>
     /// Value that character get when take this crystal
@@ -20,12 +20,13 @@ public class ExpCrystal : PickableObject, IPoolable
     /// </summary>
     /// <param name="param">Params need to set</param>
     /// <param name="pool">Pool to release to</param>
-    public void Initialize(CrystalParam param, FactoryMonoPool<ExpCrystal, Factory> pool)
+    public void Initialize(CrystalParam param, MonoPool<ExpCrystal> pool, Player player)
     {
         _expValue = param.ExpValue;
         _renderer.material.color = param.Color;
 
         _pool = pool;
+        _player = player;
     }
 
     public void ResetObject()

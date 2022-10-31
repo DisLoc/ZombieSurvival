@@ -52,7 +52,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         _killed++;
         if (_killed >= _enemiesForProgress)
         {
-            Debug.Log("Enemies killed, add progress: " + _progressPerEnemies);
+            if (_isDebug) Debug.Log("Enemies killed, add progress: " + _progressPerEnemies);
 
             _killed = 0;
             _value += _progressPerEnemies;

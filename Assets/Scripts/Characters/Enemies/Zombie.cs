@@ -9,7 +9,7 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
     // use factory for injection (end of script)
     // example in ExpCrystal, CrystalSpawner and CrystalFactoryInstaller
     // also use FactoryMonoPool for spawning
-    protected FactoryMonoPool<Zombie, Factory> _pool;
+    protected MonoPool<Zombie> _pool;
 
     public override CharacterStats Stats => _stats;
 
@@ -25,9 +25,10 @@ public class Zombie : CharacterBase, IPoolable, IUpdatable
     /// Need initialization every time when pull object
     /// </summary>
     /// <param name="pool"></param>
-    public void Initialize(FactoryMonoPool<Zombie, Factory> pool)
+    public void Initialize(Player player, MonoPool<Zombie> pool = null)
     {
         _pool = pool;
+        _player = player;
 
         _stats.Health.SetValue(_stats.Health.MaxHP);
         _healthBar.Initialize(_stats.Health);

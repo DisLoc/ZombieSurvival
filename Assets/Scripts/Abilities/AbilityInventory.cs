@@ -66,7 +66,7 @@ public sealed class AbilityInventory
             return null; // cant have too much abilities
         }
 
-        AbilityContainer newAbility = Object.Instantiate(ability, _abilitiesParent.position, ability.transform.localRotation, _abilitiesParent);
+        AbilityContainer newAbility = Object.Instantiate(ability, _abilitiesParent);
 
         newAbility.Initialize();
 
