@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseValue: 6
   _minValue: 1
-  _maxValue: 0
+  _maxValue: 6
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: a7686d67e0d3f7342a14eb33d86b47ee, type: 2}

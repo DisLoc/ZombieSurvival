@@ -71,27 +71,26 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     public void SetAbilities()
     {
         _menuGO.SetActive(true);
-        CleanupAbilities();
 
         InitializeAbilitiesUI();
 
         List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerLevel.Value);
 
-        if (_abilitiesUI.Count != abilities.Count)
-        {
-            if (_isDebug) Debug.Log("Abilities count error!");
-
-            _menuGO.SetActive(false);
-            return;
-        }
-
         for(int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
         {
-            if (_abilitiesUI[i].gameObject.activeSelf)
+            if (i >= abilities.Count)
             {
-                _abilitiesUI[i].SetAbility(abilities[i]);
+                if (_isDebug) Debug.Log("Abilities error!");
+
+                return;
             }
-            else if (_isDebug) Debug.Log("AbilityUI is disabled! Skip it");
+
+            AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
+
+            abilityUI.Initialize(this);
+            abilityUI.SetAbility(abilities[i]);
+            
+            _abilitiesUI.Add(abilityUI);
         }
     }
 
@@ -109,15 +108,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
             _abilitiesUI.Clear();
         }
-
-        for (int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
-        {
-            AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
-
-            abilityUI.Initialize(this);
-
-            _abilitiesUI.Add(abilityUI);
-        }
     }
 
     /// <summary>
@@ -127,6 +117,8 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
     private List<AbilityContainer> GetRandomAbilities(int count)
     {
+        CleanupAbilities();
+
         AbilityInventory playerInventory = _player.AbilityInventory;
 
         foreach(AbilityContainer abilityContainer in playerInventory.Abilities) // add abilities that player have in inventory
@@ -182,8 +174,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
         _player.GetAbility(ability);
 
-        CleanupAbilities();
-
         _levelUps--;
 
         if (_levelUps > 0)
@@ -192,6 +182,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
         else
         {
+            _levelUps = 0;
             _onChoice = false;
         }
     }

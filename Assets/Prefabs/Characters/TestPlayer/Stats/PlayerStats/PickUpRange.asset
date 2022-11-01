@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: PickUpRange
   m_EditorClassIdentifier: 
   _baseValue: 1
-  _minValue: 0
-  _maxValue: 0
+  _minValue: 1
+  _maxValue: 1
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: 15768da618126b84a8dd2d14d7269d34, type: 2}
-  _level:
-    _baseValue: 0
-    _minValue: 0
-    _maxValue: 5
-    _maxValueIsInfinite: 0
