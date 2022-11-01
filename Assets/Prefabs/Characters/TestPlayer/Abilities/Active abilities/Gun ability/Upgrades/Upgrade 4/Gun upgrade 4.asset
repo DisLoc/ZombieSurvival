@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
-  m_Name: GunUpgrade 4
+  m_Name: Gun upgrade 4
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
   _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}

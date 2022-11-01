@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
-  m_Name: Upgrade data
+  m_Name: Blade upgrade data 2x0
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: fe7d5b414acc94d4da7508201099c4e7, type: 2}
+  _upgradingStatMarker: {fileID: 11400000, guid: 48d7ea21aa7e9d64c991705a9874d0ac, type: 2}
   _upgradeValue: 0
-  _upgradeMultiplier: 1.5
+  _upgradeMultiplier: 1.25
