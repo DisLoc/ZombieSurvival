@@ -736,14 +736,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7764750604290027405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7764750604290027405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -768,18 +760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3996085182143219124, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
-      propertyPath: _isDebug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3996085182143219125, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
-      propertyPath: _isDebug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3996085182143219126, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
-      propertyPath: _isDebug
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3996085183425521321, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_Name
       value: Spawners
@@ -827,10 +807,6 @@ PrefabInstance:
     - target: {fileID: 3996085183425521322, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3996085184043712268, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
-      propertyPath: _isDebug
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
