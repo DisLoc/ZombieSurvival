@@ -100,6 +100,10 @@ public sealed class AbilityInventory
             {
                 _weapons.Remove(removingAbility as Weapon);
             }
+            if (removingAbility as ProjectileWeapon != null)
+            {
+                _projectileWeapons.Remove(removingAbility as ProjectileWeapon);
+            }
 
             return _abilities.Remove(removingAbility);
         }
@@ -117,18 +121,46 @@ public sealed class AbilityInventory
         return _abilities.Find(item => item.Name == ability.Name);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="weapon"></param>
+    /// <returns></returns>
     public Weapon FindCombine(Weapon weapon)
     {
-        AbilityContainer ability = Find(weapon);
-
-        if (ability != null)
+        if (weapon.IsSuper)
         {
-            if (ability.IsMaxLevel && Find((ability as Weapon).RequiredAbilityToUpgradeToSuper) != null)
+            foreach(AbilityContainer ability in _abilities)
             {
-                return (ability as Weapon).RequiredAbilityToUpgradeToSuper.FindCombine(ability as Weapon);
+                if (ability as PassiveAbility != null)
+                {
+                    foreach(CombineAbility combine in (ability as PassiveAbility).CombinedAbilities)
+                    {
+                        if (combine.SuperWeapon.Equals(weapon))
+                        {
+                            return combine.CombinedWeapon;
+                        }
+                        else continue;
+                    }
+                }
+                else continue;
+            }
+
+            return null;
+        }
+        else
+        {
+            AbilityContainer ability = Find(weapon);
+
+            if (ability != null)
+            {
+                if (ability.IsMaxLevel && Find((ability as Weapon).RequiredAbilityToUpgradeToSuper) != null)
+                {
+                    return (ability as Weapon).RequiredAbilityToUpgradeToSuper.FindCombine(ability as Weapon);
+                }
+                else return null;
             }
             else return null;
         }
-        else return null;
     }
 }

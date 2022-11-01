@@ -37,7 +37,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         _abilityChooseCount.Initialize();
 
         _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
-        _abilitiesUI = new List<AbilityUI>((int)_abilitiesPerLevel.Value);
 
         InitializeAbilitiesUI();
 
@@ -78,19 +77,14 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
         for(int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
         {
-            if (i >= abilities.Count)
+            if (i >= abilities.Count || i > _abilitiesUI.Count)
             {
                 if (_isDebug) Debug.Log("Abilities error!");
 
                 return;
             }
 
-            AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
-
-            abilityUI.Initialize(this);
-            abilityUI.SetAbility(abilities[i]);
-            
-            _abilitiesUI.Add(abilityUI);
+            _abilitiesUI[i].SetAbility(abilities[i]);
         }
     }
 
@@ -99,7 +93,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// </summary>
     private void InitializeAbilitiesUI()
     {
-        if (_abilitiesUI.Count > 0)
+        if (_abilitiesUI != null && _abilitiesUI.Count != (int)_abilitiesPerLevel.Value)
         {
             foreach(AbilityUI abilityUI in _abilitiesUI)
             {
@@ -107,6 +101,28 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
             }
 
             _abilitiesUI.Clear();
+
+            for (int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
+            {
+                AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
+
+                abilityUI.Initialize(this);
+
+                _abilitiesUI.Add(abilityUI);
+            }
+        }
+        else if (_abilitiesUI == null)
+        {
+            _abilitiesUI = new List<AbilityUI>((int)_abilitiesPerLevel.Value);
+
+            for (int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
+            {
+                AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
+
+                abilityUI.Initialize(this);
+
+                _abilitiesUI.Add(abilityUI);
+            }
         }
     }
 

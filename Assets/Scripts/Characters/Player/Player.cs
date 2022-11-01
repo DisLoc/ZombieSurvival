@@ -113,6 +113,19 @@ public class Player : CharacterBase
             return ability;
         }
 
+        if (ability as Weapon != null && (ability as Weapon).IsSuper)
+        {
+            Weapon weapon = _abilityInventory.FindCombine(ability as Weapon);
+
+            if (weapon != null)
+            {
+                if (_isDebug) Debug.Log("Upgrade " + weapon.Name + " to super: " + ability.Name);
+
+                _abilityInventory.Remove(weapon);
+                _abilityInventory.Add(ability);
+            }
+        }
+
         AbilityContainer abilityContainer = _abilityInventory.Find(ability);
 
         if (abilityContainer != null)
