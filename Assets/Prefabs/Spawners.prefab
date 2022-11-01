@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3536400127cbbf45b538f6280a7ef70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _spawnDeltaDistance: 20
 --- !u!114 &3996085182143219126
 MonoBehaviour:
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38bad9c94ddd294c8706fa26b006757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _spawnDeltaDistance: 25
 --- !u!114 &3996085182143219125
 MonoBehaviour:
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33a1ccc6a556154eb5082f2e2fd67fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _spawnDeltaDistance: 10
   _poolSize: 1
 --- !u!1 &3996085183425521321
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee43c2693c4cbb419cbf0b94f10346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _spawnDeltaDistance: 0.25
   _poolSize: 15

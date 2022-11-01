@@ -17,6 +17,8 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
     {
         TObject obj = Pull();
 
+        if (obj == null) return null;
+        
         obj.transform.position = position;
 
         _spawnedObjects.Add(obj);
