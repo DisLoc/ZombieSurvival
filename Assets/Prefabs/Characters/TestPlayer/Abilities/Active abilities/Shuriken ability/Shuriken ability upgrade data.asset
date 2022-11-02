@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: Shuriken ability upgrade data
+  m_EditorClassIdentifier: 
+  _upgradeName: Shuriken
+  _weapon: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
+  _levelUpgrades:
+  - _description: New ability
+    _upgrade: {fileID: 11400000, guid: 54f7dd5b44b96134881d924275d71264, type: 2}
+    _requiredLevel: 0
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: 7a40b4e107261654b86eddb5c4dfdf5b, type: 2}
+    _requiredLevel: 1
+  - _description: +25% damage & +25% projectile speed
+    _upgrade: {fileID: 11400000, guid: b9a04a61934cc52438d67b61e5692044, type: 2}
+    _requiredLevel: 2
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: b3061241e2394ae4986cb316fdf9bcd3, type: 2}
+    _requiredLevel: 3
+  - _description: +25% damage & +25% projectile speed
+    _upgrade: {fileID: 11400000, guid: c74b880cc8c2cd14baec7472a9e661b0, type: 2}
+    _requiredLevel: 4

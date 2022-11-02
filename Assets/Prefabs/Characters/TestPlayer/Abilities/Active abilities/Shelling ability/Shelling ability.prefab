@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3292791445449446342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3292791445449446340}
+  - component: {fileID: 3292791445449446341}
+  m_Layer: 0
+  m_Name: Shelling ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3292791445449446340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292791445449446342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.016869, y: -1.5843542, z: 13.277952}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3292791445449446341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292791445449446342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d611c741ac526649a06f1312807cbd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: Shelling
+  _icon: {fileID: 0}
+  _isSuperWeapon: 0
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 0}
+  _abilityUpgradeData: {fileID: 0}
+  _scatterMultiplier: 0
+  _stats:
+    _abilityMarker: {fileID: 0}
+    _level:
+      _baseValue: 0
+      _minValue: 0
+      _maxValue: 0
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 0}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 0}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 0}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _projectilePrefab: {fileID: 0}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 0}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 0}
+      _valueIsInfinite: 0
