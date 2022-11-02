@@ -37,8 +37,6 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _speed = null;
         _damage = null;
         _penetrationNumber = null;
-
-        transform.localScale = Vector3.one;
     }
 
     public virtual void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
@@ -61,12 +59,9 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
             _particle.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
             _particle.Play();
         }
-        else
-        {
-            if (_isDebug) Debug.Log("Missing particle");
+        else if (_isDebug) Debug.Log("Missing particle");
 
-            transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
-        }
+        transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
     }
 
     /// <summary>

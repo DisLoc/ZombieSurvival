@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d8f67d35e62e04eaf7c3a7ed43b0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _particle: {fileID: 0}
   _sphereCollider: {fileID: 6689769446662140375}
   _targetTag: 1
