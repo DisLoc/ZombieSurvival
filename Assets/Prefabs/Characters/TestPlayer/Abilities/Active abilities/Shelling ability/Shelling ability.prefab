@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1587591856434631516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7979413392958830390}
+  - component: {fileID: 3684333639138974071}
+  - component: {fileID: 3238060928791061723}
+  m_Layer: 0
+  m_Name: TargetDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7979413392958830390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587591856434631516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3292791445449446340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3684333639138974071
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587591856434631516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3238060928791061723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587591856434631516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 3684333639138974071}
+  _triggerTag: 1
 --- !u!1 &3292791445449446342
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,11 +85,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292791445449446342}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.016869, y: -1.5843542, z: 13.277952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7979413392958830390}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,50 +110,50 @@ MonoBehaviour:
   _name: Shelling
   _icon: {fileID: 0}
   _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 0}
-  _abilityUpgradeData: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 2286109695880419290, guid: bc14bb3e3c32adb4ea0b0df588ea2a5e, type: 3}
+  _targetDetector: {fileID: 3238060928791061723}
+  _abilityUpgradeData: {fileID: 11400000, guid: 8083128d0de6fe1438ccf56d72674bab, type: 2}
   _scatterMultiplier: 0
   _stats:
-    _abilityMarker: {fileID: 0}
+    _abilityMarker: {fileID: 11400000, guid: c7c408fc1bd8c7648916c4d004655be4, type: 2}
     _level:
       _baseValue: 0
-      _minValue: 0
-      _maxValue: 0
+      _minValue: 1
+      _maxValue: 5
       _maxValueIsInfinite: 0
     _damage:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: b8a33b94d52492e41bd6eb96d47562a0, type: 2}
       _criticalDamage:
         _isDebug: 0
-        _statData: {fileID: 0}
+        _statData: {fileID: 11400000, guid: 0b29b56b4f58eca43925bd2704f044f5, type: 2}
         _chance:
           _isDebug: 0
-          _statData: {fileID: 0}
+          _statData: {fileID: 11400000, guid: b48becd8a22b712449a9435cf23c3635, type: 2}
     _attackInterval:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 2e25e8486861f9c41be031df5137d41d, type: 2}
     _attackRange:
       _isDebug: 0
-      _statData: {fileID: 0}
-    _projectilePrefab: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 3a604223bc17373428217d5aa56fc70c, type: 2}
+    _projectilePrefab: {fileID: 8342279978199038871, guid: ebcf8a93b3c998e44ad364379d06aafa, type: 3}
     _destroyProjectilesOnAttack: 0
     _projectileSize:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 3bf0da9997332e54595cc7c844ded665, type: 2}
     _projectileLifeDuration:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: bd674d9f62a21b84bad967f9ad94ce7e, type: 2}
     _projectileNumber:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 50bf80a1619ffdc4a8bbbdde80efd957, type: 2}
     _projectilesSpawnInterval:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 6358a6e5fb6e2eb45a882ec19c8fbb7c, type: 2}
     _projectileSpeed:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: 18f2be3fef34bce4399c25bc08bb12c2, type: 2}
     _penetrationNumber:
       _isDebug: 0
-      _statData: {fileID: 0}
+      _statData: {fileID: 11400000, guid: af939f40bdd2deb4c88bee90582f213a, type: 2}
       _valueIsInfinite: 0

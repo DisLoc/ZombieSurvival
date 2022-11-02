@@ -58,10 +58,15 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
             main.startLifetime = _releaseDelay.Value;
             main.duration = _releaseDelay.Value;
 
+            _particle.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
             _particle.Play();
         }
+        else
+        {
+            if (_isDebug) Debug.Log("Missing particle");
 
-        transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+        }
     }
 
     /// <summary>

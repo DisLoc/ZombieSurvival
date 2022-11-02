@@ -49,7 +49,7 @@ MonoBehaviour:
   _name: Aura
   _icon: {fileID: 0}
   _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 7105945157763679919, guid: 2484bfe7343253449b7370d0d0750e7c, type: 3}
   _targetDetector: {fileID: 1639761649709825330}
   _abilityUpgradeData: {fileID: 11400000, guid: 91e89e03209f8e145a410e5dec99dacd, type: 2}
   _stats:

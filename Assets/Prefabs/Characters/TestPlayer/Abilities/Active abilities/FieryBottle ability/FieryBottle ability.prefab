@@ -110,10 +110,10 @@ MonoBehaviour:
   _name: Fiery bottle
   _icon: {fileID: 0}
   _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _requiredAbilityToUpgradeToSuper: {fileID: 4270216756272349152, guid: 0c478017e1c1eed48ae8aafde0c470e1, type: 3}
   _targetDetector: {fileID: 7193258918535387908}
   _abilityUpgradeData: {fileID: 11400000, guid: e0391b2152f897e4b92f187c996dbd29, type: 2}
-  _scatterMultiplier: 0
+  _scatterMultiplier: 0.15
   _stats:
     _abilityMarker: {fileID: 11400000, guid: cda0936837117c04eab0b1b5292580a8, type: 2}
     _level:
