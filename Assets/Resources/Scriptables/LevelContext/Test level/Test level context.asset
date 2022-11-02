@@ -26,7 +26,7 @@ MonoBehaviour:
       _spawningCrystalStats: {fileID: 11400000, guid: 666fd299b67264443af06179764716ec, type: 2}
     - _name: 66-100%
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 66
+      _requiredProgress: 65
       _spawningCrystalStats: {fileID: 11400000, guid: 591e8bf598388ce4ba7f620463e81a83, type: 2}
   _enemyBreakpoints:
     _breakpoints:
