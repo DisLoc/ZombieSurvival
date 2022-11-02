@@ -689,10 +689,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._baseWeapon
-      value: 
-      objectReference: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._expLevel._expBar
       value: 
       objectReference: {fileID: 1289386374}
@@ -748,29 +744,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
@@ -792,10 +768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3996085183425521321, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3996085183425521321, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_Name
       value: Spawners

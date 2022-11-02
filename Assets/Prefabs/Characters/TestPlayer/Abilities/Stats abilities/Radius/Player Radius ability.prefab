@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Attack range
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 73426adc1ea28f74d87d90c2a68e7619, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 3b4c80019ba3c8a4e91d9fd4c0eb1fe1, type: 2}
@@ -58,5 +57,8 @@ MonoBehaviour:
       _maxValueIsInfinite: 0
   _combinedAbilities:
   - _combinedWeapon: {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
+    _superWeapon: {fileID: 0}
+    _unlockUpgradeLevel: 5
+  - _combinedWeapon: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
     _superWeapon: {fileID: 0}
     _unlockUpgradeLevel: 5

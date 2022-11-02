@@ -86,7 +86,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     {
         Projectile projectile = _pool.PullDisabled();
         
-        projectile.transform.position = transform.position;
+        projectile.transform.position = GetProjectilePosition();
         projectile.Initialize(_stats, this);
         projectile.Throw(GetProjectileMoveDirection());
         projectile.gameObject.SetActive(true);
@@ -102,6 +102,11 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         }
 
         _projectiles.Add(projectile);
+    }
+
+    protected virtual Vector3 GetProjectilePosition()
+    {
+        return transform.position;
     }
 
     protected abstract Vector3 GetProjectileMoveDirection();

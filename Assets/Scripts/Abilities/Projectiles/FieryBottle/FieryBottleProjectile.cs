@@ -46,4 +46,9 @@ public sealed class FieryBottleProjectile : Projectile
 
         _moveDirection = new Vector3(_targetPosition.x - position.x, _trajectorySlope, _targetPosition.z - position.z);
     }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        // todo collision with ground
+    }
 }

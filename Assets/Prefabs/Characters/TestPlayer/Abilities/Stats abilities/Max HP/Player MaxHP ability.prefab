@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Max health points
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 4497f2957b4af364eb01fda21df0ac99, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: dc4802a5b15258449b4413c8cff539ed, type: 2}
@@ -55,6 +56,6 @@ MonoBehaviour:
       _maxValue: 5
       _maxValueIsInfinite: 0
   _combinedAbilities:
-  - _combinedWeapon: {fileID: 0}
+  - _combinedWeapon: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
     _superWeapon: {fileID: 0}
     _unlockUpgradeLevel: 5

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Pick up range
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 7988cd48deb852843b10935cb405a2ac, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: b54587ee4a2bee940bf3e851e2609a0d, type: 2}
@@ -55,6 +56,6 @@ MonoBehaviour:
       _maxValue: 5
       _maxValueIsInfinite: 0
   _combinedAbilities:
-  - _combinedWeapon: {fileID: 0}
+  - _combinedWeapon: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
     _superWeapon: {fileID: 0}
     _unlockUpgradeLevel: 5

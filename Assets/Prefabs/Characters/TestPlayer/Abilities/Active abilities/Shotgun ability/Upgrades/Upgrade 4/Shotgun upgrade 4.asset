@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
   _abilityMarker: {fileID: 11400000, guid: 2988629e7037469499da175f14395932, type: 2}
-  _upgrades: []
+  _upgrades:
+  - {fileID: 11400000, guid: 2131a8ba0501b2f4c9169e3987066310, type: 2}

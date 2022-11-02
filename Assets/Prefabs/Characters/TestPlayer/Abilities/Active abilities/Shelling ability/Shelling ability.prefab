@@ -41,7 +41,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587591856434631516}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -156,4 +156,13 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: af939f40bdd2deb4c88bee90582f213a, type: 2}
-      _valueIsInfinite: 0
+      _valueIsInfinite: 1
+  _projectileSpawnHeight: 15
+  _explosionPrefab: {fileID: 614978102777021079, guid: f0bbc9c2e45742d46b4221d8878097e5, type: 3}
+  _destroyExplosionsOnAttack: 0
+  _explosionRadius:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 0dbd8c10a9386a94da2de73b37463625, type: 2}
+  _explosionLifeDuration:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 36db9c5010dfe8e45b29c9899c6c8023, type: 2}

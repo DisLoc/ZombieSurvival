@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Shotgun ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: 
-  _weapon: {fileID: 0}
-  _levelUpgrades: []
+  _upgradeName: Shotgun
+  _weapon: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
+  _levelUpgrades:
+  - _description: New ability
+    _upgrade: {fileID: 11400000, guid: 926ed1aedc547374488239df5833f82e, type: 2}
+    _requiredLevel: 0
+  - _description: +50% damage, +25% attack range
+    _upgrade: {fileID: 11400000, guid: 49556c74ac3dc4b429910d018c982d39, type: 2}
+    _requiredLevel: 1
+  - _description: +50% damage, +1 projectile
+    _upgrade: {fileID: 11400000, guid: 37209cdf91240c948aa87ef8a575657f, type: 2}
+    _requiredLevel: 2
+  - _description: +50% damage, +25% attack range
+    _upgrade: {fileID: 11400000, guid: 7d741ea64bb3ff94496a37e1d5411f47, type: 2}
+    _requiredLevel: 3
+  - _description: +50% damage
+    _upgrade: {fileID: 11400000, guid: 959266baec27ae544bd9f5d34a7bd821, type: 2}
+    _requiredLevel: 4

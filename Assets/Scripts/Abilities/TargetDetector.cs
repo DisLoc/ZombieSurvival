@@ -143,4 +143,27 @@ public class TargetDetector : TriggerDetector
 
         return (position - transform.position).normalized;
     }
+
+    public Vector3 GetRandomTargetPosition()
+    {
+        Cleanup();
+
+        if (_targets.Count == 0) return -Vector3.one;
+
+        return _targets[Random.Range(0, _targets.Count)].transform.position;
+    }
+
+    public Vector3 GetDirectionToRandomTarget()
+    {
+        Vector3 position = GetRandomTargetPosition();
+
+        if (position == -Vector3.one)
+        {
+            return transform.TransformDirection(Vector3.forward);
+        }
+
+        position.y = transform.position.y;
+
+        return (position - transform.position).normalized;
+    }
 }

@@ -32,7 +32,7 @@ public sealed class PlayerFieryBottle : ProjectileWeapon
 
         for(int i = 0; i < _puddlesSpawner.SpawnedObjects.Count; i++)
         {
-            _puddlesSpawner.SpawnedObjects[i].OnUpdate();
+            _puddlesSpawner.SpawnedObjects[i]?.OnUpdate();
         }
 
         _puddlesSpawner.SpawnedObjects.Cleanup();

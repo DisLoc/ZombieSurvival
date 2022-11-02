@@ -30,5 +30,6 @@ MonoBehaviour:
   - {fileID: 7494275413525525377, guid: 6f683db9e81f4ba46b85e11a1855c481, type: 3}
   - {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
   - {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
+  - {fileID: 3292791445449446341, guid: 3c52f6bb14b194b4bb5b69ff9f00acd5, type: 3}
   _additionalAbilities:
   - {fileID: 1190983084559487519, guid: 2010c1b8df79df647876012e822e6ded, type: 3}
