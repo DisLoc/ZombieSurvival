@@ -5,12 +5,12 @@ public class ProjectileAbilityStats : WeaponAbilityStats
 {
     [Header("Projectiles settings")]
     [SerializeField] protected Projectile _projectilePrefab;
+    [Tooltip("Destroy projectiles that throwed when attacks")]
+    [SerializeField] protected bool _destroyProjectilesOnAttack;
     [SerializeField] protected Radius _projectileSize;
     [SerializeField] protected Duration _projectileLifeDuration;
 
     [Space(10)]
-    [Tooltip("Destroy projectiles that throwed when attacks")]
-    [SerializeField] protected bool _destroyProjectilesOnAttack;
     [SerializeField] protected ProjectileNumber _projectileNumber;
     [SerializeField] protected Cooldown _projectilesSpawnInterval;
     [SerializeField] protected ProjectileSpeed _projectileSpeed;

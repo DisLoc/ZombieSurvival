@@ -9,6 +9,7 @@ TagManager:
   - EnemiesList
   - TargetDetector
   - Weapon
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - TargetDetector
   - BossFence
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 

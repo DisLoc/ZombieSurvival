@@ -4,5 +4,6 @@ public enum Tags
     Enemy,
     PickableObject,
     TargetDetector,
-    Weapon
+    Weapon,
+    Ground
 }

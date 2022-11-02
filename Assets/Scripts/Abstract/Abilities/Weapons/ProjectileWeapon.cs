@@ -87,7 +87,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         Projectile projectile = _pool.PullDisabled();
         
         projectile.transform.position = transform.position;
-        projectile.Initialize(_pool, _stats, this);
+        projectile.Initialize(_stats, this);
         projectile.Throw(GetProjectileMoveDirection());
         projectile.gameObject.SetActive(true);
 
@@ -106,9 +106,10 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
     protected abstract Vector3 GetProjectileMoveDirection();
 
-    public void OnProjectileRelease(Projectile projectile)
+    public virtual void OnProjectileRelease(Projectile projectile)
     {
         _projectiles.Remove(projectile, true);
+        _pool.Release(projectile);
     }
 
     public override bool Upgrade(Upgrade upgrade)

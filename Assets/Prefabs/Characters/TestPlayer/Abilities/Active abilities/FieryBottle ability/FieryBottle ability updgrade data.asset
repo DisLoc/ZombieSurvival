@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: FieryBottle ability updgrade data
+  m_EditorClassIdentifier: 
+  _upgradeName: Fiery bottle
+  _weapon: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
+  _levelUpgrades:
+  - _description: New ability
+    _upgrade: {fileID: 11400000, guid: ebaccaa8956775146bc08c3e289fe5b8, type: 2}
+    _requiredLevel: 0
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: edfdf0c4774bcec4594820c218b062d9, type: 2}
+    _requiredLevel: 1
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: ca63e9dd31f5b26428d34666b2044fba, type: 2}
+    _requiredLevel: 2
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: cc6bb3f1af257bf43aa666dcc6e9a24a, type: 2}
+    _requiredLevel: 3
+  - _description: +1 projectile & +25% damage
+    _upgrade: {fileID: 11400000, guid: e13ca4112866b4f4da8a8ba20d8b200f, type: 2}
+    _requiredLevel: 4

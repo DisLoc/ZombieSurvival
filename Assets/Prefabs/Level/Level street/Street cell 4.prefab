@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3159172552962453679}
   - component: {fileID: 327465319708935143}
   - component: {fileID: 7534849254386573563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Street cell 4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

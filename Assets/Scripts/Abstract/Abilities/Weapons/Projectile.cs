@@ -1,10 +1,15 @@
-using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 {
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
+
+    [Header("Collision settings")]
+    [SerializeField] protected Tags _targetTag;
+
+    [Header("Effects settings")]
+    [SerializeField] protected ParticleSystem _particle;
 
     protected Vector3 _moveDirection;
 
@@ -17,12 +22,10 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     protected Damage _damage;
     protected PenetrationNumber _penetrationNumber;
 
-    protected MonoPool<Projectile> _pool;
     protected ProjectileWeapon _weapon;
 
-    public void ResetObject()
+    public virtual void ResetObject()
     {
-        _pool = null;
         _moveDirection = Vector3.zero;
 
         transform.position = _weapon.transform.position;
@@ -34,23 +37,38 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _speed = null;
         _damage = null;
         _penetrationNumber = null;
+
+        transform.localScale = Vector3.one;
     }
 
-    public void Initialize(MonoPool<Projectile> pool, ProjectileAbilityStats stats, ProjectileWeapon weapon)
+    public virtual void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
     {
-        _pool = pool;
         _releaseDelay = stats.ProjectileLifeDuration;
         _speed = stats.ProjectileSpeed;
         _damage = stats.Damage;
         _penetrationNumber = stats.PenetrationNumber;
         _weapon = weapon;
+
+        if (_particle != null)
+        {
+            _particle.Stop();
+
+            var main = _particle.main;
+
+            main.startLifetime = _releaseDelay.Value;
+            main.duration = _releaseDelay.Value;
+
+            _particle.Play();
+        }
+
+        transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
     }
 
     /// <summary>
     /// Throw projectile in direction
     /// </summary>
     /// <param name="direction">Direction need to move</param>
-    public void Throw(Vector3 direction)
+    public virtual void Throw(Vector3 direction)
     {
         transform.LookAt(transform.position + direction);
 
@@ -59,7 +77,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _onThrow = true;
     }
 
-    public void OnFixedUpdate()
+    public virtual void OnFixedUpdate()
     {
         if (_onThrow)
         {
@@ -70,31 +88,30 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         if (_releaseTimer <= 0f)
         {
             _weapon.OnProjectileRelease(this);
-            _pool.Release(this);
         }
     }
 
     /// <summary>
     /// Move into direction with current speed
     /// </summary>
-    protected void Move()
+    protected virtual void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position + _moveDirection * _speed.Value, _speed.Value * Time.fixedDeltaTime);
     }
 
     /// <summary>
-    /// Update release timer
+    /// Update release timer based on fixedDeltaTime
     /// </summary>
-    private void UpdateTimer()
+    protected virtual void UpdateTimer()
     {
         _releaseTimer -= Time.fixedDeltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
-        DamageableObject obj = other.GetComponent<Zombie>();
+        DamageableObject obj = other.GetComponent<DamageableObject>();
 
-        if (obj != null)
+        if (obj != null && obj.CompareTag(_targetTag.ToString()))
         {
             if (_isDebug) Debug.Log(name + " find target");
 
@@ -105,7 +122,6 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
             if (!_penetrationNumber.ValueIsInfinite && _penetrations >= (int)_penetrationNumber.Value)
             {
                 _weapon.OnProjectileRelease(this);
-                _pool.Release(this);
             }
         }
     }
