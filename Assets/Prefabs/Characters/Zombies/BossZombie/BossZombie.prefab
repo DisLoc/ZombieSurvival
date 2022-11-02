@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7414268705409287256}
   - component: {fileID: 2244051903603598489}
   - component: {fileID: 8181119150974801558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BossZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -164,6 +164,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: Boss collider
   _icon: {fileID: 0}
+  _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 6444446918046450822}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
   m_Name: NullUpgradeData
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 0}
+  _upgradingStatMarker: {fileID: 11400000, guid: 12b4ba833c925c342bb555af6d6dcf12, type: 2}
   _upgradeValue: 0
   _upgradeMultiplier: 1

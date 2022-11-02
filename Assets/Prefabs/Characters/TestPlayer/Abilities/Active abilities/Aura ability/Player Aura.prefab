@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player Aura
   m_TagString: Weapon
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48,6 +48,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: Aura
   _icon: {fileID: 0}
+  _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 1639761649709825330}
   _abilityUpgradeData: {fileID: 11400000, guid: 91e89e03209f8e145a410e5dec99dacd, type: 2}

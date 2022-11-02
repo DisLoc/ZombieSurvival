@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player Blade
   m_TagString: Weapon
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Blade
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _icon: {fileID: 0}
+  _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 87203292017648079, guid: 306d1bfc0d0a18041bda8f6c8506a3d3, type: 3}
   _targetDetector: {fileID: 7218241782557838940}
   _abilityUpgradeData: {fileID: 11400000, guid: d9443f27aad8a6046a059d29ca75e7ac, type: 2}

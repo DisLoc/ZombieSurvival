@@ -7,6 +7,7 @@ public class BossSpawner : Spawner
 
     private BreakpointList<BossBreakpoint> _breakpoints;
     private ObjectSpawner<Zombie> _spawner;
+    private GameObject _fence;
 
     [Inject] private Player _player;
     [Inject] private LevelContext _levelContext;
@@ -68,6 +69,12 @@ public class BossSpawner : Spawner
         _spawner.ClearPool();
         _spawner = null;
 
+        if (_fence != null)
+        {
+            Destroy(_fence);
+            _fence = null;
+        }
+
         if (_isDebug) Debug.Log("Boss event ended");
 
         EventBus.Publish<IBossEventEndedHandler>(handler => handler.OnBossEventEnd());
@@ -82,6 +89,15 @@ public class BossSpawner : Spawner
 
     private void SpawnFence(Vector3 position, GameObject fence)
     {
-
+        if (fence != null)
+        {
+            _fence = Instantiate(fence, 
+                                 new Vector3
+                                 (
+                                     position.x, 
+                                     _levelContext.LevelBuilder.GridHeight + fence.transform.localScale.y * 0.5f,
+                                     position.z
+                                 ), fence.transform.localRotation, transform);
+        }
     }
 }

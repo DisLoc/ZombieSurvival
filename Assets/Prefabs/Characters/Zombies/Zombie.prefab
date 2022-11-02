@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 2281845291444769187}
   - component: {fileID: 2817904043961400775}
   - component: {fileID: 5512361925152601609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zombie
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -118,7 +118,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &2817904043961400775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: Zombie collider
   _icon: {fileID: 0}
+  _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 1577825861537638417}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
