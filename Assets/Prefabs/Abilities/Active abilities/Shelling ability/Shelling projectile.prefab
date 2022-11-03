@@ -49,6 +49,7 @@ MonoBehaviour:
   _isDebug: 0
   _targetTag: 5
   _particle: {fileID: 0}
+  _destroyOnExitAttackRange: 0
 --- !u!33 &7067943941216415752
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -77,7 +78,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df0a06cc1f663474d9c6edabb4b33ab1, type: 2}
+  - {fileID: 2100000, guid: 6e85909994e401144a9e35af0c4ab9c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

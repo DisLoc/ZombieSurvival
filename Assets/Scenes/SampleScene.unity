@@ -689,6 +689,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._baseWeapon
+      value: 
+      objectReference: {fileID: 3292791445449446341, guid: 3c52f6bb14b194b4bb5b69ff9f00acd5, type: 3}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._expLevel._expBar
       value: 
       objectReference: {fileID: 1289386374}
