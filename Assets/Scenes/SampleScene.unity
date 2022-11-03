@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._baseWeapon
       value: 
-      objectReference: {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
+      objectReference: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _stats._expLevel._expBar
       value: 

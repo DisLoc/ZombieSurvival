@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: Shuriken AttackRange
   m_EditorClassIdentifier: 
-  _baseValue: 10
+  _baseValue: 9
   _minValue: 1
-  _maxValue: 10
+  _maxValue: 9
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: fe7d5b414acc94d4da7508201099c4e7, type: 2}

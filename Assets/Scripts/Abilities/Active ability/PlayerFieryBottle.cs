@@ -90,6 +90,7 @@ public sealed class PlayerFieryBottle : ProjectileWeapon
     {
         _puddleAttackInterval.Upgrade(upgrade);
         _puddleLifeDuration.Upgrade(upgrade);
+        _puddleRadius.Upgrade(upgrade);
 
         return base.Upgrade(upgrade);
     }

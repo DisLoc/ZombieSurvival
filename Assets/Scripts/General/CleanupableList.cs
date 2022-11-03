@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class CleanupableList<T> where T : class
 {
     protected List<T> _list;

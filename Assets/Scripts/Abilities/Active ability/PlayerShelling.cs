@@ -27,6 +27,14 @@ public sealed class PlayerShelling : ProjectileWeapon
         _explosionsSpawner = new ObjectSpawner<ShellingExplosion>(_explosionPrefab, (int)_stats.ProjectileNumber.Value);
     }
 
+    public override bool Upgrade(Upgrade upgrade)
+    {
+        _explosionRadius.Upgrade(upgrade);
+        _explosionLifeDuration.Upgrade(upgrade);
+
+        return base.Upgrade(upgrade);
+    }
+
     public override void OnUpdate()
     {
         base.OnUpdate();
