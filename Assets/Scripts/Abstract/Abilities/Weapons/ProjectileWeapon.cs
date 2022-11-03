@@ -36,9 +36,11 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
             if (_stats.DestroyProjectilesOnAttack)
             {
-                for(int i = 0; i < _projectiles.List.Count; i++)
+                _projectiles.Cleanup();
+
+                for (int i = 0; i < _projectiles.List.Count; i++)
                 {
-                    Destroy(_projectiles[i].gameObject);
+                    _pool.Release(_projectiles[i]);
                     _projectiles.Remove(_projectiles[i], true);
                 }
 

@@ -52,7 +52,7 @@ MonoBehaviour:
   _requiredAbilityToUpgradeToSuper: {fileID: 2056321283870601937, guid: a824429bc032c34418b47ae96b756635, type: 3}
   _targetDetector: {fileID: 138357203404630445}
   _abilityUpgradeData: {fileID: 11400000, guid: 1891dc3a3ff3cf4448f1b81838d28299, type: 2}
-  _scatterMultiplier: 0
+  _scatterMultiplier: 1
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 2988629e7037469499da175f14395932, type: 2}
     _level:
@@ -75,8 +75,8 @@ MonoBehaviour:
     _attackRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 5cec97fd1b0d4634dbd3e8e5c2af84a5, type: 2}
-    _projectilePrefab: {fileID: 0}
-    _destroyProjectilesOnAttack: 0
+    _projectilePrefab: {fileID: -8285765190768952089, guid: c662849236f1f01489b4d07fab0a6ce0, type: 3}
+    _destroyProjectilesOnAttack: 1
     _projectileSize:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: a0256cf569c933940a337741cd63ee8e, type: 2}
@@ -95,7 +95,7 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: afeb0be9d3853c54bafbe6b9dc95d462, type: 2}
-      _valueIsInfinite: 0
+      _valueIsInfinite: 1
 --- !u!1 &2560064267086727033
 GameObject:
   m_ObjectHideFlags: 0

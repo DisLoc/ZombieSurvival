@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: Shotgun ProjectileSpawnInterval
   m_EditorClassIdentifier: 
-  _baseValue: 0.05
-  _minValue: 0.01
-  _maxValue: 0.05
+  _baseValue: 0.01
+  _minValue: 0.001
+  _maxValue: 0.01
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: f3c8f963f6c44cc4ca5ab968921a7da1, type: 2}

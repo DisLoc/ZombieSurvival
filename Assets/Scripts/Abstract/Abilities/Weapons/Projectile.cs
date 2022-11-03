@@ -11,8 +11,12 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     [Header("Effects settings")]
     [SerializeField] protected ParticleSystem _particle;
 
+    [Header("Throw settings")]
+    [SerializeField] protected bool _destroyOnExitAttackRange;
+
     protected Vector3 _moveDirection;
 
+    protected float _passedDistance;
     protected int _penetrations;
     protected float _releaseTimer;
     protected bool _onThrow;
@@ -21,6 +25,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     protected ProjectileSpeed _speed;
     protected Damage _damage;
     protected PenetrationNumber _penetrationNumber;
+    protected Radius _attackRange;
 
     protected ProjectileWeapon _weapon;
 
@@ -30,6 +35,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 
         transform.position = _weapon.transform.position;
 
+        _passedDistance = 0;
         _penetrations = 0;
         _releaseTimer = 0;
         _onThrow = false;
@@ -37,6 +43,8 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _speed = null;
         _damage = null;
         _penetrationNumber = null;
+        _attackRange = null;
+        _weapon = null;
     }
 
     public virtual void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
@@ -45,6 +53,8 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _speed = stats.ProjectileSpeed;
         _damage = stats.Damage;
         _penetrationNumber = stats.PenetrationNumber;
+        _attackRange = stats.AttackRange;
+
         _weapon = weapon;
 
         if (_particle != null)
@@ -74,6 +84,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 
         _moveDirection = direction.normalized;
         _releaseTimer = _releaseDelay.Value;
+        _passedDistance = 0;
         _onThrow = true;
     }
 
@@ -83,6 +94,11 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         {
             Move();
             UpdateTimer();
+        }
+
+        if (_destroyOnExitAttackRange && _passedDistance >= _attackRange.Value)
+        {
+            _releaseTimer = -1f;
         }
 
         if (_releaseTimer <= 0f)
@@ -96,7 +112,12 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     /// </summary>
     protected virtual void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + _moveDirection * _speed.Value, _speed.Value * Time.fixedDeltaTime);
+        Vector3 currentPosition = transform.position;
+        Vector3 newPosition = Vector3.MoveTowards(currentPosition, currentPosition + _moveDirection * _speed.Value, _speed.Value * Time.fixedDeltaTime);
+
+        transform.position = newPosition;
+
+        _passedDistance += (newPosition - currentPosition).magnitude;
     }
 
     /// <summary>

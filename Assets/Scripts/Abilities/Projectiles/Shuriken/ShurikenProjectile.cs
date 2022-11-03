@@ -6,12 +6,9 @@ public sealed class ShurikenProjectile : Projectile
     [SerializeField] private float _maxSpeedMultiplier = 5f;
 
     private Vector3 _startPosition;
-
-    private Radius _attackRange;
     private Duration _stopDuration;
 
     private float _stopTimer;
-    private float _passedDistance;
     private float _speedMultiplier;
 
     private bool _moveForward;
@@ -24,8 +21,6 @@ public sealed class ShurikenProjectile : Projectile
         base.ResetObject();
 
         _startPosition = Vector3.zero;
-        _attackRange = null;
-        _passedDistance = 0;
         _speedMultiplier = 0;
         _moveForward = false;
     }
@@ -34,7 +29,6 @@ public sealed class ShurikenProjectile : Projectile
     {
         base.Initialize(stats, weapon);
 
-        _attackRange = stats.AttackRange;
         _stopDuration = (weapon as PlayerShuriken).ProjectileStopDuration;
     }
 
@@ -43,7 +37,6 @@ public sealed class ShurikenProjectile : Projectile
         base.Throw(direction);
 
         _startPosition = transform.position;
-        _passedDistance = 0;
         _moveForward = true;
     }
 

@@ -72,6 +72,7 @@ MonoBehaviour:
   _isDebug: 0
   _targetTag: 1
   _particle: {fileID: 2196847629766700966}
+  _destroyOnExitAttackRange: 1
 --- !u!1001 &995145006544028828
 PrefabInstance:
   m_ObjectHideFlags: 0
