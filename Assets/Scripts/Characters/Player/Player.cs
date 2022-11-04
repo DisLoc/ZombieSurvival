@@ -121,8 +121,20 @@ public class Player : CharacterBase
             {
                 if (_isDebug) Debug.Log("Upgrade " + weapon.Name + " to super: " + ability.Name);
 
-                _abilityInventory.Remove(weapon);
-                _abilityInventory.Add(ability);
+                if (_abilityInventory.Remove(weapon))
+                {
+                    AbilityContainer newAbility = _abilityInventory.Add(ability);
+                    
+                    if (newAbility != null)
+                    {
+                        weapon.DestroyWeapon();
+
+                        foreach(Upgrade upgrade in _upgrades)
+                        {
+                            newAbility.Upgrade(upgrade);
+                        }
+                    }
+                }
             }
         }
 

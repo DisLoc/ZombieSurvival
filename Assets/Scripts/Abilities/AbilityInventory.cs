@@ -136,7 +136,7 @@ public sealed class AbilityInventory
                 {
                     foreach(CombineAbility combine in (ability as PassiveAbility).CombinedAbilities)
                     {
-                        if (combine.SuperWeapon.Equals(weapon))
+                        if (combine != null && combine.SuperWeapon != null && combine.SuperWeapon.Equals(weapon))
                         {
                             return combine.CombinedWeapon;
                         }

@@ -58,4 +58,10 @@ public abstract class Weapon : AbilityContainer, IUpdatable
             _isSuperWeapon = true;
         }
     }
+
+    public virtual void DestroyWeapon()
+    {
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
+    }
 }

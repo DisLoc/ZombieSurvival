@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4613138481507212282
+--- !u!1 &1349281547289511777
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1486525581738360750}
-  - component: {fileID: 7507451856207292059}
-  - component: {fileID: 8948671830434654073}
-  m_Layer: 6
+  - component: {fileID: 7315207836083469647}
+  - component: {fileID: 3561289701281980958}
+  - component: {fileID: 2367391784821225944}
+  m_Layer: 0
   m_Name: TargetDetector
-  m_TagString: TargetDetector
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1486525581738360750
+--- !u!4 &7315207836083469647
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613138481507212282}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1349281547289511777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1940750129644544309}
+  m_Father: {fileID: 814376561825575969}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7507451856207292059
+--- !u!135 &3561289701281980958
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613138481507212282}
+  m_GameObject: {fileID: 1349281547289511777}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8948671830434654073
+--- !u!114 &2367391784821225944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613138481507212282}
+  m_GameObject: {fileID: 1349281547289511777}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _collider: {fileID: 7507451856207292059}
+  _collider: {fileID: 3561289701281980958}
   _triggerTag: 1
---- !u!1 &5275130782484521481
+--- !u!1 &2234981696892754071
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,91 +69,91 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1940750129644544309}
-  - component: {fileID: 1463812404313771700}
+  - component: {fileID: 814376561825575969}
+  - component: {fileID: 3187750679169941802}
   m_Layer: 0
-  m_Name: Gun
-  m_TagString: Weapon
-  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Name: SuperGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1940750129644544309
+--- !u!4 &814376561825575969
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5275130782484521481}
+  m_GameObject: {fileID: 2234981696892754071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1486525581738360750}
+  - {fileID: 7315207836083469647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1463812404313771700
+--- !u!114 &3187750679169941802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5275130782484521481}
+  m_GameObject: {fileID: 2234981696892754071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88312d861be5ebf448157d63ff6a5a1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a964eb6106b2144aa6feeb34b98c354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _name: Gun
+  _name: Super gun
   _icon: {fileID: 0}
-  _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 1142227134379360519, guid: 81315c25cd2b06d4285a10d363f46bfb, type: 3}
-  _targetDetector: {fileID: 8948671830434654073}
-  _abilityUpgradeData: {fileID: 11400000, guid: bd3419453c51db74a92e4d3bbc84a152, type: 2}
-  _scatterMultiplier: 0.1
+  _isSuperWeapon: 1
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 2367391784821225944}
+  _abilityUpgradeData: {fileID: 11400000, guid: 1af79dac79c820d439056c41d5808786, type: 2}
+  _scatterMultiplier: 0.3
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
+    _abilityMarker: {fileID: 11400000, guid: f91eafdd97a240d4d887b4c673ca3c24, type: 2}
     _level:
       _baseValue: 0
       _minValue: 1
-      _maxValue: 5
+      _maxValue: 1
       _maxValueIsInfinite: 0
     _damage:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: d501e72fc66845940b66a29aba104371, type: 2}
+      _statData: {fileID: 11400000, guid: fc36c4de1ad0be847a45b6fedf2ec9f3, type: 2}
       _criticalDamage:
         _isDebug: 0
-        _statData: {fileID: 11400000, guid: 1f76581c85503fc459347158fa52c312, type: 2}
+        _statData: {fileID: 11400000, guid: 8be30efe0a7df194da561576379becb4, type: 2}
         _chance:
           _isDebug: 0
-          _statData: {fileID: 11400000, guid: 9bfb693644eb71848bee649c636743eb, type: 2}
+          _statData: {fileID: 11400000, guid: 7f22f790958e7fe46af63e865859ba95, type: 2}
     _attackInterval:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 32d602f4bc6d5b84282da2032b55bf42, type: 2}
+      _statData: {fileID: 11400000, guid: 7cf0c12e90d04f740bfd4c70a6f49761, type: 2}
     _attackRange:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 5e77ea228b051ff45a9065a1ef0dfa55, type: 2}
-    _projectilePrefab: {fileID: 6739021425677014267, guid: 493deab322251694783b9934343faf48, type: 3}
+      _statData: {fileID: 11400000, guid: d1ccf5b422b62e0439f7380573dae1bc, type: 2}
+    _projectilePrefab: {fileID: 122420665965827606, guid: 198e1aca9149aaa48a9741b20443c5a4, type: 3}
     _destroyProjectilesOnAttack: 0
     _projectileSize:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: ba7f0511e7507b443b0363646ac7514c, type: 2}
+      _statData: {fileID: 11400000, guid: 7454fc6eefa9e5342baaed276acd602c, type: 2}
     _projectileLifeDuration:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 97113bac7591c7d4a88689aefd4e360c, type: 2}
+      _statData: {fileID: 11400000, guid: 62e1b4c30d4e8e24c91f4e5984f71d13, type: 2}
     _projectileNumber:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: b5c3d44e030a95245abdd61ea64b8bfe, type: 2}
+      _statData: {fileID: 11400000, guid: d5457f9247c51e048afe03094f49149e, type: 2}
     _projectilesSpawnInterval:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 4b5a41d8bdde4fd44bc8298041c49087, type: 2}
+      _statData: {fileID: 11400000, guid: 6c3181a9bce59094a824bb87adeeed4f, type: 2}
     _projectileSpeed:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 963187abb1752624e92e3d9bc3d877fc, type: 2}
+      _statData: {fileID: 11400000, guid: 1c99a8712cfd0f9478c0143249ab57f5, type: 2}
     _penetrationNumber:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 1909be1c8b8750146bc505209432e033, type: 2}
+      _statData: {fileID: 11400000, guid: dc07b2ccaff57d54f9fc4d8e91c6fdcc, type: 2}
       _valueIsInfinite: 0

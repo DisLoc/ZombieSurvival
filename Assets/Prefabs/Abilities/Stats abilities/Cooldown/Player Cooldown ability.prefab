@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Cooldown reduction
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: 0975d56ae8e40ed438ea84e4e8805415, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 0487fc65071605e4ca4a24bba204d4fd, type: 2}
@@ -58,5 +57,5 @@ MonoBehaviour:
       _maxValueIsInfinite: 0
   _combinedAbilities:
   - _combinedWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
-    _superWeapon: {fileID: 0}
+    _superWeapon: {fileID: 3187750679169941802, guid: 838d378519198764bb97f6aa04827d6d, type: 3}
     _unlockUpgradeLevel: 5

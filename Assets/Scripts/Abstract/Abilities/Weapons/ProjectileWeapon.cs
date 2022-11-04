@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
@@ -9,6 +8,8 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
     protected MonoPool<Projectile> _pool;
     protected CleanupableList<Projectile> _projectiles;
+    protected ObjectSpawner<Projectile> _projectilePool;
+
     protected float _spawnIntervalTimer;
     protected bool _spawning;
     protected int _spawnCount;
@@ -22,6 +23,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         _pool = new MonoPool<Projectile>(_stats.Projectile, (int)_stats.ProjectileNumber.Value);
         _projectiles = new CleanupableList<Projectile>((int)_stats.ProjectileNumber.Value);
 
+        //_projectilePool = new ObjectSpawner<Projectile>(_stats.Projectile, (int)_stats.ProjectileNumber.Value);
 
         _spawnCount = 0;
         _spawnIntervalTimer = _stats.ProjectilesSpawnInterval.Value;
@@ -126,5 +128,16 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         _targetDetector.UpdateRadius();
 
         return base.Upgrade(upgrade);
+    }
+
+    public override void DestroyWeapon()
+    {
+        _pool?.ClearPool();
+        _projectiles?.Cleanup();
+
+        _pool = null;
+        _projectiles = null;
+
+        base.DestroyWeapon();
     }
 }
