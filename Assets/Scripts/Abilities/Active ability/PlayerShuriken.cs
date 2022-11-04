@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public sealed class PlayerShuriken : ProjectileWeapon
+public class PlayerShuriken : ProjectileWeapon
 {
-    [SerializeField] private Duration _projectileStopDuration;
+    [SerializeField] protected Duration _projectileStopDuration;
 
     public Duration ProjectileStopDuration => _projectileStopDuration;
 
@@ -25,7 +25,7 @@ public sealed class PlayerShuriken : ProjectileWeapon
         return _targetDetector.GetDirectionToNearestTarget() + GetDeltaMoveDirection();
     }
 
-    private Vector3 GetDeltaMoveDirection()
+    protected Vector3 GetDeltaMoveDirection()
     {
         Vector3 delta = Vector3.zero;
 

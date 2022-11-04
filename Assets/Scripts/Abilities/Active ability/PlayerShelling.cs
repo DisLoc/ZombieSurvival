@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public sealed class PlayerShelling : ProjectileWeapon
+public class PlayerShelling : ProjectileWeapon
 {
     [Header("Shelling ability settings")]
-    [SerializeField] private float _projectileSpawnHeight;
-    [SerializeField] private ShellingExplosion _explosionPrefab;
+    [SerializeField] protected float _projectileSpawnHeight;
+    [SerializeField] protected ShellingExplosion _explosionPrefab;
 
-    [SerializeField] private bool _destroyExplosionsOnAttack;
-    [SerializeField] private Radius _explosionRadius;
-    [SerializeField] private Duration _explosionLifeDuration;
+    [SerializeField] protected bool _destroyExplosionsOnAttack;
+    [SerializeField] protected Radius _explosionRadius;
+    [SerializeField] protected Duration _explosionLifeDuration;
 
-    private ObjectSpawner<ShellingExplosion> _explosionsSpawner;
+    protected ObjectSpawner<ShellingExplosion> _explosionsSpawner;
 
     public Radius ExplosionRadius => _explosionRadius;
     public Duration ExplosionLifeDuration => _explosionLifeDuration;

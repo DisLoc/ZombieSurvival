@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public sealed class PlayerGun : ProjectileWeapon
+public class PlayerGun : ProjectileWeapon
 {
     protected override Vector3 GetProjectileMoveDirection()
     {
         return _targetDetector.GetDirectionToNearestTarget() + GetDeltaMoveDirection();
     }
 
-    private Vector3 GetDeltaMoveDirection()
+    protected virtual Vector3 GetDeltaMoveDirection()
     {
         Vector3 delta = Vector3.zero;
 

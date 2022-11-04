@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public sealed class PlayerFieryBottle : ProjectileWeapon
+public class PlayerFieryBottle : ProjectileWeapon
 {
     [Header("Fiery bottle settings")]
-    [SerializeField] private FirePuddle _puddlePrefab;
-    [SerializeField] private bool _destroyPuddlesOnAttack;
-    [SerializeField] private Radius _puddleRadius;
-    [SerializeField] private Duration _puddleLifeDuration;
-    [SerializeField] private Cooldown _puddleAttackInterval;
+    [SerializeField] protected FirePuddle _puddlePrefab;
+    [SerializeField] protected bool _destroyPuddlesOnAttack;
+    [SerializeField] protected Radius _puddleRadius;
+    [SerializeField] protected Duration _puddleLifeDuration;
+    [SerializeField] protected Cooldown _puddleAttackInterval;
 
-    private ObjectSpawner<FirePuddle> _puddlesSpawner;
+    protected ObjectSpawner<FirePuddle> _puddlesSpawner;
 
     public Radius PuddleRadius => _puddleRadius;
     public Duration PuddleLifeDuration => _puddleLifeDuration;

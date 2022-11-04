@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public sealed class PlayerBlade : ProjectileWeapon
+public class PlayerBlade : ProjectileWeapon
 {
     protected override Vector3 GetProjectileMoveDirection()
     {
         return transform.TransformDirection(Vector3.forward) + GetDeltaMoveDirection();
     }
 
-    private Vector3 GetDeltaMoveDirection()
+    protected Vector3 GetDeltaMoveDirection()
     {
         Vector3 delta = Vector3.zero;
 

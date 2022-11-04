@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class PlayerSuperGun : ProjectileWeapon
+public class PlayerSuperGun : PlayerGun
 {
     protected override Vector3 GetProjectileMoveDirection()
     {
         return _targetDetector.GetDirectionToNearestTarget() + GetDeltaMoveDirection();
     }
 
-    private Vector3 GetDeltaMoveDirection()
+    protected override Vector3 GetDeltaMoveDirection()
     {
         Vector3 delta = Vector3.zero;
 

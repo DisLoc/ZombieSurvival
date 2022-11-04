@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public sealed class PlayerShotgun : ProjectileWeapon
+public class PlayerShotgun : ProjectileWeapon
 {
     protected override Vector3 GetProjectileMoveDirection()
     {
