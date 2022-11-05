@@ -156,7 +156,7 @@ MonoBehaviour:
   _catcher: {fileID: 4806763617484522634}
   _collider: {fileID: 8953109175079049454}
   _stats:
-    _baseWeapon: {fileID: 3187750679169941802, guid: 838d378519198764bb97f6aa04827d6d, type: 3}
+    _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8a6dd93761d83924ab08bc3b7ef0bca9, type: 2}

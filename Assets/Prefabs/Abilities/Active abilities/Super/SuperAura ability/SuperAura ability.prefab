@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7874177509043777659}
   - component: {fileID: 7874177509043777658}
-  - component: {fileID: 1082360240576863096}
-  - component: {fileID: 52970435516623987}
   m_Layer: 0
   m_Name: SuperAura ability
   m_TagString: Untagged
@@ -52,7 +50,7 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 52970435516623987}
+  _targetDetector: {fileID: 6766336299975137043}
   _abilityUpgradeData: {fileID: 11400000, guid: b1d3f09c9f5641448b0817ee00cb64ff, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 6a51f5f3774c9804696234a267f25353, type: 2}
@@ -77,34 +75,6 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 429694cba7b85c64eb2d61d90f026193, type: 2}
   _particle: {fileID: 4029598860881763333}
---- !u!135 &1082360240576863096
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874177509043777656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &52970435516623987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874177509043777656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 1082360240576863096}
-  _triggerTag: 1
 --- !u!1001 &8039124513637333958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 3227455941725385764}
-  _triggerTag: 0
+  _triggerTag: 1
 --- !u!4 &3004936606825840754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5053910465421310900, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
