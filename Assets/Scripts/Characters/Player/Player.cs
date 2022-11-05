@@ -48,7 +48,7 @@ public class Player : CharacterBase
         GetAbility(_stats.BaseWeapon);
     }
 
-    private void Update() // test
+    private void Update()
     {
         Attack();
 
@@ -127,8 +127,6 @@ public class Player : CharacterBase
                     
                     if (newAbility != null)
                     {
-                        weapon.DestroyWeapon();
-
                         foreach(Upgrade upgrade in _upgrades)
                         {
                             newAbility.Upgrade(upgrade);

@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3952381218074834680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3952381218074834567}
+  - component: {fileID: 3952381218074834566}
+  - component: {fileID: 3961764513588038350}
+  - component: {fileID: 5616406366014195109}
+  m_Layer: 0
+  m_Name: SuperShotgun ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3952381218074834567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952381218074834680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3952381218074834566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952381218074834680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0995a2e57f5fdb84ea76c6a056fca20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: SUPER Shotgun
+  _icon: {fileID: 0}
+  _isSuperWeapon: 1
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 5616406366014195109}
+  _abilityUpgradeData: {fileID: 11400000, guid: b87e0411960a3bd40b0ff93f64e89c58, type: 2}
+  _scatterMultiplier: 1
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 0d59761f8ff44e14e96c113dc98fac00, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 1
+      _maxValue: 1
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: a150dcf183a45ae47aa6eb62464c325b, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 02a47a03a10d2dc44b0cef72e50b428e, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: c51e84f4de9a55342a04c1c0180eb29e, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 90803434a5af9f5448ee8885d957b805, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 212ed7aeddd85f64cacd11a1a712a444, type: 2}
+    _projectilePrefab: {fileID: 4273359265195437569, guid: a768862b3bb0edc4e9e14bc611ac1288, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: c7b5cdd372fbc9544b86ea73e61b334f, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: f580bdc687a52bb4584501e3c7468e8b, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: df577ec22a1fa4a48ba02a4b4f907dfa, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 9bb01ba8c8102d14089007aa410eadfe, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 1d935fc63f3c3a746ab13e50f47bfa69, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 4860905eefc9be940b1254be9f0820c6, type: 2}
+      _valueIsInfinite: 0
+--- !u!135 &3961764513588038350
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952381218074834680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5616406366014195109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952381218074834680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 3961764513588038350}
+  _triggerTag: 1

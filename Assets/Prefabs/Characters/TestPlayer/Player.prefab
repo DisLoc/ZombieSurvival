@@ -156,7 +156,7 @@ MonoBehaviour:
   _catcher: {fileID: 4806763617484522634}
   _collider: {fileID: 8953109175079049454}
   _stats:
-    _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+    _baseWeapon: {fileID: 3187750679169941802, guid: 838d378519198764bb97f6aa04827d6d, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8a6dd93761d83924ab08bc3b7ef0bca9, type: 2}
@@ -179,7 +179,7 @@ MonoBehaviour:
           _maxValue: 0
           _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
-      _baseExpForLevelUp: 100
+      _baseExpForLevelUp: 150
       _levelMultiplier: 0.5
     _pickUpRange:
       _isDebug: 0
@@ -187,8 +187,8 @@ MonoBehaviour:
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilityInventory:
-    _maxActiveAbilitiesCount: 5
-    _maxPassiveAbilitiesCount: 5
+    _maxActiveAbilitiesCount: 7
+    _maxPassiveAbilitiesCount: 7
     _abilitiesParent: {fileID: 4441788838641939132}
 --- !u!1001 &2567576988300668118
 PrefabInstance:

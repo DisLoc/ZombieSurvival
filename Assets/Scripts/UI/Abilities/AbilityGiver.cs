@@ -71,6 +71,8 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     {
         _menuGO.SetActive(true);
 
+        Time.timeScale = 0;
+
         InitializeAbilitiesUI();
 
         List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerLevel.Value);
@@ -80,6 +82,8 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
             if (i >= abilities.Count || i > _abilitiesUI.Count)
             {
                 if (_isDebug) Debug.Log("Abilities error!");
+
+                Time.timeScale = 1;
 
                 return;
             }
@@ -186,8 +190,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// <param name="ability">Ability need to add</param>
     public void GetAbility(AbilityContainer ability)
     {
-        _menuGO.SetActive(false);
-
         _player.GetAbility(ability);
 
         _levelUps--;
@@ -198,8 +200,12 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
         else
         {
+            _menuGO.SetActive(false);
+
             _levelUps = 0;
             _onChoice = false;
+
+            Time.timeScale = 1;
         }
     }
 

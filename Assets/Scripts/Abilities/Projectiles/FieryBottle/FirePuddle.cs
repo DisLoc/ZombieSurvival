@@ -9,7 +9,7 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private TargetDetector _targetDetector;
 
-    private PlayerFieryBottle _weapon;
+    private FieryBottle _weapon;
 
     private float _releaseTimer;
     private float _attackTimer;
@@ -26,7 +26,7 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
         _releaseTimer = 0;
     }
 
-    public void Initialize(ProjectileAbilityStats stats, PlayerFieryBottle weapon)
+    public void Initialize(ProjectileAbilityStats stats, FieryBottle weapon)
     {
         _weapon = weapon;
         _targetDetector.Initialize(_weapon.PuddleRadius);

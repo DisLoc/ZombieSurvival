@@ -52,7 +52,7 @@ MonoBehaviour:
   _particle: {fileID: 0}
   _destroyOnExitAttackRange: 0
   _minSpeedMultiplier: 0.1
-  _maxSpeedMultiplier: 5
+  _maxSpeedMultiplier: 2.5
 --- !u!33 &6213235526261541028
 MeshFilter:
   m_ObjectHideFlags: 0

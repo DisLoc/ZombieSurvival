@@ -11,7 +11,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private Tags _targetTag;
 
-    private PlayerShelling _weapon;
+    private Shelling _weapon;
 
     private float _releaseTimer;
 
@@ -24,7 +24,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         _releaseTimer = 0;
     }
 
-    public void Initialize(ProjectileAbilityStats stats, PlayerShelling weapon)
+    public void Initialize(ProjectileAbilityStats stats, Shelling weapon)
     {
         _weapon = weapon;
         _sphereCollider.radius = _weapon.ExplosionRadius.Value;

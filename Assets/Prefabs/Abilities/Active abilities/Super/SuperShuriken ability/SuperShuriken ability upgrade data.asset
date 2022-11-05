@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: SuperShuriken ability upgrade data
+  m_EditorClassIdentifier: 
+  _upgradeName: SuperShuriken
+  _weapon: {fileID: 8423875939376286437, guid: e7dd076fec0e75b4d9e95a8fc4b7ef8e, type: 3}
+  _levelUpgrades:
+  - _description: Upgrade Shuriken to SUPER
+    _upgrade: {fileID: 11400000, guid: 169e0705123451e479e6456d186affec, type: 2}
+    _requiredLevel: 0

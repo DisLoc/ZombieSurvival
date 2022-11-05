@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2254483478624583234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2254483478624583235}
+  - component: {fileID: 2254483478624583236}
+  - component: {fileID: 2458300018118335456}
+  - component: {fileID: 7137966155708572769}
+  m_Layer: 0
+  m_Name: SuperShelling ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2254483478624583235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254483478624583234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2254483478624583236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254483478624583234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0b0a0429ed4a041b878fbf7e9da868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: SUPER Shelling
+  _icon: {fileID: 0}
+  _isSuperWeapon: 1
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 7137966155708572769}
+  _abilityUpgradeData: {fileID: 11400000, guid: 4f0896a412cc92c4bbb77edbc1403f68, type: 2}
+  _scatterMultiplier: 0
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 3abae33686db55a489b159df079a04d2, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 1
+      _maxValue: 1
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: d77841ed0abe7d34cb899861eb6a5029, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: d59be606343b3784a9175c427a21df54, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: d8e3f0373e820704989e48e9f0fcf4c0, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 1ada38943ea6d7848a301064ceb07cf9, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 44a50145b8bf9154d88f8639efd37daf, type: 2}
+    _projectilePrefab: {fileID: 7450362126633706662, guid: 1a1b1b80c2c00f9478fc55a6bff509ab, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 0a6a1ad26ade2534b9e17bdc183d2af0, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 52206c2910779e747ac09f228f068441, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 3782dbc6599322840aa60276576102e6, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: cbbf27071812ca640980514951a62bf9, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: ea48a7b492cefb04f81bb74cb59d7dc8, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 448d7efb9ea3c2a45b749590698e7f12, type: 2}
+      _valueIsInfinite: 1
+  _projectileSpawnHeight: 15
+  _explosionPrefab: {fileID: 6101822160187556765, guid: 1182edc0d2dc473429cf703316df94c3, type: 3}
+  _destroyExplosionsOnAttack: 0
+  _explosionRadius:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 3979dc2fa1e974d41b52cd1251696fbe, type: 2}
+  _explosionLifeDuration:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: ce8027422d54f0e43b58404def94223a, type: 2}
+--- !u!135 &2458300018118335456
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254483478624583234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7137966155708572769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254483478624583234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 2458300018118335456}
+  _triggerTag: 1

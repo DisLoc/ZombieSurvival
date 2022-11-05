@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: SuperShotgun upgrade 0
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 1
+  _abilityMarker: {fileID: 11400000, guid: 0d59761f8ff44e14e96c113dc98fac00, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: d1eb2930681432c4a8a6ee2c236a8f50, type: 2}

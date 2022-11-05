@@ -105,7 +105,14 @@ public sealed class AbilityInventory
                 _projectileWeapons.Remove(removingAbility as ProjectileWeapon);
             }
 
-            return _abilities.Remove(removingAbility);
+            bool removed = _abilities.Remove(removingAbility);
+
+            if (removingAbility != null && removed)
+            {
+                removingAbility.DestroyAbility();
+            }
+
+            return removed;
         }
         else return false;
     }
@@ -118,6 +125,7 @@ public sealed class AbilityInventory
     public AbilityContainer Find(AbilityContainer ability)
     {
         if (ability == null) return null;
+
         return _abilities.Find(item => item.Name == ability.Name);
     }
 

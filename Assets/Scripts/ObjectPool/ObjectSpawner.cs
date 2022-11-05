@@ -26,13 +26,50 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
         return obj;
     }
 
+    public TObject SpawnDisabled(Vector3 position)
+    {
+        TObject obj = PullDisabled();
+
+        if (obj == null) return null;
+
+        obj.transform.position = position;
+
+        _spawnedObjects.Add(obj);
+
+        return obj;
+    }
+
     public List<TObject> SpawnGroup(Vector3 position, int count, float deltaPositionXZ)
     {
         List<TObject> objects = new List<TObject>(count);
 
         for(int i = 0; i < count; i++)
         {
-            objects.Add(Spawn(GetRandomPosition(position, deltaPositionXZ)));
+            TObject obj = Spawn(GetRandomPosition(position, deltaPositionXZ));
+
+            if (obj != null)
+            {
+                objects.Add(obj);
+            }
+        }
+
+        _spawnedObjects.List.AddRange(objects);
+
+        return objects;
+    }
+
+    public List<TObject> SpawnGroupDisabled(Vector3 position, int count, float deltaPositionXZ)
+    {
+        List<TObject> objects = new List<TObject>(count);
+
+        for (int i = 0; i < count; i++)
+        {
+            TObject obj = SpawnDisabled(GetRandomPosition(position, deltaPositionXZ));
+            
+            if (obj != null)
+            {
+                objects.Add(obj);
+            }
         }
 
         _spawnedObjects.List.AddRange(objects);
@@ -54,5 +91,22 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
         base.Release(obj);
 
         _spawnedObjects.Remove(obj, true);
+    }
+
+    public override void ClearPool()
+    {
+        base.ClearPool();
+
+        _spawnedObjects.Cleanup();
+
+        if (_spawnedObjects.Count > 0)
+        {
+            for (int i = 0; i < _spawnedObjects.Count; i++)
+            {
+                Object.Destroy(_spawnedObjects[i]);
+            }
+        }
+
+        _spawnedObjects = null;
     }
 }

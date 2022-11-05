@@ -7,6 +7,7 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
     protected Transform _parent;
 
     public TObject Prefab => _prefab;
+    public Transform Parent => _parent;
 
     public MonoPool(TObject prefab, int capacity, Transform poolParent = null)
     {
@@ -42,7 +43,7 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
 
     public override void Release(TObject obj)
     {
-        obj.gameObject.SetActive(false);
+        if (obj != null) obj.gameObject.SetActive(false);
 
         base.Release(obj);
     }

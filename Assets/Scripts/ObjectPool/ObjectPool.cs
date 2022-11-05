@@ -55,8 +55,12 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
     /// <param name="obj">Object need to release</param>
     public virtual void Release(TObject obj)
     {
-        obj.ResetObject();
-        _objects.Add(obj);
+        if (obj == null)
+        {
+            obj.ResetObject();
+            _objects.Add(obj);
+        }
+        else return;
     }
 
     /// <summary>
