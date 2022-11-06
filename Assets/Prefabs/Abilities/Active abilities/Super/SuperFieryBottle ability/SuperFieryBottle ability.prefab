@@ -135,4 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 7637138812238184596}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 01000000

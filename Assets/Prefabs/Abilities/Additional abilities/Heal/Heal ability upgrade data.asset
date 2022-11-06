@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: Heal ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Heal player
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: Heal upgrade
   _repeatingUpgrade:
     _description: Heal on 30%
     _upgrade: {fileID: 11400000, guid: a2fe8924ee3a3f144b300c3bffcde996, type: 2}

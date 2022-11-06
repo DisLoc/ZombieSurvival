@@ -62,7 +62,8 @@ MonoBehaviour:
   _isDebug: 0
   _particle: {fileID: 6881304598672486603}
   _sphereCollider: {fileID: 67558807688179933}
-  _targetTag: 1
+  _targetTags:
+    _tags: 01000000
 --- !u!1 &6881304598672486601
 GameObject:
   m_ObjectHideFlags: 0

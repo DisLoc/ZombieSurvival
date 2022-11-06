@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 3561289701281980958}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 01000000
 --- !u!1 &2234981696892754071
 GameObject:
   m_ObjectHideFlags: 0

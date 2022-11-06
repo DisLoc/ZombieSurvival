@@ -9,7 +9,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     [Header("Settings")]
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private SphereCollider _sphereCollider;
-    [SerializeField] private Tags _targetTag;
+    [SerializeField] private TagList _targetTags;
 
     private Shelling _weapon;
 
@@ -69,7 +69,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     {
         DamageableObject obj = other.GetComponent<DamageableObject>();
 
-        if (obj != null && other.CompareTag(_targetTag.ToString()))
+        if (obj != null && _targetTags.Contains(other.tag))
         {
             obj.TakeDamage((int)_damage.Value);
 

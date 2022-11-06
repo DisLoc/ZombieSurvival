@@ -2,8 +2,9 @@ public enum Tags
 {
     Player,
     Enemy,
-    PickableObject,
-    TargetDetector,
     Weapon,
+    TargetDetector,
+    PickableObject,
+    ExpCrystal,
     Ground
 }

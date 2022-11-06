@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     [SerializeField] protected bool _isDebug;
 
     [Header("Collision settings")]
-    [SerializeField] protected Tags _targetTag;
+    [SerializeField] protected TagList _targetTags;
 
     [Header("Effects settings")]
     [SerializeField] protected ParticleSystem _particle;
@@ -132,7 +132,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     {
         DamageableObject obj = other.GetComponent<DamageableObject>();
 
-        if (obj != null && obj.CompareTag(_targetTag.ToString()))
+        if (obj != null && _targetTags.Contains(obj.tag))
         {
             if (_isDebug) Debug.Log(name + " find target");
 

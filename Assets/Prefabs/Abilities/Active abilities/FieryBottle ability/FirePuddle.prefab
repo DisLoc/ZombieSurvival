@@ -55,6 +55,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6178334118462139373}
     m_Modifications:
+    - target: {fileID: 8840732065860743004, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: _triggerTags._tags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840732065860743004, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: _triggerTags._tags.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: playOnAwake
       value: 0

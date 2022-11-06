@@ -27,10 +27,8 @@ public class Player : CharacterBase
     [Inject] protected LevelContext _levelContext;
 
     public override CharacterStats Stats => _stats;
-    /// <summary>
-    /// All abilities player getted in game
-    /// </summary>
-    public List<AbilityContainer> Abilities => _abilityInventory.Abilities;
+
+
     public AbilityInventory AbilityInventory => _abilityInventory;
 
     public void Initialize()

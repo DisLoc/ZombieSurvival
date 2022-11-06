@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 7838577586118745013}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 01000000
 --- !u!1 &8751664031472139035
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ GameObject:
   - component: {fileID: 8751664031472139236}
   m_Layer: 0
   m_Name: FieryBottle ability
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

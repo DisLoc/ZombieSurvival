@@ -60,7 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _targetTag: 1
+  _targetTags:
+    _tags: 01000000
   _particle: {fileID: 7831362375748254162}
   _destroyOnExitAttackRange: 1
 --- !u!1001 &6736948494421542308

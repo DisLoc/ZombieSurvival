@@ -62,7 +62,8 @@ MonoBehaviour:
   _isDebug: 0
   _particle: {fileID: 241399617854353857}
   _sphereCollider: {fileID: 6689769446662140375}
-  _targetTag: 1
+  _targetTags:
+    _tags: 01000000
 --- !u!1001 &8688037390909015941
 PrefabInstance:
   m_ObjectHideFlags: 0

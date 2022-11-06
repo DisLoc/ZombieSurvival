@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zenject;
 
+[RequireComponent(typeof(SphereCollider))]
 public class ExpCrystal : PickableObject, IPoolable
 {
     [SerializeField] private MeshRenderer _renderer;
@@ -35,15 +36,13 @@ public class ExpCrystal : PickableObject, IPoolable
     }
 
 
-    public override PickableObject PickUp()
+    public override void PickUp()
     {
         if (_player != null)
             (_player.Stats as PlayerStats).AddExpirience(_expValue);
         else if (_isDebug) Debug.Log("Missing player!");
 
         _pool.Release(this);
-
-        return base.PickUp();
     }
 
     /// <summary>

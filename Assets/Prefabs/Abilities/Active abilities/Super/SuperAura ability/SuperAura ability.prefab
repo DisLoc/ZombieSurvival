@@ -184,7 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 3227455941725385764}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 01000000
 --- !u!4 &3004936606825840754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5053910465421310900, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
