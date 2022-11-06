@@ -96,7 +96,7 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 109c0416b7448134fb9b9154a126511b, type: 2}
-      _valueIsInfinite: 0
+      _valueIsInfinite: 1
   _projectileStopDuration:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: c3e371b7fcf7f9047aef77739ce9c656, type: 2}
