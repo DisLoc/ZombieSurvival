@@ -736,18 +736,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4806763617484522634, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _triggerTags._tags.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4806763617484522634, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _triggerTags._tags.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4806763617484522634, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _triggerTags._tags.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7764750604290027405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

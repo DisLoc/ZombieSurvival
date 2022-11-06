@@ -4,7 +4,7 @@ using UnityEngine;
 public class PickableCoin : PickableObject
 {
     [Header("Coin settings")]
-    [SerializeField][Range(0, 1000)] private int _coinValue;
+    [SerializeField] private Coin _coin;
 
     private Player _player;
 
@@ -19,7 +19,7 @@ public class PickableCoin : PickableObject
 
         if (_player != null)
         {
-
+            _player.CoinInventory.Add(_coin);
         }
         else if (_isDebug) Debug.Log("Missing player!");
     }

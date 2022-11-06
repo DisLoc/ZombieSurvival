@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8038103952488939020}
   m_Layer: 0
   m_Name: ExpCrystal
-  m_TagString: PickableObject
+  m_TagString: ExpCrystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

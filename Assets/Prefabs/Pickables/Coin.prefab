@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2449599218809666177
 Transform:
   m_ObjectHideFlags: 0
@@ -62,3 +62,6 @@ MonoBehaviour:
   _gizmosColor: {r: 1, g: 0.89133024, b: 0, a: 1}
   _pickUpCollider: {fileID: 2449599218809666178}
   _pickUpRange: 0.75
+  _coin:
+    _currencyValue: 1
+    _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

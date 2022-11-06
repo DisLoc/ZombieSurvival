@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Currency : MonoBehaviour
+public class Currency
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField][Range(0, 1000)] protected int _currencyValue;
+    [SerializeField] protected CurrencyData _currencyData;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int CurrencyValue => _currencyValue;
+    public CurrencyData CurrencyData => _currencyData;
 }

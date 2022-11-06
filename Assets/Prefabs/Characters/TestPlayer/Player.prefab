@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 1904523937}
-  _triggerTag: 2
+  _triggerTags:
+    _tags: 0400000005000000
 --- !u!1 &8953109175079049449
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,9 +188,12 @@ MonoBehaviour:
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilityInventory:
-    _maxActiveAbilitiesCount: 7
-    _maxPassiveAbilitiesCount: 7
+    _maxActiveAbilitiesCount: 1
+    _maxPassiveAbilitiesCount: 1
     _abilitiesParent: {fileID: 4441788838641939132}
+  _coinInventory:
+    _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _counter: {fileID: 0}
 --- !u!1001 &2567576988300668118
 PrefabInstance:
   m_ObjectHideFlags: 0
