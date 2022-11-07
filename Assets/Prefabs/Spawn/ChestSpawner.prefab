@@ -44,3 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921407d437a7f104abba9cf43edcfb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDebug: 0
+  _spawnDeltaDistance: 15
+  _rewardChestPrefab: {fileID: 4231006293177933437, guid: a4f62fe21138b984885985d5403c7b25, type: 3}
+  _pickablesSpawnChances:
+    _spawnChances:
+    - _object: {fileID: 2449599218809666176, guid: e7e43a8cedf45e142a06ec792a0fa012, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+    - _object: {fileID: 9201151954380301379, guid: a333f7e5fb06f994d9eb51c9da2f4e7a, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+    - _object: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
+    - _object: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+  _spawnCooldown: 30

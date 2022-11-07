@@ -22,5 +22,7 @@ public class PickableCoin : PickableObject
             _player.CoinInventory.Add(_coin);
         }
         else if (_isDebug) Debug.Log("Missing player!");
+
+        Destroy(gameObject);
     }
 }

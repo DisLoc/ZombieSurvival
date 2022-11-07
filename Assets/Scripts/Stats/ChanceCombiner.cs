@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class ChanceCombiner<T> where T : class
 {
-    private List<ObjectChanceSpawn<T>> _spawnChances;
+    [SerializeField] private List<ObjectChanceSpawn<T>> _spawnChances;
 
     public List<ObjectChanceSpawn<T>> SpawnChances => _spawnChances;
 
@@ -19,6 +20,14 @@ public class ChanceCombiner<T> where T : class
         foreach(ObjectChanceSpawn<T> spawnChance in spawnChances)
         {
             Add(spawnChance);
+        }
+    }
+
+    public void Initialize()
+    {
+        foreach (ObjectChanceSpawn<T> spawnChance in _spawnChances)
+        {
+            spawnChance.SpawnChance.Initialize();
         }
     }
 

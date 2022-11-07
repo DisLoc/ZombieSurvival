@@ -22,5 +22,7 @@ public class PickableHeart : PickableObject
             _player.GetUpgrade(_healUpgrade);
         }
         else if (_isDebug) Debug.Log("Missing player!");
+
+        Destroy(gameObject);
     }
 }

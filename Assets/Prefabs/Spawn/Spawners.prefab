@@ -121,6 +121,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3996085183425521322}
     m_Modifications:
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _isDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _spawnCooldown
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _rewardChestPrefab
+      value: 
+      objectReference: {fileID: 4231006293177933437, guid: a4f62fe21138b984885985d5403c7b25, type: 3}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _spawnDeltaDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[0]._object
+      value: 
+      objectReference: {fileID: 2449599218809666176, guid: e7e43a8cedf45e142a06ec792a0fa012, type: 3}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[1]._object
+      value: 
+      objectReference: {fileID: 9201151954380301379, guid: a333f7e5fb06f994d9eb51c9da2f4e7a, type: 3}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[2]._object
+      value: 
+      objectReference: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[3]._object
+      value: 
+      objectReference: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[0]._spawnChance._statData
+      value: 
+      objectReference: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[1]._spawnChance._statData
+      value: 
+      objectReference: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[2]._spawnChance._statData
+      value: 
+      objectReference: {fileID: 11400000, guid: 15b7331bb348fa44cb205d9a6f078a56, type: 2}
+    - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
+      propertyPath: _pickablesSpawnChances._spawnChances.Array.data[3]._spawnChance._statData
+      value: 
+      objectReference: {fileID: 11400000, guid: ab96bd229158773429a7ebaba1537961, type: 2}
     - target: {fileID: 5733476968982346860, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
       propertyPath: m_RootOrder
       value: 2

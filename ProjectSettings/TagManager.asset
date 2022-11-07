@@ -11,6 +11,8 @@ TagManager:
   - Weapon
   - Ground
   - ExpCrystal
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

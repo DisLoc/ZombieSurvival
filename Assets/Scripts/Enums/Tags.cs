@@ -6,5 +6,7 @@ public enum Tags
     TargetDetector,
     PickableObject,
     ExpCrystal,
-    Ground
+    Ground,
+    PlayerProjectile,
+    EnemyProjectile
 }
