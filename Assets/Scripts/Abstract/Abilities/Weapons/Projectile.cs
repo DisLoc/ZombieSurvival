@@ -5,14 +5,12 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
-    [Header("Collision settings")]
+    [Header("Throw settings")]
     [SerializeField] protected TagList _targetTags;
+    [SerializeField] protected bool _destroyOnExitAttackRange;
 
     [Header("Effects settings")]
     [SerializeField] protected ParticleSystem _particle;
-
-    [Header("Throw settings")]
-    [SerializeField] protected bool _destroyOnExitAttackRange;
 
     protected Vector3 _moveDirection;
 

@@ -9803,5 +9803,6 @@ MonoBehaviour:
   _isDebug: 0
   _targetTags:
     _tags: 05000000
-  _particle: {fileID: 6718211201671254677}
   _destroyOnExitAttackRange: 0
+  _particle: {fileID: 6718211201671254677}
+  _sparkParticle: {fileID: 6718211201379723645}

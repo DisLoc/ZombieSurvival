@@ -250,7 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 8632883831247114022}
-  _triggerTag: 0
+  _triggerTags:
+    _tags: 00000000
 --- !u!1001 &5512315502173112210
 PrefabInstance:
   m_ObjectHideFlags: 0

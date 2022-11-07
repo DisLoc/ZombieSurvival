@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7978427900431315395}
   - component: {fileID: 8877730517216545559}
-  - component: {fileID: 6739021425677014267}
+  - component: {fileID: 564502217357169730}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -47,7 +47,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6739021425677014267
+--- !u!114 &564502217357169730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,14 +56,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 719524571440240848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34446d3519da82e4b99fed77e015d489, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b930ace83c02774ab9b0fea541a33ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
   _targetTags:
     _tags: 01000000
-  _particle: {fileID: 7831362375748254162}
   _destroyOnExitAttackRange: 1
+  _particle: {fileID: 7831362375748254162}
+  _sparkParticle: {fileID: 7831362376333544709}
 --- !u!1001 &6736948494421542308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,5 +130,10 @@ ParticleSystem:
 --- !u!4 &7831362375748254163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3589620006562577527, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
+  m_PrefabInstance: {fileID: 6736948494421542308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7831362376333544709 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3589620008220690593, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
   m_PrefabInstance: {fileID: 6736948494421542308}
   m_PrefabAsset: {fileID: 0}

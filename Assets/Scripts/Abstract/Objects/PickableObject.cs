@@ -15,7 +15,6 @@ public abstract class PickableObject : MonoBehaviour
     {
         _pickUpCollider.isTrigger = true;
         _pickUpCollider.radius = _pickUpRange;
-        gameObject.tag = Tags.PickableObject.ToString();
     }
 
     /// <summary>

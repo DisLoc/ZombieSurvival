@@ -137,7 +137,7 @@ MonoBehaviour:
     _attackRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: d1ccf5b422b62e0439f7380573dae1bc, type: 2}
-    _projectilePrefab: {fileID: 122420665965827606, guid: 198e1aca9149aaa48a9741b20443c5a4, type: 3}
+    _projectilePrefab: {fileID: 6562178455493680420, guid: 198e1aca9149aaa48a9741b20443c5a4, type: 3}
     _destroyProjectilesOnAttack: 0
     _projectileSize:
       _isDebug: 0

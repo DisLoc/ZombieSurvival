@@ -7,8 +7,10 @@ public class PickableMagnet : PickableObject
     [SerializeField] private Radius _magnetRadius;
     [SerializeField] private TargetDetector _targetDetector;
 
+    [ContextMenu("Initialize")]
     public void Initialize()
     {
+        _magnetRadius.Initialize();
         _targetDetector.Initialize(_magnetRadius);
     }
 
