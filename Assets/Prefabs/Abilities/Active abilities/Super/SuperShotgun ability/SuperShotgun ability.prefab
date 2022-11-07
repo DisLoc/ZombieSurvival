@@ -96,7 +96,7 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 4860905eefc9be940b1254be9f0820c6, type: 2}
-      _valueIsInfinite: 0
+      _valueIsInfinite: 1
 --- !u!135 &3961764513588038350
 SphereCollider:
   m_ObjectHideFlags: 0
