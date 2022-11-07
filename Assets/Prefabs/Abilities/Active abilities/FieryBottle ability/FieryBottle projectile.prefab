@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6378427429363072027}
   m_Layer: 0
   m_Name: FieryBottle projectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

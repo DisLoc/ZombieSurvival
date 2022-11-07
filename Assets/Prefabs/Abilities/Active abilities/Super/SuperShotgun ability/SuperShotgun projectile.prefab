@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6269223999869169462}
   m_Layer: 0
   m_Name: SuperShotgun projectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,8 +50,8 @@ MonoBehaviour:
   _isDebug: 0
   _targetTags:
     _tags: 01000000
-  _particle: {fileID: 0}
   _destroyOnExitAttackRange: 1
+  _particle: {fileID: 0}
 --- !u!33 &6767544011211743256
 MeshFilter:
   m_ObjectHideFlags: 0

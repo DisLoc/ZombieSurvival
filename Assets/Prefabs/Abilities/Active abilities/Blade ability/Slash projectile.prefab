@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8162076670152734966}
   m_Layer: 0
   m_Name: Slash projectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,8 +72,8 @@ MonoBehaviour:
   _isDebug: 0
   _targetTags:
     _tags: 01000000
-  _particle: {fileID: 2196847629766700966}
   _destroyOnExitAttackRange: 1
+  _particle: {fileID: 2196847629766700966}
 --- !u!1001 &995145006544028828
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
 
     [Header("Settings")]
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private ParticleSystem _impact1;
+    [SerializeField] private ParticleSystem _impact2;
+    [SerializeField] private ParticleSystem _impact3;
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private TagList _targetTags;
 
@@ -48,9 +51,48 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         else
         {
             if (_isDebug) Debug.Log("Missing particle!");
-
-            transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
         }
+        
+        if (_impact1 != null)
+        {
+            _impact1.Stop();
+
+            _impact1.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+
+            _impact1.Play();
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Missing impact1!");
+        }
+
+        if (_impact2 != null)
+        {
+            _impact2.Stop();
+
+            _impact2.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+
+            _impact2.Play();
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Missing impact1!");
+        }
+
+        if (_impact3 != null)
+        {
+            _impact3.Stop();
+
+            _impact3.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+
+            _impact3.Play();
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Missing impact1!");
+        }
+
+        transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
     }
 
     public void OnUpdate()

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7023920069490771533}
   m_Layer: 0
   m_Name: SuperShuriken projectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,8 +50,8 @@ MonoBehaviour:
   _isDebug: 0
   _targetTags:
     _tags: 01000000
-  _particle: {fileID: 0}
   _destroyOnExitAttackRange: 0
+  _particle: {fileID: 0}
   _minSpeedMultiplier: 0.1
   _maxSpeedMultiplier: 3
 --- !u!33 &4500217221018519758

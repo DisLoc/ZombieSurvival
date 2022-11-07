@@ -67,12 +67,12 @@ public class Shelling : ProjectileWeapon
 
     protected override Vector3 GetProjectileMoveDirection()
     {
-        return Vector3.down;
+        return Vector3.down + Vector3.back;
     }
 
     protected override Vector3 GetProjectilePosition()
     {
-        return _targetDetector.GetRandomTargetPosition() + Vector3.up * _projectileSpawnHeight + GetDeltaMoveDirection();
+        return _targetDetector.GetRandomTargetPosition() + Vector3.up * _projectileSpawnHeight + Vector3.forward * _projectileSpawnHeight + GetDeltaMoveDirection();
     }
 
     public override void OnProjectileRelease(Projectile projectile)

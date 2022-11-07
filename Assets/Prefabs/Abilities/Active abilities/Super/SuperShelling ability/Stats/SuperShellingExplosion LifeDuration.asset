@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: SuperShellingExplosion LifeDuration
   m_EditorClassIdentifier: 
-  _baseValue: 2.5
-  _minValue: 2.5
-  _maxValue: 2.5
+  _baseValue: 0.75
+  _minValue: 0.75
+  _maxValue: 0.75
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: 48d7ea21aa7e9d64c991705a9874d0ac, type: 2}
