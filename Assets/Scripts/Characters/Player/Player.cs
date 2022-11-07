@@ -19,19 +19,18 @@ public class Player : CharacterBase
     /// </summary>
     [HideInInspector] public bool isMoving;
 
-    [Header("Ability inventory settings")]
+    [Header("Inventory settings")]
     [SerializeField] protected AbilityInventory _abilityInventory;
+    [SerializeField] protected CurrencyInventory _coinInventory;
 
     protected List<Upgrade> _upgrades;
 
-    [Inject] protected LevelContext _levelContext;
-
     public override CharacterStats Stats => _stats;
-    /// <summary>
-    /// All abilities player getted in game
-    /// </summary>
-    public List<AbilityContainer> Abilities => _abilityInventory.Abilities;
+
     public AbilityInventory AbilityInventory => _abilityInventory;
+    public CurrencyInventory CoinInventory => _coinInventory;
+
+    [Inject] protected LevelContext _levelContext;
 
     public void Initialize()
     {
@@ -42,13 +41,14 @@ public class Player : CharacterBase
         _healthBar.Initialize(_stats.Health);
         _catcher.Initialize(_stats.PickUpRange);
         _abilityInventory.Initialize();
+        _coinInventory.Initialize();
 
         _upgrades = new List<Upgrade>();
 
         GetAbility(_stats.BaseWeapon);
     }
 
-    private void Update() // test
+    private void Update()
     {
         Attack();
 
@@ -89,6 +89,7 @@ public class Player : CharacterBase
     public override void GetUpgrade(Upgrade upgrade)
     {
         base.GetUpgrade(upgrade);
+        _coinInventory.GetUpgrade(upgrade);
 
         _upgrades.Add(upgrade);
 
@@ -127,8 +128,6 @@ public class Player : CharacterBase
                     
                     if (newAbility != null)
                     {
-                        weapon.DestroyWeapon();
-
                         foreach(Upgrade upgrade in _upgrades)
                         {
                             newAbility.Upgrade(upgrade);

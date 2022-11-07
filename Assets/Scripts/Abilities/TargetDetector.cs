@@ -27,7 +27,7 @@ public class TargetDetector : TriggerDetector
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(_triggerTag.ToString()))
+        if (_triggerTags.Contains(other.tag))
         {
             if (_isDebug) Debug.Log(other.name + " enter");
 
@@ -37,7 +37,7 @@ public class TargetDetector : TriggerDetector
 
     protected override void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(_triggerTag.ToString()))
+        if (_triggerTags.Contains(other.tag))
         {
             if (_isDebug) Debug.Log(other.name + " exit");
 
@@ -53,11 +53,6 @@ public class TargetDetector : TriggerDetector
         _targets?.RemoveAll(item => item == null || item.activeSelf == false || (CheckDistance(item) == false));
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <returns></returns>
     private bool CheckDistance(GameObject obj)
     {
         foreach(RaycastHit hit in Physics.RaycastAll(transform.position, obj.transform.position - transform.position, _collider.radius * transform.localScale.magnitude))

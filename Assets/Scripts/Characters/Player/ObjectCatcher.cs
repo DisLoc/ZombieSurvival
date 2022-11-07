@@ -4,7 +4,7 @@ public sealed class ObjectCatcher : TriggerDetector
 {
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(_triggerTag.ToString()))
+        if (_triggerTags.Contains(other.tag))
         {
             PickableObject obj = other.GetComponent<PickableObject>();
 

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: SuperShelling ability upgrade data
+  m_EditorClassIdentifier: 
+  _upgradeName: SUPER Shelling
+  _weapon: {fileID: 2254483478624583236, guid: 5a23de9e78e39624993b0272a5892f88, type: 3}
+  _levelUpgrades:
+  - _description: Upgrade Shelling to SUPER
+    _upgrade: {fileID: 11400000, guid: 2d126aba88fb29d409b709526ee6c5ef, type: 2}
+    _requiredLevel: 0

@@ -10,10 +10,14 @@ public class LevelContext : ScriptableObject
 
     [Header("Breakpoints settings")]
     [SerializeField] private BreakpointList<CrystalBreakpoint> _crystalSpawnBreakpoints;
+
     [Space(5)]
     [SerializeField] private BreakpointList<EnemyBreakpoint> _enemyBreakpoints;
     [SerializeField] private BreakpointList<HordeBreakpoint> _hordeBreakpoints;
     [SerializeField] private BreakpointList<BossBreakpoint> _bossBreakpoints;
+
+    [Space(5)]
+    [SerializeField] private BreakpointList<UpgradeBreakpoint> _enemyUpgradeBreakpoints;
 
     [Header("Level Upgrades")]
     [SerializeField] private List<Upgrade> _playerUpgrades;
@@ -26,6 +30,7 @@ public class LevelContext : ScriptableObject
     public BreakpointList<EnemyBreakpoint> EnemyBreakpoints => _enemyBreakpoints;
     public BreakpointList<HordeBreakpoint> HordeBreakpoints => _hordeBreakpoints;
     public BreakpointList<BossBreakpoint> BossBreakpoints => _bossBreakpoints;
+    public BreakpointList<UpgradeBreakpoint> EnemyUpgradeBreakpoints => _enemyUpgradeBreakpoints;
 
     public List<Upgrade> PlayerUpgrades => _playerUpgrades;
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
@@ -58,7 +63,12 @@ public class LevelContext : ScriptableObject
 
         for (int i = 0; i < _bossBreakpoints.Breakpoints.Count; i++)
         {
-            _bossBreakpoints.Breakpoints[i].SetReached(false);
+            _enemyUpgradeBreakpoints.Breakpoints[i].SetReached(false);
+        }
+
+        for (int i = 0; i < _bossBreakpoints.Breakpoints.Count; i++)
+        {
+            _enemyUpgradeBreakpoints.Breakpoints[i].SetReached(false);
         }
     }
 }

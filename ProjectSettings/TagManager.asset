@@ -10,6 +10,7 @@ TagManager:
   - TargetDetector
   - Weapon
   - Ground
+  - ExpCrystal
   layers:
   - Default
   - TransparentFX

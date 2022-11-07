@@ -5,14 +5,12 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
-    [Header("Collision settings")]
-    [SerializeField] protected Tags _targetTag;
+    [Header("Throw settings")]
+    [SerializeField] protected TagList _targetTags;
+    [SerializeField] protected bool _destroyOnExitAttackRange;
 
     [Header("Effects settings")]
     [SerializeField] protected ParticleSystem _particle;
-
-    [Header("Throw settings")]
-    [SerializeField] protected bool _destroyOnExitAttackRange;
 
     protected Vector3 _moveDirection;
 
@@ -132,7 +130,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     {
         DamageableObject obj = other.GetComponent<DamageableObject>();
 
-        if (obj != null && obj.CompareTag(_targetTag.ToString()))
+        if (obj != null && _targetTags.Contains(obj.tag))
         {
             if (_isDebug) Debug.Log(name + " find target");
 

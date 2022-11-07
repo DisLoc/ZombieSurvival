@@ -3,11 +3,9 @@ using UnityEngine;
 public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 {
     [Header("Projectile settings")]
-    [SerializeField] protected float _scatterMultiplier;
+    [SerializeField][Range(0, 2)] protected float _scatterMultiplier;
     [SerializeField] protected ProjectileAbilityStats _stats;
 
-    protected MonoPool<Projectile> _pool;
-    protected CleanupableList<Projectile> _projectiles;
     protected ObjectSpawner<Projectile> _projectilePool;
 
     protected float _spawnIntervalTimer;
@@ -20,10 +18,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     {
         base.Initialize();
 
-        _pool = new MonoPool<Projectile>(_stats.Projectile, (int)_stats.ProjectileNumber.Value);
-        _projectiles = new CleanupableList<Projectile>((int)_stats.ProjectileNumber.Value);
-
-        //_projectilePool = new ObjectSpawner<Projectile>(_stats.Projectile, (int)_stats.ProjectileNumber.Value);
+        _projectilePool = new ObjectSpawner<Projectile>(_stats.Projectile, (int)_stats.ProjectileNumber.Value);
 
         _spawnCount = 0;
         _spawnIntervalTimer = _stats.ProjectilesSpawnInterval.Value;
@@ -38,15 +33,14 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
             if (_stats.DestroyProjectilesOnAttack)
             {
-                _projectiles.Cleanup();
+                _projectilePool.SpawnedObjects.Cleanup();
 
-                for (int i = 0; i < _projectiles.List.Count; i++)
+                for (int i = 0; i < _projectilePool.SpawnCount; i++)
                 {
-                    _pool.Release(_projectiles[i]);
-                    _projectiles.Remove(_projectiles[i], true);
+                    _projectilePool.Release(_projectilePool.SpawnedObjects[i]);
                 }
 
-                _projectiles.Cleanup();
+                _projectilePool.SpawnedObjects.Cleanup();
             }
 
             _isReady = false;
@@ -75,22 +69,18 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
     public virtual void OnFixedUpdate()
     {
-        _projectiles.Cleanup();
-
-        for (int i = 0; i < _projectiles.List.Count; i++)
+        for (int i = 0; i < _projectilePool.SpawnCount; i++)
         {
-            if (_projectiles[i] != null)
-            {
-                _projectiles[i].OnFixedUpdate();
-            }
+            _projectilePool.SpawnedObjects[i]?.OnFixedUpdate();
         }
+
+        _projectilePool.SpawnedObjects.Cleanup();
     }
 
     protected virtual void SpawnProjectile()
     {
-        Projectile projectile = _pool.PullDisabled();
+        Projectile projectile = _projectilePool.SpawnDisabled(GetProjectilePosition());
         
-        projectile.transform.position = GetProjectilePosition();
         projectile.Initialize(_stats, this);
         projectile.Throw(GetProjectileMoveDirection());
         projectile.gameObject.SetActive(true);
@@ -104,8 +94,6 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
             _attackIntervalTimer = _stats.AttackInterval.Value;
             _spawnCount = 0;
         }
-
-        _projectiles.Add(projectile);
     }
 
     protected virtual Vector3 GetProjectilePosition()
@@ -113,12 +101,24 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         return transform.position;
     }
 
-    protected abstract Vector3 GetProjectileMoveDirection();
+    protected virtual Vector3 GetProjectileMoveDirection()
+    {
+        return transform.TransformDirection(Vector3.forward) + GetDeltaMoveDirection();
+    }
+
+    protected virtual Vector3 GetDeltaMoveDirection()
+    {
+        return new Vector3
+            (
+                Random.Range(-_scatterMultiplier, _scatterMultiplier),
+                0f,
+                Random.Range(-_scatterMultiplier, _scatterMultiplier)
+            );
+    }
 
     public virtual void OnProjectileRelease(Projectile projectile)
     {
-        _projectiles.Remove(projectile, true);
-        _pool.Release(projectile);
+        _projectilePool.Release(projectile);
     }
 
     public override bool Upgrade(Upgrade upgrade)
@@ -130,14 +130,10 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         return base.Upgrade(upgrade);
     }
 
-    public override void DestroyWeapon()
+    public override void DestroyAbility()
     {
-        _pool?.ClearPool();
-        _projectiles?.Cleanup();
+        _projectilePool.ClearPool();
 
-        _pool = null;
-        _projectiles = null;
-
-        base.DestroyWeapon();
+        base.DestroyAbility();
     }
 }

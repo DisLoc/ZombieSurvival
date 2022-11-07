@@ -76,13 +76,13 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 3d46c9206af456e49a7d18a8b3c2a7ec, type: 2}
     _projectilePrefab: {fileID: 8162076670152734966, guid: c0ddfd099ad91044f8ca0c4688534bf5, type: 3}
+    _destroyProjectilesOnAttack: 0
     _projectileSize:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 0229e2cc9c90a584497606283deb6d7f, type: 2}
     _projectileLifeDuration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 63aad032070ede94f8d354c1cdf0d46c, type: 2}
-    _destroyProjectilesOnAttack: 0
     _projectileNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: a1cce133ecb731b439ee16bd25ac7e66, type: 2}
@@ -156,4 +156,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 2458274235636608188}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 01000000

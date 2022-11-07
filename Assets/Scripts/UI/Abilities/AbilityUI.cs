@@ -78,8 +78,6 @@ public class AbilityUI : MonoBehaviour
 
         if (ability as PassiveAbility != null)
         {
-            _combineText.gameObject.SetActive(true);
-
             if (_combines.Count > 0)
             {
                 foreach (CombineAbilityUI combine in _combines)
@@ -88,6 +86,17 @@ public class AbilityUI : MonoBehaviour
                 }
 
                 _combines.Clear();
+            }
+
+            _combineText.gameObject.SetActive(true);
+            _combineAbilitiesParent.gameObject.SetActive(true);
+
+            if ((ability as PassiveAbility).CombinedAbilities == null || (ability as PassiveAbility).CombinedAbilities.Count == 0)
+            {
+                _combineText.gameObject.SetActive(true);
+                _combineAbilitiesParent.gameObject.SetActive(true);
+
+                return;
             }
 
             foreach (CombineAbility combineAbility in (ability as PassiveAbility).CombinedAbilities)
@@ -112,6 +121,7 @@ public class AbilityUI : MonoBehaviour
         else
         {
             _combineText.gameObject.SetActive(false);
+            _combineAbilitiesParent.gameObject.SetActive(false);
         }
     }
 

@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9059485718224465170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9059485718224465171}
+  - component: {fileID: 9059485718224465172}
+  - component: {fileID: 7637138812238184596}
+  - component: {fileID: 8786884293732478710}
+  m_Layer: 0
+  m_Name: SuperFieryBottle ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9059485718224465171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059485718224465170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9059485718224465172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059485718224465170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3beea562ee4d75241aa9e58f5380733e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: SUPER Fiery bottle
+  _icon: {fileID: 0}
+  _isSuperWeapon: 1
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 8786884293732478710}
+  _abilityUpgradeData: {fileID: 11400000, guid: 8980520e67e62a44b95527f68e794e2e, type: 2}
+  _scatterMultiplier: 1
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 6619d2429273ff4409f6bcc2540732c4, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 1
+      _maxValue: 1
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: ba4d86ec574ad9a489807ffbde40c05e, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 409a0a90a6a1b8644999c5d5f5e51d5c, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: e9e4f5ac9d2b1ba4ba3e9cc36c159958, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: bb19a20c139dc56499907804c433b14a, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 2d1bd32283ee6894ab05bd595aeac47a, type: 2}
+    _projectilePrefab: {fileID: 3102979988303616865, guid: f45acf212c759ff4083ef8f266caa33f, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: a77a68b9f78a09c469f43b7dd9b910b0, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 58200f86b71cdfa48a87febce21bc42c, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 818b0a095eb2ae6419625317d74f8b10, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 75e31ac0458b0f14597471a2d3950c97, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: bec93a69dc839c847a17227548f1573b, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 49ca615c771b9e348b6caf8fddb72323, type: 2}
+      _valueIsInfinite: 1
+  _puddlePrefab: {fileID: 646684746008263237, guid: 1dd4460325d82d042bca6a494a21c1ef, type: 3}
+  _destroyPuddlesOnAttack: 0
+  _puddleRadius:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 8c2fed963c2eb4649ada4c45c35671fd, type: 2}
+  _puddleLifeDuration:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: d668011bf977dc3439737f0051526845, type: 2}
+  _puddleAttackInterval:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 2b3976147472a7640b8f83dba30a1ec0, type: 2}
+--- !u!135 &7637138812238184596
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059485718224465170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8786884293732478710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059485718224465170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 7637138812238184596}
+  _triggerTags:
+    _tags: 01000000

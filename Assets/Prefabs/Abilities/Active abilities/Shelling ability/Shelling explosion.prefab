@@ -62,7 +62,8 @@ MonoBehaviour:
   _isDebug: 0
   _particle: {fileID: 241399617854353857}
   _sphereCollider: {fileID: 6689769446662140375}
-  _targetTag: 1
+  _targetTags:
+    _tags: 01000000
 --- !u!1001 &8688037390909015941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,11 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 0.4292453
       objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.19320267
+      value: 0.53891975
       objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r

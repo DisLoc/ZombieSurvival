@@ -8,7 +8,7 @@ public abstract class TriggerDetector : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] protected SphereCollider _collider;
-    [SerializeField] protected Tags _triggerTag;
+    [SerializeField] protected TagList _triggerTags;
 
     protected Radius _radius;
 
@@ -27,7 +27,7 @@ public abstract class TriggerDetector : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (_isDebug && other.CompareTag(_triggerTag.ToString()))
+        if (_isDebug && _triggerTags.Contains(other.tag))
         {
             Debug.Log(name + " detected " + other.name);
         }
@@ -35,7 +35,7 @@ public abstract class TriggerDetector : MonoBehaviour
 
     protected virtual void OnTriggerExit(Collider other)
     {
-        if (_isDebug && other.CompareTag(_triggerTag.ToString()))
+        if (_isDebug && _triggerTags.Contains(other.tag))
         {
             Debug.Log(other.name + " exit");
         }

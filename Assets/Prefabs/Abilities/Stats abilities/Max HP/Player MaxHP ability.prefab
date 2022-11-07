@@ -57,5 +57,5 @@ MonoBehaviour:
       _maxValueIsInfinite: 0
   _combinedAbilities:
   - _combinedWeapon: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
-    _superWeapon: {fileID: 0}
+    _superWeapon: {fileID: 3952381218074834566, guid: c4252e1ed8f4c13489de15fcba827174, type: 3}
     _unlockUpgradeLevel: 5

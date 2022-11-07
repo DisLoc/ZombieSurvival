@@ -9,9 +9,9 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     [Header("Settings")]
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private SphereCollider _sphereCollider;
-    [SerializeField] private Tags _targetTag;
+    [SerializeField] private TagList _targetTags;
 
-    private PlayerShelling _weapon;
+    private Shelling _weapon;
 
     private float _releaseTimer;
 
@@ -24,7 +24,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         _releaseTimer = 0;
     }
 
-    public void Initialize(ProjectileAbilityStats stats, PlayerShelling weapon)
+    public void Initialize(ProjectileAbilityStats stats, Shelling weapon)
     {
         _weapon = weapon;
         _sphereCollider.radius = _weapon.ExplosionRadius.Value;
@@ -69,7 +69,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     {
         DamageableObject obj = other.GetComponent<DamageableObject>();
 
-        if (obj != null && other.CompareTag(_targetTag.ToString()))
+        if (obj != null && _targetTags.Contains(other.tag))
         {
             obj.TakeDamage((int)_damage.Value);
 

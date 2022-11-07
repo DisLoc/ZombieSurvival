@@ -29,7 +29,7 @@ public sealed class ShurikenProjectile : Projectile
     {
         base.Initialize(stats, weapon);
 
-        _stopDuration = (weapon as PlayerShuriken).ProjectileStopDuration;
+        _stopDuration = (weapon as Shuriken).ProjectileStopDuration;
     }
 
     public override void Throw(Vector3 direction)

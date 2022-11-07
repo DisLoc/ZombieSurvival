@@ -11,25 +11,22 @@ public abstract class PickableObject : MonoBehaviour
     [SerializeField] protected SphereCollider _pickUpCollider;
     [SerializeField] protected float _pickUpRange;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _pickUpCollider.isTrigger = true;
         _pickUpCollider.radius = _pickUpRange;
-        gameObject.tag = Tags.PickableObject.ToString();
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <returns>Return self</returns>
-    public virtual PickableObject PickUp()
+    public virtual void PickUp()
     {
         if (_isDebug) Debug.Log("Pick up " + name);
-
-        return this;
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         if (_isDebug)
         {

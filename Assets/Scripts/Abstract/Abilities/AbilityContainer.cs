@@ -60,4 +60,9 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
 
         return false;
     }
+
+    public virtual void DestroyAbility()
+    {
+        Destroy(gameObject);
+    }
 }
