@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class ChestSpawner : MonoBehaviour
+public class ChestSpawner : Spawner
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Inject] private LevelContext _levelContext;
 
-    // Update is called once per frame
-    void Update()
+    protected override void Spawn(Vector3 position)
     {
         
     }

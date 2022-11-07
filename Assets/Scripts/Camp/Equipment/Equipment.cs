@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Debug settings")]
+    [SerializeField] private bool _isDebug;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Equipment settings")]
+    [SerializeField] private EquipSlots _equipSlot;
+    [SerializeField] private EquipRarity _rarity;
+
+
+
+    public Upgrade EquipUpgrade => null;
 }

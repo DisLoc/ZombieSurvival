@@ -139,5 +139,23 @@ MonoBehaviour:
       _requiredProgress: 100
       _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
+  _enemyUpgradeBreakpoints:
+    _breakpoints:
+    - _name: 5-15
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 5
+      _upgrade: {fileID: 11400000, guid: 84d32d3058ccfbc48888f69be8129b71, type: 2}
+    - _name: 16-30
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 16
+      _upgrade: {fileID: 11400000, guid: 591e8652b08ac6a4095e785bb62e0d29, type: 2}
+    - _name: 31-60
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 31
+      _upgrade: {fileID: 11400000, guid: 264bcc088b786d44a9cf2550317a00a2, type: 2}
+    - _name: 61-100
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 61
+      _upgrade: {fileID: 11400000, guid: 27e6f7d6ce9311b47ab40c8c4fc4382f, type: 2}
   _playerUpgrades: []
   _enemiesUpgrades: []
