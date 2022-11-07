@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: Cooldown ability upgrade data
   m_EditorClassIdentifier: 
-  _name: Cooldown reduction
-  _inventoryIcon: {fileID: 0}
-  _upgradeIcon: {fileID: 0}
+  _upgradeName: 
   _repeatingUpgrade:
-    _description: +5% cooldown reduction
+    _description: +8% cooldown reduction
     _upgrade: {fileID: 11400000, guid: 6083dfe370cbe1847be2ccd9262dc326, type: 2}
     _requiredLevel: 0
