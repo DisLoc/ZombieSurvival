@@ -22,6 +22,7 @@ public class Player : CharacterBase
     [Header("Inventory settings")]
     [SerializeField] protected AbilityInventory _abilityInventory;
     [SerializeField] protected CurrencyInventory _coinInventory;
+    [SerializeField] protected EquipmentInventory _equipmentInventory;
 
     protected List<Upgrade> _upgrades;
 

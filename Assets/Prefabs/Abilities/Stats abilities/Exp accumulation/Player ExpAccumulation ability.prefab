@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Exp accumulation
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: be6583a613aff424bb888f8e424034e4, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 9848fdb74a3741f47b51e52ac6eac7bf, type: 2}
@@ -54,7 +55,4 @@ MonoBehaviour:
       _minValue: 1
       _maxValue: 5
       _maxValueIsInfinite: 0
-  _combinedAbilities:
-  - _combinedWeapon: {fileID: 0}
-    _superWeapon: {fileID: 0}
-    _unlockUpgradeLevel: 5
+  _combinedAbilities: []

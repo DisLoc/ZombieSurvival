@@ -76,7 +76,7 @@ public class AbilityUI : MonoBehaviour
         _upgradeDescriptionText.text = _ability.CurrentUpgrade.Description;
 
 
-        if (ability as PassiveAbility != null)
+        if (ability as PassiveAbility != null && (ability as PassiveAbility).CombinedAbilities.Count > 0)
         {
             if (_combines.Count > 0)
             {

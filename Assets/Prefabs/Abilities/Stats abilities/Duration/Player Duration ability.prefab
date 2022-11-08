@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Duration
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: b09f78b3b13958648b4b0898db0997cd, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: b8b3f88fb8514e54898b0a68241699a0, type: 2}
@@ -54,7 +55,4 @@ MonoBehaviour:
       _minValue: 1
       _maxValue: 5
       _maxValueIsInfinite: 0
-  _combinedAbilities:
-  - _combinedWeapon: {fileID: 0}
-    _superWeapon: {fileID: 0}
-    _unlockUpgradeLevel: 5
+  _combinedAbilities: []

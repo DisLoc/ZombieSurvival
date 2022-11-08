@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Critical damage
+  _icon: {fileID: 0}
   _upgradeData: {fileID: 11400000, guid: c505f1a2b98ed5e47be2d2371866ee93, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: f20bae64364883b4c8530124f7978c13, type: 2}
@@ -54,7 +55,4 @@ MonoBehaviour:
       _minValue: 1
       _maxValue: 5
       _maxValueIsInfinite: 0
-  _combinedAbilities:
-  - _combinedWeapon: {fileID: 0}
-    _superWeapon: {fileID: 0}
-    _unlockUpgradeLevel: 5
+  _combinedAbilities: []
