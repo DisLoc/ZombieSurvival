@@ -88,9 +88,9 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
 
     public override void Release(TObject obj)
     {
-        base.Release(obj);
-
         _spawnedObjects.Remove(obj, true);
+
+        base.Release(obj);
     }
 
     public override void ClearPool()

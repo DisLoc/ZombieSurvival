@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
-  m_Name: HP
+  m_Name: Player ExpLevel
   m_EditorClassIdentifier: 
-  _baseValue: 500
-  _minValue: 0
-  _maxValue: 500
+  _baseValue: 1
+  _minValue: 1
+  _maxValue: 1
   _maxValueIsInfinite: 1
-  _upgradeMarker: {fileID: 11400000, guid: dc340090bd1bb9d46844d1cca45edb29, type: 2}
+  _upgradeMarker: {fileID: 11400000, guid: 0c4c925473ccdc247aa94165bfcc5a2d, type: 2}
