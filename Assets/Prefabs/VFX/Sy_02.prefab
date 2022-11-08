@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3899632165645603391}
   - component: {fileID: 3899632165645603388}
   m_Layer: 0
-  m_Name: Sy_01
+  m_Name: Sy_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.61698115, g: 0.75011855, b: 1, a: 1}
+      maxColor: {r: 0.8796381, g: 0.6156863, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -286,7 +286,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 2.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5094,7 +5094,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.4558499, b: 1, a: 1}
+      maxColor: {r: 0.88955355, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5156,7 +5156,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.41
+      scalar: 4.42
       minScalar: 1
       maxCurve:
         serializedVersion: 2

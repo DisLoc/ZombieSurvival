@@ -6251,7 +6251,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 3277
-        atime2: 28913
+        atime2: 44333
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -14595,7 +14595,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0.3, z: 0}
+  m_Pivot: {x: -0.15, y: 0.3, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -15480,7 +15480,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
