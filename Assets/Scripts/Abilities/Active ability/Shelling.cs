@@ -88,4 +88,13 @@ public class Shelling : ProjectileWeapon
     {
         _explosionsSpawner.Release(explosion);
     }
+
+    public override void DestroyAbility()
+    {
+        _explosionsSpawner.ClearPool();
+
+        _explosionsSpawner = null;
+
+        base.DestroyAbility();
+    }
 }
