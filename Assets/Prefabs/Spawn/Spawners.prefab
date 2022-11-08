@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 4231006293177933437, guid: a4f62fe21138b984885985d5403c7b25, type: 3}
     - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
       propertyPath: _spawnDeltaDistance
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3763541597869820498, guid: 39c6536503ccbdb429334a0279f1ea55, type: 3}
       propertyPath: _pickablesSpawnChances._spawnChances.Array.size

@@ -4,7 +4,7 @@ using Zenject;
 [RequireComponent(typeof(SphereCollider))]
 public class ExpCrystal : PickableObject, IPoolable
 {
-    [SerializeField] private MeshRenderer _renderer;
+    [SerializeField] private SpriteRenderer _renderer;
 
     private Player _player;
 

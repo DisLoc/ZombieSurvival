@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485ec41d1ff565e4e9e29da26b4eebef, type: 3}
   m_Name: Coin data
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
   _marker: {fileID: 11400000, guid: e84a43aad54a9c1429a35f8d80caeb36, type: 2}
