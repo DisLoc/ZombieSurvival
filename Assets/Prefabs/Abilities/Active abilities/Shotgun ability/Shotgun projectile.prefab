@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 442743518526430013}
+  - {fileID: 5277762773536081976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   _targetTags:
     _tags: 01000000
   _destroyOnExitAttackRange: 1
-  _particle: {fileID: 442743518526430014}
+  _particle: {fileID: 5277762773536081979}
 --- !u!135 &7011484401472929232
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &8503270660897356138
+--- !u!1001 &4114951098445359727
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -73,51 +73,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8080970106652746322, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
       propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: ShapeModule.type
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: InitialModule.size3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 6
+      value: Shotgun_01
       objectReference: {fileID: 0}
     - target: {fileID: 8080970106652746327, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
       propertyPath: m_RootOrder
@@ -165,13 +121,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
---- !u!4 &442743518526430013 stripped
+--- !u!4 &5277762773536081976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8080970106652746327, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-  m_PrefabInstance: {fileID: 8503270660897356138}
+  m_PrefabInstance: {fileID: 4114951098445359727}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &442743518526430014 stripped
+--- !u!198 &5277762773536081979 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8080970106652746324, guid: 2717e3e948f69be4eb79e4593617ff06, type: 3}
-  m_PrefabInstance: {fileID: 8503270660897356138}
+  m_PrefabInstance: {fileID: 4114951098445359727}
   m_PrefabAsset: {fileID: 0}

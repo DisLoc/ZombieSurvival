@@ -157,7 +157,7 @@ MonoBehaviour:
   _catcher: {fileID: 4806763617484522634}
   _collider: {fileID: 8953109175079049454}
   _stats:
-    _baseWeapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
+    _baseWeapon: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8a6dd93761d83924ab08bc3b7ef0bca9, type: 2}
@@ -180,7 +180,7 @@ MonoBehaviour:
           _maxValue: 0
           _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
-      _baseExpForLevelUp: 150
+      _baseExpForLevelUp: 50
       _levelMultiplier: 0.5
     _pickUpRange:
       _isDebug: 0
@@ -188,8 +188,8 @@ MonoBehaviour:
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilityInventory:
-    _maxActiveAbilitiesCount: 1
-    _maxPassiveAbilitiesCount: 1
+    _maxActiveAbilitiesCount: 7
+    _maxPassiveAbilitiesCount: 7
     _abilitiesParent: {fileID: 4441788838641939132}
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
