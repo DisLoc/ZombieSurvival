@@ -15,7 +15,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     [SerializeField] private AbilityUI _abilityUIPrefab;
 
     [Header("Stats settings")]
-    [SerializeField] private AbilitiesPerChoice _abilitiesPerLevel;
+    [SerializeField] private AbilitiesPerChoice _abilitiesPerChoice;
     [SerializeField] private AbilityChooseCount _abilityChooseCount;
 
     [Space(5)]
@@ -33,7 +33,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     {
         EventBus.Subscribe(this);
 
-        _abilitiesPerLevel.Initialize();
+        _abilitiesPerChoice.Initialize();
         _abilityChooseCount.Initialize();
 
         _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
@@ -75,15 +75,16 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
         InitializeAbilitiesUI();
 
-        List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerLevel.Value);
+        List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerChoice.Value);
 
-        for(int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
+        for(int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
         {
             if (i >= abilities.Count || i > _abilitiesUI.Count)
             {
                 if (_isDebug) Debug.Log("Abilities error!");
 
                 Time.timeScale = 1;
+                _onChoice = false;
 
                 return;
             }
@@ -97,7 +98,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// </summary>
     private void InitializeAbilitiesUI()
     {
-        if (_abilitiesUI != null && _abilitiesUI.Count != (int)_abilitiesPerLevel.Value)
+        if (_abilitiesUI != null && _abilitiesUI.Count != (int)_abilitiesPerChoice.Value)
         {
             foreach(AbilityUI abilityUI in _abilitiesUI)
             {
@@ -106,7 +107,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
             _abilitiesUI.Clear();
 
-            for (int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
+            for (int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
             {
                 AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
 
@@ -117,9 +118,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
         else if (_abilitiesUI == null)
         {
-            _abilitiesUI = new List<AbilityUI>((int)_abilitiesPerLevel.Value);
+            _abilitiesUI = new List<AbilityUI>((int)_abilitiesPerChoice.Value);
 
-            for (int i = 0; i < (int)_abilitiesPerLevel.Value; i++)
+            for (int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
             {
                 AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
 

@@ -12,6 +12,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     [SerializeField] private ParticleSystem _impact2;
     [SerializeField] private ParticleSystem _impact3;
     [SerializeField] private SphereCollider _sphereCollider;
+
     [SerializeField] private TagList _targetTags;
 
     private Shelling _weapon;
@@ -76,7 +77,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         }
         else
         {
-            if (_isDebug) Debug.Log("Missing impact1!");
+            if (_isDebug) Debug.Log("Missing impact2!");
         }
 
         if (_impact3 != null)
@@ -89,7 +90,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         }
         else
         {
-            if (_isDebug) Debug.Log("Missing impact1!");
+            if (_isDebug) Debug.Log("Missing impact3!");
         }
 
         transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
