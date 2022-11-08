@@ -49,9 +49,9 @@ public class ChestSpawner : Spawner, IGameStartHandler
     {
         return new Vector3
             (
-                _player.transform.position.x + (Random.Range(0, 2) > 0 ? _spawnDeltaDistance : -_spawnDeltaDistance),
-                0.05f,
-                _player.transform.position.z + (Random.Range(0, 2) > 0 ? _spawnDeltaDistance : -_spawnDeltaDistance)
+                Random.Range(0, 2) > 0 ? _spawnDeltaDistance : -_spawnDeltaDistance,
+                0f,
+                Random.Range(0, 2) > 0 ? _spawnDeltaDistance : -_spawnDeltaDistance
             );
     }
 

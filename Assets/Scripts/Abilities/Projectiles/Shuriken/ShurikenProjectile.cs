@@ -4,8 +4,11 @@ public sealed class ShurikenProjectile : Projectile
 {
     [SerializeField] private ParticleSystem _sparkParticle;
 
-    [SerializeField] private float _minSpeedMultiplier = 0.1f;
-    [SerializeField] private float _maxSpeedMultiplier = 5f;
+    [Space(5)]
+    [SerializeField][Range(0.01f, 1f)] private float _minSpeedMultiplier = 0.1f;
+    [SerializeField][Range(1f, 5f)] private float _maxSpeedMultiplier = 5f;
+
+    [SerializeField][Range(3f, 10f)] private float _exitRangeMultiplier = 3f;
 
     private Vector3 _startPosition;
     private Duration _stopDuration;
@@ -64,7 +67,13 @@ public sealed class ShurikenProjectile : Projectile
         {
             _stopTimer -= Time.fixedDeltaTime;
 
-            if (_stopTimer <= 0f) _isStopped = false;
+            if (_stopTimer <= 0f)
+            {
+                _isStopped = false;
+
+                _moveForward = false;
+                _moveDirection = -_moveDirection;
+            }
         }
         
     }
@@ -113,8 +122,6 @@ public sealed class ShurikenProjectile : Projectile
 
             if (_passedDistance + MAX_DELTA_POS >= _attackRange.Value)
             {
-                _moveDirection = -_moveDirection;
-                _moveForward = false;
                 _isStopped = true;
 
                 _stopTimer = _stopDuration.Value;
@@ -123,6 +130,11 @@ public sealed class ShurikenProjectile : Projectile
         else
         {
             _passedDistance += (newPosition - currentPosition).magnitude;
+
+            if (_passedDistance > _attackRange.Value * _exitRangeMultiplier)
+            {
+                _releaseTimer = -1f;
+            }
         }
     }
 }

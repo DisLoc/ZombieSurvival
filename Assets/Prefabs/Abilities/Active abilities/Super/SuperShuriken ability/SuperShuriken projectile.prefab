@@ -54,6 +54,7 @@ MonoBehaviour:
   _sparkParticle: {fileID: 1038566207781246032}
   _minSpeedMultiplier: 0.1
   _maxSpeedMultiplier: 3
+  _exitRangeMultiplier: 5
 --- !u!135 &7023920069490771533
 SphereCollider:
   m_ObjectHideFlags: 0
