@@ -9,6 +9,7 @@ public abstract class UIMenu : MonoBehaviour
     [SerializeField] protected CanvasGroup _canvasGroup;
     [SerializeField] protected MenuButton _button;
 
+
     public virtual void Display()
     {
         _canvasGroup.alpha = 1;
