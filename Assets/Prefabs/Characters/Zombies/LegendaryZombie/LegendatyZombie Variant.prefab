@@ -93,8 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _isImmortal: 0
-  _healthBar: {fileID: 0}
-  _hpCanvas: {fileID: 0}
+  _healthBar: {fileID: 6567868740871431620, guid: fc5cc9efdcbd88e41918110e18f707bc, type: 3}
+  _hpCanvas: {fileID: 5737324548141797751, guid: 3e77efb77ed53194691de0f66ddd6e46, type: 3}
   _stats:
     _baseWeapon: {fileID: 7224976869378105685}
     _health:
