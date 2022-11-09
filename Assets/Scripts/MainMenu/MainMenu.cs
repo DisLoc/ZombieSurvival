@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     {
         foreach (var menu in _menus)
         {
+            menu.Initialize(this);
+
             if (menu.Equals(_defaultMenu))
             {
                 menu.Display();
@@ -34,5 +36,25 @@ public class MainMenu : MonoBehaviour
 
             else menu.Hide();
         }
+    }
+
+    public void OnSettingsClick()
+    {
+
+    }
+
+    public void OnBuyEnergyClick()
+    {
+
+    }
+
+    public void OnBuyGemsClick()
+    {
+
+    }
+
+    public void OnBuyGoldClick()
+    {
+
     }
 }

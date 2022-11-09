@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6efe390ed7d7444e8c7f2c041c25368, type: 3}
   m_Name: Test level context
   m_EditorClassIdentifier: 
+  _levelName: Test level
+  _levelNumber: 1
   _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
   _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
   _crystalSpawnBreakpoints:

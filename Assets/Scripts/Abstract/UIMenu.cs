@@ -9,6 +9,12 @@ public abstract class UIMenu : MonoBehaviour
     [SerializeField] protected CanvasGroup _canvasGroup;
     [SerializeField] protected MenuButton _button;
 
+    protected MainMenu _mainMenu;
+
+    public virtual void Initialize(MainMenu mainMenu)
+    {
+        _mainMenu = mainMenu;
+    }
 
     public virtual void Display()
     {

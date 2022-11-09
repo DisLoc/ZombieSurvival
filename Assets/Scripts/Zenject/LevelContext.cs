@@ -5,8 +5,13 @@ using UnityEngine;
 public class LevelContext : ScriptableObject
 {
     [Header("Level settings")]
+    [SerializeField] private string _levelName;
+    [SerializeField] private int _levelNumber;
+    [SerializeField] private Sprite _levelSprite;
+
     [SerializeField] private LevelBuilder _levelBuilderPrefab;
     [SerializeField] private GroundGrid _levelEnvironment;
+    [SerializeField] private LevelReward _levelReward;
 
     [Header("Breakpoints settings")]
     [SerializeField] private BreakpointList<CrystalBreakpoint> _crystalSpawnBreakpoints;
@@ -22,6 +27,10 @@ public class LevelContext : ScriptableObject
     [Header("Level Upgrades")]
     [SerializeField] private List<Upgrade> _playerUpgrades;
     [SerializeField] private List<Upgrade> _enemiesUpgrades;
+
+    public string LevelName => _levelName;
+    public int LevelNumber => _levelNumber;
+    public LevelReward LevelReward => _levelReward;
 
     public LevelBuilder LevelBuilder { get; private set; }
     public GroundGrid LevelEnvironment => _levelEnvironment;
