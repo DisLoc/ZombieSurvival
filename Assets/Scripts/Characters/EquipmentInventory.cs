@@ -10,15 +10,24 @@ public class EquipmentInventory
         _equipment = new Dictionary<EquipSlots, Equipment>();
     }
     
-    public EquipmentInventory(Dictionary<EquipSlots, Equipment> equipment)
+    public EquipmentInventory(List<Equipment> equipment)
     {
         _equipment = new Dictionary<EquipSlots, Equipment>();
 
-
+        foreach (var item in equipment)
+        {
+            Add(item);
+        }
     }
 
     public bool Add(Equipment equipment)
     {
-        return true;
+        if (!_equipment.ContainsKey(equipment.EquipSlot) || (_equipment.ContainsKey(equipment.EquipSlot) && _equipment[equipment.EquipSlot] != null))
+        {
+            _equipment.Add(equipment.EquipSlot, equipment);
+            return true;
+        }
+
+        return false;
     }
 }
