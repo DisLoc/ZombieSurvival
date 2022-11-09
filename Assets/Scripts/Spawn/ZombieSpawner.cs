@@ -7,6 +7,7 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private List<Zombie> _zombies = new List<Zombie>();
     [SerializeField] private List<HordeBreakpoint> _hordeBreakpoints;
     [SerializeField] private List<HordeBreakpoint> _herdBreakpoints;
+    [SerializeField] private List<HordeBreakpoint> _legendaryZombieBreakpoints;
 
     [SerializeField] private LevelProgress _levelProgress;
     [SerializeField] private SpawnHorde _spawnHorde;
@@ -31,19 +32,26 @@ public class ZombieSpawner : MonoBehaviour
     }
 
     private void Update()
-    {/*
-        if(_levelProgress.Value > _hordeBreakpoints[0].RequiredProgress && _spawned == false)
+    {
+        if (_levelProgress.Value > _hordeBreakpoints[0].RequiredProgress && _spawned == false)
         {
             _spawnHorde.SetZombie(_zombies[Random.Range(0, _zombies.Count)]);
             EventBus.Publish<IStartHorde>(handler => handler.OnHordeSpawn());
             _spawned = true;
         }
-        if(_levelProgress.Value > _herdBreakpoints[0].RequiredProgress && _spawned == false)
+        if (_levelProgress.Value > _herdBreakpoints[0].RequiredProgress && _spawned == false)
         {
             _spawnHorde.SetZombie(_zombies[Random.Range(0, _zombies.Count)]);
-            EventBus.Publish<IStartHerd>(handler => handler.OnHerdSpawn());
-   
-        }*/
+            EventBus.Publish<IStartHerd>(handler => handler.OnStartHerd());
+
+        }
+
+        if (_levelProgress.Value > _legendaryZombieBreakpoints[0].RequiredProgress && _spawned == false)
+        {
+            _spawnHorde.SetZombie(_zombies[Random.Range(0, _zombies.Count)]);
+            EventBus.Publish<ISpawnLegendaryZombie>(handler => handler.SpawnLegendaryZombie());
+
+        }
     }
 
     private void Spawn()
