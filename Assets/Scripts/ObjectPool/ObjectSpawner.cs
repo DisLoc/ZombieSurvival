@@ -21,6 +21,8 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
         
         obj.transform.position = position;
 
+        if (_spawnedObjects == null) _spawnedObjects = new CleanupableList<TObject>();
+
         _spawnedObjects.Add(obj);
 
         return obj;

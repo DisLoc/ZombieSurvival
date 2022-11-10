@@ -26,4 +26,11 @@ public class CharacterStats : IObjectStats
         _velocity.Upgrade(upgrade);
         _regeneration.Upgrade(upgrade);
     }
+
+    public virtual void DispelUpgrade(Upgrade upgrade)
+    {
+        _health.DispelUpgrade(upgrade);
+        _velocity.DispelUpgrade(upgrade);
+        _regeneration.DispelUpgrade(upgrade);
+    }
 }

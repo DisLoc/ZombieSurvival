@@ -8,11 +8,13 @@ TagManager:
   - PickableObject
   - EnemiesList
   - TargetDetector
-  - Weapon
   - Ground
   - ExpCrystal
   - PlayerProjectile
   - EnemyProjectile
+  - PlayerWeapon
+  - EnemyWeapon
+  - Weapon
   layers:
   - Default
   - TransparentFX

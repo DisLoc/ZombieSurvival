@@ -4,9 +4,10 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 {
     [Header("Ability settings")]
     [SerializeField] protected bool _isSuperWeapon;
+    [Tooltip("Field can be null if abiltity cant upgrade to SUPER")]
+    [SerializeField] protected PassiveAbility _requiredAbilityToUpgradeToSuper;
 
     [Space(5)]
-    [SerializeField] protected PassiveAbility _requiredAbilityToUpgradeToSuper;
     [SerializeField] protected TargetDetector _targetDetector;
     [SerializeField] protected WeaponAbilityUpgradeData _abilityUpgradeData;
 

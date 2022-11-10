@@ -28,4 +28,13 @@ public class WeaponAbilityStats : AbilityStats
         _attackInterval.Upgrade(upgrade);
         _attackRange.Upgrade(upgrade);
     }
+
+    public override void DispelUpgrade(Upgrade upgrade)
+    {
+        base.DispelUpgrade(upgrade);
+
+        _damage.DispelUpgrade(upgrade);
+        _attackInterval.DispelUpgrade(upgrade);
+        _attackRange.DispelUpgrade(upgrade);
+    }
 }

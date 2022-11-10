@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 3187750679169941802}
   m_Layer: 0
   m_Name: SuperGun ability
-  m_TagString: Weapon
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

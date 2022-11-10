@@ -26,6 +26,14 @@ public sealed class PlayerStats : CharacterStats
         _pickUpRange.Upgrade(upgrade);
     }
 
+    public override void DispelUpgrade(Upgrade upgrade)
+    {
+        base.DispelUpgrade(upgrade);
+
+        _expLevel.DispelUpgrade(upgrade);
+        _pickUpRange.DispelUpgrade(upgrade);
+    }
+
     /// <summary>
     /// Add expirience to player
     /// </summary>

@@ -183,4 +183,14 @@ public class Player : CharacterBase
             return newAbility;
         }
     }
+
+    public override void DispelUpgrade(Upgrade upgrade)
+    {
+        base.DispelUpgrade(upgrade);
+
+        foreach(AbilityContainer ability in _abilityInventory.Abilities)
+        {
+            ability.DispelUpgrade(upgrade);
+        }
+    }
 }

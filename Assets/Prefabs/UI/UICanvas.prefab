@@ -218,10 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
-    - target: {fileID: 8956970954969619536, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8956970955438195202, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -244,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956970955438195213, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.9834792
       objectReference: {fileID: 0}
     - target: {fileID: 8956970955438195213, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -328,10 +324,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
+    - target: {fileID: 974910916303125792, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1356826037244441245, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
       propertyPath: m_Name
       value: ZombieCount
       objectReference: {fileID: 0}
+    - target: {fileID: 1763847888007102621, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
     - target: {fileID: 7743323979193016988, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -350,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743323979193016988, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.9834792
       objectReference: {fileID: 0}
     - target: {fileID: 7743323979193016988, guid: 6cbc65155308edd409d3ef3f53673918, type: 3}
       propertyPath: m_AnchorMin.x
@@ -430,9 +434,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
+    - target: {fileID: 783346734578971673, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.6999512
+      objectReference: {fileID: 0}
     - target: {fileID: 4290029750732059114, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
       propertyPath: m_Name
       value: GameOverMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290029750732059114, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6102926882562214796, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
       propertyPath: m_Pivot.x
@@ -812,6 +824,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
+    - target: {fileID: 3013984748125463359, guid: c06eeff0c205541439c90059184c181f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 3927188831583333506, guid: c06eeff0c205541439c90059184c181f, type: 3}
       propertyPath: m_Name
       value: CoinCounter
@@ -842,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5702005019839249539, guid: c06eeff0c205541439c90059184c181f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.896
+      value: 0.90900004
       objectReference: {fileID: 0}
     - target: {fileID: 5702005019839249539, guid: c06eeff0c205541439c90059184c181f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1002,6 +1018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7800735493577414210, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
 --- !u!224 &1947528198438293675 stripped
@@ -1016,6 +1036,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
+    - target: {fileID: 74652857936994874, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.6999512
+      objectReference: {fileID: 0}
     - target: {fileID: 6140413081811040593, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1103,6 +1127,10 @@ PrefabInstance:
     - target: {fileID: 7272310073512753179, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
       propertyPath: m_Name
       value: LevelPassedMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272310073512753179, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}

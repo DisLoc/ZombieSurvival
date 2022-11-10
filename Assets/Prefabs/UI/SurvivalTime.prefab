@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c393deed846fc47a3b119ce879fc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _survivalTimeCountText: {fileID: 8591597738107504985}
+  _survivalTimeText: {fileID: 8591597738107504985}
 --- !u!1 &8591597736519462062
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 8591597738107504986}
   - component: {fileID: 8591597738107504985}
   m_Layer: 5
-  m_Name: SurvivalText
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

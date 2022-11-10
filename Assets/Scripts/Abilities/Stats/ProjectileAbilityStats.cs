@@ -48,4 +48,16 @@ public class ProjectileAbilityStats : WeaponAbilityStats
         _projectileSpeed.Upgrade(upgrade);
         _penetrationNumber.Upgrade(upgrade);
     }
+
+    public override void DispelUpgrade(Upgrade upgrade)
+    {
+        base.DispelUpgrade(upgrade);
+
+        _projectileSize.DispelUpgrade(upgrade);
+        _projectileLifeDuration.DispelUpgrade(upgrade);
+        _projectileNumber.DispelUpgrade(upgrade);
+        _projectilesSpawnInterval.DispelUpgrade(upgrade);
+        _projectileSpeed.DispelUpgrade(upgrade);
+        _penetrationNumber.DispelUpgrade(upgrade);
+    }
 }

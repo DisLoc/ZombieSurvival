@@ -1,19 +1,17 @@
 using Zenject;
 using UnityEngine;
 
-public class LegendaryZombiesSpawner : EnemySpawner, ISpawnLegendaryZombie
+public class LegendaryZombiesSpawner : Spawner, ISpawnLegendaryZombie
 {
-    private Zombie _legendaryZombie;
+    private Enemy _legendaryZombie;
     [SerializeField] ZombieSpawner zombieSpawner;
 
     [Inject] private Player _player;
 
-    public void SetZombie(Zombie zombieNew)
+    public void SetZombie(Enemy zombieNew)
     {
         _legendaryZombie = zombieNew;
     }
-
-
 
     public void SpawnLegendaryZombie()
     {
@@ -21,5 +19,10 @@ public class LegendaryZombiesSpawner : EnemySpawner, ISpawnLegendaryZombie
         var zombie = pool.Pull();
         zombie.Initialize(_player, pool);
         zombie.gameObject.transform.position = new Vector3(0, zombieSpawner.LevelBuilder.GridHeight + 1f, 0);
+    }
+
+    protected override void Spawn(Vector3 position)
+    {
+        throw new System.NotImplementedException();
     }
 }

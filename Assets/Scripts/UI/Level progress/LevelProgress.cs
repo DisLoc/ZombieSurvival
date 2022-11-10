@@ -45,7 +45,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         UpdateBar();
     }
 
-    public void OnEnemyKilled(Zombie enemy)
+    public void OnEnemyKilled(Enemy enemy)
     {
         if (_isDebug) Debug.Log("Enemy killed");
 

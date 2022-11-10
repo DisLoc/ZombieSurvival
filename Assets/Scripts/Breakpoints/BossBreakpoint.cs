@@ -4,9 +4,9 @@ using UnityEngine;
 public class BossBreakpoint : Breakpoint
 {
     [Header("Boss settings")]
-    [SerializeField] protected Zombie _bossPrefab;
+    [SerializeField] protected Enemy _bossPrefab;
     [SerializeField] protected GameObject _bossEventFence;
 
-    public Zombie BossPrefab => _bossPrefab;
+    public Enemy BossPrefab => _bossPrefab;
     public GameObject BossEventFence => _bossEventFence;
 }

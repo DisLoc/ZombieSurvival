@@ -1,4 +1,4 @@
 public interface IEnemyKilledHandler : ISubscriber
 {
-    public void OnEnemyKilled(Zombie enemy); 
+    public void OnEnemyKilled(Enemy enemy); 
 }

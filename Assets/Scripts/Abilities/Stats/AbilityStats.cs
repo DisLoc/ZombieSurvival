@@ -18,4 +18,9 @@ public class AbilityStats : IObjectStats
     {
 
     }
+
+    public virtual void DispelUpgrade(Upgrade upgrade)
+    {
+
+    }
 }

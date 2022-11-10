@@ -58,7 +58,7 @@ public class CrystalSpawner : Spawner, IEnemyKilledHandler
     /// Create ExpCrystal in position that Zombie dies
     /// </summary>
     /// <param name="zombie"></param>
-    public void OnEnemyKilled(Zombie zombie)
+    public void OnEnemyKilled(Enemy zombie)
     {
         Vector3 position = new Vector3
             (

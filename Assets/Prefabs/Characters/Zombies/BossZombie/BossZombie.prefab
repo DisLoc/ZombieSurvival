@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: 818313708213056111}
   - component: {fileID: 7414268705409287256}
   - component: {fileID: 2244051903603598489}
-  - component: {fileID: 8181119150974801558}
   m_Layer: 8
   m_Name: BossZombie
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -136,7 +135,7 @@ MonoBehaviour:
   _healthBar: {fileID: 1265719188695295974}
   _hpCanvas: {fileID: 3003321719583788077}
   _stats:
-    _baseWeapon: {fileID: 8181119150974801558}
+    _baseWeapon: {fileID: 3421925443653111862}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: e12afb31dee26e544b88819c5a26040d, type: 2}
@@ -149,47 +148,6 @@ MonoBehaviour:
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 2494a704c477c59478eb92e4f3f50507, type: 2}
---- !u!114 &8181119150974801558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4354608558582715489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3ab3279ca16a84f96a5f1d068fef79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _name: Boss collider
-  _icon: {fileID: 0}
-  _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 6444446918046450822}
-  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
-  _stats:
-    _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
-    _level:
-      _baseValue: 1
-      _minValue: 1
-      _maxValue: 1
-      _maxValueIsInfinite: 1
-    _damage:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 4d74ec18663e79e429bbb8551851a2ad, type: 2}
-      _criticalDamage:
-        _isDebug: 0
-        _statData: {fileID: 11400000, guid: e68e45023fd4144428f407e95f1d56fa, type: 2}
-        _chance:
-          _isDebug: 0
-          _statData: {fileID: 11400000, guid: 55de5b06d2496004d98752c783cc47ba, type: 2}
-    _attackInterval:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: f125973d967074147bae736f0d5fb190, type: 2}
-    _attackRange:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 377e61a1664f5f941b28d28383aba68d, type: 2}
 --- !u!1 &8140675609892667956
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,9 +159,10 @@ GameObject:
   - component: {fileID: 1644387906138582712}
   - component: {fileID: 7987045824845997277}
   - component: {fileID: 6444446918046450822}
+  - component: {fileID: 3421925443653111862}
   m_Layer: 0
-  m_Name: TargetDetector
-  m_TagString: Untagged
+  m_Name: ColliderAbility
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,6 +211,47 @@ MonoBehaviour:
   _collider: {fileID: 7987045824845997277}
   _triggerTags:
     _tags: 00000000
+--- !u!114 &3421925443653111862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140675609892667956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3ab3279ca16a84f96a5f1d068fef79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: BossZombie collider
+  _icon: {fileID: 0}
+  _isSuperWeapon: 0
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 6444446918046450822}
+  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+    _level:
+      _baseValue: 1
+      _minValue: 1
+      _maxValue: 1
+      _maxValueIsInfinite: 1
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 4d74ec18663e79e429bbb8551851a2ad, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: e68e45023fd4144428f407e95f1d56fa, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 55de5b06d2496004d98752c783cc47ba, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: f125973d967074147bae736f0d5fb190, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 377e61a1664f5f941b28d28383aba68d, type: 2}
 --- !u!1001 &7364198438648356186
 PrefabInstance:
   m_ObjectHideFlags: 0

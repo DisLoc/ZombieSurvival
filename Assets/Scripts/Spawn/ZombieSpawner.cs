@@ -4,7 +4,7 @@ using Zenject;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Zombie> _zombies = new List<Zombie>();
+    [SerializeField] private List<Enemy> _zombies = new List<Enemy>();
     [SerializeField] private List<HordeBreakpoint> _hordeBreakpoints;
     [SerializeField] private List<HordeBreakpoint> _herdBreakpoints;
     [SerializeField] private List<HordeBreakpoint> _legendaryZombieBreakpoints;
@@ -12,11 +12,11 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private LevelProgress _levelProgress;
     [SerializeField] private SpawnHorde _spawnHorde;
 
-    private FactoryMonoPool<Zombie, Zombie.Factory> _pool;
-    public FactoryMonoPool<Zombie, Zombie.Factory> Pool => _pool;
+    private MonoPool<Enemy> _pool;
+    public MonoPool<Enemy> Pool => _pool;
 
-
-    [Inject] private Zombie.Factory _factory;
+    // factory installer dont work on Enemy.Factoy, spawn only 1 type of zombie
+    //[Inject] private Enemy.Factory _factory;
     [Inject] private LevelContext _levelContext;
     [Inject] private Player _player;
 
@@ -27,7 +27,7 @@ public class ZombieSpawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating(nameof(Spawn), 5, 5);
-        _pool = new FactoryMonoPool<Zombie, Zombie.Factory>(_zombies[0], _factory, 10);
+        _pool = new MonoPool<Enemy>(_zombies[0], 10);
         
     }
 

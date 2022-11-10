@@ -3,7 +3,7 @@ using Zenject;
 
 public class SpawnHorde : MonoBehaviour, IStartHorde
 { 
-    private Zombie zombie;
+    private Enemy zombie;
 
     [SerializeField] private ZombieSpawner zombieSpawner;
 
@@ -20,7 +20,7 @@ public class SpawnHorde : MonoBehaviour, IStartHorde
         EventBus.Unsubscribe(this);
     }
 
-    public void SetZombie(Zombie zombieNew)
+    public void SetZombie(Enemy zombieNew)
     {
         zombie = zombieNew;
     }

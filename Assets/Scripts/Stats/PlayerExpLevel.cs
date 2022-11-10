@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerExpLevel : Stat
 {
     [SerializeField] protected Expirience _exp;
-    [SerializeField] protected ExpBar _expBar;
+    [SerializeField] protected PlayerExpBar _expBar;
 
     [Header("LevelUp settings")]
     [SerializeField] protected int _baseExpForLevelUp;
@@ -30,7 +30,7 @@ public class PlayerExpLevel : Stat
         _expBar.Initialize(this);
     }
 
-    public PlayerExpLevel(StatData statData, int baseExpForLevel, float levelMuliplier, ExpirienceData expirienceData, ExpBar expBar = null,
+    public PlayerExpLevel(StatData statData, int baseExpForLevel, float levelMuliplier, ExpirienceData expirienceData, PlayerExpBar expBar = null,
                           UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug)
     {
         _baseExpForLevelUp = baseExpForLevel;

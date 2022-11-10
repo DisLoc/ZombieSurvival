@@ -6,7 +6,7 @@ public class BossSpawner : Spawner
     [SerializeField] private int _poolSize = 1;
 
     private BreakpointList<BossBreakpoint> _breakpoints;
-    private ObjectSpawner<Zombie> _spawner;
+    private ObjectSpawner<Enemy> _spawner;
     private GameObject _fence;
 
     [Inject] private Player _player;
@@ -57,7 +57,7 @@ public class BossSpawner : Spawner
             EventBus.Publish<IBossEventHandler>(handler => handler.OnBossEvent());
 
             Vector3 position = _player.transform.position;
-            _spawner = new ObjectSpawner<Zombie>((breakpoint as BossBreakpoint).BossPrefab, _poolSize, transform);
+            _spawner = new ObjectSpawner<Enemy>((breakpoint as BossBreakpoint).BossPrefab, _poolSize, transform);
 
             SpawnFence(position, (breakpoint as BossBreakpoint).BossEventFence);
             Spawn(position);
@@ -82,9 +82,9 @@ public class BossSpawner : Spawner
 
     protected override void Spawn(Vector3 position)
     {
-        Zombie boss = _spawner.Spawn(position + Vector3.forward * _spawnDeltaDistance + Vector3.up);
+        Enemy boss = _spawner.Spawn(position + Vector3.forward * _spawnDeltaDistance + Vector3.up);
         boss.Initialize(_player, _spawner);
-        (boss as Boss).InitializeSpawner(this);
+        (boss as BossZombie).InitializeSpawner(this);
     }
 
     private void SpawnFence(Vector3 position, GameObject fence)

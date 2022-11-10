@@ -10,4 +10,6 @@ public interface IObjectStats
     /// </summary>
     /// <param name="upgrade">Upgrade need to add</param>
     public void GetUpgrade(Upgrade upgrade);
+
+    public void DispelUpgrade(Upgrade upgrade);
 }

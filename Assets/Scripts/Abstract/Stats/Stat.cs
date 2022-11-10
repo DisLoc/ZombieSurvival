@@ -100,6 +100,30 @@ public abstract class Stat : IStat, IUpgradeable
         return upgrades > 0;
     }
 
+    public virtual bool DispelUpgrade(Upgrade upgrade)
+    {
+        if (_isDebug) Debug.Log(_statData.name + " try reveal upgrade: " + upgrade.name);
+
+        int revealedUpgrades = 0;
+
+        foreach (UpgradeData data in upgrade.Upgrades)
+        {
+            if (data == null) continue;
+
+            if (_upgrades.Dispel(data))
+            {
+                revealedUpgrades++;
+            }
+        }
+
+        if (_statData.MaxValueIsInfinite)
+        {
+            _maxValue = (_statData.MaxValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+        }
+
+        return revealedUpgrades > 0;
+    }
+
     /// <summary>
     /// Set current value. Cant be less than MinValue and more than MaxValue (if MaxValue is not infinite)
     /// </summary>

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
@@ -59,6 +60,19 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
         }
 
         return false;
+    }
+
+    public virtual void DispelUpgrade(Upgrade upgrade)
+    {
+        Stats.DispelUpgrade(upgrade);
+    }
+
+    public virtual void DispelUgrades(List<Upgrade> upgrades)
+    {
+        foreach (Upgrade upgrade in upgrades)
+        {
+            DispelUpgrade(upgrade);
+        }
     }
 
     public virtual void DestroyAbility()

@@ -26,7 +26,7 @@ public sealed class ZombieCounter : MonoBehaviour, IEnemyKilledHandler, IGameSta
         _killed = 0;
     }
 
-    public void OnEnemyKilled(Zombie enemy)
+    public void OnEnemyKilled(Enemy enemy)
     {
         _killed++;
 

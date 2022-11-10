@@ -2,10 +2,14 @@ using UnityEngine;
 using Zenject;
 using static UnityEngine.Mathf;
 
-public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHandler, IBossEventEndedHandler
+public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHandler
 {
-    protected ObjectSpawner<Zombie> _spawner;
-    protected BreakpointList<HordeBreakpoint> _breakpoints;
+    private ObjectSpawner<Enemy> _spawner;
+    private BreakpointList<HordeBreakpoint> _breakpoints;
+
+    private BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
+
+    private Upgrade _currentUpgrade;
 
     private int _spawned;
     private bool _onBossEvent;
@@ -19,6 +23,7 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
         base.OnEnable();
 
         _breakpoints = _levelContext.HordeBreakpoints;
+        _upgradeBreakpoints = _levelContext.EnemyUpgradeBreakpoints;
     }
 
     public override void OnUpdate()
@@ -58,19 +63,35 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
                 _spawner.ClearPool();
             }
 
-            _spawner = new ObjectSpawner<Zombie>((breakpoint as HordeBreakpoint).EnemyToSpawnPrefab, (breakpoint as HordeBreakpoint).SpawnCount, transform);
+            _spawner = new ObjectSpawner<Enemy>((breakpoint as HordeBreakpoint).EnemyToSpawnPrefab, (breakpoint as HordeBreakpoint).SpawnCount, transform);
 
             for (int i = 0; i < (breakpoint as HordeBreakpoint).SpawnCount; i++)
             {
                 Spawn(GetSpawnPosition());
                 _spawned++;
             }
+
+            DispelUpgrades();
+            GetUpgrade();
+        }
+
+        Breakpoint upgradeBreakpoint = _upgradeBreakpoints.CheckReaching(progress);
+
+        if (upgradeBreakpoint != null)
+        {
+            if (_isDebug) Debug.Log("Enemy upgrade!");
+
+            DispelUpgrades();
+
+            _currentUpgrade = (upgradeBreakpoint as UpgradeBreakpoint).Upgrade;
+
+            GetUpgrade();
         }
     }
 
     protected override void Spawn(Vector3 position)
     {
-        Zombie spawnedEnemy = _spawner.Spawn(position);
+        Enemy spawnedEnemy = _spawner.Spawn(position);
 
         if (spawnedEnemy != null)
         {
@@ -109,5 +130,54 @@ public class HordeSpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
     public void OnBossEventEnd()
     {
         _onBossEvent = false;
+    }
+
+    private void DispelUpgrades()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Current upgrade is null!");
+
+            return;
+        }
+
+        if (_spawner != null)
+        {
+            foreach (Enemy zombie in _spawner.Objects)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
+            }
+
+            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Add upgrade to enemies 
+    /// </summary>
+    private void GetUpgrade()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Try get null upgrade!");
+
+            return;
+        }
+
+        if (_spawner != null)
+        {
+            foreach (Enemy zombie in _spawner.Objects)
+            {
+                zombie?.GetUpgrade(_currentUpgrade);
+            }
+
+            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            {
+                zombie?.GetUpgrade(_currentUpgrade);
+            }
+        }
     }
 }
