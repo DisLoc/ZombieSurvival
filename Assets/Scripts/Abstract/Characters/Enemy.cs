@@ -1,9 +1,9 @@
 using UnityEngine;
-using Zenject;
 
 public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 {
     [SerializeField] protected CharacterStats _stats;
+
 
     protected Player _player; 
     protected MonoPool<Enemy> _pool;
@@ -51,6 +51,11 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         base.OnFixedUpdate();
 
         Move(_player.transform.position - transform.position);
+
+        _hpCanvas?.OnFixedUpdate();
+        
+        Vector3 pos = transform.position;
+        _renderer.transform.LookAt(new Vector3(pos.x, pos.y + _player.CameraDeltaPos.y, pos.z + _player.CameraDeltaPos.z));
     }
 
     public override void Move(Vector3 direction)

@@ -21,6 +21,8 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
     /// </summary>
     private bool _onTouch;
 
+    public Vector3 CameraDeltaPos => _cameraPos;
+
     private void OnEnable()
     {
         _isMobile = Application.isMobilePlatform;

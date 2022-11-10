@@ -15,7 +15,7 @@ public class Player : CharacterBase
     [Header("Stats settings")]
     [SerializeField] protected PlayerStats _stats;
 
-    [Header("Animations settings")]
+    [Header("Animation settings")]
     [SerializeField] protected Animator _animator;
     /// <summary>
     /// Current animation bool
@@ -29,12 +29,13 @@ public class Player : CharacterBase
 
     protected List<Upgrade> _upgrades;
 
+    [Inject] protected LevelContext _levelContext;
+
     public override CharacterStats Stats => _stats;
 
     public AbilityInventory AbilityInventory => _abilityInventory;
     public CurrencyInventory CoinInventory => _coinInventory;
-
-    [Inject] protected LevelContext _levelContext;
+    public Vector3 CameraDeltaPos => _moveController.CameraDeltaPos;
 
     public void Initialize()
     {
@@ -56,14 +57,18 @@ public class Player : CharacterBase
     {
         Attack();
 
-        _animator.SetBool("IsMoving", isMoving);
+        if (_animator.gameObject.activeSelf)
+        {
+            _animator.SetBool("IsMoving", isMoving);
+        }
     }
 
     private void FixedUpdate()
     {
         OnFixedUpdate();
-
         _moveController.OnFixedUpdate();
+        Vector3 pos = transform.position;
+        _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
@@ -77,6 +82,8 @@ public class Player : CharacterBase
 
         transform.LookAt(pos + direction);
         transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
+
+        _hpCanvas?.OnFixedUpdate();
     }
 
     protected override void Attack()

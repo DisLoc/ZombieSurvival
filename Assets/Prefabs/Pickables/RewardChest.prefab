@@ -143,7 +143,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7049788309695188052}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1
   m_Height: 2
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d413b377fd3e846b0ff59e126bc9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _collider: {fileID: 6922097992627956937}
   _triggerTags:
     _tags: 000000000600000008000000

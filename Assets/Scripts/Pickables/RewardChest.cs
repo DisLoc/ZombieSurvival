@@ -20,6 +20,8 @@ public class RewardChest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_isDebug) Debug.Log(other.tag);
+
         if (_chestSpawner != null)
         {
             if (_triggerTags.Contains(other.tag))

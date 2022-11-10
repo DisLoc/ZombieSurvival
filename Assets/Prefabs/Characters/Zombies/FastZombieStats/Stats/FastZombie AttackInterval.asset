@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FastZombie AttackInterval
   m_EditorClassIdentifier: 
   _baseValue: 1
-  _minValue: 0
+  _minValue: 0.1
   _maxValue: 2
   _maxValueIsInfinite: 0
   _upgradeMarker: {fileID: 11400000, guid: 07c976f80c1139147a50fe92fa1622aa, type: 2}

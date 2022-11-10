@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6634286488309741979, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
+      propertyPath: m_TagString
+      value: PlayerWeapon
+      objectReference: {fileID: 0}
     - target: {fileID: 6653044035004115250, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1

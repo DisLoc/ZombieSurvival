@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: FatZombieExplosion Damage
   m_EditorClassIdentifier: 
-  _baseValue: 0
+  _baseValue: 100
   _minValue: 0
-  _maxValue: 0
-  _maxValueIsInfinite: 0
+  _maxValue: 100
+  _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: a0e0f30d484da2d44a4cd168dcd9785f, type: 2}

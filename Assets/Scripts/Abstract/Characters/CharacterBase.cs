@@ -6,6 +6,9 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
     [Tooltip("Can be null if HealthBar is null")]
     [SerializeField] protected HPBarCanvas _hpCanvas;
 
+    [Header("Render settings")]
+    [SerializeField] protected SpriteRenderer _renderer;
+
     /// <summary>
     /// Object stats
     /// </summary>
@@ -22,7 +25,6 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
         Stats.Health.Heal(Stats.Regeneration.Value * Time.fixedDeltaTime);
 
         if (_healthBar != null) _healthBar.UpdateHealth();
-        if (_hpCanvas != null) _hpCanvas.OnFixedUpdate();
     }
 
     /// <summary>

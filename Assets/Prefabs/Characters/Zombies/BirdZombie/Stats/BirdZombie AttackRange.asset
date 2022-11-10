@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BirdZombie AttackRange
   m_EditorClassIdentifier: 
   _baseValue: 0.9
-  _minValue: 0
-  _maxValue: 0
+  _minValue: 0.1
+  _maxValue: 0.9
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: ab0ac4cfab9d6b24c8e766351285b99a, type: 2}
