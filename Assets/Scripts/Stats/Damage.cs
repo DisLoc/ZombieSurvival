@@ -48,7 +48,7 @@ public class Damage : Stat
 
     public override bool Upgrade(Upgrade upgrade)
     {
-        _criticalDamage.Upgrade(upgrade);
+        bool critUpgrade = _criticalDamage.Upgrade(upgrade);
 
         if (base.Upgrade(upgrade))
         {
@@ -59,6 +59,22 @@ public class Damage : Stat
 
             return true;
         }
-        else return false;
+        else return critUpgrade;
+    }
+
+    public override bool DispelUpgrade(Upgrade upgrade)
+    {
+        bool critDispel = _criticalDamage.DispelUpgrade(upgrade);
+
+        if (base.DispelUpgrade(upgrade))
+        {
+            _value = (_statData.BaseValue + _upgrades.UpgradesValue) * _upgrades.UpgradesMultiplier;
+
+            if (_value < _minValue) _value = _minValue;
+            if (!_statData.MaxValueIsInfinite && _value > _maxValue) _value = _maxValue;
+
+            return true;
+        }
+        else return critDispel;
     }
 }

@@ -21,7 +21,7 @@ public class ChestSpawner : Spawner, IGameStartHandler
         _onGame = true;
     }
 
-    public override void OnUpdate()
+    private void Update()
     {
         if (!_onGame) return;
 

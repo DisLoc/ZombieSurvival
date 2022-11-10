@@ -19,4 +19,14 @@ public class Breakpoint
     {
         _isReached = value;
     }
+
+    protected Breakpoint(Breakpoint breakpoint)
+    {
+        _name = breakpoint._name;
+        _breakpointIcon = breakpoint._breakpointIcon;
+        _requiredProgress = breakpoint._requiredProgress;
+        _isReached = false;
+    }
+
+    public virtual Breakpoint Clone() => new Breakpoint(this);
 }

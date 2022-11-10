@@ -1,7 +1,7 @@
 using Zenject;
 using UnityEngine;
 
-public class LegendaryZombiesSpawner : Spawner, ISpawnLegendaryZombie
+public class LegendaryZombiesSpawner : EnemySpawner, ISpawnLegendaryZombie
 {
     private Enemy _legendaryZombie;
     [SerializeField] ZombieSpawner zombieSpawner;
@@ -22,6 +22,16 @@ public class LegendaryZombiesSpawner : Spawner, ISpawnLegendaryZombie
     }
 
     protected override void Spawn(Vector3 position)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void GetUpgrade()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void DispelUpgrades()
     {
         throw new System.NotImplementedException();
     }

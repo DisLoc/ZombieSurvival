@@ -1,13 +1,17 @@
 using UnityEngine;
 using Zenject;
 
-public class BossSpawner : Spawner
+public class BossSpawner : EnemySpawner
 {
     [SerializeField] private int _poolSize = 1;
 
-    private BreakpointList<BossBreakpoint> _breakpoints;
     private ObjectSpawner<Enemy> _spawner;
     private GameObject _fence;
+
+    private BreakpointList<BossBreakpoint> _breakpoints;
+    private BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
+
+    private Upgrade _currentUpgrade;
 
     [Inject] private Player _player;
     [Inject] private LevelContext _levelContext;
@@ -16,7 +20,8 @@ public class BossSpawner : Spawner
     {
         base.OnEnable();
 
-        _breakpoints = _levelContext.BossBreakpoints;
+        _breakpoints = new BreakpointList<BossBreakpoint>(_levelContext.BossBreakpoints);
+        _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
     }
 
     public override void OnUpdate()
@@ -27,7 +32,10 @@ public class BossSpawner : Spawner
         {
             _spawner.SpawnedObjects[i]?.OnUpdate();
         }
+
         _spawner.SpawnedObjects.Cleanup();
+
+        TryClearPool();
     }
 
     public override void OnFixedUpdate()
@@ -38,7 +46,10 @@ public class BossSpawner : Spawner
         {
             _spawner.SpawnedObjects[i]?.OnFixedUpdate();
         }
+
         _spawner.SpawnedObjects.Cleanup();
+
+        TryClearPool();
     }
 
     public override void OnLevelProgressUpdate(int progress)
@@ -61,6 +72,21 @@ public class BossSpawner : Spawner
 
             SpawnFence(position, (breakpoint as BossBreakpoint).BossEventFence);
             Spawn(position);
+
+            GetUpgrade();
+        }
+
+        Breakpoint upgradeBreakpoint = _upgradeBreakpoints.CheckReaching(progress);
+
+        if (upgradeBreakpoint != null)
+        {
+            if (_isDebug) Debug.Log("Boss upgrade!");
+
+            DispelUpgrades();
+
+            _currentUpgrade = (upgradeBreakpoint as UpgradeBreakpoint).Upgrade;
+
+            GetUpgrade();
         }
     }
 
@@ -98,6 +124,67 @@ public class BossSpawner : Spawner
                                      _levelContext.LevelBuilder.GridHeight + fence.transform.localScale.y * 0.5f,
                                      position.z
                                  ), fence.transform.localRotation, transform);
+        }
+    }
+
+    private void TryClearPool()
+    {
+        if (_spawner.SpawnCount == 0)
+        {
+            _spawner.ClearPool();
+            _spawner = null;
+        }
+    }
+
+    /// <summary>
+    /// Add upgrade to enemies 
+    /// </summary>
+    protected override void GetUpgrade()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Try get null upgrade!");
+
+            return;
+        }
+
+        if (_spawner != null)
+        {
+            foreach (Enemy zombie in _spawner.Objects)
+            {
+                zombie?.GetUpgrade(_currentUpgrade);
+            }
+
+            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            {
+                zombie?.GetUpgrade(_currentUpgrade);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Dispel upgrade from enemies (spawned and enemies in pool)
+    /// </summary>
+    protected override void DispelUpgrades()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Current upgrade is null!");
+
+            return;
+        }
+
+        if (_spawner != null)
+        {
+            foreach (Enemy zombie in _spawner.Objects)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
+            }
+
+            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
+            }
         }
     }
 }

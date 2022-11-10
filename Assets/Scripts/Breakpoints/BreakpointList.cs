@@ -13,9 +13,14 @@ public class BreakpointList<T> where T : Breakpoint
         _breakpoints = new List<T>();
     }
 
-    public BreakpointList(List<T> breakpoints)
+    public BreakpointList(BreakpointList<T> breakpointList)
     {
-        _breakpoints = breakpoints;
+        _breakpoints = new List<T>();
+
+        foreach(T breakpoint in breakpointList._breakpoints)
+        {
+            _breakpoints.Add(breakpoint.Clone() as T);
+        }
     }
 
     public void Add(T breakpoint)

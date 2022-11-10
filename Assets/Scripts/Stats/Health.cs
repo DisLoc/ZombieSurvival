@@ -102,4 +102,30 @@ public class Health : Stat
 
         return isMaxUpgrade || isUpgade;
     }
+
+    public override bool DispelUpgrade(Upgrade upgrade)
+    {
+        float currentPercent = _value / _maxHP.Value;
+
+        if (_maxHP.DispelUpgrade(upgrade))
+        {
+            _value = _maxHP.Value * currentPercent;
+
+            if (_value > _maxHP.Value)
+            {
+                if (_isDebug) Debug.Log("HP > MaxHP! Fixing...");
+
+                _value = _maxHP.Value;
+            }
+
+            if (_value < _minValue)
+            {
+                _value = _minValue;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
 }

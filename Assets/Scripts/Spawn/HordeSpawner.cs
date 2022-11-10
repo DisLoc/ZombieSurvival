@@ -1,8 +1,9 @@
 using UnityEngine;
 using Zenject;
+
 using static UnityEngine.Mathf;
 
-public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHandler
+public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEndedHandler
 {
     private ObjectSpawner<Enemy> _spawner;
     private BreakpointList<HordeBreakpoint> _breakpoints;
@@ -22,8 +23,8 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
     {
         base.OnEnable();
 
-        _breakpoints = _levelContext.HordeBreakpoints;
-        _upgradeBreakpoints = _levelContext.EnemyUpgradeBreakpoints;
+        _breakpoints = new BreakpointList<HordeBreakpoint>(_levelContext.HordeBreakpoints);
+        _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
     }
 
     public override void OnUpdate()
@@ -35,6 +36,8 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
             _spawner.SpawnedObjects[i]?.OnUpdate();
         }
         _spawner.SpawnedObjects.Cleanup();
+
+        TryClearPool();
     }
 
     public override void OnFixedUpdate()
@@ -45,7 +48,10 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
         {
             _spawner.SpawnedObjects[i]?.OnFixedUpdate();
         }
+
         _spawner.SpawnedObjects.Cleanup();
+
+        TryClearPool();
     }
 
     public override void OnLevelProgressUpdate(int progress)
@@ -79,7 +85,7 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
 
         if (upgradeBreakpoint != null)
         {
-            if (_isDebug) Debug.Log("Enemy upgrade!");
+            if (_isDebug) Debug.Log("Horde upgrade!");
 
             DispelUpgrades();
 
@@ -132,33 +138,19 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
         _onBossEvent = false;
     }
 
-    private void DispelUpgrades()
+    private void TryClearPool()
     {
-        if (_currentUpgrade == null)
+        if (_spawner.SpawnCount == 0)
         {
-            if (_isDebug) Debug.Log("Current upgrade is null!");
-
-            return;
-        }
-
-        if (_spawner != null)
-        {
-            foreach (Enemy zombie in _spawner.Objects)
-            {
-                zombie?.DispelUpgrade(_currentUpgrade);
-            }
-
-            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
-            {
-                zombie?.DispelUpgrade(_currentUpgrade);
-            }
+            _spawner.ClearPool();
+            _spawner = null;
         }
     }
 
     /// <summary>
     /// Add upgrade to enemies 
     /// </summary>
-    private void GetUpgrade()
+    protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
         {
@@ -177,6 +169,32 @@ public sealed class HordeSpawner : Spawner, IBossEventHandler, IBossEventEndedHa
             foreach (Enemy zombie in _spawner.SpawnedObjects.List)
             {
                 zombie?.GetUpgrade(_currentUpgrade);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Dispel upgrade from enemies (spawned and enemies in pool)
+    /// </summary>
+    protected override void DispelUpgrades()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Current upgrade is null!");
+
+            return;
+        }
+
+        if (_spawner != null)
+        {
+            foreach (Enemy zombie in _spawner.Objects)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
+            }
+
+            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            {
+                zombie?.DispelUpgrade(_currentUpgrade);
             }
         }
     }

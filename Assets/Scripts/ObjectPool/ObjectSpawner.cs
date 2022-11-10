@@ -92,7 +92,7 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
     {
         if (obj == null) return;
 
-        _spawnedObjects.Remove(obj, true);
+        _spawnedObjects?.Remove(obj, true);
 
         base.Release(obj);
     }

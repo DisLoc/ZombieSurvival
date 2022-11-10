@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LegendaryZombieBreakpoint : Breakpoint
@@ -10,4 +8,12 @@ public class LegendaryZombieBreakpoint : Breakpoint
 
     public Enemy EnemyToSpawnPrefab => _enemyToSpawnPrefab;
     public int SpawnCount => _spawnCount;
+
+    protected LegendaryZombieBreakpoint(LegendaryZombieBreakpoint breakpoint) : base(breakpoint)
+    {
+        _enemyToSpawnPrefab = breakpoint._enemyToSpawnPrefab;
+        _spawnCount = breakpoint._spawnCount;
+    }
+
+    public override Breakpoint Clone() => new LegendaryZombieBreakpoint(this);
 }

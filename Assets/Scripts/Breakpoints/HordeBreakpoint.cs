@@ -9,4 +9,12 @@ public class HordeBreakpoint : Breakpoint
 
     public Enemy EnemyToSpawnPrefab => _enemyToSpawnPrefab;
     public int SpawnCount => _spawnCount;
+
+    protected HordeBreakpoint(HordeBreakpoint breakpoint) : base(breakpoint)
+    {
+        _enemyToSpawnPrefab = breakpoint._enemyToSpawnPrefab;
+        _spawnCount = breakpoint._spawnCount;
+    }
+
+    public override Breakpoint Clone() => new HordeBreakpoint(this);
 }

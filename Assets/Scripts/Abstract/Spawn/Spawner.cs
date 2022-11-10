@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Spawner : MonoBehaviour, ILevelProgressUpdateHandler, IUpdatable, IFixedUpdatable
+public abstract class Spawner : MonoBehaviour, ILevelProgressUpdateHandler
 {
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
@@ -11,10 +11,6 @@ public abstract class Spawner : MonoBehaviour, ILevelProgressUpdateHandler, IUpd
     protected abstract void Spawn(Vector3 position);
 
     public virtual void OnLevelProgressUpdate(int progress) { }
-
-    public virtual void OnUpdate() { }
-
-    public virtual void OnFixedUpdate() { }
 
     protected virtual void OnEnable()
     {

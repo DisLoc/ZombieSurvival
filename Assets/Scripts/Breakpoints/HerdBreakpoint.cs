@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HerdBreakpoint : Breakpoint
@@ -10,4 +8,12 @@ public class HerdBreakpoint : Breakpoint
 
     public Enemy EnemyToSpawnPrefab => _enemyToSpawnPrefab;
     public int SpawnCount => _spawnCount;
+
+    protected HerdBreakpoint(HerdBreakpoint breakpoint) : base(breakpoint)
+    {
+        _enemyToSpawnPrefab = breakpoint._enemyToSpawnPrefab;
+        _spawnCount = breakpoint._spawnCount;
+    }
+
+    public override Breakpoint Clone() => new HerdBreakpoint(this);
 }

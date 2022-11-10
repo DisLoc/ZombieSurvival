@@ -4,7 +4,7 @@ using Zenject;
 
 using static UnityEngine.Mathf;
 
-public sealed class EnemySpawner : Spawner, IBossEventHandler, IBossEventEndedHandler
+public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBossEventEndedHandler
 {
     private int _maxUnitsOnScene;
     private int _totalSpawned;
@@ -29,8 +29,8 @@ public sealed class EnemySpawner : Spawner, IBossEventHandler, IBossEventEndedHa
     {
         base.OnEnable();
 
-        _breakpoints = _levelContext.EnemyBreakpoints;
-        _upgradeBreakpoints = _levelContext.EnemyUpgradeBreakpoints;
+        _breakpoints = new BreakpointList<EnemyBreakpoint>(_levelContext.EnemyBreakpoints);
+        _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
 
         _spawners = new List<ObjectSpawner<Enemy>>();
         _prevSpawners = new List<ObjectSpawner<Enemy>>();
@@ -261,54 +261,9 @@ public sealed class EnemySpawner : Spawner, IBossEventHandler, IBossEventEndedHa
     }
 
     /// <summary>
-    /// Dispel upgrade from enemies (spawned and enemies in pool)
-    /// </summary>
-    private void DispelUpgrades()
-    {
-        if (_currentUpgrade == null)
-        {
-            if (_isDebug) Debug.Log("Current upgrade is null!");
-
-            return;
-        }
-
-        if (_spawners != null)
-        {
-            foreach (ObjectSpawner<Enemy> pool in _spawners)
-            {
-                foreach(Enemy zombie in pool.Objects)
-                {
-                    zombie?.DispelUpgrade(_currentUpgrade);
-                }
-
-                foreach(Enemy zombie in pool.SpawnedObjects.List)
-                {
-                    zombie?.DispelUpgrade(_currentUpgrade);
-                }
-            }
-        }
-
-        if (_prevSpawners != null)
-        {
-            foreach (ObjectSpawner<Enemy> pool in _prevSpawners)
-            {
-                foreach (Enemy zombie in pool.Objects)
-                {
-                    zombie?.DispelUpgrade(_currentUpgrade);
-                }
-
-                foreach (Enemy zombie in pool.SpawnedObjects.List)
-                {
-                    zombie?.DispelUpgrade(_currentUpgrade);
-                }
-            }
-        }
-    }
-
-    /// <summary>
     /// Add upgrade to enemies (spawned and enemies in pool)
     /// </summary>
-    private void GetUpgrade()
+    protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
         {
@@ -345,6 +300,51 @@ public sealed class EnemySpawner : Spawner, IBossEventHandler, IBossEventEndedHa
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
                 {
                     zombie?.GetUpgrade(_currentUpgrade);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Dispel upgrade from enemies (spawned and enemies in pool)
+    /// </summary>
+    protected override void DispelUpgrades()
+    {
+        if (_currentUpgrade == null)
+        {
+            if (_isDebug) Debug.Log("Current upgrade is null!");
+
+            return;
+        }
+
+        if (_spawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _spawners)
+            {
+                foreach(Enemy zombie in pool.Objects)
+                {
+                    zombie?.DispelUpgrade(_currentUpgrade);
+                }
+
+                foreach(Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.DispelUpgrade(_currentUpgrade);
+                }
+            }
+        }
+
+        if (_prevSpawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _prevSpawners)
+            {
+                foreach (Enemy zombie in pool.Objects)
+                {
+                    zombie?.DispelUpgrade(_currentUpgrade);
+                }
+
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.DispelUpgrade(_currentUpgrade);
                 }
             }
         }

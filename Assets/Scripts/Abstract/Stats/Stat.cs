@@ -74,6 +74,11 @@ public abstract class Stat : IStat, IUpgradeable
         if (_isDebug) Debug.Log(_statData.name + " initialized");
     }
 
+    /// <summary>
+    /// Try to add upgrade
+    /// </summary>
+    /// <param name="upgrade">Upgrade need to add</param>
+    /// <returns>Returns true if one or more UpgradeData was added</returns>
     public virtual bool Upgrade(Upgrade upgrade)
     {
         if (_isDebug) Debug.Log(_statData.name + " try get upgrade: " + upgrade.name);
@@ -86,6 +91,8 @@ public abstract class Stat : IStat, IUpgradeable
 
             if (data.UpgradingStatMarker.Equals(_statData.Marker))
             {
+                if (_isDebug) Debug.Log(_statData.name + " getted upgrade: " + upgrade.name);
+
                 upgrades++;
 
                 _upgrades.Add(data);
@@ -100,9 +107,14 @@ public abstract class Stat : IStat, IUpgradeable
         return upgrades > 0;
     }
 
+    /// <summary>
+    /// Try to dispel upgrade
+    /// </summary>
+    /// <param name="upgrade">Upgrade need to dispel</param>
+    /// <returns>Returns true if was dispelled one or more UpgradeData</returns>
     public virtual bool DispelUpgrade(Upgrade upgrade)
     {
-        if (_isDebug) Debug.Log(_statData.name + " try reveal upgrade: " + upgrade.name);
+        if (_isDebug) Debug.Log(_statData.name + " try dispel upgrade: " + upgrade.name);
 
         int revealedUpgrades = 0;
 
@@ -112,6 +124,8 @@ public abstract class Stat : IStat, IUpgradeable
 
             if (_upgrades.Dispel(data))
             {
+                if (_isDebug) Debug.Log(_statData.name + " dispelled upgrade: " + upgrade.name);
+
                 revealedUpgrades++;
             }
         }
