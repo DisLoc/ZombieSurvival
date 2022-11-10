@@ -204,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SurvivalTime
       objectReference: {fileID: 0}
+    - target: {fileID: 8841780151467973466, guid: 12aef3a5ffd0df64c99fd262d7024ea4, type: 3}
+      propertyPath: _levelProgress
+      value: 
+      objectReference: {fileID: 8773999760326087460}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12aef3a5ffd0df64c99fd262d7024ea4, type: 3}
 --- !u!224 &1566712117054946295 stripped
@@ -211,6 +215,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1166462770738472524, guid: 12aef3a5ffd0df64c99fd262d7024ea4, type: 3}
   m_PrefabInstance: {fileID: 400274919273373115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9167745375494244065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8841780151467973466, guid: 12aef3a5ffd0df64c99fd262d7024ea4, type: 3}
+  m_PrefabInstance: {fileID: 400274919273373115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c393deed846fc47a3b119ce879fc08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &400274919477989674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -218,6 +233,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400274920047212578}
     m_Modifications:
+    - target: {fileID: 8956970954969619536, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956970954969619536, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956970955438195202, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -310,8 +333,23 @@ PrefabInstance:
       propertyPath: _isDebug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8956970955438195214, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
+      propertyPath: _survivalTimeCounter
+      value: 
+      objectReference: {fileID: 9167745375494244065}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
+--- !u!114 &8773999760326087460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8956970955438195214, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}
+  m_PrefabInstance: {fileID: 400274919477989674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b0603e06c2fbe47ac8f9a1120ba968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8773999760326087463 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8956970955438195213, guid: ae6804e6a57a13548aa7ac91d3854a0c, type: 3}

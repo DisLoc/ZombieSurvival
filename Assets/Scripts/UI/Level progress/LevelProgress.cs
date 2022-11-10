@@ -1,18 +1,16 @@
 using UnityEngine;
 using Zenject;
 
-public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHandler, IMinuteLeftHandler
+public sealed class LevelProgress : FillBar, IGameStartHandler
 {
-    [SerializeField][Range(1, 100)] private int _progressPerMinute = 5;
-    [SerializeField][Range(1, 1000)] private int _enemiesForProgress = 75;
-    [Tooltip("Additional progress each X enemies")]
-    [SerializeField][Range(1, 100)] private int _progressPerEnemies = 1;
+    [Header("LevelProgress settings")]
+    [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
+
+    private int _maxLevelTime;
 
     [Inject] private LevelContext _levelContext;
 
-    public float Value => _value;
-
-    private int _killed;
+    public int Value => _value;
 
     private void OnEnable()
     {
@@ -27,7 +25,6 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     public override void Initialize()
     {
         _value = _minFillValue;
-        _killed = 0;
 
         base.Initialize();
     }
@@ -35,30 +32,20 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
     public void OnGameStart()
     {
         Initialize();
+        
+        _maxLevelTime = _levelContext.LevelLenght;
     }
 
-    public void OnMinuteLeft()
+    public void OnTimerUpdate()
     {
-        if (_isDebug) Debug.Log("Minute left, add progress: " + _progressPerMinute);
-
-        _value += _progressPerMinute;
-        UpdateBar();
-    }
-
-    public void OnEnemyKilled(Enemy enemy)
-    {
-        if (_isDebug) Debug.Log("Enemy killed");
-
-        _killed++;
-        if (_killed >= _enemiesForProgress)
+        int newVal = (int)(_survivalTimeCounter.SurvivalTime / _maxLevelTime * _maxFillValue);
+        
+        if (_value != newVal)
         {
-            if (_isDebug) Debug.Log("Enemies killed, add progress: " + _progressPerEnemies);
+            _value = newVal;
 
-            _killed = 0;
-            _value += _progressPerEnemies;
+            UpdateBar();
         }
-
-        UpdateBar();
     }
 
     protected override void UpdateBar()
@@ -73,7 +60,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IEnemyKilledHand
         {
             if (_isDebug) Debug.Log("Level complete!");
 
-            EventBus.Publish<IGameOverHandler>(handler => handler.OnGameOver());
+            EventBus.Publish<ILevelPassedHandler>(handler => handler.OnLevelPassed());
         }
     }
 }

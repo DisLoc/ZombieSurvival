@@ -43,11 +43,6 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
         base.TakeDamage(damage);
     }
 
-    public override void Die()
-    {
-        base.Die();
-    }
-
     /// <summary>
     /// Upgrade character stats
     /// </summary>

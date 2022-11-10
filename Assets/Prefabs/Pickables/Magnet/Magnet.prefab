@@ -146,7 +146,7 @@ MonoBehaviour:
   _isDebug: 0
   _collider: {fileID: 3779730591916002621}
   _triggerTags:
-    _tags: 05000000
+    _tags: 04000000
 --- !u!1 &5568654666333565026
 GameObject:
   m_ObjectHideFlags: 0

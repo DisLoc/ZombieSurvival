@@ -1,35 +1,33 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SurvivalTimeCounter : MonoBehaviour, IGameStartHandler
 {
+    [SerializeField] private LevelProgress _levelProgress;
     [SerializeField] private Text _survivalTimeText;
 
     private float _survivalTime;
-    private float _seconds;
+
+    public float SurvivalTime => _survivalTime;
 
     public void OnGameStart()
     {
         _survivalTime = 0f;
-        _seconds = 0f;
+        UpdateTimerText();
     }
 
     private void FixedUpdate()
     {
-        _seconds += Time.fixedDeltaTime;
         _survivalTime += Time.fixedDeltaTime;
+
+        _levelProgress.OnTimerUpdate();
 
         UpdateTimerText();
     }
 
     private void UpdateTimerText()
     {
-        _survivalTimeText.text = ((int)_survivalTime).ToString();
-
-        if (_seconds >= 60)
-        {
-            _seconds = 0f;
-            EventBus.Publish<IMinuteLeftHandler>(handler => handler.OnMinuteLeft());
-        }
+        _survivalTimeText.text = IntegerFormatter.GetTime((int)_survivalTime);
     }
 }

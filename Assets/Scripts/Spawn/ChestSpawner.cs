@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class ChestSpawner : Spawner, IGameStartHandler
+public sealed class ChestSpawner : Spawner, IGameStartHandler
 {
     [Header("Chest settings")]
     [SerializeField] private RewardChest _rewardChestPrefab;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class BossSpawner : EnemySpawner
+public sealed class BossSpawner : EnemySpawner
 {
     [SerializeField] private int _poolSize = 1;
 

@@ -1,7 +1,7 @@
 using Zenject;
 using UnityEngine;
 
-public class LegendaryZombiesSpawner : EnemySpawner, ISpawnLegendaryZombie
+public sealed class LegendaryZombiesSpawner : EnemySpawner, ISpawnLegendaryZombie
 {
     private Enemy _legendaryZombie;
     [SerializeField] ZombieSpawner zombieSpawner;

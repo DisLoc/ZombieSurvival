@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelName: Test level
   _levelNumber: 1
-  _levelSprite: {fileID: 0}
+  _levelIcon: {fileID: 0}
+  _levelLenght: 10
   _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
   _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
   _crystalSpawnBreakpoints:

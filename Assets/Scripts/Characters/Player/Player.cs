@@ -4,10 +4,13 @@ using Zenject;
 
 public class Player : CharacterBase
 {
+    [Header("Moving settings")]
+    [SerializeField] protected PlayerMoveController _moveController;
+
     [Header("Colliders")]
-    [SerializeField] protected ObjectCatcher _catcher;
     [Tooltip("Self collider")]
     [SerializeField] protected CapsuleCollider _collider;
+    [SerializeField] protected ObjectCatcher _pickablesCatcher;
     
     [Header("Stats settings")]
     [SerializeField] protected PlayerStats _stats;
@@ -40,7 +43,7 @@ public class Player : CharacterBase
         _stats.Initialize();
 
         _healthBar.Initialize(_stats.Health);
-        _catcher.Initialize(_stats.PickUpRange);
+        _pickablesCatcher.Initialize(_stats.PickUpRange);
         _abilityInventory.Initialize();
         _coinInventory.Initialize();
 
@@ -59,6 +62,8 @@ public class Player : CharacterBase
     private void FixedUpdate()
     {
         OnFixedUpdate();
+
+        _moveController.OnFixedUpdate();
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
@@ -94,7 +99,7 @@ public class Player : CharacterBase
 
         _upgrades.Add(upgrade);
 
-        _catcher.UpdateRadius();
+        _pickablesCatcher.UpdateRadius();
 
         for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
         {
@@ -192,5 +197,12 @@ public class Player : CharacterBase
         {
             ability.DispelUpgrade(upgrade);
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        EventBus.Publish<IPlayerDieHandler>(handler => handler.OnPlayerDie());
     }
 }

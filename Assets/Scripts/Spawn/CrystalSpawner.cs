@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class CrystalSpawner : Spawner, IEnemyKilledHandler
+public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
 {
     [SerializeField] private int _poolSize;
 
@@ -16,7 +16,7 @@ public class CrystalSpawner : Spawner, IEnemyKilledHandler
     {
         base.OnEnable();
 
-        _breakpoints = _levelContext.CrystalSpawnBreakpoints;
+        _breakpoints = new BreakpointList<CrystalBreakpoint>(_levelContext.CrystalSpawnBreakpoints);
     }
 
     protected override void OnDisable()

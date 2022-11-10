@@ -1,7 +1,6 @@
 using UnityEngine;
-using Zenject;
 
-public class PlayerMoveController : MonoBehaviour
+public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -9,8 +8,7 @@ public class PlayerMoveController : MonoBehaviour
     [Header("Settings")]
     [Tooltip("Camera always follow player")]
     [SerializeField] private Vector3 _cameraPos;
-
-    [Inject] private Player _player;
+    [SerializeField] private Player _player;
 
     private bool _isMobile;
 
@@ -28,9 +26,9 @@ public class PlayerMoveController : MonoBehaviour
         _isMobile = Application.isMobilePlatform;
     }
 
-    private void FixedUpdate()
+    public void OnFixedUpdate()
     {
-        if (_isMobile) // Mobile control (need test)
+        if (_isMobile)
         {
             if (Input.touchCount > 0) 
             {
@@ -123,5 +121,6 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         transform.position = _player.transform.position + _cameraPos; // Follow player
+        transform.LookAt(_player.transform);
     }
 }
