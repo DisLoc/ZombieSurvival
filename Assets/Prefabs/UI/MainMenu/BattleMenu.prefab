@@ -62,6 +62,9 @@ MonoBehaviour:
   _levelText: {fileID: 8705098645274560069}
   _previousLevelButton: {fileID: 8705098645336606816}
   _nextLevelButton: {fileID: 8705098646692237247}
+  _chest1: {fileID: 0}
+  _chest2: {fileID: 0}
+  _chest3: {fileID: 0}
   _levels:
   - {fileID: 11400000, guid: 0b0a064a571b97f429e0089c7f16140f, type: 2}
 --- !u!225 &8705098645566937112
@@ -655,6 +658,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelRewards
       objectReference: {fileID: 0}
+    - target: {fileID: 1143281581607805392, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8705098645566937113}
+    - target: {fileID: 1143281581632644945, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8705098645566937113}
+    - target: {fileID: 1436720279691444162, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8705098645566937113}
     - target: {fileID: 3312998616652320640, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -662,18 +677,6 @@ PrefabInstance:
     - target: {fileID: 3312998616652320640, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3391445506551845191, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_Value
-      value: 0.734
-      objectReference: {fileID: 0}
-    - target: {fileID: 5567060143173864250, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_Text
-      value: Chapter 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5567060143215087035, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_Text
-      value: 6 min
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}

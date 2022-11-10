@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach (var menu in _menus)
+        foreach (UIMenu menu in _menus)
         {
             menu.Initialize(this);
 
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void Display(UIMenu tab)
     {
-        foreach (var menu in _menus)
+        foreach (UIMenu menu in _menus)
         {
             if (menu.Equals(tab))
             {

@@ -12,6 +12,7 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
     private BreakpointList<EnemyBreakpoint> _breakpoints;
 
+    private List<ObjectSpawner<Zombie>> _prevSpawners;
     private List<ObjectSpawner<Zombie>> _spawners;
     private ChanceCombiner<Zombie> _combiner;
 
@@ -26,6 +27,7 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
 
         _breakpoints = _levelContext.EnemyBreakpoints;
         _spawners = new List<ObjectSpawner<Zombie>>();
+        _prevSpawners = new List<ObjectSpawner<Zombie>>();
     }
 
     public override void OnUpdate()
@@ -44,6 +46,28 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
             }
             spawner.SpawnedObjects.Cleanup();
         }
+
+        foreach (var spawner in _prevSpawners)
+        {
+            if (spawner.SpawnCount == 0) continue;
+
+            for (int i = 0; i < spawner.SpawnCount; i++)
+            {
+                spawner.SpawnedObjects[i]?.OnUpdate();
+            }
+
+            spawner.SpawnedObjects.Cleanup();
+        }
+
+        foreach (ObjectSpawner<Zombie> pool in _prevSpawners)
+        {
+            if (pool.SpawnCount == 0)
+            {
+                pool.ClearPool();
+            }
+        }
+
+        _prevSpawners.RemoveAll(item => item.SpawnedObjects == null);
     }
 
     public override void OnFixedUpdate()
@@ -58,8 +82,31 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
             {
                 spawner.SpawnedObjects[i]?.OnFixedUpdate();
             }
+            
             spawner.SpawnedObjects.Cleanup();
         }
+
+        foreach (var spawner in _prevSpawners)
+        {
+            if (spawner.SpawnCount == 0) continue;
+
+            for (int i = 0; i < spawner.SpawnCount; i++)
+            {
+                spawner.SpawnedObjects[i]?.OnFixedUpdate();
+            }
+
+            spawner.SpawnedObjects.Cleanup();
+        }
+
+        foreach (ObjectSpawner<Zombie> pool in _prevSpawners)
+        {
+            if (pool.SpawnCount == 0)
+            {
+                pool.ClearPool();
+            }
+        }
+
+        _prevSpawners.RemoveAll(item => item.SpawnedObjects == null);
     }
 
     public override void OnLevelProgressUpdate(int progress)
@@ -173,7 +220,15 @@ public class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable, IBossEventHand
         {
             foreach(ObjectSpawner<Zombie> pool in _spawners)
             {
-                pool.ClearPool();
+                if (pool.SpawnCount == 0)
+                {
+                    pool.ClearPool();
+                }
+
+                else
+                {
+                    _prevSpawners.Add(pool);
+                }
             }
 
             _spawners.Clear();
