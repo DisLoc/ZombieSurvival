@@ -7,40 +7,83 @@ public abstract class UIMenu : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] protected CanvasGroup _canvasGroup;
+    [Tooltip("Button that displays this menu (can be null)")]
     [SerializeField] protected MenuButton _button;
+
+    [Space(5)]
+    [SerializeField] private Animator _animator;
 
     protected MainMenu _mainMenu;
 
     public virtual void Initialize(MainMenu mainMenu)
     {
         _mainMenu = mainMenu;
+        _animator.cullingMode = AnimatorCullingMode.CullCompletely;
     }
 
-    public virtual void Display()
+    public virtual void Display(bool playAnimation = false)
     {
-        _canvasGroup.alpha = 1;
-        _canvasGroup.blocksRaycasts = true;
-        _canvasGroup.interactable = true;
+        if (_animator != null && playAnimation)
+        {
+            if (_isDebug) Debug.Log("Display by animator: " + name);
+
+            _animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            _animator.SetTrigger("Display");
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Just display: " + name);
+
+            _canvasGroup.alpha = 1;
+            _canvasGroup.blocksRaycasts = true;
+            _canvasGroup.interactable = true;
+
+            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
+        }
 
         if (_button != null)
         {
             _button.Enable();
         }
-
-        if (_isDebug) Debug.Log("Display: " + name);
     }
 
-    public virtual void Hide()
+    public virtual void Hide(bool playAnimation = false)
     {
-        _canvasGroup.alpha = 0;
-        _canvasGroup.blocksRaycasts = false;
-        _canvasGroup.interactable = false;
+        if (_animator != null && playAnimation)
+        {
+            if (_isDebug) Debug.Log("Hide by animator: " + name);
+
+            _animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            _animator.SetTrigger("Hide");
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Just hide: " + name);
+
+            _canvasGroup.alpha = 0;
+            _canvasGroup.blocksRaycasts = false;
+            _canvasGroup.interactable = false;
+
+            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
+        }
 
         if (_button != null)
         {
             _button.Disable();
         }
-
-        if (_isDebug) Debug.Log("Hide: " + name);
     }
+
+    #if UNITY_EDITOR
+    [ContextMenu("Display with animation")]
+    protected void DisplayAnimation()
+    {
+        Display(true);
+    }
+
+    [ContextMenu("Hide with animation")]
+    protected void HideAnimation()
+    {
+        Hide(true);
+    }
+    #endif
 }

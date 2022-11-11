@@ -1,8 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public sealed class PauseMenu : UIMenu
 {
+    public override void Display(bool playAnimation = false)
+    {
+        Time.timeScale = 0;
 
+        base.Display(playAnimation);
+    }
+
+    public override void Hide(bool playAnimation = false)
+    {
+        Time.timeScale = 1;
+
+        base.Hide(playAnimation);
+    }
 }

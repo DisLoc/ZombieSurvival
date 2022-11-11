@@ -6,6 +6,11 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
 {
     [SerializeField] private LevelContext _levelContext;
 
+    public void SetLevel(LevelContext level)
+    {
+        _levelContext = level;
+    }
+
     public override void InstallBindings()
     {
         _levelContext.Initialize();

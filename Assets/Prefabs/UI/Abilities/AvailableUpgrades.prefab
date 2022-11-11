@@ -94,7 +94,7 @@ MonoBehaviour:
   _menuGO: {fileID: 5896450654144838833}
   _abilityUIParent: {fileID: 3505353006881403423}
   _abilityUIPrefab: {fileID: 513647843441780316, guid: a40ced8ead63f91459255fad402d4454, type: 3}
-  _abilitiesPerLevel:
+  _abilitiesPerChoice:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 399c5575be56a02458b69f274a727664, type: 2}
   _abilityChooseCount:

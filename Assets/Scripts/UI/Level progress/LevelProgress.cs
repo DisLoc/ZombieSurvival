@@ -1,12 +1,13 @@
 using UnityEngine;
 using Zenject;
 
-public sealed class LevelProgress : FillBar, IGameStartHandler
+public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandler, IBossEventEndedHandler
 {
     [Header("LevelProgress settings")]
     [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
 
     private int _maxLevelTime;
+    private bool _onBoss;
 
     [Inject] private LevelContext _levelContext;
 
@@ -36,8 +37,27 @@ public sealed class LevelProgress : FillBar, IGameStartHandler
         _maxLevelTime = _levelContext.LevelLenght;
     }
 
+    public void OnBossEvent()
+    {
+        _onBoss = true;
+    }
+
+    public void OnBossEventEnd()
+    {
+        _onBoss = false;
+
+        if (_value >= _maxFillValue)
+        {
+            if (_isDebug) Debug.Log("Level complete!");
+
+            EventBus.Publish<ILevelPassedHandler>(handler => handler.OnLevelPassed());
+        }
+    }
+
     public void OnTimerUpdate()
     {
+        if (_onBoss) return;
+
         int newVal = (int)(_survivalTimeCounter.SurvivalTime / _maxLevelTime * _maxFillValue);
         
         if (_value != newVal)
@@ -56,7 +76,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler
 
         EventBus.Publish<ILevelProgressUpdateHandler>(handler => handler.OnLevelProgressUpdate(_value));
         
-        if (_value >= _maxFillValue)
+        if (_value >= _maxFillValue && !_onBoss)
         {
             if (_isDebug) Debug.Log("Level complete!");
 

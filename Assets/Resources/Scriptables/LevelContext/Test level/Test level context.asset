@@ -24,13 +24,13 @@ MonoBehaviour:
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 0
       _spawningCrystalStats: {fileID: 11400000, guid: 374a29a7dcf360c40b5c6d2d80d53528, type: 2}
-    - _name: 31-65%
+    - _name: 30-60%
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 30
       _spawningCrystalStats: {fileID: 11400000, guid: 666fd299b67264443af06179764716ec, type: 2}
-    - _name: 66-100%
+    - _name: 60-100%
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 65
+      _requiredProgress: 60
       _spawningCrystalStats: {fileID: 11400000, guid: 591e8bf598388ce4ba7f620463e81a83, type: 2}
   _enemyBreakpoints:
     _breakpoints:
@@ -56,9 +56,9 @@ MonoBehaviour:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
       _maxUnitsOnScene: 15
-    - _name: 31-65
+    - _name: 30-60
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 31
+      _requiredProgress: 30
       _spawningEnemies:
       - _object: {fileID: 6014635930849753472, guid: 9b45625e86b9e6141be69c6800fa1fc7, type: 3}
         _spawnChance:
@@ -73,9 +73,9 @@ MonoBehaviour:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
       _maxUnitsOnScene: 20
-    - _name: 66-100
+    - _name: 60-100
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 66
+      _requiredProgress: 60
       _spawningEnemies:
       - _object: {fileID: 1294031339213091140, guid: bd5766aca1ed9fb4e9d5be33ae6daff1, type: 3}
         _spawnChance:
@@ -111,9 +111,9 @@ MonoBehaviour:
       _requiredProgress: 40
       _enemyToSpawnPrefab: {fileID: 1294031339213091140, guid: bd5766aca1ed9fb4e9d5be33ae6daff1, type: 3}
       _spawnCount: 25
-    - _name: 55% horde
+    - _name: 50% horde
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 55
+      _requiredProgress: 50
       _enemyToSpawnPrefab: {fileID: 3984346456179942867, guid: c544dfe747c26da428fbc1a56839ceb9, type: 3}
       _spawnCount: 30
     - _name: 80% horde
@@ -133,9 +133,9 @@ MonoBehaviour:
       _requiredProgress: 30
       _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
-    - _name: 65% boss
+    - _name: 60% boss
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 65
+      _requiredProgress: 60
       _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
     - _name: 100% boss

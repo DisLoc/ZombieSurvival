@@ -62,6 +62,19 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     {
         Vector3 pos = transform.position;
 
+        if (direction.x > 0 && _defaultViewSide.x < 0)
+        {
+            _renderer.flipX = false;
+        }
+        else if (direction.x < 0 && _defaultViewSide.x > 0)
+        {
+            _renderer.flipX = false;
+        }
+        else
+        {
+            _renderer.flipX = true;
+        }
+
         transform.LookAt(new Vector3(pos.x + direction.x, transform.position.y, pos.z + direction.z));
         transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
     }

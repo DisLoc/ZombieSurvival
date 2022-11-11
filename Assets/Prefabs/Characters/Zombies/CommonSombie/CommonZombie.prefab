@@ -84,6 +84,7 @@ MonoBehaviour:
   _healthBar: {fileID: 4313870295063821614}
   _hpCanvas: {fileID: 279434253097670373}
   _renderer: {fileID: 8078037489742521134}
+  _defaultViewSide: {x: 1, y: 0, z: 0}
   _stats:
     _baseWeapon: {fileID: 7982200257602912286}
     _health:

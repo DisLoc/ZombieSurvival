@@ -4,14 +4,14 @@ using UnityEngine;
 public class CurrencyInventory
 { 
     [SerializeField] private CurrencyData _currencyData;
-    [SerializeField] private CoinCounter _counter;
+    [SerializeField] private CurrencyCounter _counter;
 
     private int _total;
 
     public CurrencyData CurrencyData => _currencyData;
     public int Total => _total;
 
-    public CurrencyInventory(CurrencyData currencyData, CoinCounter counter)
+    public CurrencyInventory(CurrencyData currencyData, CurrencyCounter counter)
     {
         _currencyData = currencyData;
         _counter = counter;

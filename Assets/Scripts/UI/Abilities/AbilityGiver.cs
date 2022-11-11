@@ -14,16 +14,16 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     [SerializeField] private RectTransform _abilityUIParent;
     [SerializeField] private AbilityUI _abilityUIPrefab;
 
-    [Header("Stats settings")]
-    [SerializeField] private AbilitiesPerChoice _abilitiesPerChoice;
-    [SerializeField] private AbilityChooseCount _abilityChooseCount;
-
     [Space(5)]
     [SerializeField] private AvailableAbilities _availableAbilities;
 
+    private AbilitiesPerChoice _abilitiesPerChoice;
+    private AbilityChooseCount _abilityChooseCount;
+    private AbilitiesRerollCount _abilitiesRerollCount;
 
     private List<AbilityUI> _abilitiesUI;
     private List<AbilityContainer> _abilities;
+    
     private int _levelUps;
     private bool _onChoice;
 
@@ -33,8 +33,9 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     {
         EventBus.Subscribe(this);
 
-        _abilitiesPerChoice.Initialize();
-        _abilityChooseCount.Initialize();
+        _abilityChooseCount = (_player.Stats as PlayerStats).AbilityChooseCount;
+        _abilitiesPerChoice = (_player.Stats as PlayerStats).AbilitiesPerChoice;
+        _abilitiesRerollCount = (_player.Stats as PlayerStats).AbilitiiesRerollCount;
 
         _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
 
@@ -136,7 +137,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// </summary>
     /// <returns>Return X random abilities based on abilities that player getted</returns>
 
-    private List<AbilityContainer> GetRandomAbilities(int count)
+    public List<AbilityContainer> GetRandomAbilities(int count)
     {
         CleanupAbilities();
 

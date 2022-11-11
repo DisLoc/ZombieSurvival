@@ -51,6 +51,8 @@ public class Player : CharacterBase
         _upgrades = new List<Upgrade>();
 
         GetAbility(_stats.BaseWeapon);
+
+        _hpCanvas?.OnFixedUpdate();
     }
 
     private void Update()
@@ -79,6 +81,19 @@ public class Player : CharacterBase
     public override void Move(Vector3 direction)
     {
         Vector3 pos = transform.position;
+
+        if (direction.x > 0 && _defaultViewSide.x < 0)
+        {
+            _renderer.flipX = true;
+        }
+        else if (direction.x < 0 && _defaultViewSide.x > 0)
+        {
+            _renderer.flipX = true;
+        }
+        else
+        {
+            _renderer.flipX = false;
+        }
 
         transform.LookAt(pos + direction);
         transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);

@@ -11,6 +11,8 @@ public sealed class ZombieCounter : MonoBehaviour, IEnemyKilledHandler, IGameSta
 
     private int _killed;
 
+    public int TotalKilled => _killed;
+
     private void OnEnable()
     {
         EventBus.Subscribe(this);

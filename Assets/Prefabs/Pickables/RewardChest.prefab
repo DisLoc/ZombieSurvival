@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d413b377fd3e846b0ff59e126bc9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _collider: {fileID: 6922097992627956937}
   _triggerTags:
     _tags: 000000000600000008000000

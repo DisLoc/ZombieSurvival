@@ -1,3 +1,4 @@
+[System.Serializable]
 public class AbilitiesRerollCount : Stat
 {
     public AbilitiesRerollCount(StatData statData, UpgradeList upgradeList = null, bool isDebug = false) : base(statData, upgradeList, isDebug)

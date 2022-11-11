@@ -137,7 +137,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac7208d1b0175294a8bf6f9d5078bef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.44, y: 0.77}
@@ -397,10 +397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _isImmortal: 1
+  _isImmortal: 0
   _healthBar: {fileID: 6053825508757198442}
   _hpCanvas: {fileID: 7799900224490454433}
   _renderer: {fileID: 1448123843326196526}
+  _defaultViewSide: {x: 1, y: 0, z: 0}
   _moveController: {fileID: 5057284736669028852}
   _collider: {fileID: 8953109175079049454}
   _pickablesCatcher: {fileID: 4806763617484522634}
@@ -428,11 +429,23 @@ MonoBehaviour:
           _maxValue: 0
           _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
-      _baseExpForLevelUp: 50
+      _baseExpForLevelUp: 500
       _levelMultiplier: 0.5
     _pickUpRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 231373b3ec40f5d44bb254f56008db8e, type: 2}
+    _rebornCount:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: f42c74b01164d05468d6cf5b3934c02a, type: 2}
+    _abilityChooseCount:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 6925509b024f8f44389161d00d758179, type: 2}
+    _abilitiesPerChoice:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 399c5575be56a02458b69f274a727664, type: 2}
+    _abilitiesRerollCount:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 8794446aa052ce94e9965f3fb6fb3c52, type: 2}
   _animator: {fileID: 1413743868}
   isMoving: 0
   _abilityInventory:

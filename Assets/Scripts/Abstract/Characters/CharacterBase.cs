@@ -8,6 +8,7 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable
 
     [Header("Render settings")]
     [SerializeField] protected SpriteRenderer _renderer;
+    [SerializeField] protected Vector3 _defaultViewSide = Vector3.right;
 
     /// <summary>
     /// Object stats
