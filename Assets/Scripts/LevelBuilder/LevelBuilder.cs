@@ -7,9 +7,6 @@ public class LevelBuilder : MonoBehaviour
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
 
-    [Header("Settings")]
-    public GroundGrid groundGrid; // test
-
     [Header("Generation settings")]
     [Tooltip("Level height in y axis")]
     [SerializeField] private float _gridHeight;
@@ -31,32 +28,12 @@ public class LevelBuilder : MonoBehaviour
     /// </summary>
     private int _maxX, _minX, _maxZ, _minZ;
 
-    [ContextMenu("Init")]
-    public void Initialize()
-    {
-        _grid = new GridXZ(groundGrid, this);
-        _cells = new Dictionary<Vector2, Cell>();
-        _groundGrid = groundGrid;
-
-        _maxDeltaIndex = Mathf.RoundToInt((float)_visionRange / _groundGrid.CellSize);
-        _maxX = _maxZ = _minX = _minZ = 0;
-
-        Vector3 pos = new Vector3(0, _gridHeight, 0);
-
-        Cell cell = GetCell(0, 0, pos); // create only ZeroCell
-        cell.Initialize(0, 0, _grid);
-
-        _cells.Add(new Vector2(0, 0), cell);
-
-        UpdateGrid(cell);
-    }
-
     [Inject]
     public void Construct(GroundGrid grid)
     {
-        _grid = new GridXZ(groundGrid, this);
+        _grid = new GridXZ(grid, this);
         _cells = new Dictionary<Vector2, Cell>();
-        _groundGrid = groundGrid;
+        _groundGrid = grid;
 
         _maxDeltaIndex = Mathf.RoundToInt((float)_visionRange / _groundGrid.CellSize);
         _maxX = _maxZ = _minX = _minZ = 0;
@@ -98,9 +75,9 @@ public class LevelBuilder : MonoBehaviour
                 // current cell position
                 Vector3 pos = new Vector3
                         (
-                            groundGrid.CellSize * i * 2,
+                            _groundGrid.CellSize * i * 2,
                             _gridHeight,
-                            groundGrid.CellSize * j * 2
+                            _groundGrid.CellSize * j * 2
                         );
 
                 if (index.x < minX || index.x > maxX || index.y < minZ || index.y > maxZ)
