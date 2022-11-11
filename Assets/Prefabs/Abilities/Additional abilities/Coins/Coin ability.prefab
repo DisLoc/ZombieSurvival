@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: More coins
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 7749b1da805c3f148b967361defe6c25, type: 2}
     _level:

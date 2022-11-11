@@ -25,21 +25,17 @@ public class LevelUI : MonoBehaviour
         {
             case LevelType.Current:
                 sprite = _currentLevel;
-                _image.color = Color.white; // test
                 break;
             case LevelType.Unlocked:
                 sprite = _unlockedLevel;
-                _image.color = Color.green; // test
                 break;
             case LevelType.Locked:
                 sprite = _lockedLevel;
-                _image.color = Color.red; // test
                 break;
             default:
                 if (_isDebug) Debug.Log("Missing LevelType!");
 
                 sprite = _lockedLevel;
-                _image.color = Color.red; // test
                 break;
         }
 
