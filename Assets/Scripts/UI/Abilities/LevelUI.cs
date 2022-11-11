@@ -21,6 +21,7 @@ public class LevelUI : MonoBehaviour
     public void Initialize(LevelType type)
     {
         Sprite sprite;
+
         switch (type)
         {
             case LevelType.Current:
