@@ -101,6 +101,7 @@ MonoBehaviour:
   _chest3: {fileID: 4090731017516764941}
   _levels:
   - {fileID: 11400000, guid: 0b0a064a571b97f429e0089c7f16140f, type: 2}
+  - {fileID: 11400000, guid: 39dbc1fbcc0d5344ca5c9abf95222d18, type: 2}
   _levelInstaller: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
 --- !u!1001 &2412484861007940317
 PrefabInstance:

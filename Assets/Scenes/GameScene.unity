@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 400274920047212590, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1663542967180993610, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -496,6 +500,22 @@ PrefabInstance:
     - target: {fileID: 2187330878869843244, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005894782514548427, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005894782514548427, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005894782514548427, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005894782514548427, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734620320848148783, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_IsActive
