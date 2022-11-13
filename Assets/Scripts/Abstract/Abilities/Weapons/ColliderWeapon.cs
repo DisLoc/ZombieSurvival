@@ -7,11 +7,6 @@ public abstract class ColliderWeapon : Weapon
 
     public override AbilityStats Stats => _stats;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
-
     public override void Attack()
     {
         if (_isReady)

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TargetDetector : TriggerDetector
 {
+    private readonly float EPSILON = 0.15f;
     private List<GameObject> _targets;
 
     /// <summary>
@@ -55,7 +56,12 @@ public class TargetDetector : TriggerDetector
 
     private bool CheckDistance(GameObject obj)
     {
-        foreach(RaycastHit hit in Physics.RaycastAll(transform.position, obj.transform.position - transform.position, _collider.radius * transform.localScale.magnitude))
+        foreach(RaycastHit hit in Physics.RaycastAll
+                                                (
+                                                    transform.position, 
+                                                    obj.transform.position - transform.position, 
+                                                    _collider.radius * transform.localScale.magnitude + EPSILON
+                                                ))
         {
             if (hit.collider.gameObject.Equals(obj))
             {

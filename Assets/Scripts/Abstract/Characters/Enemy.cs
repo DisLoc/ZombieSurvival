@@ -4,7 +4,6 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 {
     [SerializeField] protected CharacterStats _stats;
 
-
     protected Player _player; 
     protected MonoPool<Enemy> _pool;
 
@@ -22,7 +21,7 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     /// Need initialization every time when pull object
     /// </summary>
     /// <param name="pool"></param>
-    public void Initialize(Player player, MonoPool<Enemy> pool = null)
+    public virtual void Initialize(Player player, MonoPool<Enemy> pool = null)
     {
         _pool = pool;
         _player = player;
@@ -31,7 +30,7 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         _healthBar.Initialize(_stats.Health);
     }
 
-    public void ResetObject()
+    public virtual void ResetObject()
     {
         _pool = null;
 
@@ -41,7 +40,7 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         }
     }
 
-    public void OnUpdate()
+    public virtual void OnUpdate()
     {
         Attack();
     }

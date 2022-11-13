@@ -12,6 +12,8 @@ public abstract class TriggerDetector : MonoBehaviour
 
     protected Radius _radius;
 
+    public TagList TriggerTags => _triggerTags;
+
     public virtual void Initialize(Radius raduis)
     {
         _collider.isTrigger = true;
