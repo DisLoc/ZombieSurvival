@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8875827945838437711}
   - component: {fileID: 2256704756882340303}
   - component: {fileID: 631107886468096058}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CollisionDetector
-  m_TagString: Untagged
+  m_TagString: TargetDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316875271533592097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.75
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _collider: {fileID: 2256704756882340303}
   _triggerTags:
     _tags: 00000000
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3193146097a53a4598eb9c00eab571c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _isImmortal: 0
   _healthBar: {fileID: 4335061329182879509}
   _hpCanvas: {fileID: 293990288021488862}

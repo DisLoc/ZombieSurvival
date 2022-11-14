@@ -15,6 +15,6 @@ MonoBehaviour:
   _isAbilityUpgrade: 0
   _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
   _upgrades:
-  - {fileID: 11400000, guid: f0a2862ba61f29249aad2c2258e6f371, type: 2}
-  - {fileID: 11400000, guid: 6950ab2230cca6d4bb3cf5108450e7d4, type: 2}
-  - {fileID: 11400000, guid: 4a162a1f46bf15542a11fa8eceb5aadf, type: 2}
+  - {fileID: 11400000, guid: 6f08388624595584c8e97a3c8542f363, type: 2}
+  - {fileID: 11400000, guid: 94d0298dcea5ffd4aa9371d5b948bdae, type: 2}
+  - {fileID: 11400000, guid: 6a52941cc8f48294e808104ee9f53af5, type: 2}

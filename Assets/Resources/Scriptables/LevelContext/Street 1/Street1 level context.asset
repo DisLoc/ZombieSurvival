@@ -131,17 +131,17 @@ MonoBehaviour:
     - _name: 30% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 30
-      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
     - _name: 60% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 60
-      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
     - _name: 100% boss
       _breakpointIcon: {fileID: 0}
       _requiredProgress: 100
-      _bossPrefab: {fileID: 2244051903603598489, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _bossEventFence: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
   _enemyUpgradeBreakpoints:
     _breakpoints:
