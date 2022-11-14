@@ -13,6 +13,18 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
         _spawnedObjects = new CleanupableList<TObject>(capacity);
     }
 
+    public override void AddObject(TObject obj)
+    {
+        if (obj.gameObject.activeSelf)
+        {
+            _spawnedObjects.Add(obj);
+        }
+        else
+        {
+            base.AddObject(obj);
+        }
+    }
+
     public TObject Spawn(Vector3 position)
     {
         TObject obj = Pull();
@@ -102,14 +114,6 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
         base.ClearPool();
 
         _spawnedObjects.Cleanup();
-
-        if (_spawnedObjects.Count > 0)
-        {
-            for (int i = 0; i < _spawnedObjects.Count; i++)
-            {
-                Object.Destroy(_spawnedObjects[i]);
-            }
-        }
 
         _spawnedObjects = null;
     }

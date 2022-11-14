@@ -16,7 +16,6 @@ MonoBehaviour:
   _levelNumber: 1
   _levelIcon: {fileID: 21300000, guid: b8c3779c8e4c0a94eb56574cb48418d6, type: 3}
   _levelLenght: 8
-  _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
   _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
   _crystalSpawnBreakpoints:
     _breakpoints:
@@ -126,6 +125,34 @@ MonoBehaviour:
       _requiredProgress: 90
       _enemyToSpawnPrefab: {fileID: 5443555473341688872, guid: 2a6163ec7efbc8445a0384f8af222662, type: 3}
       _spawnCount: 40
+  _herdBreakpoints:
+    _breakpoints: []
+  _eliteZombieBreakpoints:
+    _breakpoints:
+    - _name: 5%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 5
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+      _abilitiesRewardCount: 1
+    - _name: 20%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 25
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+      _abilitiesRewardCount: 2
+    - _name: 50%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 50
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+      _abilitiesRewardCount: 2
+    - _name: 75%
+      _breakpointIcon: {fileID: 0}
+      _requiredProgress: 75
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+      _abilitiesRewardCount: 3
   _bossBreakpoints:
     _breakpoints:
     - _name: 30% boss

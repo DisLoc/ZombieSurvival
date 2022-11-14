@@ -17,10 +17,6 @@ public abstract class PickableObject : MonoBehaviour
         _pickUpCollider.radius = _pickUpRange;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>Return self</returns>
     public virtual void PickUp()
     {
         if (_isDebug) Debug.Log("Pick up " + name);

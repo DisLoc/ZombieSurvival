@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
-  m_Name: LegendaryZombie HealthPoints
+  m_Name: EliteZombie AttackRange
   m_EditorClassIdentifier: 
-  _baseValue: 500
-  _minValue: 0
-  _maxValue: 500
+  _baseValue: 0.9
+  _minValue: 0.1
+  _maxValue: 0.9
   _maxValueIsInfinite: 1
-  _upgradeMarker: {fileID: 11400000, guid: 4895b0c41cddb7f4286efd71fe5ee5a3, type: 2}
+  _upgradeMarker: {fileID: 11400000, guid: ab0ac4cfab9d6b24c8e766351285b99a, type: 2}

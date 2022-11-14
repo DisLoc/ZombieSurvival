@@ -3,27 +3,30 @@ using Zenject;
 
 using static UnityEngine.Mathf;
 
-public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEndedHandler
+public sealed class EliteZombiesSpawner : EnemySpawner
 {
+    [SerializeField][Range(1, 5)] private int _poolSize;
+
     private ObjectSpawner<Enemy> _spawner;
-    private BreakpointList<HordeBreakpoint> _breakpoints;
+    private BreakpointList<EliteZombieBreakpoint> _breakpoints;
 
     private BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
 
     private Upgrade _currentUpgrade;
+    private ZombieChest _currentChest;
+    private int _abilitiesRewardCount;
 
-    private int _spawned;
     private bool _onBossEvent;
 
     [Inject] private Player _player;
+    [Inject] private AbilityGiver _abilityGiver;
     [Inject] private LevelContext _levelContext;
-
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        _breakpoints = new BreakpointList<HordeBreakpoint>(_levelContext.HordeBreakpoints);
+        _breakpoints = new BreakpointList<EliteZombieBreakpoint>(_levelContext.EliteZombieBreakpoints);
         _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
     }
 
@@ -60,21 +63,26 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
 
         if (breakpoint != null)
         {
-            if (_isDebug) Debug.Log("Horde incoming!");
-
-            _spawned = 0;
+            if (_isDebug) Debug.Log("Elite zombie incoming!");
 
             if (_spawner != null)
             {
                 _spawner.ClearPool();
             }
 
-            _spawner = new ObjectSpawner<Enemy>((breakpoint as HordeBreakpoint).EnemyToSpawnPrefab, (breakpoint as HordeBreakpoint).SpawnCount, transform);
+            _currentChest = (breakpoint as EliteZombieBreakpoint).ChestPrefab;
+            _abilitiesRewardCount = (breakpoint as EliteZombieBreakpoint).AbilitiesRewardCount;
 
-            for (int i = 0; i < (breakpoint as HordeBreakpoint).SpawnCount; i++)
+            _spawner = new ObjectSpawner<Enemy>
+                (
+                    (breakpoint as EliteZombieBreakpoint).EnemyToSpawnPrefab,
+                    _poolSize,
+                    transform
+                );
+
+            for (int i = 0; i < _poolSize; i++)
             {
                 Spawn(GetSpawnPosition());
-                _spawned++;
             }
 
             DispelUpgrades();
@@ -85,7 +93,7 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
 
         if (upgradeBreakpoint != null)
         {
-            if (_isDebug) Debug.Log("Horde upgrade!");
+            if (_isDebug) Debug.Log("Elite zombie upgrade!");
 
             DispelUpgrades();
 
@@ -99,10 +107,8 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
     {
         Enemy spawnedEnemy = _spawner.Spawn(position);
 
-        if (spawnedEnemy != null)
-        {
-            spawnedEnemy.Initialize(_player, _spawner);
-        }
+        spawnedEnemy.Initialize(_player, _spawner);
+        (spawnedEnemy as EliteZombie).InitializeSpawner(this);
     }
 
     private Vector3 GetSpawnPosition()
@@ -111,10 +117,20 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
 
         return new Vector3
             (
-                Cos(_spawned) * _spawnDeltaDistance + playerPos.x,
+                Cos(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.x,
                 playerPos.y,
-                Sin(_spawned) * _spawnDeltaDistance + playerPos.z
+                Sin(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.z
             );
+    }
+
+    public void OnEliteZombieDies(EliteZombie zombie)
+    {
+        if (_currentChest != null)
+        {
+            ZombieChest chest = Instantiate(_currentChest, zombie.transform.position, _currentChest.transform.localRotation);
+            chest.Initialize(_player, _abilityGiver, _abilitiesRewardCount);
+        }
+        else if (_isDebug) Debug.Log("Missing RewardChest!");
     }
 
     public void OnBossEvent()

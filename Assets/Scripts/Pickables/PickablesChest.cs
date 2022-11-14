@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class RewardChest : MonoBehaviour
+public class PickablesChest : MonoBehaviour
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;

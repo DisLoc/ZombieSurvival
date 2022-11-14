@@ -50,7 +50,7 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
     }
 
     /// <summary>
-    /// Release object to pool
+    /// Release object to pool and reset it
     /// </summary>
     /// <param name="obj">Object need to release</param>
     public virtual void Release(TObject obj)
@@ -58,6 +58,19 @@ public abstract class ObjectPool<TObject> where TObject : IPoolable
         if (obj != null)
         {
             obj.ResetObject();
+            _objects.Add(obj);
+        }
+        else return;
+    }
+
+    /// <summary>
+    /// Add object to pool without reseting
+    /// </summary>
+    /// <param name="obj">Object need to add</param>
+    public virtual void AddObject(TObject obj)
+    {
+        if (obj != null)
+        {
             _objects.Add(obj);
         }
         else return;

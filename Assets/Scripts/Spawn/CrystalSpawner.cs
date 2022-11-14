@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -40,10 +41,34 @@ public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
     {
         if (_isDebug) Debug.Log("Get breakpoint: " + breakpoint.Name);
 
+        List<ExpCrystal> crystals = null;
+
+        if (_pool != null)
+        {
+            _pool.SpawnedObjects.Cleanup();
+            crystals = _pool.SpawnedObjects.List;
+        
+            foreach (ExpCrystal crystal in crystals)
+            {
+                crystal.transform.parent = null;
+            }
+        }
+
         ClearPool();
         
         _pool = new ObjectSpawner<ExpCrystal>(breakpoint.SpawningCrystalsStats.CrystalPrefab, _poolSize, transform);
         _spawnCombiner = new ChanceCombiner<CrystalParam>(breakpoint.SpawningCrystalsStats.CrystalSpawnParams);
+
+        if (crystals != null)
+        {
+            foreach (ExpCrystal crystal in crystals)
+            {
+                crystal.transform.parent = _pool.Parent;
+                _pool.AddObject(crystal);
+            }
+
+            crystals.Clear();
+        }
     }
 
     private void ClearPool()
@@ -60,6 +85,8 @@ public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
     /// <param name="zombie"></param>
     public void OnEnemyKilled(Enemy zombie)
     {
+        if (!zombie.HasExpReward) return;
+
         Vector3 position = new Vector3
             (
                 zombie.transform.position.x,

@@ -3,7 +3,7 @@ using Zenject;
 
 public sealed class BossSpawner : EnemySpawner
 {
-    [SerializeField] private int _poolSize = 1;
+    [SerializeField][Range(1, 5)] private int _poolSize = 1;
 
     private ObjectSpawner<Enemy> _spawner;
     private GameObject _fence;
@@ -136,9 +136,6 @@ public sealed class BossSpawner : EnemySpawner
         }
     }
 
-    /// <summary>
-    /// Add upgrade to enemies 
-    /// </summary>
     protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
@@ -162,9 +159,6 @@ public sealed class BossSpawner : EnemySpawner
         }
     }
 
-    /// <summary>
-    /// Dispel upgrade from enemies (spawned and enemies in pool)
-    /// </summary>
     protected override void DispelUpgrades()
     {
         if (_currentUpgrade == null)

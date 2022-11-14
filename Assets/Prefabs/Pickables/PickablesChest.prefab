@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6922097992627956937}
   - component: {fileID: 4231006293177933437}
   m_Layer: 0
-  m_Name: RewardChest
+  m_Name: PickablesChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

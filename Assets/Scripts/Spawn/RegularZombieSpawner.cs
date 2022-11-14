@@ -260,9 +260,6 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
         }
     }
 
-    /// <summary>
-    /// Add upgrade to enemies (spawned and enemies in pool)
-    /// </summary>
     protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
@@ -305,9 +302,6 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
         }
     }
 
-    /// <summary>
-    /// Dispel upgrade from enemies (spawned and enemies in pool)
-    /// </summary>
     protected override void DispelUpgrades()
     {
         if (_currentUpgrade == null)

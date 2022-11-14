@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2300272471008107739}
   - component: {fileID: 2300272471008107738}
   m_Layer: 8
-  m_Name: LegendaryZombie
+  m_Name: EliteZombie
   m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -220,6 +220,8 @@ MonoBehaviour:
   _healthBar: {fileID: 7516061597266680721}
   _hpCanvas: {fileID: 5797021018960490586}
   _renderer: {fileID: 4752005128536379400}
+  _defaultViewSide: {x: 1, y: 0, z: 0}
+  _hasExpReward: 0
   _stats:
     _baseWeapon: {fileID: 2300272471711871559}
     _health:
@@ -234,7 +236,6 @@ MonoBehaviour:
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 3a93845756f31794ea83f9ac924f268a, type: 2}
-  _reward: {fileID: 0}
 --- !u!1 &2300272471711871553
 GameObject:
   m_ObjectHideFlags: 0

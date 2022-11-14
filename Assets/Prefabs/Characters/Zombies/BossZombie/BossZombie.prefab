@@ -646,6 +646,7 @@ MonoBehaviour:
   _hpCanvas: {fileID: 5330277169062642404}
   _renderer: {fileID: 4180107282287703855}
   _defaultViewSide: {x: -1, y: 0, z: 0}
+  _hasExpReward: 0
   _stats:
     _baseWeapon: {fileID: 2656620164662432799}
     _health:
