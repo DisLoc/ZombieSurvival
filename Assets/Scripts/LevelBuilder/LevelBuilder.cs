@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -28,7 +27,6 @@ public class LevelBuilder : MonoBehaviour
     /// </summary>
     private int _maxX, _minX, _maxZ, _minZ;
 
-    [Inject]
     public void Construct(GroundGrid grid)
     {
         _grid = new GridXZ(grid, this);

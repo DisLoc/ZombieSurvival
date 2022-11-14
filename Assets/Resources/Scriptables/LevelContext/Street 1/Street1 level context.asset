@@ -15,7 +15,7 @@ MonoBehaviour:
   _levelName: Street
   _levelNumber: 1
   _levelIcon: {fileID: 21300000, guid: b8c3779c8e4c0a94eb56574cb48418d6, type: 3}
-  _levelLenght: 10
+  _levelLenght: 8
   _levelBuilderPrefab: {fileID: 6634640359151922154, guid: 8c9e3e2d9d25bbb4ba3e32ed6dd32877, type: 3}
   _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
   _crystalSpawnBreakpoints:
