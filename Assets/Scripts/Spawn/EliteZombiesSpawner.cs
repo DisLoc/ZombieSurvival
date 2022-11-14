@@ -6,6 +6,7 @@ using static UnityEngine.Mathf;
 public sealed class EliteZombiesSpawner : EnemySpawner
 {
     [SerializeField][Range(1, 5)] private int _poolSize;
+    [SerializeField] private ZombieChest _chestPrefab;
 
     private ObjectSpawner<Enemy> _spawner;
     private BreakpointList<EliteZombieBreakpoint> _breakpoints;
@@ -13,7 +14,6 @@ public sealed class EliteZombiesSpawner : EnemySpawner
     private BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
 
     private Upgrade _currentUpgrade;
-    private ZombieChest _currentChest;
     private int _abilitiesRewardCount;
 
     private bool _onBossEvent;
@@ -70,7 +70,6 @@ public sealed class EliteZombiesSpawner : EnemySpawner
                 _spawner.ClearPool();
             }
 
-            _currentChest = (breakpoint as EliteZombieBreakpoint).ChestPrefab;
             _abilitiesRewardCount = (breakpoint as EliteZombieBreakpoint).AbilitiesRewardCount;
 
             _spawner = new ObjectSpawner<Enemy>
@@ -125,9 +124,9 @@ public sealed class EliteZombiesSpawner : EnemySpawner
 
     public void OnEliteZombieDies(EliteZombie zombie)
     {
-        if (_currentChest != null)
+        if (_chestPrefab != null)
         {
-            ZombieChest chest = Instantiate(_currentChest, zombie.transform.position, _currentChest.transform.localRotation);
+            ZombieChest chest = Instantiate(_chestPrefab, zombie.transform.position, _chestPrefab.transform.localRotation);
             chest.Initialize(_player, _abilityGiver, _abilitiesRewardCount);
         }
         else if (_isDebug) Debug.Log("Missing RewardChest!");

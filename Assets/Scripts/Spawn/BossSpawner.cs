@@ -4,6 +4,8 @@ using Zenject;
 public sealed class BossSpawner : EnemySpawner
 {
     [SerializeField][Range(1, 5)] private int _poolSize = 1;
+    [SerializeField] private ZombieChest _chestPrefab;
+    [SerializeField] private GameObject _bossEventFencePrefab;
 
     private ObjectSpawner<Enemy> _spawner;
     private GameObject _fence;
@@ -70,7 +72,7 @@ public sealed class BossSpawner : EnemySpawner
             Vector3 position = _player.transform.position;
             _spawner = new ObjectSpawner<Enemy>((breakpoint as BossBreakpoint).BossPrefab, _poolSize, transform);
 
-            SpawnFence(position, (breakpoint as BossBreakpoint).BossEventFence);
+            SpawnFence(position, _bossEventFencePrefab);
             Spawn(position);
 
             GetUpgrade();

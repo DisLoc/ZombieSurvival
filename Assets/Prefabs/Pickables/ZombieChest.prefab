@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 7400282451038139748}
   - component: {fileID: 7400282451038139747}
   - component: {fileID: 7400282451038139746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ZombieChest
   m_TagString: PickableObject
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7400282451038139745}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1

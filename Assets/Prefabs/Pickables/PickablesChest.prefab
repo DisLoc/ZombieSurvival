@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7231009589191213265}
   - component: {fileID: 6922097992627956937}
   - component: {fileID: 4231006293177933437}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PickablesChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -81,6 +81,8 @@ MonoBehaviour:
   _spawnDeltaDistance: 10
   _maxDistanceForRespawn: 0
   _poolSize: 1
+  _chestPrefab: {fileID: 0}
+  _bossEventFencePrefab: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
 --- !u!114 &8247142234265384198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,3 +99,4 @@ MonoBehaviour:
   _spawnDeltaDistance: 10
   _maxDistanceForRespawn: 0
   _poolSize: 1
+  _chestPrefab: {fileID: 0}

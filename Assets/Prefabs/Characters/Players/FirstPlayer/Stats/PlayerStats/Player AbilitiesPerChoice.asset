@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player AbilitiesPerChoice
   m_EditorClassIdentifier: 
   _baseValue: 3
-  _minValue: 1
-  _maxValue: 0
+  _minValue: 3
+  _maxValue: 3
   _maxValueIsInfinite: 1
   _upgradeMarker: {fileID: 11400000, guid: 1a83e45866e69ad41bf21c5ca4332be4, type: 2}

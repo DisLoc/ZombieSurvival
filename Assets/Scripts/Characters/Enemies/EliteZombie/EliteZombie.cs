@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public sealed class EliteZombie : Enemy
 {
     private EliteZombiesSpawner _spawner;
