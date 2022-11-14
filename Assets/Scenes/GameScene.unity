@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: _stats._expLevel._expBar
       value: 
       objectReference: {fileID: 1289386374}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._expLevel._baseExpForLevelUp
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
