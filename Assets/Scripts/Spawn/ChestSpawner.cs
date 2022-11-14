@@ -4,7 +4,7 @@ using Zenject;
 public sealed class ChestSpawner : Spawner, IGameStartHandler
 {
     [Header("Chest settings")]
-    [SerializeField] private RewardChest _rewardChestPrefab;
+    [SerializeField] private PickablesChest _rewardChestPrefab;
     [SerializeField] private ChanceCombiner<PickableObject> _pickablesSpawnChances;
     [Tooltip("Spawn interval in seconds")]
     [SerializeField] private int _spawnCooldown;
@@ -39,7 +39,7 @@ public sealed class ChestSpawner : Spawner, IGameStartHandler
 
         _timer = _spawnCooldown;
 
-        RewardChest chest = Instantiate(_rewardChestPrefab, transform);
+        PickablesChest chest = Instantiate(_rewardChestPrefab, transform);
         chest.transform.position = position + GetDeltaPos();
 
         chest.Initialize(this);
@@ -55,7 +55,7 @@ public sealed class ChestSpawner : Spawner, IGameStartHandler
             );
     }
 
-    public void OnChestDestoyed(RewardChest chest)
+    public void OnChestDestoyed(PickablesChest chest)
     {
         PickableObject obj = Instantiate(_pickablesSpawnChances.GetStrikedObject(), transform);
 

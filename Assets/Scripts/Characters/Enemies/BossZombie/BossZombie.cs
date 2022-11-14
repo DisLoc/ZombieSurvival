@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BossZombie : Enemy
 {
     private BossSpawner _spawner;

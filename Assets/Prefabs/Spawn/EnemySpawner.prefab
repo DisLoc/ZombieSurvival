@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 742492564938912031}
   - component: {fileID: 742492564938912029}
   - component: {fileID: 742492564938912030}
+  - component: {fileID: 8247142234265384198}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _spawnDeltaDistance: 20
+  _maxDistanceForRespawn: 0
 --- !u!114 &742492564938912029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _spawnDeltaDistance: 25
+  _maxDistanceForRespawn: 0
 --- !u!114 &742492564938912030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,4 +79,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _spawnDeltaDistance: 10
+  _maxDistanceForRespawn: 0
   _poolSize: 1
+  _chestPrefab: {fileID: 0}
+  _bossEventFencePrefab: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
+--- !u!114 &8247142234265384198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742492564938912025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33aab42e1ce2e7d43be1891632a79426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _spawnDeltaDistance: 10
+  _maxDistanceForRespawn: 0
+  _poolSize: 1
+  _chestPrefab: {fileID: 0}

@@ -136,7 +136,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// 
     /// </summary>
     /// <returns>Return X random abilities based on abilities that player getted</returns>
-
     public List<AbilityContainer> GetRandomAbilities(int count)
     {
         CleanupAbilities();
@@ -184,6 +183,58 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
 
         return randomAbilities;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>Return X abilities upgrades based on abilities that player getted</returns>
+    public List<AbilityContainer> GetAbilitiesUpgrades(int count)
+    {
+        List<AbilityContainer> abilitiesUpgrades = new List<AbilityContainer>();
+        AbilityInventory playerInventory = _player.AbilityInventory;
+
+        foreach (AbilityContainer abilityContainer in playerInventory.Abilities) // add abilities that player have in inventory
+        {
+            if (!abilityContainer.IsMaxLevel) abilitiesUpgrades.Add(abilityContainer);
+
+            else
+            {
+                if (abilityContainer.IsMaxLevel && abilityContainer as Weapon != null) // weapons at max level can upgrade to super
+                {
+                    Weapon super = playerInventory.FindCombine(abilityContainer as Weapon);
+
+                    if (super != null)
+                    {
+                        if (_isDebug) Debug.Log("Add super upgrade to pool: " + super.Name);
+                        abilitiesUpgrades.Add(super);
+                    }
+                }
+            }
+        }
+
+        List<AbilityContainer> randomUpgrades = new List<AbilityContainer>(count);
+
+        for (int currentCount = 0; currentCount < count; currentCount++)
+        {
+            AbilityContainer randomAbility;
+
+            if (abilitiesUpgrades.Count <= randomUpgrades.Count) // add additional abilities (like more gold or heal)
+            {
+                randomAbility = _availableAbilities.AdditionalAbilities[Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+            }
+            else
+            {
+                do
+                {
+                    randomAbility = abilitiesUpgrades[Random.Range(0, abilitiesUpgrades.Count)];
+                } while (randomUpgrades.Contains(randomAbility)); // get random ability without repeating
+            }
+
+            randomUpgrades.Add(randomAbility);
+        }
+
+        return randomUpgrades;
     }
 
     /// <summary>

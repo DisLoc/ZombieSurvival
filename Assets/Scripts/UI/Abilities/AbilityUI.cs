@@ -24,7 +24,7 @@ public class AbilityUI : MonoBehaviour
     private List<LevelUI> _levels;
     private List<CombineAbilityUI> _combines;
 
-    public void Initialize(AbilityGiver abilityGiver)
+    public void Initialize(AbilityGiver abilityGiver = null)
     {
         _levels = new List<LevelUI>();
         _combines = new List<CombineAbilityUI>();
@@ -130,6 +130,6 @@ public class AbilityUI : MonoBehaviour
     /// </summary>
     public void ChooseUpgrade()
     {
-        _abilityGiver.GetAbility(_ability);
+        _abilityGiver?.GetAbility(_ability);
     }
 }

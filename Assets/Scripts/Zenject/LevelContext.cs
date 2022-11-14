@@ -12,10 +12,10 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [Tooltip("Level lenght in minutes")]
     [SerializeField][Range(1, 60)] private int _levelLenght;
+    [SerializeField] private Reward _levelReward;
 
-    [SerializeField] private LevelBuilder _levelBuilderPrefab;
+    [Space(5)]
     [SerializeField] private GroundGrid _levelEnvironment;
-    [SerializeField] private LevelReward _levelReward;
 
     [Header("Breakpoints settings")]
     [SerializeField] private BreakpointList<CrystalBreakpoint> _crystalSpawnBreakpoints;
@@ -23,6 +23,8 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [SerializeField] private BreakpointList<EnemyBreakpoint> _enemyBreakpoints;
     [SerializeField] private BreakpointList<HordeBreakpoint> _hordeBreakpoints;
+    //[SerializeField] private BreakpointList<HerdBreakpoint> _herdBreakpoints;
+    [SerializeField] private BreakpointList<EliteZombieBreakpoint> _eliteZombieBreakpoints;
     [SerializeField] private BreakpointList<BossBreakpoint> _bossBreakpoints;
 
     [Space(5)]
@@ -39,23 +41,27 @@ public sealed class LevelContext : ScriptableObject
     /// Level lenght in seconds
     /// </summary>
     public int LevelLenght => _levelLenght * 60;
-    public LevelReward LevelReward => _levelReward;
+    public Reward LevelReward => _levelReward;
 
     public LevelBuilder LevelBuilder { get; private set; }
     public GroundGrid LevelEnvironment => _levelEnvironment;
 
     public BreakpointList<CrystalBreakpoint> CrystalSpawnBreakpoints => _crystalSpawnBreakpoints;
+
     public BreakpointList<EnemyBreakpoint> EnemyBreakpoints => _enemyBreakpoints;
     public BreakpointList<HordeBreakpoint> HordeBreakpoints => _hordeBreakpoints;
+    //public BreakpointList<HerdBreakpoint> HerdBreakpoints => _herdBreakpoints;
+    public BreakpointList<EliteZombieBreakpoint> EliteZombieBreakpoints => _eliteZombieBreakpoints;
     public BreakpointList<BossBreakpoint> BossBreakpoints => _bossBreakpoints;
+
     public BreakpointList<UpgradeBreakpoint> EnemyUpgradeBreakpoints => _enemyUpgradeBreakpoints;
 
     public List<Upgrade> PlayerUpgrades => _playerUpgrades;
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
-    public void Initialize()
+    public void Initialize(LevelBuilder builderPrefab)
     {
-        LevelBuilder = Instantiate(_levelBuilderPrefab);
+        LevelBuilder = Instantiate(builderPrefab);
 
         LevelBuilder.Construct(_levelEnvironment);
     }

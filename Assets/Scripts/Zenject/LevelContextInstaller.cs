@@ -4,7 +4,10 @@ using Zenject;
 [CreateAssetMenu(fileName = "LevelContextInstaller", menuName = "Installers/LevelContextInstaller")]
 public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInstaller>
 {
-    [SerializeField] private LevelContext _levelContext;
+    [SerializeField] private LevelBuilder _levelBuilderPrefab;
+    [SerializeField] private LevelContext _defaultContext;
+    
+    private LevelContext _levelContext;
 
     public void SetLevel(LevelContext level)
     {
@@ -13,7 +16,12 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
 
     public override void InstallBindings()
     {
-        _levelContext.Initialize();
+        if (_levelContext == null)
+        {
+            _levelContext = _defaultContext;
+        }
+
+        _levelContext.Initialize(_levelBuilderPrefab);
 
         Container.Bind<LevelContext>().FromScriptableObject(_levelContext).AsSingle();
     }

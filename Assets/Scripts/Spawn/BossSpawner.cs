@@ -3,7 +3,9 @@ using Zenject;
 
 public sealed class BossSpawner : EnemySpawner
 {
-    [SerializeField] private int _poolSize = 1;
+    [SerializeField][Range(1, 5)] private int _poolSize = 1;
+    [SerializeField] private ZombieChest _chestPrefab;
+    [SerializeField] private GameObject _bossEventFencePrefab;
 
     private ObjectSpawner<Enemy> _spawner;
     private GameObject _fence;
@@ -70,7 +72,7 @@ public sealed class BossSpawner : EnemySpawner
             Vector3 position = _player.transform.position;
             _spawner = new ObjectSpawner<Enemy>((breakpoint as BossBreakpoint).BossPrefab, _poolSize, transform);
 
-            SpawnFence(position, (breakpoint as BossBreakpoint).BossEventFence);
+            SpawnFence(position, _bossEventFencePrefab);
             Spawn(position);
 
             GetUpgrade();
@@ -136,9 +138,6 @@ public sealed class BossSpawner : EnemySpawner
         }
     }
 
-    /// <summary>
-    /// Add upgrade to enemies 
-    /// </summary>
     protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
@@ -162,9 +161,6 @@ public sealed class BossSpawner : EnemySpawner
         }
     }
 
-    /// <summary>
-    /// Dispel upgrade from enemies (spawned and enemies in pool)
-    /// </summary>
     protected override void DispelUpgrades()
     {
         if (_currentUpgrade == null)

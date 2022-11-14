@@ -147,9 +147,6 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
         }
     }
 
-    /// <summary>
-    /// Add upgrade to enemies 
-    /// </summary>
     protected override void GetUpgrade()
     {
         if (_currentUpgrade == null)
@@ -173,9 +170,6 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
         }
     }
 
-    /// <summary>
-    /// Dispel upgrade from enemies (spawned and enemies in pool)
-    /// </summary>
     protected override void DispelUpgrades()
     {
         if (_currentUpgrade == null)

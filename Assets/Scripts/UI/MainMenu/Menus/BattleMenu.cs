@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleMenu : UIMenu
 {
@@ -24,8 +25,13 @@ public class BattleMenu : UIMenu
     {
         base.Initialize(mainMenu);
 
-        _currentLevel = _levels[0];
+        LoadLevels();
         UpdatePreview();
+    }
+
+    private void LoadLevels()
+    {
+        _currentLevel = _levels[0];
     }
 
     public void StartGame()
@@ -42,17 +48,53 @@ public class BattleMenu : UIMenu
 
     public void OnPreviousLevelClick()
     {
+        int index = _levels.IndexOf(_currentLevel);
 
+        if (index > 0)
+        {
+            _currentLevel = _levels[index - 1];
+        }
+
+        UpdatePreview();
     }
 
     public void OnNextLevelClick()
     {
+        int index = _levels.IndexOf(_currentLevel);
 
+        if (index < _levels.Count - 1)
+        {
+            _currentLevel = _levels[index + 1];
+        }
+
+        UpdatePreview();
     }
 
     private void UpdatePreview()
     {
         _levelIcon.sprite = _currentLevel.LevelIcon;
         _levelText.text = _currentLevel.LevelNumber.ToString() + ". " + _currentLevel.LevelName;
+
+        _levelInstaller.SetLevel(_currentLevel);
+
+        int index = _levels.IndexOf(_currentLevel);
+
+        if (index == 0)
+        {
+            _previousLevelButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            _previousLevelButton.gameObject.SetActive(true);
+        }
+
+        if (index == _levels.Count - 1)
+        {
+            _nextLevelButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            _nextLevelButton.gameObject.SetActive(true);
+        }
     }
 }

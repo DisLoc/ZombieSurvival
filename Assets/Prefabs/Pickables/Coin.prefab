@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3d22a999f717974ab8afceba90f91c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,5 +148,5 @@ MonoBehaviour:
   _pickUpCollider: {fileID: 2449599218809666178}
   _pickUpRange: 1
   _coin:
-    _currencyValue: 1
+    _currencyValue: 5
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

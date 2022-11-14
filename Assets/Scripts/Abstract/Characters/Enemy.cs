@@ -2,11 +2,14 @@ using UnityEngine;
 
 public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 {
+    [Header("Enemy settings")]
+    [SerializeField] protected bool _hasExpReward = true;
     [SerializeField] protected CharacterStats _stats;
 
     protected Player _player; 
     protected MonoPool<Enemy> _pool;
 
+    public bool HasExpReward => _hasExpReward;
     public override CharacterStats Stats => _stats;
 
     protected void Awake()

@@ -7,7 +7,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
     [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
 
     private int _maxLevelTime;
-    private bool _onBoss;
+    private bool _onBossEvent;
 
     [Inject] private LevelContext _levelContext;
 
@@ -39,12 +39,12 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 
     public void OnBossEvent()
     {
-        _onBoss = true;
+        _onBossEvent = true;
     }
 
     public void OnBossEventEnd()
     {
-        _onBoss = false;
+        _onBossEvent = false;
 
         if (_value >= _maxFillValue)
         {
@@ -56,7 +56,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 
     public void OnTimerUpdate()
     {
-        if (_onBoss) return;
+        if (_onBossEvent) return;
 
         int newVal = (int)(_survivalTimeCounter.SurvivalTime / _maxLevelTime * _maxFillValue);
         
@@ -76,7 +76,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 
         EventBus.Publish<ILevelProgressUpdateHandler>(handler => handler.OnLevelProgressUpdate(_value));
         
-        if (_value >= _maxFillValue && !_onBoss)
+        if (_value >= _maxFillValue && !_onBossEvent)
         {
             if (_isDebug) Debug.Log("Level complete!");
 

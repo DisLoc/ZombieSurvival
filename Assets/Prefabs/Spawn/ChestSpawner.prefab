@@ -65,4 +65,8 @@ MonoBehaviour:
       _spawnChance:
         _isDebug: 0
         _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+    - _object: {fileID: 9201151954380301379, guid: 0b944a27b5c94a741bd58ba2390f903d, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: ab96bd229158773429a7ebaba1537961, type: 2}
   _spawnCooldown: 30

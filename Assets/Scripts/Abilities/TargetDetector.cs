@@ -30,7 +30,7 @@ public class TargetDetector : TriggerDetector
     {
         if (_triggerTags.Contains(other.tag))
         {
-            if (_isDebug) Debug.Log(other.name + " enter");
+            if (_isDebug) Debug.Log(other.name + " added");
 
             _targets.Add(other.gameObject);
         }
@@ -71,7 +71,6 @@ public class TargetDetector : TriggerDetector
 
         return false;
     }
-
 
     public Vector3 GetNearestTargetPosition()
     {

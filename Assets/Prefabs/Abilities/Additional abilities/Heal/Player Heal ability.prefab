@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Heal player
-  _icon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+  _icon: {fileID: 21300000, guid: ea6e13adb404ec24791172b84b2174b4, type: 3}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 79ac725181c5fbb4d9ec2b1f216ed495, type: 2}
     _level:

@@ -6,7 +6,6 @@ public class TagList
 {
     [SerializeField] private List<Tags> _tags;
 
-
     public bool Contains(Tags tag) => _tags.Contains(tag);
 
 
