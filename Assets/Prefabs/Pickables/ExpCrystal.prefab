@@ -129,7 +129,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8038103952488939020
 MonoBehaviour:
@@ -146,5 +146,7 @@ MonoBehaviour:
   _isDebug: 0
   _gizmosColor: {r: 0, g: 0.37633944, b: 1, a: 1}
   _pickUpCollider: {fileID: 9200049327040706117}
-  _pickUpRange: 1
+  _pickUpRange: 0.4
   _renderer: {fileID: 7654382446754802328}
+  _pickUpSpeed: 7
+  _speedMultiplier: 0.01

@@ -146,7 +146,7 @@ MonoBehaviour:
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.89133024, b: 0, a: 1}
   _pickUpCollider: {fileID: 2449599218809666178}
-  _pickUpRange: 1
+  _pickUpRange: 0.5
   _coin:
     _currencyValue: 5
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

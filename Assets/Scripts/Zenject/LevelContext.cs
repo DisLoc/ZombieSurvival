@@ -11,7 +11,7 @@ public sealed class LevelContext : ScriptableObject
 
     [Space(5)]
     [Tooltip("Level lenght in minutes")]
-    [SerializeField][Range(1, 60)] private int _levelLenght;
+    [SerializeField][Range(5, 60)] private int _levelLenght;
     [SerializeField] private Reward _levelReward;
 
     [Space(5)]
