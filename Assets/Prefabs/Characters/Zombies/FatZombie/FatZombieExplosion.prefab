@@ -9751,9 +9751,9 @@ GameObject:
   - component: {fileID: 6782762123520433838}
   - component: {fileID: 4346277331950401627}
   - component: {fileID: 4272335291500521000}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: FatZombieExplosion
-  m_TagString: Untagged
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

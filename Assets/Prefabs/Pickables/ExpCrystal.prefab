@@ -148,5 +148,5 @@ MonoBehaviour:
   _pickUpCollider: {fileID: 9200049327040706117}
   _pickUpRange: 0.4
   _renderer: {fileID: 7654382446754802328}
-  _pickUpSpeed: 7
+  _pickUpSpeed: 10
   _speedMultiplier: 0.01
