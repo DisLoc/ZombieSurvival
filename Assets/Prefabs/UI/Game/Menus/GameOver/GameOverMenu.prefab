@@ -266,6 +266,8 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2165760723574251768}
   _button: {fileID: 0}
   _animator: {fileID: 5878678008962859878}
+  _reanimationMaxTimer: 10
+  _timerText: {fileID: 4247387911614672272}
 --- !u!1 &1543187719854713486
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +887,6 @@ MonoBehaviour:
   _totalKilledText: {fileID: 7648350490809411272}
   _survivalTimeText: {fileID: 2046891284469089087}
   _reanimationMenu: {fileID: 3376389753632115635}
-  _timerText: {fileID: 4247387911614672272}
   _reanimationByAdHealUpgrade: {fileID: 11400000, guid: 3a2b0d3b8ea830947b3c6ad6859a9c25, type: 2}
   _reanimationByAdHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
   _reanimationByAdHeartImage: {fileID: 814699313076122495}
@@ -1310,10 +1311,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReanimationByAd
       objectReference: {fileID: 0}
-    - target: {fileID: 7323992199514616939, guid: be6ef2cde67c48543ba21a0b1a2f96ce, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bdc012f09d21ba347aa0e7f24914c1ce, type: 3}
     - target: {fileID: 8218721108518807961, guid: be6ef2cde67c48543ba21a0b1a2f96ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

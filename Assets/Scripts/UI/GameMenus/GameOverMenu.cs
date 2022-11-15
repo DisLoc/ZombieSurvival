@@ -25,9 +25,6 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
     [Header("Reanimation menu settings")]
     [SerializeField] private UIMenu _reanimationMenu;
 
-    [Space(5)]
-    [SerializeField] private Text _timerText;
-
     [Header("Ad reanimation")]
     [Tooltip("Must have only 1 UpgradeData for correct work")]
     [SerializeField] private Upgrade _reanimationByAdHealUpgrade;
@@ -74,7 +71,11 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     public void OnClose()
     {
-        SceneManager.LoadScene(0);
+        _reanimationMenu.Hide();
+        _gameOverMenu.Display(true);
+
+        _totalKilledText.text = _enemyCounter.TotalKilled.ToString();
+        _survivalTimeText.text = IntegerFormatter.GetTime((int)_survivalTimeCounter.SurvivalTime);
     }
     #endregion
 
@@ -91,6 +92,9 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         base.Initialize(mainMenu, parentMenu);
+
+        _gameOverMenu.Initialize(mainMenu, this);
+        _reanimationMenu.Initialize(mainMenu, this);
 
         _reanimations = 0;
 
@@ -122,7 +126,6 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     public void OnPlayerDie()
     {
-
         _mainMenu.Display(this);
 
         if (_reanimations < (_player.Stats as PlayerStats).RebornCount.Value)
@@ -134,6 +137,9 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
         {
             _reanimationMenu.Hide();
             _gameOverMenu.Display(true);
+
+            _totalKilledText.text = _enemyCounter.TotalKilled.ToString();
+            _survivalTimeText.text = IntegerFormatter.GetTime((int)_survivalTimeCounter.SurvivalTime);
         }
     }
 }

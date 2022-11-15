@@ -429,7 +429,7 @@ MonoBehaviour:
           _maxValue: 0
           _maxValueIsInfinite: 1
       _expBar: {fileID: 0}
-      _baseExpForLevelUp: 500
+      _baseExpForLevelUp: 50
       _levelMultiplier: 0.5
     _pickUpRange:
       _isDebug: 0
