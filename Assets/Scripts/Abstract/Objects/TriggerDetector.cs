@@ -24,7 +24,10 @@ public abstract class TriggerDetector : MonoBehaviour
 
     public virtual void UpdateRadius()
     {
-        _collider.radius = _radius.Value;
+        if (_radius != null)
+        {
+            _collider.radius = _radius.Value;
+        }
     }
 
     protected virtual void OnTriggerEnter(Collider other)

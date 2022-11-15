@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfffd36e0997e6438e95144fccf9bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _gizmosColor: {r: 1, g: 0.12406184, b: 0, a: 1}
   _pickUpCollider: {fileID: 1510365690108338249}
   _pickUpRange: 1
