@@ -7,7 +7,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 {
     #region GameOver
     [Header("Game over menu settings")]
-    [SerializeField] private GOGameOverMenu _gameOverMenu;
+    [SerializeField] private UIMenu _gameOverMenu;
 
     [SerializeField] private ZombieCounter _enemyCounter;
     [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
@@ -23,7 +23,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     #region Reanimatoin
     [Header("Reanimation menu settings")]
-    [SerializeField] private GOReanimationMenu _reanimationMenu;
+    [SerializeField] private UIMenu _reanimationMenu;
 
     [Space(5)]
     [SerializeField] private Text _timerText;
@@ -57,7 +57,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
         _reanimations++;
         _player.GetUpgrade(_reanimationByCurrencyHealUpgrade);
 
-        Hide();
+        _mainMenu.DisplayDefault();
     }
 
     public void OnAdReanimation()
@@ -68,7 +68,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
         _player.GetUpgrade(_reanimationByAdHealUpgrade);
         _reanimations++;
 
-        Hide();
+        _mainMenu.DisplayDefault();
          */
     }
 
@@ -88,9 +88,9 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
         EventBus.Unsubscribe(this);
     }
 
-    public override void Initialize(MainMenu mainMenu)
+    public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
-        base.Initialize(mainMenu);
+        base.Initialize(mainMenu, parentMenu);
 
         _reanimations = 0;
 
@@ -110,8 +110,6 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
         _reanimationMenu.Hide(playAnimation);
         _gameOverMenu.Hide(playAnimation);
-
-        Time.timeScale = 1;
     }
 
     public override void Display(bool playAnimation = false)
@@ -120,13 +118,10 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
         _reanimationMenu.Hide();
         _gameOverMenu.Hide();
-
-        Time.timeScale = 0;
     }
 
     public void OnPlayerDie()
     {
-        Time.timeScale = 0;
 
         _mainMenu.Display(this);
 

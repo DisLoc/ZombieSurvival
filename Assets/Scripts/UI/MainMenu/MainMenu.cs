@@ -4,13 +4,13 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
+    [SerializeField] protected bool _isDebug;
 
     [Header("Settings")]
-    [SerializeField] private UIMenu _defaultMenu;
-    [SerializeField] private List<UIMenu> _menus;
+    [SerializeField] protected UIMenu _defaultMenu;
+    [SerializeField] protected List<UIMenu> _menus;
 
-    private void Start()
+    protected virtual void OnEnable()
     {
         foreach (UIMenu menu in _menus)
         {
@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void Display(UIMenu tab)
+    public virtual void Display(UIMenu tab)
     {
         foreach (UIMenu menu in _menus)
         {
@@ -36,6 +36,11 @@ public class MainMenu : MonoBehaviour
 
             else menu.Hide();
         }
+    }
+
+    public void DisplayDefault()
+    {
+        Display(_defaultMenu);
     }
 
     public void OnSettingsClick()

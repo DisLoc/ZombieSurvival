@@ -14,10 +14,14 @@ public abstract class UIMenu : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     protected MainMenu _mainMenu;
+    protected UIMenu _parentMenu;
 
-    public virtual void Initialize(MainMenu mainMenu)
+    public virtual void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         _mainMenu = mainMenu;
+        _parentMenu = parentMenu;
+
+        _animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         _animator.cullingMode = AnimatorCullingMode.CullCompletely;
     }
 
@@ -71,6 +75,16 @@ public abstract class UIMenu : MonoBehaviour
         {
             _button.Disable();
         }
+    }
+
+    public void MainMenuDisplay()
+    {
+        _mainMenu.Display(this);
+    }
+
+    public void MainMenuHide()
+    {
+        _mainMenu.DisplayDefault();
     }
 
     #if UNITY_EDITOR

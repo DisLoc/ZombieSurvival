@@ -21,9 +21,9 @@ public class BattleMenu : UIMenu
 
     private LevelContext _currentLevel;
 
-    public override void Initialize(MainMenu mainMenu)
+    public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
-        base.Initialize(mainMenu);
+        base.Initialize(mainMenu, parentMenu);
 
         LoadLevels();
         UpdatePreview();

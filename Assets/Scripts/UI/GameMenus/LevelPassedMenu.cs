@@ -21,18 +21,16 @@ public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
         EventBus.Unsubscribe(this);
     }
 
-    public override void Initialize(MainMenu mainMenu)
+    public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
-        base.Initialize(mainMenu);
+        base.Initialize(mainMenu, parentMenu);
 
         _totalKilledText.text = "0";
         _goldGainedText.text = "0";
     }
 
     public void OnLevelPassed()
-    {
-        Time.timeScale = 0;
-
+    { 
         _mainMenu.Display(this);
 
         Display(true);
@@ -43,7 +41,6 @@ public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
 
     public void OnContinue()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

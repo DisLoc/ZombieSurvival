@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 1084568168021004665}
   - component: {fileID: 1187904890423059842}
   - component: {fileID: 2511374088383223401}
-  - component: {fileID: 1756728438964378541}
+  - component: {fileID: 3370256049325901432}
   m_Layer: 5
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -379,7 +379,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1756728438964378541
+--- !u!114 &3370256049325901432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -879,7 +879,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 3204561419662214925}
   _button: {fileID: 0}
   _animator: {fileID: 9130568012435189990}
-  _gameOverMenu: {fileID: 1756728438964378541}
+  _gameOverMenu: {fileID: 3370256049325901432}
   _enemyCounter: {fileID: 0}
   _survivalTimeCounter: {fileID: 0}
   _totalKilledText: {fileID: 7648350490809411272}

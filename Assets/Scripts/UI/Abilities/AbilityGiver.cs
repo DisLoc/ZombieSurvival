@@ -8,7 +8,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
-    [SerializeField] private GameObject _menuGO;
+    [SerializeField] private UIMenu _menu;
 
     [Space(5)]
     [SerializeField] private RectTransform _abilityUIParent;
@@ -41,8 +41,6 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
         InitializeAbilitiesUI();
 
-        _menuGO.SetActive(false);
-
         _levelUps = 0;
         _onChoice = false;
     }
@@ -70,9 +68,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
     /// </summary>
     public void SetAbilities()
     {
-        _menuGO.SetActive(true);
-
-        Time.timeScale = 0;
+        _menu.MainMenuDisplay();
 
         InitializeAbilitiesUI();
 
@@ -87,6 +83,7 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
                 Time.timeScale = 1;
                 _onChoice = false;
 
+                _menu.MainMenuHide();
                 return;
             }
 
@@ -253,12 +250,10 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
         else
         {
-            _menuGO.SetActive(false);
+            _menu.MainMenuHide(); ;
 
             _levelUps = 0;
             _onChoice = false;
-
-            Time.timeScale = 1;
         }
     }
 

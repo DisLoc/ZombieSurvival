@@ -15,7 +15,7 @@ public sealed class PauseMenu : UIMenu
 
     public void OnContinue()
     {
-        Hide(true);
+        _mainMenu.DisplayDefault();
     }
 
     public void OnExit()

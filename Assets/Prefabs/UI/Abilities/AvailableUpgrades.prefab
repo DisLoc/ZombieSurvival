@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6500650268767465969}
   - component: {fileID: 3357445473480235104}
-  - component: {fileID: 7602904058877866928}
+  - component: {fileID: -395585888109052618}
+  - component: {fileID: -226187166972707145}
+  - component: {fileID: 8661644919535560015}
   - component: {fileID: 4949642981656056744}
   m_Layer: 2
   m_Name: AvailableUpgrades
@@ -48,7 +50,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009008013591120522}
   m_CullTransparentMesh: 1
---- !u!114 &7602904058877866928
+--- !u!225 &-395585888109052618
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009008013591120522}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &-226187166972707145
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009008013591120522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e8ee5def9ba359499207151530dba6c, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8661644919535560015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,27 +91,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009008013591120522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 038e20416d9288347882c6bdc4ef2f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  _isDebug: 0
+  _canvasGroup: {fileID: -395585888109052618}
+  _button: {fileID: 0}
+  _animator: {fileID: -226187166972707145}
 --- !u!114 &4949642981656056744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _menuGO: {fileID: 5896450654144838833}
+  _menu: {fileID: 8661644919535560015}
   _abilityUIParent: {fileID: 3505353006881403423}
   _abilityUIPrefab: {fileID: 513647843441780316, guid: a40ced8ead63f91459255fad402d4454, type: 3}
   _availableAbilities: {fileID: 11400000, guid: 11f280753d047934da207201617365ea, type: 2}
