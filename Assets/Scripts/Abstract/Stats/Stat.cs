@@ -45,11 +45,7 @@ public abstract class Stat : IStat, IUpgradeable
     {
         _statData = statData;
 
-        _upgrades = new UpgradeList();
-
-        _value = _statData.BaseValue;
-        _minValue = _statData.MinValue;
-        _maxValue = _statData.MaxValue;
+        Initialize();
 
         if (upgradeList != null)
         {
@@ -81,9 +77,13 @@ public abstract class Stat : IStat, IUpgradeable
     /// <returns>Returns true if one or more UpgradeData was added</returns>
     public virtual bool Upgrade(Upgrade upgrade)
     {
+        if (upgrade == null) return false;
+
         if (_isDebug) Debug.Log(_statData.name + " try get upgrade: " + upgrade.name);
 
         int upgrades = 0;
+
+        if (_upgrades == null) _upgrades = new UpgradeList();
 
         foreach(UpgradeData data in upgrade.Upgrades)
         {
@@ -114,10 +114,14 @@ public abstract class Stat : IStat, IUpgradeable
     /// <returns>Returns true if was dispelled one or more UpgradeData</returns>
     public virtual bool DispelUpgrade(Upgrade upgrade)
     {
+        if (upgrade == null) return false;
+
         if (_isDebug) Debug.Log(_statData.name + " try dispel upgrade: " + upgrade.name);
 
         int revealedUpgrades = 0;
-
+        
+        if (_upgrades == null) _upgrades = new UpgradeList();
+        
         foreach (UpgradeData data in upgrade.Upgrades)
         {
             if (data == null) continue;

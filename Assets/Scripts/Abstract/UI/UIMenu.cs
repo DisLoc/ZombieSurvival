@@ -32,13 +32,13 @@ public abstract class UIMenu : MonoBehaviour
         }
         else
         {
-            if (_isDebug) Debug.Log("Just display: " + name);
+            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
 
             _canvasGroup.alpha = 1;
             _canvasGroup.blocksRaycasts = true;
             _canvasGroup.interactable = true;
 
-            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
+            if (_isDebug) Debug.Log("Just display: " + name);
         }
 
         if (_button != null)
@@ -58,13 +58,13 @@ public abstract class UIMenu : MonoBehaviour
         }
         else
         {
-            if (_isDebug) Debug.Log("Just hide: " + name);
+            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
 
             _canvasGroup.alpha = 0;
             _canvasGroup.blocksRaycasts = false;
             _canvasGroup.interactable = false;
 
-            _animator.cullingMode = AnimatorCullingMode.CullCompletely;
+            if (_isDebug) Debug.Log("Just hide: " + name);
         }
 
         if (_button != null)

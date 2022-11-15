@@ -1948,7 +1948,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6304650402917817011, guid: e22e89c6a82e71c49bc1a63bb26155cc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8978251ee11067a40ac4bc036e538732, type: 3}
+    - target: {fileID: 6304650402917817011, guid: e22e89c6a82e71c49bc1a63bb26155cc, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304650402917817011, guid: e22e89c6a82e71c49bc1a63bb26155cc, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6835764422506880092, guid: e22e89c6a82e71c49bc1a63bb26155cc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e22e89c6a82e71c49bc1a63bb26155cc, type: 3}
 --- !u!224 &400759718 stripped
 RectTransform:

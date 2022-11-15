@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 using Zenject;
 
 using static UnityEngine.Mathf;
@@ -117,7 +118,7 @@ public sealed class EliteZombiesSpawner : EnemySpawner
         return new Vector3
             (
                 Cos(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.x,
-                playerPos.y,
+                _levelContext.LevelBuilder.GridHeight + _spawner.Prefab.Collider.height * _spawner.Prefab.transform.localScale.y * 0.5f,
                 Sin(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.z
             );
     }

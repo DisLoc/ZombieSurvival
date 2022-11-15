@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Gun
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: de14b79914bf9984686a712ec492587a, type: 3}
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 1142227134379360519, guid: 81315c25cd2b06d4285a10d363f46bfb, type: 3}
   _targetDetector: {fileID: 8948671830434654073}

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Cooldown reduction
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 398d8ee7241c21c4e8fec10b258db7bf, type: 3}
   _upgradeData: {fileID: 11400000, guid: 0975d56ae8e40ed438ea84e4e8805415, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 0487fc65071605e4ca4a24bba204d4fd, type: 2}

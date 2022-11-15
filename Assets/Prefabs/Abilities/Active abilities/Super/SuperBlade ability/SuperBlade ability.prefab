@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Blade
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: d8e8caa57bb3dbe46a044a6f7c65bf62, type: 3}
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 4082003063471532527}

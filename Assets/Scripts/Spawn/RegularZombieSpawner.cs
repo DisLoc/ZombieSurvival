@@ -210,7 +210,12 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
 
         if (spawner == null) return;
 
-        Enemy spawnedEnemy = spawner.Spawn(position);
+        Enemy spawnedEnemy = spawner.Spawn(new Vector3
+            (
+                position.x, 
+                _levelContext.LevelBuilder.GridHeight + spawner.Prefab.Collider.height * spawner.Prefab.transform.localScale.y * 0.5f,
+                position.z
+            ));
 
         if (spawnedEnemy != null)
         {

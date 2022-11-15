@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Shotgun
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 766aae507a8424b449c47103e1c610c1, type: 3}
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 5616406366014195109}

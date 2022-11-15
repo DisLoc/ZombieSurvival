@@ -3,12 +3,14 @@ using UnityEngine;
 public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 {
     [Header("Enemy settings")]
+    [SerializeField] protected CapsuleCollider _selfCollider;
     [SerializeField] protected bool _hasExpReward = true;
     [SerializeField] protected CharacterStats _stats;
 
     protected Player _player; 
     protected MonoPool<Enemy> _pool;
 
+    public CapsuleCollider Collider => _selfCollider;
     public bool HasExpReward => _hasExpReward;
     public override CharacterStats Stats => _stats;
 
@@ -52,7 +54,12 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     {
         base.OnFixedUpdate();
 
-        Move(_player.transform.position - transform.position);
+        Move(new Vector3 
+            (
+                _player.transform.position.x - transform.position.x,
+                0f,
+                _player.transform.position.z - transform.position.z
+            ));
 
         _hpCanvas?.OnFixedUpdate();
         

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Shuriken
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: d2fa8aa0e4983e641a3ce254a8920a34, type: 3}
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 8300827102759287615}

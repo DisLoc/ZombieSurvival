@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Max health points
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: dafe0f9bef3645347a46229a2ec93f3d, type: 3}
   _upgradeData: {fileID: 11400000, guid: 4497f2957b4af364eb01fda21df0ac99, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: dc4802a5b15258449b4413c8cff539ed, type: 2}

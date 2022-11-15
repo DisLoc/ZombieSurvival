@@ -62,7 +62,7 @@ Rigidbody:
   m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -85,6 +85,8 @@ MonoBehaviour:
   _hpCanvas: {fileID: 279434253097670373}
   _renderer: {fileID: 8078037489742521134}
   _defaultViewSide: {x: 1, y: 0, z: 0}
+  _selfCollider: {fileID: 2817904043961400771}
+  _hasExpReward: 1
   _stats:
     _baseWeapon: {fileID: 7982200257602912286}
     _health:

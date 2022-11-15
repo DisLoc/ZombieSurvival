@@ -110,7 +110,13 @@ public sealed class BossSpawner : EnemySpawner
 
     protected override void Spawn(Vector3 position)
     {
-        Enemy boss = _spawner.Spawn(position + Vector3.forward * _spawnDeltaDistance + Vector3.up);
+        Enemy boss = _spawner.Spawn(new Vector3
+            (
+                position.x,
+                _levelContext.LevelBuilder.GridHeight + _spawner.Prefab.Collider.height * _spawner.Prefab.transform.localScale.y * 0.5f,
+                position.z + _spawnDeltaDistance
+            ));
+
         boss.Initialize(_player, _spawner);
         (boss as BossZombie).InitializeSpawner(this);
     }

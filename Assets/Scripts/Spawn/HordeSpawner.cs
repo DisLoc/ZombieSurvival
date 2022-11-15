@@ -97,7 +97,12 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
 
     protected override void Spawn(Vector3 position)
     {
-        Enemy spawnedEnemy = _spawner.Spawn(position);
+        Enemy spawnedEnemy = _spawner.Spawn(new Vector3
+            (
+                position.x,
+                _levelContext.LevelBuilder.GridHeight + _spawner.Prefab.Collider.height * _spawner.Prefab.transform.localScale.y * 0.5f,
+                position.z
+            ));
 
         if (spawnedEnemy != null)
         {

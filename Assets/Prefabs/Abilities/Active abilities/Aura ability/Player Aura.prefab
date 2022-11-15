@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Aura
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 8003cb6ff704e5c458136a4df33edc4c, type: 3}
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 7105945157763679919, guid: 2484bfe7343253449b7370d0d0750e7c, type: 3}
   _targetDetector: {fileID: 1639761649709825330}

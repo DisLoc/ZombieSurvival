@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Projectile speed
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 43b32da1fd2da2a4d8d859aac26ee656, type: 3}
   _upgradeData: {fileID: 11400000, guid: 2f766c9559e2df64ab343e482467ec11, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 9dde714e8325a804fac63c12fc61a11b, type: 2}
