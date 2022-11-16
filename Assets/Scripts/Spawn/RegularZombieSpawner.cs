@@ -18,12 +18,7 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
 
     private List<ObjectSpawner<Enemy>> _prevSpawners;
     private List<ObjectSpawner<Enemy>> _spawners;
-    private ChanceCombiner<Enemy> _combiner;
-
-    #region Inject
-    [Inject] private Player _player;
-    [Inject] private LevelContext _levelContext;
-    #endregion
+    private ChanceCombiner<Enemy> _combiner;    
 
     protected override void OnEnable()
     {

@@ -8,7 +8,7 @@ public class GameInitializer : MonoBehaviour
 
     [Header("Settings")]
     [Inject] private Player _player;
-
+    
     private void Start()
     {
         _player.Initialize();

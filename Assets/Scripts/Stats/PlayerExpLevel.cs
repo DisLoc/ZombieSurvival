@@ -1,16 +1,17 @@
 using UnityEngine;
+using Zenject;
 
 [System.Serializable]
 public class PlayerExpLevel : Stat
 {
     [SerializeField] protected Expirience _exp;
-    [SerializeField] protected PlayerExpBar _expBar;
 
     [Header("LevelUp settings")]
     [SerializeField] protected int _baseExpForLevelUp;
     [Tooltip("ExpForLevel = BaseExpForLevel * LevelMultiplier * CurrentLevel")]
     [SerializeField] protected float _levelMultiplier;
-
+    [SerializeField] protected PlayerExpBar _expBar;
+    
     public Expirience Exp => _exp;
     /// <summary>
     /// Expirience value required for level up

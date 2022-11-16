@@ -15,10 +15,6 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler, IBossEventEn
     private int _spawned;
     private bool _onBossEvent;
 
-    [Inject] private Player _player;
-    [Inject] private LevelContext _levelContext;
-
-
     protected override void OnEnable()
     {
         base.OnEnable();

@@ -569,6 +569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gems
       objectReference: {fileID: 0}
+    - target: {fileID: 7046120044611577408, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.5000076
+      objectReference: {fileID: 0}
     - target: {fileID: 7922046806800672074, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

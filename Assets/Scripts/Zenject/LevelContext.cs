@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 [CreateAssetMenu(menuName = "ZombieSurvival/Level/LevelContext", fileName = "New level context")]
 public sealed class LevelContext : ScriptableObject
@@ -44,7 +45,6 @@ public sealed class LevelContext : ScriptableObject
     public Reward LevelReward => _levelReward;
 
     public LevelBuilder LevelBuilder { get; private set; }
-    public GroundGrid LevelEnvironment => _levelEnvironment;
 
     public BreakpointList<CrystalBreakpoint> CrystalSpawnBreakpoints => _crystalSpawnBreakpoints;
 
@@ -59,10 +59,10 @@ public sealed class LevelContext : ScriptableObject
     public List<Upgrade> PlayerUpgrades => _playerUpgrades;
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
+
     public void Initialize(LevelBuilder builderPrefab)
     {
         LevelBuilder = Instantiate(builderPrefab);
-
         LevelBuilder.Construct(_levelEnvironment);
     }
 }

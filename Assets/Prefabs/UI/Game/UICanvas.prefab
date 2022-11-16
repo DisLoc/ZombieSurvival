@@ -137,6 +137,14 @@ PrefabInstance:
       propertyPath: _isDebug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3370256049325901432, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
+      propertyPath: _enemyCounter
+      value: 
+      objectReference: {fileID: 687271268739993901}
+    - target: {fileID: 3370256049325901432, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
+      propertyPath: _survivalTimeCounter
+      value: 
+      objectReference: {fileID: 9167745375494244065}
     - target: {fileID: 3376389753632115635, guid: 83f26cd898aaa6848a041dbf455e941f, type: 3}
       propertyPath: _isDebug
       value: 0
@@ -590,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6500650268767465969, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.29681256
+      value: 0.303
       objectReference: {fileID: 0}
     - target: {fileID: 6500650268767465969, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
       propertyPath: m_SizeDelta.x
@@ -756,6 +764,14 @@ PrefabInstance:
     - target: {fileID: 2799156285845921141, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991227800977929637, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991227800977929637, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 7573982353472203717, guid: 3ffb98dda3cad60469a479d6e5b2da83, type: 3}
       propertyPath: m_Pivot.x

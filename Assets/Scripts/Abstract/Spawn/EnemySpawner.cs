@@ -1,9 +1,18 @@
 using UnityEngine;
+using Zenject;
 
 public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
 {
     [Tooltip("Means distance between player and spawned objects")]
     [SerializeField] protected float _maxDistanceForRespawn;
+
+    [InjectOptional] protected Player _player;
+    [Inject] protected LevelContext _levelContext;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();;    
+    }
 
     public virtual void OnUpdate() { }
 

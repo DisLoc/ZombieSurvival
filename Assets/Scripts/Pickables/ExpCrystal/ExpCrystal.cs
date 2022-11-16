@@ -91,8 +91,4 @@ public class ExpCrystal : PickableObject, IPoolable
             AddExp();
         }
     }
-    /// <summary>
-    /// Zenject factory for auto injection fields
-    /// </summary>
-    public class Factory : PlaceholderFactory<ExpCrystal> { }
 }

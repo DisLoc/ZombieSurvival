@@ -15,13 +15,6 @@ public class Player : CharacterBase
     [Header("Stats settings")]
     [SerializeField] protected PlayerStats _stats;
 
-    [Header("Animation settings")]
-    [SerializeField] protected Animator _animator;
-    /// <summary>
-    /// Current animation bool
-    /// </summary>
-    [HideInInspector] public bool isMoving;
-
     [Header("Inventory settings")]
     [SerializeField] protected AbilityInventory _abilityInventory;
     [SerializeField] protected CurrencyInventory _coinInventory;
@@ -58,11 +51,6 @@ public class Player : CharacterBase
     private void Update()
     {
         Attack();
-
-        if (_animator.gameObject.activeSelf)
-        {
-            _animator.SetBool("IsMoving", isMoving);
-        }
     }
 
     private void FixedUpdate()
@@ -227,4 +215,6 @@ public class Player : CharacterBase
 
         EventBus.Publish<IPlayerDieHandler>(handler => handler.OnPlayerDie());
     }
+
+    public class Factory: PlaceholderFactory<Player> { }
 }

@@ -15,9 +15,6 @@ public sealed class BossSpawner : EnemySpawner
 
     private Upgrade _currentUpgrade;
 
-    [Inject] private Player _player;
-    [Inject] private LevelContext _levelContext;
-
     protected override void OnEnable()
     {
         base.OnEnable();

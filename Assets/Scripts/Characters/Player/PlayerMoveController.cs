@@ -45,8 +45,6 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
                         );
 
                     _player.Move(moveDirection);
-
-                    _player.isMoving = true;
                 }
                 // Set new touch position
                 else
@@ -58,8 +56,6 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
             else // Reset flags
             {
                 _onTouch = false;
-
-                _player.isMoving = false;
             }
         }
         else
@@ -68,22 +64,18 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
             if (Input.GetKey(KeyCode.W))
             {
                 _player.Move(Vector3.forward);
-                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 _player.Move(Vector3.back);
-                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 _player.Move(Vector3.left);
-                _player.isMoving = true;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 _player.Move(Vector3.right);
-                _player.isMoving = true;
             }
             #endregion
 
@@ -102,8 +94,6 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
                     if (_isDebug) Debug.Log(moveDirection);
 
                     _player.Move(moveDirection);
-
-                    _player.isMoving = true;
                 }
                 else
                 {
@@ -116,8 +106,6 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
             else
             {
                 _onTouch = false;
-
-                _player.isMoving = false;
             }
             #endregion
         }

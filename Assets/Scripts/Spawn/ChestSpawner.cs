@@ -13,6 +13,7 @@ public sealed class ChestSpawner : Spawner, IGameStartHandler
     private bool _onGame;
 
     [Inject] private Player _player;
+    [Inject] private LevelContext _levelContext;
 
     public void OnGameStart()
     {

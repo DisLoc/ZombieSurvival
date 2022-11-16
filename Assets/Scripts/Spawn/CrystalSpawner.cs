@@ -10,8 +10,8 @@ public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
     private ChanceCombiner<CrystalParam> _spawnCombiner;
     private BreakpointList<CrystalBreakpoint> _breakpoints;
 
-    [Inject] private LevelContext _levelContext;
     [Inject] private Player _player;
+    [Inject] private LevelContext _levelContext;
 
     protected override void OnEnable()
     {

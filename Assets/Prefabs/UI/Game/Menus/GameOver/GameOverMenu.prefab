@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5057270575562388859}
         m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
-        m_MethodName: OnClose
+        m_MethodName: OnCloseReanimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -266,8 +266,20 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2165760723574251768}
   _button: {fileID: 0}
   _animator: {fileID: 5878678008962859878}
-  _reanimationMaxTimer: 10
   _timerText: {fileID: 4247387911614672272}
+  _reanimationMaxTimer: 10
+  _reanimationCurrencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+  _reanimationByCurrencyCost: 100
+  _reanimationByAdHealUpgrade: {fileID: 11400000, guid: 3a2b0d3b8ea830947b3c6ad6859a9c25, type: 2}
+  _reanimationByAdHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
+  _reanimationByAdHeartImage: {fileID: 814699313076122495}
+  _reanimationByAdHealthText: {fileID: 1078407279243333708}
+  _reanimationByCurrencyHealUpgrade: {fileID: 11400000, guid: 716a4fa9397aab443a7ff77557ecfa1c, type: 2}
+  _reanimationByCurrencyHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
+  _reanimationByCurrencyHeartImage: {fileID: 8138786789043148255}
+  _reanimationByCurrencyHealthText: {fileID: 8452102525126555372}
+  _reanimationByCurrencyCostText: {fileID: 4984893122254824445}
+  _reanimationByCurrencyIcon: {fileID: 5448483725539916657}
 --- !u!1 &1543187719854713486
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +409,10 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1187904890423059842}
   _button: {fileID: 0}
   _animator: {fileID: 2511374088383223401}
+  _enemyCounter: {fileID: 0}
+  _survivalTimeCounter: {fileID: 0}
+  _totalKilledText: {fileID: 7648350490809411272}
+  _survivalTimeText: {fileID: 2046891284469089087}
 --- !u!1 &1660234346526479000
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,23 +898,7 @@ MonoBehaviour:
   _button: {fileID: 0}
   _animator: {fileID: 9130568012435189990}
   _gameOverMenu: {fileID: 3370256049325901432}
-  _enemyCounter: {fileID: 0}
-  _survivalTimeCounter: {fileID: 0}
-  _totalKilledText: {fileID: 7648350490809411272}
-  _survivalTimeText: {fileID: 2046891284469089087}
   _reanimationMenu: {fileID: 3376389753632115635}
-  _reanimationByAdHealUpgrade: {fileID: 11400000, guid: 3a2b0d3b8ea830947b3c6ad6859a9c25, type: 2}
-  _reanimationByAdHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
-  _reanimationByAdHeartImage: {fileID: 814699313076122495}
-  _reanimationByAdHealthText: {fileID: 1078407279243333708}
-  _reanimationByCurrencyHealUpgrade: {fileID: 11400000, guid: 716a4fa9397aab443a7ff77557ecfa1c, type: 2}
-  _reanimationByCurrencyHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
-  _reanimationByCurrencyHeartImage: {fileID: 8138786789043148255}
-  _reanimationByCurrencyHealthText: {fileID: 8452102525126555372}
-  _reanimationByCurrencyCostText: {fileID: 4984893122254824445}
-  _reanimationByCurrencyIcon: {fileID: 5448483725539916657}
-  _reanimationCurrencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
-  _reanimationByCurrencyCost: 100
 --- !u!1 &4860060045734644389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1481,7 @@ PrefabInstance:
       objectReference: {fileID: 5057270575562388859}
     - target: {fileID: 6005537395883585284, guid: 2858a70991953874d9cea2ade2a21b3c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnContinue
+      value: OnContinueGameOver
       objectReference: {fileID: 0}
     - target: {fileID: 6005537395883585284, guid: 2858a70991953874d9cea2ade2a21b3c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
