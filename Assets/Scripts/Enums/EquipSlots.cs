@@ -1,9 +1,9 @@
 public enum EquipSlots
 {
-    Head,
-    Body,
-    Arms,
-    LeftHand,
-    RightHand,
-    Boots
+    Helmet,
+    Armor,
+    Boots,
+    Weapon,
+    Hands,
+    Belt
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Zenject;
 
 public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
@@ -94,6 +93,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     public void OnContinueGameOver()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
     #endregion

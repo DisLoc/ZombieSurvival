@@ -3,5 +3,6 @@
     Common,
     Rare,
     Epic,
-    Legendary
+    Legendary,
+    SSR
 }

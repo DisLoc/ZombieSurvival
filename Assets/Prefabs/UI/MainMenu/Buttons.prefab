@@ -73,6 +73,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3070860801062810806}
     m_Modifications:
+    - target: {fileID: 1953883293088061261, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7139336150971846478, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
       propertyPath: m_Text
       value: Camp
@@ -195,6 +199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3070860801062810806}
     m_Modifications:
+    - target: {fileID: 1953883293088061261, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8668548604360154232, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -313,6 +321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3070860801062810806}
     m_Modifications:
+    - target: {fileID: 1953883293088061261, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7139336150971846478, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
       propertyPath: m_Text
       value: Achievements
@@ -435,6 +447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3070860801062810806}
     m_Modifications:
+    - target: {fileID: 1953883293088061261, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7139336150971846478, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
       propertyPath: m_Text
       value: Inventory
@@ -557,6 +573,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3070860801062810806}
     m_Modifications:
+    - target: {fileID: 1953883293088061261, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3481954681141137242, guid: 60d20e9a3a80adf43895c8dc7f5fb60c, type: 3}
       propertyPath: _defaultPosition.x
       value: -422.63995

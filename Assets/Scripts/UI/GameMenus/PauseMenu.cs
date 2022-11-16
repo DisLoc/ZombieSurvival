@@ -20,6 +20,7 @@ public sealed class PauseMenu : UIMenu
 
     public void OnExit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }
