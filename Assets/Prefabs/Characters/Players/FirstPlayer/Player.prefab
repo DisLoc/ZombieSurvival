@@ -418,6 +418,15 @@ MonoBehaviour:
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: b6726b3e8e4dab847b54276521665750, type: 2}
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 69f7fe66e416f9f4ea3345501db17a5e, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 0}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 0}
     _expLevel:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 181c1ebad5cadab42a102fb4113b5568, type: 2}
@@ -427,9 +436,9 @@ MonoBehaviour:
           _minValue: 0
           _maxValue: 0
           _maxValueIsInfinite: 1
-      _expBar: {fileID: 0}
       _baseExpForLevelUp: 500
       _levelMultiplier: 0.5
+      _expBar: {fileID: 0}
     _pickUpRange:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 231373b3ec40f5d44bb254f56008db8e, type: 2}
@@ -445,8 +454,6 @@ MonoBehaviour:
     _abilitiesRerollCount:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8794446aa052ce94e9965f3fb6fb3c52, type: 2}
-  _animator: {fileID: 0}
-  isMoving: 0
   _abilityInventory:
     _maxActiveAbilitiesCount: 5
     _maxPassiveAbilitiesCount: 5

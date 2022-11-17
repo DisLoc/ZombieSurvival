@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class EquipmentInventory
 {
-    private Dictionary<EquipSlots, Equipment> _equipment;
+    private Dictionary<EquipSlot, Equipment> _equipment;
 
     public EquipmentInventory()
     {
-        _equipment = new Dictionary<EquipSlots, Equipment>();
+        _equipment = new Dictionary<EquipSlot, Equipment>();
     }
     
     public EquipmentInventory(List<Equipment> equipment)
     {
-        _equipment = new Dictionary<EquipSlots, Equipment>();
+        _equipment = new Dictionary<EquipSlot, Equipment>();
 
         foreach (var item in equipment)
         {

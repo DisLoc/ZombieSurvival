@@ -1,4 +1,4 @@
-public enum EquipSlots
+public enum EquipSlot
 {
     Helmet,
     Armor,

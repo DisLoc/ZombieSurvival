@@ -6,8 +6,10 @@ public class Equipment : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Equipment settings")]
-    [SerializeField] private EquipSlots _equipSlot;
+    [SerializeField] private Sprite _icon;
+    [SerializeField] private EquipSlot _equipSlot;
     [SerializeField] private EquipRarity _rarity;
+    [SerializeField] private UpgradedStat _upgradingStat;
     [SerializeField] private Upgrade _equipUpgrade;
 
     [Header("Rarity settings")]
@@ -15,8 +17,10 @@ public class Equipment : MonoBehaviour
     [SerializeField] private Upgrade _rarityUpgrade;
     [SerializeField] private Equipment _previousRarityEquipment;
 
-    public EquipSlots EquipSlot => _equipSlot;
+    public Sprite Icon => _icon;
+    public EquipSlot EquipSlot => _equipSlot;
     public EquipRarity EquipRarity => _rarity;
+    public UpgradedStat UpgradingStat => _upgradingStat;
 
     public Level Level => _level;
 

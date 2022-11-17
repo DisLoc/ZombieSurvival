@@ -137,6 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c70d4e267d7064bb8770eb4135209a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDebug: 0
+  _nullEquipmentBackground: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+  _equipmentBackground: {fileID: 6210527918805320780}
+  _equipmentIcon: {fileID: 5458055786022710729}
+  _equipmentTypeIcon: {fileID: 3915830016018213270}
+  _equipmentLevel: {fileID: 6600619705991614171}
 --- !u!1 &4020365308127110326
 GameObject:
   m_ObjectHideFlags: 0

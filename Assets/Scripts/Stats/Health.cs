@@ -9,6 +9,7 @@ public class Health : Stat
     /// Means MaxValue of this stat
     /// </summary>
     public int MaxHP => (int)_maxHP.Value;
+    public MaxHP MaxHealthPoints => _maxHP;
 
     public override void Initialize()
     {
