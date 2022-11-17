@@ -1190,6 +1190,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+    - target: {fileID: 1004279293146979044, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1004279293146979047, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
