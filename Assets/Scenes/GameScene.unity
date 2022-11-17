@@ -554,6 +554,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379060781126340830, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8773999759855668602, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

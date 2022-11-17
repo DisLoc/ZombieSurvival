@@ -11,6 +11,7 @@ public sealed class AbilityInventory
 
     private List<Weapon> _weapons;
     private List<ProjectileWeapon> _projectileWeapons;
+    private List<PassiveAbility> _passiveAbilities;
     private List<AbilityContainer> _abilities;
 
     /// <summary>
@@ -21,6 +22,7 @@ public sealed class AbilityInventory
     /// Projectile weapons that player getted in game
     /// </summary>
     public List<ProjectileWeapon> ProjectileWeapons => _projectileWeapons;
+    public List<PassiveAbility> PassiveAbilities => _passiveAbilities;
     /// <summary>
     /// All abilities player getted in game
     /// </summary>
@@ -46,6 +48,7 @@ public sealed class AbilityInventory
     {
         _weapons = new List<Weapon>();
         _projectileWeapons = new List<ProjectileWeapon>();
+        _passiveAbilities = new List<PassiveAbility>();
         _abilities = new List<AbilityContainer>();
     }
 
@@ -82,6 +85,11 @@ public sealed class AbilityInventory
             }
         }
 
+        if (newAbility as PassiveAbility != null)
+        {
+            _passiveAbilities.Add(newAbility as PassiveAbility);
+        }
+
         return newAbility;
     }
 
@@ -103,6 +111,11 @@ public sealed class AbilityInventory
             if (removingAbility as ProjectileWeapon != null)
             {
                 _projectileWeapons.Remove(removingAbility as ProjectileWeapon);
+            }
+
+            if (removingAbility as PassiveAbility != null)
+            {
+                _passiveAbilities.Remove(removingAbility as PassiveAbility);
             }
 
             bool removed = _abilities.Remove(removingAbility);
