@@ -10,7 +10,7 @@ public class Equipment : MonoBehaviour
     [SerializeField] private EquipSlot _equipSlot;
     [SerializeField] private EquipRarity _rarity;
     [SerializeField] private UpgradedStat _upgradingStat;
-    [SerializeField] private Upgrade _equipUpgrade;
+    [SerializeField] private EquipmentUpgrades _equipUpgrade;
 
     [Header("Rarity settings")]
     [SerializeField] private Level _level;
@@ -28,11 +28,12 @@ public class Equipment : MonoBehaviour
     {
         get
         {
-            if (_previousRarityEquipment != null)
-            {
-                return _rarityUpgrade + _equipUpgrade + _previousRarityEquipment.EquipUpgrade;
-            }
-            else return _rarityUpgrade + _equipUpgrade;
+            return null;   
         }
+    }
+
+    public void Initialize()
+    {
+        _level.Initialize();
     }
 }

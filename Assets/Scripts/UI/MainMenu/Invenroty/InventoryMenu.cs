@@ -17,15 +17,30 @@ public sealed class InventoryMenu : UIMenu
 
     [SerializeField] private Player _player;
 
+    [SerializeField] private List<Equipment> _baseEquipment;
+
+    private EquipmentInventory _equipmentInventory;
+
+    public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
+
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         base.Initialize(mainMenu, parentMenu);
+
+        _equipmentInventory = new EquipmentInventory(_baseEquipment);
 
         _upgradeMenu.Initialize(mainMenu, this);
 
         foreach(EquipmentSlot slot in _slots)
         {
             slot.Initialize(_equipmentTypesData);
+
+            Equipment equipment = _equipmentInventory[slot.ValidSlot];
+
+            if (equipment != null)
+            {
+                slot.SetSlot(equipment);
+            }
         }
     }
 

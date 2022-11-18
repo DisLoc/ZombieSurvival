@@ -20,11 +20,25 @@ public class EquipmentInventory
         }
     }
 
+    public Equipment this[EquipSlot slot]
+    {
+        get
+        {
+            if (_equipment.ContainsKey(slot))
+            {
+                return _equipment[slot];
+            }
+            else return null;
+        }
+    }
+
     public bool Add(Equipment equipment)
     {
         if (!_equipment.ContainsKey(equipment.EquipSlot) || (_equipment.ContainsKey(equipment.EquipSlot) && _equipment[equipment.EquipSlot] != null))
         {
+            equipment.Initialize();
             _equipment.Add(equipment.EquipSlot, equipment);
+
             return true;
         }
 

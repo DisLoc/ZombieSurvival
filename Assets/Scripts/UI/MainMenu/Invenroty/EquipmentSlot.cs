@@ -7,6 +7,7 @@ public class EquipmentSlot : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
+    [SerializeField] private EquipSlot _validSlot;
     [SerializeField] private Sprite _nullEquipmentBackground;
 
     [SerializeField] private Image _equipmentBackground;
@@ -17,6 +18,7 @@ public class EquipmentSlot : MonoBehaviour
     private Equipment _equipment;
     private EquipmentTypesData _equipmentTypesData;
 
+    public EquipSlot ValidSlot => _validSlot;
     public Equipment Equipment => _equipment;
 
     public void Initialize(EquipmentTypesData typesData, Equipment equipment = null)
@@ -64,7 +66,7 @@ public class EquipmentSlot : MonoBehaviour
 
             _equipmentIcon.sprite = _equipment.Icon;
             _equipmentTypeIcon.sprite = _equipmentTypesData[_equipment.EquipSlot].SlotIcon;
-            _equipmentLevel.text = ((int)_equipment.Level.Value).ToString();
+            _equipmentLevel.text = "LVL " + ((int)_equipment.Level.Value).ToString();
         }
     }
 }
