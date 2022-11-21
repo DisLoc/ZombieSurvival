@@ -8,5 +8,5 @@ public sealed class ObjectChanceSpawn<TObject> where TObject : class
 
     public TObject Object => _object;
     public Chance SpawnChance => _spawnChance;
-    public bool ChanceIsTrue => _spawnChance.Probability == 1f;
+    public bool ChanceIsTrue => _spawnChance.Probability == 1;
 }

@@ -43,7 +43,20 @@ public sealed class BossSpawner : EnemySpawner
 
         for (int i = 0; i < _spawner.SpawnCount; i++)
         {
-            _spawner.SpawnedObjects[i]?.OnFixedUpdate();
+            if (_spawner.SpawnedObjects[i] != null)
+            {
+                _spawner.SpawnedObjects[i]?.OnFixedUpdate();
+
+                Vector3 moveDirection = new Vector3
+                    (
+                        _player.transform.position.x - _spawner.SpawnedObjects[i].transform.position.x,
+                        0f,
+                        _player.transform.position.z - _spawner.SpawnedObjects[i].transform.position.z
+                    );
+
+                _spawner.SpawnedObjects[i]?.Move(moveDirection);
+            }
+            else continue;
         }
 
         _spawner.SpawnedObjects.Cleanup();

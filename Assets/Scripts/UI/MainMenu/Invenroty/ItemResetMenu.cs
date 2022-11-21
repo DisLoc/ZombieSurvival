@@ -5,9 +5,16 @@ public sealed class ItemResetMenu : UIMenu
 {
     [Header("Item reset menu settings")]
     [SerializeField] private Text _mainButtonText;
+    [SerializeField] private Button _mainButton;
 
     [Space(5)]
-    [SerializeField] private EquipmentSlot _currentEquipmentIcon;
+    [SerializeField] private GameObject _arrow;
+    [SerializeField] private GameObject _returnedMaterials;
+    [SerializeField] private Text _cantDowngradeTooltipText;   
+    [SerializeField] private Text _cantResetTooltipText;   
+
+    [Space(5)]
+    [SerializeField] private EquipmentSlot _currentEquipmentSlot;
 
     [Space(5)]
     [SerializeField] private Image _resultEquipmentBackground;
@@ -33,6 +40,13 @@ public sealed class ItemResetMenu : UIMenu
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         base.Initialize(mainMenu, parentMenu);
+        
+        if (_parentMenu != null)
+        {
+            _currentEquipmentSlot.Initialize((_parentMenu as ItemUpgradeMenu).EquipmentTypesData);
+        }
+        else if (_isDebug) Debug.Log("Missing InventoryMenu!");
+        
 
         _currentButtonState = MainButtonStates.LevelReset;
         SetButtonText();
@@ -41,6 +55,10 @@ public sealed class ItemResetMenu : UIMenu
     public void SetEquipment(Equipment equipment)
     {
         _equipment = equipment;
+        _currentEquipmentSlot.SetSlot(equipment);
+
+        _currentButtonState = MainButtonStates.LevelReset;
+        SetButtonText();
     }
 
     public void OnCloseMenu()
@@ -95,13 +113,53 @@ public sealed class ItemResetMenu : UIMenu
 
     private void UpdateResetingData()
     {
+        if (_equipment == null) return;
+
         if (_currentButtonState.Equals(MainButtonStates.LevelReset))
         {
+            if ((int)_equipment.Level.Value == 1)
+            {
+                _arrow.SetActive(false);
+                _returnedMaterials.SetActive(false);
 
+                _cantResetTooltipText.enabled = true;
+                _cantDowngradeTooltipText.enabled = false;
+
+                _mainButton.interactable = false;
+
+                return;
+            }
+
+            _arrow.SetActive(true);
+            _returnedMaterials.SetActive(true);
+
+            _cantResetTooltipText.enabled = false;
+            _cantDowngradeTooltipText.enabled = false;
+
+            _mainButton.interactable = true;
         }
         else
         {
+            if (_equipment.EquipRarity.Equals(EquipRarity.Common))
+            {
+                _arrow.SetActive(false);
+                _returnedMaterials.SetActive(false);
 
+                _cantDowngradeTooltipText.enabled = true;
+                _cantResetTooltipText.enabled = false;
+
+                _mainButton.interactable = false;
+
+                return;
+            }
+
+            _arrow.SetActive(true);
+            _returnedMaterials.SetActive(true);
+
+            _cantResetTooltipText.enabled = false;
+            _cantDowngradeTooltipText.enabled = false;
+
+            _mainButton.interactable = true;
         }
     }
 

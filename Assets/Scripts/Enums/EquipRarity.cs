@@ -1,8 +1,9 @@
 ﻿public enum EquipRarity
 {
     Common,
+    Uncommon,
     Rare,
+    Excellent,
     Epic,
-    Legendary,
-    SSR
+    Superior
 }

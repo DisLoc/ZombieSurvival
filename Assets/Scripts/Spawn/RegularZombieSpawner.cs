@@ -78,7 +78,20 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
 
             for (int i = 0; i < spawner.SpawnCount; i++)
             {
-                spawner.SpawnedObjects[i]?.OnFixedUpdate();
+                if (spawner.SpawnedObjects[i] != null)
+                {
+                    spawner.SpawnedObjects[i]?.OnFixedUpdate();
+
+                    Vector3 moveDirection = new Vector3
+                        (
+                            _player.transform.position.x - spawner.SpawnedObjects[i].transform.position.x,
+                            0f,
+                            _player.transform.position.z - spawner.SpawnedObjects[i].transform.position.z
+                        );
+
+                    spawner.SpawnedObjects[i]?.Move(moveDirection);
+                }
+                else continue;
             }
             
             spawner.SpawnedObjects.Cleanup();
@@ -90,7 +103,20 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
 
             for (int i = 0; i < spawner.SpawnCount; i++)
             {
-                spawner.SpawnedObjects[i]?.OnFixedUpdate();
+                if (spawner.SpawnedObjects[i] != null)
+                {
+                    spawner.SpawnedObjects[i]?.OnFixedUpdate();
+
+                    Vector3 moveDirection = new Vector3
+                        (
+                            _player.transform.position.x - spawner.SpawnedObjects[i].transform.position.x,
+                            0f,
+                            _player.transform.position.z - spawner.SpawnedObjects[i].transform.position.z
+                        );
+
+                    spawner.SpawnedObjects[i]?.Move(moveDirection);
+                }
+                else continue;
             }
 
             spawner.SpawnedObjects.Cleanup();

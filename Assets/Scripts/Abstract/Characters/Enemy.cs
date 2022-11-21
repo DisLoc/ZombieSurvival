@@ -54,12 +54,12 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     {
         base.OnFixedUpdate();
 
-        Move(new Vector3 
+        /*Move(new Vector3 
             (
                 _player.transform.position.x - transform.position.x,
                 0f,
                 _player.transform.position.z - transform.position.z
-            ));
+            ));*/
 
         _hpCanvas?.OnFixedUpdate();
         

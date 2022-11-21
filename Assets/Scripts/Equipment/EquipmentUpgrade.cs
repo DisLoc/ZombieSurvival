@@ -5,9 +5,9 @@ public struct EquipmentUpgrade
 {
     [SerializeField] private int _requiredLevel;
     [SerializeField] private UpgradeData _upgradeData;
-    // [SerializeField] private UpgradeMaterials _upgradeMaterials;
+    [SerializeField] private EquipmentUpgradeMaterials _upgradeMaterials;
 
     public int RequiredLevel => _requiredLevel;
     public UpgradeData UpgradeData => _upgradeData;
-    // public UpgradeMaterials UpgradeMaterials => _upgradeMaterials
+    public EquipmentUpgradeMaterials UpgradeMaterials => _upgradeMaterials;
 }

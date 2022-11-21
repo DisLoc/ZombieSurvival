@@ -21,6 +21,18 @@ MonoBehaviour:
     _upgrades:
     - _requiredLevel: 1
       _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
+      _upgradeMaterials:
+        _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+        _requiredCurrencyAmount: 5
+        _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
+      _upgradeMaterials:
+        _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+        _requiredCurrencyAmount: 5
+        _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
+        _requiredMaterialAmount: 5
   _rarityUpgrade: {fileID: 11400000, guid: 20a2c7b2f83db234ca87b818de115515, type: 2}
   _previousRarityEquipment: {fileID: 0}
   _nextRarityEquipment: {fileID: 0}

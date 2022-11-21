@@ -58,6 +58,8 @@ public class ItemUpgradeMenu : UIMenu
     private EquipmentTypesData _equipmentTypesData;
     private Equipment _equipment;
 
+    public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
+
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         base.Initialize(mainMenu, parentMenu);
