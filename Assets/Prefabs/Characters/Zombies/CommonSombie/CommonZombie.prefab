@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 8
   m_Name: CommonZombie
   m_TagString: Enemy
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47,7 +47,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: fa77ba82c72223f499c6b7a021b6cd0e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   _targetDetector: {fileID: 1577825861537638417}
   _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+    _abilityMarker: {fileID: 0}
     _level:
       _baseValue: 1
       _minValue: 1
@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828744803129492712}
   - component: {fileID: 8078037489742521134}
+  - component: {fileID: 6202672824015900658}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -231,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 4823044077776685389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2817904043961400774}
@@ -278,7 +279,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c7f55e0e2519864aaf74a5239aebe8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 839f302bb7438bc43af4a70189dfe85b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,6 +290,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6202672824015900658
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823044077776685389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a73d571fc63f054dbceaab7d4b52b42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5512315502173112210
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -34,6 +34,8 @@ public sealed class LevelContext : ScriptableObject
     [SerializeField] private List<Upgrade> _playerUpgrades;
     [SerializeField] private List<Upgrade> _enemiesUpgrades;
 
+    private List<Upgrade> _equipmentUpgrades;
+
     public string LevelName => _levelName;
     public int LevelNumber => _levelNumber;
     public Sprite LevelIcon => _levelIcon;
@@ -55,12 +57,25 @@ public sealed class LevelContext : ScriptableObject
 
     public BreakpointList<UpgradeBreakpoint> EnemyUpgradeBreakpoints => _enemyUpgradeBreakpoints;
 
-    public List<Upgrade> PlayerUpgrades => _playerUpgrades;
+    public List<Upgrade> PlayerUpgrades
+    {
+        get
+        {
+            List<Upgrade> upgrades = new List<Upgrade>();
+
+            upgrades.AddRange(_playerUpgrades);
+            upgrades.AddRange(_equipmentUpgrades);
+
+            return upgrades;
+        }
+    }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
 
     public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
     {
+        _equipmentUpgrades = new List<Upgrade>();
+
         if (equipmentInventory != null)
         {
             foreach(Equipment equipment in equipmentInventory.GetEquipment())
@@ -71,7 +86,7 @@ public sealed class LevelContext : ScriptableObject
 
                     if (upgrade != null)
                     {
-                        _playerUpgrades.Add(upgrade);
+                        _equipmentUpgrades.Add(upgrade);
                     }
                 }
                 else continue;

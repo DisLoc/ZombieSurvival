@@ -1190,6 +1190,10 @@ PrefabInstance:
       propertyPath: _contextInstaller
       value: 
       objectReference: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1004279293146979044, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_IsActive
       value: 1
