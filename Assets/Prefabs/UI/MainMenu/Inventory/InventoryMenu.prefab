@@ -347,14 +347,14 @@ MonoBehaviour:
   - {fileID: 8928524057143940698}
   - {fileID: 6831068849099578727}
   _equipmentTypesData: {fileID: 11400000, guid: a84433bd886f6ce40b23a75d8a3f39dc, type: 2}
-  _player: {fileID: 0}
+  _player: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
   _baseEquipment:
-  - {fileID: 4802932153029291615, guid: 6e3de1808a03f5d4896567987d725fc5, type: 3}
-  - {fileID: 7945172485191463309, guid: 02f368bc7073ee146a161de5a9bbe0a5, type: 3}
-  - {fileID: 1240786985694297151, guid: 616d04d54de494a4286ff51080a345ea, type: 3}
-  - {fileID: 1781533495435962061, guid: a510b5a66ad415444b5ea58b2c1734d1, type: 3}
-  - {fileID: 5088761256208797871, guid: f79fd4b69149821489ee878e1bfc5597, type: 3}
-  - {fileID: 378730608316453306, guid: cec5c1b8a8ce9454b98e9b3f62617dfd, type: 3}
+  - {fileID: 2565584387524054931, guid: 50a393e731ee5574cb26b876f6c42515, type: 3}
+  - {fileID: 2565584387524054931, guid: 86692b78bbfeaf343a8311b460550a09, type: 3}
+  - {fileID: 2565584387524054931, guid: 4dc607dbc30398b4daada8b5f9765aab, type: 3}
+  - {fileID: 2565584387524054931, guid: 6f90ddca426ac464391191a204a1ddd3, type: 3}
+  - {fileID: 2565584387524054931, guid: 270e21cfb27fbdb479233bf0f137b043, type: 3}
+  - {fileID: 2565584387524054931, guid: 4eddd7068d4e79b4393fe75973f8c7eb, type: 3}
 --- !u!1 &1004279292252055734
 GameObject:
   m_ObjectHideFlags: 0

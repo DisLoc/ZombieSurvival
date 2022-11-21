@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 [CreateAssetMenu(menuName = "ZombieSurvival/Upgrades/Upgrade", fileName = "New upgrade")]
 public class Upgrade : ScriptableObject
@@ -41,11 +42,14 @@ public class Upgrade : ScriptableObject
 
     public static Upgrade operator +(Upgrade upgrade, UpgradeData data)
     {
+        List<UpgradeData> datas = new List<UpgradeData>();
+
+        datas.AddRange(upgrade.Upgrades);
         if (data != null)
         {
-            upgrade._upgrades.Add(data);
+            datas.Add(data);
         }
 
-        return upgrade;
+        return new Upgrade(data);
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 [CreateAssetMenu(menuName = "ZombieSurvival/Level/LevelContext", fileName = "New level context")]
 public sealed class LevelContext : ScriptableObject
@@ -60,8 +59,25 @@ public sealed class LevelContext : ScriptableObject
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
 
-    public void Initialize(LevelBuilder builderPrefab)
+    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
     {
+        if (equipmentInventory != null)
+        {
+            foreach(Equipment equipment in equipmentInventory.GetEquipment())
+            {
+                if (equipment != null)
+                {
+                    Upgrade upgrade = equipment.EquipUpgrade;
+
+                    if (upgrade != null)
+                    {
+                        _playerUpgrades.Add(upgrade);
+                    }
+                }
+                else continue;
+            }
+        }
+
         LevelBuilder = Instantiate(builderPrefab);
         LevelBuilder.Construct(_levelEnvironment);
     }

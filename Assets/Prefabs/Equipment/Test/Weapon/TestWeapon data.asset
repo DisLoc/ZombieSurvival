@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
-  m_Name: TestBelt
+  m_Name: TestWeapon data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: fb77d3d5525a9ed4e8df01aa7e9096c0, type: 3}
-  _equipSlot: 5
+  _icon: {fileID: 21300000, guid: 431bb4bcfd8ffc54d82885d395dd84dd, type: 3}
+  _equipSlot: 3
   _rarity: 0
   _upgradingStat: 0
-  _equipUpgrade:
+  _equipmentUpgrades:
     _upgrades:
     - _requiredLevel: 1
-      _upgradeData: {fileID: 11400000, guid: 2819b1c4dbb2456448810592b0c06134, type: 2}
-  _level:
-    _baseValue: 1
-    _minValue: 1
-    _maxValue: 10
-    _maxValueIsInfinite: 0
-  _rarityUpgrade: {fileID: 11400000, guid: 802d55f13d24d5343864966170ec1e42, type: 2}
+      _upgradeData: {fileID: 11400000, guid: cd738e2371f102945b2cf3a205483b8a, type: 2}
+  _rarityUpgrade: {fileID: 11400000, guid: 8bb161ad98817e641889830923ebee5e, type: 2}
   _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 0}

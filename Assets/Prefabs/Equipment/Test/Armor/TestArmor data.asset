@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
-  m_Name: TestBoots
+  m_Name: TestArmor data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: 3b79d7f35e9d7f742bb25c7607b6ddec, type: 3}
-  _equipSlot: 2
+  _icon: {fileID: 21300000, guid: 759e2d7d14d5f164493e08d4ee559ffe, type: 3}
+  _equipSlot: 1
   _rarity: 0
   _upgradingStat: 1
-  _equipUpgrade:
+  _equipmentUpgrades:
     _upgrades:
     - _requiredLevel: 1
-      _upgradeData: {fileID: 11400000, guid: 0bfb2d4b68f76c84b9540e6bfc79f997, type: 2}
-  _level:
-    _baseValue: 1
-    _minValue: 1
-    _maxValue: 10
-    _maxValueIsInfinite: 0
-  _rarityUpgrade: {fileID: 11400000, guid: 72c674fe43d180e439b1208d50b1d9c0, type: 2}
+      _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
+  _rarityUpgrade: {fileID: 11400000, guid: 20a2c7b2f83db234ca87b818de115515, type: 2}
   _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 0}

@@ -1,44 +1,31 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZombieSurvival/Equipment/Equipment", fileName = "New equipment")]
-public class Equipment : ScriptableObject
+public class Equipment : MonoBehaviour
 {
-    [Header("Debug settings")]
-    [SerializeField] private bool _isDebug;
-
-    [Header("Equipment settings")]
-    [SerializeField] private Sprite _icon;
-    [SerializeField] private EquipSlot _equipSlot;
-    [SerializeField] private EquipRarity _rarity;
-    [SerializeField] private UpgradedStat _upgradingStat;
-    [SerializeField] private EquipmentUpgrades _equipUpgrade;
-
-    [Header("Rarity settings")]
     [SerializeField] private Level _level;
-    [SerializeField] private Upgrade _rarityUpgrade;
-    [SerializeField] private Equipment _previousRarityEquipment;
+    [SerializeField] private EquipmentData _equipmentData;
 
-    public Sprite Icon => _icon;
-    public EquipSlot EquipSlot => _equipSlot;
-    public EquipRarity EquipRarity => _rarity;
-    public UpgradedStat UpgradingStat => _upgradingStat;
-
-    public Level Level => _level;
-
+    public Sprite Icon => _equipmentData.Icon;
+    public EquipSlot EquipSlot => _equipmentData.EquipSlot;
+    public EquipRarity EquipRarity => _equipmentData.EquipRarity;
+    public UpgradingStat UpgradingStat => _equipmentData.UpgradingStat;
     public Upgrade EquipUpgrade
     {
         get
         {
-            if (_previousRarityEquipment != null)
+            if (_equipmentData.PreviousRarityEquipment != null)
             {
-                return _previousRarityEquipment.EquipUpgrade + _rarityUpgrade + _equipUpgrade.GetUpgrade((int)_level.Value);
+                return _equipmentData.PreviousRarityEquipment.RarityUpgrade + 
+                    _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value);
             }
             else
             {
-                return _rarityUpgrade + _equipUpgrade.GetUpgrade((int)_level.Value);
+                return _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value);
             }
         }
     }
+
+    public Level Level => _level;
 
     public void Initialize()
     {

@@ -8,6 +8,8 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private ItemUpgradeMenu _upgradeMenu;
 
     [Header("Equipment settings")]
+    [SerializeField] private LevelContextInstaller _contextInstaller;
+
     [SerializeField] private Text _damageText;
     [SerializeField] private Text _healthText;
 
@@ -42,6 +44,8 @@ public sealed class InventoryMenu : UIMenu
                 slot.SetSlot(equipment);
             }
         }
+
+        OnInventoryChange();
     }
 
     public override void Display(bool playAnimation = false)
@@ -75,14 +79,14 @@ public sealed class InventoryMenu : UIMenu
 
     public void UpdateValues()
     {
-        int totalDamage = (int)(_player.Stats as PlayerStats).Damage.BaseValue;
-        int totalHP = (int)_player.Stats.Health.MaxHealthPoints.BaseValue;
+        int totalDamage = (int)_player.LevelUpgrades.GetUpgrade(1).DamageData.UpgradeValue;
+        int totalHP = (int)_player.Stats.Health.MaxHealthPoints.BaseValue + (int)_player.LevelUpgrades.GetUpgrade(1).HealthData.UpgradeValue;
 
         foreach(EquipmentSlot slot in _slots)
         {
             if (slot.Equipment != null)
             {
-                if (slot.Equipment.UpgradingStat.Equals(UpgradedStat.Damage))
+                if (slot.Equipment.UpgradingStat.Equals(UpgradingStat.Damage))
                 {
                     foreach (UpgradeData data in slot.Equipment.EquipUpgrade.Upgrades)
                     {
@@ -90,7 +94,7 @@ public sealed class InventoryMenu : UIMenu
                     }
                 }
 
-                else if (slot.Equipment.UpgradingStat.Equals(UpgradedStat.Health))
+                else if (slot.Equipment.UpgradingStat.Equals(UpgradingStat.Health))
                 {
                     foreach (UpgradeData data in slot.Equipment.EquipUpgrade.Upgrades)
                     {
@@ -104,5 +108,10 @@ public sealed class InventoryMenu : UIMenu
 
         _damageText.text = totalDamage.ToString();
         _healthText.text = totalHP.ToString();
+    }
+
+    public void OnInventoryChange()
+    {
+        _contextInstaller.SetEquipment(_equipmentInventory);
     }
 }

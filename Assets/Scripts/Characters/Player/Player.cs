@@ -13,12 +13,12 @@ public class Player : CharacterBase
     [SerializeField] protected ObjectCatcher _pickablesCatcher;
     
     [Header("Stats settings")]
+    [SerializeField] protected PlayerUpgrades _levelUpgrades;
     [SerializeField] protected PlayerStats _stats;
 
     [Header("Inventory settings")]
     [SerializeField] protected AbilityInventory _abilityInventory;
     [SerializeField] protected CurrencyInventory _coinInventory;
-    [SerializeField] protected EquipmentInventory _equipmentInventory;
 
     protected List<Upgrade> _upgrades;
 
@@ -26,6 +26,7 @@ public class Player : CharacterBase
 
     public override CharacterStats Stats => _stats;
 
+    public PlayerUpgrades LevelUpgrades => _levelUpgrades;
     public AbilityInventory AbilityInventory => _abilityInventory;
     public CurrencyInventory CoinInventory => _coinInventory;
     public Vector3 CameraDeltaPos => _moveController.CameraDeltaPos;
@@ -42,6 +43,16 @@ public class Player : CharacterBase
         _coinInventory.Initialize();
 
         _upgrades = new List<Upgrade>();
+
+        foreach (Upgrade upgrade in _levelContext.PlayerUpgrades)
+        {
+            GetUpgrade(upgrade);
+        }
+
+        PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
+
+        GetUpgrade(new Upgrade(currentUpgrade.DamageData));
+        GetUpgrade(new Upgrade(currentUpgrade.HealthData));
 
         GetAbility(_stats.BaseWeapon);
 

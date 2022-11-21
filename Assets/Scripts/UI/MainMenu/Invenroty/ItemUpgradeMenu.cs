@@ -95,7 +95,7 @@ public class ItemUpgradeMenu : UIMenu
         _equipmentIcon.sprite = _equipment.Icon;
         _equipmentTypeIcon.sprite = _equipmentTypesData[_equipment.EquipSlot].SlotIcon;
 
-        _equipmentUpgradeValueIcon.sprite = _equipment.UpgradingStat.Equals(UpgradedStat.Health) ? _healthIcon : _damageIcon;
+        _equipmentUpgradeValueIcon.sprite = _equipment.UpgradingStat.Equals(UpgradingStat.Health) ? _healthIcon : _damageIcon;
 
         float value = 0;
 
@@ -104,7 +104,7 @@ public class ItemUpgradeMenu : UIMenu
             value += data.UpgradeValue;
         }
 
-        _equipmentUpgradeValueName.text = _equipment.UpgradingStat.Equals(UpgradedStat.Health) ? "Health" : "Damage";
+        _equipmentUpgradeValueName.text = _equipment.UpgradingStat.Equals(UpgradingStat.Health) ? "Health" : "Damage";
         _equipmentUpgradeValue.text = ((int)value).ToString();
 
         _equipmentLevel.text = ((int)_equipment.Level.Value).ToString() + "/" + ((int)_equipment.Level.MaxValue).ToString();

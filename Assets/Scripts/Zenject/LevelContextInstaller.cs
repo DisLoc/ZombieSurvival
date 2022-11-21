@@ -6,11 +6,12 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
 {
     [SerializeField] private LevelBuilder _levelBuilderPrefab;
 
-    [SerializeField] private Player _defaultPlayer;
     [SerializeField] private LevelContext _defaultContext;
+    [SerializeField] private Player _defaultPlayer;
     
-    private Player _player;
     private LevelContext _levelContext;
+    private Player _player;
+    private EquipmentInventory _inventory;
 
     public void SetLevel(LevelContext level)
     {
@@ -20,6 +21,11 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
     public void SetPlayer(Player player)
     {
         _player = player;
+    }
+
+    public void SetEquipment(EquipmentInventory inventory)
+    {
+        _inventory = inventory;
     }
 
     public override void InstallBindings()
@@ -34,7 +40,7 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
             _levelContext = _defaultContext;
         }
 
-        _levelContext.Initialize(_levelBuilderPrefab);
+        _levelContext.Initialize(_levelBuilderPrefab, _inventory);
 
         Container.Bind<LevelContext>().FromScriptableObject(_levelContext).AsSingle();
     }

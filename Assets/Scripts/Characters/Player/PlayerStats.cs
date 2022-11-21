@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public sealed class PlayerStats : CharacterStats
 {
-    [SerializeField] private Damage _damage;
     [SerializeField] private PlayerExpLevel _expLevel;
     [SerializeField] private PickUpRange _pickUpRange;
     [SerializeField] private ReanimationCount _rebornCount;
@@ -13,7 +12,6 @@ public sealed class PlayerStats : CharacterStats
     [SerializeField] private AbilitiesPerChoice _abilitiesPerChoice;
     [SerializeField] private AbilitiesRerollCount _abilitiesRerollCount;
 
-    public Damage Damage => _damage;
     public PickUpRange PickUpRange => _pickUpRange;
     public int Exp => (int)_expLevel.Exp.Value;
     public int Level => (int)_expLevel.Value;

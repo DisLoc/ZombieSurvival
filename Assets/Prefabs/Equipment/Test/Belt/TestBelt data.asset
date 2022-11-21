@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
-  m_Name: TestHand
+  m_Name: TestBelt data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: a6ed9566bafeb984b90313f07f5e2964, type: 3}
-  _equipSlot: 4
+  _icon: {fileID: 21300000, guid: fb77d3d5525a9ed4e8df01aa7e9096c0, type: 3}
+  _equipSlot: 5
   _rarity: 0
   _upgradingStat: 0
-  _equipUpgrade:
+  _equipmentUpgrades:
     _upgrades:
     - _requiredLevel: 1
-      _upgradeData: {fileID: 11400000, guid: 1b6a261f1c05ad649870200c0cbbb4ae, type: 2}
-  _level:
-    _baseValue: 1
-    _minValue: 1
-    _maxValue: 10
-    _maxValueIsInfinite: 0
-  _rarityUpgrade: {fileID: 11400000, guid: cd3637f1cb483f24cb7a246529cbd8d4, type: 2}
+      _upgradeData: {fileID: 11400000, guid: 2819b1c4dbb2456448810592b0c06134, type: 2}
+  _rarityUpgrade: {fileID: 11400000, guid: 802d55f13d24d5343864966170ec1e42, type: 2}
   _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 0}

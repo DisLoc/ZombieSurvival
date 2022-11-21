@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
-  m_Name: TestArmor
+  m_Name: TestHand data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: 759e2d7d14d5f164493e08d4ee559ffe, type: 3}
-  _equipSlot: 1
+  _icon: {fileID: 21300000, guid: a6ed9566bafeb984b90313f07f5e2964, type: 3}
+  _equipSlot: 4
   _rarity: 0
-  _upgradingStat: 1
-  _equipUpgrade:
+  _upgradingStat: 0
+  _equipmentUpgrades:
     _upgrades:
     - _requiredLevel: 1
-      _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
-  _level:
-    _baseValue: 1
-    _minValue: 1
-    _maxValue: 10
-    _maxValueIsInfinite: 0
-  _rarityUpgrade: {fileID: 11400000, guid: 20a2c7b2f83db234ca87b818de115515, type: 2}
+      _upgradeData: {fileID: 11400000, guid: 1b6a261f1c05ad649870200c0cbbb4ae, type: 2}
+  _rarityUpgrade: {fileID: 11400000, guid: cd3637f1cb483f24cb7a246529cbd8d4, type: 2}
   _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 0}

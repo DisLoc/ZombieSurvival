@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public class EquipmentInventory
 {
@@ -30,6 +29,18 @@ public class EquipmentInventory
             }
             else return null;
         }
+    }
+    
+    public List<Equipment> GetEquipment()
+    {
+        List<Equipment> equipment = new List<Equipment>();
+
+        foreach(KeyValuePair<EquipSlot, Equipment> item in _equipment)
+        {
+            if (item.Value != null) equipment.Add(item.Value);
+        }
+
+        return equipment;
     }
 
     public bool Add(Equipment equipment)
