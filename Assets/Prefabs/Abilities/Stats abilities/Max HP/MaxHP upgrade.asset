@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MaxHP upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: dc4802a5b15258449b4413c8cff539ed, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 041be729fa6349741b6dad7917fee949, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: d2d67ff5fe8b99748938fd40c41a59e8, type: 2}

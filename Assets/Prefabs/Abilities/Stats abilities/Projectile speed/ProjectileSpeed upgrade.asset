@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ProjectileSpeed upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 9dde714e8325a804fac63c12fc61a11b, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 25709e66828fef446bb4115595765545, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 1b46d3b4a045db44baee4fa3d804e869, type: 2}

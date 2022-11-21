@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
+  m_Name: SuperBlade AttackInterval
+  m_EditorClassIdentifier: 
+  _baseValue: 3
+  _minValue: 0.1
+  _maxValue: 3
+  _maxValueIsInfinite: 1
+  _upgradeMarkers:
+    _markers:
+    - {fileID: 11400000, guid: f3c8f963f6c44cc4ca5ab968921a7da1, type: 2}
+    _minMatchesCount: 1

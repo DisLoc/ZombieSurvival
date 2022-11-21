@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun upgrade 2
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 2988629e7037469499da175f14395932, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 29e69ba595fa693468da24f13611f8f7, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: d5119c408f30cf04caa344fec2cfb5e7, type: 2}
   - {fileID: 11400000, guid: fc676b7c3d45c9a4a8bf8fc9364a43f8, type: 2}

@@ -49,7 +49,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: eb8adc860d7bcc04ab66ffea5a2495e5, type: 3}
   _upgradeData: {fileID: 11400000, guid: 94ba67299ffcf4b4ab470b0c1418c707, type: 2}
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: 8b105f42f207aef468b76047ebe6ba26, type: 2}
+    _abilityMarker: {fileID: 11400000, guid: 975fa70a7d885174a9ceaca296ff5265, type: 2}
     _level:
       _baseValue: 0
       _minValue: 1

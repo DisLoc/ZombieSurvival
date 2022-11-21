@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: TestHands rarity upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 0
-  _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: e5f7403719f287b41a9d94c314ea7707, type: 2}
+  - {fileID: 11400000, guid: 1b6a261f1c05ad649870200c0cbbb4ae, type: 2}
+  - {fileID: 11400000, guid: 1b6a261f1c05ad649870200c0cbbb4ae, type: 2}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: TestWeapon
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 431bb4bcfd8ffc54d82885d395dd84dd, type: 3}
+  _equipSlot: 3
+  _rarity: 0
+  _upgradingStat: 0
+  _equipUpgrade:
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: cd738e2371f102945b2cf3a205483b8a, type: 2}
+  _level:
+    _baseValue: 1
+    _minValue: 1
+    _maxValue: 10
+    _maxValueIsInfinite: 0
+  _rarityUpgrade: {fileID: 11400000, guid: 8bb161ad98817e641889830923ebee5e, type: 2}
+  _previousRarityEquipment: {fileID: 0}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: TestArmor
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 759e2d7d14d5f164493e08d4ee559ffe, type: 3}
+  _equipSlot: 1
+  _rarity: 0
+  _upgradingStat: 1
+  _equipUpgrade:
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
+  _level:
+    _baseValue: 1
+    _minValue: 1
+    _maxValue: 10
+    _maxValueIsInfinite: 0
+  _rarityUpgrade: {fileID: 11400000, guid: 20a2c7b2f83db234ca87b818de115515, type: 2}
+  _previousRarityEquipment: {fileID: 0}

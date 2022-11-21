@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cooldown upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 0487fc65071605e4ca4a24bba204d4fd, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 2edd752f1c246b340ac349a5109db10b, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 0d127db26afdcee48be02f1fdfa0a6ec, type: 2}

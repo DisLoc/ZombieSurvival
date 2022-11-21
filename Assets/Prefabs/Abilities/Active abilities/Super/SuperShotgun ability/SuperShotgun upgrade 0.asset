@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SuperShotgun upgrade 0
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 0d59761f8ff44e14e96c113dc98fac00, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: b50c2902608c8a04d9bc5c09314f2d22, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: d1eb2930681432c4a8a6ee2c236a8f50, type: 2}

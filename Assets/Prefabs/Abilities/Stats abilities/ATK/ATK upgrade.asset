@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ATK upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 8b105f42f207aef468b76047ebe6ba26, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 975fa70a7d885174a9ceaca296ff5265, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: d6cf0e6812d2f76479e6169cad8da436, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shuriken upgrade 3
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: f3bdd14a217be58449249550e7333207, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 23f7de88458aeae42a6ab482de9196e7, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 88b895c7092d72248baec12645021a87, type: 2}
   - {fileID: 11400000, guid: 6c428dbad1f3e384694f9c1ae0d311b5, type: 2}

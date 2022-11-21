@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
   m_Name: Coin upgrade data
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: e84a43aad54a9c1429a35f8d80caeb36, type: 2}
+  _upgradingMarkers:
+    _markers:
+    - {fileID: 11400000, guid: e84a43aad54a9c1429a35f8d80caeb36, type: 2}
+    _minMatchesCount: 1
   _upgradeValue: 25
   _upgradeMultiplier: 1

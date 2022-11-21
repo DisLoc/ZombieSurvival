@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ExpAccumulation upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 9848fdb74a3741f47b51e52ac6eac7bf, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: cceda0d17ac069244a5d055dfc2ec8b9, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 4a6c16197fc168840aa93763e38310da, type: 2}

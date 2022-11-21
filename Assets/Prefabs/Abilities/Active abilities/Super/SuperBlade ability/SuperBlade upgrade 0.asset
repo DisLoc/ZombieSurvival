@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SuperBlade upgrade 0
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: dec9a82c69369af4b936f7f334ade0c7, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 5cd5362392a04814ca90b3f42afb5948, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: b373afa5afcb2134f84ad96c22615e4c, type: 2}

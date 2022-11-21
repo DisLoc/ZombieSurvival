@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SuperShuriken upgrade 0
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 8dfc7d5a651e85e438a60b056ba8cd41, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 59c62471dd6b40a4c9ebf0e4c2931ce7, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 0928166361cbabe45b3d49855e9b0bfe, type: 2}

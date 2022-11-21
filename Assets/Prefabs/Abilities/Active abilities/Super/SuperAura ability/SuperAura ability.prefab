@@ -53,7 +53,7 @@ MonoBehaviour:
   _targetDetector: {fileID: 6766336299975137043}
   _abilityUpgradeData: {fileID: 11400000, guid: b1d3f09c9f5641448b0817ee00cb64ff, type: 2}
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: 6a51f5f3774c9804696234a267f25353, type: 2}
+    _abilityMarker: {fileID: 11400000, guid: 590407419a985454ab9ec3f0b7f978b6, type: 2}
     _level:
       _baseValue: 0
       _minValue: 1

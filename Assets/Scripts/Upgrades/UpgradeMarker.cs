@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZombieSurvival/Upgrades/Upgrade marker", fileName = "New upgrade marker")]
-public sealed class UpgradeMarker : ScriptableObject { } // just a marker
+[CreateAssetMenu(menuName = "ZombieSurvival/Markers/Upgrade marker", fileName = "New upgrade marker")]
+public sealed class UpgradeMarker : Marker { }

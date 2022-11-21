@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
   m_Name: ProjectileSpeed upgrade data
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: a7686d67e0d3f7342a14eb33d86b47ee, type: 2}
+  _upgradingMarkers:
+    _markers:
+    - {fileID: 11400000, guid: a7686d67e0d3f7342a14eb33d86b47ee, type: 2}
+    _minMatchesCount: 1
   _upgradeValue: 0
   _upgradeMultiplier: 1.1

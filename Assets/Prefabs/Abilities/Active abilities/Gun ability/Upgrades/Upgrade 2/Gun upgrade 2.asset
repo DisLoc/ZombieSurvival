@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun upgrade 2
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 5173e4754a01e1f4ca37dbc7b0c8c848, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 6642e7de55830664fb789579deeac68e, type: 2}
   - {fileID: 11400000, guid: 129182dd654f8e949ae40dfa3d5011f0, type: 2}

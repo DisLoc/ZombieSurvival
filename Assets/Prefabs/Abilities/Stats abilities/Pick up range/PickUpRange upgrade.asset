@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PickUpRange upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: b54587ee4a2bee940bf3e851e2609a0d, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: a7defdf456d7ad74ca44d326ca39eb0b, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: b16b2f3a9a8f5cf499849b13b34f70f7, type: 2}

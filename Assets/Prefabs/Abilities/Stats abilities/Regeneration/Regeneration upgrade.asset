@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Regeneration upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: a3d8c376e06e20c4bb1835e63e09013a, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 7698f0aec86e6f545814e8e7e8d77607, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: f529d60ea72fb68489640ee18cc0d934, type: 2}

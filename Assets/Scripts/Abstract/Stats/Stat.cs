@@ -53,7 +53,7 @@ public abstract class Stat : IStat, IUpgradeable
             {
                 if (data == null) continue;
 
-                if (data.UpgradingStatMarker.Equals(_statData.Marker))
+                if (data.UpgradingMarkers.IsStrike(_statData.Markers))
                 {
                     _upgrades.Add(data);
                 }
@@ -89,7 +89,7 @@ public abstract class Stat : IStat, IUpgradeable
         {
             if (data == null) continue;
 
-            if (data.UpgradingStatMarker.Equals(_statData.Marker))
+            if (data.UpgradingMarkers.IsStrike(_statData.Markers))
             {
                 if (_isDebug) Debug.Log(_statData.name + " getted upgrade: " + upgrade.name);
 

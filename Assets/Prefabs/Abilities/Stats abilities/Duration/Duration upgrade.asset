@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Duration upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: b8b3f88fb8514e54898b0a68241699a0, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 0a66625a3f693064cad7b65ed0224095, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 0d1ef83aa69fabb45a7f47d9eb764553, type: 2}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoveSpeed upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: bdbbb8f9ac32c0943be813000391862b, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 3625c52a5c62dad47a95926d10b8427e, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 57c9f1a087be8094b8e76583ef0c3f43, type: 2}

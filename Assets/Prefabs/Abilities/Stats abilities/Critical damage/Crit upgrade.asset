@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crit upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: f20bae64364883b4c8530124f7978c13, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: c3a837933e6ecf7449d53ff2dcbfab15, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: de0a56cf917a36b40b706afd3167f8ce, type: 2}
   - {fileID: 11400000, guid: c6b872ad60ac43b42abc68760d634de8, type: 2}

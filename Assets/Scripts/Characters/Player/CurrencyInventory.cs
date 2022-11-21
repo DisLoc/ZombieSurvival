@@ -62,7 +62,7 @@ public class CurrencyInventory
         {
             foreach (UpgradeData data in upgrade.Upgrades)
             {
-                if (data.UpgradingStatMarker.Equals(_currencyData.Marker))
+                if (data.UpgradingMarkers.IsStrike(_currencyData.Marker))
                 {
                     _total = (int)((_total + data.UpgradeValue) * data.UpgradeMultiplier);
 

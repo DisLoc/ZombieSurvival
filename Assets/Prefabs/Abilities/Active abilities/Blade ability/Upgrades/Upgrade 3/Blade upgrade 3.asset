@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Blade upgrade 3
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 583b085b0496a514fa09dd337994674c, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 983e4523fa1755a4c95c665d5e28a9b2, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 489b2f8ffbc940645a622d1f651af073, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FieryBottle upgrade 2
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: cda0936837117c04eab0b1b5292580a8, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: fb85536cbb1b2944ba057c64de731977, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: fff55856054d5c644b4456258aa73be8, type: 2}
   - {fileID: 11400000, guid: 4e10f9866308f0f4180b710f97546bf9, type: 2}

@@ -116,7 +116,7 @@ MonoBehaviour:
   _abilityUpgradeData: {fileID: 11400000, guid: bd3419453c51db74a92e4d3bbc84a152, type: 2}
   _scatterMultiplier: 0.12
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: 603d744c896f6b6459f64162c195c23f, type: 2}
+    _abilityMarker: {fileID: 11400000, guid: 5173e4754a01e1f4ca37dbc7b0c8c848, type: 2}
     _level:
       _baseValue: 0
       _minValue: 1

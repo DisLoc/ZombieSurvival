@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
   m_Name: FieryBottle upgrade data 2x0
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: dbf64e7175c04354d962637077b46d5d, type: 2}
+  _upgradingMarkers:
+    _markers:
+    - {fileID: 11400000, guid: dbf64e7175c04354d962637077b46d5d, type: 2}
+    _minMatchesCount: 1
   _upgradeValue: 1
   _upgradeMultiplier: 1

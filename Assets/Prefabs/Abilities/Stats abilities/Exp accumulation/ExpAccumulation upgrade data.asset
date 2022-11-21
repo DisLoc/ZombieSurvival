@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
   m_Name: ExpAccumulation upgrade data
   m_EditorClassIdentifier: 
-  _upgradingStatMarker: {fileID: 11400000, guid: 0c4c925473ccdc247aa94165bfcc5a2d, type: 2}
+  _upgradingMarkers:
+    _markers:
+    - {fileID: 11400000, guid: 0c4c925473ccdc247aa94165bfcc5a2d, type: 2}
+    _minMatchesCount: 1
   _upgradeValue: 0
   _upgradeMultiplier: 1.08

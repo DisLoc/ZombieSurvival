@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Radius upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: 3b4c80019ba3c8a4e91d9fd4c0eb1fe1, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 513450eeddea8b843bd302d01e0d25c9, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 528a127aa3cc28e40811d4a65a3f9f68, type: 2}

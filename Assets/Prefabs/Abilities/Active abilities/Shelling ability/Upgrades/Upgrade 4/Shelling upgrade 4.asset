@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shelling upgrade 4
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 1
-  _abilityMarker: {fileID: 11400000, guid: c7c408fc1bd8c7648916c4d004655be4, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 273566bc75db98c49aff42a2f945a5cf, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: a2a63ee8512f72f4791c61259487aa47, type: 2}
   - {fileID: 11400000, guid: 68d67d44e4670a647b0ea7db0e28a6b8, type: 2}

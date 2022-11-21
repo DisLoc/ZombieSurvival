@@ -16,4 +16,7 @@ MonoBehaviour:
   _minValue: 0
   _maxValue: 15
   _maxValueIsInfinite: 1
-  _upgradeMarker: {fileID: 11400000, guid: d17969023ac9d8d448cefc15a2b4ed9a, type: 2}
+  _upgradeMarkers:
+    _markers:
+    - {fileID: 11400000, guid: d17969023ac9d8d448cefc15a2b4ed9a, type: 2}
+    _minMatchesCount: 1

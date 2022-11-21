@@ -48,7 +48,7 @@ MonoBehaviour:
   _name: Heal player
   _icon: {fileID: 21300000, guid: ea6e13adb404ec24791172b84b2174b4, type: 3}
   _stats:
-    _abilityMarker: {fileID: 11400000, guid: 79ac725181c5fbb4d9ec2b1f216ed495, type: 2}
+    _abilityMarker: {fileID: 11400000, guid: 021a3b1d2234b814a8cc1bc0e3cb939e, type: 2}
     _level:
       _baseValue: 0
       _minValue: 0

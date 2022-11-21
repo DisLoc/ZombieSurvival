@@ -103,6 +103,7 @@ public class ItemUpgradeMenu : UIMenu
         {
             value += data.UpgradeValue;
         }
+
         _equipmentUpgradeValueName.text = _equipment.UpgradingStat.Equals(UpgradedStat.Health) ? "Health" : "Damage";
         _equipmentUpgradeValue.text = ((int)value).ToString();
 
