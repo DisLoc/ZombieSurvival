@@ -6,6 +6,8 @@ public class Player : CharacterBase
 {
     [Header("Moving settings")]
     [SerializeField] protected PlayerMoveController _moveController;
+    [SerializeField] protected Animator _animator;
+    [HideInInspector] public bool isMoving;
 
     [Header("Colliders")]
     [Tooltip("Self collider")]
@@ -49,6 +51,8 @@ public class Player : CharacterBase
             GetUpgrade(upgrade);
         }
 
+        _animator.SetBool(AnimatorBools.WithShotgun.ToString(), true);
+
         PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
 
         GetUpgrade(new Upgrade(currentUpgrade.DamageData));
@@ -68,8 +72,11 @@ public class Player : CharacterBase
     {
         OnFixedUpdate();
         _moveController.OnFixedUpdate();
+
         Vector3 pos = transform.position;
         _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
+
+        _animator.SetBool(AnimatorBools.ShotgunWalk.ToString(), isMoving);
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
@@ -225,6 +232,14 @@ public class Player : CharacterBase
         base.Die();
 
         EventBus.Publish<IPlayerDieHandler>(handler => handler.OnPlayerDie());
+    }
+
+    protected enum AnimatorBools
+    {
+        WithBlade,
+        BladeWalk,
+        WithShotgun,
+        ShotgunWalk
     }
 
     public class Factory: PlaceholderFactory<Player> { }

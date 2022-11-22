@@ -51,10 +51,12 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
                 {
                     _onTouch = true;
                     _touchPosition = Input.GetTouch(0).position;
+                    _player.isMoving = true;
                 }
             }
             else // Reset flags
             {
+                _player.isMoving = false;
                 _onTouch = false;
             }
         }
@@ -99,13 +101,13 @@ public class PlayerMoveController : MonoBehaviour, IFixedUpdatable
                 {
                     _onTouch = true;
                     _touchPosition = Input.mousePosition;
-
-                    if (_isDebug) Debug.Log(_touchPosition);
+                    _player.isMoving = true;
                 }
             }
             else
             {
                 _onTouch = false;
+                _player.isMoving = false;
             }
             #endregion
         }
