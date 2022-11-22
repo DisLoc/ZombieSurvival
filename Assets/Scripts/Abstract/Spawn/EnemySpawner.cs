@@ -17,7 +17,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
 
     protected List<ObjectSpawner<Enemy>> _prevSpawners;
     protected List<ObjectSpawner<Enemy>> _spawners;
-    protected ChanceCombiner<Enemy> _combiner;
 
     protected int CurrentSpawned
     {
@@ -175,53 +174,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                             0f,
                             playerPos.z - enemyPos.z
                         );
-    }
-
-    protected override void Spawn(Vector3 position)
-    {
-        if (_spawners == null) return;
-        
-        Enemy enemy = _combiner.GetStrikedObject();
-
-        if (enemy == null) return;
-
-        int unitsOnScene = 0;
-
-        foreach (ObjectSpawner<Enemy> pool in _spawners)
-        {
-            unitsOnScene += pool.SpawnCount;
-        }
-
-        if (unitsOnScene >= _maxUnitsOnScene)
-        {
-            return;
-        }
-
-        ObjectSpawner<Enemy> spawner = _spawners.Find(item => item.Prefab.Equals(enemy));
-
-        foreach (ObjectSpawner<Enemy> pool in _spawners)
-        {
-            if (pool.Prefab.Equals(enemy))
-            {
-                spawner = pool;
-                break;
-            }
-        }
-
-        if (spawner == null) return;
-
-        Enemy spawnedEnemy = spawner.Spawn(new Vector3
-            (
-                position.x,
-                _levelContext.LevelBuilder.GridHeight + spawner.Prefab.Collider.height * spawner.Prefab.transform.localScale.y * 0.5f,
-                position.z
-            ));
-
-        if (spawnedEnemy != null)
-        {
-            spawnedEnemy.Initialize(_player, spawner);
-            _totalSpawned++;
-        }
     }
 
     protected virtual Vector3 GetSpawnPosition()

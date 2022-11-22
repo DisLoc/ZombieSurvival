@@ -4,7 +4,9 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
 {
     private bool _onBossEvent;
 
-    private BreakpointList<EnemyBreakpoint> _breakpoints;  
+    private BreakpointList<EnemyBreakpoint> _breakpoints;
+
+    private ChanceCombiner<Enemy> _combiner;
 
     protected override void OnEnable()
     {
@@ -30,6 +32,53 @@ public sealed class RegularZombieSpawner : EnemySpawner, IBossEventHandler, IBos
             base.OnFixedUpdate();
         }
         else return;
+    }
+
+    protected override void Spawn(Vector3 position)
+    {
+        if (_spawners == null) return;
+
+        Enemy enemy = _combiner.GetStrikedObject();
+
+        if (enemy == null) return;
+
+        int unitsOnScene = 0;
+
+        foreach (ObjectSpawner<Enemy> pool in _spawners)
+        {
+            unitsOnScene += pool.SpawnCount;
+        }
+
+        if (unitsOnScene >= _maxUnitsOnScene)
+        {
+            return;
+        }
+
+        ObjectSpawner<Enemy> spawner = _spawners.Find(item => item.Prefab.Equals(enemy));
+
+        foreach (ObjectSpawner<Enemy> pool in _spawners)
+        {
+            if (pool.Prefab.Equals(enemy))
+            {
+                spawner = pool;
+                break;
+            }
+        }
+
+        if (spawner == null) return;
+
+        Enemy spawnedEnemy = spawner.Spawn(new Vector3
+            (
+                position.x,
+                _levelContext.LevelBuilder.GridHeight + spawner.Prefab.Collider.height * spawner.Prefab.transform.localScale.y * 0.5f,
+                position.z
+            ));
+
+        if (spawnedEnemy != null)
+        {
+            spawnedEnemy.Initialize(_player, spawner);
+            _totalSpawned++;
+        }
     }
 
     public override void OnLevelProgressUpdate(int progress)

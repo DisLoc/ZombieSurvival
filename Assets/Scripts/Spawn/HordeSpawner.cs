@@ -68,7 +68,7 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler
                         position.x,
                         _levelContext.LevelBuilder.GridHeight + _spawners[0].Prefab.Collider.height * _spawners[0].Prefab.transform.localScale.y * 0.5f,
                         position.z
-                    )); ;
+                    ));
 
             spawnedEnemy.Initialize(_player, _spawners[0]);
 
