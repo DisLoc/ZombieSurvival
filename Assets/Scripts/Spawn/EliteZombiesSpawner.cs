@@ -1,20 +1,15 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using Zenject;
 
 using static UnityEngine.Mathf;
 
-public sealed class EliteZombiesSpawner : EnemySpawner
+public sealed class EliteZombiesSpawner : EnemySpawner, IBossEventHandler
 {
     [SerializeField][Range(1, 5)] private int _poolSize;
     [SerializeField] private ZombieChest _chestPrefab;
 
-    private ObjectSpawner<Enemy> _spawner;
     private BreakpointList<EliteZombieBreakpoint> _breakpoints;
 
-    private BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
-
-    private Upgrade _currentUpgrade;
     private int _abilitiesRewardCount;
 
     private bool _onBossEvent;
@@ -26,112 +21,89 @@ public sealed class EliteZombiesSpawner : EnemySpawner
         base.OnEnable();
 
         _breakpoints = new BreakpointList<EliteZombieBreakpoint>(_levelContext.EliteZombieBreakpoints);
-        _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
     }
 
     public override void OnUpdate()
     {
-        if (_onBossEvent || _spawner == null || _spawner.SpawnCount == 0) return;
-
-        for (int i = 0; i < _spawner.SpawnCount; i++)
+        if (!_onBossEvent && CurrentSpawned > 0)
         {
-            _spawner.SpawnedObjects[i]?.OnUpdate();
+            base.OnUpdate();
+            TryClearPool();
         }
-        _spawner.SpawnedObjects.Cleanup();
-
-        TryClearPool();
+        else return;
     }
 
     public override void OnFixedUpdate()
     {
-        if (_onBossEvent || _spawner == null || _spawner.SpawnCount == 0) return;
-
-        for (int i = 0; i < _spawner.SpawnCount; i++)
+        if (!_onBossEvent && CurrentSpawned > 0)
         {
-            if (_spawner.SpawnedObjects[i] != null)
-            {
-                _spawner.SpawnedObjects[i]?.OnFixedUpdate();
-
-                Vector3 moveDirection = new Vector3
-                    (
-                        _player.transform.position.x - _spawner.SpawnedObjects[i].transform.position.x,
-                        0f,
-                        _player.transform.position.z - _spawner.SpawnedObjects[i].transform.position.z
-                    );
-
-                _spawner.SpawnedObjects[i]?.Move(moveDirection);
-            }
-            else continue;
+            base.OnFixedUpdate(); 
+            TryClearPool();
         }
-
-        _spawner.SpawnedObjects.Cleanup();
-
-        TryClearPool();
+        else return;
     }
 
     public override void OnLevelProgressUpdate(int progress)
     {
         Breakpoint breakpoint = _breakpoints.CheckReaching(progress);
-
+        
         if (breakpoint != null)
         {
             if (_isDebug) Debug.Log("Elite zombie incoming!");
 
-            if (_spawner != null)
-            {
-                _spawner.ClearPool();
-            }
-
             _abilitiesRewardCount = (breakpoint as EliteZombieBreakpoint).AbilitiesRewardCount;
 
-            _spawner = new ObjectSpawner<Enemy>
-                (
-                    (breakpoint as EliteZombieBreakpoint).EnemyToSpawnPrefab,
-                    _poolSize,
-                    transform
-                );
+            _maxUnitsOnScene = _poolSize;
+
+            DispelUpgrades();
+            ReplacePools();
+
+            _spawners.Add(new ObjectSpawner<Enemy>((breakpoint as EliteZombieBreakpoint).EnemyToSpawnPrefab, _maxUnitsOnScene, transform));
 
             for (int i = 0; i < _poolSize; i++)
             {
                 Spawn(GetSpawnPosition());
             }
 
-            DispelUpgrades();
             GetUpgrade();
         }
 
-        Breakpoint upgradeBreakpoint = _upgradeBreakpoints.CheckReaching(progress);
-
-        if (upgradeBreakpoint != null)
-        {
-            if (_isDebug) Debug.Log("Elite zombie upgrade!");
-
-            DispelUpgrades();
-
-            _currentUpgrade = (upgradeBreakpoint as UpgradeBreakpoint).Upgrade;
-
-            GetUpgrade();
-        }
+        base.OnLevelProgressUpdate(progress);
     }
 
     protected override void Spawn(Vector3 position)
     {
-        Enemy spawnedEnemy = _spawner.Spawn(position);
+        if (_spawners != null && _spawners.Count > 0 && position != -Vector3.one)
+        {
+            Enemy spawnedEnemy = _spawners[0].Spawn(new Vector3
+                    (
+                        position.x,
+                        _levelContext.LevelBuilder.GridHeight + _spawners[0].Prefab.Collider.height * _spawners[0].Prefab.transform.localScale.y * 0.5f,
+                        position.z
+                    ));
 
-        spawnedEnemy.Initialize(_player, _spawner);
-        (spawnedEnemy as EliteZombie).InitializeSpawner(this);
+            spawnedEnemy.Initialize(_player, _spawners[0]);
+            (spawnedEnemy as EliteZombie).InitializeSpawner(this); 
+            
+            _totalSpawned++;
+        }
+        else return;
     }
 
-    private Vector3 GetSpawnPosition()
+    protected override Vector3 GetSpawnPosition()
     {
-        Vector3 playerPos = _player.transform.position;
+        if (_spawners != null && _spawners.Count > 0)
+        {
+            Vector3 playerPos = _player.transform.position;
 
-        return new Vector3
-            (
-                Cos(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.x,
-                _levelContext.LevelBuilder.GridHeight + _spawner.Prefab.Collider.height * _spawner.Prefab.transform.localScale.y * 0.5f,
-                Sin(Random.Range(0f, 2*PI)) * _spawnDeltaDistance + playerPos.z
-            );
+            return new Vector3
+                (
+                    Cos(Random.Range(0f, 2 * PI)) * _spawnDeltaDistance + playerPos.x,
+                    _levelContext.LevelBuilder.GridHeight + _spawners[0].Prefab.Collider.height * _spawners[0].Prefab.transform.localScale.y * 0.5f,
+                    Sin(Random.Range(0f, 2 * PI)) * _spawnDeltaDistance + playerPos.z
+                );
+        }
+        else return -Vector3.one;
     }
 
     public void OnEliteZombieDies(EliteZombie zombie)
@@ -146,77 +118,49 @@ public sealed class EliteZombiesSpawner : EnemySpawner
 
     public void OnBossEvent()
     {
-        if (_spawner == null || _spawner.SpawnCount == 0) return;
-
-        for (int i = 0; i < _spawner.SpawnCount; i++)
+        if (_spawners != null)
         {
-            if (_spawner.SpawnedObjects[i] != null)
+            foreach (var spawner in _spawners)
             {
-                _spawner.Release(_spawner.SpawnedObjects[i]);
+                for (int i = 0; i < spawner.SpawnCount; i++)
+                {
+                    spawner.SpawnedObjects[i]?.Die();
+                }
+            }
+        }
+        
+        if (_prevSpawners != null)
+        {
+            foreach (var spawner in _prevSpawners)
+            {
+                for (int i = 0; i < spawner.SpawnCount; i++)
+                {
+                    spawner.SpawnedObjects[i]?.Die();
+                }
             }
         }
 
-        _spawner.SpawnedObjects.Cleanup();
-        _onBossEvent = true;
-    }
-
-    public void OnBossEventEnd()
-    {
-        _onBossEvent = false;
+        ClearPools();
     }
 
     private void TryClearPool()
     {
-        if (_spawner.SpawnCount == 0)
+        if (CurrentSpawned == 0)
         {
-            _spawner.ClearPool();
-            _spawner = null;
-        }
-    }
-
-    protected override void GetUpgrade()
-    {
-        if (_currentUpgrade == null)
-        {
-            if (_isDebug) Debug.Log("Try get null upgrade!");
-
-            return;
-        }
-
-        if (_spawner != null)
-        {
-            foreach (Enemy zombie in _spawner.Objects)
+            foreach (Enemy zombie in _spawners[0].SpawnedObjects.List)
             {
-                zombie?.GetUpgrade(_currentUpgrade);
+                zombie.Die();
             }
 
-            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
+            foreach (var pool in _spawners)
             {
-                zombie?.GetUpgrade(_currentUpgrade);
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie.Die();
+                }
             }
-        }
-    }
-
-    protected override void DispelUpgrades()
-    {
-        if (_currentUpgrade == null)
-        {
-            if (_isDebug) Debug.Log("Current upgrade is null!");
-
-            return;
-        }
-
-        if (_spawner != null)
-        {
-            foreach (Enemy zombie in _spawner.Objects)
-            {
-                zombie?.DispelUpgrade(_currentUpgrade);
-            }
-
-            foreach (Enemy zombie in _spawner.SpawnedObjects.List)
-            {
-                zombie?.DispelUpgrade(_currentUpgrade);
-            }
+            
+            ClearPools();
         }
     }
 }

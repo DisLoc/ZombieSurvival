@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBehaviour, IPoolable
 {
     private CleanupableList<TObject> _spawnedObjects;

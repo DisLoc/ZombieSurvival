@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy ugrade Street1x2
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 0
-  _abilityMarker: {fileID: 11400000, guid: f7404f97562c6cc4b9ebb0a946ceeff8, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 205c13ab19ddffc478eb6b0b24d51477, type: 2}
   - {fileID: 11400000, guid: 44eacff9e82658c4d8b05db1d380fe23, type: 2}
