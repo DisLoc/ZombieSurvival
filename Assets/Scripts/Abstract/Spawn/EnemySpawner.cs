@@ -13,7 +13,9 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     protected int _totalSpawned;
 
     protected BreakpointList<UpgradeBreakpoint> _upgradeBreakpoints;
+
     protected Upgrade _currentUpgrade;
+    protected List<Upgrade> _levelUpgrades;
 
     protected List<ObjectSpawner<Enemy>> _prevSpawners;
     protected List<ObjectSpawner<Enemy>> _spawners;
@@ -52,6 +54,8 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
         base.OnEnable();
 
         _upgradeBreakpoints = new BreakpointList<UpgradeBreakpoint>(_levelContext.EnemyUpgradeBreakpoints);
+
+        _levelUpgrades = _levelContext.EnemiesUpgrades;
 
         _spawners = new List<ObjectSpawner<Enemy>>();
         _prevSpawners = new List<ObjectSpawner<Enemy>>();
@@ -255,12 +259,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     /// </summary>
     protected virtual void GetUpgrade()
     {
-        if (_currentUpgrade == null)
-        {
-            if (_isDebug) Debug.Log("Try get null upgrade!");
-
-            return;
-        }
 
         if (_spawners != null)
         {
@@ -269,11 +267,21 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                 foreach (Enemy zombie in pool.Objects)
                 {
                     zombie?.GetUpgrade(_currentUpgrade);
+                    
+                    foreach(Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.GetUpgrade(levelUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
                 {
                     zombie?.GetUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.GetUpgrade(levelUpgrade);
+                    }
                 }
             }
         }
@@ -285,11 +293,21 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                 foreach (Enemy zombie in pool.Objects)
                 {
                     zombie?.GetUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.GetUpgrade(levelUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
                 {
                     zombie?.GetUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.GetUpgrade(levelUpgrade);
+                    }
                 }
             }
         }
@@ -300,13 +318,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     /// </summary>
     protected virtual void DispelUpgrades()
     {
-        if (_currentUpgrade == null)
-        {
-            if (_isDebug) Debug.Log("Current upgrade is null!");
-
-            return;
-        }
-
         if (_spawners != null)
         {
             foreach (ObjectSpawner<Enemy> pool in _spawners)
@@ -314,11 +325,21 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                 foreach (Enemy zombie in pool.Objects)
                 {
                     zombie?.DispelUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.DispelUpgrade(levelUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
                 {
                     zombie?.DispelUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.DispelUpgrade(levelUpgrade);
+                    }
                 }
             }
         }
@@ -330,11 +351,21 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                 foreach (Enemy zombie in pool.Objects)
                 {
                     zombie?.DispelUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.DispelUpgrade(levelUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
                 {
                     zombie?.DispelUpgrade(_currentUpgrade);
+
+                    foreach (Upgrade levelUpgrade in _levelUpgrades)
+                    {
+                        zombie?.DispelUpgrade(levelUpgrade);
+                    }
                 }
             }
         }

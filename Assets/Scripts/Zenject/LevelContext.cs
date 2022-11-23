@@ -57,6 +57,83 @@ public sealed class LevelContext : ScriptableObject
 
     public BreakpointList<UpgradeBreakpoint> EnemyUpgradeBreakpoints => _enemyUpgradeBreakpoints;
 
+    #region All breakpoints
+    public BreakpointList<Breakpoint> AllBreakpoints
+    {
+        get
+        {
+            BreakpointList<Breakpoint> breakpoints = new BreakpointList<Breakpoint>();
+
+            for (int i = 0; i < GetMaxBreakpointsCount(); i++)
+            {
+                if (i < _crystalSpawnBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_crystalSpawnBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _enemyBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_enemyBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _hordeBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_hordeBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _eliteZombieBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_eliteZombieBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _bossBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_bossBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _enemyUpgradeBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_enemyUpgradeBreakpoints.Breakpoints[i]);
+                }
+            }
+
+            return breakpoints;
+        }
+    }
+
+    private int GetMaxBreakpointsCount()
+    {
+        int max = _crystalSpawnBreakpoints.Breakpoints.Count;
+
+        if (max < _enemyBreakpoints.Breakpoints.Count)
+        {
+            max = _enemyBreakpoints.Breakpoints.Count;
+        }
+
+        if (max < _hordeBreakpoints.Breakpoints.Count)
+        {
+            max = _hordeBreakpoints.Breakpoints.Count;
+        }
+
+        if (max < _eliteZombieBreakpoints.Breakpoints.Count)
+        {
+            max = _eliteZombieBreakpoints.Breakpoints.Count;
+        }
+
+        if (max < _bossBreakpoints.Breakpoints.Count)
+        {
+            max = _bossBreakpoints.Breakpoints.Count;
+        }
+
+        if (max < _enemyUpgradeBreakpoints.Breakpoints.Count)
+        {
+            max = _enemyUpgradeBreakpoints.Breakpoints.Count;
+        }
+
+        return max;
+    }
+    #endregion
+
     public List<Upgrade> PlayerUpgrades
     {
         get
@@ -70,7 +147,6 @@ public sealed class LevelContext : ScriptableObject
         }
     }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
-
 
     public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
     {

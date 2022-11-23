@@ -20,10 +20,8 @@ public class ZombieChest : PickableObject
         _canvas.gameObject.SetActive(false);
     }
 
-    public override void PickUp()
+    protected override void OnPickUp()
     {
-        base.PickUp();
-
         _canvas.gameObject.SetActive(true);
 
         Time.timeScale = 0;

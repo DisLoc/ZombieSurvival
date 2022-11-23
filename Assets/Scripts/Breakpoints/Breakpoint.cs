@@ -7,9 +7,16 @@ public class Breakpoint
 
     [Header("Breakpoint settings")]
     [SerializeField] protected Sprite _breakpointIcon;
+    [SerializeField] protected Sprite _breakpointLine;
+    [SerializeField] protected Color _breakpointLineColor = Color.white;
+    
     [SerializeField][Range(0, 100)] protected int _requiredProgress;
 
     private bool _isReached;
+
+    public Sprite Icon => _breakpointIcon;
+    public Sprite Line => _breakpointLine;
+    public Color LineColor => _breakpointLineColor;
 
     public string Name => _name;
     public int RequiredProgress => _requiredProgress;

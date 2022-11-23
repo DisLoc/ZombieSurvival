@@ -5,13 +5,14 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 {
     [Header("LevelProgress settings")]
     [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
+    [SerializeField] private LevelProgressBreakpoint _breakpointPrefab;
 
     private int _maxLevelTime;
     private bool _onBossEvent;
 
-    [Inject] private LevelContext _levelContext;
-
     public int Value => _value;
+
+    [Inject] private LevelContext _levelContext;
 
     private void OnEnable()
     {
@@ -33,6 +34,21 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
     public void OnGameStart()
     {
         Initialize();
+
+        foreach (Breakpoint breakpoint in _levelContext.AllBreakpoints.Breakpoints)
+        {
+            if (breakpoint.Icon != null)
+            {
+                LevelProgressBreakpoint newBreakpoint = Instantiate(_breakpointPrefab, transform);
+
+                newBreakpoint.Transform.anchorMin = new Vector2(breakpoint.RequiredProgress * 0.01f, 0f);
+                newBreakpoint.Transform.anchorMax = new Vector2(breakpoint.RequiredProgress * 0.01f, 1f);
+
+                newBreakpoint.Transform.anchoredPosition = new Vector2(0f, 0f);
+
+                newBreakpoint.SetBreakpoint(breakpoint);
+            }
+        }
         
         _maxLevelTime = _levelContext.LevelLenght;
     }

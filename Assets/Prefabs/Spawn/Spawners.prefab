@@ -271,10 +271,18 @@ PrefabInstance:
       propertyPath: _chestPrefab
       value: 
       objectReference: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+    - target: {fileID: 742492564938912031, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
+      propertyPath: _spawnDeltaDistance
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8247142234265384198, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
       propertyPath: _chestPrefab
       value: 
       objectReference: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+    - target: {fileID: 8247142234265384198, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
+      propertyPath: _spawnDeltaDistance
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
 --- !u!4 &3996085182143219123 stripped

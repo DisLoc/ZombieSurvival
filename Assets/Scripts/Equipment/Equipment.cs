@@ -27,6 +27,8 @@ public class Equipment : MonoBehaviour
 
     public Level Level => _level;
 
+    public bool isEquiped;
+
     public void Initialize()
     {
         _level.Initialize();

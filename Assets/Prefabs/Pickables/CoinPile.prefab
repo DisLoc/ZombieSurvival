@@ -145,8 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.8901961, b: 0, a: 1}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 9201151954380301377}
   _pickUpRange: 0.5
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _coin:
     _currencyValue: 25
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

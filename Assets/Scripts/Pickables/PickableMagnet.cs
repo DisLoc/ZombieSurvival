@@ -14,20 +14,15 @@ public class PickableMagnet : PickableObject
         _targetDetector.Initialize(_magnetRadius);
     }
 
-    public override void PickUp()
+    protected override void OnPickUp()
     {
-        base.PickUp();
-
-        if (_targetDetector.Targets.Count > 0)
+        foreach(var target in _targetDetector.Targets) 
         {
-            foreach(var target in _targetDetector.Targets) 
-            {
-                PickableObject obj = target.GetComponent<PickableObject>();
+            PickableObject obj = target.GetComponent<PickableObject>();
 
-                if (obj != null)
-                {
-                    obj.PickUp();
-                }
+            if (obj != null)
+            {
+                obj.PickUp(_target);
             }
         }
 

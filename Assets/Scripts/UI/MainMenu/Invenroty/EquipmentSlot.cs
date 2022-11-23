@@ -7,6 +7,7 @@ public class EquipmentSlot : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Settings")]
+    [SerializeField] private Button _button;
     [SerializeField] private EquipSlot _validSlot;
     [SerializeField] private Sprite _nullEquipmentBackground;
 
@@ -18,6 +19,7 @@ public class EquipmentSlot : MonoBehaviour
     private Equipment _equipment;
     private EquipmentTypesData _equipmentTypesData;
 
+    public Button Button => _button;
     public EquipSlot ValidSlot => _validSlot;
     public Equipment Equipment => _equipment;
 
@@ -32,29 +34,24 @@ public class EquipmentSlot : MonoBehaviour
 
     public bool SetSlot(Equipment equipment)
     {
-        if (equipment == null)
-        {
-            if (_isDebug) Debug.Log("Equipment error!");
-
-            return false;
-        }
-
         _equipment = equipment;
 
         UpdateSlot();
 
-        return true;
+        return _equipment != null;
     }
 
     private void UpdateSlot()
     {
+        _equipmentTypeIcon.enabled = true;
+        _equipmentTypeIcon.sprite = _equipmentTypesData[_validSlot].SlotIcon;
+
         if (_equipment == null)
         {
             _equipmentBackground.sprite = _nullEquipmentBackground;
 
             _equipmentIcon.enabled = false;
             _equipmentLevel.enabled = false;
-            _equipmentTypeIcon.enabled = false;
         }
         else
         {
@@ -62,7 +59,6 @@ public class EquipmentSlot : MonoBehaviour
 
             _equipmentIcon.enabled = true;
             _equipmentLevel.enabled = true;
-            _equipmentTypeIcon.enabled = true;
 
             _equipmentIcon.sprite = _equipment.Icon;
             _equipmentTypeIcon.sprite = _equipmentTypesData[_equipment.EquipSlot].SlotIcon;

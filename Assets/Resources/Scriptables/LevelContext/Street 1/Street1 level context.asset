@@ -21,20 +21,28 @@ MonoBehaviour:
     _breakpoints:
     - _name: 0-30%
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 0
       _spawningCrystalStats: {fileID: 11400000, guid: 374a29a7dcf360c40b5c6d2d80d53528, type: 2}
     - _name: 30-60%
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 30
       _spawningCrystalStats: {fileID: 11400000, guid: 666fd299b67264443af06179764716ec, type: 2}
     - _name: 60-100%
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 60
       _spawningCrystalStats: {fileID: 11400000, guid: 591e8bf598388ce4ba7f620463e81a83, type: 2}
   _enemyBreakpoints:
     _breakpoints:
     - _name: 0-10
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 1, g: 1, b: 1, a: 1}
       _requiredProgress: 0
       _spawningEnemies:
       - _object: {fileID: 5029482728136856336, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
@@ -44,6 +52,8 @@ MonoBehaviour:
       _maxUnitsOnScene: 10
     - _name: 11-30
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 1, g: 1, b: 1, a: 1}
       _requiredProgress: 11
       _spawningEnemies:
       - _object: {fileID: 5029482728136856336, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
@@ -57,6 +67,8 @@ MonoBehaviour:
       _maxUnitsOnScene: 15
     - _name: 30-60
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 30
       _spawningEnemies:
       - _object: {fileID: 6014635930849753472, guid: 9b45625e86b9e6141be69c6800fa1fc7, type: 3}
@@ -74,6 +86,8 @@ MonoBehaviour:
       _maxUnitsOnScene: 20
     - _name: 60-100
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 60
       _spawningEnemies:
       - _object: {fileID: 1294031339213091140, guid: bd5766aca1ed9fb4e9d5be33ae6daff1, type: 3}
@@ -97,87 +111,136 @@ MonoBehaviour:
     _breakpoints:
     - _name: 10% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 10
       _enemyToSpawnPrefab: {fileID: 5029482728136856336, guid: fd0330aa3859e7f418ebaf9148d91b58, type: 3}
       _spawnCount: 20
     - _name: 20% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 20
       _enemyToSpawnPrefab: {fileID: 6014635930849753472, guid: 9b45625e86b9e6141be69c6800fa1fc7, type: 3}
       _spawnCount: 25
     - _name: 40% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 40
       _enemyToSpawnPrefab: {fileID: 1294031339213091140, guid: bd5766aca1ed9fb4e9d5be33ae6daff1, type: 3}
       _spawnCount: 25
     - _name: 50% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 50
       _enemyToSpawnPrefab: {fileID: 3984346456179942867, guid: c544dfe747c26da428fbc1a56839ceb9, type: 3}
       _spawnCount: 30
     - _name: 80% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 80
       _enemyToSpawnPrefab: {fileID: 3984346456179942867, guid: c544dfe747c26da428fbc1a56839ceb9, type: 3}
       _spawnCount: 30
     - _name: 90% horde
       _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
       _requiredProgress: 90
       _enemyToSpawnPrefab: {fileID: 5443555473341688872, guid: 2a6163ec7efbc8445a0384f8af222662, type: 3}
       _spawnCount: 40
   _eliteZombieBreakpoints:
     _breakpoints:
     - _name: 5%
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9167996, b: 0, a: 1}
       _requiredProgress: 5
       _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
-      _abilitiesRewardCount: 1
+      _maxAbilitiesRewardCount: 0
     - _name: 20%
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
       _requiredProgress: 25
       _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
-      _abilitiesRewardCount: 2
+      _maxAbilitiesRewardCount: 0
     - _name: 50%
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
       _requiredProgress: 50
       _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
-      _abilitiesRewardCount: 2
+      _maxAbilitiesRewardCount: 0
     - _name: 75%
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
       _requiredProgress: 75
       _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
-      _abilitiesRewardCount: 3
+      _maxAbilitiesRewardCount: 0
   _bossBreakpoints:
     _breakpoints:
     - _name: 30% boss
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
       _requiredProgress: 30
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _maxAbilitiesRewardCount: 0
     - _name: 60% boss
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
       _requiredProgress: 60
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _maxAbilitiesRewardCount: 0
     - _name: 100% boss
-      _breakpointIcon: {fileID: 0}
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
       _requiredProgress: 100
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _maxAbilitiesRewardCount: 0
   _enemyUpgradeBreakpoints:
     _breakpoints:
-    - _name: 5-15
+    - _name: 10-19
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 5
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 10
       _upgrade: {fileID: 11400000, guid: 84d32d3058ccfbc48888f69be8129b71, type: 2}
-    - _name: 16-30
+    - _name: 20-30
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 16
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 20
       _upgrade: {fileID: 11400000, guid: 591e8652b08ac6a4095e785bb62e0d29, type: 2}
-    - _name: 31-60
+    - _name: 30-60
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 31
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 30
       _upgrade: {fileID: 11400000, guid: 264bcc088b786d44a9cf2550317a00a2, type: 2}
-    - _name: 61-100
+    - _name: 60-79
       _breakpointIcon: {fileID: 0}
-      _requiredProgress: 61
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 60
       _upgrade: {fileID: 11400000, guid: 27e6f7d6ce9311b47ab40c8c4fc4382f, type: 2}
+    - _name: 80-99
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 80
+      _upgrade: {fileID: 11400000, guid: b536790cb0fd76e4497c62fce47f461d, type: 2}
+    - _name: 100
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _requiredProgress: 100
+      _upgrade: {fileID: 11400000, guid: 2a53766870fdb644f91adfb647fefd35, type: 2}
   _playerUpgrades: []
   _enemiesUpgrades: []

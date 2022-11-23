@@ -51,7 +51,7 @@ public class Player : CharacterBase
             GetUpgrade(upgrade);
         }
 
-        _animator.SetBool(AnimatorBools.WithShotgun.ToString(), true);
+        _animator.SetBool(AnimatorBools.WithBlade.ToString(), true);
 
         PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
 
@@ -76,7 +76,7 @@ public class Player : CharacterBase
         Vector3 pos = transform.position;
         _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
 
-        _animator.SetBool(AnimatorBools.ShotgunWalk.ToString(), isMoving);
+        _animator.SetBool(AnimatorBools.BladeWalk.ToString(), isMoving);
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {

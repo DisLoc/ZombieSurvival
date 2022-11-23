@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -9048139581476611238}
   - component: {fileID: 8162076670152734966}
   m_Layer: 0
-  m_Name: Slash projectile
+  m_Name: Blade projectile
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

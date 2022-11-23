@@ -755,8 +755,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 7400282451038139747}
-  _pickUpRange: 1
+  _pickUpRange: 0.5
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _canvas: {fileID: 6437488437433588298}
   _abilityUIParent: {fileID: 3659641335560866168}
   _abilityUIPrefab: {fileID: 513647843441780316, guid: a40ced8ead63f91459255fad402d4454, type: 3}

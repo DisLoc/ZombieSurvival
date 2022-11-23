@@ -6,19 +6,22 @@ public sealed class InventoryMenu : UIMenu
 {
     [Header("Inventory menu settings")]
     [SerializeField] private ItemUpgradeMenu _upgradeMenu;
+    [SerializeField] private LevelContextInstaller _contextInstaller;
+    [SerializeField] private RectTransform _unequipedInventoryTransform;
+    [SerializeField] private GridScaler _gridScaler;
 
     [Header("Equipment settings")]
-    [SerializeField] private LevelContextInstaller _contextInstaller;
+    [SerializeField] private EquipmentTypesData _equipmentTypesData;
 
+    [SerializeField] private List<EquipmentSlot> _slots;
     [SerializeField] private Text _damageText;
     [SerializeField] private Text _healthText;
 
-    [SerializeField] private List<EquipmentSlot> _slots;
+    [SerializeField] private EquipmentInventoryMenu _inventory; 
 
-    [SerializeField] private EquipmentTypesData _equipmentTypesData;
-
+    [Header("Test")]
     [SerializeField] private Player _player;
-
+    [SerializeField] private bool _useBaseEquipment;
     [SerializeField] private List<Equipment> _baseEquipment;
 
     private EquipmentInventory _equipmentInventory;
@@ -29,19 +32,30 @@ public sealed class InventoryMenu : UIMenu
     {
         base.Initialize(mainMenu, parentMenu);
 
-        _equipmentInventory = new EquipmentInventory(_baseEquipment);
-
         _upgradeMenu.Initialize(mainMenu, this);
 
-        foreach(EquipmentSlot slot in _slots)
+        _inventory.Initialize(this);
+        _equipmentInventory = new EquipmentInventory();
+
+        foreach (EquipmentSlot slot in _slots)
         {
             slot.Initialize(_equipmentTypesData);
+        }
 
-            Equipment equipment = _equipmentInventory[slot.ValidSlot];
+        if (_useBaseEquipment)
+        {
+            _equipmentInventory = new EquipmentInventory(_baseEquipment);
 
-            if (equipment != null)
+            foreach (EquipmentSlot slot in _slots)
             {
-                slot.SetSlot(equipment);
+                Equipment equipment = _equipmentInventory[slot.ValidSlot];
+
+                equipment.isEquiped = true;
+
+                if (equipment != null)
+                {
+                    slot.SetSlot(equipment);
+                }
             }
         }
 
@@ -108,6 +122,52 @@ public sealed class InventoryMenu : UIMenu
 
         _damageText.text = totalDamage.ToString();
         _healthText.text = totalHP.ToString();
+    }
+
+    public void Equip(Equipment equipment)
+    {
+        if (equipment == null) return;
+
+        EquipmentSlot slot = _slots.Find(item => item.ValidSlot.Equals(equipment.EquipSlot));
+
+        if (slot.Equipment != null)
+        {
+            _inventory.AddEquipment(slot.Equipment);
+        }
+
+        equipment.isEquiped = true;
+
+        _inventory.RemoveEquipment(equipment);
+        slot.SetSlot(equipment);
+
+        _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
+
+        Display();
+    }
+
+    public void Unequip(Equipment equipment)
+    {
+        EquipmentSlot slot = _slots.Find(item => item.ValidSlot.Equals(equipment.EquipSlot));
+
+        if (slot.Equipment != null)
+        {
+            _inventory.AddEquipment(slot.Equipment);
+        }
+
+        equipment.isEquiped = false;
+
+        slot.SetSlot(null);
+
+        _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
+
+        Display();
+    }
+    
+    private int GetInventoryHeight()
+    {
+        int rows = _inventory.Equipment.Count / _gridScaler.MaxItemsInRow + (_inventory.Equipment.Count % _gridScaler.MaxItemsInRow > 0 ? 1 : 0);
+
+        return _gridScaler.Grid.padding.top + _gridScaler.Grid.padding.bottom + (int)(_gridScaler.Grid.cellSize.y * rows) + (int)(_gridScaler.Grid.spacing.y * rows);
     }
 
     public void OnInventoryChange()

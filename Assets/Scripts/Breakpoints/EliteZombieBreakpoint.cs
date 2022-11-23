@@ -5,15 +5,15 @@ public class EliteZombieBreakpoint : Breakpoint
 {
     [Header("Enemy settings")]
     [SerializeField] protected Enemy _enemyToSpawnPrefab;
-    [SerializeField] private int _abilitiesRewardCount;
+    [SerializeField] private int _maxAbilitiesRewardCount;
 
     public Enemy EnemyToSpawnPrefab => _enemyToSpawnPrefab;
-    public int AbilitiesRewardCount => _abilitiesRewardCount;
+    public int MaxAbilitiesRewardCount => _maxAbilitiesRewardCount;
 
     protected EliteZombieBreakpoint(EliteZombieBreakpoint breakpoint) : base(breakpoint)
     {
         _enemyToSpawnPrefab = breakpoint._enemyToSpawnPrefab;
-        _abilitiesRewardCount = breakpoint._abilitiesRewardCount;
+        _maxAbilitiesRewardCount = breakpoint._maxAbilitiesRewardCount;
     }
 
     public override Breakpoint Clone() => new EliteZombieBreakpoint(this);

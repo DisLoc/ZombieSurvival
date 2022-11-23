@@ -129,7 +129,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2449599218809666176
 MonoBehaviour:
@@ -145,8 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.89133024, b: 0, a: 1}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 2449599218809666178}
   _pickUpRange: 0.5
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _coin:
     _currencyValue: 5
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

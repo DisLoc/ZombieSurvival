@@ -53,7 +53,12 @@ public class ItemUpgradeMenu : UIMenu
     [SerializeField] private Image _currencyIcon;
     [SerializeField] private Text _currencyCountText;
 
+    [Space(5)]
+    [SerializeField] private Text _maxLevelTootlipText;
     [SerializeField] private Text _equipUnequipButtonText;
+
+    [SerializeField] private Button _upgradeButton;
+    [SerializeField] private Button _quickUpgradeButton;
 
     private EquipmentTypesData _equipmentTypesData;
     private Equipment _equipment;
@@ -86,11 +91,15 @@ public class ItemUpgradeMenu : UIMenu
 
         base.Hide(playAnimation);
     }
+
     public void SetEquipment(Equipment equipment)
     {
         if (equipment == null) return;
 
         _equipment = equipment;
+
+        if (_equipment.isEquiped) _equipUnequipButtonText.text = "Unequip";
+        else _equipUnequipButtonText.text = "Equip";
 
         _rarityText.text = _equipment.EquipRarity.ToString();
         _rarityBackground.sprite = _equipmentTypesData[_equipment.EquipRarity].RarityBackground;
@@ -110,6 +119,31 @@ public class ItemUpgradeMenu : UIMenu
         _equipmentUpgradeValue.text = ((int)value).ToString();
 
         _equipmentLevel.text = ((int)_equipment.Level.Value).ToString() + "/" + ((int)_equipment.Level.MaxValue).ToString();
+
+        if (_equipment.Level.Value == _equipment.Level.MaxValue)
+        {
+            _upgradeButton.interactable = false;
+            _quickUpgradeButton.interactable = false;
+
+            _materialIcon.enabled = false;
+            _materialCountText.enabled = false;
+            _currencyIcon.enabled = false;
+            _currencyCountText.enabled = false;
+
+            _maxLevelTootlipText.enabled = true;
+        }
+        else
+        {
+            _upgradeButton.interactable = true;
+            _quickUpgradeButton.interactable = true;
+
+            _materialIcon.enabled = true;
+            _materialCountText.enabled = true;
+            _currencyIcon.enabled = true;
+            _currencyCountText.enabled = true;
+
+            _maxLevelTootlipText.enabled = false;
+        }
     }
 
     public void OnResetClick()
@@ -122,7 +156,16 @@ public class ItemUpgradeMenu : UIMenu
 
     public void OnEquipUnequipClick()
     {
+        if (_equipment == null) return;
 
+        if (_equipment.isEquiped)
+        {
+            (_parentMenu as InventoryMenu).Unequip(_equipment);
+        }
+        else
+        {
+            (_parentMenu as InventoryMenu).Equip(_equipment);
+        }
     }
 
     public void OnUpgradeClick()

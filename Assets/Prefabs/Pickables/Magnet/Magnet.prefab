@@ -79,8 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.12406184, b: 0, a: 1}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 1510365690108338249}
   _pickUpRange: 0.5
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _magnetRadius:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 34b23e0375437b846bb5ee329b1b47e0, type: 2}

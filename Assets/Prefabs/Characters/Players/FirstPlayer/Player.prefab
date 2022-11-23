@@ -62,6 +62,7 @@ MonoBehaviour:
   _collider: {fileID: 1904523937}
   _triggerTags:
     _tags: 0400000003000000
+  _carrier: {fileID: 4441788838641939132}
 --- !u!1 &270640016734670283
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ GameObject:
   - component: {fileID: 2756268326544508076}
   - component: {fileID: 1448123843326196526}
   - component: {fileID: 2956812378847984679}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7532975292053593487}
   - component: {fileID: 3495370905877527891}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +519,7 @@ MonoBehaviour:
       _damageData: {fileID: 11400000, guid: 48920c09ae47c4c41a7c8015ef4d4986, type: 2}
       _healthData: {fileID: 11400000, guid: e99eb14d65da3b441b1cb8226a2563ff, type: 2}
   _stats:
-    _baseWeapon: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
+    _baseWeapon: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8a6dd93761d83924ab08bc3b7ef0bca9, type: 2}
@@ -540,7 +541,7 @@ MonoBehaviour:
           _minValue: 0
           _maxValue: 0
           _maxValueIsInfinite: 1
-      _baseExpForLevelUp: 500
+      _baseExpForLevelUp: 1000
       _levelMultiplier: 0.5
       _expBar: {fileID: 0}
     _pickUpRange:
@@ -559,8 +560,8 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8794446aa052ce94e9965f3fb6fb3c52, type: 2}
   _abilityInventory:
-    _maxActiveAbilitiesCount: 5
-    _maxPassiveAbilitiesCount: 5
+    _maxActiveAbilitiesCount: 7
+    _maxPassiveAbilitiesCount: 7
     _abilitiesParent: {fileID: 4441788838641939132}
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

@@ -10,7 +10,7 @@ public sealed class EliteZombiesSpawner : EnemySpawner, IBossEventHandler
 
     private BreakpointList<EliteZombieBreakpoint> _breakpoints;
 
-    private int _abilitiesRewardCount;
+    private int _maxAbilitiesRewardCount;
 
     private bool _onBossEvent;
 
@@ -51,7 +51,7 @@ public sealed class EliteZombiesSpawner : EnemySpawner, IBossEventHandler
         {
             if (_isDebug) Debug.Log("Elite zombie incoming!");
 
-            _abilitiesRewardCount = (breakpoint as EliteZombieBreakpoint).AbilitiesRewardCount;
+            _maxAbilitiesRewardCount = (breakpoint as EliteZombieBreakpoint).MaxAbilitiesRewardCount;
 
             _maxUnitsOnScene = _poolSize;
 
@@ -111,7 +111,7 @@ public sealed class EliteZombiesSpawner : EnemySpawner, IBossEventHandler
         if (_chestPrefab != null)
         {
             ZombieChest chest = Instantiate(_chestPrefab, zombie.transform.position, _chestPrefab.transform.localRotation);
-            chest.Initialize(_player, _abilityGiver, _abilitiesRewardCount);
+            chest.Initialize(_player, _abilityGiver, Random.Range(1, _maxAbilitiesRewardCount + 1));
         }
         else if (_isDebug) Debug.Log("Missing RewardChest!");
     }

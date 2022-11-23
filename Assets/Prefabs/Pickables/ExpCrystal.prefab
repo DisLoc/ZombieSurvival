@@ -145,8 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 0, g: 0.37633944, b: 1, a: 1}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 9200049327040706117}
   _pickUpRange: 0.4
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _renderer: {fileID: 7654382446754802328}
-  _pickUpSpeed: 10
-  _speedMultiplier: 0.01

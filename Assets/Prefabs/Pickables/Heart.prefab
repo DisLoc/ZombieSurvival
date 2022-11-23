@@ -61,8 +61,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 0.12519169, g: 1, b: 0, a: 1}
+  _pickUpTag: 0
   _pickUpCollider: {fileID: 2925953008271214788}
   _pickUpRange: 0.5
+  _pickUpSpeed: 13
+  _speedMultiplier: 0.02
   _healUpgrade: {fileID: 11400000, guid: a2fe8924ee3a3f144b300c3bffcde996, type: 2}
 --- !u!1 &7319343339322575496
 GameObject:

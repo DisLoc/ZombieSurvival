@@ -13,10 +13,8 @@ public class PickableCoin : PickableObject
         _player = player;
     }
 
-    public override void PickUp()
+    protected override void OnPickUp()
     {
-        base.PickUp();
-
         if (_player != null)
         {
             _player.CoinInventory.Add(_coin);
