@@ -179,12 +179,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     protected virtual Vector3 GetSpawnPosition()
     {
         Vector3 playerPos = _player.transform.position;
-        int unitsOnScene = 0;
-
-        foreach (ObjectSpawner<Enemy> pool in _spawners)
-        {
-            unitsOnScene += pool.SpawnCount;
-        }
 
         return new Vector3
             (
