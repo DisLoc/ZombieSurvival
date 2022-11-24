@@ -510,6 +510,9 @@ MonoBehaviour:
   _defaultViewSide: {x: 1, y: 0, z: 0}
   _moveController: {fileID: 5057284736669028852}
   _animator: {fileID: 2956812378847984679}
+  _startWeaponsList:
+  - {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
+  - {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
   isMoving: 0
   _collider: {fileID: 8953109175079049454}
   _pickablesCatcher: {fileID: 4806763617484522634}

@@ -341,7 +341,7 @@ MonoBehaviour:
   _upgradeMenu: {fileID: 6949385503264261472}
   _contextInstaller: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
   _unequipedInventoryTransform: {fileID: 1004279293514795559}
-  _gridScaler: {fileID: 9164133297848631900}
+  _grid: {fileID: 1004279293514795558}
   _equipmentTypesData: {fileID: 11400000, guid: a84433bd886f6ce40b23a75d8a3f39dc, type: 2}
   _slots:
   - {fileID: 4808176719622937326}
@@ -1565,7 +1565,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1004279293514795559}
   - component: {fileID: 1004279293514795558}
-  - component: {fileID: 9164133297848631900}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1617,23 +1616,6 @@ MonoBehaviour:
   m_Spacing: {x: 25, y: 25}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &9164133297848631900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004279293514795556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a61e6c34f80ef489c91b1022554934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grid: {fileID: 1004279293514795558}
-  _maxItemsInRow: 6
-  _defaultResolution: {x: 1920, y: 1080}
-  _defaultCellSize: {x: 120, y: 120}
-  _defaultSpacing: {x: 25, y: 25}
 --- !u!1 &1004279293524102807
 GameObject:
   m_ObjectHideFlags: 0

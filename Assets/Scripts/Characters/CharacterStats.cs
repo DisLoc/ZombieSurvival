@@ -20,6 +20,14 @@ public class CharacterStats : IObjectStats
         _regeneration.Initialize();
     }
 
+    public virtual void SetBaseWeapon(Weapon weapon)
+    {
+        if (weapon != null)
+        {
+            _baseWeapon = weapon;
+        }
+    }
+
     public virtual void GetUpgrade(Upgrade upgrade)
     {
         _health.Upgrade(upgrade);

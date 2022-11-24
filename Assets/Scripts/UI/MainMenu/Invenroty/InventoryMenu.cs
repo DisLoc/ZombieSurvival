@@ -8,7 +8,7 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private ItemUpgradeMenu _upgradeMenu;
     [SerializeField] private LevelContextInstaller _contextInstaller;
     [SerializeField] private RectTransform _unequipedInventoryTransform;
-    [SerializeField] private GridScaler _gridScaler;
+    [SerializeField] private GridLayoutGroup _grid;
 
     [Header("Equipment settings")]
     [SerializeField] private EquipmentTypesData _equipmentTypesData;
@@ -165,9 +165,9 @@ public sealed class InventoryMenu : UIMenu
     
     private int GetInventoryHeight()
     {
-        int rows = _inventory.Equipment.Count / _gridScaler.MaxItemsInRow + (_inventory.Equipment.Count % _gridScaler.MaxItemsInRow > 0 ? 1 : 0);
+        int rows = _inventory.Equipment.Count / 6 + (_inventory.Equipment.Count % 6 > 0 ? 1 : 0);
 
-        return _gridScaler.Grid.padding.top + _gridScaler.Grid.padding.bottom + (int)(_gridScaler.Grid.cellSize.y * rows) + (int)(_gridScaler.Grid.spacing.y * rows);
+        return _grid.padding.top + _grid.padding.bottom + (int)(_grid.cellSize.y * rows) + (int)(_grid.spacing.y * rows);
     }
 
     public void OnInventoryChange()

@@ -134,6 +134,7 @@ public sealed class LevelContext : ScriptableObject
     }
     #endregion
 
+    public Weapon PlayerBaseWeapon { get; private set; }
     public List<Upgrade> PlayerUpgrades
     {
         get
@@ -148,9 +149,10 @@ public sealed class LevelContext : ScriptableObject
     }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
-    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
+    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory, Weapon baseWeapon = null)
     {
         _equipmentUpgrades = new List<Upgrade>();
+        PlayerBaseWeapon = baseWeapon;
 
         if (equipmentInventory != null)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -7,7 +8,11 @@ public class Player : CharacterBase
     [Header("Moving settings")]
     [SerializeField] protected PlayerMoveController _moveController;
     [SerializeField] protected Animator _animator;
+    [SerializeField] protected List<Weapon> _startWeaponsList;
+
     [HideInInspector] public bool isMoving;
+
+    protected AnimatorBools _baseWeaponBool; 
 
     [Header("Colliders")]
     [Tooltip("Self collider")]
@@ -33,11 +38,38 @@ public class Player : CharacterBase
     public CurrencyInventory CoinInventory => _coinInventory;
     public Vector3 CameraDeltaPos => _moveController.CameraDeltaPos;
 
+    [Inject] protected AbilityGiver _abilityGiver;
+
     public void Initialize()
     {
         transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
+        if (_levelContext.PlayerBaseWeapon == null)
+        {
+            List<Type> startWeaponTypes = new List<Type>();
+
+            foreach (Weapon weapon in _startWeaponsList)
+            {
+                startWeaponTypes.Add(weapon.GetType());
+            }
+
+            _stats.SetBaseWeapon(_abilityGiver.GetRandomWeapon(startWeaponTypes.Count > 0 ? startWeaponTypes : null));
+        }
+        else 
+        {
+            _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
+        }
+        
         _stats.Initialize();
+
+        if (_stats.BaseWeapon as Shotgun != null)
+        {
+            _baseWeaponBool = AnimatorBools.WithShotgun;
+        }
+        else
+        {
+            _baseWeaponBool = AnimatorBools.WithBlade;
+        }
 
         _healthBar.Initialize(_stats.Health);
         _pickablesCatcher.Initialize(_stats.PickUpRange);
@@ -51,7 +83,7 @@ public class Player : CharacterBase
             GetUpgrade(upgrade);
         }
 
-        _animator.SetBool(AnimatorBools.WithBlade.ToString(), true);
+        _animator.SetBool(_baseWeaponBool.ToString(), true);
 
         PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
 
@@ -76,7 +108,7 @@ public class Player : CharacterBase
         Vector3 pos = transform.position;
         _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
 
-        _animator.SetBool(AnimatorBools.BladeWalk.ToString(), isMoving);
+        _animator.SetBool(_baseWeaponBool.Equals(AnimatorBools.WithBlade) ? AnimatorBools.BladeWalk.ToString() : AnimatorBools.ShotgunWalk.ToString(), isMoving);
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {

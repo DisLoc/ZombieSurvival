@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -166,13 +167,13 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
             if (_abilities.Count <= randomAbilities.Count) // add additional abilities (like more gold or heal)
             {
-                randomAbility = _availableAbilities.AdditionalAbilities[Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+                randomAbility = _availableAbilities.AdditionalAbilities[UnityEngine.Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
             }
             else
             {
                 do 
                 {
-                    randomAbility = _abilities[Random.Range(0, _abilities.Count)];
+                    randomAbility = _abilities[UnityEngine.Random.Range(0, _abilities.Count)];
                 } while (randomAbilities.Contains(randomAbility)); // get random ability without repeating
             }
 
@@ -218,13 +219,13 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
             if (abilitiesUpgrades.Count <= randomUpgrades.Count) // add additional abilities (like more gold or heal)
             {
-                randomAbility = _availableAbilities.AdditionalAbilities[Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+                randomAbility = _availableAbilities.AdditionalAbilities[UnityEngine.Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
             }
             else
             {
                 do
                 {
-                    randomAbility = abilitiesUpgrades[Random.Range(0, abilitiesUpgrades.Count)];
+                    randomAbility = abilitiesUpgrades[UnityEngine.Random.Range(0, abilitiesUpgrades.Count)];
                 } while (randomUpgrades.Contains(randomAbility)); // get random ability without repeating
             }
 
@@ -232,6 +233,18 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         }
 
         return randomUpgrades;
+    }
+
+    public Weapon GetRandomWeapon(List<Type> concreteWeaponTypes = null)
+    {
+        List<AbilityContainer> weapons = _abilities.FindAll(item => item as Weapon != null && (item as Weapon).IsSuper == false);
+
+        if (concreteWeaponTypes != null)
+        {
+            weapons.RemoveAll(item => !concreteWeaponTypes.Contains(item.GetType()));
+        }
+
+        return weapons[UnityEngine.Random.Range(0, weapons.Count)] as Weapon;
     }
 
     /// <summary>
