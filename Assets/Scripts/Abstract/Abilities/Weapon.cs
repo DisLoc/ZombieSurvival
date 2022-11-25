@@ -2,6 +2,9 @@ using UnityEngine;
 
 public abstract class Weapon : AbilityContainer, IUpdatable
 {
+    [Header("Sounds settings")]
+    [SerializeField] protected SoundList _sounds;
+
     [Header("Ability settings")]
     [SerializeField] protected bool _isSuperWeapon;
     [Tooltip("Field can be null if abiltity cant upgrade to SUPER")]

@@ -8,7 +8,6 @@ public class Player : CharacterBase
     [Header("Moving settings")]
     [SerializeField] protected PlayerMoveController _moveController;
     [SerializeField] protected Animator _animator;
-    [SerializeField] protected List<Weapon> _startWeaponsList;
 
     [HideInInspector] public bool isMoving;
 
@@ -20,6 +19,7 @@ public class Player : CharacterBase
     [SerializeField] protected ObjectCatcher _pickablesCatcher;
     
     [Header("Stats settings")]
+    [SerializeField] protected List<Weapon> _startWeaponsList;
     [SerializeField] protected PlayerUpgrades _levelUpgrades;
     [SerializeField] protected PlayerStats _stats;
 

@@ -15,6 +15,8 @@ public class PickableHeart : PickableObject
 
     protected override void OnPickUp()
     {
+        base.OnPickUp();
+
         if (_player != null)
         {
             _player.GetUpgrade(_healUpgrade);

@@ -9,13 +9,16 @@ public abstract class PickableObject : MonoBehaviour
     [SerializeField] protected Color _gizmosColor;
 
     [Header("Pick up settings")]
-    [SerializeField] protected Tags _pickUpTag = Tags.Player;
+    [SerializeField] protected TagList _pickUpTags;
     [SerializeField] protected SphereCollider _pickUpCollider;
     [SerializeField] protected float _pickUpRange;
 
     [SerializeField][Range(0.01f, 20f)] protected float _pickUpSpeed = 13;
     [Tooltip("Speed increases every frame while moving")]
     [SerializeField][Range(0f, 0.1f)] protected float _speedMultiplier = 0.01f;
+
+    [Header("Sounds settings")]
+    [SerializeField] protected SoundList _sounds;
 
     protected float _speed;
     protected Transform _target;
@@ -44,7 +47,6 @@ public abstract class PickableObject : MonoBehaviour
 
             yield return null;
         }
-        if (_isDebug) Debug.Log(name + " moves");
 
         transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.fixedDeltaTime);
 
@@ -55,11 +57,14 @@ public abstract class PickableObject : MonoBehaviour
         StartCoroutine(MoveToTarget());
     }
 
-    protected abstract void OnPickUp();
+    protected virtual void OnPickUp()
+    {
+        _sounds.PlaySound(SoundTypes.PickUp);
+    }
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(_pickUpTag.ToString()))
+        if (_pickUpTags.Contains(other.tag))
         {
             OnPickUp();
         }

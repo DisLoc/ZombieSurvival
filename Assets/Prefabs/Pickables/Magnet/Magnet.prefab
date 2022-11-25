@@ -79,11 +79,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.12406184, b: 0, a: 1}
-  _pickUpTag: 0
+  _pickUpTags:
+    _tags: 00000000
   _pickUpCollider: {fileID: 1510365690108338249}
   _pickUpRange: 0.5
   _pickUpSpeed: 13
   _speedMultiplier: 0.02
+  _sounds:
+    _sounds:
+    - _soundType: 4
+      _mixerType: 4
+      _sound: {fileID: 8300000, guid: 4873e5ce4a643e54daece7c3240a4329, type: 3}
   _magnetRadius:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 34b23e0375437b846bb5ee329b1b47e0, type: 2}
@@ -99,7 +105,7 @@ GameObject:
   - component: {fileID: 5425637712400308168}
   - component: {fileID: 3779730591916002621}
   - component: {fileID: 2012983669758734937}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

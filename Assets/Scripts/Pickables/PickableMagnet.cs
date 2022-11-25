@@ -16,7 +16,9 @@ public class PickableMagnet : PickableObject
 
     protected override void OnPickUp()
     {
-        foreach(var target in _targetDetector.Targets) 
+        base.OnPickUp();
+
+        foreach (var target in _targetDetector.Targets) 
         {
             PickableObject obj = target.GetComponent<PickableObject>();
 

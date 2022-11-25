@@ -20,12 +20,12 @@ public class PickablesChest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isDebug) Debug.Log(other.tag);
-
         if (_chestSpawner != null)
         {
             if (_triggerTags.Contains(other.tag))
             {
+                if (_isDebug) Debug.Log(other.tag);
+
                 _chestSpawner.OnChestDestoyed(this);
             }
         }
