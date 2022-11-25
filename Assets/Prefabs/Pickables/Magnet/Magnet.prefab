@@ -89,7 +89,7 @@ MonoBehaviour:
     _sounds:
     - _soundType: 4
       _mixerType: 4
-      _sound: {fileID: 8300000, guid: 4873e5ce4a643e54daece7c3240a4329, type: 3}
+      _sound: {fileID: 8300000, guid: c7ad8ba7d3485834da608b780ebeb5eb, type: 3}
   _magnetRadius:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 34b23e0375437b846bb5ee329b1b47e0, type: 2}
