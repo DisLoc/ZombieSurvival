@@ -1341,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
     - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: _useBaseEquipment
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: _baseEquipment.Array.size
@@ -1370,7 +1370,7 @@ PrefabInstance:
     - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: _baseEquipment.Array.data[5]
       value: 
-      objectReference: {fileID: 2565584387524054931, guid: 4eddd7068d4e79b4393fe75973f8c7eb, type: 3}
+      objectReference: {fileID: 7228236411287217178, guid: 4eddd7068d4e79b4393fe75973f8c7eb, type: 3}
     - target: {fileID: 1004279292790640283, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_IsActive
       value: 1

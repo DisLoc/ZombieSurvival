@@ -34,10 +34,3 @@ public class Equipment : MonoBehaviour
         _level.Initialize();
     }
 }
-
-public class WeaponEquipment : Equipment
-{
-    [SerializeField] private Weapon _playerBaseWeaponOnEquip;
-
-    public Weapon BaseWeapon => _playerBaseWeaponOnEquip;
-}

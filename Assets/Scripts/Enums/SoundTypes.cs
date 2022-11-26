@@ -7,5 +7,6 @@
     PickUp,
     Shoot,
     Click,
-    Music
+    Music,
+
 }
