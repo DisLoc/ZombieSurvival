@@ -15,6 +15,8 @@ public class PickableCoin : PickableObject
 
     protected override void OnPickUp()
     {
+        base.OnPickUp();
+
         if (_player != null)
         {
             _player.CoinInventory.Add(_coin);

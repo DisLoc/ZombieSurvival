@@ -8,7 +8,6 @@ public class Player : CharacterBase
     [Header("Moving settings")]
     [SerializeField] protected PlayerMoveController _moveController;
     [SerializeField] protected Animator _animator;
-    [SerializeField] protected List<Weapon> _startWeaponsList;
 
     [HideInInspector] public bool isMoving;
 
@@ -20,6 +19,7 @@ public class Player : CharacterBase
     [SerializeField] protected ObjectCatcher _pickablesCatcher;
     
     [Header("Stats settings")]
+    [SerializeField] protected List<Weapon> _startWeaponsList;
     [SerializeField] protected PlayerUpgrades _levelUpgrades;
     [SerializeField] protected PlayerStats _stats;
 
@@ -44,7 +44,11 @@ public class Player : CharacterBase
     {
         transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
-        if (_levelContext.PlayerBaseWeapon == null)
+        if (_levelContext.PlayerBaseWeapon != null)
+        {
+            _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
+        }
+        else 
         {
             List<Type> startWeaponTypes = new List<Type>();
 
@@ -54,10 +58,6 @@ public class Player : CharacterBase
             }
 
             _stats.SetBaseWeapon(_abilityGiver.GetRandomWeapon(startWeaponTypes.Count > 0 ? startWeaponTypes : null));
-        }
-        else 
-        {
-            _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
         }
         
         _stats.Initialize();

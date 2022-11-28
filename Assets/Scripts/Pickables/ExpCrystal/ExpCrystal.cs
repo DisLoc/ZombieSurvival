@@ -36,6 +36,8 @@ public class ExpCrystal : PickableObject, IPoolable
 
     protected override void OnPickUp()
     {
+        base.OnPickUp();
+
         StopAllCoroutines();
 
         if (_player != null)

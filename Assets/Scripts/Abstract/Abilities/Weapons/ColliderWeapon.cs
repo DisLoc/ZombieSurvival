@@ -13,6 +13,8 @@ public abstract class ColliderWeapon : Weapon
         {
             base.Attack();
 
+            _sounds.PlaySound(SoundTypes.Shoot);
+
             List<GameObject> targets = _targetDetector.Targets;
 
             if (targets.Count == 0) return;

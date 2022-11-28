@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehaviour, IPoolable
 {
     protected TObject _prefab;

@@ -145,9 +145,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 0, g: 0.37633944, b: 1, a: 1}
-  _pickUpTag: 0
+  _pickUpTags:
+    _tags: 00000000
   _pickUpCollider: {fileID: 9200049327040706117}
   _pickUpRange: 0.4
   _pickUpSpeed: 13
   _speedMultiplier: 0.02
+  _sounds:
+    _sounds:
+    - _soundType: 4
+      _mixerType: 4
+      _sound: {fileID: 8300000, guid: da08c862d004257458ec82f995c4dc1d, type: 3}
   _renderer: {fileID: 7654382446754802328}

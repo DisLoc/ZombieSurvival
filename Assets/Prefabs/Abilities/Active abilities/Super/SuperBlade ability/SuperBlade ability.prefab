@@ -49,6 +49,11 @@ MonoBehaviour:
   _isDebug: 0
   _name: SUPER Blade
   _icon: {fileID: 21300000, guid: d8e8caa57bb3dbe46a044a6f7c65bf62, type: 3}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: 9e5d2c2b137fe8243acdfc7524cf3932, type: 3}
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 4082003063471532527}

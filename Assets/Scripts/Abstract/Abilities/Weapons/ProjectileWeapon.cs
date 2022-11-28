@@ -87,7 +87,9 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
 
         _spawnIntervalTimer = _stats.ProjectilesSpawnInterval.Value;
         _spawnCount++;
-        
+
+        _sounds.PlaySound(SoundTypes.Shoot);
+
         if (_spawnCount >= (int)_stats.ProjectileNumber.Value)
         {
             _spawning = false;

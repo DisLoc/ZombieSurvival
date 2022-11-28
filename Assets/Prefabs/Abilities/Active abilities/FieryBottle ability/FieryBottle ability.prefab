@@ -110,6 +110,11 @@ MonoBehaviour:
   _isDebug: 0
   _name: Fiery bottle
   _icon: {fileID: 21300000, guid: ee1b5a329e1225d48a37c6403a4c584e, type: 3}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: e3bc349bb5d8c4e4c8525bb8f5ed3e7a, type: 3}
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 4270216756272349152, guid: 0c478017e1c1eed48ae8aafde0c470e1, type: 3}
   _targetDetector: {fileID: 7193258918535387908}

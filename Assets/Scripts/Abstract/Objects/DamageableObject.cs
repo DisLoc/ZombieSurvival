@@ -5,6 +5,9 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
     [Header("Debug settings")]
     [SerializeField] protected bool _isDebug;
 
+    [Header("Sounds settings")]
+    [SerializeField] protected SoundList _sounds;
+
     [Header("Health settings")]
     [Tooltip("If object is immortal it takes damage but cant die")]
     [SerializeField] protected bool _isImmortal;
@@ -31,10 +34,16 @@ public abstract class DamageableObject : MonoBehaviour, IDamageable
         {
             Die();
         }
+        else
+        {
+            _sounds.PlaySound(SoundTypes.TakeDamage);
+        }
     }
 
     public virtual void Die()
     {
+        _sounds.PlaySound(SoundTypes.Die);
+
         if (_isDebug) Debug.Log(name + " dies");
     }
 }

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    [SerializeField] private Level _level;
-    [SerializeField] private EquipmentData _equipmentData;
+    [SerializeField] protected Level _level;
+    [SerializeField] protected EquipmentData _equipmentData;
 
     public Sprite Icon => _equipmentData.Icon;
     public EquipSlot EquipSlot => _equipmentData.EquipSlot;

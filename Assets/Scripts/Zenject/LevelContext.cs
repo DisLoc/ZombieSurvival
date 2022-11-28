@@ -149,10 +149,11 @@ public sealed class LevelContext : ScriptableObject
     }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
 
-    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory, Weapon baseWeapon = null)
+    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
     {
         _equipmentUpgrades = new List<Upgrade>();
-        PlayerBaseWeapon = baseWeapon;
+
+        PlayerBaseWeapon = null;
 
         if (equipmentInventory != null)
         {
@@ -165,6 +166,11 @@ public sealed class LevelContext : ScriptableObject
                     if (upgrade != null)
                     {
                         _equipmentUpgrades.Add(upgrade);
+                    }
+
+                    if (equipment as WeaponEquipment != null)
+                    {
+                        PlayerBaseWeapon = (equipment as WeaponEquipment).BaseWeapon;
                     }
                 }
                 else continue;

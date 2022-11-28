@@ -48,6 +48,11 @@ MonoBehaviour:
   _isDebug: 0
   _name: Shotgun
   _icon: {fileID: 21300000, guid: 9f22f7e3e2efefd4ea46c200998650cd, type: 3}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: 0bf4bfe8f848b284180cf9b009d45da2, type: 3}
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 2056321283870601937, guid: a824429bc032c34418b47ae96b756635, type: 3}
   _targetDetector: {fileID: 138357203404630445}
