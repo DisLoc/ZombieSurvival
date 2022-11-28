@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 1, g: 0.12406184, b: 0, a: 1}
+  _useUnscaledTime: 0
   _pickUpTags:
     _tags: 00000000
   _pickUpCollider: {fileID: 1510365690108338249}
@@ -90,6 +91,7 @@ MonoBehaviour:
     - _soundType: 4
       _mixerType: 4
       _sound: {fileID: 8300000, guid: c7ad8ba7d3485834da608b780ebeb5eb, type: 3}
+      _playbackCooldown: 0.5
   _magnetRadius:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 34b23e0375437b846bb5ee329b1b47e0, type: 2}

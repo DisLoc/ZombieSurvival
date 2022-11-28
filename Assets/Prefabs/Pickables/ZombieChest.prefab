@@ -755,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _gizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  _useUnscaledTime: 0
   _pickUpTags:
     _tags: 00000000
   _pickUpCollider: {fileID: 7400282451038139747}
