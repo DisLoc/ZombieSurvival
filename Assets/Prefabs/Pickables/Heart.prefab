@@ -71,7 +71,8 @@ MonoBehaviour:
     _sounds:
     - _soundType: 4
       _mixerType: 4
-      _sound: {fileID: 8300000, guid: 86d3fa1a54448784d956e87bb4c8e72c, type: 3}
+      _sound: {fileID: 8300000, guid: 891e289787cac7b42a6729a055672d0d, type: 3}
+      _playbackCooldown: 0
   _healUpgrade: {fileID: 11400000, guid: a2fe8924ee3a3f144b300c3bffcde996, type: 2}
 --- !u!1 &7319343339322575496
 GameObject:

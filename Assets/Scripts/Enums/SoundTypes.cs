@@ -8,5 +8,8 @@
     Shoot,
     Click,
     Music,
-
+    ProjectileDestroy,
+    LevelUp,
+    GameOver,
+    LevelPassed,
 }

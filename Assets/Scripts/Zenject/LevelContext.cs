@@ -17,6 +17,10 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [SerializeField] private GroundGrid _levelEnvironment;
 
+    [Space(5)]
+    [SerializeField] private CrystalStats _startCrystalsStats;
+    [SerializeField] private int _startCrystalsCount = 8;
+
     [Header("Breakpoints settings")]
     [SerializeField] private BreakpointList<CrystalBreakpoint> _crystalSpawnBreakpoints;
 
@@ -46,6 +50,9 @@ public sealed class LevelContext : ScriptableObject
     public Reward LevelReward => _levelReward;
 
     public LevelBuilder LevelBuilder { get; private set; }
+
+    public CrystalStats StartCrystalStats => _startCrystalsStats;
+    public int StartCrystalsCount => _startCrystalsCount;
 
     public BreakpointList<CrystalBreakpoint> CrystalSpawnBreakpoints => _crystalSpawnBreakpoints;
 

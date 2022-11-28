@@ -508,15 +508,19 @@ MonoBehaviour:
     - _soundType: 0
       _mixerType: 2
       _sound: {fileID: 0}
+      _playbackCooldown: 1
     - _soundType: 1
       _mixerType: 2
       _sound: {fileID: 0}
+      _playbackCooldown: 1
     - _soundType: 3
       _mixerType: 2
       _sound: {fileID: 0}
+      _playbackCooldown: 0.5
     - _soundType: 2
       _mixerType: 2
       _sound: {fileID: 0}
+      _playbackCooldown: 0.5
   _isImmortal: 0
   _healthBar: {fileID: 6053825508757198442}
   _hpCanvas: {fileID: 7799900224490454433}
@@ -528,13 +532,14 @@ MonoBehaviour:
   _collider: {fileID: 8953109175079049454}
   _pickablesCatcher: {fileID: 4806763617484522634}
   _startWeaponsList:
-  - {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
   - {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
+  - {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
   _levelUpgrades:
     _upgrades:
     - _requiredLevel: 1
       _damageData: {fileID: 11400000, guid: 48920c09ae47c4c41a7c8015ef4d4986, type: 2}
       _healthData: {fileID: 11400000, guid: e99eb14d65da3b441b1cb8226a2563ff, type: 2}
+  _useBaseWeapon: 0
   _stats:
     _baseWeapon: {fileID: 0}
     _health:
@@ -558,6 +563,12 @@ MonoBehaviour:
           _minValue: 0
           _maxValue: 0
           _maxValueIsInfinite: 1
+      _sounds:
+        _sounds:
+        - _soundType: 9
+          _mixerType: 2
+          _sound: {fileID: 8300000, guid: 86d3fa1a54448784d956e87bb4c8e72c, type: 3}
+          _playbackCooldown: 0.1
       _baseExpForLevelUp: 750
       _levelMultiplier: 0.5
       _expBar: {fileID: 0}

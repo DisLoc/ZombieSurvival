@@ -54,6 +54,7 @@ MonoBehaviour:
     - _soundType: 5
       _mixerType: 3
       _sound: {fileID: 8300000, guid: 0bf4bfe8f848b284180cf9b009d45da2, type: 3}
+      _playbackCooldown: 0.05
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 5616406366014195109}

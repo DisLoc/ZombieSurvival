@@ -403,6 +403,12 @@ MonoBehaviour:
   _canvasGroup: {fileID: 3373859471414490934}
   _button: {fileID: 0}
   _animator: {fileID: 321775866226424421}
+  _sounds:
+    _sounds:
+    - _soundType: 11
+      _mixerType: 1
+      _sound: {fileID: 8300000, guid: 9b73dde00a5a31b43acacd447e81b1dc, type: 3}
+      _playbackCooldown: 5
   _totalKilledText: {fileID: 5126382896305721060}
   _goldGainedText: {fileID: 3121064206861612103}
   _currencyCounter: {fileID: 0}

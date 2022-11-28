@@ -409,6 +409,12 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1187904890423059842}
   _button: {fileID: 0}
   _animator: {fileID: 2511374088383223401}
+  _sounds:
+    _sounds:
+    - _soundType: 10
+      _mixerType: 1
+      _sound: {fileID: 8300000, guid: 5243d9e0a03b1164bb59121ab8c56a16, type: 3}
+      _playbackCooldown: 10
   _enemyCounter: {fileID: 0}
   _survivalTimeCounter: {fileID: 0}
   _totalKilledText: {fileID: 7648350490809411272}

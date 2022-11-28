@@ -49,10 +49,13 @@ MonoBehaviour:
     _sounds:
     - _soundType: 7
       _mixerType: 0
-      _sound: {fileID: 8300000, guid: 81fc5efaff2874e6da32ddb2f87d86cb, type: 3}
+      _sound: {fileID: 8300000, guid: fc0f93e5391004d5a961f6833541ad31, type: 3}
+      _playbackCooldown: 60
     - _soundType: 7
       _mixerType: 0
-      _sound: {fileID: 8300000, guid: ac4fa69c1dd7c4371b5d99593cd46cf7, type: 3}
+      _sound: {fileID: 8300000, guid: 8ac4228a869fc4fc88e2af913598c956, type: 3}
+      _playbackCooldown: 60
     - _soundType: 7
       _mixerType: 0
-      _sound: {fileID: 8300000, guid: f63faf43f9b9841329bd46d73202215b, type: 3}
+      _sound: {fileID: 8300000, guid: 663c7980c50bc4096916f9fcfab48a1a, type: 3}
+      _playbackCooldown: 60

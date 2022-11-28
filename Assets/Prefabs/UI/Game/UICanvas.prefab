@@ -923,10 +923,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 835678321770420597, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
-      propertyPath: _isDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835678321770420597, guid: ab059a5c73aea0b4ba7ce3a6eb24083c, type: 3}
       propertyPath: _enemyCounter
       value: 
       objectReference: {fileID: 687271268739993901}

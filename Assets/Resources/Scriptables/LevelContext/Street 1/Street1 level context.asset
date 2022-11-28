@@ -17,6 +17,8 @@ MonoBehaviour:
   _levelIcon: {fileID: 21300000, guid: b8c3779c8e4c0a94eb56574cb48418d6, type: 3}
   _levelLenght: 10
   _levelEnvironment: {fileID: 11400000, guid: 8906338fdceaa284aa25dcb309f893c7, type: 2}
+  _startCrystalsStats: {fileID: 11400000, guid: b9a2a7c2b3cbf1b42916e076297b0230, type: 2}
+  _startCrystalsCount: 8
   _crystalSpawnBreakpoints:
     _breakpoints:
     - _name: 0-30%

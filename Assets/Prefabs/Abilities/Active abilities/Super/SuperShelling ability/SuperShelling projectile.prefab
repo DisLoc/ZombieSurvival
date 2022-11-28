@@ -63,6 +63,12 @@ MonoBehaviour:
   _targetTags:
     _tags: 06000000
   _destroyOnExitAttackRange: 0
+  _sounds:
+    _sounds:
+    - _soundType: 8
+      _mixerType: 3
+      _sound: {fileID: 0}
+      _playbackCooldown: 0.1
   _particle: {fileID: 9019830622442970291}
 --- !u!1001 &3119797993483487865
 PrefabInstance:

@@ -48,6 +48,8 @@ public class ExpCrystal : PickableObject, IPoolable
         }    
         else if (_isDebug) Debug.Log("Missing player!");
 
-        _pool.Release(this);
+        if (_pool != null)
+            _pool.Release(this);
+        else Destroy(gameObject);
     }
 }

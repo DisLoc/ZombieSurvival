@@ -200,7 +200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &105156164
 MonoBehaviour:
@@ -365,7 +365,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &951260599
 PrefabInstance:
@@ -383,10 +383,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1289386374}
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _startWeaponsList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _startWeaponsList.Array.data[2]
       value: 
       objectReference: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
@@ -394,6 +390,10 @@ PrefabInstance:
       propertyPath: _startWeaponsList.Array.data[3]
       value: 
       objectReference: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._expLevel._baseExpForLevelUp
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -444,6 +444,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7764750604290027405, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953109175079049448, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953109175079049449, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
@@ -761,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawners
       objectReference: {fileID: 0}
+    - target: {fileID: 3996085183425521321, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3996085183425521322, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -805,6 +817,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3996085184043712268, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: _startSpawnMaxRange
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996085184043712268, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: _startSpawnMinRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5713541162725687725, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: _maxDistanceForRespawn
       value: 0
@@ -819,28 +839,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
-      propertyPath: _musics._sounds.Array.size
-      value: 3
+      propertyPath: _tracksCooldown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _musics._sounds.Array.data[0]._sound
       value: 
-      objectReference: {fileID: 8300000, guid: fc0f93e5391004d5a961f6833541ad31, type: 3}
+      objectReference: {fileID: 8300000, guid: 81fc5efaff2874e6da32ddb2f87d86cb, type: 3}
     - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _musics._sounds.Array.data[1]._sound
       value: 
-      objectReference: {fileID: 8300000, guid: 8ac4228a869fc4fc88e2af913598c956, type: 3}
+      objectReference: {fileID: 8300000, guid: ac4fa69c1dd7c4371b5d99593cd46cf7, type: 3}
     - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _musics._sounds.Array.data[2]._sound
       value: 
-      objectReference: {fileID: 8300000, guid: 663c7980c50bc4096916f9fcfab48a1a, type: 3}
+      objectReference: {fileID: 8300000, guid: f63faf43f9b9841329bd46d73202215b, type: 3}
     - target: {fileID: 7964344052306266368, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_Name
       value: AudioPool
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_LocalPosition.x
@@ -885,6 +905,18 @@ PrefabInstance:
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _masterVolume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[2]._soundsCountLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._soundsCountLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[4]._soundsCountLimit
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec69db15838a874daef26f73a598846, type: 3}
