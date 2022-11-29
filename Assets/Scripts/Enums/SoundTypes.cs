@@ -12,4 +12,5 @@
     LevelUp,
     GameOver,
     LevelPassed,
+    BreakpointEvent
 }
