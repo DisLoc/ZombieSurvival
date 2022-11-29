@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: CommonTestWeapon data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 431bb4bcfd8ffc54d82885d395dd84dd, type: 3}
+  _equipSlot: 3
+  _rarity: 0
+  _upgradingStat: 0
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 0}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: cd738e2371f102945b2cf3a205483b8a, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: 92f99b2dbf263ec4d8c11f0a880f06bc, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 50
+        _requiredMaterialAmount: 1
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: 0f709b0388a88804a91777a1ae1f7dde, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 100
+        _requiredMaterialAmount: 2
+  _rarityDescription: Masters Gun
+  _rarityUpgrade: {fileID: 11400000, guid: 8bb161ad98817e641889830923ebee5e, type: 2}
+  _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 6f3d84e6bf9527a40a4acbdd0fa6ec6e, type: 2}

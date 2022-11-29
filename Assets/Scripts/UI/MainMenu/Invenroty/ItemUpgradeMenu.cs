@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,9 +28,19 @@ public class ItemUpgradeMenu : UIMenu
     [SerializeField] private Text _commonDescription;
 
     [Space(5)]
+    [SerializeField] private Image _uncommonCircleImage;
+    [SerializeField] private Image _uncommonLockedImage;
+    [SerializeField] private Text _uncommonDescription;
+    
+    [Space(5)]
     [SerializeField] private Image _rareCircleImage;
     [SerializeField] private Image _rareLockedImage;
     [SerializeField] private Text _rareDescription;
+
+    [Space(5)]
+    [SerializeField] private Image _excellentCircleImage;
+    [SerializeField] private Image _excellentLockedImage;
+    [SerializeField] private Text _excellentDescription;
 
     [Space(5)]
     [SerializeField] private Image _epicCircleImage;
@@ -37,14 +48,9 @@ public class ItemUpgradeMenu : UIMenu
     [SerializeField] private Text _epicDescription;
 
     [Space(5)]
-    [SerializeField] private Image _legendaryCircleImage;
-    [SerializeField] private Image _legendaryLockedImage;
-    [SerializeField] private Text _legendaryDescription;
-
-    [Space(5)]
-    [SerializeField] private Image _SSRCircleImage;
-    [SerializeField] private Image _SSRLockedImage;
-    [SerializeField] private Text _SSRDescription;
+    [SerializeField] private Image _superiorCircleImage;
+    [SerializeField] private Image _superiorLockedImage;
+    [SerializeField] private Text _superiorDescription;
 
     [Header("Upgrade settings")]
     [SerializeField] private Image _materialIcon;
@@ -98,6 +104,7 @@ public class ItemUpgradeMenu : UIMenu
 
         _equipment = equipment;
 
+        #region Initialization
         if (_equipment.isEquiped) _equipUnequipButtonText.text = "Unequip";
         else _equipUnequipButtonText.text = "Equip";
 
@@ -107,7 +114,9 @@ public class ItemUpgradeMenu : UIMenu
         _equipmentTypeIcon.sprite = _equipmentTypesData[_equipment.EquipSlot].SlotIcon;
 
         _equipmentUpgradeValueIcon.sprite = _equipment.UpgradingStat.Equals(UpgradingStat.Health) ? _healthIcon : _damageIcon;
+        #endregion
 
+        #region Equipment values
         float value = 0;
 
         foreach(UpgradeData data in _equipment.EquipUpgrade.Upgrades)
@@ -143,7 +152,108 @@ public class ItemUpgradeMenu : UIMenu
             _currencyCountText.enabled = true;
 
             _maxLevelTootlipText.enabled = false;
+
+            _materialIcon.sprite = equipment.EquipmentData.EquipmentUpgrades.RequiredMaterial.Icon;
+            _materialCountText.text = equipment.CurrentUpgrade.UpgradeMaterials.RequiredMaterialAmount.ToString();
+
+            _currencyIcon.sprite = equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency.Icon;
+            _currencyCountText.text = equipment.CurrentUpgrade.UpgradeMaterials.RequiredCurrencyAmount.ToString();
         }
+        #endregion
+
+        #region Rarity upgrades
+        Dictionary<EquipRarity, string> equipmentRarities = new Dictionary<EquipRarity, string>();
+
+        EquipmentData currentData = equipment.EquipmentData;
+
+        equipmentRarities.Add(currentData.EquipRarity, currentData.RarityDescription);
+
+        while (currentData.PreviousRarityEquipment != null)
+        {
+            currentData = currentData.PreviousRarityEquipment;
+            
+            if (equipmentRarities.ContainsKey(currentData.EquipRarity))
+            {
+                if (_isDebug) Debug.Log("Rarity error! Repeating rarity in " + equipment);
+
+                break;
+            }
+            else
+            {
+                equipmentRarities.Add(currentData.EquipRarity, currentData.RarityDescription);
+            }
+        }
+
+        currentData = equipment.EquipmentData;
+
+        while (currentData.NextRarityEquipment != null)
+        {
+            currentData = currentData.NextRarityEquipment;
+
+            if (equipmentRarities.ContainsKey(currentData.EquipRarity))
+            {
+                if (_isDebug) Debug.Log("Rarity error! Repeating rarity in " + equipment);
+
+                break;
+            }
+            else
+            {
+                equipmentRarities.Add(currentData.EquipRarity, currentData.RarityDescription);
+            }
+        }
+
+        foreach(var rarity in equipmentRarities)
+        {
+            switch (rarity.Key)
+            {
+                case EquipRarity.Common:
+                    _commonCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _commonLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _commonLockedImage.sprite = _onLockedIcon;
+                    _commonDescription.text = rarity.Value;
+                    break;
+
+                case EquipRarity.Uncommon:
+                    _uncommonCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _uncommonLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _uncommonLockedImage.sprite = _onLockedIcon;
+                    _uncommonDescription.text = rarity.Value;
+                    break;
+
+                case EquipRarity.Rare:
+                    _rareCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _rareLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _rareLockedImage.sprite = _onLockedIcon;
+                    _rareDescription.text = rarity.Value;
+                    break;
+
+                case EquipRarity.Excellent:
+                    _excellentCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _excellentLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _excellentLockedImage.sprite = _onLockedIcon;
+                    _excellentDescription.text = rarity.Value;
+                    break;
+
+                case EquipRarity.Epic:
+                    _epicCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _epicLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _epicLockedImage.sprite = _onLockedIcon;
+                    _epicDescription.text = rarity.Value;
+                    break;
+
+                case EquipRarity.Superior:
+                    _superiorCircleImage.sprite = _equipmentTypesData[rarity.Key].RarityCircle;
+                    _superiorLockedImage.enabled = equipment.EquipRarity < rarity.Key;
+                    _superiorLockedImage.sprite = _onLockedIcon;
+                    _superiorDescription.text = rarity.Value;
+                    break;
+
+                default:
+                    if (_isDebug) Debug.Log("Missing rarity!");
+                    break;
+            }
+        }
+        #endregion
     }
 
     public void OnResetClick()
@@ -170,12 +280,32 @@ public class ItemUpgradeMenu : UIMenu
 
     public void OnUpgradeClick()
     {
+        if (_equipment != null)
+        {
+            /*
+            if (_equipment.Level.Value != _equipment.Level.MaxValue && MainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials))
+            {
+                
+            }
+            */
 
+            _equipment.Level.LevelUp();
+
+            SetEquipment(_equipment);
+        }
     }
 
     public void OnQuickUpgradeClick()
     {
-
+        if (_equipment != null)
+        {
+            /*
+            while (_equipment.Level.Value != _equipment.Level.MaxValue && MainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials))
+            {
+                OnUpgradeClick();
+            }
+            */
+        }
     }
 
     public void OnCloseMenu()
