@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Equipment : MonoBehaviour
@@ -11,19 +12,22 @@ public class Equipment : MonoBehaviour
     public EquipSlot EquipSlot => _equipmentData.EquipSlot;
     public EquipRarity EquipRarity => _equipmentData.EquipRarity;
     public UpgradingStat UpgradingStat => _equipmentData.UpgradingStat;
-    public Upgrade EquipUpgrade
+
+    public Upgrade EquipUpgrade => new Upgrade(_equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value).UpgradeData);
+    public List<Upgrade> RarityUpgrades
     {
         get
         {
-            if (_equipmentData.PreviousRarityEquipment != null)
+            List<Upgrade> upgrades = new List<Upgrade>();
+            EquipmentData equipmentData = _equipmentData;
+
+            while (equipmentData.PreviousRarityEquipment != null)
             {
-                return _equipmentData.PreviousRarityEquipment.RarityUpgrade + 
-                    _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value).UpgradeData;
+                upgrades.Add(equipmentData.RarityUpgrade);
+                equipmentData = equipmentData.PreviousRarityEquipment;
             }
-            else
-            {
-                return _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value).UpgradeData;
-            }
+
+            return upgrades;
         }
     }
 

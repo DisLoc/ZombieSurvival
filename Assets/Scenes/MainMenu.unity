@@ -1335,6 +1335,30 @@ PrefabInstance:
       propertyPath: _button
       value: 
       objectReference: {fileID: 1096224675}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[0]
+      value: 
+      objectReference: {fileID: 2565584387524054931, guid: 33a482990ca6c89409daca7815a17aba, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[1]
+      value: 
+      objectReference: {fileID: 2565584387524054931, guid: 90c9ddcaa33a60d48b20d4c8cbaaef86, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[2]
+      value: 
+      objectReference: {fileID: 2565584387524054931, guid: bbd2e161081ba664298e0ac8164ed7c2, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[3]
+      value: 
+      objectReference: {fileID: 2565584387524054931, guid: 7e520119d23093644a10880cebddf363, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[4]
+      value: 
+      objectReference: {fileID: 2565584387524054931, guid: 088baad935b4a4747b41cccb39143229, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _baseEquipment.Array.data[5]
+      value: 
+      objectReference: {fileID: 7228236411287217178, guid: d32cad264a734ea41b008ca050c6276d, type: 3}
     - target: {fileID: 1004279292790640283, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_IsActive
       value: 1

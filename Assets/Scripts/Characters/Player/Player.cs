@@ -76,12 +76,14 @@ public class Player : CharacterBase
             _baseWeaponBool = AnimatorBools.WithBlade;
         }
 
-        _healthBar.Initialize(_stats.Health);
+        _healthBar?.Initialize(_stats.Health);
         _pickablesCatcher.Initialize(_stats.PickUpRange);
         _abilityInventory.Initialize();
         _coinInventory.Initialize();
 
         _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
 
         foreach (Upgrade upgrade in _levelContext.PlayerUpgrades)
         {
@@ -94,8 +96,6 @@ public class Player : CharacterBase
 
         GetUpgrade(new Upgrade(currentUpgrade.DamageData));
         GetUpgrade(new Upgrade(currentUpgrade.HealthData));
-
-        GetAbility(_stats.BaseWeapon);
 
         _hpCanvas?.OnFixedUpdate();
     }
@@ -160,6 +160,7 @@ public class Player : CharacterBase
     public override void GetUpgrade(Upgrade upgrade)
     {
         base.GetUpgrade(upgrade);
+
         _coinInventory.GetUpgrade(upgrade);
 
         _upgrades.Add(upgrade);
@@ -241,12 +242,12 @@ public class Player : CharacterBase
 
             if (newAbility != null)
             {
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
+
                 foreach (Upgrade upgrade in _upgrades)
                 {
                     newAbility.Upgrade(upgrade);
                 }
-
-                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
             }
             else if (_isDebug) Debug.Log("Adding ability error!");
 

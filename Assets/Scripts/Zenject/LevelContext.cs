@@ -179,6 +179,8 @@ public sealed class LevelContext : ScriptableObject
                     {
                         PlayerBaseWeapon = (equipment as WeaponEquipment).BaseWeapon;
                     }
+
+                    _equipmentUpgrades.AddRange(equipment.RarityUpgrades);
                 }
                 else continue;
             }
