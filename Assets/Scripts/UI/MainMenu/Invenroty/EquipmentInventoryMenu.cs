@@ -52,4 +52,15 @@ public class EquipmentInventoryMenu
         }
         else return false;
     }
+    
+    public void UpdateInventory()
+    {
+        foreach(var slot in _slots)
+        {
+            if (slot.Equipment != null)
+            {
+                slot.SetSlot(slot.Equipment);
+            }
+        }
+    }
 }

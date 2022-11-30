@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: BeltMaterial
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: fb77d3d5525a9ed4e8df01aa7e9096c0, type: 3}
+  _background: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+  _validEquipment: 5

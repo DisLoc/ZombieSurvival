@@ -86,9 +86,13 @@ public class ItemUpgradeMenu : UIMenu
 
     public override void Display(bool playAnimation = false)
     {
-        _resetMenu.Hide();
+        if (_equipment != null)
+        {
+            _resetMenu.Hide();
 
-        base.Display(playAnimation);
+            base.Display(playAnimation);
+        }
+        else Hide();
     }
 
     public override void Hide(bool playAnimation = false)
@@ -293,7 +297,7 @@ public class ItemUpgradeMenu : UIMenu
 
             SetEquipment(_equipment);
 
-            (_parentMenu as InventoryMenu).UpdateValues();
+            UpdateInventory();
         }
     }
 
@@ -308,7 +312,17 @@ public class ItemUpgradeMenu : UIMenu
             }
             */
 
-            (_parentMenu as InventoryMenu).UpdateValues();
+            UpdateInventory();
+        }
+    }
+
+    public void UpdateInventory()
+    {
+        (_parentMenu as InventoryMenu).UpdateValues();
+
+        if (_equipment != null)
+        {
+            SetEquipment(_equipment);
         }
     }
 

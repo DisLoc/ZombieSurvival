@@ -13,6 +13,7 @@ public class EquipmentUpgrades
     public Equipment RequiredEquipment => _requiredEquipment;
     public CurrencyData RequiredCurrency => _requiredCurrency;
     public EquipmentMaterial RequiredMaterial => _requiredMaterial;
+    public List<EquipmentUpgrade> Upgrades => _upgrades;
 
     public EquipmentUpgrade GetUpgrade(int level)
     {

@@ -113,6 +113,8 @@ public sealed class InventoryMenu : UIMenu
 
         _damageText.text = totalDamage.ToString();
         _healthText.text = totalHP.ToString();
+
+        _inventory.UpdateInventory();
     }
 
     public void Equip(Equipment equipment)

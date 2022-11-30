@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: HandsMaterial
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: a6ed9566bafeb984b90313f07f5e2964, type: 3}
+  _background: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+  _validEquipment: 4
