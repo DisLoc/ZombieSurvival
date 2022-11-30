@@ -50,4 +50,4 @@ MonoBehaviour:
     _maxValue: 3
     _maxValueIsInfinite: 0
   _equipmentData: {fileID: 11400000, guid: b81bc9262fcad914180a1d400209905f, type: 2}
-  isEquiped: 1
+  isEquiped: 0
