@@ -43,4 +43,4 @@ MonoBehaviour:
   _rarityDescription: +1% exp accumulation
   _rarityUpgrade: {fileID: 11400000, guid: 783ba06cdf27cda48bfe524c7558be61, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: e4f617b6b4b73b74d80dfa81b461809c, type: 2}
-  _nextRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 61d60edf567822b48b3b7cccdd6d41bc, type: 2}

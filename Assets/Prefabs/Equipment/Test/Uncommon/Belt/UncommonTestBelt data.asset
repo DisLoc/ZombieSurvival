@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
-  _rarityDescription: +5% max health points
+  _rarityDescription: +5% ATK
   _rarityUpgrade: {fileID: 11400000, guid: 7a0adbffeecfec343817e966bc9f76b6, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: f4d164c51cfc37e42bbe20cad83e2a17, type: 2}
-  _nextRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 52f3863c2520b894490abde02e396e3b, type: 2}

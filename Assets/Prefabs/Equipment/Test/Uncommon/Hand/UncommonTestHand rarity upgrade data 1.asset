@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upgradingMarkers:
     _markers:
-    - {fileID: 11400000, guid: c7f82875a7c10b24ba58911fba63cf47, type: 2}
+    - {fileID: 11400000, guid: 15768da618126b84a8dd2d14d7269d34, type: 2}
     _minMatchesCount: 1
   _upgradeValue: 0
-  _upgradeMultiplier: 1.05
+  _upgradeMultiplier: 1.1

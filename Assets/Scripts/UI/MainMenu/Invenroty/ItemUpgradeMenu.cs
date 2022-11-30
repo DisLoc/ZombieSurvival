@@ -292,6 +292,8 @@ public class ItemUpgradeMenu : UIMenu
             _equipment.Level.LevelUp();
 
             SetEquipment(_equipment);
+
+            (_parentMenu as InventoryMenu).UpdateValues();
         }
     }
 
@@ -305,6 +307,8 @@ public class ItemUpgradeMenu : UIMenu
                 OnUpgradeClick();
             }
             */
+
+            (_parentMenu as InventoryMenu).UpdateValues();
         }
     }
 

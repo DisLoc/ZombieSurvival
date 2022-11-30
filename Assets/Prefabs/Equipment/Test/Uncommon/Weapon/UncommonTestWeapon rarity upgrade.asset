@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: UncommonTestWeapon rarity upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 0
-  _abilityMarker: {fileID: 11400000, guid: 5173e4754a01e1f4ca37dbc7b0c8c848, type: 2}
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
   _upgrades:
   - {fileID: 11400000, guid: 995e86c357a8d0942a83a5618a6331eb, type: 2}

@@ -44,22 +44,11 @@ public sealed class InventoryMenu : UIMenu
 
         if (_useBaseEquipment)
         {
-            _equipmentInventory = new EquipmentInventory(_baseEquipment);
-
-            foreach (EquipmentSlot slot in _slots)
+            foreach (Equipment equipment in _baseEquipment)
             {
-                Equipment equipment = _equipmentInventory[slot.ValidSlot];
-
-                equipment.isEquiped = true;
-
-                if (equipment != null)
-                {
-                    slot.SetSlot(equipment);
-                }
+                Equip(equipment);
             }
         }
-
-        OnInventoryChange();
     }
 
     public override void Display(bool playAnimation = false)
@@ -100,6 +89,8 @@ public sealed class InventoryMenu : UIMenu
         {
             if (slot.Equipment != null)
             {
+                slot.SetSlot(slot.Equipment);
+
                 if (slot.Equipment.UpgradingStat.Equals(UpgradingStat.Damage))
                 {
                     foreach (UpgradeData data in slot.Equipment.EquipUpgrade.Upgrades)
@@ -137,30 +128,39 @@ public sealed class InventoryMenu : UIMenu
 
         equipment.isEquiped = true;
 
+        _equipmentInventory.Add(equipment);
         _inventory.RemoveEquipment(equipment);
         slot.SetSlot(equipment);
 
         _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
         Display();
+
+        OnInventoryChange();
     }
 
     public void Unequip(Equipment equipment)
     {
-        EquipmentSlot slot = _slots.Find(item => item.ValidSlot.Equals(equipment.EquipSlot));
+        if (equipment == null) return;
 
-        if (slot.Equipment != null)
+        EquipmentSlot slot = _slots.Find(item => item.Equipment != null && item.Equipment.Equals(equipment));
+
+        if (slot != null)
         {
-            _inventory.AddEquipment(slot.Equipment);
+            _inventory.AddEquipment(equipment);
+            _equipmentInventory.Remove(equipment);
+
+            equipment.isEquiped = false;
+
+            slot.SetSlot(null);
+
+            _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
+
+            Display();
+
+            OnInventoryChange();
         }
-
-        equipment.isEquiped = false;
-
-        slot.SetSlot(null);
-
-        _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
-
-        Display();
+        else return;
     }
     
     private int GetInventoryHeight()

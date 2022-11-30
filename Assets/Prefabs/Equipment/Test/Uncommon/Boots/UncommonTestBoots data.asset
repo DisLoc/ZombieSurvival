@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
-  _rarityDescription: +10% pick up range
+  _rarityDescription: +5% move speed
   _rarityUpgrade: {fileID: 11400000, guid: 453473418923651458c14392591e7ccf, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: a8cc0f8061526af47a06f884fcc6949f, type: 2}
-  _nextRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 1f1e6b6f0f5d68e46a75b07b33a00082, type: 2}

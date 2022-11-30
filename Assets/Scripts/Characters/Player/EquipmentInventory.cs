@@ -55,4 +55,16 @@ public class EquipmentInventory
 
         return false;
     }
+
+    public bool Remove(Equipment equipment)
+    {
+        if (_equipment.ContainsKey(equipment.EquipSlot))
+        {
+            _equipment[equipment.EquipSlot] = null;
+
+            return true;
+        }
+
+        return false;
+    }
 }

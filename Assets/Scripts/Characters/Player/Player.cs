@@ -159,18 +159,20 @@ public class Player : CharacterBase
     /// <param name="upgrade"></param>
     public override void GetUpgrade(Upgrade upgrade)
     {
-        base.GetUpgrade(upgrade);
+        if (!upgrade.IsAbilityUpgrade)
+        {
+            base.GetUpgrade(upgrade);
 
-        _coinInventory.GetUpgrade(upgrade);
-
-        _upgrades.Add(upgrade);
-
-        _pickablesCatcher.UpdateRadius();
+            _coinInventory.GetUpgrade(upgrade);
+            _pickablesCatcher.UpdateRadius();
+        }
 
         for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
         {
             _abilityInventory.Abilities[index].Upgrade(upgrade);
         }
+
+        _upgrades.Add(upgrade);
     }
 
     /// <summary>
