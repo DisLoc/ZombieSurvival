@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 3187572567721332352}
   - component: {fileID: 4796686581229035760}
   - component: {fileID: 2637955930854666980}
+  - component: {fileID: 2311773131691790477}
   m_Layer: 5
   m_Name: BreakpointEventText
   m_TagString: Untagged
@@ -190,6 +191,26 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!95 &2311773131691790477
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507039398697010805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1159594137442413399
 PrefabInstance:
   m_ObjectHideFlags: 0
