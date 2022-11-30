@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct EquipmentUpgrade
+public class EquipmentUpgrade
 {
     [SerializeField] private int _requiredLevel;
     [SerializeField] private UpgradeData _upgradeData;

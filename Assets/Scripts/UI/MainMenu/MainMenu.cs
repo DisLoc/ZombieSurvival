@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] protected UIMenu _defaultMenu;
     [SerializeField] protected List<UIMenu> _menus;
 
+    [SerializeField] private SettingsMenu _settings;
+
     protected virtual void OnEnable()
     {
         foreach (UIMenu menu in _menus)
@@ -23,6 +25,8 @@ public class MainMenu : MonoBehaviour
 
             else menu.Hide();
         }
+
+        _settings.Initialize();
     }
 
     public virtual void Display(UIMenu tab)
@@ -45,7 +49,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsClick()
     {
-
+        _settings.gameObject.SetActive(true);
+    }
+    
+    public void OnSettingsClose()
+    {
+        _settings.gameObject.SetActive(false);
     }
 
     public void OnBuyEnergyClick()

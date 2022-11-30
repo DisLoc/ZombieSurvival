@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
 {
     [Header("Level passed menu settings")]
+    [SerializeField] private SoundList _sounds;
+
     [SerializeField] private Text _totalKilledText;
     [SerializeField] private Text _goldGainedText;
 
@@ -37,6 +39,8 @@ public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
 
         _totalKilledText.text = _enemyCounter.TotalKilled.ToString();
         _goldGainedText.text = _currencyCounter.TotalGained.ToString();
+
+        _sounds.PlaySound(SoundTypes.LevelPassed);
     }
 
     public void OnContinue()

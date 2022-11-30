@@ -9,6 +9,7 @@ public abstract class PickableObject : MonoBehaviour
     [SerializeField] protected Color _gizmosColor;
 
     [Header("Pick up settings")]
+    [SerializeField] protected bool _useUnscaledTime = true;
     [SerializeField] protected TagList _pickUpTags;
     [SerializeField] protected SphereCollider _pickUpCollider;
     [SerializeField] protected float _pickUpRange;
@@ -47,13 +48,27 @@ public abstract class PickableObject : MonoBehaviour
 
             yield return null;
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.fixedDeltaTime);
-
+        
+        if (_useUnscaledTime)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.fixedUnscaledDeltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.fixedDeltaTime);
+        }
+        
         _speed += _speed * _speedMultiplier;
 
-        yield return new WaitForFixedUpdate();
-
+        if (_useUnscaledTime)
+        {
+            yield return new WaitForSecondsRealtime(Time.fixedUnscaledDeltaTime);
+        }
+        else
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        
         StartCoroutine(MoveToTarget());
     }
 

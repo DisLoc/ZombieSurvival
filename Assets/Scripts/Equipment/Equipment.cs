@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Equipment : MonoBehaviour
@@ -5,29 +6,36 @@ public class Equipment : MonoBehaviour
     [SerializeField] protected Level _level;
     [SerializeField] protected EquipmentData _equipmentData;
 
+    [HideInInspector] public bool isEquiped;
+
+    public EquipmentData EquipmentData => _equipmentData;
+
     public Sprite Icon => _equipmentData.Icon;
     public EquipSlot EquipSlot => _equipmentData.EquipSlot;
     public EquipRarity EquipRarity => _equipmentData.EquipRarity;
     public UpgradingStat UpgradingStat => _equipmentData.UpgradingStat;
-    public Upgrade EquipUpgrade
+
+    public Upgrade EquipUpgrade => new Upgrade(_equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value).UpgradeData);
+    public List<Upgrade> RarityUpgrades
     {
         get
         {
-            if (_equipmentData.PreviousRarityEquipment != null)
+            List<Upgrade> upgrades = new List<Upgrade>();
+            EquipmentData equipmentData = _equipmentData;
+
+            while (equipmentData.PreviousRarityEquipment != null)
             {
-                return _equipmentData.PreviousRarityEquipment.RarityUpgrade + 
-                    _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value);
+                upgrades.Add(equipmentData.RarityUpgrade);
+                equipmentData = equipmentData.PreviousRarityEquipment;
             }
-            else
-            {
-                return _equipmentData.RarityUpgrade + _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value);
-            }
+
+            return upgrades;
         }
     }
 
-    public Level Level => _level;
+    public EquipmentUpgrade CurrentUpgrade => _level.Value != _level.MaxValue ? _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value + 1) : null;
 
-    public bool isEquiped;
+    public Level Level => _level;
 
     public void Initialize()
     {

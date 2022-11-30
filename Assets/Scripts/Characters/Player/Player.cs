@@ -21,6 +21,8 @@ public class Player : CharacterBase
     [Header("Stats settings")]
     [SerializeField] protected List<Weapon> _startWeaponsList;
     [SerializeField] protected PlayerUpgrades _levelUpgrades;
+
+    [SerializeField] protected bool _useBaseWeapon;
     [SerializeField] protected PlayerStats _stats;
 
     [Header("Inventory settings")]
@@ -44,20 +46,23 @@ public class Player : CharacterBase
     {
         transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
-        if (_levelContext.PlayerBaseWeapon != null)
+        if (!_useBaseWeapon)
         {
-            _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
-        }
-        else 
-        {
-            List<Type> startWeaponTypes = new List<Type>();
-
-            foreach (Weapon weapon in _startWeaponsList)
+            if (_levelContext.PlayerBaseWeapon != null)
             {
-                startWeaponTypes.Add(weapon.GetType());
+                _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
             }
+            else
+            {
+                List<Type> startWeaponTypes = new List<Type>();
 
-            _stats.SetBaseWeapon(_abilityGiver.GetRandomWeapon(startWeaponTypes.Count > 0 ? startWeaponTypes : null));
+                foreach (Weapon weapon in _startWeaponsList)
+                {
+                    startWeaponTypes.Add(weapon.GetType());
+                }
+
+                _stats.SetBaseWeapon(_abilityGiver.GetRandomWeapon(startWeaponTypes.Count > 0 ? startWeaponTypes : null));
+            }
         }
         
         _stats.Initialize();
@@ -71,12 +76,14 @@ public class Player : CharacterBase
             _baseWeaponBool = AnimatorBools.WithBlade;
         }
 
-        _healthBar.Initialize(_stats.Health);
+        _healthBar?.Initialize(_stats.Health);
         _pickablesCatcher.Initialize(_stats.PickUpRange);
         _abilityInventory.Initialize();
         _coinInventory.Initialize();
 
         _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
 
         foreach (Upgrade upgrade in _levelContext.PlayerUpgrades)
         {
@@ -89,8 +96,6 @@ public class Player : CharacterBase
 
         GetUpgrade(new Upgrade(currentUpgrade.DamageData));
         GetUpgrade(new Upgrade(currentUpgrade.HealthData));
-
-        GetAbility(_stats.BaseWeapon);
 
         _hpCanvas?.OnFixedUpdate();
     }
@@ -154,17 +159,20 @@ public class Player : CharacterBase
     /// <param name="upgrade"></param>
     public override void GetUpgrade(Upgrade upgrade)
     {
-        base.GetUpgrade(upgrade);
-        _coinInventory.GetUpgrade(upgrade);
+        if (!upgrade.IsAbilityUpgrade)
+        {
+            base.GetUpgrade(upgrade);
 
-        _upgrades.Add(upgrade);
-
-        _pickablesCatcher.UpdateRadius();
+            _coinInventory.GetUpgrade(upgrade);
+            _pickablesCatcher.UpdateRadius();
+        }
 
         for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
         {
             _abilityInventory.Abilities[index].Upgrade(upgrade);
         }
+
+        _upgrades.Add(upgrade);
     }
 
     /// <summary>
@@ -236,12 +244,12 @@ public class Player : CharacterBase
 
             if (newAbility != null)
             {
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
+
                 foreach (Upgrade upgrade in _upgrades)
                 {
                     newAbility.Upgrade(upgrade);
                 }
-
-                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
             }
             else if (_isDebug) Debug.Log("Adding ability error!");
 
@@ -259,6 +267,7 @@ public class Player : CharacterBase
         }
     }
 
+    [ContextMenu("Die")]
     public override void Die()
     {
         base.Die();

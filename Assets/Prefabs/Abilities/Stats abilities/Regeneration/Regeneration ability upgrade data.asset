@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: Regeneration ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Health regeneration
   _repeatingUpgrade:
-    _description: +25% HP restore
+    _description: +10% HP restore
     _upgrade: {fileID: 11400000, guid: 0d39362ee033dc64b8311a3ab4ca2a9b, type: 2}
     _requiredLevel: 0

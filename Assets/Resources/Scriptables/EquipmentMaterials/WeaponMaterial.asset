@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: WeaponMaterial
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 431bb4bcfd8ffc54d82885d395dd84dd, type: 3}
+  _background: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+  _validEquipment: 3

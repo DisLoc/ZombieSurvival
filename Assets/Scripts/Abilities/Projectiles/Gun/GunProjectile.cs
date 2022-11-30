@@ -3,6 +3,7 @@ using UnityEngine;
 public class GunProjectile : Projectile
 {
     [SerializeField] private ParticleSystem _sparkParticle;
+    [SerializeField] private TrailRenderer _trail;
 
     public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
     {
@@ -21,5 +22,12 @@ public class GunProjectile : Projectile
             _sparkParticle.Play();
         }
         else if (_isDebug) Debug.Log("Missing spark particle");
+    }
+
+    public override void Throw(Vector3 direction)
+    {
+        base.Throw(direction);
+
+        _trail.Clear();
     }
 }

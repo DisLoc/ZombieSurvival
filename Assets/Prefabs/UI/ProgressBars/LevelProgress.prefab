@@ -264,9 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b0603e06c2fbe47ac8f9a1120ba968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
+  _isDebug: 0
   _fillBar: {fileID: 9126398035109511831}
   _minFillValue: 0
   _maxFillValue: 100
+  _breakpointAlertText: {fileID: 0}
   _survivalTimeCounter: {fileID: 0}
   _breakpointPrefab: {fileID: 9199277913750914541, guid: 1f56f09772a4f654da8ca8efcd704f90, type: 3}

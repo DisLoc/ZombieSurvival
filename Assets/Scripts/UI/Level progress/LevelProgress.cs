@@ -1,11 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandler, IBossEventEndedHandler
 {
     [Header("LevelProgress settings")]
+    [SerializeField] private Text _breakpointAlertText;
     [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
     [SerializeField] private LevelProgressBreakpoint _breakpointPrefab;
+
+    private List<AlertBreakpoint> _alertBreakpoints;
+    private BreakpointList<LevelBreakpoint> _levelBreakpoints;
 
     private int _maxLevelTime;
     private bool _onBossEvent;
@@ -28,6 +35,9 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
     {
         _value = _minFillValue;
 
+        _alertBreakpoints = new List<AlertBreakpoint>();
+        _levelBreakpoints = _levelContext.LevelRewards;
+
         base.Initialize();
     }
 
@@ -47,10 +57,19 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
                 newBreakpoint.Transform.anchoredPosition = new Vector2(0f, 0f);
 
                 newBreakpoint.SetBreakpoint(breakpoint);
+
+                _alertBreakpoints.Add(new AlertBreakpoint
+                    (
+                    _levelContext.LevelLenght * breakpoint.RequiredProgress * 0.01f - breakpoint.DisplayTime,
+                    breakpoint.DisplayTime,
+                    breakpoint.Description, 
+                    breakpoint.Sound
+                    ));
             }
         }
         
         _maxLevelTime = _levelContext.LevelLenght;
+        _breakpointAlertText.enabled = false;
     }
 
     public void OnBossEvent()
@@ -75,12 +94,36 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
         if (_onBossEvent) return;
 
         int newVal = (int)(_survivalTimeCounter.SurvivalTime / _maxLevelTime * _maxFillValue);
-        
+
         if (_value != newVal)
         {
             _value = newVal;
 
             UpdateBar();
+        }
+
+        if (!_levelContext.wasPassed)
+        {
+            Breakpoint breakpoint = _levelBreakpoints.CheckReaching(_value);
+
+            if (breakpoint != null)
+            {
+                if (_isDebug) Debug.Log("Reached level reward!");
+            }
+        }
+
+        AlertBreakpoint alertBreakpoint = _alertBreakpoints.Find(item => item.reached == false && item.time <= _survivalTimeCounter.SurvivalTime);
+
+        if (alertBreakpoint != null)
+        {
+            alertBreakpoint.SetReached(true);
+
+            _breakpointAlertText.text = alertBreakpoint.description;
+            _breakpointAlertText.enabled = true;
+
+            EventBus.Publish<ISoundPlayHandler>(handler => handler.OnSoundPlay(alertBreakpoint.sound));
+
+            StartCoroutine(WaitAlert(alertBreakpoint));
         }
     }
 
@@ -97,6 +140,36 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
             if (_isDebug) Debug.Log("Level complete!");
 
             EventBus.Publish<ILevelPassedHandler>(handler => handler.OnLevelPassed());
+        }
+    }
+
+    private IEnumerator WaitAlert(AlertBreakpoint breakpoint)
+    {
+        yield return new WaitForSeconds(breakpoint.displayTime);
+
+        _breakpointAlertText.enabled = false;
+    }
+
+    private class AlertBreakpoint 
+    {
+        public float time { private set; get; }
+        public float displayTime { private set; get; }
+        public string description { private set; get; }
+        public SoundType sound { private set; get; }
+        public bool reached { private set; get; }
+
+        public AlertBreakpoint(float time, float displayTime, string description, SoundType sound)
+        {
+            this.time = time;
+            this.displayTime = displayTime;
+            this.description = description;
+            this.sound = sound;
+            this.reached = false;
+        }
+
+        public void SetReached(bool value)
+        {
+            reached = value;
         }
     }
 }

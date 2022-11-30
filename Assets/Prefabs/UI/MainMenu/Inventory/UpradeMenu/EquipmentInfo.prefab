@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 8077522370813494241}
   - component: {fileID: 8077522370813494270}
   - component: {fileID: 8077522370813494271}
+  - component: {fileID: 6475604637735995365}
   m_Layer: 5
   m_Name: ResetUpgradesButton
   m_TagString: Untagged
@@ -595,6 +596,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6475604637735995365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077522370813494269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979cb1b33c5c58e4eb1b1bebd8dc69bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+    _sounds:
+    - _soundType: 6
+      _mixerType: 1
+      _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
+      _playbackCooldown: 0.05
 --- !u!1 &8077522370815802610
 GameObject:
   m_ObjectHideFlags: 0

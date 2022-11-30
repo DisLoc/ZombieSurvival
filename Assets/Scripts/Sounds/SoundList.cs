@@ -8,7 +8,8 @@ public class SoundList
 
     public AudioClip PlaySound(SoundTypes type)
     {
-        List<SoundType> sounds = _sounds.FindAll(item => item.Type.Equals(type));
+        List<SoundType> sounds = _sounds.FindAll(item => item.Type.Equals(type) && (!item.wasPlayed || 
+                                                    (item.wasPlayed && Time.realtimeSinceStartup >= item.LastPlayTime + item.PlaybackCooldown)));
 
         SoundType sound = null;
 
@@ -19,6 +20,7 @@ public class SoundList
         else
         {
             sound = sounds[Random.Range(0, sounds.Count)];
+            sound.Play(Time.realtimeSinceStartup);
         }
 
         EventBus.Publish<ISoundPlayHandler>(handler => handler.OnSoundPlay(sound));

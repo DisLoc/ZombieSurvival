@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -17,6 +16,7 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
     [SerializeField] private MixerList _mixers;
 
     private Dictionary<MixerTypes, int> _playingSounds;
+    private List<AudioPlayer> _currentPlayers;
     private MonoPool<AudioPlayer> _players;
 
     private void OnEnable()
@@ -38,6 +38,7 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
         }
 
         _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
+        _currentPlayers = new List<AudioPlayer>();
         _musicPlayer.PlayMusic();
     }
     
@@ -78,6 +79,26 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
 
                 _playingSounds[sound.MixerType]++;
 
+                if (sound.Type.Equals(SoundTypes.GameOver) || sound.Type.Equals(SoundTypes.LevelPassed))
+                {
+                    StopAllCoroutines();
+
+                    _musicPlayer.StopAllCoroutines();
+
+                    foreach (AudioPlayer audioPlayer in _currentPlayers)
+                    {
+                        audioPlayer.Stop(); 
+                        _players.Release(audioPlayer);
+                    }
+
+                    _currentPlayers.Clear();
+
+                    foreach (var mixer1 in _mixers.Mixers)
+                    {
+                        _playingSounds[mixer1.Type] = 0;
+                    }
+                }
+
                 StartCoroutine(WaitRelease(player, sound));
             }
             else if (_isDebug) Debug.Log("Missing AudioPlayer!");
@@ -96,10 +117,13 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
 
     private IEnumerator WaitRelease(AudioPlayer player, SoundType sound)
     {
-        yield return new WaitForSeconds(sound.Sound.length);
+        _currentPlayers.Add(player);
+
+        yield return new WaitForSecondsRealtime(sound.Sound.length + 0.5f);
 
         if (_isDebug) Debug.Log("Releasing " + player);
 
+        _currentPlayers.Remove(player);
         _playingSounds[sound.MixerType]--;
         _players.Release(player);
     }

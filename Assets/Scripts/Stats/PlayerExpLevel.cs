@@ -7,6 +7,7 @@ public class PlayerExpLevel : Stat
     [SerializeField] protected Expirience _exp;
 
     [Header("LevelUp settings")]
+    [SerializeField] protected SoundList _sounds;
     [SerializeField] protected int _baseExpForLevelUp;
     [Tooltip("ExpForLevel = BaseExpForLevel * LevelMultiplier * CurrentLevel")]
     [SerializeField] protected float _levelMultiplier;
@@ -61,6 +62,8 @@ public class PlayerExpLevel : Stat
                 _expBar.UpdateLevel();
             }
             else if (_isDebug) Debug.Log("Missing ExpBar!");
+
+            _sounds.PlaySound(SoundTypes.LevelUp);
 
             EventBus.Publish<IPlayerLevelUpHandler>(handler => handler.OnPlayerLevelUp());
         }

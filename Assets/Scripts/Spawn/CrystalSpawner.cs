@@ -2,9 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
+using static UnityEngine.Mathf;
+
+public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler, IGameStartHandler
 {
     [SerializeField] private int _poolSize;
+    [SerializeField] private float _startSpawnMinRange = 2f;
+    [SerializeField] private float _startSpawnMaxRange = 5f;
 
     private ObjectSpawner<ExpCrystal> _pool;
     private ChanceCombiner<CrystalParam> _spawnCombiner;
@@ -26,6 +30,29 @@ public sealed class CrystalSpawner : Spawner, IEnemyKilledHandler
 
         ClearPool();
     }
+
+    public void OnGameStart()
+    {
+        var spawnCombiner = new ChanceCombiner<CrystalParam>(_levelContext.StartCrystalStats.CrystalSpawnParams);
+
+        Vector3 playerPos = _player.transform.position;
+
+        for(int i = 0; i < _levelContext.StartCrystalsCount; i++)
+        {
+            ExpCrystal crystal = Instantiate(_levelContext.StartCrystalStats.CrystalPrefab, transform);
+
+            crystal.transform.position = new Vector3
+                (
+                    Cos(Random.Range(0f, 2 * PI)) * GetStartRange() + playerPos.x,
+                    _levelContext.LevelBuilder.GridHeight,
+                    Sin(Random.Range(0f, 2 * PI)) * GetStartRange() + playerPos.z
+                );
+
+            crystal.Initialize(spawnCombiner.GetStrikedObject(), null, _player);
+        }
+    }
+
+    private float GetStartRange() => Random.Range(_startSpawnMinRange, _startSpawnMaxRange);
 
     public override void OnLevelProgressUpdate(int progress)
     {

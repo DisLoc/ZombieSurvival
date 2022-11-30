@@ -8,6 +8,7 @@ public class MusicPlayer : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private SoundList _musics;
+    [SerializeField] private float _tracksCooldown = 5f;
 
     public void PlayMusic()
     {
@@ -24,7 +25,7 @@ public class MusicPlayer : MonoBehaviour
 
     private IEnumerator WaitForNewTrack(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time + _tracksCooldown);
 
         PlayMusic();
     }

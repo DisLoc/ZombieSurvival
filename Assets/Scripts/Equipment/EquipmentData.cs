@@ -14,6 +14,7 @@ public class EquipmentData : ScriptableObject
     [SerializeField] private EquipmentUpgrades _equipmentUpgrades;
 
     [Header("Rarity settings")]
+    [SerializeField] private string _rarityDescription;
     [SerializeField] private Upgrade _rarityUpgrade;
     [SerializeField] private EquipmentData _previousRarityEquipment;
     [SerializeField] private EquipmentData _nextRarityEquipment;
@@ -24,6 +25,7 @@ public class EquipmentData : ScriptableObject
     public UpgradingStat UpgradingStat => _upgradingStat;
     public EquipmentUpgrades EquipmentUpgrades => _equipmentUpgrades;
 
+    public string RarityDescription => _rarityDescription;
     public Upgrade RarityUpgrade => _rarityUpgrade;
     public EquipmentData PreviousRarityEquipment => _previousRarityEquipment;
     public EquipmentData NextRarityEquipment => _nextRarityEquipment;

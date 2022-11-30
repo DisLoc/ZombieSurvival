@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: EpicTestArmor data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 759e2d7d14d5f164493e08d4ee559ffe, type: 3}
+  _equipSlot: 1
+  _rarity: 4
+  _upgradingStat: 1
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 2565584387524054931, guid: d665954f8393d214684ba44e6b440b58, type: 3}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: c497e1465c04f8146a4313e989c08a28, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 3
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: 3f7c869cf4f01994eade2aa81b212484, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 2000
+        _requiredMaterialAmount: 10
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: 29345c569402122438b124259614d8b1, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 3000
+        _requiredMaterialAmount: 13
+  _rarityDescription: +5 health regeneration
+  _rarityUpgrade: {fileID: 11400000, guid: 543b4a0a0abc714448c2226493e2eaee, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: d0978ed722b22b242a5bff0f93ed9e01, type: 2}
+  _nextRarityEquipment: {fileID: 11400000, guid: 5e55d485c7b699e428698a3e683eeb7d, type: 2}

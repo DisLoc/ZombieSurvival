@@ -4,10 +4,19 @@ using UnityEngine;
 [System.Serializable]
 public class EquipmentUpgrades
 {
+    [SerializeField] private Equipment _requiredEquipment;
+    [SerializeField] private CurrencyData _requiredCurrency;
+    [SerializeField] private EquipmentMaterial _requiredMaterial;
+
     [SerializeField] private List<EquipmentUpgrade> _upgrades;
 
-    public UpgradeData GetUpgrade(int level)
+    public Equipment RequiredEquipment => _requiredEquipment;
+    public CurrencyData RequiredCurrency => _requiredCurrency;
+    public EquipmentMaterial RequiredMaterial => _requiredMaterial;
+    public List<EquipmentUpgrade> Upgrades => _upgrades;
+
+    public EquipmentUpgrade GetUpgrade(int level)
     {
-        return _upgrades.Find(item => item.RequiredLevel == level).UpgradeData;
+        return _upgrades.Find(item => item.RequiredLevel == level);
     }
 }

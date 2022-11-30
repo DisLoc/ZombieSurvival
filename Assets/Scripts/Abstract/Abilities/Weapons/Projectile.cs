@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
     [Header("Throw settings")]
     [SerializeField] protected TagList _targetTags;
     [SerializeField] protected bool _destroyOnExitAttackRange;
+    [SerializeField] protected SoundList _sounds;
 
     [Header("Effects settings")]
     [SerializeField] protected ParticleSystem _particle;
@@ -101,6 +102,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
 
         if (_releaseTimer <= 0f)
         {
+            _sounds.PlaySound(SoundTypes.ProjectileDestroy);
             _weapon.OnProjectileRelease(this);
         }
     }

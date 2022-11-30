@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: Shotgun ProjectileSpeed
   m_EditorClassIdentifier: 
-  _baseValue: 15
+  _baseValue: 10
   _minValue: 1
-  _maxValue: 15
+  _maxValue: 10
   _maxValueIsInfinite: 1
   _upgradeMarkers:
     _markers:
     - {fileID: 11400000, guid: a7686d67e0d3f7342a14eb33d86b47ee, type: 2}
+    - {fileID: 11400000, guid: ac807923051e1294c8d0304696e8315e, type: 2}
     _minMatchesCount: 1

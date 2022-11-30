@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: SuperiorTestHelmet data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: c8e7d998d68e7f64e9f87d085975b1f7, type: 3}
+  _equipSlot: 0
+  _rarity: 5
+  _upgradingStat: 1
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 2565584387524054931, guid: cc270b6d86b8c0448b3a9a3c93347c54, type: 3}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 8a6e463088e1247459b4c3084188ac09, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: 70d5b0f7ccb01194d81890221b581c29, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 3
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: c702f46341c0f364e802e53bf78ad9d6, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5000
+        _requiredMaterialAmount: 15
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: 6ab4f6a5542c2d54cb619613444b48f9, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 7500
+        _requiredMaterialAmount: 20
+  _rarityDescription: +3% exp accumulation
+  _rarityUpgrade: {fileID: 11400000, guid: 4e0ad1edbd3bdd744b0d601e1280e690, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: 954a10bf63470ed40886319e5838c79f, type: 2}
+  _nextRarityEquipment: {fileID: 0}

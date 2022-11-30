@@ -63,8 +63,11 @@ MonoBehaviour:
   _targetTags:
     _tags: 01000000
   _destroyOnExitAttackRange: 1
+  _sounds:
+    _sounds: []
   _particle: {fileID: 7831362375748254162}
   _sparkParticle: {fileID: 7831362376333544709}
+  _trail: {fileID: 7831362376312556968}
 --- !u!1001 &6736948494421542308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3589620008199735308, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
+      propertyPath: m_Time
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
 --- !u!198 &7831362375748254162 stripped
@@ -130,6 +137,11 @@ ParticleSystem:
 --- !u!4 &7831362375748254163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3589620006562577527, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
+  m_PrefabInstance: {fileID: 6736948494421542308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &7831362376312556968 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 3589620008199735308, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
   m_PrefabInstance: {fileID: 6736948494421542308}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &7831362376333544709 stripped

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: CommonTestArmor data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 759e2d7d14d5f164493e08d4ee559ffe, type: 3}
+  _equipSlot: 1
+  _rarity: 0
+  _upgradingStat: 1
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 0}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: 2b21c2d9b21f2544f8b3d96a7309f0b4, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: ec7a48764470b024fbaf63ea85d32568, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 50
+        _requiredMaterialAmount: 1
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: 66dec795c1009c74b97c719e2551826c, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 100
+        _requiredMaterialAmount: 2
+  _rarityDescription: '-'
+  _rarityUpgrade: {fileID: 11400000, guid: 20a2c7b2f83db234ca87b818de115515, type: 2}
+  _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 77b59f6d645188a47a48ebab43d79726, type: 2}
