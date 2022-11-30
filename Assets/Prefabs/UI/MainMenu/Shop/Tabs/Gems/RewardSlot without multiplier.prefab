@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 40000
+  m_Text: 400
 --- !u!114 &7029784543874045973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 7634778590736892046}
   - component: {fileID: 3833156403976822328}
   - component: {fileID: 7760788303351878185}
+  - component: {fileID: 3886689476979001000}
   m_Layer: 5
   m_Name: RewardSlot without multiplier
   m_TagString: Untagged
@@ -219,7 +220,37 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3833156403976822328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3886689476979001000}
+        m_TargetAssemblyTypeName: ButtonSoundPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3886689476979001000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566991690478273972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979cb1b33c5c58e4eb1b1bebd8dc69bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+    _sounds:
+    - _soundType: 6
+      _mixerType: 1
+      _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
+      _playbackCooldown: 0.05
 --- !u!1 &1778503190371778185
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $ 19.99
+  m_Text: $ 9.99
 --- !u!114 &4707428221668810813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3c0c1c8f58153d4f89036bd03213175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4eab8b459b259e94e98c04f89622181b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

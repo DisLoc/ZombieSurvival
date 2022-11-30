@@ -608,18 +608,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RewardSlot without multiplier
       objectReference: {fileID: 0}
-    - target: {fileID: 6988511614573972807, guid: 4cc91ec6f636fdc428a17e767039ab00, type: 3}
-      propertyPath: m_Text
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 7867961463165109489, guid: 4cc91ec6f636fdc428a17e767039ab00, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4eab8b459b259e94e98c04f89622181b, type: 3}
-    - target: {fileID: 8061213328790714513, guid: 4cc91ec6f636fdc428a17e767039ab00, type: 3}
-      propertyPath: m_Text
-      value: $ 9.99
-      objectReference: {fileID: 0}
     - target: {fileID: 8156926334417909629, guid: 4cc91ec6f636fdc428a17e767039ab00, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
