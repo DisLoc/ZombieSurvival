@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
             else menu.Hide();
         }
 
-        _settings.Initialize();
+        _settings?.Initialize();
     }
 
     public virtual void Display(UIMenu tab)
@@ -49,12 +49,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsClick()
     {
-        _settings.gameObject.SetActive(true);
+        _settings?.gameObject.SetActive(true);
     }
     
     public void OnSettingsClose()
     {
-        _settings.gameObject.SetActive(false);
+        _settings?.gameObject.SetActive(false);
     }
 
     public void OnBuyEnergyClick()

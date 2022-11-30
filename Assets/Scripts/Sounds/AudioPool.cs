@@ -100,6 +100,7 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
                 }
 
                 StartCoroutine(WaitRelease(player, sound));
+                return;
             }
             else if (_isDebug) Debug.Log("Missing AudioPlayer!");
         }

@@ -1934,7 +1934,7 @@ PrefabInstance:
     - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: _baseEquipment.Array.data[5]
       value: 
-      objectReference: {fileID: 7228236411287217178, guid: 82b7e0fc2521ebe43afadf8ccd1e1092, type: 3}
+      objectReference: {fileID: 7228236411287217178, guid: 94907044528cee64c906615c26c01964, type: 3}
     - target: {fileID: 1004279292790640283, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2968,6 +2968,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1651239694}
     m_Modifications:
+    - target: {fileID: 524169124941123424, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -26.835266
+      objectReference: {fileID: 0}
     - target: {fileID: 1248202975780276522, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
