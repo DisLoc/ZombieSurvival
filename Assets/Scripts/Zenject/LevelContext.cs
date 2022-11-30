@@ -12,7 +12,7 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [Tooltip("Level lenght in minutes")]
     [SerializeField][Range(1, 60)] private int _levelLenght;
-    [SerializeField] private Reward _levelReward;
+    [SerializeField] private BreakpointList<LevelBreakpoint> _levelRewards;
 
     [Space(5)]
     [SerializeField] private GroundGrid _levelEnvironment;
@@ -40,6 +40,9 @@ public sealed class LevelContext : ScriptableObject
 
     private List<Upgrade> _equipmentUpgrades;
 
+    [HideInInspector] public bool wasPassed;
+
+    #region Fields
     public string LevelName => _levelName;
     public int LevelNumber => _levelNumber;
     public Sprite LevelIcon => _levelIcon;
@@ -47,7 +50,7 @@ public sealed class LevelContext : ScriptableObject
     /// Level lenght in seconds
     /// </summary>
     public int LevelLenght => _levelLenght * 60;
-    public Reward LevelReward => _levelReward;
+    public BreakpointList<LevelBreakpoint> LevelRewards => _levelRewards;
 
     public LevelBuilder LevelBuilder { get; private set; }
 
@@ -155,6 +158,7 @@ public sealed class LevelContext : ScriptableObject
         }
     }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
+    #endregion
 
     public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
     {
