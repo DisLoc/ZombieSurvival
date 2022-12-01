@@ -10,6 +10,10 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private RectTransform _unequipedInventoryTransform;
     [SerializeField] private GridLayoutGroup _grid;
 
+    [Space(5)]
+    [SerializeField] private MergeMenu _mergeMenu;
+    [SerializeField] private HeroListMenu _heroListMenu;
+
     [Header("Equipment settings")]
     [SerializeField] private EquipmentTypesData _equipmentTypesData;
 
@@ -33,6 +37,8 @@ public sealed class InventoryMenu : UIMenu
         base.Initialize(mainMenu, parentMenu);
 
         _upgradeMenu.Initialize(mainMenu, this);
+        _mergeMenu.Initialize(mainMenu, this);
+        _heroListMenu.Initialize(mainMenu, this);
 
         _unequippedInventory.Initialize(this);
         _equipmentInventory = new EquipmentInventory();
@@ -54,6 +60,8 @@ public sealed class InventoryMenu : UIMenu
     public override void Display(bool playAnimation = false)
     {
         _upgradeMenu.Hide();
+        _heroListMenu.Hide();
+        _mergeMenu.Hide();
 
         base.Display(playAnimation);
 
@@ -63,6 +71,8 @@ public sealed class InventoryMenu : UIMenu
     public override void Hide(bool playAnimation = false)
     {
         _upgradeMenu.Hide();
+        _heroListMenu.Hide();
+        _mergeMenu.Hide();
 
         base.Hide(playAnimation);
     }
@@ -175,5 +185,21 @@ public sealed class InventoryMenu : UIMenu
     public void OnInventoryChange()
     {
         _contextInstaller.SetEquipment(_equipmentInventory);
+    }
+
+    public void OnMergeClick()
+    {
+        _upgradeMenu.Hide();
+        _heroListMenu.Hide();
+
+        _mergeMenu.Display(true);
+    }
+    
+    public void OnHeroListClick()
+    {
+        _upgradeMenu.Hide();
+        _mergeMenu.Hide();
+
+        _heroListMenu.Display(true);
     }
 }

@@ -120,7 +120,7 @@ public class BattleMenu : UIMenu
             _previousLevelButton.gameObject.SetActive(true);
         }
 
-        if (levelIndex == _levels.Count - 1 || _currentLevel.wasPassed == false)
+        if (levelIndex == _levels.Count - 1 || (!_isDebug && _currentLevel.wasPassed == false))
         {
             _nextLevelButton.gameObject.SetActive(false);
         }
