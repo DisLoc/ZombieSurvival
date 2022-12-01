@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 8953109175079049448}
   - component: {fileID: 1800959968247124480}
   m_Layer: 3
-  m_Name: Player
+  m_Name: GirlPlayer
   m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

@@ -1,11 +1,21 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsMenu : UIMenu 
 {
+    [Header("Settings menu")]
     [SerializeField] private AudioMixer _musicGroup;
+    [SerializeField] private Image _musicImage;
+    [SerializeField] private Sprite _musicOnIcon;
+    [SerializeField] private Sprite _musicOffIcon;
+
+    [Space(5)]
     [SerializeField] private List<AudioMixer> _soundGroups;
+    [SerializeField] private Image _soundsImage;
+    [SerializeField] private Sprite _soundsOnIcon;
+    [SerializeField] private Sprite _soundsOffIcon;
 
     private SoundsStates _musicState;
     private SoundsStates _soundState;
@@ -42,6 +52,7 @@ public class SettingsMenu : UIMenu
             }
 
             _soundState = SoundsStates.Disabled;
+            _soundsImage.sprite = _soundsOffIcon;
         }
         else
         {
@@ -51,6 +62,7 @@ public class SettingsMenu : UIMenu
             }
 
             _soundState = SoundsStates.Enabled;
+            _soundsImage.sprite = _soundsOnIcon;
         }
     }
 
@@ -61,12 +73,14 @@ public class SettingsMenu : UIMenu
             _musicGroup.SetFloat(MIXER_NAME, MIN_BOUNDS);
 
             _musicState = SoundsStates.Disabled;
+            _musicImage.sprite = _musicOffIcon;
         }
         else
         {
             _musicGroup.SetFloat(MIXER_NAME, MAX_MUSIC_BOUNDS);
 
             _musicState = SoundsStates.Enabled;
+            _musicImage.sprite = _musicOnIcon;
         }
     }
 

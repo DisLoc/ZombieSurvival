@@ -365,11 +365,17 @@ MonoBehaviour:
   _button: {fileID: 0}
   _animator: {fileID: 253560536}
   _musicGroup: {fileID: 24100000, guid: 970a7e399c9107b47a297371795f0ad9, type: 2}
+  _musicImage: {fileID: 397498461}
+  _musicOnIcon: {fileID: 21300000, guid: 2662315bfce376d44b6078b12f15689a, type: 3}
+  _musicOffIcon: {fileID: 21300000, guid: e7c5885da36b4314dab58313a337dec1, type: 3}
   _soundGroups:
   - {fileID: 24100000, guid: 12ffaa7be98292342b1d51b4b6f0e243, type: 2}
   - {fileID: 24100000, guid: 0a5ef3c906c36f14d91c23450290975d, type: 2}
   - {fileID: 24100000, guid: 0a41439d4a1674742a10989e85ec4331, type: 2}
   - {fileID: 24100000, guid: 79a262e2daac75a4a80e99f1c402ffaf, type: 2}
+  _soundsImage: {fileID: 1964306518}
+  _soundsOnIcon: {fileID: 21300000, guid: 5ca7c0c75ad91a242ae0cfb52ba46886, type: 3}
+  _soundsOffIcon: {fileID: 21300000, guid: d44548ccf8a2e0e45bf027cca04aa311, type: 3}
 --- !u!114 &253560534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,8 +574,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6270877655912f24c81d0c01a5816c3c, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2662315bfce376d44b6078b12f15689a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1781,8 +1787,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 618270bc2b248064a9d985b099f709d0, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5ca7c0c75ad91a242ae0cfb52ba46886, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3168,6 +3174,22 @@ PrefabInstance:
     - target: {fileID: 2359795017111649327, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
       propertyPath: m_Name
       value: Resources
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359795017828721720, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 930cda4a0159f7e4a8eaad4cb73222df, type: 3}
+    - target: {fileID: 2359795017828721720, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359795017828721720, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359795017828721720, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
+      propertyPath: m_Color.r
+      value: 0.14509805
       objectReference: {fileID: 0}
     - target: {fileID: 2359795017828721727, guid: b4f58c3ad3e13494d89215b78199dd02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
