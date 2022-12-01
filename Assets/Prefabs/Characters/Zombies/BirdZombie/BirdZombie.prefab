@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _sounds:
+    _sounds: []
   _isImmortal: 0
   _healthBar: {fileID: 951266968786383313}
   _hpCanvas: {fileID: 3823232349681146394}
@@ -385,6 +387,7 @@ MonoBehaviour:
   _collider: {fileID: 4692834867816350681}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 1294031339213091134}
 --- !u!114 &6352361076084198625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +403,8 @@ MonoBehaviour:
   _isDebug: 0
   _name: BirdZombie collider
   _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 2525382681606251758}

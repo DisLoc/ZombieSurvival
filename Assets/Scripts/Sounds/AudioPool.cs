@@ -39,12 +39,16 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
 
         _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
         _currentPlayers = new List<AudioPlayer>();
-        _musicPlayer.PlayMusic();
     }
     
     private void OnDisable()
     {
         EventBus.Subscribe(this);
+    }
+
+    private void Start()
+    {
+        _musicPlayer.PlayMusic();
     }
 
     public void OnSoundPlay(SoundType sound)
@@ -120,7 +124,14 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
     {
         _currentPlayers.Add(player);
 
-        yield return new WaitForSecondsRealtime(sound.Sound.length + 0.5f);
+        if (sound.MixerType != MixerTypes.Music)
+        {
+            yield return new WaitForSeconds(sound.Sound.length);
+        }
+        else
+        {
+            yield return new WaitForSecondsRealtime(sound.Sound.length);
+        }
 
         if (_isDebug) Debug.Log("Releasing " + player);
 

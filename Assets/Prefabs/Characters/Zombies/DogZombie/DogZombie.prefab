@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _sounds:
+    _sounds: []
   _isImmortal: 0
   _healthBar: {fileID: 2655461387694652262}
   _hpCanvas: {fileID: 2082727654760108205}
@@ -354,6 +356,7 @@ MonoBehaviour:
   _collider: {fileID: 6014635931554664395}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 6014635930849753473}
 --- !u!114 &6014635931554664393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +372,8 @@ MonoBehaviour:
   _isDebug: 0
   _name: DogZombie collider
   _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 6014635931554664392}

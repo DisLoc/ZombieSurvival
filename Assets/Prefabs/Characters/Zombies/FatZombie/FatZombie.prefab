@@ -62,6 +62,7 @@ MonoBehaviour:
   _collider: {fileID: 2256704756882340303}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 5443555473341688875}
 --- !u!1 &1225345768804038199
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +156,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5443555473341688877}
-  - component: {fileID: 5443555473341688876}
-  - component: {fileID: 5443555473341688879}
   - component: {fileID: 5443555473341688878}
   - component: {fileID: 5443555473341688873}
   - component: {fileID: 5443555473341688872}
@@ -187,56 +186,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5443555473341688876
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443555473341688875}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5443555473341688879
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443555473341688875}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &5443555473341688878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -280,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _sounds:
+    _sounds: []
   _isImmortal: 0
   _healthBar: {fileID: 4335061329182879509}
   _hpCanvas: {fileID: 293990288021488862}
@@ -385,6 +336,7 @@ MonoBehaviour:
   _collider: {fileID: 5443555474708623002}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 5443555473341688875}
 --- !u!114 &5443555474708622980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +352,8 @@ MonoBehaviour:
   _isDebug: 0
   _name: FatZombie collider
   _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 5443555474708622981}
@@ -452,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 8256287964604668375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.79, y: 1.31, z: 1.79}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5443555473341688877}
@@ -499,15 +453,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 121a18d28d661e34a9748a50b2507fbc, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.65, y: 1.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &5443555473245689257

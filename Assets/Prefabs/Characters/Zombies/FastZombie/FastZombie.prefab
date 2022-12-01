@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2322432723978596905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 2, y: 1.36, z: 2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3984346456179942872}
   m_RootOrder: 2
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7c3480b2fbb3cea4882b341be5215ee6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dc8665a4af45b247aabaa282549832c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.66}
+  m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -147,6 +147,7 @@ MonoBehaviour:
   _collider: {fileID: 3984346455586216854}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 3984346456179942866}
 --- !u!114 &3984346455586216852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,8 @@ MonoBehaviour:
   _isDebug: 0
   _name: FastZombie collider
   _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 3984346455586216853}
@@ -269,6 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _sounds:
+    _sounds: []
   _isImmortal: 0
   _healthBar: {fileID: 4677377915829188485}
   _hpCanvas: {fileID: 8706636458491157582}

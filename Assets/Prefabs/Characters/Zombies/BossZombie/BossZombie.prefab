@@ -252,6 +252,7 @@ MonoBehaviour:
   _collider: {fileID: 4455862380758211367}
   _triggerTags:
     _tags: 00000000
+  _parent: {fileID: 7855256235738180032}
 --- !u!114 &2656620164662432799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +268,8 @@ MonoBehaviour:
   _isDebug: 0
   _name: BossZombie collider
   _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 6916928023401610256}
@@ -747,6 +750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _sounds:
+    _sounds: []
   _isImmortal: 0
   _healthBar: {fileID: 8198168756330916143}
   _hpCanvas: {fileID: 5330277169062642404}

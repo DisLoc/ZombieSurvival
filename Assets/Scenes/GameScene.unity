@@ -390,10 +390,6 @@ PrefabInstance:
       propertyPath: _startWeaponsList.Array.data[3]
       value: 
       objectReference: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._expLevel._baseExpForLevelUp
-      value: 800
-      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -471,13 +467,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e277be8676dcc0240b0ecf427ae81010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &968229936
+--- !u!1001 &991357330
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _tracksCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _musics._sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _musics._sounds.Array.data[1]._sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 663c7980c50bc4096916f9fcfab48a1a, type: 3}
+    - target: {fileID: 3563581753651858451, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _musics._sounds.Array.data[0]._playbackCooldown
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266368, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_Name
       value: AudioPool
@@ -525,6 +537,18 @@ PrefabInstance:
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[1]._soundsCountLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[2]._soundsCountLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[4]._soundsCountLimit
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec69db15838a874daef26f73a598846, type: 3}

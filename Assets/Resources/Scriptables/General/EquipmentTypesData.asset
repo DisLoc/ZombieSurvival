@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rarityBackgrounds:
   - _rarity: 0
-    _rarityBackground: {fileID: 21300000, guid: 618270bc2b248064a9d985b099f709d0, type: 3}
-    _rarityCircle: {fileID: 21300000, guid: 618270bc2b248064a9d985b099f709d0, type: 3}
+    _rarityBackground: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+    _rarityCircle: {fileID: 21300000, guid: 490c4ea64e6246d44a2464e7d0aefa55, type: 3}
   - _rarity: 1
     _rarityBackground: {fileID: 21300000, guid: 80c812fb9acd316438ac828988a8fbf3, type: 3}
-    _rarityCircle: {fileID: 21300000, guid: 80c812fb9acd316438ac828988a8fbf3, type: 3}
+    _rarityCircle: {fileID: 21300000, guid: ffbd990b1560a354e9a357682f8e8c95, type: 3}
   - _rarity: 2
     _rarityBackground: {fileID: 21300000, guid: 68ec112d7feb27c4c8405b1c819ee83f, type: 3}
     _rarityCircle: {fileID: 21300000, guid: 990394f50e5032c4980188cd19b68a5b, type: 3}

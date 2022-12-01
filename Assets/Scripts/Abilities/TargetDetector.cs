@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TargetDetector : TriggerDetector
 {
+    [SerializeField] private GameObject _parent;
+
     private readonly float EPSILON = 0.15f;
     private List<GameObject> _targets;
 
@@ -51,25 +53,14 @@ public class TargetDetector : TriggerDetector
     /// </summary>
     public void Cleanup()
     {
-        _targets?.RemoveAll(item => item == null || item.activeSelf == false || (CheckDistance(item) == false));
-    }
-
-    private bool CheckDistance(GameObject obj)
-    {
-        foreach(RaycastHit hit in Physics.RaycastAll
-                                                (
-                                                    transform.position, 
-                                                    obj.transform.position - transform.position, 
-                                                    _collider.radius * transform.localScale.magnitude + EPSILON
-                                                ))
+        if (_parent != null && _parent.activeSelf == false)
         {
-            if (hit.collider.gameObject.Equals(obj))
-            {
-                return true;
-            }
+            _targets?.Clear();
         }
-
-        return false;
+        else
+        {
+            _targets?.RemoveAll(item => item == null || item.activeSelf == false);
+        }
     }
 
     public Vector3 GetNearestTargetPosition()

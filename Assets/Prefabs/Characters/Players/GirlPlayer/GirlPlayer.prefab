@@ -569,7 +569,7 @@ MonoBehaviour:
           _mixerType: 2
           _sound: {fileID: 8300000, guid: 86d3fa1a54448784d956e87bb4c8e72c, type: 3}
           _playbackCooldown: 0.1
-      _baseExpForLevelUp: 750
+      _baseExpForLevelUp: 800
       _levelMultiplier: 0.5
       _expBar: {fileID: 0}
     _pickUpRange:
@@ -588,8 +588,8 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8794446aa052ce94e9965f3fb6fb3c52, type: 2}
   _abilityInventory:
-    _maxActiveAbilitiesCount: 7
-    _maxPassiveAbilitiesCount: 7
+    _maxActiveAbilitiesCount: 5
+    _maxPassiveAbilitiesCount: 5
     _abilitiesParent: {fileID: 4441788838641939132}
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}

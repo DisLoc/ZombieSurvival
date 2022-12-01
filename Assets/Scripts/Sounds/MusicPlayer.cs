@@ -25,7 +25,7 @@ public class MusicPlayer : MonoBehaviour
 
     private IEnumerator WaitForNewTrack(float time)
     {
-        yield return new WaitForSeconds(time + _tracksCooldown);
+        yield return new WaitForSecondsRealtime(time + _tracksCooldown);
 
         PlayMusic();
     }
