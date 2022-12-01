@@ -15,7 +15,53 @@ MonoBehaviour:
   _levelName: Winter
   _levelNumber: 2
   _levelIcon: {fileID: 0}
-  _levelLenght: 10
+  _levelLenght: 15
+  _levelRewards:
+    _breakpoint1:
+      _name: 30%
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 1
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 30
+      _requiredTime: 270
+      wasClaimed: 0
+    _breakpoint2:
+      _name: 60%
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 1
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 60
+      _requiredTime: 540
+      wasClaimed: 0
+    _breakpoint3:
+      _name: 100%
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 100
+      _requiredTime: 900
+      wasClaimed: 0
   _levelEnvironment: {fileID: 11400000, guid: 818102e4090ec2e4a81f6e41f13417ea, type: 2}
   _startCrystalsStats: {fileID: 11400000, guid: b0a861d57680a164e9da284feaf0bbbf, type: 2}
   _startCrystalsCount: 8

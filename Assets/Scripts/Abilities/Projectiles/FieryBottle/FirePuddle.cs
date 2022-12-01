@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
@@ -71,13 +72,19 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
     {
         if (_targetDetector.Targets.Count == 0) return;
 
-        foreach(GameObject target in _targetDetector.Targets)
-        {
-            DamageableObject obj = target.GetComponent<DamageableObject>();
+        List<GameObject> targets = _targetDetector.Targets;
 
-            if (obj != null)
+        if (targets.Count == 0) return;
+
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (targets[i] == null) continue;
+
+            DamageableObject target = targets[i].GetComponent<DamageableObject>();
+
+            if (target != null)
             {
-                obj.TakeDamage((int)_damage.Value);
+                target.TakeDamage((int)_damage.Value);
             }
         }
 

@@ -95,11 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b767e41d3ffa1f498a6cd4873e99a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockText: {fileID: 5391834267382669345}
-  _unlockImage: {fileID: 0}
-  _onUnlockSprite: {fileID: 0}
+  _button: {fileID: 597940313540496458}
+  _unlockTimeText: {fileID: 5391834267382669345}
+  _unlockImage: {fileID: 6661086366153864930}
   _chestImage: {fileID: 2030421881664975835}
-  _onOpenSprite: {fileID: 0}
+  _onOpenSprite: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
 --- !u!114 &597940313540496458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,13 +144,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BattleMenu, Assembly-CSharp
-        m_MethodName: OnRewardClick
-        m_Mode: 2
+      - m_Target: {fileID: 4614935313162765712}
+        m_TargetAssemblyTypeName: LevelRewardChest, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 4614935313162765712}
-          m_ObjectArgumentAssemblyTypeName: LevelRewardChest, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6882930371460733789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -297,8 +297,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.10443338}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.7}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.5}
+  m_SizeDelta: {x: 10, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7576285170138312614
 CanvasRenderer:

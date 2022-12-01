@@ -21,6 +21,8 @@ public abstract class ColliderWeapon : Weapon
 
             for (int i = 0; i < targets.Count; i++)
             {
+                if (targets[i] == null) continue;
+
                 DamageableObject target = targets[i].GetComponent<DamageableObject>();
 
                 if (target != null)

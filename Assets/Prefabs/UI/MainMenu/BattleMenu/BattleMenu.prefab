@@ -96,6 +96,7 @@ MonoBehaviour:
   _levelText: {fileID: 8705098645274560069}
   _previousLevelButton: {fileID: 8705098645336606816}
   _nextLevelButton: {fileID: 8705098646692237247}
+  _levelProgress: {fileID: 6787881495547599167}
   _chest1: {fileID: 2659573346784253854}
   _chest2: {fileID: 4090731017475541388}
   _chest3: {fileID: 4090731017516764941}
@@ -868,6 +869,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3391445506551845191, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391445506551845191, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391445506551845191, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_MinValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391445506551845191, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4915989347431753941, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.49230957
@@ -936,6 +953,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6787881495547599167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2408388271856351417, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
+  m_PrefabInstance: {fileID: 9178114068730945926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c59bbab00de1341ab69fe88bfb52c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8705098645287486638 stripped

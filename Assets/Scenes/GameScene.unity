@@ -539,6 +539,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _masterVolume
+      value: 0.202
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _mixers._mixerTypes.Array.data[1]._soundsCountLimit
       value: 5
       objectReference: {fileID: 0}

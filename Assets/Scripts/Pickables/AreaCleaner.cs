@@ -22,20 +22,13 @@ public class AreaCleaner : PickableObject
 
         _particle.Play();
 
-        StartCoroutine(WaitDestroy());
-
         foreach(var target in _targetDetector.Targets)
         {
             DamageableObject obj = target.GetComponent<DamageableObject>();
 
             if (obj != null) obj.Die();
         }
-    }
 
-    private IEnumerator WaitDestroy()
-    {
-        yield return new WaitForSeconds(_destroyDelay);
-
-        Destroy(gameObject);
+        Destroy(gameObject, _destroyDelay);
     }
 }

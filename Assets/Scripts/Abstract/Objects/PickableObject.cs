@@ -74,6 +74,8 @@ public abstract class PickableObject : MonoBehaviour
 
     protected virtual void OnPickUp()
     {
+        StopAllCoroutines();
+
         _sounds.PlaySound(SoundTypes.PickUp);
     }
 

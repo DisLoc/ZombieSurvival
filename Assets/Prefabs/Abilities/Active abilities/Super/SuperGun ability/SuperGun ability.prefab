@@ -62,6 +62,7 @@ MonoBehaviour:
   _collider: {fileID: 3561289701281980958}
   _triggerTags:
     _tags: 01000000
+  _parent: {fileID: 2234981696892754071}
 --- !u!1 &2234981696892754071
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public class LevelBreakpoint : Breakpoint
 {
     [Tooltip("Time in seconds")]
@@ -8,6 +9,9 @@ public class LevelBreakpoint : Breakpoint
 
     [HideInInspector] public bool wasClaimed;
 
+    /// <summary>
+    /// Time in seconds
+    /// </summary>
     public int RequiredTime => _requiredTime;
     public Reward Reward => _reward;
 

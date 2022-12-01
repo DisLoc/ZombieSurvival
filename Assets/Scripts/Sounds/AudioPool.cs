@@ -22,23 +22,6 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
     private void OnEnable()
     {
         EventBus.Subscribe(this);
-
-        int maxCapacity = 0;
-
-        foreach (MixerType mixer in _mixers.Mixers)
-        {
-            maxCapacity += mixer.SoundsCountLimit;
-        }
-
-        _playingSounds = new Dictionary<MixerTypes, int>();
-
-        foreach(var mixer in _mixers.Mixers)
-        {
-            _playingSounds.Add(mixer.Type, 0);
-        }
-
-        _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
-        _currentPlayers = new List<AudioPlayer>();
     }
     
     private void OnDisable()
@@ -48,11 +31,30 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
 
     private void Start()
     {
+        int maxCapacity = 0;
+
+        foreach (MixerType mixer in _mixers.Mixers)
+        {
+            maxCapacity += mixer.SoundsCountLimit;
+        }
+
+        _playingSounds = new Dictionary<MixerTypes, int>();
+
+        foreach (var mixer in _mixers.Mixers)
+        {
+            _playingSounds.Add(mixer.Type, 0);
+        }
+
+        _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
+        _currentPlayers = new List<AudioPlayer>();
+
         _musicPlayer.PlayMusic();
     }
 
     public void OnSoundPlay(SoundType sound)
     {
+        if (_players == null) return;
+
         if (_isDebug) Debug.Log("Try to play " + sound);
 
         if (sound.Sound == null)
@@ -79,12 +81,9 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
 
             if (player != null)
             {
-                player.Play(sound.Sound, mixer, _masterVolume);
-
-                _playingSounds[sound.MixerType]++;
-
                 if (sound.Type.Equals(SoundTypes.GameOver) || sound.Type.Equals(SoundTypes.LevelPassed))
                 {
+                    if (_isDebug) Debug.Log("Stop all sounds");
                     StopAllCoroutines();
 
                     _musicPlayer.StopAllCoroutines();
@@ -103,7 +102,9 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
                     }
                 }
 
+                player.Play(sound.Sound, mixer, _masterVolume);
                 StartCoroutine(WaitRelease(player, sound));
+
                 return;
             }
             else if (_isDebug) Debug.Log("Missing AudioPlayer!");
@@ -123,15 +124,9 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
     private IEnumerator WaitRelease(AudioPlayer player, SoundType sound)
     {
         _currentPlayers.Add(player);
+        _playingSounds[sound.MixerType]++;
 
-        if (sound.MixerType != MixerTypes.Music)
-        {
-            yield return new WaitForSeconds(sound.Sound.length);
-        }
-        else
-        {
-            yield return new WaitForSecondsRealtime(sound.Sound.length);
-        }
+        yield return new WaitForSecondsRealtime(sound.Sound.length);
 
         if (_isDebug) Debug.Log("Releasing " + player);
 

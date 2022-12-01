@@ -61,6 +61,10 @@ public class EquipmentInventoryMenu
             {
                 slot.SetSlot(slot.Equipment);
             }
+            else
+            {
+                Object.Destroy(slot);
+            }
         }
     }
 }

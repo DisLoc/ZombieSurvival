@@ -12,7 +12,7 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [Tooltip("Level lenght in minutes")]
     [SerializeField][Range(1, 60)] private int _levelLenght;
-    [SerializeField] private BreakpointList<LevelBreakpoint> _levelRewards;
+    [SerializeField] private LevelRewardBreakpoints _levelRewards;
 
     [Space(5)]
     [SerializeField] private GroundGrid _levelEnvironment;
@@ -50,7 +50,7 @@ public sealed class LevelContext : ScriptableObject
     /// Level lenght in seconds
     /// </summary>
     public int LevelLenght => _levelLenght * 60;
-    public BreakpointList<LevelBreakpoint> LevelRewards => _levelRewards;
+    public LevelRewardBreakpoints LevelRewards => _levelRewards;
 
     public LevelBuilder LevelBuilder { get; private set; }
 
@@ -168,7 +168,7 @@ public sealed class LevelContext : ScriptableObject
 
         if (equipmentInventory != null)
         {
-            foreach(Equipment equipment in equipmentInventory.GetEquipment())
+            foreach (Equipment equipment in equipmentInventory.GetEquipment())
             {
                 if (equipment != null)
                 {
@@ -192,5 +192,17 @@ public sealed class LevelContext : ScriptableObject
 
         LevelBuilder = Instantiate(builderPrefab);
         LevelBuilder.Construct(_levelEnvironment);
+    }
+
+    [ContextMenu("Reset level")]
+    private void ResetLevel()
+    {
+        wasPassed = false;
+
+        foreach (var breakpoint in _levelRewards.Breakpoints)
+        {
+            breakpoint.SetReached(false);
+            breakpoint.wasClaimed = false;
+        }
     }
 }

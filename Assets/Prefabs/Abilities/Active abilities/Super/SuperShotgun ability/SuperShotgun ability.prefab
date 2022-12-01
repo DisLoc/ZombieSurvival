@@ -132,3 +132,4 @@ MonoBehaviour:
   _collider: {fileID: 3961764513588038350}
   _triggerTags:
     _tags: 01000000
+  _parent: {fileID: 3952381218074834680}

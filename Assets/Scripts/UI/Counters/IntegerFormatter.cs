@@ -36,6 +36,22 @@ public static class IntegerFormatter
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="time">Time in seconds</param>
+    /// <returns>Returns formatted time in string</returns>
+    public static string GetMinutes(int time)
+    {
+        string result = "";
+
+        int minutes = time / SECONDS_PER_MINUTE;
+
+        result += minutes.ToString() + " min";
+
+        return result;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     /// <param name="currency"></param>
     /// <returns>Returns formatted currency value in string</returns>
     public static string GetCurrency(int currency)
@@ -43,5 +59,21 @@ public static class IntegerFormatter
         string result = "";
 
         return result;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="progress">Current progress</param>
+    /// <param name="minProgress">Default param = 0</param>
+    /// <param name="maxProgress">Default param = 100</param>
+    /// <returns>Returns progress in range [0, 1]</returns>
+    public static float GetNormalizedProgress(int progress, int minProgress = 0, int maxProgress = 100)
+    {
+        if (minProgress == 0 && maxProgress == 100)
+        {
+            return progress * 0.01f;
+        }
+        else return 0;
     }
 }

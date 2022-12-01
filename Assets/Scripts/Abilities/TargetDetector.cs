@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class TargetDetector : TriggerDetector
+public class TargetDetector : TriggerDetector, IObjectDisableHandler
 {
     [SerializeField] private GameObject _parent;
 
-    private readonly float EPSILON = 0.15f;
     private List<GameObject> _targets;
 
     /// <summary>
@@ -21,11 +21,35 @@ public class TargetDetector : TriggerDetector
         }
     }
 
+    private void OnEnable()
+    {
+        EventBus.Subscribe(this);
+    }
+    
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe(this);
+    }
+
     public override void Initialize(Radius raduis)
     {
         base.Initialize(raduis);
 
         _targets = new List<GameObject>();
+    }
+
+    public void OnObjectDisable(GameObject obj)
+    {
+        if (obj == null) return;
+
+        int index = _targets.FindIndex(item => item != null && item.Equals(obj));
+
+        if (index != -1)
+        {
+            if (_isDebug) Debug.Log(obj.name + " exit");
+
+            _targets[index] = null;
+        }
     }
 
     protected override void OnTriggerEnter(Collider other)

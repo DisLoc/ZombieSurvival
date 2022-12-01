@@ -17,7 +17,7 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private Text _damageText;
     [SerializeField] private Text _healthText;
 
-    [SerializeField] private EquipmentInventoryMenu _inventory; 
+    [SerializeField] private EquipmentInventoryMenu _unequippedInventory; 
 
     [Header("Test")]
     [SerializeField] private Player _player;
@@ -34,7 +34,7 @@ public sealed class InventoryMenu : UIMenu
 
         _upgradeMenu.Initialize(mainMenu, this);
 
-        _inventory.Initialize(this);
+        _unequippedInventory.Initialize(this);
         _equipmentInventory = new EquipmentInventory();
 
         foreach (EquipmentSlot slot in _slots)
@@ -114,7 +114,7 @@ public sealed class InventoryMenu : UIMenu
         _damageText.text = totalDamage.ToString();
         _healthText.text = totalHP.ToString();
 
-        _inventory.UpdateInventory();
+        _unequippedInventory.UpdateInventory();
     }
 
     public void Equip(Equipment equipment)
@@ -125,13 +125,13 @@ public sealed class InventoryMenu : UIMenu
 
         if (slot.Equipment != null)
         {
-            _inventory.AddEquipment(slot.Equipment);
+            _unequippedInventory.AddEquipment(slot.Equipment);
         }
 
         equipment.isEquiped = true;
 
         _equipmentInventory.Add(equipment);
-        _inventory.RemoveEquipment(equipment);
+        _unequippedInventory.RemoveEquipment(equipment);
         slot.SetSlot(equipment);
 
         _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
@@ -149,7 +149,7 @@ public sealed class InventoryMenu : UIMenu
 
         if (slot != null)
         {
-            _inventory.AddEquipment(equipment);
+            _unequippedInventory.AddEquipment(equipment);
             _equipmentInventory.Remove(equipment);
 
             equipment.isEquiped = false;
@@ -167,7 +167,7 @@ public sealed class InventoryMenu : UIMenu
     
     private int GetInventoryHeight()
     {
-        int rows = _inventory.Equipment.Count / 6 + (_inventory.Equipment.Count % 6 > 0 ? 1 : 0);
+        int rows = _unequippedInventory.Equipment.Count / 6 + (_unequippedInventory.Equipment.Count % 6 > 0 ? 1 : 0);
 
         return _grid.padding.top + _grid.padding.bottom + (int)(_grid.cellSize.y * rows) + (int)(_grid.spacing.y * rows);
     }

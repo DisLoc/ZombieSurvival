@@ -12,6 +12,7 @@ public class BattleMenu : UIMenu
     [SerializeField] private Button _previousLevelButton;
     [SerializeField] private Button _nextLevelButton;
 
+    [SerializeField] private BattleMenuLevelProgress _levelProgress;
     [SerializeField] private LevelRewardChest _chest1;
     [SerializeField] private LevelRewardChest _chest2;
     [SerializeField] private LevelRewardChest _chest3;
@@ -24,6 +25,8 @@ public class BattleMenu : UIMenu
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
         base.Initialize(mainMenu, parentMenu);
+
+        _levelProgress.Initialize();
 
         LoadLevels();
         UpdatePreview();
@@ -76,10 +79,39 @@ public class BattleMenu : UIMenu
         _levelText.text = _currentLevel.LevelNumber.ToString() + ". " + _currentLevel.LevelName;
 
         _levelInstaller.SetLevel(_currentLevel);
+        int levelIndex = _levels.IndexOf(_currentLevel);
 
-        int index = _levels.IndexOf(_currentLevel);
+        List<LevelBreakpoint> breakpoints = _currentLevel.LevelRewards.Breakpoints;
 
-        if (index == 0)
+        if (breakpoints.Count != 3)
+        {
+            if (_isDebug) Debug.Log("Rewards count error!");
+
+            _levelProgress.gameObject.SetActive(false);
+            _chest1.gameObject.SetActive(false);
+            _chest2.gameObject.SetActive(false);
+            _chest3.gameObject.SetActive(false);
+        }
+        else
+        {
+            _levelProgress.gameObject.SetActive(true);
+            _chest1.gameObject.SetActive(true);
+            _chest2.gameObject.SetActive(true);
+            _chest3.gameObject.SetActive(true);
+
+            string description = IntegerFormatter.GetMinutes(breakpoints[0].RequiredTime);
+            _chest1.Initialize(this, description, breakpoints[0].IsReached, breakpoints[0].wasClaimed);
+
+            description = IntegerFormatter.GetMinutes(breakpoints[1].RequiredTime);
+            _chest2.Initialize(this, description, breakpoints[1].IsReached, breakpoints[1].wasClaimed);
+
+            description = levelIndex < _levels.Count - 1 ? "Chapter " + (levelIndex + 2) : IntegerFormatter.GetMinutes(breakpoints[2].RequiredTime);
+            _chest3.Initialize(this, description, breakpoints[2].IsReached, breakpoints[2].wasClaimed);
+
+            _levelProgress.Initialize(_currentLevel.LevelRewards);
+        }
+
+        if (levelIndex == 0)
         {
             _previousLevelButton.gameObject.SetActive(false);
         }
@@ -88,7 +120,7 @@ public class BattleMenu : UIMenu
             _previousLevelButton.gameObject.SetActive(true);
         }
 
-        if (index == _levels.Count - 1)
+        if (levelIndex == _levels.Count - 1 || _currentLevel.wasPassed == false)
         {
             _nextLevelButton.gameObject.SetActive(false);
         }

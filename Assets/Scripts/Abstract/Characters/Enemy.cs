@@ -7,8 +7,8 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     [SerializeField] protected bool _hasExpReward = true;
     [SerializeField] protected CharacterStats _stats;
 
-    protected Player _player; 
-    protected MonoPool<Enemy> _pool;
+    protected Player _player = null; 
+    protected MonoPool<Enemy> _pool = null;
 
     public CapsuleCollider Collider => _selfCollider;
     public bool HasExpReward => _hasExpReward;
@@ -94,6 +94,7 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         _stats.BaseWeapon.Attack();
     }
 
+    [ContextMenu("Die")]
     public override void Die()
     {
         base.Die();
@@ -115,5 +116,19 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         base.DispelUpgrade(upgrade);
 
         _stats.BaseWeapon.DispelUpgrade(upgrade);
+    }
+
+    protected virtual void OnDisable()
+    {
+        EventBus.Publish<IObjectDisableHandler>(handler => handler?.OnObjectDisable(gameObject));
+        
+        if (_isDebug) Debug.Log(name + " disabled");
+    }
+    
+    protected virtual void OnDestroy()
+    {
+        EventBus.Publish<IObjectDisableHandler>(handler => handler?.OnObjectDisable(gameObject));
+
+        if (_isDebug) Debug.Log(name + " destroyed");
     }
 }

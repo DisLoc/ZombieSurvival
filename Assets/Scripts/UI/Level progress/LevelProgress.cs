@@ -12,7 +12,7 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
     [SerializeField] private LevelProgressBreakpoint _breakpointPrefab;
 
     private List<AlertBreakpoint> _alertBreakpoints;
-    private BreakpointList<LevelBreakpoint> _levelBreakpoints;
+    private LevelRewardBreakpoints _levelBreakpoints;
 
     private int _maxLevelTime;
     private bool _onBossEvent;
@@ -87,6 +87,21 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 
             EventBus.Publish<ILevelPassedHandler>(handler => handler.OnLevelPassed());
         }
+
+        if (!_levelContext.wasPassed)
+        {
+            Breakpoint breakpoint = _levelBreakpoints.CheckReaching(_value);
+
+            if (breakpoint != null)
+            {
+                if (_isDebug) Debug.Log("Reached level reward!");
+            }
+
+            if (_value == _maxFillValue)
+            {
+                _levelContext.wasPassed = true;
+            }
+        }
     }
 
     public void OnTimerUpdate()
@@ -100,16 +115,6 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
             _value = newVal;
 
             UpdateBar();
-        }
-
-        if (!_levelContext.wasPassed)
-        {
-            Breakpoint breakpoint = _levelBreakpoints.CheckReaching(_value);
-
-            if (breakpoint != null)
-            {
-                if (_isDebug) Debug.Log("Reached level reward!");
-            }
         }
 
         AlertBreakpoint alertBreakpoint = _alertBreakpoints.Find(item => item.reached == false && item.time <= _survivalTimeCounter.SurvivalTime);
