@@ -63,8 +63,11 @@ MonoBehaviour:
   _targetTags:
     _tags: 01000000
   _destroyOnExitAttackRange: 0
+  _sounds:
+    _sounds: []
   _particle: {fileID: 2160488846364610999}
   _sparkParticle: {fileID: 2160488846849779040}
+  _trail: {fileID: 2160488846929487309}
 --- !u!1001 &6961740959107128219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,5 +138,10 @@ ParticleSystem:
 --- !u!198 &2160488846849779040 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 9036063275975098107, guid: 6672d43f89e704241981ff6e8c97aa99, type: 3}
+  m_PrefabInstance: {fileID: 6961740959107128219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &2160488846929487309 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 9036063275962531414, guid: 6672d43f89e704241981ff6e8c97aa99, type: 3}
   m_PrefabInstance: {fileID: 6961740959107128219}
   m_PrefabAsset: {fileID: 0}

@@ -49,11 +49,7 @@ MonoBehaviour:
   _name: SUPER Aura
   _icon: {fileID: 21300000, guid: 6dd32e0e2d242a34aa6ad3e6a1fd82c4, type: 3}
   _sounds:
-    _sounds:
-    - _soundType: 6
-      _mixerType: 3
-      _sound: {fileID: 0}
-      _playbackCooldown: 0.5
+    _sounds: []
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
   _targetDetector: {fileID: 6766336299975137043}

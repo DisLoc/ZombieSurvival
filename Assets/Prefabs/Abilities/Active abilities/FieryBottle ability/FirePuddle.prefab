@@ -48,6 +48,12 @@ MonoBehaviour:
   _isDebug: 0
   _particle: {fileID: 1627256449650593985}
   _targetDetector: {fileID: 1724385743155349977}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: 151e084de24be154bbcb220479800659, type: 3}
+      _playbackCooldown: 5
 --- !u!1001 &7880922538481362565
 PrefabInstance:
   m_ObjectHideFlags: 0

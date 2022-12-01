@@ -221,15 +221,7 @@ public class Player : CharacterBase
 
             if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
 
-            if (abilityContainer as PassiveAbility != null)
-            {
-                GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
-            }
-            else if (abilityContainer as Weapon != null)
-            {
-                abilityContainer.Upgrade(abilityContainer.CurrentUpgrade.Upgrade);
-            }
-            else if (_isDebug) Debug.Log("Missing ability!");
+            GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
 
             return abilityContainer;
         }
@@ -241,12 +233,12 @@ public class Player : CharacterBase
 
             if (newAbility != null)
             {
-                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
-
                 foreach (Upgrade upgrade in _upgrades)
                 {
                     newAbility.Upgrade(upgrade);
                 }
+                
+                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
             }
             else if (_isDebug) Debug.Log("Adding ability error!");
 

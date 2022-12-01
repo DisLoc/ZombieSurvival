@@ -4901,6 +4901,7 @@ MonoBehaviour:
   _collider: {fileID: 8638579627885533580}
   _triggerTags:
     _tags: 01000000
+  _parent: {fileID: 0}
 --- !u!1 &5576482619357635831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,3 +4950,9 @@ MonoBehaviour:
   _isDebug: 0
   _particle: {fileID: 1030007506074345428}
   _targetDetector: {fileID: 1094446119337510604}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: 151e084de24be154bbcb220479800659, type: 3}
+      _playbackCooldown: 1

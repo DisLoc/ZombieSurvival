@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AreaCleaner : PickableObject
@@ -22,11 +23,20 @@ public class AreaCleaner : PickableObject
 
         _particle.Play();
 
-        foreach(var target in _targetDetector.Targets)
-        {
-            DamageableObject obj = target.GetComponent<DamageableObject>();
+        List<GameObject> targets = _targetDetector.Targets;
 
-            if (obj != null) obj.Die();
+        if (targets.Count == 0) return;
+
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (targets[i] == null) continue;
+
+            DamageableObject target = targets[i].GetComponent<DamageableObject>();
+
+            if (target != null)
+            {
+                target.Die();
+            }
         }
 
         Destroy(gameObject, _destroyDelay);

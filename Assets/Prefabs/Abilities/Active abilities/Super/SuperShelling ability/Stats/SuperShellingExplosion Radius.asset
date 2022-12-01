@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: SuperShellingExplosion Radius
   m_EditorClassIdentifier: 
-  _baseValue: 1
+  _baseValue: 1.25
   _minValue: 1
-  _maxValue: 1
+  _maxValue: 1.25
   _maxValueIsInfinite: 1
   _upgradeMarkers:
     _markers:
     - {fileID: 11400000, guid: fe7d5b414acc94d4da7508201099c4e7, type: 2}
+    - {fileID: 11400000, guid: cbeeee505942dd9499d9dc157f771a68, type: 2}
     _minMatchesCount: 1
