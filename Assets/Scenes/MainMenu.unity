@@ -1340,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPool
       objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266368, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1393,6 +1397,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[1]._mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 0a41439d4a1674742a10989e85ec4331, type: 2}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _mixers._mixerTypes.Array.data[2]._mixer
       value: 
       objectReference: {fileID: 24300002, guid: 0a5ef3c906c36f14d91c23450290975d, type: 2}
@@ -1407,6 +1415,10 @@ PrefabInstance:
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _mixers._mixerTypes.Array.data[3]._mixerType
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[1]._soundsCountLimit
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _mixers._mixerTypes.Array.data[2]._soundsCountLimit
@@ -1663,6 +1675,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0147a9e1a4229af47b509583931f8033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1950733153 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1004279293514795559, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+  m_PrefabInstance: {fileID: 1004279294219642133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1964306515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2063,10 @@ PrefabInstance:
       propertyPath: _baseEquipment.Array.data[5]
       value: 
       objectReference: {fileID: 7228236411287217178, guid: 94907044528cee64c906615c26c01964, type: 3}
+    - target: {fileID: 1004279292223075179, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
+      propertyPath: _unequippedInventory._equipmentParent
+      value: 
+      objectReference: {fileID: 1950733153}
     - target: {fileID: 1004279292790640283, guid: ece9d8b7bba91824ab5bc8d7065bc264, type: 3}
       propertyPath: m_IsActive
       value: 1

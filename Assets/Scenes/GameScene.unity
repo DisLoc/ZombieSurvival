@@ -390,6 +390,22 @@ PrefabInstance:
       propertyPath: _startWeaponsList.Array.data[3]
       value: 
       objectReference: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _sounds._sounds.Array.data[0]._mixerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _sounds._sounds.Array.data[1]._mixerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _sounds._sounds.Array.data[2]._mixerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _sounds._sounds.Array.data[3]._mixerType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -494,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPool
       objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266368, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -539,15 +559,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
-      propertyPath: _masterVolume
-      value: 0.202
+      propertyPath: _isDebug
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
-      propertyPath: _mixers._mixerTypes.Array.data[1]._soundsCountLimit
-      value: 5
+      propertyPath: _mixers._mixerTypes.Array.data[2]._mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 79a262e2daac75a4a80e99f1c402ffaf, type: 2}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 12ffaa7be98292342b1d51b4b6f0e243, type: 2}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[2]._mixerType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._mixerType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: _mixers._mixerTypes.Array.data[2]._soundsCountLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._soundsCountLimit
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}

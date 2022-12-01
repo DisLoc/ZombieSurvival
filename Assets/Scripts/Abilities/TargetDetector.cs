@@ -75,8 +75,14 @@ public class TargetDetector : TriggerDetector, IObjectDisableHandler
     /// <summary>
     /// Remove all missing objects
     /// </summary>
-    public void Cleanup()
+    public void Cleanup(bool cleanupAll = false)
     {
+        if (cleanupAll)
+        {
+            _targets?.Clear();
+            return;
+        }
+
         if (_parent != null && _parent.activeSelf == false)
         {
             _targets?.Clear();

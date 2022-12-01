@@ -2,7 +2,7 @@ public sealed class ZombieCollider : ColliderWeapon
 {
     public void OnReset()
     {
-        _targetDetector.Cleanup();
+        _targetDetector.Cleanup(true);
     }
 
     public override bool Upgrade(Upgrade upgrade)

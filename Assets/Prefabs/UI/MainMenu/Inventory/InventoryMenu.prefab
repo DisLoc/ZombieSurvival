@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 6831068849099578727}
   _damageText: {fileID: 8108120273358779970}
   _healthText: {fileID: 7072840042002006336}
-  _inventory:
+  _unequippedInventory:
     _slotPrefab: {fileID: 3260672668585323185, guid: 5e78521917cd41648a789106ec23a584, type: 3}
     _equipmentParent: {fileID: 1004279293514795559}
   _player: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}

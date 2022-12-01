@@ -44,9 +44,9 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
 
     public override void Release(TObject obj)
     {
-        if (obj != null) obj.gameObject.SetActive(false);
-
         base.Release(obj);
+
+        if (obj != null) obj.gameObject.SetActive(false);
     }
 
     public override TObject Pull()
@@ -57,6 +57,7 @@ public class MonoPool<TObject> : ObjectPool<TObject> where TObject : MonoBehavio
         {
             return null;
         }
+
         obj.gameObject.SetActive(true);
 
         return obj;

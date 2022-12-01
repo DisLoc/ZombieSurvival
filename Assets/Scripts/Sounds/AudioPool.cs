@@ -26,7 +26,8 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler
     
     private void OnDisable()
     {
-        EventBus.Subscribe(this);
+        StopAllCoroutines();
+        EventBus.Unsubscribe(this);
     }
 
     private void Start()
