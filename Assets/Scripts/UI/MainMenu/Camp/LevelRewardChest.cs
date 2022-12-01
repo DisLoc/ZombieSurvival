@@ -11,9 +11,6 @@ public class LevelRewardChest : MonoBehaviour
     [SerializeField] private Image _chestImage;
     [SerializeField] private Sprite _onOpenSprite;
 
-    private bool _opened;
-    private bool _unlocked;
-
     private BattleMenu _menu;
     private Reward _reward;
 
@@ -25,8 +22,6 @@ public class LevelRewardChest : MonoBehaviour
         _unlockTimeText.text = unlockText;
 
         _reward = breakpoint.Reward;
-        _opened = breakpoint.wasClaimed;
-
 
         _button.interactable = breakpoint.IsReached;
 
@@ -44,7 +39,6 @@ public class LevelRewardChest : MonoBehaviour
 
     public void UnlockChest()
     {
-        _unlocked = true;
         _button.interactable = true;
 
         _unlockImage.gameObject.SetActive(true);
