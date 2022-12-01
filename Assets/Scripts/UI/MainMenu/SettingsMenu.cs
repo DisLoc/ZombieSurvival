@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SettingsMenu : MonoBehaviour 
+public class SettingsMenu : UIMenu 
 {
     [SerializeField] private AudioMixer _musicGroup;
     [SerializeField] private List<AudioMixer> _soundGroups;
@@ -11,7 +11,7 @@ public class SettingsMenu : MonoBehaviour
     private SoundsStates _soundState;
 
     private const float MIN_BOUNDS = -80f;
-    private const float MAX_MUSIC_BOUNDS = 0f;
+    private const float MAX_MUSIC_BOUNDS = -15f;
     private const float MAX_SOUNDS_BOUNDS = -10f;
 
     private const string MIXER_NAME = "Master";
@@ -20,8 +20,16 @@ public class SettingsMenu : MonoBehaviour
     {
         _musicState = SoundsStates.Enabled;
         _soundState = SoundsStates.Enabled;
+    }
 
-        gameObject.SetActive(false);
+    private void Start()
+    {
+        _musicGroup.SetFloat(MIXER_NAME, MAX_MUSIC_BOUNDS);
+
+        foreach (var mixer in _soundGroups)
+        {
+            mixer.SetFloat(MIXER_NAME, MAX_SOUNDS_BOUNDS);
+        }
     }
 
     public void OnSoundsClick()
