@@ -194,6 +194,7 @@ public sealed class LevelContext : ScriptableObject
         LevelBuilder.Construct(_levelEnvironment);
     }
 
+    #region DEBUG
     [ContextMenu("Reset level")]
     private void ResetLevel()
     {
@@ -205,4 +206,23 @@ public sealed class LevelContext : ScriptableObject
             breakpoint.wasClaimed = false;
         }
     }
+    
+    [ContextMenu("Pass level")]
+    private void PassLevel()
+    {
+        wasPassed = true;
+
+        foreach (var breakpoint in _levelRewards.Breakpoints)
+        {
+            breakpoint.SetReached(true);
+            breakpoint.wasClaimed = false;
+        }
+    }
+
+    [ContextMenu("Pass next breakpoint")]
+    private void PassNextBreakpoint()
+    {
+        _levelRewards.CheckReaching(100);
+    }
+    #endregion
 }

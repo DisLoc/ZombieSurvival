@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelName: Desert
   _levelNumber: 3
-  _levelIcon: {fileID: 21300000, guid: f6e049312af42bb488bd3a1f33fb009e, type: 3}
+  _levelIcon: {fileID: 21300000, guid: b5f8bf03cfe816445be37efe347afa4b, type: 3}
   _levelLenght: 20
   _levelRewards:
     _breakpoint1:
@@ -362,7 +362,7 @@ MonoBehaviour:
         _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
         _playbackCooldown: 5
       _requiredProgress: 30
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
       _maxAbilitiesRewardCount: 2
     - _name: 60% boss
       _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
@@ -376,7 +376,7 @@ MonoBehaviour:
         _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
         _playbackCooldown: 5
       _requiredProgress: 60
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
       _maxAbilitiesRewardCount: 3
     - _name: 100% boss
       _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
@@ -390,8 +390,8 @@ MonoBehaviour:
         _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
         _playbackCooldown: 0.5
       _requiredProgress: 100
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
-      _maxAbilitiesRewardCount: 4
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _maxAbilitiesRewardCount: 0
   _enemyUpgradeBreakpoints:
     _breakpoints:
     - _name: 10-19

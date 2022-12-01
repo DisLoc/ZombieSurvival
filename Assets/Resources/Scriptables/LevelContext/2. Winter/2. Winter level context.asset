@@ -291,10 +291,136 @@ MonoBehaviour:
       _enemyToSpawnPrefab: {fileID: 5443555473341688872, guid: 2a6163ec7efbc8445a0384f8af222662, type: 3}
       _spawnCount: 40
   _eliteZombieBreakpoints:
-    _breakpoints: []
+    _breakpoints:
+    - _name: 5%
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9167996, b: 0, a: 1}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 5
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _maxAbilitiesRewardCount: 1
+    - _name: 20%
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 25
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _maxAbilitiesRewardCount: 2
+    - _name: 50%
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 50
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _maxAbilitiesRewardCount: 3
+    - _name: 75%
+      _breakpointIcon: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0.9176471, b: 0, a: 1}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 75
+      _enemyToSpawnPrefab: {fileID: 2300272471008107738, guid: 0b0f9535b89f87648afc2b45e3c546c2, type: 3}
+      _maxAbilitiesRewardCount: 3
   _bossBreakpoints:
     _breakpoints:
     - _name: 30% boss
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
+      _breakpointDisplayTime: 5
+      _breakpointDescription: Boss incoming
+      _breakpointSound:
+        _soundType: 12
+        _mixerType: 1
+        _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
+        _playbackCooldown: 5
+      _requiredProgress: 30
+      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _maxAbilitiesRewardCount: 2
+    - _name: 60% boss
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
+      _breakpointDisplayTime: 5
+      _breakpointDescription: Boss incoming
+      _breakpointSound:
+        _soundType: 12
+        _mixerType: 1
+        _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
+        _playbackCooldown: 5
+      _requiredProgress: 60
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _maxAbilitiesRewardCount: 3
+    - _name: 100% boss
+      _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
+      _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
+      _breakpointLineColor: {r: 1, g: 0, b: 0, a: 1}
+      _breakpointDisplayTime: 5
+      _breakpointDescription: Boss incoming
+      _breakpointSound:
+        _soundType: 12
+        _mixerType: 1
+        _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
+        _playbackCooldown: 0.5
+      _requiredProgress: 100
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _maxAbilitiesRewardCount: 0
+  _enemyUpgradeBreakpoints:
+    _breakpoints:
+    - _name: 10-19
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 10
+      _upgrade: {fileID: 11400000, guid: 84d32d3058ccfbc48888f69be8129b71, type: 2}
+    - _name: 20-30
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 20
+      _upgrade: {fileID: 11400000, guid: 591e8652b08ac6a4095e785bb62e0d29, type: 2}
+    - _name: 30-60
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
       _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -306,9 +432,8 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 30
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
-      _maxAbilitiesRewardCount: 0
-    - _name: 60% boss
+      _upgrade: {fileID: 11400000, guid: 264bcc088b786d44a9cf2550317a00a2, type: 2}
+    - _name: 60-79
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
       _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -320,9 +445,21 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 60
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
-      _maxAbilitiesRewardCount: 0
-    - _name: 100% boss
+      _upgrade: {fileID: 11400000, guid: 27e6f7d6ce9311b47ab40c8c4fc4382f, type: 2}
+    - _name: 80-99
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0.5
+      _requiredProgress: 80
+      _upgrade: {fileID: 11400000, guid: b536790cb0fd76e4497c62fce47f461d, type: 2}
+    - _name: 100
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
       _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -334,62 +471,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 100
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
-      _maxAbilitiesRewardCount: 0
-  _enemyUpgradeBreakpoints:
-    _breakpoints:
-    - _name: 5-15
-      _breakpointIcon: {fileID: 0}
-      _breakpointLine: {fileID: 0}
-      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
-      _breakpointDisplayTime: 0
-      _breakpointDescription: 
-      _breakpointSound:
-        _soundType: 0
-        _mixerType: 0
-        _sound: {fileID: 0}
-        _playbackCooldown: 0.5
-      _requiredProgress: 5
-      _upgrade: {fileID: 11400000, guid: 63099f33df445ee4ca36c1c487f4d86c, type: 2}
-    - _name: 16-30
-      _breakpointIcon: {fileID: 0}
-      _breakpointLine: {fileID: 0}
-      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
-      _breakpointDisplayTime: 0
-      _breakpointDescription: 
-      _breakpointSound:
-        _soundType: 0
-        _mixerType: 0
-        _sound: {fileID: 0}
-        _playbackCooldown: 0.5
-      _requiredProgress: 16
-      _upgrade: {fileID: 11400000, guid: 591e8652b08ac6a4095e785bb62e0d29, type: 2}
-    - _name: 31-60
-      _breakpointIcon: {fileID: 0}
-      _breakpointLine: {fileID: 0}
-      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
-      _breakpointDisplayTime: 0
-      _breakpointDescription: 
-      _breakpointSound:
-        _soundType: 0
-        _mixerType: 0
-        _sound: {fileID: 0}
-        _playbackCooldown: 0.5
-      _requiredProgress: 31
-      _upgrade: {fileID: 11400000, guid: 264bcc088b786d44a9cf2550317a00a2, type: 2}
-    - _name: 61-100
-      _breakpointIcon: {fileID: 0}
-      _breakpointLine: {fileID: 0}
-      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
-      _breakpointDisplayTime: 0
-      _breakpointDescription: 
-      _breakpointSound:
-        _soundType: 0
-        _mixerType: 0
-        _sound: {fileID: 0}
-        _playbackCooldown: 0.5
-      _requiredProgress: 61
-      _upgrade: {fileID: 11400000, guid: 27e6f7d6ce9311b47ab40c8c4fc4382f, type: 2}
+      _upgrade: {fileID: 11400000, guid: 2a53766870fdb644f91adfb647fefd35, type: 2}
   _playerUpgrades: []
   _enemiesUpgrades: []
   wasPassed: 0

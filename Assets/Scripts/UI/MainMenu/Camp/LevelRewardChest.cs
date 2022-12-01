@@ -15,31 +15,31 @@ public class LevelRewardChest : MonoBehaviour
     private bool _unlocked;
 
     private BattleMenu _menu;
+    private Reward _reward;
 
-    public void Initialize(BattleMenu menu, string unlockText, bool unlocked = false, bool claimed = false)
+    public Reward Reward => _reward;
+
+    public void Initialize(BattleMenu menu, string unlockText, LevelBreakpoint breakpoint)
     {
         _menu = menu;
         _unlockTimeText.text = unlockText;
 
-        _opened = claimed;
+        _reward = breakpoint.Reward;
+        _opened = breakpoint.wasClaimed;
 
-        if (unlocked && !claimed)
+
+        _button.interactable = breakpoint.IsReached;
+
+        if (breakpoint.wasClaimed)
         {
-            UnlockChest();
+            _unlockImage.gameObject.SetActive(false);
+            _chestImage.sprite = _onOpenSprite;
+            _button.interactable = false;
         }
         else
         {
-            _unlocked = unlocked;
+            _unlockImage.gameObject.SetActive(breakpoint.IsReached);
         }
-
-        if (claimed)
-        {
-            _unlockImage.gameObject.SetActive(false);
-            _chestImage.sprite = _onOpenSprite; 
-            _button.interactable = false;
-        }
-
-        if (!unlocked) _button.interactable = false;
     }
 
     public void UnlockChest()

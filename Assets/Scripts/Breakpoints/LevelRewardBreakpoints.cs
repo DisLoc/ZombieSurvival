@@ -4,8 +4,11 @@ using UnityEngine;
 [System.Serializable]
 public class LevelRewardBreakpoints
 {
+    [Tooltip("Must be equals boss event breakpoint")]
     [SerializeField] private LevelBreakpoint _breakpoint1;
+    [Tooltip("Must be equals boss event breakpoint")]
     [SerializeField] private LevelBreakpoint _breakpoint2;
+    [Tooltip("Must be equals boss event breakpoint")]
     [SerializeField] private LevelBreakpoint _breakpoint3;
 
     public int ReachedProgress

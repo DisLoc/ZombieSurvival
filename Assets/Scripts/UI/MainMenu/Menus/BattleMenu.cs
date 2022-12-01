@@ -46,7 +46,9 @@ public class BattleMenu : UIMenu
 
     public void OnRewardClick(LevelRewardChest chest)
     {
-
+        Reward reward = chest.Reward;
+        
+        // TODO add reward to inventory
     }
 
     public void OnPreviousLevelClick()
@@ -100,13 +102,13 @@ public class BattleMenu : UIMenu
             _chest3.gameObject.SetActive(true);
 
             string description = IntegerFormatter.GetMinutes(breakpoints[0].RequiredTime);
-            _chest1.Initialize(this, description, breakpoints[0].IsReached, breakpoints[0].wasClaimed);
+            _chest1.Initialize(this, description, breakpoints[0]);
 
             description = IntegerFormatter.GetMinutes(breakpoints[1].RequiredTime);
-            _chest2.Initialize(this, description, breakpoints[1].IsReached, breakpoints[1].wasClaimed);
+            _chest2.Initialize(this, description, breakpoints[1]);
 
             description = levelIndex < _levels.Count - 1 ? "Chapter " + (levelIndex + 2) : IntegerFormatter.GetMinutes(breakpoints[2].RequiredTime);
-            _chest3.Initialize(this, description, breakpoints[2].IsReached, breakpoints[2].wasClaimed);
+            _chest3.Initialize(this, description, breakpoints[2]);
 
             _levelProgress.Initialize(_currentLevel.LevelRewards);
         }
