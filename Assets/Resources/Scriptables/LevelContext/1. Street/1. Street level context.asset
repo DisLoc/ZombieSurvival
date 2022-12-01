@@ -390,8 +390,8 @@ MonoBehaviour:
         _sound: {fileID: 8300000, guid: 9ffdef654cd2683409c5b8a0e0cea472, type: 3}
         _playbackCooldown: 0.5
       _requiredProgress: 100
-      _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
-      _maxAbilitiesRewardCount: 4
+      _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _maxAbilitiesRewardCount: 0
   _enemyUpgradeBreakpoints:
     _breakpoints:
     - _name: 10-19
