@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: ATK
-  _icon: {fileID: 21300000, guid: eb8adc860d7bcc04ab66ffea5a2495e5, type: 3}
+  _icon: {fileID: 21300000, guid: 06edcd3d8b939a143a6030044762c707, type: 3}
   _upgradeData: {fileID: 11400000, guid: 94ba67299ffcf4b4ab470b0c1418c707, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 975fa70a7d885174a9ceaca296ff5265, type: 2}

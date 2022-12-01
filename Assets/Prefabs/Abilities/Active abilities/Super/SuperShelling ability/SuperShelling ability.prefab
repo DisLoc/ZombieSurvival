@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Shelling
-  _icon: {fileID: 21300000, guid: c38f7ed9364ea2843a16fe49f2ee7aab, type: 3}
+  _icon: {fileID: 21300000, guid: de87bdc5e1a99644891c043759c166cb, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

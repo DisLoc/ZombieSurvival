@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ExcellentShotgunWeapon data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: 0190a207fea0d0d44be0e2445beb108d, type: 3}
+  _icon: {fileID: 21300000, guid: 3f6f1c19551172249a9c1ebd611757f7, type: 3}
   _equipSlot: 3
   _rarity: 3
   _upgradingStat: 0

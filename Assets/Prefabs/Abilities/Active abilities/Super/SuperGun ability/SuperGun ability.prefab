@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Gun
-  _icon: {fileID: 21300000, guid: ec62465a5c50871459c7c3c604d5d4be, type: 3}
+  _icon: {fileID: 21300000, guid: e77526dff069c774885f69eedf475ddc, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Shuriken
-  _icon: {fileID: 21300000, guid: 24b0236e534ca924ab75c865eae76bc5, type: 3}
+  _icon: {fileID: 21300000, guid: 67be55f6aa81ff9479f8feb71b33c8f2, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

@@ -11,8 +11,6 @@ public class Player : CharacterBase
 
     [HideInInspector] public bool isMoving;
 
-    protected AnimatorBools _baseWeaponBool; 
-
     [Header("Colliders")]
     [Tooltip("Self collider")]
     [SerializeField] protected CapsuleCollider _collider;
@@ -69,11 +67,15 @@ public class Player : CharacterBase
 
         if (_stats.BaseWeapon as Shotgun != null)
         {
-            _baseWeaponBool = AnimatorBools.WithShotgun;
+            _animator.SetBool(AnimatorBools.WithShotgun.ToString(), true);
+        }
+        else if (_stats.BaseWeapon as Blade != null)
+        {
+            _animator.SetBool(AnimatorBools.WithBlade.ToString(), true);
         }
         else
         {
-            _baseWeaponBool = AnimatorBools.WithBlade;
+            _animator.SetBool(AnimatorBools.WithPistol.ToString(), true);
         }
 
         _healthBar?.Initialize(_stats.Health);
@@ -89,8 +91,6 @@ public class Player : CharacterBase
         {
             GetUpgrade(upgrade);
         }
-
-        _animator.SetBool(_baseWeaponBool.ToString(), true);
 
         PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
 
@@ -113,7 +113,7 @@ public class Player : CharacterBase
         Vector3 pos = transform.position;
         _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
 
-        _animator.SetBool(_baseWeaponBool.Equals(AnimatorBools.WithBlade) ? AnimatorBools.BladeWalk.ToString() : AnimatorBools.ShotgunWalk.ToString(), isMoving);
+        _animator.SetBool(AnimatorBools.Walk.ToString(), isMoving);
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
@@ -277,10 +277,11 @@ public class Player : CharacterBase
 
     protected enum AnimatorBools
     {
+        Walk, 
+
         WithBlade,
-        BladeWalk,
         WithShotgun,
-        ShotgunWalk
+        WithPistol,
     }
 
     public class Factory: PlaceholderFactory<Player> { }

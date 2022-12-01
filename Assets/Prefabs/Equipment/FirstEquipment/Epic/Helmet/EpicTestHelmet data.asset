@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EpicTestHelmet data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: c8e7d998d68e7f64e9f87d085975b1f7, type: 3}
+  _icon: {fileID: 21300000, guid: 0a816a2822b853b43ab43ebf71d286dd, type: 3}
   _equipSlot: 0
   _rarity: 4
   _upgradingStat: 1

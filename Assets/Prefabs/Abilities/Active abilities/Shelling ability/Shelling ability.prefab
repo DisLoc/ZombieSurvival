@@ -109,12 +109,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Shelling
-  _icon: {fileID: 21300000, guid: cd178e082ce6cd141b66d01dabbccf0f, type: 3}
+  _icon: {fileID: 21300000, guid: 677dff1562069df40bfa9d37665410ba, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5
       _mixerType: 3
       _sound: {fileID: 8300000, guid: 6423712fbd8feba449880696e6020fc9, type: 3}
+      _playbackCooldown: 0.5
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 2286109695880419290, guid: bc14bb3e3c32adb4ea0b0df588ea2a5e, type: 3}
   _targetDetector: {fileID: 3238060928791061723}

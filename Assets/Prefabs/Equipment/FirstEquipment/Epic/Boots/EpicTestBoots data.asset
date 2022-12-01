@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EpicTestBoots data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: 3b79d7f35e9d7f742bb25c7607b6ddec, type: 3}
+  _icon: {fileID: 21300000, guid: 28604922d4978f14eb833c4505d605e1, type: 3}
   _equipSlot: 2
   _rarity: 4
   _upgradingStat: 1

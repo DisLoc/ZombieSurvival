@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Attack range
-  _icon: {fileID: 21300000, guid: f470a88b2a958b04ea36c5920bc485d9, type: 3}
+  _icon: {fileID: 21300000, guid: 018c44366383483438a1e92a00387cff, type: 3}
   _upgradeData: {fileID: 11400000, guid: 73426adc1ea28f74d87d90c2a68e7619, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 513450eeddea8b843bd302d01e0d25c9, type: 2}

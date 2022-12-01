@@ -49,12 +49,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsClick()
     {
-        _settings?.gameObject.SetActive(true);
+        _settings?.Display(true);
     }
     
     public void OnSettingsClose()
     {
-        _settings?.gameObject.SetActive(false);
+        _settings?.Hide(true);
     }
 
     public void OnBuyEnergyClick()

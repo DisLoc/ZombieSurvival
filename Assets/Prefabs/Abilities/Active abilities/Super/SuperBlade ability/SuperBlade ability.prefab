@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Blade
-  _icon: {fileID: 21300000, guid: d8e8caa57bb3dbe46a044a6f7c65bf62, type: 3}
+  _icon: {fileID: 21300000, guid: 58bc5829be2a4b0499241d77dbcc8a63, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

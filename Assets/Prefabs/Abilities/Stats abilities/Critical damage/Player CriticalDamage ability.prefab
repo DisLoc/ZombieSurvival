@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Critical damage
-  _icon: {fileID: 21300000, guid: 2b734cd5ac9e8b44c9bcf06669bff827, type: 3}
+  _icon: {fileID: 21300000, guid: 805cacaf09f1f0e448853078a964a587, type: 3}
   _upgradeData: {fileID: 11400000, guid: c505f1a2b98ed5e47be2d2371866ee93, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: c3a837933e6ecf7449d53ff2dcbfab15, type: 2}
