@@ -695,6 +695,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1469835889124051267, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: _currencyText
+      value: 
+      objectReference: {fileID: 1289386375}
+    - target: {fileID: 1469835889124051267, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+      propertyPath: _currencyImage
+      value: 
+      objectReference: {fileID: 1289386376}
     - target: {fileID: 7485619038865408912, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -714,6 +722,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de6f0484f7b6c348a8a30fb0d130905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1289386375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6564075933178387887, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+  m_PrefabInstance: {fileID: 1289386373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1289386376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8788555005936694526, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
+  m_PrefabInstance: {fileID: 1289386373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1314947534 stripped

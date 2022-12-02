@@ -30,6 +30,9 @@ public sealed class InventoryMenu : UIMenu
 
     private EquipmentInventory _equipmentInventory;
 
+    public EquipmentInventory EquipmentInventory => _equipmentInventory;
+    public EquipmentInventoryMenu UnequippedInventory => _unequippedInventory;
+
     public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
@@ -135,7 +138,7 @@ public sealed class InventoryMenu : UIMenu
 
         if (slot.Equipment != null)
         {
-            _unequippedInventory.AddEquipment(slot.Equipment);
+            Unequip(slot.Equipment);
         }
 
         equipment.isEquiped = true;

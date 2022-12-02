@@ -125,7 +125,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 93b7c7bc19ce8af48a598ee71d5408c2, type: 2}
-      _maxUnitsOnScene: 10
+      _maxUnitsOnScene: 200
     - _name: 11-30
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}

@@ -11,7 +11,7 @@ public abstract class UIMenu : MonoBehaviour
     [SerializeField] protected MenuButton _button;
 
     [Space(5)]
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
 
     protected MainMenu _mainMenu;
     protected UIMenu _parentMenu;
@@ -24,7 +24,6 @@ public abstract class UIMenu : MonoBehaviour
         _animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         _animator.cullingMode = AnimatorCullingMode.CullCompletely;
     }
-
     public virtual void Display(bool playAnimation = false)
     {
         if (_animator != null && playAnimation)

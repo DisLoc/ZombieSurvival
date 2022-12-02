@@ -2,11 +2,11 @@ using UnityEngine;
 
 [System.Serializable]
 public class CurrencyInventory
-{ 
-    [SerializeField] private CurrencyData _currencyData;
-    [SerializeField] private CurrencyCounter _counter;
+{
+    [SerializeField] protected CurrencyData _currencyData;
+    [SerializeField] protected CurrencyCounter _counter;
 
-    private int _total;
+    protected int _total;
 
     public CurrencyData CurrencyData => _currencyData;
     public int Total => _total;
@@ -22,6 +22,7 @@ public class CurrencyInventory
 
     public void Initialize()
     {
+        _total = 0;
         _counter.Initialize(this);
     }
 
@@ -53,7 +54,7 @@ public class CurrencyInventory
 
     public bool IsEnough(Currency currency)
     {
-        return  currency.CurrencyValue <= _total;
+        return currency.CurrencyValue <= _total;
     }
 
     public void GetUpgrade(Upgrade upgrade)

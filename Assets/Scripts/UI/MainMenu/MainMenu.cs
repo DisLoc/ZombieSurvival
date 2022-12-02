@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private SettingsMenu _settings;
 
+    [Space(5)]
+    [SerializeField] private NotReadyMessage _message;
+     
     protected virtual void OnEnable()
     {
         foreach (UIMenu menu in _menus)
@@ -27,6 +30,7 @@ public class MainMenu : MonoBehaviour
         }
 
         _settings?.Initialize();
+        _message?.Hide();
     }
 
     public virtual void Display(UIMenu tab)
@@ -70,5 +74,10 @@ public class MainMenu : MonoBehaviour
     public void OnBuyGoldClick()
     {
 
+    }
+
+    public void ShowNotReadyMessage(string message)
+    {
+        _message.ShowMessage(message);
     }
 }

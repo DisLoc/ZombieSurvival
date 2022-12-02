@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public static class IntegerFormatter
 {
     public static readonly char TIME_SEPARATOR = ':';
@@ -56,7 +54,7 @@ public static class IntegerFormatter
     /// <returns>Returns formatted currency value in string</returns>
     public static string GetCurrency(int currency)
     {
-        string result = "";
+        string result = currency.ToString();
 
         return result;
     }
