@@ -20,6 +20,8 @@ public class BattleMenu : UIMenu
     [SerializeField] private List<LevelContext> _levels;
     [SerializeField] private LevelContextInstaller _levelInstaller;
 
+    [SerializeField] private Color _passedColor;
+
     private LevelContext _currentLevel;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)

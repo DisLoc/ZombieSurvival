@@ -145,6 +145,7 @@ public sealed class LevelContext : ScriptableObject
     #endregion
 
     public Weapon PlayerBaseWeapon { get; private set; }
+    public int maxSurvivalTime;
     public List<Upgrade> PlayerUpgrades
     {
         get

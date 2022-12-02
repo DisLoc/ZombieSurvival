@@ -43,4 +43,4 @@ MonoBehaviour:
   _rarityDescription: +5% skills duration
   _rarityUpgrade: {fileID: 11400000, guid: 19c388a15a0b37a4eab0568d00fc42b4, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: d5117ed4fad203942a9c4389071ec762, type: 2}
-  _nextRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: 56a6798bac0434045813a24e337a0611, type: 2}

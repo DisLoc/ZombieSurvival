@@ -126,7 +126,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2719070389527482541}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InventoryMenu, Assembly-CSharp
+        m_MethodName: OnItemClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3260672668585323185}
+          m_ObjectArgumentAssemblyTypeName: EquipmentSlot, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonSoundPlayer, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -152,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _button: {fileID: 3342076435260466281}
-  _validSlot: 0
+  _validSlot: 5
   _nullEquipmentBackground: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
   _equipmentBackground: {fileID: 6210527918805320780}
   _equipmentIcon: {fileID: 5458055786022710729}
