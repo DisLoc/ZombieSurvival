@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CurrencyInventory
+public class CurrencyInventory : Inventory
 {
     [SerializeField] protected CurrencyData _currencyData;
     [SerializeField] protected CurrencyCounter _counter;
@@ -20,10 +20,24 @@ public class CurrencyInventory
         _counter.Initialize(this);
     }
 
-    public void Initialize()
+    public virtual void Initialize()
     {
         _total = 0;
-        _counter.Initialize(this);
+
+        if (_counter != null)
+        {
+            _counter.Initialize(this);
+        }
+    }
+
+    public override SerializableData SaveData()
+    {
+        return null;
+    }
+
+    public override void LoadData(SerializableData data)
+    {
+
     }
 
     public void Add(Currency currency)

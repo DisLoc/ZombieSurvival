@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ZombieSurvival/Equipment/Equipment list", fileName = "New equipment list")]
 public class EquipmentList : ScriptableObject
 {
+    [SerializeField] private List<EquipmentMaterial> _materials;
     [SerializeField] private List<Equipment> _allEquipment;
 
     public Equipment this[EquipmentData data]
@@ -37,4 +38,6 @@ public class EquipmentList : ScriptableObject
         if (random.Count > 0) return random[Random.Range(0, random.Count)];
         else return null;
     }
+
+    public EquipmentMaterial GetRandomMaterial() => _materials[Random.Range(0, _materials.Count)];
 }

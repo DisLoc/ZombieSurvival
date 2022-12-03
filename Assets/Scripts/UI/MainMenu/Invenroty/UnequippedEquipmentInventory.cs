@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class EquipmentInventoryMenu
+public class UnequippedEquipmentInventory
 {
     [SerializeField] private EquipmentSlot _slotPrefab;
     [SerializeField] private Transform _equipmentParent;

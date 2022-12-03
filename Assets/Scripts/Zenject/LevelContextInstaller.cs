@@ -11,7 +11,7 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
     
     private LevelContext _levelContext;
     private Player _player;
-    private EquipmentInventory _inventory;
+    private EquippedEquipmentInventory _inventory;
 
     public void SetLevel(LevelContext level)
     {
@@ -23,7 +23,7 @@ public class LevelContextInstaller : ScriptableObjectInstaller<LevelContextInsta
         _player = player;
     }
 
-    public void SetEquipment(EquipmentInventory inventory)
+    public void SetEquipment(EquippedEquipmentInventory inventory)
     {
         _inventory = inventory;
     }

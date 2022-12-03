@@ -11,6 +11,8 @@ public class ZombieChest : PickableObject
     private AbilityGiver _abilityGiver;
     private int _abilitiesRewardCount;
 
+    private const int MIN_ABILITIES_REWARD = 1;
+
     public void Initialize(Player player, AbilityGiver abilityGiver, int abilitiesRewardCount)
     {
         _player = player;
@@ -30,7 +32,7 @@ public class ZombieChest : PickableObject
 
         for(int i = 0; i < _abilitiesRewardCount; i++)
         {
-            AbilityContainer ability = _abilityGiver.GetAbilitiesUpgrades(1)[0];
+            AbilityContainer ability = _abilityGiver.GetAbilitiesUpgrades(MIN_ABILITIES_REWARD)[0];
 
             if (ability != null)
             {

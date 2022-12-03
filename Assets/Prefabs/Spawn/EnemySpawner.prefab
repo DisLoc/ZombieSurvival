@@ -82,8 +82,11 @@ MonoBehaviour:
   _spawnDeltaDistance: 10
   _maxDistanceForRespawn: 0
   _spawnCount: 1
-  _chestPrefab: {fileID: 0}
   _bossEventFencePrefab: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
+  _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+  _heartPrefab: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
+  _magnetPrefab: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
+  _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
 --- !u!114 &8247142234265384198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +103,7 @@ MonoBehaviour:
   _spawnDeltaDistance: 10
   _maxDistanceForRespawn: 0
   _poolSize: 1
-  _chestPrefab: {fileID: 0}
+  _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
 --- !u!114 &-2047685362577752691
 MonoBehaviour:
   m_ObjectHideFlags: 0

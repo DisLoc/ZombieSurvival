@@ -27,7 +27,7 @@ public sealed class LevelContext : ScriptableObject
     [Space(5)]
     [SerializeField] private BreakpointList<EnemyBreakpoint> _enemyBreakpoints;
     [SerializeField] private BreakpointList<HordeBreakpoint> _hordeBreakpoints;
-    //[SerializeField] private BreakpointList<HerdBreakpoint> _herdBreakpoints;
+    [SerializeField] private BreakpointList<HerdBreakpoint> _herdBreakpoints;
     [SerializeField] private BreakpointList<EliteZombieBreakpoint> _eliteZombieBreakpoints;
     [SerializeField] private BreakpointList<BossBreakpoint> _bossBreakpoints;
 
@@ -50,6 +50,7 @@ public sealed class LevelContext : ScriptableObject
     /// Level lenght in seconds
     /// </summary>
     public int LevelLenght => _levelLenght * 60;
+    public int LevelLenghtInMinutes => _levelLenght;
     public LevelRewardBreakpoints LevelRewards => _levelRewards;
 
     public LevelBuilder LevelBuilder { get; private set; }
@@ -61,7 +62,7 @@ public sealed class LevelContext : ScriptableObject
 
     public BreakpointList<EnemyBreakpoint> EnemyBreakpoints => _enemyBreakpoints;
     public BreakpointList<HordeBreakpoint> HordeBreakpoints => _hordeBreakpoints;
-    //public BreakpointList<HerdBreakpoint> HerdBreakpoints => _herdBreakpoints;
+    public BreakpointList<HerdBreakpoint> HerdBreakpoints => _herdBreakpoints;
     public BreakpointList<EliteZombieBreakpoint> EliteZombieBreakpoints => _eliteZombieBreakpoints;
     public BreakpointList<BossBreakpoint> BossBreakpoints => _bossBreakpoints;
 
@@ -89,6 +90,11 @@ public sealed class LevelContext : ScriptableObject
                 if (i < _hordeBreakpoints.Breakpoints.Count)
                 {
                     breakpoints.Add(_hordeBreakpoints.Breakpoints[i]);
+                }
+
+                if (i < _herdBreakpoints.Breakpoints.Count)
+                {
+                    breakpoints.Add(_herdBreakpoints.Breakpoints[i]);
                 }
 
                 if (i < _eliteZombieBreakpoints.Breakpoints.Count)
@@ -123,6 +129,11 @@ public sealed class LevelContext : ScriptableObject
         if (max < _hordeBreakpoints.Breakpoints.Count)
         {
             max = _hordeBreakpoints.Breakpoints.Count;
+        }
+
+        if (max < _herdBreakpoints.Breakpoints.Count)
+        {
+            max = _herdBreakpoints.Breakpoints.Count;
         }
 
         if (max < _eliteZombieBreakpoints.Breakpoints.Count)
@@ -161,7 +172,7 @@ public sealed class LevelContext : ScriptableObject
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
     #endregion
 
-    public void Initialize(LevelBuilder builderPrefab, EquipmentInventory equipmentInventory)
+    public void Initialize(LevelBuilder builderPrefab, EquippedEquipmentInventory equipmentInventory)
     {
         _equipmentUpgrades = new List<Upgrade>();
 

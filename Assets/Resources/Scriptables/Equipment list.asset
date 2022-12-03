@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc1da23713c0a948bdd39a916612782, type: 3}
   m_Name: Equipment list
   m_EditorClassIdentifier: 
+  _materials:
+  - {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
+  - {fileID: 11400000, guid: ee2361427c10e1744ac28c814ed0fac1, type: 2}
+  - {fileID: 11400000, guid: 1761e8830e5a34a448864888413b8225, type: 2}
+  - {fileID: 11400000, guid: b4f38a6b55b8f8e429406bfe336258bd, type: 2}
+  - {fileID: 11400000, guid: 8a6e463088e1247459b4c3084188ac09, type: 2}
+  - {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
   _allEquipment:
   - {fileID: 2565584387524054931, guid: 50a393e731ee5574cb26b876f6c42515, type: 3}
   - {fileID: 2565584387524054931, guid: 4dc607dbc30398b4daada8b5f9765aab, type: 3}

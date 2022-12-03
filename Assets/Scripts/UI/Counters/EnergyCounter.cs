@@ -1,17 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class EnergyCounter : CurrencyCounter
 {
-    [SerializeField] private Text _maxCurrencyText;
-
     public override void UpdateCounter()
     {
-        base.UpdateCounter();
-
-        if (_inventory as EnergyInventory != null)
+        if (_inventory is EnergyInventory inventory)
         {
-            _maxCurrencyText.text = IntegerFormatter.GetCurrency((_inventory as EnergyInventory).MaxValue);
+            _currencyText.text = ((int)inventory.Energy.Value).ToString() + "/" + ((int)inventory.Energy.MaxValue).ToString();
         }
         else if (_isDebug) Debug.Log("Missing inventory!");
     }

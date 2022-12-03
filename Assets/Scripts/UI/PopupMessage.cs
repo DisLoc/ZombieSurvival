@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NotReadyMessage : UIMenu
+public class PopupMessage : UIMenu
 {
     [SerializeField] private Text _messageText;
 
@@ -22,7 +22,6 @@ public class NotReadyMessage : UIMenu
     {
         yield return new WaitForSecondsRealtime(_hideDelay);
 
-        Debug.Log("Here");
         _animator.SetTrigger("Hide");
     }
 }

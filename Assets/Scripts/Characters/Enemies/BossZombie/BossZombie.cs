@@ -13,6 +13,6 @@ public class BossZombie : Enemy
     {
         base.Die();
 
-        _spawner.OnBossDies();
+        _spawner.OnBossDies(transform.position);
     }
 }

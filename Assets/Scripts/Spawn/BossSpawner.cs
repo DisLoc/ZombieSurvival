@@ -1,14 +1,33 @@
 using UnityEngine;
+using Zenject;
 
 public sealed class BossSpawner : EnemySpawner
 {
     [SerializeField][Range(1, 5)] private int _spawnCount = 1;
-    [SerializeField] private ZombieChest _chestPrefab;
     [SerializeField] private GameObject _bossEventFencePrefab;
+
+    [Header("Rewards")]
+    [SerializeField] private ZombieChest _chestPrefab;
+    [SerializeField] private PickableHeart _heartPrefab;
+    [SerializeField] private PickableMagnet _magnetPrefab;
+
+    [SerializeField] private EquipmentList _equipmentList;
+
+    private enum CurrentReward
+    {
+        PickablesReward,
+        LevelPassReward
+    }
+
+    private CurrentReward _currentReward;
 
     private GameObject _fence;
 
     private BreakpointList<BossBreakpoint> _breakpoints;
+    private BossBreakpoint _currentBreakpoint;
+
+    [Inject] private AbilityGiver _abilityGiver;
+    [Inject] private MainInventory _mainInventory;
 
     protected override void OnEnable()
     {
@@ -41,12 +60,14 @@ public sealed class BossSpawner : EnemySpawner
 
         if (breakpoint != null)
         {
+            _currentBreakpoint = (breakpoint as BossBreakpoint);
+
             if (_isDebug) Debug.Log("Boss event incoming!");
 
             EventBus.Publish<IBossEventHandler>(handler => handler.OnBossEvent());
 
             Vector3 position = _player.transform.position;
-            _spawners.Add(new ObjectSpawner<Enemy>((breakpoint as BossBreakpoint).BossPrefab, _spawnCount, transform));
+            _spawners.Add(new ObjectSpawner<Enemy>(_currentBreakpoint.BossPrefab, _spawnCount, transform));
 
             SpawnFence(position, _bossEventFencePrefab);
             
@@ -56,12 +77,21 @@ public sealed class BossSpawner : EnemySpawner
             }
 
             GetUpgrade();
+
+            if (_currentBreakpoint.IsFinalBoss)
+            {
+                _currentReward = CurrentReward.LevelPassReward;
+            }
+            else
+            {
+                _currentReward = CurrentReward.PickablesReward;
+            }
         }
 
         base.OnLevelProgressUpdate(progress);
     }
 
-    public void OnBossDies()
+    public void OnBossDies(Vector3 position)
     {
         ClearPools();
 
@@ -70,6 +100,57 @@ public sealed class BossSpawner : EnemySpawner
             Destroy(_fence);
             _fence = null;
         }
+
+        if (_currentReward.Equals(CurrentReward.PickablesReward))
+        {
+            if (_isDebug) Debug.Log("Get boss reward");
+
+            PickableHeart heart = Instantiate(_heartPrefab, position + Vector3.right, _heartPrefab.transform.localRotation, transform);
+            PickableMagnet magnet = Instantiate(_magnetPrefab, position + Vector3.left, _heartPrefab.transform.localRotation, transform);
+            ZombieChest chest = Instantiate(_chestPrefab, position + Vector3.up, _heartPrefab.transform.localRotation, transform);
+
+            heart.Initialize(_player);
+            magnet.Initialize();
+            chest.Initialize(_player, _abilityGiver, _currentBreakpoint.MaxAbilitiesRewardCount);
+        }
+        else
+        {
+            if (_isDebug) Debug.Log("Get level reward");
+
+            Equipment rewardEquipment;
+
+            if (_currentBreakpoint.HasRandomEquipmentReward || _currentBreakpoint.SpecificEquipmentReward == null)
+            {
+                rewardEquipment = _equipmentList.GetRandomEquipment(_currentBreakpoint.RandomEquipmentRarity);
+            }
+            else
+            {
+                rewardEquipment = _currentBreakpoint.SpecificEquipmentReward;
+            }
+
+            if (rewardEquipment != null)
+            {
+                _mainInventory.Add(rewardEquipment);
+            }
+            else if (_isDebug) Debug.Log("Reward error! Missing equipment");
+        }
+
+        EquipmentMaterial rewardMaterial;
+
+        if (_currentBreakpoint.HasRandomMaterialReward || _currentBreakpoint.SpecificMaterialReward == null)
+        {
+            rewardMaterial = _equipmentList.GetRandomMaterial();
+        }
+        else
+        {
+            rewardMaterial = _currentBreakpoint.SpecificMaterialReward;
+        }
+        if (rewardMaterial != null)
+        {
+            _mainInventory.Add(rewardMaterial, _currentBreakpoint.MaterialsCount);
+        }
+        else if (_isDebug) Debug.Log("Reward error! Missing material");
+        
 
         if (_isDebug) Debug.Log("Boss event ended");
 

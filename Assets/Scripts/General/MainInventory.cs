@@ -1,32 +1,60 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class MainInventory
+public class MainInventory : MonoBehaviour
 {
+    [Header("Inventories settings")]
     [SerializeField] private CurrencyInventory _coinInventory;
     [SerializeField] private CurrencyInventory _gemsInventory;
     [SerializeField] private EnergyInventory _energyInventory;
+    [SerializeField] private EquipmentInventory _equipmentInventory;
 
-    [SerializeField] private InventoryMenu _equipmentMenu;
-
-    [SerializeField] private PlayerExpBar _playerExpBar;
-
-    //[SerializeField] private List<CurrencyInventory> _moreCurrencies;
+    [SerializeField] private PlayerExpLevel _playerLevel;
 
     private EquipmentMaterialInventory _materialsInventory;
 
     public CurrencyInventory CoinInventory => _coinInventory;
     public CurrencyInventory GesmsInventory => _gemsInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
+    public EquipmentInventory EquipmentInventory => _equipmentInventory;
 
-    public void Initialize()
+    [Header("Test")]
+    [SerializeField] private bool _useBaseEquipment;
+    [SerializeField] private List<Equipment> _baseEquipment;
+
+    public bool UseBaseEquipment => _useBaseEquipment;
+    public List<Equipment> BaseEquipment => _baseEquipment;
+
+    private void OnEnable()
     {
+        _playerLevel.Initialize();
+
         _coinInventory.Initialize();
         _gemsInventory.Initialize();
         _energyInventory.Initialize();
 
         _materialsInventory = new EquipmentMaterialInventory();
+
+        LoadData();
+    }
+
+    private void OnDisable()
+    {
+        SaveData();
+    }
+
+    private void LoadData()
+    {
+
+    }
+
+    private void SaveData()
+    {
+        SerializableData coinData = _coinInventory.SaveData();
+        SerializableData gemData = _gemsInventory.SaveData();
+        SerializableData energyData = _energyInventory.SaveData();
+        SerializableData equipmentData = _equipmentInventory.SaveData();
+
     }
 
     #region Currencies
@@ -107,14 +135,24 @@ public class MainInventory
         return false;
     }
 
-    public void Add(Equipment equipment)
+    public void Add(Equipment equipment, int count = 1)
     {
 
     }
-    
-    public void Remove(Equipment equipment)
-    {
 
+    public void Add(EquipmentMaterial material, int count = 1)
+    {
+        _materialsInventory.Add(material.ValidEquipment, count);
+    }
+    
+    public bool Spend(Equipment equipment, int count = 1)
+    {
+        return true;
+    }
+    
+    public bool Spend(EquipmentMaterial material, int count = 1)
+    {
+        return _materialsInventory.Remove(material.ValidEquipment, count);
     }
     #endregion
 }

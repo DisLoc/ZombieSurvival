@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private SettingsMenu _settings;
 
     [Space(5)]
-    [SerializeField] private NotReadyMessage _message;
+    [SerializeField] private PopupMessage _message;
      
     protected virtual void OnEnable()
     {

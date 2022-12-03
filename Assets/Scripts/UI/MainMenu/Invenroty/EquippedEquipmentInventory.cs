@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 
-public class EquipmentInventory
+public class EquippedEquipmentInventory
 {
     private Dictionary<EquipSlot, Equipment> _equipment;
 
-    public EquipmentInventory()
+    public EquippedEquipmentInventory()
     {
         _equipment = new Dictionary<EquipSlot, Equipment>();
     }
     
-    public EquipmentInventory(List<Equipment> equipment)
+    public EquippedEquipmentInventory(List<Equipment> equipment)
     {
         _equipment = new Dictionary<EquipSlot, Equipment>();
 

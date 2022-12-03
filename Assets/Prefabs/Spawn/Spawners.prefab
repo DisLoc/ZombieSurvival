@@ -267,10 +267,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 742492564938912030, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
-      propertyPath: _chestPrefab
-      value: 
-      objectReference: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
     - target: {fileID: 742492564938912031, guid: d1960a8b0a43cbe42a0d466cc1301146, type: 3}
       propertyPath: _spawnDeltaDistance
       value: 25

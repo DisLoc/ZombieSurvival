@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public sealed class InventoryMenu : UIMenu
 {
@@ -21,19 +22,19 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private Text _damageText;
     [SerializeField] private Text _healthText;
 
-    [SerializeField] private EquipmentInventoryMenu _unequippedInventory; 
+    [SerializeField] private UnequippedEquipmentInventory _unequippedInventory; 
+
+    private EquippedEquipmentInventory _equipmentInventory;
+
+    public EquippedEquipmentInventory EquipmentInventory => _equipmentInventory;
+    public UnequippedEquipmentInventory UnequippedInventory => _unequippedInventory;
+
+    public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
+
+    [Inject] private MainInventory _mainInventory;
 
     [Header("Test")]
     [SerializeField] private Player _player;
-    [SerializeField] private bool _useBaseEquipment;
-    [SerializeField] private List<Equipment> _baseEquipment;
-
-    private EquipmentInventory _equipmentInventory;
-
-    public EquipmentInventory EquipmentInventory => _equipmentInventory;
-    public EquipmentInventoryMenu UnequippedInventory => _unequippedInventory;
-
-    public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
@@ -44,16 +45,16 @@ public sealed class InventoryMenu : UIMenu
         _heroListMenu.Initialize(mainMenu, this);
 
         _unequippedInventory.Initialize(this);
-        _equipmentInventory = new EquipmentInventory();
+        _equipmentInventory = new EquippedEquipmentInventory();
 
         foreach (EquipmentSlot slot in _slots)
         {
             slot.Initialize(_equipmentTypesData);
         }
 
-        if (_useBaseEquipment)
+        if (_mainInventory.UseBaseEquipment)
         {
-            foreach (Equipment equipment in _baseEquipment)
+            foreach (Equipment equipment in _mainInventory.BaseEquipment)
             {
                 Equip(equipment);
             }
@@ -66,7 +67,10 @@ public sealed class InventoryMenu : UIMenu
         _heroListMenu.Hide();
         _mergeMenu.Hide();
 
-        base.Display(playAnimation);
+        if (_canvasGroup.alpha == 0)
+        {
+            base.Display(playAnimation);
+        }
 
         UpdateValues();
     }
