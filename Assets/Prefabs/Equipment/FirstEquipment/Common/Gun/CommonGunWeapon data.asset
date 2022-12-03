@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 100
         _requiredMaterialAmount: 2
-  _rarityDescription: Masters Gun
+  _rarityDescription: ' Masters Gun'
   _rarityUpgrade: {fileID: 11400000, guid: 8bb161ad98817e641889830923ebee5e, type: 2}
   _previousRarityEquipment: {fileID: 0}
   _nextRarityEquipment: {fileID: 11400000, guid: 6f3d84e6bf9527a40a4acbdd0fa6ec6e, type: 2}

@@ -9,6 +9,14 @@ public class BattleMenu : UIMenu
     [Header("Battle menu settings")]
     [SerializeField] private Image _levelIcon;
     [SerializeField] private Text _levelText;
+    [SerializeField] private Text _survivalTimeText;
+    [SerializeField] private string _onPassedText;
+    [SerializeField] private Color _passedColor;
+    [SerializeField] private string _onFailedText;
+    [SerializeField] private Color _failedColor;
+
+
+    [Space(5)]
     [SerializeField] private Button _previousLevelButton;
     [SerializeField] private Button _nextLevelButton;
 
@@ -19,8 +27,6 @@ public class BattleMenu : UIMenu
 
     [SerializeField] private List<LevelContext> _levels;
     [SerializeField] private LevelContextInstaller _levelInstaller;
-
-    [SerializeField] private Color _passedColor;
 
     private LevelContext _currentLevel;
 
@@ -87,6 +93,15 @@ public class BattleMenu : UIMenu
 
         List<LevelBreakpoint> breakpoints = _currentLevel.LevelRewards.Breakpoints;
 
+        if (_currentLevel.maxSurvivalTime != -1)
+        {
+            _survivalTimeText.gameObject.SetActive(true);
+        }
+        else
+        {
+            _survivalTimeText.gameObject.SetActive(false);
+        }
+
         if (breakpoints.Count != 3)
         {
             if (_isDebug) Debug.Log("Rewards count error!");
@@ -101,7 +116,7 @@ public class BattleMenu : UIMenu
             _levelProgress.gameObject.SetActive(true);
             _chest1.gameObject.SetActive(true);
             _chest2.gameObject.SetActive(true);
-            _chest3.gameObject.SetActive(true);
+            _chest3.gameObject.SetActive(true); 
 
             string description = IntegerFormatter.GetMinutes(breakpoints[0].RequiredTime);
             _chest1.Initialize(this, description, breakpoints[0]);
@@ -113,6 +128,10 @@ public class BattleMenu : UIMenu
             _chest3.Initialize(this, description, breakpoints[2]);
 
             _levelProgress.Initialize(_currentLevel.LevelRewards);
+
+
+            _survivalTimeText.text = _currentLevel.wasPassed ? _onPassedText : _onFailedText + IntegerFormatter.GetTime(_currentLevel.maxSurvivalTime);
+            _survivalTimeText.color = _currentLevel.wasPassed ? _passedColor : _failedColor;
         }
 
         if (levelIndex == 0)

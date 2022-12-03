@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 100
         _requiredMaterialAmount: 2
-  _rarityDescription: '-'
+  _rarityDescription: ' just stats upgrade'
   _rarityUpgrade: {fileID: 11400000, guid: 802d55f13d24d5343864966170ec1e42, type: 2}
   _previousRarityEquipment: {fileID: 0}
   _nextRarityEquipment: {fileID: 11400000, guid: 76d6e66995259fd49b33b24626af2284, type: 2}

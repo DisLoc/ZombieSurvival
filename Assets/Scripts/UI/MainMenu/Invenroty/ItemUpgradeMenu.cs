@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ItemUpgradeMenu : UIMenu
 {
     [Header("Upgrade menu settings")]
+    [SerializeField] private Image _hideButton;
     [SerializeField] private ItemResetMenu _resetMenu;
     [SerializeField] private Sprite _damageIcon;
     [SerializeField] private Sprite _healthIcon;
@@ -86,6 +87,8 @@ public class ItemUpgradeMenu : UIMenu
 
     public override void Display(bool playAnimation = false)
     {
+        _hideButton.raycastTarget = true;
+
         if (_equipment != null)
         {
             _resetMenu.Hide();
@@ -97,6 +100,7 @@ public class ItemUpgradeMenu : UIMenu
 
     public override void Hide(bool playAnimation = false)
     {
+        _hideButton.raycastTarget = false;
         _resetMenu.Hide();
 
         base.Hide(playAnimation);

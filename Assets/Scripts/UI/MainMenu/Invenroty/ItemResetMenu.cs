@@ -7,6 +7,7 @@ public sealed class ItemResetMenu : UIMenu
     [Header("Item reset menu settings")]
     [SerializeField] private Text _mainButtonText;
     [SerializeField] private Button _mainButton;
+    [SerializeField] private Image _hideButton;
 
     [Space(5)]
     [SerializeField] private GameObject _arrow;
@@ -58,6 +59,18 @@ public sealed class ItemResetMenu : UIMenu
 
         _currentButtonState = MainButtonStates.LevelReset;
         SetButtonText();
+    }
+
+    public override void Display(bool playAnimation = false)
+    {
+        _hideButton.raycastTarget = true;
+        base.Display(playAnimation);
+    }
+
+    public override void Hide(bool playAnimation = false)
+    {
+        _hideButton.raycastTarget = false;
+        base.Hide(playAnimation);
     }
 
     public void SetEquipment(Equipment equipment)

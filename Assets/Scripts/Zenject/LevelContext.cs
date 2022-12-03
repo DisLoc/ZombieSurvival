@@ -145,7 +145,7 @@ public sealed class LevelContext : ScriptableObject
     #endregion
 
     public Weapon PlayerBaseWeapon { get; private set; }
-    public int maxSurvivalTime;
+    [HideInInspector] public int maxSurvivalTime;
     public List<Upgrade> PlayerUpgrades
     {
         get
@@ -200,6 +200,7 @@ public sealed class LevelContext : ScriptableObject
     private void ResetLevel()
     {
         wasPassed = false;
+        maxSurvivalTime = -1;
 
         foreach (var breakpoint in _levelRewards.Breakpoints)
         {
@@ -218,12 +219,19 @@ public sealed class LevelContext : ScriptableObject
             breakpoint.SetReached(true);
             breakpoint.wasClaimed = false;
         }
+
+        maxSurvivalTime = _levelRewards.Breakpoints[_levelRewards.Breakpoints.Count - 1].RequiredTime;
     }
 
     [ContextMenu("Pass next breakpoint")]
     private void PassNextBreakpoint()
     {
-        _levelRewards.CheckReaching(100);
+        Breakpoint breakpoint = _levelRewards.CheckReaching(100);
+
+        if (breakpoint != null)
+        {
+            maxSurvivalTime = (breakpoint as LevelBreakpoint).RequiredTime;
+        }
     }
     #endregion
 }

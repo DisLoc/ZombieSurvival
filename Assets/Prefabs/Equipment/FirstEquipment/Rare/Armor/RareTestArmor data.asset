@@ -18,7 +18,7 @@ MonoBehaviour:
   _rarity: 2
   _upgradingStat: 1
   _equipmentUpgrades:
-    _requiredEquipment: {fileID: 2565584387524054931, guid: 33a482990ca6c89409daca7815a17aba, type: 3}
+    _requiredEquipment: {fileID: 0}
     _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
     _upgrades:
