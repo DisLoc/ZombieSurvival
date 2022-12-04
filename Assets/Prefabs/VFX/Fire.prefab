@@ -372,7 +372,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 120
+      scalar: 150
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4899,4 +4899,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _collider: {fileID: 171893714382827548}
-  _triggerTag: 1
+  _triggerTags:
+    _tags: 
+  _parent: {fileID: 0}
