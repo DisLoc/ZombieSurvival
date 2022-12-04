@@ -485,7 +485,7 @@ MonoBehaviour:
   _applicationVersionText: {fileID: 365170774}
   _loadingDescription: {fileID: 300054715}
   _loadingBar: {fileID: 7478361707738083132}
-  loadingTime: 1
+  loadingTime: 2
 --- !u!114 &678491313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,6 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9278bd4b672e94d836b78d4e12e1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDebug: 1
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 2359795017724852656}
@@ -1091,6 +1092,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016239969752244393, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239970712936488, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
