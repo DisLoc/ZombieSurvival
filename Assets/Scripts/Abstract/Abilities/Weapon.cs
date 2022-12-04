@@ -52,7 +52,6 @@ public abstract class Weapon : AbilityContainer, IUpdatable
         {
             _isReady = true;
         } 
-
     }
 
     public virtual void UpgradeToSuper(Weapon super)

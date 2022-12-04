@@ -4,6 +4,13 @@ public class Aura : ColliderWeapon
 {
     [SerializeField] protected ParticleSystem _particle;
 
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        transform.LookAt(transform.position + Vector3.forward);
+    }
+
     public override bool Upgrade(Upgrade upgrade)
     {
         bool isLevelUp = base.Upgrade(upgrade);

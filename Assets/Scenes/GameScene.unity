@@ -433,7 +433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 749952933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b9278bd4b672e94d836b78d4e12e1e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 446a65369120b5347bed721c26a15e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
@@ -449,6 +449,8 @@ MonoBehaviour:
     _energy:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: d9417a419404c3d4c8a321a74a12599f, type: 2}
+  _equipmentInventory:
+    _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
   _playerLevel:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 30ae34d0df932d141a059f1bf25c91ae, type: 2}

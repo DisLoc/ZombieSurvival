@@ -7,6 +7,8 @@ public class EnergyInventory : CurrencyInventory
 
     public EnergyStat Energy => _energy;
 
+    public EnergyInventory(CurrencyData currencyData, EnergyCounter counter) : base(currencyData, counter) { }
+
     public override void Initialize()
     {
         _energy.Initialize();
@@ -17,8 +19,6 @@ public class EnergyInventory : CurrencyInventory
             _counter.Initialize(this);
         }
     }
-
-    public EnergyInventory(CurrencyData currencyData, EnergyCounter counter) : base(currencyData, counter) { }
 
     public override void Add(Currency currency)
     {
@@ -45,6 +45,7 @@ public class EnergyInventory : CurrencyInventory
         return false;
     }
 
+    #region Serialization
     public override void LoadData(SerializableData data)
     {
         if (data == null) return;
@@ -71,5 +72,6 @@ public class EnergyInventory : CurrencyInventory
 
         base.ResetData();
     }
+    #endregion
 }
 

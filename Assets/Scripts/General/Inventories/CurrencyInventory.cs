@@ -30,30 +30,6 @@ public class CurrencyInventory : Inventory
         }
     }
 
-    public override SerializableData SaveData()
-    {
-        CurrencyInventoryData data = new CurrencyInventoryData();
-
-        data.total = _total;
-
-        return data;
-    }
-
-    public override void LoadData(SerializableData data)
-    {
-        if (data == null) return;
-
-        _total = (data as CurrencyInventoryData).total;
-
-        _counter.UpdateCounter();
-    }
-
-    public override void ResetData()
-    {
-        _total = 0;
-        _counter.UpdateCounter();
-    }
-
     public virtual void Add(Currency currency)
     {
         _total += currency.CurrencyValue;
@@ -103,10 +79,36 @@ public class CurrencyInventory : Inventory
             }
         }
     }
+   
+    #region Serialization
+    public override SerializableData SaveData()
+    {
+        CurrencyInventoryData data = new CurrencyInventoryData();
+
+        data.total = _total;
+
+        return data;
+    }
+
+    public override void LoadData(SerializableData data)
+    {
+        if (data == null) return;
+
+        _total = (data as CurrencyInventoryData).total;
+
+        _counter.UpdateCounter();
+    }
+
+    public override void ResetData()
+    {
+        _total = 0;
+        _counter.UpdateCounter();
+    }
 
     [System.Serializable]
     protected class CurrencyInventoryData : SerializableData
     {
         public int total;
     }
+    #endregion
 }

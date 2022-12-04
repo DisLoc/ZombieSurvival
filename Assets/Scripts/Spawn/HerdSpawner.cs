@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using static UnityEngine.Mathf;
-
 public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
 {
     [Header("Herd spawner settings")]
@@ -103,7 +101,7 @@ public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
     {
         yield return new WaitForSeconds(_directionRotationDelay);
 
-        _currentSide = (SpawnSide)Abs((int)_currentSide - 3);
+        _currentSide = (SpawnSide)Mathf.Abs((int)_currentSide - 3);
 
         StartCoroutine(WaitRotation());
     }

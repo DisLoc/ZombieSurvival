@@ -5,6 +5,8 @@ public static class IntegerFormatter
 
     public static readonly int SECONDS_PER_MINUTE = 60;
 
+    public static readonly int MAX_CURRENCY_LENGHT = 6;
+
     /// <summary>
     /// 
     /// </summary>
@@ -56,6 +58,8 @@ public static class IntegerFormatter
     {
         string result = currency.ToString();
 
+        // TODO add separator and chars to result
+
         return result;
     }
 
@@ -68,10 +72,6 @@ public static class IntegerFormatter
     /// <returns>Returns progress in range [0, 1]</returns>
     public static float GetNormalizedProgress(int progress, int minProgress = 0, int maxProgress = 100)
     {
-        if (minProgress == 0 && maxProgress == 100)
-        {
-            return progress * 0.01f;
-        }
-        else return 0;
+        return (progress - minProgress) / (float)(maxProgress - minProgress);
     }
 }
