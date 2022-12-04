@@ -291,7 +291,21 @@ MonoBehaviour:
       _enemyToSpawnPrefab: {fileID: 5443555473341688872, guid: 2a6163ec7efbc8445a0384f8af222662, type: 3}
       _spawnCount: 40
   _herdBreakpoints:
-    _breakpoints: []
+    _breakpoints:
+    - _name: 70% herd
+      _breakpointIcon: {fileID: 0}
+      _breakpointLine: {fileID: 0}
+      _breakpointLineColor: {r: 0, g: 0, b: 0, a: 0}
+      _breakpointDisplayTime: 0
+      _breakpointDescription: 
+      _breakpointSound:
+        _soundType: 0
+        _mixerType: 0
+        _sound: {fileID: 0}
+        _playbackCooldown: 0
+      _requiredProgress: 70
+      _enemyToSpawnPrefab: {fileID: 3984346456179942867, guid: c544dfe747c26da428fbc1a56839ceb9, type: 3}
+      _spawnCount: 15
   _eliteZombieBreakpoints:
     _breakpoints:
     - _name: 5%

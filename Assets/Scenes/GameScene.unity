@@ -436,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9278bd4b672e94d836b78d4e12e1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDebug: 0
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 1289386379}
@@ -937,6 +938,22 @@ PrefabInstance:
       propertyPath: _spawnCooldown
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3996085182143219124, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996085182143219125, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: _isDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996085182143219125, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996085182143219126, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3996085183425521321, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_Name
       value: Spawners
@@ -996,6 +1013,10 @@ PrefabInstance:
     - target: {fileID: 3996085184043712268, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: _startSpawnMinRange
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713541162725687725, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}

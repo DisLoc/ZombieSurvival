@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 742492564938912024}
   - component: {fileID: 742492564938912031}
   - component: {fileID: 742492564938912029}
-  - component: {fileID: 742492564938912030}
   - component: {fileID: 8247142234265384198}
   - component: {fileID: -2047685362577752691}
+  - component: {fileID: 742492564938912030}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -66,27 +66,6 @@ MonoBehaviour:
   _isDebug: 0
   _spawnDeltaDistance: 25
   _maxDistanceForRespawn: 0
---- !u!114 &742492564938912030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742492564938912025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33a1ccc6a556154eb5082f2e2fd67fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _spawnDeltaDistance: 10
-  _maxDistanceForRespawn: 0
-  _spawnCount: 1
-  _bossEventFencePrefab: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
-  _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
-  _heartPrefab: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
-  _magnetPrefab: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
-  _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
 --- !u!114 &8247142234265384198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +96,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _spawnDeltaDistance: 15
+  _spawnDeltaDistance: 30
   _maxDistanceForRespawn: 0
+  _deltaSpawnPosition: 6
+  _directionRotationDelay: 12
+--- !u!114 &742492564938912030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742492564938912025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33a1ccc6a556154eb5082f2e2fd67fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _spawnDeltaDistance: 10
+  _maxDistanceForRespawn: 0
+  _spawnCount: 1
+  _bossEventFencePrefab: {fileID: 948258585069837982, guid: ca4a1cafb75e4a94b9c4b78a98091b13, type: 3}
+  _rewardsSpawnDistanceMultiplier: 1.5
+  _chestPrefab: {fileID: 7400282451038139746, guid: e3ce56b00a67145418feacd99bd52ba9, type: 3}
+  _heartPrefab: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
+  _magnetPrefab: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
+  _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}

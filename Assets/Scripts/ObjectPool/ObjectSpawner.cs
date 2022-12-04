@@ -68,8 +68,6 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
             }
         }
 
-        _spawnedObjects.List.AddRange(objects);
-
         return objects;
     }
 
@@ -86,8 +84,6 @@ public class ObjectSpawner<TObject> : MonoPool<TObject> where TObject : MonoBeha
                 objects.Add(obj);
             }
         }
-
-        _spawnedObjects.List.AddRange(objects);
 
         return objects;
     }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: Gun ProjectileSpeed
   m_EditorClassIdentifier: 
-  _baseValue: 6
+  _baseValue: 12
   _minValue: 1
-  _maxValue: 6
+  _maxValue: 12
   _maxValueIsInfinite: 1
   _upgradeMarkers:
     _markers:

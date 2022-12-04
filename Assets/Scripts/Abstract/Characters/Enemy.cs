@@ -54,13 +54,6 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     {
         base.OnFixedUpdate();
 
-        /*Move(new Vector3 
-            (
-                _player.transform.position.x - transform.position.x,
-                0f,
-                _player.transform.position.z - transform.position.z
-            ));*/
-
         _hpCanvas?.OnFixedUpdate();
         
         Vector3 pos = transform.position;
@@ -103,10 +96,14 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 
         if (_pool != null)
         {
+            if (_isDebug) Debug.Log(name + " returns to pool");
+            
             _pool.Release(this);
         }
         else
         {
+            if (_isDebug) Debug.Log("Destroy" + name);
+
             Destroy(gameObject);
         }
     }
@@ -123,12 +120,5 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         EventBus.Publish<IObjectDisableHandler>(handler => handler?.OnObjectDisable(gameObject));
         
         if (_isDebug) Debug.Log(name + " disabled");
-    }
-    
-    protected virtual void OnDestroy()
-    {
-        EventBus.Publish<IObjectDisableHandler>(handler => handler?.OnObjectDisable(gameObject));
-
-        if (_isDebug) Debug.Log(name + " destroyed");
     }
 }

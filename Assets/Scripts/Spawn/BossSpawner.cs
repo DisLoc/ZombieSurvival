@@ -7,6 +7,7 @@ public sealed class BossSpawner : EnemySpawner
     [SerializeField] private GameObject _bossEventFencePrefab;
 
     [Header("Rewards")]
+    [SerializeField][Range(1, 3)] private float _rewardsSpawnDistanceMultiplier = 1.5f;
     [SerializeField] private ZombieChest _chestPrefab;
     [SerializeField] private PickableHeart _heartPrefab;
     [SerializeField] private PickableMagnet _magnetPrefab;
@@ -105,9 +106,14 @@ public sealed class BossSpawner : EnemySpawner
         {
             if (_isDebug) Debug.Log("Get boss reward");
 
-            PickableHeart heart = Instantiate(_heartPrefab, position + Vector3.right, _heartPrefab.transform.localRotation, transform);
-            PickableMagnet magnet = Instantiate(_magnetPrefab, position + Vector3.left, _heartPrefab.transform.localRotation, transform);
-            ZombieChest chest = Instantiate(_chestPrefab, position + Vector3.up, _heartPrefab.transform.localRotation, transform);
+            Vector3 pickablesPos = new Vector3(position.x, _levelContext.LevelBuilder.GridHeight, position.z);
+
+            PickableHeart heart = Instantiate(_heartPrefab, pickablesPos + Vector3.right * _rewardsSpawnDistanceMultiplier, 
+                                              _heartPrefab.transform.localRotation, transform);
+            PickableMagnet magnet = Instantiate(_magnetPrefab, pickablesPos + Vector3.left * _rewardsSpawnDistanceMultiplier,
+                                                _magnetPrefab.transform.localRotation, transform);
+            ZombieChest chest = Instantiate(_chestPrefab, pickablesPos + Vector3.up * _rewardsSpawnDistanceMultiplier,
+                                            _chestPrefab.transform.localRotation, transform);
 
             heart.Initialize(_player);
             magnet.Initialize();

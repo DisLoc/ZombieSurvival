@@ -113,19 +113,6 @@ public sealed class HordeSpawner : EnemySpawner, IBossEventHandler
     {
         if (CurrentSpawned == 0)
         {
-            foreach (Enemy zombie in _spawners[0].SpawnedObjects.List)
-            {
-                zombie.Die();
-            }
-
-            foreach (var pool in _spawners)
-            {
-                foreach (Enemy zombie in pool.SpawnedObjects.List)
-                {
-                    zombie.Die();
-                }
-            }
-
             ClearPools();
         }
     }

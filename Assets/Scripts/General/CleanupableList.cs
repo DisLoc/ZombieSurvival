@@ -64,7 +64,7 @@ public class CleanupableList<T> where T : class
     {
         if (_needCleanup)
         {
-            _list.RemoveAll(sub => sub == null);
+            _list.RemoveAll(item => item == null);
             _needCleanup = false;
         }
 
