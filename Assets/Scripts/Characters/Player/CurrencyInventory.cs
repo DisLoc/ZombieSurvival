@@ -32,15 +32,29 @@ public class CurrencyInventory : Inventory
 
     public override SerializableData SaveData()
     {
-        return null;
+        CurrencyInventoryData data = new CurrencyInventoryData();
+
+        data.total = _total;
+
+        return data;
     }
 
     public override void LoadData(SerializableData data)
     {
+        if (data == null) return;
 
+        _total = (data as CurrencyInventoryData).total;
+
+        _counter.UpdateCounter();
     }
 
-    public void Add(Currency currency)
+    public override void ResetData()
+    {
+        _total = 0;
+        _counter.UpdateCounter();
+    }
+
+    public virtual void Add(Currency currency)
     {
         _total += currency.CurrencyValue;
 
@@ -50,7 +64,7 @@ public class CurrencyInventory : Inventory
         }
     }
 
-    public bool Spend(Currency currency)
+    public virtual bool Spend(Currency currency)
     {
         if (IsEnough(currency))
         {
@@ -88,5 +102,11 @@ public class CurrencyInventory : Inventory
                 }
             }
         }
+    }
+
+    [System.Serializable]
+    protected class CurrencyInventoryData : SerializableData
+    {
+        public int total;
     }
 }

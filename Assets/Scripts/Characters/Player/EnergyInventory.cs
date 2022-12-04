@@ -10,23 +10,66 @@ public class EnergyInventory : CurrencyInventory
     public override void Initialize()
     {
         _energy.Initialize();
+        _total = (int)_energy.Value;
 
-        base.Initialize();
+        if (_counter != null)
+        {
+            _counter.Initialize(this);
+        }
     }
 
-    public EnergyInventory(CurrencyData currencyData, EnergyCounter counter) : base(currencyData, counter)
-    {
+    public EnergyInventory(CurrencyData currencyData, EnergyCounter counter) : base(currencyData, counter) { }
 
+    public override void Add(Currency currency)
+    {
+        _energy.SetValue(_energy.Value + currency.CurrencyValue);
+
+        _total = (int)_energy.Value;
+
+        _counter.UpdateCounter();
     }
 
-    public override SerializableData SaveData()
+    public override bool Spend(Currency currency)
     {
-        return null;
+        if (IsEnough(currency))
+        {
+            _energy.SetValue(_energy.Value - currency.CurrencyValue);
+
+            _total = (int)_energy.Value;
+
+            _counter.UpdateCounter();
+
+            return true;
+        }
+
+        return false;
     }
 
     public override void LoadData(SerializableData data)
     {
+        if (data == null) return;
 
+        _energy.SetValue((data as CurrencyInventoryData).total);
+        _total = (int)_energy.Value;
+
+        _counter.UpdateCounter();
+    }
+
+    public override SerializableData SaveData()
+    {
+        CurrencyInventoryData data = new CurrencyInventoryData();
+
+        _total = (int)_energy.Value;
+        data.total = _total;
+
+        return data;
+    }
+
+    public override void ResetData()
+    {
+        _energy.Initialize();
+
+        base.ResetData();
     }
 }
 
