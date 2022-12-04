@@ -5,6 +5,45 @@ using Zenject;
 
 public sealed class InventoryMenu : UIMenu
 {
+    [Header("Player animation")]
+    [SerializeField] private Animator _playerAnimator;
+    private enum AnimationStates 
+    {
+        WithBlade,
+        WithShotgun,
+        WithPistol,
+        
+        Girl
+    }
+
+    private void SetAnimatorBools()
+    {
+        _playerAnimator.SetBool(AnimationStates.Girl.ToString(), true); // TODO add more characters
+
+        WeaponEquipment weapon = _equipmentInventory[EquipSlot.Weapon] as WeaponEquipment;
+        if (weapon != null)
+        {
+            if (weapon.BaseWeapon as Shotgun != null)
+            {
+                _playerAnimator.SetBool(AnimationStates.WithShotgun.ToString(), true);
+            }            
+            else if (weapon.BaseWeapon as Blade != null)
+            {
+                _playerAnimator.SetBool(AnimationStates.WithBlade.ToString(), true);
+            }
+            else if (weapon.BaseWeapon as Gun != null)
+            {
+                _playerAnimator.SetBool(AnimationStates.WithPistol.ToString(), true);
+            }
+        }
+        else
+        {
+            _playerAnimator.SetBool(AnimationStates.WithShotgun.ToString(), false);
+            _playerAnimator.SetBool(AnimationStates.WithBlade.ToString(), false);
+            _playerAnimator.SetBool(AnimationStates.WithPistol.ToString(), false);
+        }
+    }
+
     [Header("Inventory menu settings")]
     [SerializeField] private ItemUpgradeMenu _upgradeMenu;
     [SerializeField] private LevelContextInstaller _contextInstaller;
@@ -59,6 +98,8 @@ public sealed class InventoryMenu : UIMenu
                 Equip(equipment);
             }
         }
+
+        SetAnimatorBools();
     }
 
     public override void Display(bool playAnimation = false)
@@ -156,6 +197,7 @@ public sealed class InventoryMenu : UIMenu
         Display();
 
         OnInventoryChange();
+        SetAnimatorBools();
     }
 
     public void Unequip(Equipment equipment)
@@ -178,6 +220,7 @@ public sealed class InventoryMenu : UIMenu
             Display();
 
             OnInventoryChange();
+            SetAnimatorBools();
         }
         else return;
     }

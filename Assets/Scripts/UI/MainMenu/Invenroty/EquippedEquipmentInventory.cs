@@ -45,10 +45,15 @@ public class EquippedEquipmentInventory
 
     public bool Add(Equipment equipment)
     {
-        if (!_equipment.ContainsKey(equipment.EquipSlot) || (_equipment.ContainsKey(equipment.EquipSlot) && _equipment[equipment.EquipSlot] != null))
+        if (!_equipment.ContainsKey(equipment.EquipSlot))
+        {
+            _equipment.Add(equipment.EquipSlot, null);
+        }
+
+        if (_equipment[equipment.EquipSlot] == null)
         {
             equipment.Initialize();
-            _equipment.Add(equipment.EquipSlot, equipment);
+            _equipment[equipment.EquipSlot] = equipment;
 
             return true;
         }

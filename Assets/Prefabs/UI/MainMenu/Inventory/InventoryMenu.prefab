@@ -92,6 +92,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1004279292223075178}
   _button: {fileID: 0}
   _animator: {fileID: 1004279292223075221}
+  _playerAnimator: {fileID: 7192186446026217860}
   _upgradeMenu: {fileID: 6949385503264261472}
   _contextInstaller: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
   _unequipedInventoryTransform: {fileID: 1004279293514795559}
@@ -112,14 +113,6 @@ MonoBehaviour:
     _slotPrefab: {fileID: 3260672668585323185, guid: 5e78521917cd41648a789106ec23a584, type: 3}
     _equipmentParent: {fileID: 1004279293514795559}
   _player: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-  _useBaseEquipment: 1
-  _baseEquipment:
-  - {fileID: 2565584387524054931, guid: 53e3933dd85e7914b95943d2e216bdf4, type: 3}
-  - {fileID: 2565584387524054931, guid: 90c9ddcaa33a60d48b20d4c8cbaaef86, type: 3}
-  - {fileID: 2565584387524054931, guid: a6cb01c2cf50e47438361bfd9f47aed0, type: 3}
-  - {fileID: 2565584387524054931, guid: eb006621da4bcf84282bd0a9ce86f8f0, type: 3}
-  - {fileID: 2565584387524054931, guid: 270e21cfb27fbdb479233bf0f137b043, type: 3}
-  - {fileID: 7228236411287217178, guid: 94907044528cee64c906615c26c01964, type: 3}
 --- !u!1 &1004279292252055734
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +369,7 @@ Animator:
   m_GameObject: {fileID: 1004279292837528352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48dbc14ccf3985c409b30228da3346af, type: 2}
+  m_Controller: {fileID: 9100000, guid: bfdad061833529845af6d2267f3024ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
