@@ -299,8 +299,9 @@ MonoBehaviour:
   _animator: {fileID: 5878678008962859878}
   _timerText: {fileID: 4247387911614672272}
   _reanimationMaxTimer: 10
-  _reanimationCurrencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
-  _reanimationByCurrencyCost: 100
+  _reanimationCost:
+    _currencyValue: 50
+    _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
   _reanimationByAdHealUpgrade: {fileID: 11400000, guid: 3a2b0d3b8ea830947b3c6ad6859a9c25, type: 2}
   _reanimationByAdHeartSprite: {fileID: 21300000, guid: 4128d89182d9c084b9cb80b3baed309d, type: 3}
   _reanimationByAdHeartImage: {fileID: 814699313076122495}
@@ -447,6 +448,7 @@ MonoBehaviour:
       _sound: {fileID: 8300000, guid: 5243d9e0a03b1164bb59121ab8c56a16, type: 3}
       _playbackCooldown: 10
   _enemyCounter: {fileID: 0}
+  _currencyCounter: {fileID: 0}
   _survivalTimeCounter: {fileID: 0}
   _totalKilledText: {fileID: 7648350490809411272}
   _survivalTimeText: {fileID: 2046891284469089087}

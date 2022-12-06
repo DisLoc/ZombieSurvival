@@ -19,7 +19,7 @@ public class MainInventory : MonoBehaviour
     private EquipmentMaterialInventory _materialsInventory;
 
     public CurrencyInventory CoinInventory => _coinInventory;
-    public CurrencyInventory GesmsInventory => _gemsInventory;
+    public CurrencyInventory GemsInventory => _gemsInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
 
@@ -207,9 +207,7 @@ public class MainInventory : MonoBehaviour
         {
             if (_materialsInventory.IsEnough(equipmentData.EquipmentUpgrades.RequiredMaterial.ValidEquipment, materials.RequiredMaterialAmount))
             {
-                //if (EnoughEquipment)
-
-                return true;
+                return _equipmentInventory.IsEnough(equipmentData, materials.RequiredEquipmentAmount);
             }
         }
 
@@ -218,17 +216,24 @@ public class MainInventory : MonoBehaviour
 
     public void Add(Equipment equipment, int count = 1)
     {
+        if (_isDebug) Debug.Log("Add equipment: " + equipment.name);
 
+        for (int i = 0; i < count; i++)
+        {
+            _equipmentInventory.Add(equipment);
+        }
     }
 
     public void Add(EquipmentMaterial material, int count = 1)
     {
+        if (_isDebug) Debug.Log("Add material: " + material.name);
+
         _materialsInventory.Add(material.ValidEquipment, count);
     }
     
     public bool Spend(Equipment equipment, int count = 1)
     {
-        return true;
+        return _equipmentInventory.Spend(equipment, count);
     }
     
     public bool Spend(EquipmentMaterial material, int count = 1)
@@ -276,4 +281,9 @@ public class MainInventory : MonoBehaviour
         _energyInventory.Spend(new Currency(_energyInventory.CurrencyData, 10));
     }
     #endregion
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Loaded", 0);
+    }
 }

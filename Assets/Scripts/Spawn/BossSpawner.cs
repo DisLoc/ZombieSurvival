@@ -151,6 +151,7 @@ public sealed class BossSpawner : EnemySpawner
         {
             rewardMaterial = _currentBreakpoint.SpecificMaterialReward;
         }
+
         if (rewardMaterial != null)
         {
             _mainInventory.Add(rewardMaterial, _currentBreakpoint.MaterialsCount);

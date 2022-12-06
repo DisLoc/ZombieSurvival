@@ -50,7 +50,12 @@ public class EquipmentInventory : Inventory
     public bool IsEnough(Equipment equipment, int count = 1)
     {
         return _equipment.FindAll(item => item.EquipmentData.Equals(equipment.EquipmentData)).Count >= count;
-    }  
+    }
+
+    public bool IsEnough(EquipmentData data, int count = 1)
+    {
+        return _equipment.FindAll(item => item.EquipmentData.Equals(data)).Count >= count;
+    }
     
     private bool IsEnough(Equipment equipment, int count, out List<Equipment> findedEquipment)
     {

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Currency
 {
     [SerializeField][Range(0, 100000)] protected int _currencyValue;

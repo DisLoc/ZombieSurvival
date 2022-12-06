@@ -7,10 +7,9 @@ public class GOReanimationMenu : UIMenu
     [Header("Reanimation menu settings")]
     [SerializeField] private Text _timerText; 
     [SerializeField][Range(5, 20)] private int _reanimationMaxTimer = 10;
-    
+
     [Space(5)]
-    [SerializeField] private CurrencyData _reanimationCurrencyData;
-    [SerializeField][Range(1, 1000)] private int _reanimationByCurrencyCost;
+    [SerializeField] private Currency _reanimationCost;
 
     [Header("Ad reanimation")]
     [Tooltip("Must have only 1 UpgradeData for correct work")]
@@ -30,6 +29,7 @@ public class GOReanimationMenu : UIMenu
 
     private int _timer;
 
+    public Currency ReanimationCost => _reanimationCost;
     public Upgrade ReanimationByAdHealUpgrade => _reanimationByAdHealUpgrade;
     public Upgrade ReanimationByCurrencyHealUpgrade => _reanimationByCurrencyHealUpgrade;
 
@@ -43,8 +43,8 @@ public class GOReanimationMenu : UIMenu
 
         _reanimationByCurrencyHealthText.text = (_reanimationByCurrencyHealUpgrade.Upgrades[0].UpgradeMultiplier * 100).ToString() + "%";
         _reanimationByCurrencyHeartImage.sprite = _reanimationByCurrencyHeartSprite;
-        _reanimationByCurrencyIcon.sprite = _reanimationCurrencyData.Icon;
-        _reanimationByCurrencyCostText.text = _reanimationByCurrencyCost.ToString();
+        _reanimationByCurrencyIcon.sprite = _reanimationCost.CurrencyData.Icon;
+        _reanimationByCurrencyCostText.text = _reanimationCost.CurrencyValue.ToString();
     }
 
     public override void Display(bool playAnimation = false)

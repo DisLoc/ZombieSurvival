@@ -290,6 +290,8 @@ MonoBehaviour:
       _requiredProgress: 90
       _enemyToSpawnPrefab: {fileID: 5443555473341688872, guid: 2a6163ec7efbc8445a0384f8af222662, type: 3}
       _spawnCount: 40
+  _herdBreakpoints:
+    _breakpoints: []
   _eliteZombieBreakpoints:
     _breakpoints:
     - _name: 5%
@@ -363,7 +365,14 @@ MonoBehaviour:
         _playbackCooldown: 5
       _requiredProgress: 30
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
+      _isFinalBoss: 0
       _maxAbilitiesRewardCount: 2
+      _hasRandomMaterialReward: 1
+      _specificMaterialReward: {fileID: 0}
+      _materialsCount: 1
+      _hasRandomEquipmentReward: 0
+      _specificRandomEquipmentRarity: 0
+      _specificEquipmentReward: {fileID: 0}
     - _name: 60% boss
       _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
       _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
@@ -377,7 +386,14 @@ MonoBehaviour:
         _playbackCooldown: 5
       _requiredProgress: 60
       _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _isFinalBoss: 0
       _maxAbilitiesRewardCount: 3
+      _hasRandomMaterialReward: 1
+      _specificMaterialReward: {fileID: 0}
+      _materialsCount: 1
+      _hasRandomEquipmentReward: 0
+      _specificRandomEquipmentRarity: 0
+      _specificEquipmentReward: {fileID: 0}
     - _name: 100% boss
       _breakpointIcon: {fileID: 21300000, guid: ebc36bbdc19d4eb42a5c67c1e5cbacb4, type: 3}
       _breakpointLine: {fileID: 21300000, guid: bc7019297ce7ad049b15c94a633da6e1, type: 3}
@@ -391,7 +407,14 @@ MonoBehaviour:
         _playbackCooldown: 0.5
       _requiredProgress: 100
       _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _isFinalBoss: 1
       _maxAbilitiesRewardCount: 0
+      _hasRandomMaterialReward: 1
+      _specificMaterialReward: {fileID: 0}
+      _materialsCount: 1
+      _hasRandomEquipmentReward: 1
+      _specificRandomEquipmentRarity: 0
+      _specificEquipmentReward: {fileID: 0}
   _enemyUpgradeBreakpoints:
     _breakpoints:
     - _name: 10-19

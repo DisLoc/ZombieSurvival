@@ -246,17 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainInventoryInstance: {fileID: 749952934}
---- !u!114 &512203789 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4393017907504792710, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-  m_PrefabInstance: {fileID: 1289386373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &571071802 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3541854349142275080, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
@@ -810,42 +799,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1469835889124051267, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: _currencyText
-      value: 
-      objectReference: {fileID: 1289386375}
-    - target: {fileID: 1469835889124051267, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: _currencyImage
-      value: 
-      objectReference: {fileID: 1289386376}
-    - target: {fileID: 2589925672117589973, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2589925672117589973, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664895702429188930, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: _currencyText
-      value: 
-      objectReference: {fileID: 512203789}
-    - target: {fileID: 4803733833258476515, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485619038865408912, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 48b848818faa8444f882fe636d6cf91b, type: 3}
-    - target: {fileID: 8257453246504556999, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257453246504556999, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8773999759855668602, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -861,28 +814,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de6f0484f7b6c348a8a30fb0d130905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1289386375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6564075933178387887, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-  m_PrefabInstance: {fileID: 1289386373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1289386376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8788555005936694526, guid: ae11f0a2f37c9694c838894f7aec9fa6, type: 3}
-  m_PrefabInstance: {fileID: 1289386373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1289386377 stripped
@@ -951,6 +882,10 @@ PrefabInstance:
     - target: {fileID: 3996085182143219125, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996085182143219125, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
+      propertyPath: _rewardsSpawnDistanceMultiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3996085182143219126, guid: 1fc61afd160c06b41b0986db3b84f322, type: 3}
       propertyPath: m_Enabled

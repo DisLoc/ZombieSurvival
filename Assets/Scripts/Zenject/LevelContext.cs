@@ -40,8 +40,6 @@ public sealed class LevelContext : ScriptableObject
 
     private List<Upgrade> _equipmentUpgrades;
 
-    [HideInInspector] public bool wasPassed;
-
     #region Fields
     public string LevelName => _levelName;
     public int LevelNumber => _levelNumber;
@@ -155,8 +153,6 @@ public sealed class LevelContext : ScriptableObject
     }
     #endregion
 
-    public Weapon PlayerBaseWeapon { get; private set; }
-    [HideInInspector] public int maxSurvivalTime;
     public List<Upgrade> PlayerUpgrades
     {
         get
@@ -171,6 +167,11 @@ public sealed class LevelContext : ScriptableObject
     }
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
     #endregion
+
+    public Weapon PlayerBaseWeapon { get; private set; }
+
+    [HideInInspector] public bool wasPassed;
+    [HideInInspector] public int maxSurvivalTime;
 
     public void Initialize(LevelBuilder builderPrefab, EquippedEquipmentInventory equipmentInventory)
     {

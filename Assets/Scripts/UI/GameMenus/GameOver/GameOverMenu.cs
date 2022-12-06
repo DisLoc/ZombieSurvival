@@ -11,6 +11,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
     private int _reanimations;
 
     [Inject] private Player _player;
+    [Inject] private MainInventory _mainInentory;
 
     private void OnEnable()
     {
@@ -67,22 +68,22 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
     #region Buttons
     public void OnCurrencyReanimation()
     {
-        _player.GetUpgrade(_reanimationMenu.ReanimationByCurrencyHealUpgrade);
-        _reanimations++;
+        if (_mainInentory.GemsInventory.Spend(_reanimationMenu.ReanimationCost))
+        {
+            _player.GetUpgrade(_reanimationMenu.ReanimationByCurrencyHealUpgrade);
+            _reanimations++;
 
-        _mainMenu.DisplayDefault();
+            _mainMenu.DisplayDefault();
+        }
+        else
+        {
+            _mainMenu.ShowNotReadyMessage("Not enough resources!");
+        }
     }
 
     public void OnAdReanimation()
     {
-        return;
-
-        /*
-        _player.GetUpgrade(_reanimationMenu.ReanimationByAdHealUpgrade);
-        _reanimations++;
-
-        _mainMenu.DisplayDefault();
-         */
+        _mainMenu.ShowNotReadyMessage("Ad is not ready");
     }
 
     public void OnCloseReanimation()
@@ -93,6 +94,8 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     public void OnContinueGameOver()
     {
+        (_mainMenu as GameMenu).SaveCurrency();
+
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }

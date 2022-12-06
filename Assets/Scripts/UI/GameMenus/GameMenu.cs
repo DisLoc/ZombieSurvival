@@ -1,7 +1,12 @@
 using UnityEngine;
+using Zenject;
 
 public class GameMenu : MainMenu
 {
+    [SerializeField] private CurrencyCounter _currencyCounter;
+
+    [Inject] private MainInventory _mainInventory;
+
     public override void Display(UIMenu tab)
     {
         if (tab != _defaultMenu)
@@ -23,6 +28,11 @@ public class GameMenu : MainMenu
 
             else menu.Hide();
         }
+    }
+
+    public void SaveCurrency()
+    {
+        _mainInventory.Add(new Currency(_currencyCounter.CurrencyData, _currencyCounter.TotalGained));
     }
 
     private void StopTime()

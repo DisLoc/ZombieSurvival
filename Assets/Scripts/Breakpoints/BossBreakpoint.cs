@@ -39,6 +39,17 @@ public class BossBreakpoint : Breakpoint
     protected BossBreakpoint (BossBreakpoint breakpoint) : base (breakpoint)
     {
         _bossPrefab = breakpoint._bossPrefab;
+        
+        _isFinalBoss = breakpoint._isFinalBoss;
+        _maxAbilitiesRewardCount = breakpoint._maxAbilitiesRewardCount;
+
+        _hasRandomMaterialReward = breakpoint._hasRandomMaterialReward;
+        _specificMaterialReward = breakpoint._specificMaterialReward;
+        _materialsCount = breakpoint._materialsCount;
+
+        _hasRandomEquipmentReward = breakpoint._hasRandomEquipmentReward;
+        _specificRandomEquipmentRarity = breakpoint._specificRandomEquipmentRarity;
+        _specificEquipmentReward = breakpoint._specificEquipmentReward;
     }
 
     public override Breakpoint Clone() => new BossBreakpoint(this);

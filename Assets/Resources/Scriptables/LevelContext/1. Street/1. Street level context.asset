@@ -381,9 +381,9 @@ MonoBehaviour:
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _isFinalBoss: 0
       _maxAbilitiesRewardCount: 2
-      _hasRandomMaterialReward: 0
+      _hasRandomMaterialReward: 1
       _specificMaterialReward: {fileID: 0}
-      _materialsCount: 0
+      _materialsCount: 1
       _hasRandomEquipmentReward: 0
       _specificRandomEquipmentRarity: 0
       _specificEquipmentReward: {fileID: 0}
@@ -402,9 +402,9 @@ MonoBehaviour:
       _bossPrefab: {fileID: 7855256235738180036, guid: 67d6b2b745eec9243b852fe85f9f2b02, type: 3}
       _isFinalBoss: 0
       _maxAbilitiesRewardCount: 3
-      _hasRandomMaterialReward: 0
+      _hasRandomMaterialReward: 1
       _specificMaterialReward: {fileID: 0}
-      _materialsCount: 0
+      _materialsCount: 1
       _hasRandomEquipmentReward: 0
       _specificRandomEquipmentRarity: 0
       _specificEquipmentReward: {fileID: 0}
@@ -425,7 +425,7 @@ MonoBehaviour:
       _maxAbilitiesRewardCount: 0
       _hasRandomMaterialReward: 1
       _specificMaterialReward: {fileID: 0}
-      _materialsCount: 3
+      _materialsCount: 1
       _hasRandomEquipmentReward: 1
       _specificRandomEquipmentRarity: 0
       _specificEquipmentReward: {fileID: 0}

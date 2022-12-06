@@ -12,6 +12,7 @@ public class CurrencyCounter : MonoBehaviour
 
     protected CurrencyInventory _inventory;
 
+    public CurrencyData CurrencyData => _inventory.CurrencyData;
     public int TotalGained => _inventory.Total;
 
     public virtual void Initialize(CurrencyInventory currencyInventory)

@@ -17,7 +17,7 @@ public class ZombieChest : PickableObject
     {
         _player = player;
         _abilityGiver = abilityGiver;
-        _abilitiesRewardCount = abilitiesRewardCount;
+        _abilitiesRewardCount = Random.Range(MIN_ABILITIES_REWARD,  abilitiesRewardCount + 1);
 
         _canvas.gameObject.SetActive(false);
     }
@@ -32,7 +32,7 @@ public class ZombieChest : PickableObject
 
         for(int i = 0; i < _abilitiesRewardCount; i++)
         {
-            AbilityContainer ability = _abilityGiver.GetAbilitiesUpgrades(MIN_ABILITIES_REWARD)[0];
+            AbilityContainer ability = _abilityGiver.GetAbilitiesUpgrades(1)[0];
 
             if (ability != null)
             {

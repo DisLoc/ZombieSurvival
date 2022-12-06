@@ -18,6 +18,22 @@ public class LoadingScreen : MonoBehaviour
 
     private void OnEnable()
     {
+        if (PlayerPrefs.HasKey("Loaded"))
+        {
+            int loaded = PlayerPrefs.GetInt("Loaded");
+
+            if (loaded == 1)
+            {
+                EventBus.Publish<IGameStartHandler>(handler => handler.OnGameStart());
+
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Loaded", 1);
+        }
+
         _applicationVersionText.text = Application.version;
         _loadingBar.Initialize();
         _timer = 0;

@@ -63,6 +63,8 @@ public sealed class PauseMenu : UIMenu
 
     public void OnExit()
     {
+        (_mainMenu as GameMenu).SaveCurrency();
+
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
