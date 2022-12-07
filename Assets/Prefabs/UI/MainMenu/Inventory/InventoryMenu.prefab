@@ -95,10 +95,12 @@ MonoBehaviour:
   _playerAnimator: {fileID: 7192186446026217860}
   _upgradeMenu: {fileID: 6949385503264261472}
   _contextInstaller: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
-  _unequipedInventoryTransform: {fileID: 1004279293514795559}
+  _unequippedInventoryTransform: {fileID: 1004279293514795559}
   _grid: {fileID: 1004279293514795558}
   _mergeMenu: {fileID: 2620831892223031393}
   _heroListMenu: {fileID: 5259770010736339017}
+  _equipmentSlotPrefab: {fileID: 3260672668585323185, guid: 5e78521917cd41648a789106ec23a584, type: 3}
+  _unequippedEquipmentParent: {fileID: 1004279293514795559}
   _equipmentTypesData: {fileID: 11400000, guid: a84433bd886f6ce40b23a75d8a3f39dc, type: 2}
   _slots:
   - {fileID: 4808176719622937326}
@@ -109,9 +111,6 @@ MonoBehaviour:
   - {fileID: 6831068849099578727}
   _damageText: {fileID: 8108120273358779970}
   _healthText: {fileID: 7072840042002006336}
-  _unequippedInventory:
-    _slotPrefab: {fileID: 3260672668585323185, guid: 5e78521917cd41648a789106ec23a584, type: 3}
-    _equipmentParent: {fileID: 1004279293514795559}
   _player: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
 --- !u!1 &1004279292252055734
 GameObject:

@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446a65369120b5347bed721c26a15e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 0
+  _isDebug: 1
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 2359795017724852656}
@@ -910,15 +910,12 @@ MonoBehaviour:
         _baseValue: 0
         _minValue: 0
         _maxValue: 0
-        _maxValueIsInfinite: 0
+        _maxValueIsInfinite: 1
     _sounds:
       _sounds: []
     _baseExpForLevelUp: 1000
     _levelMultiplier: 0.5
     _expBar: {fileID: 2359795017724852653}
-  _useBaseEquipment: 0
-  _baseEquipment:
-  - {fileID: 7228236411287217178, guid: 4eddd7068d4e79b4393fe75973f8c7eb, type: 3}
 --- !u!4 &1489317395
 Transform:
   m_ObjectHideFlags: 0
@@ -1131,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016239970577917499, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.8999634
+      value: -7.8999023
       objectReference: {fileID: 0}
     - target: {fileID: 1016239970649296549, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_IsActive

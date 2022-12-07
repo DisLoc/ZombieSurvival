@@ -5,10 +5,17 @@ public class Equipment : MonoBehaviour
 {
     [SerializeField] protected Level _level;
     [SerializeField] protected EquipmentData _equipmentData;
+    [SerializeField] protected int _itemID;
 
-    [HideInInspector] public bool isEquiped;
+    //[HideInInspector] 
+    public bool isEquiped;
 
     public EquipmentData EquipmentData => _equipmentData;
+    public int ID
+    {
+        get { return _itemID; }
+        set { _itemID = value; }
+    }
 
     public Sprite Icon => _equipmentData.Icon;
     public EquipSlot EquipSlot => _equipmentData.EquipSlot;

@@ -74,4 +74,54 @@ public class PlayerExpLevel : Stat
         }
         else if (_isDebug) Debug.Log("Missing ExpBar!");
     }
+
+    #region Serialization
+    public SerializableData SaveData()
+    {
+        ExpLevelData data = new ExpLevelData();
+
+        data.level = (int)_value;
+        data.expirience = (int)_exp.Value;
+
+        return data;
+    } 
+
+    public void LoadData(SerializableData data) 
+    {
+        if (data == null) return;
+
+        if (data is ExpLevelData levelData)
+        {
+            SetValue(levelData.level);
+            _exp.SetValue(levelData.expirience);
+
+            if (_expBar != null)
+            {
+                _expBar.UpdateLevel();
+                _expBar.UpdateExp();
+            }
+            else if (_isDebug) Debug.Log("Missing ExpBar!");
+        }
+    }
+
+    public void ResetData()
+    {
+        _exp.SetValue();
+        _value = BaseValue;
+
+        if (_expBar != null)
+        {
+            _expBar.UpdateLevel();
+            _expBar.UpdateExp();
+        }
+        else if (_isDebug) Debug.Log("Missing ExpBar!");
+    }
+
+    [System.Serializable]
+    private class ExpLevelData : SerializableData
+    {
+        public int level;
+        public int expirience;
+    }
+    #endregion
 }

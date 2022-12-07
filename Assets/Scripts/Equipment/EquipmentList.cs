@@ -15,6 +15,14 @@ public class EquipmentList : ScriptableObject
         }
     }
 
+    public Equipment this[int id]
+    {
+        get
+        {
+            return _allEquipment.Find(item => item.ID == id);
+        }
+    }
+
     public Equipment GetRandomEquipment(EquipRarity rarity)
     {
         List<Equipment> random = _allEquipment.FindAll(item => item.EquipRarity.Equals(rarity));
@@ -39,5 +47,30 @@ public class EquipmentList : ScriptableObject
         else return null;
     }
 
+    public Equipment GetRandomEquipment()
+    {
+        return _allEquipment[Random.Range(0, _allEquipment.Count)];
+    }
+
     public EquipmentMaterial GetRandomMaterial() => _materials[Random.Range(0, _materials.Count)];
+
+    [ContextMenu("ResetEquipment")]
+    private void ResetEquipment()
+    {
+        foreach(Equipment equipment in _allEquipment)
+        {
+            equipment.isEquiped = false;
+        }
+    }
+
+    [ContextMenu("Set IDs")]
+    private void SetIDs()
+    {
+        int id = 0;
+        foreach(Equipment equipment in _allEquipment)
+        {
+            equipment.ID = id;
+            id++;
+        }
+    }
 }

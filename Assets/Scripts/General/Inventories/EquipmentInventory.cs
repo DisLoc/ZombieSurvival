@@ -8,9 +8,21 @@ public class EquipmentInventory : Inventory
 
     private List<Equipment> _equipment;
 
+    public EquipmentList EquipmentList => _equipmentList;
+    public List<Equipment> Equipment => _equipment;
+
+    public void Initialize()
+    {
+        _equipment = new List<Equipment>();
+    }
+
     public void Add(Equipment equipment)
     {
-        _equipment.Add(equipment);
+        Equipment newEquipment = Object.Instantiate(equipment);
+
+        newEquipment.Initialize();
+
+        _equipment.Add(newEquipment);
     }
 
     public bool Spend(Equipment equipment, int count = 1)
@@ -24,6 +36,7 @@ public class EquipmentInventory : Inventory
             if (removingEquipment != null)
             {
                 _equipment.Remove(removingEquipment);
+                Object.Destroy(removingEquipment);
 
                 return true;
             }
@@ -37,7 +50,8 @@ public class EquipmentInventory : Inventory
             {
                 for(int i = 0; i < count; i++)
                 {
-                    _equipment.Remove(removingEquipments[i]);
+                    _equipment.Remove(removingEquipments[i]); 
+                    Object.Destroy(removingEquipments[i]);
                 }
 
                 return true;
@@ -69,23 +83,90 @@ public class EquipmentInventory : Inventory
     {
         EquipmentInventoryData data = new EquipmentInventoryData();
 
+        foreach(Equipment equipment in _equipment)
+        {
+            data.Add(equipment);
+        }
+
         return data;
     }
 
     public override void LoadData(SerializableData data)
     {
+        if (data == null) return;
 
+        if (data is EquipmentInventoryData equipmentData)
+        {                
+            for (int i = 0; i < equipmentData.equipments.Count; i++)
+            {
+                Equipment equipment = _equipmentList[equipmentData[i].id];
+
+                if (equipment != null)
+                {
+                    Equipment loadedEquipment = Object.Instantiate(equipment);
+
+                    loadedEquipment.Initialize();
+                    loadedEquipment.Level.SetValue(equipmentData[i].level);
+                    loadedEquipment.isEquiped = equipmentData[i].isEquipped;
+
+                    _equipment.Add(loadedEquipment);
+                }
+            }
+        }
     }
 
     public override void ResetData()
     {
-        
+        if (_equipment == null) return;
+
+        foreach(Equipment equipment in _equipment)
+        {
+            Object.Destroy(equipment.gameObject);
+        }
+
+        _equipment = new List<Equipment>();
     }
 
     [System.Serializable]
     private class EquipmentInventoryData : SerializableData
     {
+        public List<SingleEquipmentData> equipments;
 
+        public EquipmentInventoryData()
+        {
+            equipments = new List<SingleEquipmentData>();
+        }
+
+        public SingleEquipmentData this[int index]
+        {
+            get
+            {
+                if (index > equipments.Count)
+                {
+                    return null;
+                }
+                else return equipments[index];
+            }
+        }
+
+        public void Add(Equipment equipment)
+        {
+            SingleEquipmentData data = new SingleEquipmentData();
+
+            data.id = equipment.ID;
+            data.level = (int)equipment.Level.Value;
+            data.isEquipped = equipment.isEquiped;
+
+            equipments.Add(data);
+        }
+
+        [System.Serializable]
+        public class SingleEquipmentData
+        {
+            public int id;
+            public int level;
+            public bool isEquipped;
+        }
     }
     #endregion
 }

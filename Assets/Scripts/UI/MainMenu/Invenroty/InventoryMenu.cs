@@ -7,12 +7,12 @@ public sealed class InventoryMenu : UIMenu
 {
     [Header("Player animation")]
     [SerializeField] private Animator _playerAnimator;
-    private enum AnimationStates 
+    private enum AnimationStates
     {
         WithBlade,
         WithShotgun,
         WithPistol,
-        
+
         Girl
     }
 
@@ -20,13 +20,15 @@ public sealed class InventoryMenu : UIMenu
     {
         _playerAnimator.SetBool(AnimationStates.Girl.ToString(), true); // TODO add more characters
 
+        if (_equipmentInventory == null) return;
+
         WeaponEquipment weapon = _equipmentInventory[EquipSlot.Weapon] as WeaponEquipment;
         if (weapon != null)
         {
             if (weapon.BaseWeapon as Shotgun != null)
             {
                 _playerAnimator.SetBool(AnimationStates.WithShotgun.ToString(), true);
-            }            
+            }
             else if (weapon.BaseWeapon as Blade != null)
             {
                 _playerAnimator.SetBool(AnimationStates.WithBlade.ToString(), true);
@@ -47,7 +49,7 @@ public sealed class InventoryMenu : UIMenu
     [Header("Inventory menu settings")]
     [SerializeField] private ItemUpgradeMenu _upgradeMenu;
     [SerializeField] private LevelContextInstaller _contextInstaller;
-    [SerializeField] private RectTransform _unequipedInventoryTransform;
+    [SerializeField] private RectTransform _unequippedInventoryTransform;
     [SerializeField] private GridLayoutGroup _grid;
 
     [Space(5)]
@@ -55,14 +57,16 @@ public sealed class InventoryMenu : UIMenu
     [SerializeField] private HeroListMenu _heroListMenu;
 
     [Header("Equipment settings")]
+    [SerializeField] private EquipmentSlot _equipmentSlotPrefab;
+    [SerializeField] private Transform _unequippedEquipmentParent;
+
     [SerializeField] private EquipmentTypesData _equipmentTypesData;
 
     [SerializeField] private List<EquipmentSlot> _slots;
     [SerializeField] private Text _damageText;
     [SerializeField] private Text _healthText;
 
-    [SerializeField] private UnequippedEquipmentInventory _unequippedInventory; 
-
+    private UnequippedEquipmentInventory _unequippedInventory;
     private EquippedEquipmentInventory _equipmentInventory;
 
     public EquippedEquipmentInventory EquipmentInventory => _equipmentInventory;
@@ -83,27 +87,26 @@ public sealed class InventoryMenu : UIMenu
         _mergeMenu.Initialize(mainMenu, this);
         _heroListMenu.Initialize(mainMenu, this);
 
-        _unequippedInventory.Initialize(this);
         _equipmentInventory = new EquippedEquipmentInventory();
+        _unequippedInventory = new UnequippedEquipmentInventory(_equipmentSlotPrefab, _unequippedEquipmentParent, this);
 
         foreach (EquipmentSlot slot in _slots)
         {
             slot.Initialize(_equipmentTypesData);
         }
 
-        if (_mainInventory.UseBaseEquipment)
-        {
-            foreach (Equipment equipment in _mainInventory.BaseEquipment)
-            {
-                Equip(equipment);
-            }
-        }
-
         SetAnimatorBools();
+    }
+
+    private void Start()
+    {
+        LoadEquipment();
     }
 
     public override void Display(bool playAnimation = false)
     {
+        LoadEquipment();
+
         _upgradeMenu.Hide();
         _heroListMenu.Hide();
         _mergeMenu.Hide();
@@ -143,7 +146,7 @@ public sealed class InventoryMenu : UIMenu
         int totalDamage = (int)_player.LevelUpgrades.GetUpgrade(1).DamageData.UpgradeValue;
         int totalHP = (int)_player.Stats.Health.MaxHealthPoints.BaseValue + (int)_player.LevelUpgrades.GetUpgrade(1).HealthData.UpgradeValue;
 
-        foreach(EquipmentSlot slot in _slots)
+        foreach (EquipmentSlot slot in _slots)
         {
             if (slot.Equipment != null)
             {
@@ -175,7 +178,7 @@ public sealed class InventoryMenu : UIMenu
         _unequippedInventory.UpdateInventory();
     }
 
-    public void Equip(Equipment equipment)
+    public void Equip(Equipment equipment, bool displayDefault = true)
     {
         if (equipment == null) return;
 
@@ -192,10 +195,9 @@ public sealed class InventoryMenu : UIMenu
         _unequippedInventory.RemoveEquipment(equipment);
         slot.SetSlot(equipment);
 
-        _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
+        _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
-        Display();
-
+        UpdateValues();
         OnInventoryChange();
         SetAnimatorBools();
     }
@@ -215,21 +217,13 @@ public sealed class InventoryMenu : UIMenu
 
             slot.SetSlot(null);
 
-            _unequipedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
+            _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
-            Display();
-
+            UpdateValues();
             OnInventoryChange();
             SetAnimatorBools();
         }
         else return;
-    }
-    
-    private int GetInventoryHeight()
-    {
-        int rows = _unequippedInventory.Equipment.Count / 6 + (_unequippedInventory.Equipment.Count % 6 > 0 ? 1 : 0);
-
-        return _grid.padding.top + _grid.padding.bottom + (int)(_grid.cellSize.y * rows) + (int)(_grid.spacing.y * rows);
     }
 
     public void OnInventoryChange()
@@ -244,12 +238,39 @@ public sealed class InventoryMenu : UIMenu
 
         _mergeMenu.Display(true);
     }
-    
+
     public void OnHeroListClick()
     {
         _upgradeMenu.Hide();
         _mergeMenu.Hide();
 
         _heroListMenu.Display(true);
+    }
+
+    private void LoadEquipment()
+    {
+        if (_mainInventory == null || (_mainInventory != null && _mainInventory.EquipmentInventory.Equipment == null)) return; 
+        
+        foreach (Equipment equipment in _mainInventory.EquipmentInventory.Equipment)
+        {
+            if (equipment.isEquiped && !_equipmentInventory.Contains(equipment))
+            {
+                Equip(equipment);
+            }
+            else if (!_unequippedInventory.Equipment.Contains(equipment) && !_equipmentInventory.Contains(equipment))
+            {
+                _unequippedInventory.AddEquipment(equipment);
+            }
+        }
+
+        UpdateValues();
+        OnInventoryChange();
+    }
+
+    private int GetInventoryHeight()
+    {
+        int rows = _unequippedInventory.Equipment.Count / 6 + (_unequippedInventory.Equipment.Count % 6 > 0 ? 1 : 0);
+
+        return _grid.padding.top + _grid.padding.bottom + (int)(_grid.cellSize.y * rows) + (int)(_grid.spacing.y * rows);
     }
 }

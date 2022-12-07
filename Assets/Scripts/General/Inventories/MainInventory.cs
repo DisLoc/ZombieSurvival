@@ -1,4 +1,3 @@
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -23,13 +22,6 @@ public class MainInventory : MonoBehaviour
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
 
-    [Header("Test")]
-    [SerializeField] private bool _useBaseEquipment;
-    [SerializeField] private List<Equipment> _baseEquipment;
-
-    public bool UseBaseEquipment => _useBaseEquipment;
-    public List<Equipment> BaseEquipment => _baseEquipment;
-
     private void OnEnable()
     {
         _playerLevel.Initialize();
@@ -37,6 +29,8 @@ public class MainInventory : MonoBehaviour
         _coinInventory.Initialize();
         _gemsInventory.Initialize();
         _energyInventory.Initialize();
+
+        _equipmentInventory.Initialize();
 
         _materialsInventory = new EquipmentMaterialInventory();
 
@@ -53,60 +47,21 @@ public class MainInventory : MonoBehaviour
     [ContextMenu("Load data")]
     private void LoadData()
     {
-        _coinInventory.LoadData(Load(DataPath.CoinsInventory));
-        _gemsInventory.LoadData(Load(DataPath.GemsInvneotry));
-        _energyInventory.LoadData(Load(DataPath.EnergyInventory));
-        _equipmentInventory.LoadData(Load(DataPath.EquipmentInventory));
+        _coinInventory.LoadData(DataPath.Load(DataPath.CoinsInventory));
+        _gemsInventory.LoadData(DataPath.Load(DataPath.GemsInvneotry));
+        _energyInventory.LoadData(DataPath.Load(DataPath.EnergyInventory));
+        _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
+        _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
     }
 
     [ContextMenu("Save data")]
     private void SaveData()
     {
-        Save(DataPath.CoinsInventory, _coinInventory.SaveData());
-        Save(DataPath.GemsInvneotry, _gemsInventory.SaveData());
-        Save(DataPath.EnergyInventory, _energyInventory.SaveData());
-        Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
-    }
-
-    private void Save(string path, SerializableData data)
-    {
-        if (data == null) return;
-
-        if (File.Exists(path))
-        {
-            File.Delete(path);
-        }
-
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(path);
-
-        bf.Serialize(file, data);
-        file.Close();
-
-        if (_isDebug) Debug.Log("Data saved to " + path);
-    }
-
-    private SerializableData Load(string path)
-    {
-        if (File.Exists(path))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(path, FileMode.Open);
-
-            SerializableData data = (SerializableData)bf.Deserialize(file);
-
-            file.Close();
-
-            if (_isDebug) Debug.Log("Loaded data from " + path + ". " + data);
-
-            return data;
-        }
-        else
-        {
-            if (_isDebug) Debug.Log("No data to load from " + path);
-
-            return null;
-        }
+        DataPath.Save(DataPath.CoinsInventory, _coinInventory.SaveData());
+        DataPath.Save(DataPath.GemsInvneotry, _gemsInventory.SaveData());
+        DataPath.Save(DataPath.EnergyInventory, _energyInventory.SaveData());
+        DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
+        DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
     }
 
     [ContextMenu("Reset data")]
@@ -116,24 +71,40 @@ public class MainInventory : MonoBehaviour
         {
             File.Delete(DataPath.CoinsInventory);
             _coinInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset CoinsInventory");
         }
         
         if (File.Exists(DataPath.GemsInvneotry))
         {
             File.Delete(DataPath.GemsInvneotry);
             _gemsInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset GemsInvneotry");
         }
         
         if (File.Exists(DataPath.EnergyInventory))
         {
             File.Delete(DataPath.EnergyInventory);
             _energyInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset EnergyInventory");
         }
         
         if (File.Exists(DataPath.EquipmentInventory))
         {
             File.Delete(DataPath.EquipmentInventory);
             _equipmentInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset EquipmentInventory");
+        }
+        
+        if (File.Exists(DataPath.PlayerLevel))
+        {
+            File.Delete(DataPath.PlayerLevel);
+            _playerLevel.ResetData();
+
+            if (_isDebug) Debug.Log("Reset PlayerLevel");
         }
     }
     #endregion
@@ -279,6 +250,18 @@ public class MainInventory : MonoBehaviour
     private void SpendEnergy()
     {
         _energyInventory.Spend(new Currency(_energyInventory.CurrencyData, 10));
+    }
+
+    [ContextMenu("Add exp")]
+    private void AddExpirience()
+    {
+        _playerLevel.AddExp(426);
+    }
+
+    [ContextMenu("Add equipment")]
+    private void AddRandomEquipment()
+    {
+        _equipmentInventory.Add(_equipmentInventory.EquipmentList.GetRandomEquipment());
     }
     #endregion
 

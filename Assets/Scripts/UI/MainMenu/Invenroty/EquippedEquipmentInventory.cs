@@ -52,7 +52,6 @@ public class EquippedEquipmentInventory
 
         if (_equipment[equipment.EquipSlot] == null)
         {
-            equipment.Initialize();
             _equipment[equipment.EquipSlot] = equipment;
 
             return true;
@@ -71,5 +70,10 @@ public class EquippedEquipmentInventory
         }
 
         return false;
+    }
+
+    public bool Contains(Equipment equipment)
+    {
+        return _equipment.ContainsKey(equipment.EquipSlot) && _equipment[equipment.EquipSlot].Equals(equipment);
     }
 }

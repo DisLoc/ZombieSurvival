@@ -30,6 +30,8 @@ public class PlayerExpBar : FillBar
     /// </summary>
     public void UpdateLevel()
     {
+        if (_expirience == null) return;
+
         _maxFillValue = _expirience.ExpForLevel;
         _fillBar.maxValue = _maxFillValue;
         _levelText.text = ((int)_expirience.Value).ToString();

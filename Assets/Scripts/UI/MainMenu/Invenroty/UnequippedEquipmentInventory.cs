@@ -4,8 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class UnequippedEquipmentInventory
 {
-    [SerializeField] private EquipmentSlot _slotPrefab;
-    [SerializeField] private Transform _equipmentParent;
+    private EquipmentSlot _slotPrefab;
+    private Transform _equipmentParent;
 
     private InventoryMenu _menu;
     private List<Equipment> _equipment;
@@ -13,8 +13,10 @@ public class UnequippedEquipmentInventory
 
     public List<Equipment> Equipment => _equipment;
 
-    public void Initialize(InventoryMenu menu)
+    public UnequippedEquipmentInventory(EquipmentSlot slotPrefab, Transform equipmentParent, InventoryMenu menu)
     {
+        _slotPrefab = slotPrefab;
+        _equipmentParent = equipmentParent;
         _menu = menu;
 
         _equipment = new List<Equipment>();
@@ -28,27 +30,37 @@ public class UnequippedEquipmentInventory
             EquipmentSlot slot = Object.Instantiate(_slotPrefab, _equipmentParent);
 
             slot.Initialize(_menu.EquipmentTypesData, equipment);
-            slot.Button.onClick.RemoveAllListeners();
             slot.Button.onClick.AddListener(new UnityEngine.Events.UnityAction(() => _menu.OnItemClick(slot)));
 
             _equipment.Add(equipment);
             _slots.Add(slot);
+
+            UpdateInventory();
         }
     }
 
     public bool RemoveEquipment(Equipment equipment)
     {
-        if (equipment != null && _equipment.Contains(equipment))
+        if (equipment != null)
         {
             EquipmentSlot slot = _slots.Find(item => item.Equipment.Equals(equipment));
 
-            if (slot != null)
+            if (slot == null)
             {
-                _slots.Remove(slot);
-                Object.Destroy(slot.gameObject);
+                return false;
             }
 
-            return _equipment.Remove(equipment);
+            _slots.Remove(slot);
+            Object.Destroy(slot.gameObject);
+
+            bool removed = _equipment.Remove(equipment);
+           
+            if (removed) 
+            {
+                UpdateInventory();
+            }
+
+            return removed;
         }
         else return false;
     }
