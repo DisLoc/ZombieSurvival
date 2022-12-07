@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class EquipmentMaterialInventory
+public class EquipmentMaterialInventory : Inventory
 {
     private Dictionary<EquipSlot, int> _materials;
 
@@ -63,4 +63,55 @@ public class EquipmentMaterialInventory
 
         return _materials[materialSlot] >= requiredAmount;
     }
+
+    #region Serialization
+    public override SerializableData SaveData()
+    {
+        EquipmentMaterialsData data = new EquipmentMaterialsData();
+
+        data.Materials = _materials;
+
+        return data;
+    }
+
+    public override void LoadData(SerializableData data)
+    {
+        if (data == null) return;
+
+        if (data is EquipmentMaterialsData equipmentData)
+        {
+            _materials = new Dictionary<EquipSlot, int>();
+
+            _materials.Add(EquipSlot.Helmet, equipmentData.Materials[EquipSlot.Helmet]);
+            _materials.Add(EquipSlot.Armor, equipmentData.Materials[EquipSlot.Armor]);
+            _materials.Add(EquipSlot.Boots, equipmentData.Materials[EquipSlot.Boots]);
+            _materials.Add(EquipSlot.Weapon, equipmentData.Materials[EquipSlot.Weapon]);
+            _materials.Add(EquipSlot.Hands, equipmentData.Materials[EquipSlot.Hands]);
+            _materials.Add(EquipSlot.Belt, equipmentData.Materials[EquipSlot.Belt]);
+        }
+    }
+
+    public override void ResetData()
+    {
+        return;
+    }
+
+    [System.Serializable]
+    private class EquipmentMaterialsData : SerializableData
+    {
+        public Dictionary<EquipSlot, int> Materials;
+        public List<KeyValuePair<EquipSlot, int>> materials;
+
+        public EquipmentMaterialsData()
+        {
+            Materials = new Dictionary<EquipSlot, int>();
+            materials = new List<KeyValuePair<EquipSlot, int>>();
+        }
+
+        public void Add(KeyValuePair<EquipSlot, int> pair)
+        {
+            materials.Add(pair);
+        }
+    }
+    #endregion
 }

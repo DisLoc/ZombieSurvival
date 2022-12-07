@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: fb77d3d5525a9ed4e8df01aa7e9096c0, type: 3}
   _background: {fileID: 21300000, guid: 3e42da246f3e75f459494a84c72262e9, type: 3}
+  _marker: {fileID: 11400000, guid: e836291b2f6743f4cbe4f69bcb20ab75, type: 2}
   _validEquipment: 5

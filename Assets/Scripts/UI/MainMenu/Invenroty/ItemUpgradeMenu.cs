@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class ItemUpgradeMenu : UIMenu
 {
@@ -71,6 +72,8 @@ public class ItemUpgradeMenu : UIMenu
     private Equipment _equipment;
 
     public EquipmentTypesData EquipmentTypesData => _equipmentTypesData;
+
+    [Inject] private MainInventory _mainInventory;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
@@ -162,10 +165,12 @@ public class ItemUpgradeMenu : UIMenu
             _maxLevelTootlipText.enabled = false;
 
             _materialIcon.sprite = equipment.EquipmentData.EquipmentUpgrades.RequiredMaterial.Icon;
-            _materialCountText.text = equipment.CurrentUpgrade.UpgradeMaterials.RequiredMaterialAmount.ToString();
+            _materialCountText.text = _mainInventory.MaterialsInventory[equipment.EquipSlot].ToString() +
+                "/" + equipment.CurrentUpgrade.UpgradeMaterials.RequiredMaterialAmount.ToString();
 
             _currencyIcon.sprite = equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency.Icon;
-            _currencyCountText.text = equipment.CurrentUpgrade.UpgradeMaterials.RequiredCurrencyAmount.ToString();
+            _currencyCountText.text = _mainInventory.FindInventory(equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency).Total.ToString() +
+                "/" + equipment.CurrentUpgrade.UpgradeMaterials.RequiredCurrencyAmount.ToString();
         }
         #endregion
 
@@ -290,18 +295,28 @@ public class ItemUpgradeMenu : UIMenu
     {
         if (_equipment != null)
         {
-            /*
-            if (_equipment.Level.Value != _equipment.Level.MaxValue && MainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials))
+            if (_equipment.Level.Value != _equipment.Level.MaxValue && 
+                _mainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials, _equipment.EquipmentData))
             {
+                _mainInventory.Spend(_equipment.EquipmentData.EquipmentUpgrades.RequiredMaterial, 
+                    _equipment.CurrentUpgrade.UpgradeMaterials.RequiredMaterialAmount);
+
+                _mainInventory.Spend(new Currency(_equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency,
+                    _equipment.CurrentUpgrade.UpgradeMaterials.RequiredCurrencyAmount));
                 
+                _mainInventory.Spend(_equipment.EquipmentData.EquipmentUpgrades.RequiredEquipment,
+                    _equipment.CurrentUpgrade.UpgradeMaterials.RequiredEquipmentAmount);
+
+                _equipment.Level.LevelUp();
+
+                SetEquipment(_equipment);
+
+                UpdateInventory();
             }
-            */
-
-            _equipment.Level.LevelUp();
-
-            SetEquipment(_equipment);
-
-            UpdateInventory();
+            else
+            {
+                _mainMenu.ShowNotReadyMessage("Not enough resources!");
+            }
         }
     }
 
@@ -309,14 +324,18 @@ public class ItemUpgradeMenu : UIMenu
     {
         if (_equipment != null)
         {
-            /*
-            while (_equipment.Level.Value != _equipment.Level.MaxValue && MainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials))
+            if (_mainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials, _equipment.EquipmentData))
             {
-                OnUpgradeClick();
+                while (_equipment.Level.Value != _equipment.Level.MaxValue &&
+                                _mainInventory.EnoughResources(_equipment.CurrentUpgrade.UpgradeMaterials, _equipment.EquipmentData))
+                {
+                    OnUpgradeClick();
+                }
             }
-            */
-
-            UpdateInventory();
+            else
+            {
+                _mainMenu.ShowNotReadyMessage("Not enough resources!");
+            }
         }
     }
 

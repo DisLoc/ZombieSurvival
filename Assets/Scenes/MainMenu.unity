@@ -1079,6 +1079,17 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &2118132075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1016239970712936489, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+  m_PrefabInstance: {fileID: 1016239969130122022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d93619404353345898c6dc9ba463e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1016239969130122022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,6 +1097,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 699281668631418083, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Ads is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 957913380152214327, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_Name
+      value: ButtonText
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239968666173471, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1094,12 +1113,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1016239968918974264, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239968918974266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016239969304945712, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239969304945726, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _isDebug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016239969752244393, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
@@ -1113,6 +1140,10 @@ PrefabInstance:
     - target: {fileID: 1016239969909200494, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239969909200495, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016239970082230455, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_IsActive
@@ -1234,6 +1265,106 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Packages is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711440377570815529, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_Name
+      value: ReturnButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Packages is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741965304865567281, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Packages is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078559218676268418, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4536391401662769947, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -1266,9 +1397,181 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4920622767519557184, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Ads is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781897679579854291, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781897679579854291, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7781897679579854291, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Packages is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458952723290902305, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Feature is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793174980339271, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Feature is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758793175788672266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Packages is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084861271431250066, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2118132075}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowNotReadyMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Feature is not ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179384446695137152, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}

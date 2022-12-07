@@ -21,6 +21,7 @@ public class MainInventory : MonoBehaviour
     public CurrencyInventory GemsInventory => _gemsInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
+    public EquipmentMaterialInventory MaterialsInventory => _materialsInventory;
 
     private void OnEnable()
     {
@@ -52,6 +53,7 @@ public class MainInventory : MonoBehaviour
         _energyInventory.LoadData(DataPath.Load(DataPath.EnergyInventory));
         _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
         _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
+        _materialsInventory.LoadData(DataPath.Load(DataPath.MaterialsInventory));
     }
 
     [ContextMenu("Save data")]
@@ -62,6 +64,7 @@ public class MainInventory : MonoBehaviour
         DataPath.Save(DataPath.EnergyInventory, _energyInventory.SaveData());
         DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
         DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
+        DataPath.Save(DataPath.MaterialsInventory, _materialsInventory.SaveData());
     }
 
     [ContextMenu("Reset data")]
@@ -106,6 +109,14 @@ public class MainInventory : MonoBehaviour
 
             if (_isDebug) Debug.Log("Reset PlayerLevel");
         }
+        
+        if (File.Exists(DataPath.MaterialsInventory))
+        {
+            File.Delete(DataPath.MaterialsInventory);
+            //_materialsInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset MaterialsInventory");
+        }
     }
     #endregion
 
@@ -144,7 +155,7 @@ public class MainInventory : MonoBehaviour
         else return false;
     }
 
-    private CurrencyInventory FindInventory(CurrencyData data)
+    public CurrencyInventory FindInventory(CurrencyData data)
     {
         CurrencyInventory inventory;
 
@@ -262,6 +273,12 @@ public class MainInventory : MonoBehaviour
     private void AddRandomEquipment()
     {
         _equipmentInventory.Add(_equipmentInventory.EquipmentList.GetRandomEquipment());
+    }
+    
+    [ContextMenu("Add equipment material")]
+    private void AddRandomEquipmentMaterial()
+    {
+        _materialsInventory.Add(_equipmentInventory.EquipmentList.GetRandomMaterial().ValidEquipment, 5);
     }
     #endregion
 

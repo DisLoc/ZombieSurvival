@@ -9,6 +9,7 @@ public static class DataPath
     public static readonly string PlayerLevel = _defaultPath + "/PlayerLevel.dat";
 
     public static readonly string EquipmentInventory = _defaultPath + "/EquipmentInventory.dat";
+    public static readonly string MaterialsInventory = _defaultPath + "/MaterialsInventory.dat";
 
     public static readonly string CoinsInventory = _defaultPath + "/CoinsInventory.dat";
     public static readonly string GemsInvneotry = _defaultPath + "/GemsInventory.dat";

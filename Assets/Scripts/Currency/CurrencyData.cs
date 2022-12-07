@@ -3,9 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ZombieSurvival/Currency/Currency data", fileName = "New currency data")]
 public class CurrencyData : ScriptableObject
 {
-    [SerializeField] private Sprite _icon;
-    [SerializeField] private Sprite _background;
-    [SerializeField] private UpgradeMarker _marker;
+    [SerializeField] protected Sprite _icon;
+    [SerializeField] protected Sprite _background;
+    [SerializeField] protected UpgradeMarker _marker;
 
     public Sprite Icon => _icon;
     public Sprite Background => _background;

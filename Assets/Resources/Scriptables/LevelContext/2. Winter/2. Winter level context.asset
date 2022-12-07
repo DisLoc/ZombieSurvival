@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelName: Winter
   _levelNumber: 2
-  _levelIcon: {fileID: 21300000, guid: be83772dab61d2247b7b8682acdb45d6, type: 3}
+  _levelIcon: {fileID: 21300000, guid: 024d2542cb21a6246afad7f72534b9c2, type: 3}
   _levelLenght: 15
   _levelRewards:
     _breakpoint1:
@@ -411,9 +411,9 @@ MonoBehaviour:
       _maxAbilitiesRewardCount: 0
       _hasRandomMaterialReward: 1
       _specificMaterialReward: {fileID: 0}
-      _materialsCount: 1
+      _materialsCount: 2
       _hasRandomEquipmentReward: 1
-      _specificRandomEquipmentRarity: 0
+      _specificRandomEquipmentRarity: 1
       _specificEquipmentReward: {fileID: 0}
   _enemyUpgradeBreakpoints:
     _breakpoints:
