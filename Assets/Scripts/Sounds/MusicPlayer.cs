@@ -20,6 +20,7 @@ public class MusicPlayer : MonoBehaviour
             return;
         }
 
+        StopAllCoroutines();
         StartCoroutine(WaitForNewTrack(clip.length));
     }
 

@@ -64,7 +64,7 @@ public class EquipmentList : ScriptableObject
     }
 
     [ContextMenu("Set IDs")]
-    private void SetIDs()
+    public void SetIDs()
     {
         int id = 0;
         foreach(Equipment equipment in _allEquipment)

@@ -30,7 +30,21 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 30
-      _requiredTime: 270
+      _requiredTime: 180
+      _reward:
+        _expirience: 275
+        _currencyRewards:
+        - _currencyValue: 650
+          _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+        - _currencyValue: 7
+          _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+        _hasRandomMaterialReward: 1
+        _specificMaterialReward: {fileID: 0}
+        _materialsCount: 1
+        _hasRandomEquipmentReward: 1
+        _specificRandomEquipmentRarity: 0
+        _specificEquipmentReward: {fileID: 0}
+        _equipmentCount: 0
       wasClaimed: 0
     _breakpoint2:
       _name: 60%
@@ -45,7 +59,21 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 60
-      _requiredTime: 540
+      _requiredTime: 360
+      _reward:
+        _expirience: 275
+        _currencyRewards:
+        - _currencyValue: 900
+          _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+        - _currencyValue: 12
+          _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+        _hasRandomMaterialReward: 1
+        _specificMaterialReward: {fileID: 0}
+        _materialsCount: 1
+        _hasRandomEquipmentReward: 1
+        _specificRandomEquipmentRarity: 0
+        _specificEquipmentReward: {fileID: 0}
+        _equipmentCount: 0
       wasClaimed: 0
     _breakpoint3:
       _name: 100%
@@ -60,7 +88,21 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 100
-      _requiredTime: 900
+      _requiredTime: 600
+      _reward:
+        _expirience: 275
+        _currencyRewards:
+        - _currencyValue: 1200
+          _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+        - _currencyValue: 17
+          _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+        _hasRandomMaterialReward: 0
+        _specificMaterialReward: {fileID: 11400000, guid: 1761e8830e5a34a448864888413b8225, type: 2}
+        _materialsCount: 3
+        _hasRandomEquipmentReward: 0
+        _specificRandomEquipmentRarity: 1
+        _specificEquipmentReward: {fileID: 2565584387524054931, guid: bbd2e161081ba664298e0ac8164ed7c2, type: 3}
+        _equipmentCount: 1
       wasClaimed: 0
   _levelEnvironment: {fileID: 11400000, guid: 818102e4090ec2e4a81f6e41f13417ea, type: 2}
   _startCrystalsStats: {fileID: 11400000, guid: b0a861d57680a164e9da284feaf0bbbf, type: 2}
@@ -429,7 +471,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 10
-      _upgrade: {fileID: 11400000, guid: 84d32d3058ccfbc48888f69be8129b71, type: 2}
+      _upgrade: {fileID: 11400000, guid: d4b0d5cfcc457ca4a88bdfd9dec4ee9e, type: 2}
     - _name: 20-30
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -442,7 +484,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 20
-      _upgrade: {fileID: 11400000, guid: 591e8652b08ac6a4095e785bb62e0d29, type: 2}
+      _upgrade: {fileID: 11400000, guid: d1704179744433f4bac0c43a87127f8a, type: 2}
     - _name: 30-60
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -455,7 +497,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 30
-      _upgrade: {fileID: 11400000, guid: 264bcc088b786d44a9cf2550317a00a2, type: 2}
+      _upgrade: {fileID: 11400000, guid: 09fa32a0500bfbb47aefc6614ca5c82a, type: 2}
     - _name: 60-79
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -468,7 +510,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 60
-      _upgrade: {fileID: 11400000, guid: 27e6f7d6ce9311b47ab40c8c4fc4382f, type: 2}
+      _upgrade: {fileID: 11400000, guid: ff83560751d38e64abb4515f75bb97e3, type: 2}
     - _name: 80-99
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -481,7 +523,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 80
-      _upgrade: {fileID: 11400000, guid: b536790cb0fd76e4497c62fce47f461d, type: 2}
+      _upgrade: {fileID: 11400000, guid: b6cf25e9396707848afc13b9b0a1dd52, type: 2}
     - _name: 100
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -494,7 +536,7 @@ MonoBehaviour:
         _sound: {fileID: 0}
         _playbackCooldown: 0.5
       _requiredProgress: 100
-      _upgrade: {fileID: 11400000, guid: 2a53766870fdb644f91adfb647fefd35, type: 2}
+      _upgrade: {fileID: 11400000, guid: 065b7e92e48fa134ea771c4e111f26d8, type: 2}
   _playerUpgrades: []
   _enemiesUpgrades: []
   wasPassed: 0

@@ -1754,18 +1754,6 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 4246385460055207514}
-    - target: {fileID: 1143281581607805392, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8705098645566937113}
-    - target: {fileID: 1143281581632644945, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8705098645566937113}
-    - target: {fileID: 1436720279691444162, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8705098645566937113}
     - target: {fileID: 3312998616652320640, guid: 6a7c14db02c666940a36c3d60f1ed624, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

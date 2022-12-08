@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -32,6 +31,7 @@ public class MainInventory : MonoBehaviour
         _energyInventory.Initialize();
 
         _equipmentInventory.Initialize();
+        _equipmentInventory.EquipmentList.SetIDs();
 
         _materialsInventory = new EquipmentMaterialInventory();
 
@@ -119,6 +119,40 @@ public class MainInventory : MonoBehaviour
         }
     }
     #endregion
+
+    public void Add(Reward reward)
+    {
+        _playerLevel.AddExp(reward.Expirience);
+
+        foreach(Currency currency in reward.CurrencyRewards)
+        {
+            Add(currency);
+        }
+
+        if (reward.HasRandomMaterialReward || reward.SpecificMaterialReward == null)
+        {
+            for (int i = 0; i < reward.MaterialsCount; i++)
+            {
+                Add(_equipmentInventory.EquipmentList.GetRandomMaterial());
+            }
+        }
+        else
+        {
+            Add(reward.SpecificMaterialReward, reward.MaterialsCount);
+        }
+
+        if (reward.HasRandomEquipmentReward || reward.SpecificEquipmentReward == null)
+        {
+            for (int i = 0; i < reward.EquipmentCount; i++)
+            {
+                Add(_equipmentInventory.EquipmentList.GetRandomEquipment(reward.EquipmentRarity));
+            }
+        }
+        else
+        {
+            Add(reward.SpecificEquipmentReward, reward.EquipmentCount);
+        }
+    }
 
     #region Currencies
     public bool EnoughResources(Currency currency)
@@ -284,6 +318,9 @@ public class MainInventory : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        SaveData();
+
         PlayerPrefs.SetInt("Loaded", 0);
+        PlayerPrefs.Save();
     }
 }

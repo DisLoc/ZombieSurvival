@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioPool : MonoBehaviour, ISoundPlayHandler, IGameStartHandler
+public class AudioPool : MonoBehaviour, ISoundPlayHandler//, IGameStartHandler
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -53,6 +53,8 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler, IGameStartHandler
 
         _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
         _currentPlayers = new List<AudioPlayer>();
+
+        OnGameStart();
     }
 
     public void OnSoundPlay(SoundType sound)

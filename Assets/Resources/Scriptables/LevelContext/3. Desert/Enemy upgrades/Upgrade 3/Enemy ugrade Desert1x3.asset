@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: Enemy ugrade Desert1x3
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 0
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: 34afef6e443c1374a8198704b4822aad, type: 2}
+  - {fileID: 11400000, guid: 0f2772fd0f841094b9e69383166fbdfa, type: 2}
+  - {fileID: 11400000, guid: 57758724b1fa7ad44a7aa2ff6c1ac041, type: 2}

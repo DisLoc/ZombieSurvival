@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: Enemy ugrade Winter1x4
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 0
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: 89bf83d201b76bd4d8e56c9548a4d6de, type: 2}
+  - {fileID: 11400000, guid: cbdc9802911f67b40a50dfe56ee6bfe6, type: 2}
+  - {fileID: 11400000, guid: 11d4af72f8ca17042ba911faaa26edd6, type: 2}

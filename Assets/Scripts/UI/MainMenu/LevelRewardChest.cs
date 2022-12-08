@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class LevelRewardChest : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class LevelRewardChest : MonoBehaviour
 
     private BattleMenu _menu;
     private Reward _reward;
+    private LevelBreakpoint _breakpoint;
 
     public Reward Reward => _reward;
+
+    [Inject] private MainInventory _mainInventory;
 
     public void Initialize(BattleMenu menu, string unlockText, LevelBreakpoint breakpoint)
     {
@@ -22,6 +26,7 @@ public class LevelRewardChest : MonoBehaviour
         _unlockTimeText.text = unlockText;
 
         _reward = breakpoint.Reward;
+        _breakpoint = breakpoint;
 
         _button.interactable = breakpoint.IsReached;
 
@@ -49,6 +54,9 @@ public class LevelRewardChest : MonoBehaviour
         _unlockImage.gameObject.SetActive(false);
         _chestImage.sprite = _onOpenSprite;
         _button.interactable = false;
+
+        _mainInventory.Add(_reward);
+        _breakpoint.wasClaimed = true;
 
         _menu.OnRewardClick(this);
     }

@@ -73,4 +73,10 @@ public class LoadingScreen : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    [ContextMenu("Reset data")]
+    private void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
