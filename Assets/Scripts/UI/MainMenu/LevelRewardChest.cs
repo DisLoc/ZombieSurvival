@@ -18,8 +18,6 @@ public class LevelRewardChest : MonoBehaviour
 
     public Reward Reward => _reward;
 
-    [Inject] private MainInventory _mainInventory;
-
     public void Initialize(BattleMenu menu, string unlockText, LevelBreakpoint breakpoint)
     {
         _menu = menu;
@@ -27,7 +25,7 @@ public class LevelRewardChest : MonoBehaviour
 
         _reward = breakpoint.Reward;
         _breakpoint = breakpoint;
-
+        
         _button.interactable = breakpoint.IsReached;
 
         if (breakpoint.wasClaimed)
@@ -55,7 +53,6 @@ public class LevelRewardChest : MonoBehaviour
         _chestImage.sprite = _onOpenSprite;
         _button.interactable = false;
 
-        _mainInventory.Add(_reward);
         _breakpoint.wasClaimed = true;
 
         _menu.OnRewardClick(this);

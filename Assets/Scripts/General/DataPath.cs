@@ -30,7 +30,7 @@ public static class DataPath
         bf.Serialize(file, data);
         file.Close();
 
-        Debug.Log("Data saved to " + path);
+        //Debug.Log("Data saved to " + path);
     }
 
     public static SerializableData Load(string path)
@@ -44,13 +44,13 @@ public static class DataPath
 
             file.Close();
 
-            Debug.Log("Loaded data from " + path + ". " + data);
+            //Debug.Log("Loaded data from " + path + ". " + data);
 
             return data;
         }
         else
         {
-            Debug.Log("No data to load from " + path);
+            //Debug.Log("No data to load from " + path);
 
             return null;
         }

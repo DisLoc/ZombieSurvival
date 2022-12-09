@@ -40,6 +40,7 @@ public class Equipment : MonoBehaviour
         }
     }
 
+    public Upgrade StatsUpgrade => new Upgrade(_equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value).UpgradeData);
     public EquipmentUpgrade CurrentUpgrade => _level.Value != _level.MaxValue ? _equipmentData.EquipmentUpgrades.GetUpgrade((int)_level.Value + 1) : null;
 
     public Level Level => _level;

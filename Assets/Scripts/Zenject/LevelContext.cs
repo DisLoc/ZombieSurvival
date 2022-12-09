@@ -38,8 +38,6 @@ public sealed class LevelContext : ScriptableObject
     [SerializeField] private List<Upgrade> _playerUpgrades;
     [SerializeField] private List<Upgrade> _enemiesUpgrades;
 
-    private List<Upgrade> _equipmentUpgrades;
-
     #region Fields
     public string LevelName => _levelName;
     public int LevelNumber => _levelNumber;
@@ -153,56 +151,15 @@ public sealed class LevelContext : ScriptableObject
     }
     #endregion
 
-    public List<Upgrade> PlayerUpgrades
-    {
-        get
-        {
-            List<Upgrade> upgrades = new List<Upgrade>();
-
-            upgrades.AddRange(_playerUpgrades);
-            upgrades.AddRange(_equipmentUpgrades);
-
-            return upgrades;
-        }
-    }
+    public List<Upgrade> PlayerUpgrades => _playerUpgrades;
     public List<Upgrade> EnemiesUpgrades => _enemiesUpgrades;
     #endregion
-
-    public Weapon PlayerBaseWeapon { get; private set; }
 
     [HideInInspector] public bool wasPassed;
     [HideInInspector] public int maxSurvivalTime;
 
-    public void Initialize(LevelBuilder builderPrefab, EquippedEquipmentInventory equipmentInventory)
+    public void Initialize(LevelBuilder builderPrefab)
     {
-        _equipmentUpgrades = new List<Upgrade>();
-
-        PlayerBaseWeapon = null;
-
-        if (equipmentInventory != null)
-        {
-            foreach (Equipment equipment in equipmentInventory.GetEquipment())
-            {
-                if (equipment != null)
-                {
-                    Upgrade upgrade = equipment.EquipUpgrade;
-
-                    if (upgrade != null)
-                    {
-                        _equipmentUpgrades.Add(upgrade);
-                    }
-
-                    if (equipment as WeaponEquipment != null)
-                    {
-                        PlayerBaseWeapon = (equipment as WeaponEquipment).BaseWeapon;
-                    }
-
-                    _equipmentUpgrades.AddRange(equipment.RarityUpgrades);
-                }
-                else continue;
-            }
-        }
-
         LevelBuilder = Instantiate(builderPrefab);
         LevelBuilder.Construct(_levelEnvironment);
     }

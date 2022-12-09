@@ -1129,6 +1129,14 @@ PrefabInstance:
       propertyPath: _isDebug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1016239969304945726, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _requiredCurrency._currencyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 47eea740e48c66248bbbf0c9df313bea, type: 2}
+    - target: {fileID: 1016239969304945726, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _requiredCurrency._currencyValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239969498899477, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_Spacing.x
       value: 28
@@ -1432,6 +1440,38 @@ PrefabInstance:
     - target: {fileID: 4609227718772390816, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054201328253415, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.x
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054201328253415, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.y
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054201691762295, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.x
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054201691762295, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.y
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054202195338320, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.x
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054202195338320, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.y
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054202405452527, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.x
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621054202405452527, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _defaultSize.y
+      value: 184
       objectReference: {fileID: 0}
     - target: {fileID: 4920622767519557184, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument

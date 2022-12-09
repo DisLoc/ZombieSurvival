@@ -29,8 +29,6 @@ public class Player : CharacterBase
 
     protected List<Upgrade> _upgrades;
 
-    [Inject] protected LevelContext _levelContext;
-
     public override CharacterStats Stats => _stats;
 
     public PlayerUpgrades LevelUpgrades => _levelUpgrades;
@@ -38,17 +36,41 @@ public class Player : CharacterBase
     public CurrencyInventory CoinInventory => _coinInventory;
     public Vector3 CameraDeltaPos => _moveController.CameraDeltaPos;
 
+
+    [Inject] protected LevelContext _levelContext;
     [Inject] protected AbilityGiver _abilityGiver;
+    [Inject] protected MainInventory _mainInventory;
 
     public void Initialize()
     {
         transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
+        List<Upgrade> equipmentUpgrades = new List<Upgrade>();
+
         if (!_useBaseWeapon)
         {
-            if (_levelContext.PlayerBaseWeapon != null)
+            List<Equipment> equip = _mainInventory.EquipmentInventory.Equipment.FindAll(item => item.isEquiped == true);
+            
+            if (equip.Count > 0)
             {
-                _stats.SetBaseWeapon(_levelContext.PlayerBaseWeapon);
+                foreach(Equipment equipment in equip)
+                {
+                    if (equipment != null)
+                    {
+                        if (equipment is WeaponEquipment weapon)
+                        {
+                            _stats.SetBaseWeapon(weapon.BaseWeapon);
+                        }
+
+                        equipmentUpgrades.Add(equipment.StatsUpgrade);
+
+                        foreach(Upgrade upgrade in equipment.RarityUpgrades)
+                        {
+                            equipmentUpgrades.Add(upgrade);
+                        }
+                    }
+                    else continue;
+                }
             }
             else
             {
@@ -87,15 +109,20 @@ public class Player : CharacterBase
 
         GetAbility(_stats.BaseWeapon);
 
-        foreach (Upgrade upgrade in _levelContext.PlayerUpgrades)
-        {
-            GetUpgrade(upgrade);
-        }
-
         PlayerUpgrade currentUpgrade = _levelUpgrades.GetUpgrade(1);
 
         GetUpgrade(new Upgrade(currentUpgrade.DamageData));
         GetUpgrade(new Upgrade(currentUpgrade.HealthData));
+
+        foreach (Upgrade upgrade in _levelContext.PlayerUpgrades)
+        {
+            GetUpgrade(upgrade);
+        }
+        
+        foreach (Upgrade upgrade in equipmentUpgrades)
+        {
+            GetUpgrade(upgrade);
+        }
 
         _hpCanvas?.OnFixedUpdate();
     }

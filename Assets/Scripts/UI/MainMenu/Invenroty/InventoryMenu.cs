@@ -198,7 +198,6 @@ public sealed class InventoryMenu : UIMenu
         _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
         UpdateValues();
-        OnInventoryChange();
         SetAnimatorBools();
     }
 
@@ -220,15 +219,9 @@ public sealed class InventoryMenu : UIMenu
             _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
             UpdateValues();
-            OnInventoryChange();
             SetAnimatorBools();
         }
         else return;
-    }
-
-    public void OnInventoryChange()
-    {
-        _contextInstaller.SetEquipment(_equipmentInventory);
     }
 
     public void OnMergeClick()
@@ -264,7 +257,6 @@ public sealed class InventoryMenu : UIMenu
         }
 
         UpdateValues();
-        OnInventoryChange();
     }
 
     private int GetInventoryHeight()

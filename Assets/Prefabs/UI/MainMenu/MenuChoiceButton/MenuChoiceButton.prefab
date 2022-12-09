@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 3481954681141137242}
   - component: {fileID: 1953883293088061261}
   - component: {fileID: 4936771484928027963}
+  - component: {fileID: 5637135154929527536}
   m_Layer: 5
   m_Name: MenuChoiceButton
   m_TagString: Untagged
@@ -377,6 +378,22 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.05
+--- !u!114 &5637135154929527536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668548604360154238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 8668548604360154233}
+  _defaultResolution: {x: 1920, y: 1080}
+  _defaultSize: {x: 184, y: 184}
+  _freezeRatio: 1
 --- !u!1 &8858303051872919451
 GameObject:
   m_ObjectHideFlags: 0

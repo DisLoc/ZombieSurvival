@@ -829,6 +829,11 @@ MonoBehaviour:
   _failedColor: {r: 0.14509805, g: 0.78823537, b: 1, a: 1}
   _previousLevelButton: {fileID: 8705098645336606816}
   _nextLevelButton: {fileID: 8705098646692237247}
+  _currencyIcon: {fileID: 363508160752450384}
+  _currencyCostText: {fileID: 494343139497596185}
+  _requiredCurrency:
+    _currencyValue: 0
+    _currencyData: {fileID: 0}
   _levelProgress: {fileID: 6787881495547599167}
   _chest1: {fileID: 2659573346784253854}
   _chest2: {fileID: 4090731017475541388}
@@ -1458,6 +1463,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ba54b3dfd59ff4db45c5a27bab8bf7, type: 3}
+--- !u!114 &363508160752450384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2990415892920866136, guid: 91ba54b3dfd59ff4db45c5a27bab8bf7, type: 3}
+  m_PrefabInstance: {fileID: 3209773329034636808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &494343139497596185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3050948647937522449, guid: 91ba54b3dfd59ff4db45c5a27bab8bf7, type: 3}
+  m_PrefabInstance: {fileID: 3209773329034636808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8705098645052011968 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6072504652005301192, guid: 91ba54b3dfd59ff4db45c5a27bab8bf7, type: 3}

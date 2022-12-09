@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 public class BattleMenu : UIMenu
 {
@@ -15,10 +16,14 @@ public class BattleMenu : UIMenu
     [SerializeField] private string _onFailedText;
     [SerializeField] private Color _failedColor;
 
-
     [Space(5)]
     [SerializeField] private Button _previousLevelButton;
     [SerializeField] private Button _nextLevelButton;
+
+    [Space(5)]
+    [SerializeField] private Image _currencyIcon;
+    [SerializeField] private Text _currencyCostText;
+    [SerializeField] private Currency _requiredCurrency;
 
     [SerializeField] private BattleMenuLevelProgress _levelProgress;
     [SerializeField] private LevelRewardChest _chest1;
@@ -29,6 +34,8 @@ public class BattleMenu : UIMenu
     [SerializeField] private LevelContextInstaller _levelInstaller;
 
     private LevelContext _currentLevel;
+
+    [Inject] private MainInventory _mainInventory;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
@@ -47,16 +54,21 @@ public class BattleMenu : UIMenu
 
     public void StartGame()
     {
-        _levelInstaller.SetLevel(_currentLevel);
+        if (_mainInventory.EnergyInventory.Spend(_requiredCurrency))
+        {
+            _levelInstaller.SetLevel(_currentLevel);
 
-        SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            _mainMenu.ShowNotReadyMessage("Not enough resources");
+        }
     }
 
     public void OnRewardClick(LevelRewardChest chest)
     {
-        Reward reward = chest.Reward;
-        
-        // TODO add reward to inventory
+        _mainInventory.Add(chest.Reward);
     }
 
     public void OnPreviousLevelClick()
@@ -101,6 +113,9 @@ public class BattleMenu : UIMenu
         {
             _survivalTimeText.gameObject.SetActive(false);
         }
+
+        _currencyIcon.sprite = _requiredCurrency.CurrencyData.Icon;
+        _currencyCostText.text = _requiredCurrency.CurrencyValue.ToString();
 
         if (breakpoints.Count != 3)
         {
