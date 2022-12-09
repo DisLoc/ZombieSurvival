@@ -15,6 +15,9 @@ public static class DataPath
     public static readonly string GemsInvneotry = _defaultPath + "/GemsInventory.dat";
     public static readonly string EnergyInventory = _defaultPath + "/EnergyInventory.dat";
 
+    public static readonly string Supplies = _defaultPath + "/Supplies.dat";
+    public static readonly string PassedLevels = _defaultPath + "/PassedLevels.dat";
+
     public static void Save(string path, SerializableData data)
     {
         if (data == null) return;

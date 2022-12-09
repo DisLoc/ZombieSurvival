@@ -258,6 +258,11 @@ public class MainInventory : MonoBehaviour
     }
     #endregion
 
+    public void TripForSupplies()
+    {
+        
+    }
+
     #region test
     [ContextMenu("Add coins")]
     private void AddCoins()

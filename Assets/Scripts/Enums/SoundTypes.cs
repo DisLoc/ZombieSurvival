@@ -12,5 +12,7 @@
     LevelUp,
     GameOver,
     LevelPassed,
-    BreakpointEvent
+    BreakpointEvent,
+    LockedClick,
+    GetReward
 }

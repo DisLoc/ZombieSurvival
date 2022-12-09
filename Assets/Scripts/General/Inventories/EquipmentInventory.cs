@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class EquipmentInventory : Inventory
 {
+    [SerializeField] private Transform _parent;
     [SerializeField] private EquipmentList _equipmentList;
 
     private List<Equipment> _equipment;
@@ -103,7 +104,7 @@ public class EquipmentInventory : Inventory
 
                 if (equipment != null)
                 {
-                    Equipment loadedEquipment = Object.Instantiate(equipment);
+                    Equipment loadedEquipment = Object.Instantiate(equipment, _parent);
 
                     loadedEquipment.Initialize();
                     loadedEquipment.Level.SetValue(equipmentData[i].level);

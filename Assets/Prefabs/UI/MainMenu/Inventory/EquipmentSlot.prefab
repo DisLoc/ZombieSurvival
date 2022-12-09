@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3342076435260466281}
   - component: {fileID: 3260672668585323185}
   - component: {fileID: 2719070389527482541}
+  - component: {fileID: 2421218449157458711}
   m_Layer: 5
   m_Name: EquipmentSlot
   m_TagString: Untagged
@@ -188,6 +189,21 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.05
+--- !u!114 &2421218449157458711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079362978771252448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 9138630125029840809}
+  _defaultResolution: {x: 1920, y: 1080}
+  _defaultSize: {x: 190, y: 190}
 --- !u!1 &4020365308127110326
 GameObject:
   m_ObjectHideFlags: 0

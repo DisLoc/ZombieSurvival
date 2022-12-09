@@ -10,15 +10,22 @@ public class ScaleFreezer : MonoBehaviour
     private void OnEnable()
     {
         Vector2 currentResolution = new Vector2(Screen.currentResolution.height, Screen.currentResolution.width);
-
-        float deltaX = _transformToScale.rect.height / _defaultSize.x;
-        float deltaY = _transformToScale.rect.width / _defaultSize.y;
+        
+        float width = _transformToScale.rect.width;
+        float height = _transformToScale.rect.height;
+        
+        float deltaX = _defaultSize.x / height;
+        float deltaY = _defaultSize.y / width;
 
         if (deltaX != deltaY)
         {
             float min = deltaX > deltaY ? deltaY : deltaX;
 
-            _transformToScale.rect.Set(0, 0, _defaultSize.y * min, _defaultSize.x * min);
+            _transformToScale.sizeDelta = new Vector2
+                (
+                    _defaultSize.x * min -_transformToScale.rect.width,
+                    _defaultSize.y * min - _transformToScale.rect.height
+                );
         }
     }
 }

@@ -439,6 +439,7 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: d9417a419404c3d4c8a321a74a12599f, type: 2}
   _equipmentInventory:
+    _parent: {fileID: 749952935}
     _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
   _playerLevel:
     _isDebug: 0
@@ -454,8 +455,6 @@ MonoBehaviour:
     _baseExpForLevelUp: 1000
     _levelMultiplier: 0.5
     _expBar: {fileID: 571071802}
-  _useBaseEquipment: 0
-  _baseEquipment: []
 --- !u!4 &749952935
 Transform:
   m_ObjectHideFlags: 0

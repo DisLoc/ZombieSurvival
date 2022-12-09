@@ -832,8 +832,8 @@ MonoBehaviour:
   _currencyIcon: {fileID: 363508160752450384}
   _currencyCostText: {fileID: 494343139497596185}
   _requiredCurrency:
-    _currencyValue: 0
-    _currencyData: {fileID: 0}
+    _currencyValue: 5
+    _currencyData: {fileID: 11400000, guid: 47eea740e48c66248bbbf0c9df313bea, type: 2}
   _levelProgress: {fileID: 6787881495547599167}
   _chest1: {fileID: 2659573346784253854}
   _chest2: {fileID: 4090731017475541388}
