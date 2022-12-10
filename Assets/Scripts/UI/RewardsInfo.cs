@@ -26,9 +26,9 @@ public class RewardsInfo : UIMenu
 
         foreach(Reward reward in rewards)
         {
-            if (reward == null)
+            if (reward == null && reward.RewardAmount == 0)
             {
-                Debug.Log("Missing reward!");
+                if (_isDebug) Debug.Log("Missing reward!");
 
                 continue;
             }

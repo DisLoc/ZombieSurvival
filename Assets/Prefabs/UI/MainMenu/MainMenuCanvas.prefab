@@ -3245,18 +3245,18 @@ PrefabInstance:
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2648694826917046806}
+      objectReference: {fileID: 1248577680295438403}
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ShowPopupMessage
+      value: GetGift
       objectReference: {fileID: 0}
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ButtonSoundPlayer, Assembly-CSharp
+      value: SpecialGift, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -3264,7 +3264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8381223599735711197, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8680774431272849549, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_IsActive
@@ -3404,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 4487849723107876677}
     - target: {fileID: 8705098645566937113, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: _isDebug
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8705098646692237244, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3484,11 +3484,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd707d3623e11c4e9881d89977b8e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2648694826917046806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5915157259246622257, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
+--- !u!114 &1248577680295438403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7459939066273092708, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
   m_PrefabInstance: {fileID: 8562699442543262759}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139ae3eeee26f24438e782929f275bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2776934892806897306 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5790914802861572797, guid: 08483c3fa3c660b499a0d4312ae099b7, type: 3}
