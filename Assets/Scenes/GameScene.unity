@@ -433,12 +433,21 @@ MonoBehaviour:
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 1289386379}
+    _baseValue:
+      _currencyValue: 1000
+      _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
   _gemsInventory:
     _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
     _counter: {fileID: 1289386378}
+    _baseValue:
+      _currencyValue: 50
+      _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
   _energyInventory:
     _currencyData: {fileID: 11400000, guid: 47eea740e48c66248bbbf0c9df313bea, type: 2}
     _counter: {fileID: 1289386377}
+    _baseValue:
+      _currencyValue: 30
+      _currencyData: {fileID: 11400000, guid: 47eea740e48c66248bbbf0c9df313bea, type: 2}
     _energy:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: d9417a419404c3d4c8a321a74a12599f, type: 2}

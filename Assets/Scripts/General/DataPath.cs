@@ -16,6 +16,7 @@ public static class DataPath
     public static readonly string EnergyInventory = DefaultPath + "EnergyInventory.dat";
 
     public static readonly string Supplies = DefaultPath + "Supplies.dat";
+    public static readonly string SpecialGift = DefaultPath + "SpecialGift.dat";
 
     public static void Save(string path, SerializableData data)
     {

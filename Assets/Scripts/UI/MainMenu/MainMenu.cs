@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private SettingsMenu _settings;
 
     [Space(5)]
+    [SerializeField] private RewardsInfo _rewardsInfo;
     [SerializeField] private PopupMessage _message;
      
     protected virtual void OnEnable()
@@ -30,6 +31,7 @@ public class MainMenu : MonoBehaviour
         }
 
         _settings?.Initialize();
+        _rewardsInfo?.Hide();
         _message?.Hide();
     }
 
@@ -76,7 +78,13 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void ShowNotReadyMessage(string message)
+    public void ShowRewards(List<Reward> rewards)
+    {
+        _rewardsInfo.ShowReward(rewards);
+        _rewardsInfo.Display(true);
+    }
+
+    public void ShowPopupMessage(string message)
     {
         _message.ShowMessage(message);
     }

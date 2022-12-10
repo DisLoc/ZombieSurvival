@@ -13,10 +13,10 @@ public class LevelRewardChest : MonoBehaviour
     [SerializeField] private Sprite _onOpenSprite;
 
     private BattleMenu _menu;
-    private Reward _reward;
+    private LevelReward _reward;
     private LevelBreakpoint _breakpoint;
 
-    public Reward Reward => _reward;
+    public LevelReward Reward => _reward;
 
     public void Initialize(BattleMenu menu, string unlockText, LevelBreakpoint breakpoint)
     {

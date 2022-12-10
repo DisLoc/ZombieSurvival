@@ -6,6 +6,8 @@ public class CurrencyInventory : Inventory
     [SerializeField] protected CurrencyData _currencyData;
     [SerializeField] protected CurrencyCounter _counter;
 
+    [SerializeField] protected Currency _baseValue;
+
     protected int _total;
 
     public CurrencyData CurrencyData => _currencyData;
@@ -32,12 +34,16 @@ public class CurrencyInventory : Inventory
 
     public virtual void Add(Currency currency)
     {
-        _total += currency.CurrencyValue;
-
-        if (_counter != null)
+        if (currency.CurrencyData.Equals(_currencyData))
         {
-            _counter.UpdateCounter();
+            _total += currency.CurrencyValue;
+
+            if (_counter != null)
+            {
+                _counter.UpdateCounter();
+            }
         }
+        else return;
     }
 
     public virtual bool Spend(Currency currency)
@@ -58,7 +64,7 @@ public class CurrencyInventory : Inventory
 
     public bool IsEnough(Currency currency)
     {
-        return currency.CurrencyValue <= _total;
+        return currency.CurrencyValue <= _total && currency.CurrencyData.Equals(_currencyData);
     }
 
     public void GetUpgrade(Upgrade upgrade)
@@ -92,7 +98,14 @@ public class CurrencyInventory : Inventory
 
     public override void LoadData(SerializableData data)
     {
-        if (data == null) return;
+        if (data == null)
+        {
+            _total = _baseValue.CurrencyValue;
+
+            _counter.UpdateCounter();
+
+            return;
+        }
 
         _total = (data as CurrencyInventoryData).total;
 

@@ -76,13 +76,13 @@ public class BattleMenu : UIMenu
         }
         else
         {
-            _mainMenu.ShowNotReadyMessage("Not enough resources");
+            _mainMenu.ShowPopupMessage("Not enough resources");
         }
     }
 
     public void OnRewardClick(LevelRewardChest chest)
     {
-        _mainInventory.Add(chest.Reward);
+        _mainMenu.ShowRewards(chest.Reward.Rewards);
     }
 
     public void OnPreviousLevelClick()

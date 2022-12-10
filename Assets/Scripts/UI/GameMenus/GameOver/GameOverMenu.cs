@@ -77,13 +77,13 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
         }
         else
         {
-            _mainMenu.ShowNotReadyMessage("Not enough resources!");
+            _mainMenu.ShowPopupMessage("Not enough resources!");
         }
     }
 
     public void OnAdReanimation()
     {
-        _mainMenu.ShowNotReadyMessage("Ad is not ready");
+        _mainMenu.ShowPopupMessage("Ad is not ready");
     }
 
     public void OnCloseReanimation()

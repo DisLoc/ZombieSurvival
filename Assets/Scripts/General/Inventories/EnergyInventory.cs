@@ -48,7 +48,15 @@ public class EnergyInventory : CurrencyInventory
     #region Serialization
     public override void LoadData(SerializableData data)
     {
-        if (data == null) return;
+        if (data == null)
+        {
+            _energy.SetValue(_baseValue.CurrencyValue);
+            _total = (int)_energy.Value;
+
+            _counter.UpdateCounter();
+
+            return;
+        }
 
         _energy.SetValue((data as CurrencyInventoryData).total);
         _total = (int)_energy.Value;

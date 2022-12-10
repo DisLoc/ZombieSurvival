@@ -430,6 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5954097752538035728}
+  - component: {fileID: 2219086996072820045}
   m_Layer: 5
   m_Name: OfflineRewards
   m_TagString: Untagged
@@ -458,6 +459,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2219086996072820045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4733269320519139864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 5954097752538035728}
+  _defaultSize: {x: 327, y: 240}
 --- !u!1 &5915157259246622257
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +482,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 665944790304492746}
+  - component: {fileID: 3313887175517156470}
+  - component: {fileID: 7459939066273092708}
   m_Layer: 5
   m_Name: Gifts
   m_TagString: Untagged
@@ -495,6 +512,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3313887175517156470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915157259246622257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 665944790304492746}
+  _defaultSize: {x: 329, y: 241}
+--- !u!114 &7459939066273092708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915157259246622257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139ae3eeee26f24438e782929f275bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6853226425596072257
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,10 +881,6 @@ MonoBehaviour:
   _chest1: {fileID: 2659573346784253854}
   _chest2: {fileID: 4090731017475541388}
   _chest3: {fileID: 4090731017516764941}
-  _levels:
-  - {fileID: 11400000, guid: 0b0a064a571b97f429e0089c7f16140f, type: 2}
-  - {fileID: 11400000, guid: 39dbc1fbcc0d5344ca5c9abf95222d18, type: 2}
-  - {fileID: 11400000, guid: 1d9359e2e7e8f284d9c2ecbe38ef197f, type: 2}
   _levelInstaller: {fileID: 11400000, guid: f1a0a527d17273b4088f95203b210a64, type: 2}
 --- !u!1001 &2412484861007940317
 PrefabInstance:

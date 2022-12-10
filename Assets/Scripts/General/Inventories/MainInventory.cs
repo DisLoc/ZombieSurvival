@@ -25,6 +25,7 @@ public class MainInventory : MonoBehaviour
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
     public EquipmentMaterialInventory MaterialsInventory => _materialsInventory;
+    public PlayerExpLevel PlayerLevel => _playerLevel;
 
     private void OnEnable()
     {
@@ -132,46 +133,19 @@ public class MainInventory : MonoBehaviour
             if (_isDebug) Debug.Log("Reset MaterialsInventory");
         }
 
+        if (File.Exists(DataPath.SpecialGift))
+        {
+            File.Delete(DataPath.SpecialGift);
+
+            if (_isDebug) Debug.Log("Reset SpecialGift");
+        }
+
         foreach (LevelContext context in _levels)
         {
             context.ResetLevel();
         }
     }
     #endregion
-
-    public void Add(Reward reward)
-    {
-        _playerLevel.AddExp(reward.Expirience);
-
-        foreach(Currency currency in reward.CurrencyRewards)
-        {
-            Add(currency);
-        }
-
-        if (reward.HasRandomMaterialReward || reward.SpecificMaterialReward == null)
-        {
-            for (int i = 0; i < reward.MaterialsCount; i++)
-            {
-                Add(_equipmentInventory.EquipmentList.GetRandomMaterial());
-            }
-        }
-        else
-        {
-            Add(reward.SpecificMaterialReward, reward.MaterialsCount);
-        }
-
-        if (reward.HasRandomEquipmentReward || reward.SpecificEquipmentReward == null)
-        {
-            for (int i = 0; i < reward.EquipmentCount; i++)
-            {
-                Add(_equipmentInventory.EquipmentList.GetRandomEquipment(reward.EquipmentRarity));
-            }
-        }
-        else
-        {
-            Add(reward.SpecificEquipmentReward, reward.EquipmentCount);
-        }
-    }
 
     #region Currencies
     public bool EnoughResources(Currency currency)
@@ -197,13 +171,19 @@ public class MainInventory : MonoBehaviour
         CurrencyInventory inventory = FindInventory(currency.CurrencyData);
 
         inventory.Add(currency);
+
+        SaveData();
     }
 
     public bool Spend(Currency currency)
     {
         if (EnoughResources(currency, out CurrencyInventory inventory))
         {
-            return inventory.Spend(currency);
+            inventory.Spend(currency);
+
+            SaveData();
+
+            return true;
         }
         else return false;
     }
@@ -257,6 +237,8 @@ public class MainInventory : MonoBehaviour
         {
             _equipmentInventory.Add(equipment);
         }
+
+        SaveData();
     }
 
     public void Add(EquipmentMaterial material, int count = 1)
@@ -264,16 +246,36 @@ public class MainInventory : MonoBehaviour
         if (_isDebug) Debug.Log("Add material: " + material.name);
 
         _materialsInventory.Add(material.ValidEquipment, count);
+
+        SaveData();
     }
     
     public bool Spend(Equipment equipment, int count = 1)
     {
-        return _equipmentInventory.Spend(equipment, count);
+        bool spended = _equipmentInventory.Spend(equipment, count);
+        
+        if (spended)
+        {
+            SaveData();
+
+            return true;
+        }
+
+        return false;
     }
     
     public bool Spend(EquipmentMaterial material, int count = 1)
     {
-        return _materialsInventory.Remove(material.ValidEquipment, count);
+        bool spended = _materialsInventory.Remove(material.ValidEquipment, count);
+        
+        if (spended)
+        {
+            SaveData();
+
+            return true;
+        }
+
+        return false; 
     }
     #endregion
 

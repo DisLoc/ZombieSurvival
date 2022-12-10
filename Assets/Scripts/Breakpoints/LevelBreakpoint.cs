@@ -5,7 +5,7 @@ public class LevelBreakpoint : Breakpoint
 {
     [Tooltip("Time in seconds")]
     [SerializeField] private int _requiredTime;
-    [SerializeField] private Reward _reward;
+    [SerializeField] private LevelReward _reward;
 
     [HideInInspector] public bool wasClaimed;
 
@@ -13,7 +13,7 @@ public class LevelBreakpoint : Breakpoint
     /// Time in seconds
     /// </summary>
     public int RequiredTime => _requiredTime;
-    public Reward Reward => _reward;
+    public LevelReward Reward => _reward;
 
     protected LevelBreakpoint(LevelBreakpoint breakpoint) : base(breakpoint)
     {

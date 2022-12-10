@@ -33,19 +33,31 @@ MonoBehaviour:
       _requiredProgress: 30
       _requiredTime: 360
       _reward:
-        _expirience: 300
+        _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
+        _rewardAmount: 1
+        _expirience:
+          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardAmount: 350
         _currencyRewards:
-        - _currencyValue: 800
+        - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+          _rewardAmount: 1500
           _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-        - _currencyValue: 5
+        - _rewardIcon: {fileID: 21300000, guid: d463b0a5042b49647b74041ae1dd2259, type: 3}
+          _rewardAmount: 10
           _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
-        _hasRandomMaterialReward: 1
-        _specificMaterialReward: {fileID: 0}
-        _materialsCount: 1
-        _hasRandomEquipmentReward: 1
-        _specificRandomEquipmentRarity: 0
-        _specificEquipmentReward: {fileID: 0}
-        _equipmentCount: 0
+        _materialReward:
+          _rewardIcon: {fileID: 21300000, guid: 1e2d6f834d6bf424b81210186a3b90a0, type: 3}
+          _rewardAmount: 1
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomMaterialReward: 1
+          _specificMaterialReward: {fileID: 0}
+        _equipmentReward:
+          _rewardIcon: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+          _rewardAmount: 0
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomEquipmentReward: 0
+          _randomEquipmentRarity: 2
+          _specificEquipmentReward: {fileID: 0}
       wasClaimed: 0
     _breakpoint2:
       _name: 60%
@@ -62,19 +74,31 @@ MonoBehaviour:
       _requiredProgress: 60
       _requiredTime: 720
       _reward:
-        _expirience: 300
+        _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
+        _rewardAmount: 1
+        _expirience:
+          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardAmount: 350
         _currencyRewards:
-        - _currencyValue: 1050
+        - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+          _rewardAmount: 1500
           _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-        - _currencyValue: 5
+        - _rewardIcon: {fileID: 21300000, guid: d463b0a5042b49647b74041ae1dd2259, type: 3}
+          _rewardAmount: 10
           _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
-        _hasRandomMaterialReward: 1
-        _specificMaterialReward: {fileID: 0}
-        _materialsCount: 1
-        _hasRandomEquipmentReward: 1
-        _specificRandomEquipmentRarity: 0
-        _specificEquipmentReward: {fileID: 0}
-        _equipmentCount: 0
+        _materialReward:
+          _rewardIcon: {fileID: 21300000, guid: 1e2d6f834d6bf424b81210186a3b90a0, type: 3}
+          _rewardAmount: 2
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomMaterialReward: 1
+          _specificMaterialReward: {fileID: 0}
+        _equipmentReward:
+          _rewardIcon: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+          _rewardAmount: 0
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomEquipmentReward: 0
+          _randomEquipmentRarity: 0
+          _specificEquipmentReward: {fileID: 0}
       wasClaimed: 0
     _breakpoint3:
       _name: 100%
@@ -91,19 +115,31 @@ MonoBehaviour:
       _requiredProgress: 100
       _requiredTime: 1200
       _reward:
-        _expirience: 300
+        _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
+        _rewardAmount: 1
+        _expirience:
+          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardAmount: 350
         _currencyRewards:
-        - _currencyValue: 1500
+        - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+          _rewardAmount: 1500
           _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-        - _currencyValue: 5
+        - _rewardIcon: {fileID: 21300000, guid: d463b0a5042b49647b74041ae1dd2259, type: 3}
+          _rewardAmount: 10
           _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
-        _hasRandomMaterialReward: 1
-        _specificMaterialReward: {fileID: 0}
-        _materialsCount: 5
-        _hasRandomEquipmentReward: 1
-        _specificRandomEquipmentRarity: 1
-        _specificEquipmentReward: {fileID: 0}
-        _equipmentCount: 1
+        _materialReward:
+          _rewardIcon: {fileID: 21300000, guid: 1e2d6f834d6bf424b81210186a3b90a0, type: 3}
+          _rewardAmount: 5
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomMaterialReward: 1
+          _specificMaterialReward: {fileID: 0}
+        _equipmentReward:
+          _rewardIcon: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+          _rewardAmount: 1
+          _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+          _hasRandomEquipmentReward: 1
+          _randomEquipmentRarity: 0
+          _specificEquipmentReward: {fileID: 0}
       wasClaimed: 0
   _levelEnvironment: {fileID: 11400000, guid: 3a15ebfb36d788f448503e665f6b5faf, type: 2}
   _startCrystalsStats: {fileID: 11400000, guid: e64eaa4a784a2fc4d9939955e24c38df, type: 2}

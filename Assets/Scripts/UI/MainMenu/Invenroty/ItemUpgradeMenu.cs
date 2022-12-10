@@ -315,7 +315,7 @@ public class ItemUpgradeMenu : UIMenu
             }
             else
             {
-                _mainMenu.ShowNotReadyMessage("Not enough resources!");
+                _mainMenu.ShowPopupMessage("Not enough resources!");
             }
         }
     }
@@ -334,7 +334,7 @@ public class ItemUpgradeMenu : UIMenu
             }
             else
             {
-                _mainMenu.ShowNotReadyMessage("Not enough resources!");
+                _mainMenu.ShowPopupMessage("Not enough resources!");
             }
         }
     }
