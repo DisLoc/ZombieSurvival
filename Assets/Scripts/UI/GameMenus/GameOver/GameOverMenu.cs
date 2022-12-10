@@ -94,8 +94,6 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
 
     public void OnContinueGameOver()
     {
-        (_mainMenu as GameMenu).SaveCurrency();
-
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }

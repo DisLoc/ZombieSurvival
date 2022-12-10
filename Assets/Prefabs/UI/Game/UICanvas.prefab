@@ -131,6 +131,7 @@ MonoBehaviour:
   _settings: {fileID: 6112040066837615982}
   _message: {fileID: 9165185076554311012}
   _currencyCounter: {fileID: 1469835889124051267}
+  _survivalTimeCounter: {fileID: 9167745375494244065}
 --- !u!1001 &891288085332423722
 PrefabInstance:
   m_ObjectHideFlags: 0

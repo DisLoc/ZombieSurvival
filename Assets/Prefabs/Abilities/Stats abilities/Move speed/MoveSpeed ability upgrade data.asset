@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
   m_Name: MoveSpeed ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: 
   _repeatingUpgrade:
-    _description: +20% MS
+    _description: +10% MS
     _upgrade: {fileID: 11400000, guid: b63f1238d8f419541b624c7a87f14779, type: 2}
     _requiredLevel: 0

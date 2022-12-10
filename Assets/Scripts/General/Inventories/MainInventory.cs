@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using UnityEngine;
 
@@ -7,6 +9,7 @@ public class MainInventory : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Inventories settings")]
+    [SerializeField] private List<LevelContext> _levels;
     [SerializeField] private CurrencyInventory _coinInventory;
     [SerializeField] private CurrencyInventory _gemsInventory;
     [SerializeField] private EnergyInventory _energyInventory;
@@ -16,6 +19,7 @@ public class MainInventory : MonoBehaviour
 
     private EquipmentMaterialInventory _materialsInventory;
 
+    public List<LevelContext> Levels => _levels;
     public CurrencyInventory CoinInventory => _coinInventory;
     public CurrencyInventory GemsInventory => _gemsInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
@@ -54,10 +58,15 @@ public class MainInventory : MonoBehaviour
         _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
         _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
         _materialsInventory.LoadData(DataPath.Load(DataPath.MaterialsInventory));
+
+        foreach (LevelContext context in _levels)
+        {
+            context.LoadData();
+        }
     }
 
     [ContextMenu("Save data")]
-    private void SaveData()
+    public void SaveData()
     {
         DataPath.Save(DataPath.CoinsInventory, _coinInventory.SaveData());
         DataPath.Save(DataPath.GemsInvneotry, _gemsInventory.SaveData());
@@ -65,6 +74,11 @@ public class MainInventory : MonoBehaviour
         DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
         DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
         DataPath.Save(DataPath.MaterialsInventory, _materialsInventory.SaveData());
+        
+        foreach (LevelContext context in _levels)
+        {
+            context.SaveData();
+        }
     }
 
     [ContextMenu("Reset data")]
@@ -116,6 +130,11 @@ public class MainInventory : MonoBehaviour
             //_materialsInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset MaterialsInventory");
+        }
+
+        foreach (LevelContext context in _levels)
+        {
+            context.ResetLevel();
         }
     }
     #endregion
@@ -260,7 +279,7 @@ public class MainInventory : MonoBehaviour
 
     public void TripForSupplies()
     {
-        
+        DataPath.Save(DataPath.Supplies, new SuppliesData());
     }
 
     #region test
@@ -324,8 +343,11 @@ public class MainInventory : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveData();
+    }
 
-        PlayerPrefs.SetInt("Loaded", 0);
-        PlayerPrefs.Save();
+    [System.Serializable]
+    private class SuppliesData : SerializableData 
+    { 
+
     }
 }

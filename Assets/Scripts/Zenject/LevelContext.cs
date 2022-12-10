@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ZombieSurvival/Level/LevelContext", fileName = "New level context")]
@@ -8,6 +9,7 @@ public sealed class LevelContext : ScriptableObject
     [SerializeField] private string _levelName;
     [SerializeField] private int _levelNumber;
     [SerializeField] private Sprite _levelIcon;
+    [SerializeField] private string _levelPath = "";
 
     [Space(5)]
     [Tooltip("Level lenght in minutes")]
@@ -164,10 +166,53 @@ public sealed class LevelContext : ScriptableObject
         LevelBuilder.Construct(_levelEnvironment);
     }
 
+    public void SaveData()
+    {
+        LevelContextData data = new LevelContextData();
+
+        data.maxSurvivalTime = maxSurvivalTime;
+        data.wasPassed = wasPassed;
+
+        foreach(var breakpoint in _levelRewards.Breakpoints)
+        {
+            data.Add(breakpoint);
+        }
+
+        DataPath.Save(DataPath.DefaultPath + _levelPath, data);
+    }
+
+    public void LoadData()
+    {
+        LevelContextData data = DataPath.Load(DataPath.DefaultPath + _levelPath) as LevelContextData;
+
+        if (data == null) return;
+
+        wasPassed = data.wasPassed;
+        maxSurvivalTime = data.maxSurvivalTime;
+
+        if (data.breakpoints.Count != _levelRewards.Breakpoints.Count)
+        {
+            Debug.Log("Loading data error!");
+
+            return;
+        }
+
+        for (int i = 0; i < data.breakpoints.Count; i++)
+        {
+            _levelRewards.Breakpoints[i].SetReached(data.breakpoints[i].isReached);
+            _levelRewards.Breakpoints[i].wasClaimed = data.breakpoints[i].wasClaimed;
+        }
+    }
+
     #region DEBUG
     [ContextMenu("Reset level")]
-    private void ResetLevel()
+    public void ResetLevel()
     {
+        if (File.Exists(DataPath.DefaultPath + _levelPath))
+        {
+            File.Delete(DataPath.DefaultPath + _levelPath);
+        }
+
         wasPassed = false;
         maxSurvivalTime = -1;
 
@@ -203,4 +248,35 @@ public sealed class LevelContext : ScriptableObject
         }
     }
     #endregion
+
+    [System.Serializable]
+    private class LevelContextData : SerializableData
+    {
+        public bool wasPassed;
+        public int maxSurvivalTime;
+
+        public List<LevelBreakpointData> breakpoints;
+
+        public LevelContextData()
+        {
+            breakpoints = new List<LevelBreakpointData>();
+        }
+
+        public void Add(LevelBreakpoint breakpoint)
+        {
+            LevelBreakpointData data = new LevelBreakpointData();
+
+            data.isReached = breakpoint.IsReached;
+            data.wasClaimed = breakpoint.wasClaimed;
+
+            breakpoints.Add(data);
+        }
+
+        [System.Serializable]
+        public class LevelBreakpointData 
+        {
+            public bool isReached;
+            public bool wasClaimed;
+        }
+    }
 }

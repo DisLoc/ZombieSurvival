@@ -426,6 +426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
+  _levels:
+  - {fileID: 11400000, guid: 0b0a064a571b97f429e0089c7f16140f, type: 2}
+  - {fileID: 11400000, guid: 39dbc1fbcc0d5344ca5c9abf95222d18, type: 2}
+  - {fileID: 11400000, guid: 1d9359e2e7e8f284d9c2ecbe38ef197f, type: 2}
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 1289386379}

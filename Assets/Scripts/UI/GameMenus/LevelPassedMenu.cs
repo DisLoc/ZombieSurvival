@@ -40,7 +40,7 @@ public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
         _totalKilledText.text = _enemyCounter.TotalKilled.ToString();
         _goldGainedText.text = _currencyCounter.TotalGained.ToString();
 
-        (_mainMenu as GameMenu).SaveCurrency();
+        (_mainMenu as GameMenu).SaveLevel();
 
         _sounds.PlaySound(SoundTypes.LevelPassed);
     }

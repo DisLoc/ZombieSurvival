@@ -4,7 +4,9 @@ using Zenject;
 public class GameMenu : MainMenu
 {
     [SerializeField] private CurrencyCounter _currencyCounter;
+    [SerializeField] private SurvivalTimeCounter _survivalTimeCounter;
 
+    [Inject] private LevelContext _levelContext;
     [Inject] private MainInventory _mainInventory;
 
     public override void Display(UIMenu tab)
@@ -30,9 +32,12 @@ public class GameMenu : MainMenu
         }
     }
 
-    public void SaveCurrency()
+    public void SaveLevel()
     {
         _mainInventory.Add(new Currency(_currencyCounter.CurrencyData, _currencyCounter.TotalGained));
+
+        if ((int)_survivalTimeCounter.SurvivalTime > _levelContext.maxSurvivalTime)
+            _levelContext.maxSurvivalTime = (int)_survivalTimeCounter.SurvivalTime;
     }
 
     private void StopTime()

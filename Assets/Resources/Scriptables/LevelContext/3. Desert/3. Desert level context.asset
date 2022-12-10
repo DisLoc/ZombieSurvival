@@ -15,6 +15,7 @@ MonoBehaviour:
   _levelName: Desert
   _levelNumber: 3
   _levelIcon: {fileID: 21300000, guid: b5f8bf03cfe816445be37efe347afa4b, type: 3}
+  _levelPath: Desert1.dat
   _levelLenght: 20
   _levelRewards:
     _breakpoint1:

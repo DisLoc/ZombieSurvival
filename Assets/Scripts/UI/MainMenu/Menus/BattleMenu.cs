@@ -30,8 +30,9 @@ public class BattleMenu : UIMenu
     [SerializeField] private LevelRewardChest _chest2;
     [SerializeField] private LevelRewardChest _chest3;
 
-    [SerializeField] private List<LevelContext> _levels;
+    [Space(5)]
     [SerializeField] private LevelContextInstaller _levelInstaller;
+    private List<LevelContext> _levels;
 
     private LevelContext _currentLevel;
 
@@ -43,13 +44,26 @@ public class BattleMenu : UIMenu
 
         _levelProgress.Initialize();
 
+        _levels = _mainInventory.Levels;
+
         LoadLevels();
         UpdatePreview();
     }
 
     private void LoadLevels()
     {
-        _currentLevel = _levels[0];
+        LevelContext lastPassed = _levels[0];
+
+        if (lastPassed.wasPassed)
+        {
+            foreach(LevelContext levelContext in _levels)
+            {
+                if (levelContext.wasPassed) lastPassed = levelContext;
+                else break;
+            }
+        }
+
+        _currentLevel = lastPassed;
     }
 
     public void StartGame()
