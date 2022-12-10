@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 9084948793552245635}
   - component: {fileID: 2699393491320256789}
   - component: {fileID: 5812047438911495239}
+  - component: {fileID: 2968774296626372905}
   m_Layer: 5
   m_Name: PlayerInventory
   m_TagString: Untagged
@@ -402,10 +403,10 @@ RectTransform:
   m_Father: {fileID: 3585472609976998170}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.034447383}
+  m_AnchorMin: {x: 0, y: 0.035653032}
   m_AnchorMax: {x: 1, y: 0.2422237}
-  m_AnchoredPosition: {x: 0, y: 0.07006836}
-  m_SizeDelta: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.09503174, y: 0.57910156}
+  m_SizeDelta: {x: 0.035137177, y: 0.93908334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2699393491320256789
 CanvasRenderer:
@@ -445,6 +446,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2968774296626372905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076422256466284743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 9084948793552245635}
+  _defaultSize: {x: 1080, y: 340}
 --- !u!1 &1858197580511670459
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +472,8 @@ GameObject:
   - component: {fileID: 4188707992988327661}
   - component: {fileID: 7582412076922323845}
   - component: {fileID: 7006126139969386406}
+  - component: {fileID: 2108435700933426836}
+  - component: {fileID: 4363805959528617910}
   m_Layer: 5
   m_Name: RefreshButton
   m_TagString: Untagged
@@ -481,9 +498,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31014815, y: 0.2422237}
-  m_AnchorMax: {x: 0.7182963, y: 0.3716711}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.71643823, y: 0.3716711}
+  m_AnchoredPosition: {x: 0.58688354, y: 0.25830078}
+  m_SizeDelta: {x: 0.3489418, y: -1.1097164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4188707992988327661
 CanvasRenderer:
@@ -566,7 +583,63 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7582412076922323845}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4949642981656056744}
+        m_TargetAssemblyTypeName: AbilityGiver, Assembly-CSharp
+        m_MethodName: OnRerollClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2108435700933426836}
+        m_TargetAssemblyTypeName: ButtonSoundPlayer, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2108435700933426836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858197580511670459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979cb1b33c5c58e4eb1b1bebd8dc69bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+    _sounds:
+    - _soundType: 6
+      _mixerType: 1
+      _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
+      _playbackCooldown: 1
+--- !u!114 &4363805959528617910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858197580511670459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 8890380396015567303}
+  _defaultSize: {x: 440, y: 210}
 --- !u!1 &2800629683386759333
 GameObject:
   m_ObjectHideFlags: 0
