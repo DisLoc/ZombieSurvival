@@ -429,6 +429,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1612209133025724176, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: _rewards._spawnChances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612209133025724176, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: _rewards._spawnChances.Array.data[0]._object._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+    - target: {fileID: 1612209133025724176, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: _rewards._spawnChances.Array.data[1]._object._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+    - target: {fileID: 1612209133025724176, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: _rewards._spawnChances.Array.data[0]._spawnChance._statData
+      value: 
+      objectReference: {fileID: 11400000, guid: d2c0ed1cedfe10840ba3deb3c4df401b, type: 2}
     - target: {fileID: 2387985622862862824, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -573,6 +589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8759702829722871809, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: m_Text
+      value: You will get [Rare] or [Excellent] equipment
+      objectReference: {fileID: 0}
     - target: {fileID: 9061000038315307966, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -627,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 50f83b79165d4bd4baab8c0a9845a740, type: 3}
+    - target: {fileID: 1612209133025724176, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
+      propertyPath: _reward._randomEquipmentRarity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2387985622862862824, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
       propertyPath: m_SizeDelta.x
       value: -0.000022888
@@ -789,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8759702829722871809, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
       propertyPath: m_Text
-      value: Able to get [Excellent], [Rare], [Epic] or [SSR quality] equipment
+      value: Able to get [Rare], [Excellent], [Epic] or [Superior] equipment
       objectReference: {fileID: 0}
     - target: {fileID: 9061000038315307966, guid: 35e6cdeb070edc840ac83d6bbb7fc0e9, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -369,6 +369,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 742ae5901a4d209428764a5437677350, type: 3}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[1]._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[2]._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: d463b0a5042b49647b74041ae1dd2259, type: 3}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._currencyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c00ba53629440040b9f11659238dde3, type: 2}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[1]._currencyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[1]._rewardAmount
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[2]._currencyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+    - target: {fileID: 3485724514669910144, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
+      propertyPath: _currencyRewards.Array.data[2]._rewardAmount
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3693147173966982369, guid: 8e57add1c59034e4e9c350e355c9d784, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.9774481
@@ -613,9 +653,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1289844950732625735}
     m_Modifications:
+    - target: {fileID: 2187215221350082643, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897633763515666491, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222352362670414808, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 1000000
+      objectReference: {fileID: 0}
     - target: {fileID: 4447244585499580592, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035338492289833471, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152790460531246561, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5530412933762280230, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -629,9 +689,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gems
       objectReference: {fileID: 0}
+    - target: {fileID: 7044692057097824385, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: m_Text
+      value: $ 19.99
+      objectReference: {fileID: 0}
     - target: {fileID: 7046120044611577408, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.5000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061611479604005420, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
+      propertyPath: _currencyRewards.Array.data[0]._rewardAmount
+      value: 40000
       objectReference: {fileID: 0}
     - target: {fileID: 7922046806800672074, guid: e2dcf8e7020f4ac4c97ec942a8ce1873, type: 3}
       propertyPath: m_Pivot.x

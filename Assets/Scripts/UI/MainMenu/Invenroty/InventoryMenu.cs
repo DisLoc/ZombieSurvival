@@ -176,6 +176,7 @@ public sealed class InventoryMenu : UIMenu
         _healthText.text = totalHP.ToString();
 
         _unequippedInventory.UpdateInventory();
+        _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
     }
 
     public void Equip(Equipment equipment, bool displayDefault = true)
@@ -195,8 +196,6 @@ public sealed class InventoryMenu : UIMenu
         _unequippedInventory.RemoveEquipment(equipment);
         slot.SetSlot(equipment);
 
-        _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
-
         UpdateValues();
         SetAnimatorBools();
     }
@@ -215,8 +214,6 @@ public sealed class InventoryMenu : UIMenu
             equipment.isEquiped = false;
 
             slot.SetSlot(null);
-
-            _unequippedInventoryTransform.sizeDelta = new Vector2(0, GetInventoryHeight());
 
             UpdateValues();
             SetAnimatorBools();
@@ -261,8 +258,8 @@ public sealed class InventoryMenu : UIMenu
 
     private int GetInventoryHeight()
     {
-        int rows = _unequippedInventory.Equipment.Count / 6 + (_unequippedInventory.Equipment.Count % 6 > 0 ? 1 : 0);
+        int rows = _unequippedInventory.Equipment.Count / 5 + (_unequippedInventory.Equipment.Count % 5 > 0 ? 1 : 0);
 
-        return _grid.padding.top + _grid.padding.bottom + (int)(_grid.cellSize.y * rows) + (int)(_grid.spacing.y * rows);
+        return _grid.padding.top + _grid.padding.bottom + (int)_grid.cellSize.y * rows + (int)_grid.spacing.y * rows;
     }
 }

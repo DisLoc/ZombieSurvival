@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 2560854963775675086}
   - component: {fileID: 1462353630713478486}
   - component: {fileID: 7899035924468022108}
+  - component: {fileID: 3499864168380852160}
   - component: {fileID: 8023400679856406696}
   m_Layer: 5
   m_Name: LimitedRewardPackage
@@ -506,6 +507,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.8
+--- !u!114 &3499864168380852160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759049379705418429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edc662e56df1fb4380d395345721904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8023400679856406696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,9 +598,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2537024, y: 0.07086206}
-  m_AnchorMax: {x: 1, y: 0.31854698}
+  m_AnchorMax: {x: 0.97586685, y: 0.31854698}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.000008583069}
+  m_SizeDelta: {x: -0.0000047683716, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7465260994711296808
 CanvasRenderer:

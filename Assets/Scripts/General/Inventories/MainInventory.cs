@@ -12,6 +12,7 @@ public class MainInventory : MonoBehaviour
     [SerializeField] private List<LevelContext> _levels;
     [SerializeField] private CurrencyInventory _coinInventory;
     [SerializeField] private CurrencyInventory _gemsInventory;
+    [SerializeField] private CurrencyInventory _keysInventory;
     [SerializeField] private EnergyInventory _energyInventory;
     [SerializeField] private EquipmentInventory _equipmentInventory;
 
@@ -22,6 +23,7 @@ public class MainInventory : MonoBehaviour
     public List<LevelContext> Levels => _levels;
     public CurrencyInventory CoinInventory => _coinInventory;
     public CurrencyInventory GemsInventory => _gemsInventory;
+    public CurrencyInventory KeysInventory => _keysInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
     public EquipmentMaterialInventory MaterialsInventory => _materialsInventory;
@@ -55,6 +57,7 @@ public class MainInventory : MonoBehaviour
     {
         _coinInventory.LoadData(DataPath.Load(DataPath.CoinsInventory));
         _gemsInventory.LoadData(DataPath.Load(DataPath.GemsInvneotry));
+        _keysInventory.LoadData(DataPath.Load(DataPath.KeysInventory));
         _energyInventory.LoadData(DataPath.Load(DataPath.EnergyInventory));
         _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
         _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
@@ -71,6 +74,7 @@ public class MainInventory : MonoBehaviour
     {
         DataPath.Save(DataPath.CoinsInventory, _coinInventory.SaveData());
         DataPath.Save(DataPath.GemsInvneotry, _gemsInventory.SaveData());
+        DataPath.Save(DataPath.KeysInventory, _keysInventory.SaveData());
         DataPath.Save(DataPath.EnergyInventory, _energyInventory.SaveData());
         DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
         DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
@@ -100,7 +104,15 @@ public class MainInventory : MonoBehaviour
 
             if (_isDebug) Debug.Log("Reset GemsInvneotry");
         }
-        
+
+        if (File.Exists(DataPath.KeysInventory))
+        {
+            File.Delete(DataPath.KeysInventory);
+            _keysInventory.ResetData();
+
+            if (_isDebug) Debug.Log("Reset KeysInventory");
+        }
+
         if (File.Exists(DataPath.EnergyInventory))
         {
             File.Delete(DataPath.EnergyInventory);
@@ -170,7 +182,7 @@ public class MainInventory : MonoBehaviour
     {
         CurrencyInventory inventory = FindInventory(currency.CurrencyData);
 
-        inventory.Add(currency);
+        inventory?.Add(currency);
 
         SaveData();
     }
@@ -203,6 +215,10 @@ public class MainInventory : MonoBehaviour
         else if (data.Equals(_energyInventory.CurrencyData))
         {
             inventory = _energyInventory;
+        }
+        else if (data.Equals(_keysInventory.CurrencyData))
+        {
+            inventory = _keysInventory;
         }
         else
         {

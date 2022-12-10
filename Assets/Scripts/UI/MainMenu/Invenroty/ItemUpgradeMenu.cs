@@ -284,10 +284,12 @@ public class ItemUpgradeMenu : UIMenu
         if (_equipment.isEquiped)
         {
             (_parentMenu as InventoryMenu).Unequip(_equipment);
+            _equipUnequipButtonText.text = "Equip";
         }
         else
         {
             (_parentMenu as InventoryMenu).Equip(_equipment);
+            _equipUnequipButtonText.text = "Unequip";
         }
     }
 

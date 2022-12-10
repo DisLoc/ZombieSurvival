@@ -78,5 +78,37 @@ public class UnequippedEquipmentInventory
                 Object.Destroy(slot);
             }
         }
+
+        Sort();
+    }
+
+    public void Sort() // buble sort...
+    {
+        // TODO normal sorting
+
+        List<Equipment> equipment = new List<Equipment>();
+
+        for (int i = 0; i < _slots.Count; i++)
+        {
+            equipment.Add(_slots[i].Equipment);
+        }
+
+        for (int i = _slots.Count - 1; i > 0; i--)
+        {
+            for (int j = i; j > 0; j--)
+            {
+                if (equipment[j].EquipRarity > equipment[j - 1].EquipRarity)
+                {
+                    var swap = equipment[j];
+                    equipment[j] = equipment[j - 1];
+                    equipment[j - 1] = swap;
+                }
+            }
+        }
+
+        for(int i = 0; i < _slots.Count; i++)
+        {
+            _slots[i].SetSlot(equipment[i]);
+        }
     }
 }

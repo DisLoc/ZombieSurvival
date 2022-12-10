@@ -13,6 +13,7 @@ public static class DataPath
 
     public static readonly string CoinsInventory = DefaultPath + "CoinsInventory.dat";
     public static readonly string GemsInvneotry = DefaultPath + "GemsInventory.dat";
+    public static readonly string KeysInventory = DefaultPath + "KeysInventory.dat";
     public static readonly string EnergyInventory = DefaultPath + "EnergyInventory.dat";
 
     public static readonly string Supplies = DefaultPath + "Supplies.dat";

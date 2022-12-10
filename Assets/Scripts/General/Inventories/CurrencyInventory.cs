@@ -102,20 +102,30 @@ public class CurrencyInventory : Inventory
         {
             _total = _baseValue.CurrencyValue;
 
-            _counter.UpdateCounter();
+            if (_counter != null)
+            {
+                _counter.UpdateCounter();
+            }
 
             return;
         }
 
         _total = (data as CurrencyInventoryData).total;
 
-        _counter.UpdateCounter();
+        if (_counter != null)
+        {
+            _counter.UpdateCounter();
+        }
     }
 
     public override void ResetData()
     {
         _total = 0;
-        _counter.UpdateCounter();
+
+        if (_counter != null)
+        {
+            _counter.UpdateCounter();
+        }
     }
 
     [System.Serializable]

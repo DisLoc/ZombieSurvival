@@ -20,9 +20,12 @@ public class PlayerExpBar : FillBar
     /// </summary>
     public void UpdateExp()
     {
-        _value = (int)_expirience.Exp.Value;
+        if (_expirience != null)
+        {
+            _value = (int)_expirience.Exp.Value;
 
-        UpdateBar();
+            UpdateBar();
+        }
     }
 
     /// <summary>
