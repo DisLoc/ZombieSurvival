@@ -91,6 +91,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _image: {fileID: 6986216014320890943}
-  _unlockedLevel: {fileID: 21300000, guid: 80c812fb9acd316438ac828988a8fbf3, type: 3}
-  _lockedLevel: {fileID: 21300000, guid: 30c3d9d8d600ad04fa3e63bf6bb45118, type: 3}
-  _currentLevel: {fileID: 21300000, guid: 13a763b6d5c153149915e6a8c66abf38, type: 3}
+  _unlockedLevel: {fileID: 21300000, guid: 981eb961a27ca5c408a827bb5a5709ba, type: 3}
+  _lockedLevel: {fileID: 21300000, guid: 1ce0c3148190e3e4aa89844cec5610f2, type: 3}
+  _currentLevel: {fileID: 21300000, guid: 5efc8492531b41f4bb80b7dd05bea5ac, type: 3}

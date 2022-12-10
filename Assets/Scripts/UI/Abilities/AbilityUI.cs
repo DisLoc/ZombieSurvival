@@ -13,6 +13,7 @@ public class AbilityUI : MonoBehaviour
     [SerializeField] private RectTransform _abilityLevelParent;
     [SerializeField] private LevelUI _levelPrefab;
     [SerializeField] private Text _upgradeDescriptionText;
+    [SerializeField] private GameObject _newAbilityLabel;
 
     [Space(5)]
     [SerializeField] private CombineAbilityUI _combineAbilityPrefab;
@@ -49,6 +50,15 @@ public class AbilityUI : MonoBehaviour
 
         _abilityName.text = _ability.Name;
         _abilityIcon.sprite = _ability.Icon;
+
+        if (_ability.Stats.Level.Value == 0)
+        {
+            _newAbilityLabel.SetActive(true);
+        }
+        else
+        {
+            _newAbilityLabel.SetActive(false);
+        }
 
         if (_levels.Count > 0)
         {

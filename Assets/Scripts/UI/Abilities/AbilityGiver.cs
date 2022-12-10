@@ -10,17 +10,28 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
     [Header("Settings")]
     [SerializeField] private UIMenu _menu;
+    [SerializeField] private GameObject _refreshButton;
 
     [Space(5)]
     [SerializeField] private RectTransform _abilityUIParent;
     [SerializeField] private AbilityUI _abilityUIPrefab;
 
     [Space(5)]
+    [SerializeField] private AbilitySlot _abilitySlotPrefab;
+    [SerializeField] private Transform _weaponSlotsParent;
+    [SerializeField] private Transform _passiveSlotsParent;
+
+    [Space(5)]
     [SerializeField] private AvailableAbilities _availableAbilities;
+
+    private List<AbilitySlot> _weaponSlots;
+    private List<AbilitySlot> _passiveSlots;
 
     private AbilitiesPerChoice _abilitiesPerChoice;
     private AbilityChooseCount _abilityChooseCount;
     private AbilitiesRerollCount _abilitiesRerollCount;
+
+    private int _rerolls;
 
     private List<AbilityUI> _abilitiesUI;
     private List<AbilityContainer> _abilities;
@@ -38,9 +49,12 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         _abilitiesPerChoice = (_player.Stats as PlayerStats).AbilitiesPerChoice;
         _abilitiesRerollCount = (_player.Stats as PlayerStats).AbilitiiesRerollCount;
 
+        _rerolls = 0;
+
         _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
 
         InitializeAbilitiesUI();
+        InitializePlayerInventory();
 
         _levelUps = 0;
         _onChoice = false;
@@ -72,6 +86,15 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         _menu.MainMenuDisplay();
 
         InitializeAbilitiesUI();
+
+        if (_rerolls >= _abilitiesRerollCount.Value)
+        {
+            _refreshButton.SetActive(false);
+        }
+        else
+        {
+            _refreshButton.SetActive(true);
+        }
 
         List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerChoice.Value);
 
@@ -127,6 +150,24 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
 
                 _abilitiesUI.Add(abilityUI);
             }
+        }
+    }
+
+    public void InitializePlayerInventory()
+    {
+        _weaponSlots = new List<AbilitySlot>(_player.AbilityInventory.MaxActiveAbilitiesCount);
+        _passiveSlots = new List<AbilitySlot>(_player.AbilityInventory.MaxPassiveAbilitiesCount);
+
+        for (int i = 0; i < _player.AbilityInventory.MaxActiveAbilitiesCount; i++)
+        {
+            _weaponSlots.Add(Instantiate(_abilitySlotPrefab, _weaponSlotsParent));
+            _weaponSlots[i].AbilityIcon.enabled = false;
+        }
+
+        for (int i = 0; i < _player.AbilityInventory.MaxPassiveAbilitiesCount; i++)
+        {
+            _passiveSlots.Add(Instantiate(_abilitySlotPrefab, _passiveSlotsParent));
+            _passiveSlots[i].AbilityIcon.enabled = false;
         }
     }
 
@@ -286,5 +327,24 @@ public class AbilityGiver : MonoBehaviour, IPlayerLevelUpHandler
         {
             _abilities.RemoveAll(item => item as Weapon != null);
         }
+
+        for (int i = 0; i < _player.AbilityInventory.Weapons.Count; i++)
+        {
+            _weaponSlots[i].AbilityIcon.enabled = true;
+            _weaponSlots[i].Initialize(_player.AbilityInventory.Weapons[i]);
+        }
+
+        for (int i = 0; i < _player.AbilityInventory.PassiveAbilities.Count; i++)
+        {
+            _passiveSlots[i].AbilityIcon.enabled = true;
+            _passiveSlots[i].Initialize(_player.AbilityInventory.PassiveAbilities[i]);
+        }
+    }
+
+    public void OnRerollClick()
+    {
+        _rerolls++;
+
+        SetAbilities();
     }
 }

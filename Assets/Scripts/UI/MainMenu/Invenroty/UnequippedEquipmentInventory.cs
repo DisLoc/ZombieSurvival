@@ -99,9 +99,7 @@ public class UnequippedEquipmentInventory
             {
                 if (equipment[j].EquipRarity > equipment[j - 1].EquipRarity)
                 {
-                    var swap = equipment[j];
-                    equipment[j] = equipment[j - 1];
-                    equipment[j - 1] = swap;
+                    (equipment[j - 1], equipment[j]) = (equipment[j], equipment[j - 1]);
                 }
             }
         }
