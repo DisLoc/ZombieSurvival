@@ -9,10 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030007506074345429}
-  - component: {fileID: 8638579627885533580}
   - component: {fileID: 1030007506074345431}
   - component: {fileID: 1030007506074345428}
-  - component: {fileID: 1094446119337510604}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -35,19 +33,6 @@ Transform:
   m_Father: {fileID: 5576482619357635832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8638579627885533580
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030007506074345430}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!199 &1030007506074345431
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -310,7 +295,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -372,7 +357,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 120
+      scalar: 100
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4885,23 +4870,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &1094446119337510604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030007506074345430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 8638579627885533580}
-  _triggerTags:
-    _tags: 01000000
-  _parent: {fileID: 0}
 --- !u!1 &5576482619357635831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,6 +4880,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5576482619357635832}
   - component: {fileID: 646684746008263237}
+  - component: {fileID: 4046770903218868523}
+  - component: {fileID: 4493503902054437604}
   m_Layer: 0
   m_Name: SuperFirePuddle
   m_TagString: PlayerProjectile
@@ -4949,10 +4919,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _particle: {fileID: 1030007506074345428}
-  _targetDetector: {fileID: 1094446119337510604}
+  _targetDetector: {fileID: 4493503902054437604}
   _sounds:
     _sounds:
     - _soundType: 5
       _mixerType: 3
       _sound: {fileID: 8300000, guid: 151e084de24be154bbcb220479800659, type: 3}
       _playbackCooldown: 1
+--- !u!135 &4046770903218868523
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576482619357635831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4493503902054437604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576482619357635831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 4046770903218868523}
+  _triggerTags:
+    _tags: 01000000
+  _parent: {fileID: 5576482619357635831}

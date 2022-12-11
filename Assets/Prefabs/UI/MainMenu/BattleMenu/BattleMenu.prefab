@@ -431,6 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5954097752538035728}
   - component: {fileID: 2219086996072820045}
+  - component: {fileID: 3699778065385086243}
   m_Layer: 5
   m_Name: OfflineRewards
   m_TagString: Untagged
@@ -473,6 +474,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transformToScale: {fileID: 5954097752538035728}
   _defaultSize: {x: 327, y: 240}
+--- !u!114 &3699778065385086243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4733269320519139864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f701d6b3addb754abd2d2f5cbda4769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5915157259246622257
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +551,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139ae3eeee26f24438e782929f275bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainMenu: {fileID: 0}
+  _giftCooldown: 0
+  _reward:
+    _rewardIcon: {fileID: 0}
+    _rewardAmount: 0
+    _currencyRewards: []
+    _expirienceReward:
+      _rewardIcon: {fileID: 0}
+      _rewardAmount: 0
 --- !u!1 &6853226425596072257
 GameObject:
   m_ObjectHideFlags: 0

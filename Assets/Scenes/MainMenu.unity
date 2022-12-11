@@ -1305,6 +1305,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1248577680295438403, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _giftCooldown
+      value: 57600
+      objectReference: {fileID: 0}
     - target: {fileID: 2626097112217866785, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1620,6 +1624,66 @@ PrefabInstance:
     - target: {fileID: 4884538745188361565, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripTimeLimit
+      value: 57600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._requiredLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._expPerTick._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._requiredTimeForMaterial
+      value: 4320
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._expPerTick._rewardAmount
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._currencyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._rewardAmount
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e2d6f834d6bf424b81210186a3b90a0, type: 3}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._rewardIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._rewardAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._equipmentList
+      value: 
+      objectReference: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._equipmentList
+      value: 
+      objectReference: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._hasRandomMaterialReward
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7328728502670666384, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

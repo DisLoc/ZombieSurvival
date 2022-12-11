@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3589620008199735308, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 39321
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482c2e384f4fe9344a67c6ee5ee3b966, type: 3}
 --- !u!198 &7831362375748254162 stripped

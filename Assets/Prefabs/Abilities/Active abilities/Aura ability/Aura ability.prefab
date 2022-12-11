@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7978409642536597299}
   - component: {fileID: 7494275413525525377}
+  - component: {fileID: 58185737651922514}
+  - component: {fileID: 2516733988325373440}
   m_Layer: 0
   m_Name: Aura ability
   m_TagString: PlayerWeapon
@@ -56,7 +58,7 @@ MonoBehaviour:
       _playbackCooldown: 1
   _isSuperWeapon: 0
   _requiredAbilityToUpgradeToSuper: {fileID: 7105945157763679919, guid: 2484bfe7343253449b7370d0d0750e7c, type: 3}
-  _targetDetector: {fileID: 1639761649709825330}
+  _targetDetector: {fileID: 2516733988325373440}
   _abilityUpgradeData: {fileID: 11400000, guid: 91e89e03209f8e145a410e5dec99dacd, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 19e7af8144ef31946b801f87c6a83df3, type: 2}
@@ -81,6 +83,36 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: d3e79ed98d60a8647938f5aeabbc79bb, type: 2}
   _particle: {fileID: 6524113959122645580}
+--- !u!135 &58185737651922514
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302024230675926553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2516733988325373440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302024230675926553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 58185737651922514}
+  _triggerTags:
+    _tags: 01000000
+  _parent: {fileID: 2302024230675926553}
 --- !u!1001 &7420482003682750141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,9 +176,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sild
       objectReference: {fileID: 0}
+    - target: {fileID: 4355145789968506097, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355145789968506097, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5397188925003635906, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
       propertyPath: m_Radius
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6634286488309741979, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
       propertyPath: m_TagString
@@ -168,19 +208,10 @@ PrefabInstance:
       propertyPath: _triggerTags._tags.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8087131882245018511, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
+    - {fileID: 5397188925003635906, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
---- !u!114 &1639761649709825330 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8087131882245018511, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}
-  m_PrefabInstance: {fileID: 7420482003682750141}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4228463738094864271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6653044035004115250, guid: b261775deb4f35a4c8674e200ac1bf32, type: 3}

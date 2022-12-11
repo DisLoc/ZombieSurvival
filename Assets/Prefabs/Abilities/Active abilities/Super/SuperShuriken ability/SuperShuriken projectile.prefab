@@ -50,6 +50,8 @@ MonoBehaviour:
   _targetTags:
     _tags: 01000000
   _destroyOnExitAttackRange: 0
+  _sounds:
+    _sounds: []
   _particle: {fileID: 1038566209247487753}
   _sparkParticle: {fileID: 1038566207781246032}
   _minSpeedMultiplier: 0.1
@@ -126,6 +128,10 @@ PrefabInstance:
     - target: {fileID: 3899632165645603391, guid: 71323b4e5ed6f8c4ba8bf173b6665ae2, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899632167064658278, guid: 71323b4e5ed6f8c4ba8bf173b6665ae2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71323b4e5ed6f8c4ba8bf173b6665ae2, type: 3}

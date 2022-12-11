@@ -76,15 +76,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2299370218224784255, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299370218224784255, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299370218224784255, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299370218224784255, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -93,6 +93,30 @@ PrefabInstance:
     - target: {fileID: 6828742209938550856, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_Name
       value: PS_Smoke_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656032520986425441, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656032520986425441, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656032520986425441, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656032520986425441, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.40103242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656032520986425441, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.06051977
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981187402366961701, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 8708809606581643247, guid: abd8c7b4a9b37e743b9a7f7bd7015714, type: 3}
       propertyPath: m_RootOrder

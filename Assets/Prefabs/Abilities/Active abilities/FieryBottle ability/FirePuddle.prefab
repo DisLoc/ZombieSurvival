@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6178334118462139373}
   - component: {fileID: 1163902437612025168}
+  - component: {fileID: 5026717788857595762}
+  - component: {fileID: 4084344610779723359}
   m_Layer: 0
   m_Name: FirePuddle
   m_TagString: PlayerProjectile
@@ -47,13 +49,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _particle: {fileID: 1627256449650593985}
-  _targetDetector: {fileID: 1724385743155349977}
+  _targetDetector: {fileID: 4084344610779723359}
   _sounds:
     _sounds:
     - _soundType: 5
       _mixerType: 3
       _sound: {fileID: 8300000, guid: 151e084de24be154bbcb220479800659, type: 3}
       _playbackCooldown: 5
+--- !u!135 &5026717788857595762
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178334118462139362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4084344610779723359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178334118462139362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 5026717788857595762}
+  _triggerTags:
+    _tags: 01000000
+  _parent: {fileID: 6178334118462139362}
 --- !u!1001 &7880922538481362565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,6 +93,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6178334118462139373}
     m_Modifications:
+    - target: {fileID: 171893714382827548, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: m_Radius
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8840732065860743004, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: _triggerTags._tags.Array.size
       value: 1
@@ -73,9 +109,25 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939269, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920368990621939269, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920368990621939269, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920368990621939269, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8920368990621939269, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -121,7 +173,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8840732065860743004, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
+    - {fileID: 171893714382827548, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
 --- !u!4 &1627256449650593984 stripped
 Transform:
@@ -133,14 +187,3 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8920368990621939268, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
   m_PrefabInstance: {fileID: 7880922538481362565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1724385743155349977 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8840732065860743004, guid: 00a54b54f4aef564580c4c10c1234bae, type: 3}
-  m_PrefabInstance: {fileID: 7880922538481362565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

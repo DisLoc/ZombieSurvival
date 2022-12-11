@@ -31,7 +31,6 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
     public void Initialize(ProjectileAbilityStats stats, Shelling weapon)
     {
         _weapon = weapon;
-        _sphereCollider.radius = _weapon.ExplosionRadius.Value;
 
         _releaseTimer = _weapon.ExplosionLifeDuration.Value;
         _damage = stats.Damage;
@@ -45,7 +44,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
             main.startLifetime = _weapon.ExplosionLifeDuration.Value;
             main.duration = _weapon.ExplosionLifeDuration.Value;
 
-            _particle.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            _particle.transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
 
             _particle.Play();
         }
@@ -58,7 +57,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         {
             _impact1.Stop();
 
-            _impact1.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            _impact1.transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
 
             _impact1.Play();
         }
@@ -71,7 +70,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         {
             _impact2.Stop();
 
-            _impact2.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            _impact2.transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
 
             _impact2.Play();
         }
@@ -84,7 +83,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         {
             _impact3.Stop();
 
-            _impact3.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            _impact3.transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
 
             _impact3.Play();
         }
@@ -93,7 +92,7 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
             if (_isDebug) Debug.Log("Missing impact3!");
         }
 
-        transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+        transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
     }
 
     public void OnUpdate()

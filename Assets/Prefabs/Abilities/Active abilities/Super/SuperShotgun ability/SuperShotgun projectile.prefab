@@ -50,6 +50,8 @@ MonoBehaviour:
   _targetTags:
     _tags: 01000000
   _destroyOnExitAttackRange: 1
+  _sounds:
+    _sounds: []
   _particle: {fileID: 5167980008051934467}
 --- !u!135 &6269223999869169462
 SphereCollider:
@@ -73,19 +75,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 608673009384669520, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: lengthInSec
-      value: 1.5
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 608673009384669520, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 608673009384669520, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: InitialModule.startSizeY.scalar
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 608673009384669520, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 1.5
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 2599724001824981973, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: m_Name
@@ -105,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773215871194587128, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 7773215871194587128, guid: db9004dc76b54354b8b022d38967fd06, type: 3}
       propertyPath: m_LocalRotation.w

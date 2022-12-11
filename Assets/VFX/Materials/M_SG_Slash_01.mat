@@ -35,8 +35,8 @@ Material:
     - _Power: 0.62
     - _Power_Mask: 2.8
     m_Colors:
-    - _Color: {r: 0, g: 0.08627451, b: 1.0431373, a: 1}
-    - _Spped_Noise_01: {r: 0, g: 0.8, b: 0, a: 0}
+    - _Color: {r: 0, g: 0.08873497, b: 1.0592737, a: 1}
+    - _Spped_Noise_01: {r: 0, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4431556426201182973
 MonoBehaviour:

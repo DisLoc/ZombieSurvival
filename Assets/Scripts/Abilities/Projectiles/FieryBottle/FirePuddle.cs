@@ -47,7 +47,7 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
             main.startLifetime = _weapon.PuddleLifeDuration.Value;
             main.duration = _weapon.PuddleLifeDuration.Value;
 
-            _particle.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+            _particle.transform.localScale = new Vector3(_weapon.PuddleRadius.Value, _weapon.PuddleRadius.Value, _weapon.PuddleRadius.Value);
 
             _particle.Play();
         }

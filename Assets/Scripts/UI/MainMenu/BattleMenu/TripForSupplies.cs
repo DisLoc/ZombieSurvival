@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Zenject;
 
 public class TripForSupplies : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Tooltip("Limit in seconds")]
+    [SerializeField] private int _tripTimeLimit;
+
+    [SerializeField] private TripRewards _tripRewards;
+
+    [Inject] private MainInventory _mainInventory;
+
+    public void OnTripClick()
     {
-        
+        var reward = _tripRewards.GetLevelRewards((int)_mainInventory.PlayerLevel.Value);
     }
 
-    // Update is called once per frame
-    void Update()
+    public SerializableData SaveData()
     {
-        
+        TripData data = new TripData();
+
+        data.time = DateTime.Now;
+
+        return data;
+    }
+
+    public void LoadData(SerializableData data)
+    {
+        if (data is TripData loadedData)
+        {
+
+        }
+    }
+
+    public void ResetData()
+    {
+
+    }
+
+    [Serializable]
+    public class TripData : SerializableData
+    {
+        public DateTime time;
     }
 }

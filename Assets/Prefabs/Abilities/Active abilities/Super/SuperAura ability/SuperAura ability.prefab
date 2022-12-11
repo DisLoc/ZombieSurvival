@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7874177509043777659}
   - component: {fileID: 7874177509043777658}
+  - component: {fileID: 4567586831293010578}
+  - component: {fileID: 282599924855208082}
   m_Layer: 0
   m_Name: SuperAura ability
   m_TagString: PlayerWeapon
@@ -52,7 +54,7 @@ MonoBehaviour:
     _sounds: []
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 6766336299975137043}
+  _targetDetector: {fileID: 282599924855208082}
   _abilityUpgradeData: {fileID: 11400000, guid: b1d3f09c9f5641448b0817ee00cb64ff, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 590407419a985454ab9ec3f0b7f978b6, type: 2}
@@ -77,6 +79,36 @@ MonoBehaviour:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 429694cba7b85c64eb2d61d90f026193, type: 2}
   _particle: {fileID: 4029598860881763333}
+--- !u!135 &4567586831293010578
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874177509043777656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &282599924855208082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874177509043777656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 4567586831293010578}
+  _triggerTags:
+    _tags: 01000000
+  _parent: {fileID: 7874177509043777656}
 --- !u!1001 &8039124513637333958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,7 +178,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6376173442295785411, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 275
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376173442295785411, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376173442295785411, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376173442295785411, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9178545835673116810, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
       propertyPath: m_Name
@@ -158,41 +202,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
---- !u!1 &1220488591513426764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9178545835673116810, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
-  m_PrefabInstance: {fileID: 8039124513637333958}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &3227455941725385764
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220488591513426764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.25
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6766336299975137043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220488591513426764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 3227455941725385764}
-  _triggerTags:
-    _tags: 01000000
-  _parent: {fileID: 7874177509043777656}
 --- !u!4 &3004936606825840754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5053910465421310900, guid: de2cdd454ed85e14cb107fcc91224bd5, type: 3}
