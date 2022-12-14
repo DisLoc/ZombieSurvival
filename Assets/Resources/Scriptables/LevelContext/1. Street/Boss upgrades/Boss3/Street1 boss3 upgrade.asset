@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
-  m_Name: Enemy ugrade Street1x5
+  m_Name: Street1 boss3 upgrade
   m_EditorClassIdentifier: 
   _isAbilityUpgrade: 0
   _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
   _upgrades:
-  - {fileID: 11400000, guid: 84324d160a6a0e047bec253abf5eea74, type: 2}
-  - {fileID: 11400000, guid: e752c94e23a515d4aaed07e6588a5ec4, type: 2}
-  - {fileID: 11400000, guid: 7fdd9caf41ffafa449bdadbc31b6400d, type: 2}
+  - {fileID: 11400000, guid: b5829fdff84cb134d91f9dfca4c9f02b, type: 2}
+  - {fileID: 11400000, guid: 40b2e0f539504d74eab418412924ea65, type: 2}
+  - {fileID: 11400000, guid: 9923b5325625ab14aa31f3c8be4a803f, type: 2}

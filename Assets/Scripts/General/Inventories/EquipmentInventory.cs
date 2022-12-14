@@ -19,7 +19,7 @@ public class EquipmentInventory : Inventory
 
     public void Add(Equipment equipment)
     {
-        Equipment newEquipment = Object.Instantiate(equipment);
+        Equipment newEquipment = Object.Instantiate(equipment, _parent);
 
         newEquipment.Initialize();
 

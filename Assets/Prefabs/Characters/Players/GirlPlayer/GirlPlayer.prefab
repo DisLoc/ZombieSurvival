@@ -506,19 +506,19 @@ MonoBehaviour:
   _sounds:
     _sounds:
     - _soundType: 0
-      _mixerType: 2
+      _mixerType: 1
       _sound: {fileID: 0}
       _playbackCooldown: 1
     - _soundType: 1
-      _mixerType: 2
+      _mixerType: 1
       _sound: {fileID: 0}
       _playbackCooldown: 1
     - _soundType: 3
-      _mixerType: 2
+      _mixerType: 1
       _sound: {fileID: 0}
       _playbackCooldown: 0.5
     - _soundType: 2
-      _mixerType: 2
+      _mixerType: 1
       _sound: {fileID: 0}
       _playbackCooldown: 0.5
   _isImmortal: 0
@@ -594,6 +594,9 @@ MonoBehaviour:
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 0}
+    _baseValue:
+      _currencyValue: 0
+      _currencyData: {fileID: 0}
 --- !u!1001 &2567576988300668118
 PrefabInstance:
   m_ObjectHideFlags: 0

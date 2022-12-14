@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class TripForSuppliesReward
 {
     [SerializeField] private int _requiredLevel;
+    [Tooltip("Time in seconds")]
+    [SerializeField] private int _tickTime;
 
     [Space(5)]
     [SerializeField] private CurrencyReward _goldPerTick;
@@ -21,10 +21,8 @@ public class TripForSuppliesReward
     [Tooltip("Time in seconds")]
     [SerializeField] private int _requiredTimeForEquipment;
 
-    
-    public bool initialized { get; private set; }
-
     public int RequiredLevel => _requiredLevel;
+    public int TickTime => _tickTime;
 
     public CurrencyReward GoldPerTick => _goldPerTick;
     public ExpirienceReward ExpPerTick => _expPerTick;

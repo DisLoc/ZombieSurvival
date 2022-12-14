@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 674625fcf6452ea4dbdb12241f97b707, type: 3}
-  m_Name: Enemy upgrade data Street1x5x1
+  m_Name: Winter1 boss1 ugrade data 1
   m_EditorClassIdentifier: 
   _upgradingMarkers:
     _markers:
-    - {fileID: 11400000, guid: ab506fb553629134fb0cb32551224e45, type: 2}
+    - {fileID: 11400000, guid: a0e0f30d484da2d44a4cd168dcd9785f, type: 2}
     _minMatchesCount: 1
-  _upgradeValue: 5000
-  _upgradeMultiplier: 4
+  _upgradeValue: 25
+  _upgradeMultiplier: 1

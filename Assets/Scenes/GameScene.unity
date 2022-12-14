@@ -497,14 +497,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _useBaseWeapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _stats._baseWeapon
-      value: 
-      objectReference: {fileID: 7874177509043777658, guid: 9b3f47fe3843c8e468ae1a0ebc184839, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _coinInventory._counter
       value: 
       objectReference: {fileID: 24631180}
@@ -520,22 +512,6 @@ PrefabInstance:
       propertyPath: _startWeaponsList.Array.data[3]
       value: 
       objectReference: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _sounds._sounds.Array.data[0]._mixerType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _sounds._sounds.Array.data[1]._mixerType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _sounds._sounds.Array.data[2]._mixerType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
-      propertyPath: _sounds._sounds.Array.data[3]._mixerType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4441788838641939132, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: m_RootOrder
       value: 1

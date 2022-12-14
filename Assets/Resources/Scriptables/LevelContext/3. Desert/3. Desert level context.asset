@@ -444,6 +444,7 @@ MonoBehaviour:
         _playbackCooldown: 5
       _requiredProgress: 30
       _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _bossUpgrade: {fileID: 11400000, guid: 9a03b04a756c9714598e6f424dcbf3a8, type: 2}
       _isFinalBoss: 0
       _maxAbilitiesRewardCount: 2
       _hasRandomMaterialReward: 1
@@ -465,6 +466,7 @@ MonoBehaviour:
         _playbackCooldown: 5
       _requiredProgress: 60
       _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _bossUpgrade: {fileID: 11400000, guid: 2ac9e9475f0a516488cbc2f3842bb66e, type: 2}
       _isFinalBoss: 0
       _maxAbilitiesRewardCount: 3
       _hasRandomMaterialReward: 0
@@ -486,6 +488,7 @@ MonoBehaviour:
         _playbackCooldown: 0.5
       _requiredProgress: 100
       _bossPrefab: {fileID: 7855256235738180036, guid: aa6c5a5c3c0e2cd4e8080072c6dded3f, type: 3}
+      _bossUpgrade: {fileID: 11400000, guid: 9cca3bf4b1f0c5845bfbab872633399b, type: 2}
       _isFinalBoss: 1
       _maxAbilitiesRewardCount: 0
       _hasRandomMaterialReward: 1

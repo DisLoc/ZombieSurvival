@@ -259,7 +259,6 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     /// </summary>
     protected virtual void GetUpgrade()
     {
-
         if (_spawners != null)
         {
             foreach (ObjectSpawner<Enemy> pool in _spawners)
@@ -318,6 +317,8 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
     /// </summary>
     protected virtual void DispelUpgrades()
     {
+        if (_currentUpgrade == null) return;
+
         if (_spawners != null)
         {
             foreach (ObjectSpawner<Enemy> pool in _spawners)

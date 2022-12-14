@@ -209,6 +209,17 @@ Transform:
   m_Father: {fileID: 1606684886}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &212901077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+  m_PrefabInstance: {fileID: 1016239969130122022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f701d6b3addb754abd2d2f5cbda4769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &238725803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,9 +1176,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016239968666173471, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239968912346613, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239968918974266, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239969304945726, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: _isDebug
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239969909200481, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239970082230455, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239970132983159, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016239970649296549, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016239970691008262, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1307,7 +1346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248577680295438403, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: _giftCooldown
-      value: 57600
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781195334446827255, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2626097112217866785, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1340,6 +1383,26 @@ PrefabInstance:
     - target: {fileID: 2823755697292193717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271353582272785516, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271353582272785516, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 212901077}
+    - target: {fileID: 3271353582272785516, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnTripClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271353582272785516, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TripForSupplies, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463859381040779362, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3624386700223797507, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1593,6 +1656,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4721859940321034314, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.6499786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721859940345743051, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.6499786
+      objectReference: {fileID: 0}
     - target: {fileID: 4884538745188361565, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -1626,64 +1697,28 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripTimeLimit
-      value: 57600
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._tickTime
+      value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._requiredLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._expPerTick._rewardIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._rewardIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
     - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: _tripRewards._levelRewards.Array.data[0]._requiredTimeForMaterial
-      value: 4320
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._expPerTick._rewardAmount
-      value: 300
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._requiredTimeForEquipment
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._currencyData
-      value: 
-      objectReference: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._goldPerTick._rewardAmount
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._rewardIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 1e2d6f834d6bf424b81210186a3b90a0, type: 3}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._rewardIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 74b980a90d1996f46b1200506dd86885, type: 3}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._rewardAmount
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._rewardAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._equipmentList
-      value: 
-      objectReference: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._equipmentList
-      value: 
-      objectReference: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
-    - target: {fileID: 5011540235729150212, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _tripRewards._levelRewards.Array.data[0]._materialReward._hasRandomMaterialReward
+      propertyPath: _tripRewards._levelRewards.Array.data[0]._equipmentReward._hasRandomEquipmentReward
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749465827111263832, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.6499786
       objectReference: {fileID: 0}
     - target: {fileID: 7328728502670666384, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

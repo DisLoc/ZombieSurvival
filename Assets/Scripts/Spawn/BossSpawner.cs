@@ -77,6 +77,10 @@ public sealed class BossSpawner : EnemySpawner
                 Spawn(GetSpawnPosition());
             }
 
+            DispelUpgrades();
+
+            _currentUpgrade = _currentBreakpoint.BossUpgrade;
+
             GetUpgrade();
 
             if (_currentBreakpoint.IsFinalBoss)
@@ -88,8 +92,6 @@ public sealed class BossSpawner : EnemySpawner
                 _currentReward = CurrentReward.PickablesReward;
             }
         }
-
-        base.OnLevelProgressUpdate(progress);
     }
 
     public void OnBossDies(Vector3 position)

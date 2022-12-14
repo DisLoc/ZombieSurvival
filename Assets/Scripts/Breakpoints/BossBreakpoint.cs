@@ -5,6 +5,7 @@ public class BossBreakpoint : Breakpoint
 {
     [Header("Boss settings")]
     [SerializeField] protected Enemy _bossPrefab;
+    [SerializeField] protected Upgrade _bossUpgrade;
 
     [Tooltip("If that enemy is final Boss, it has not abilities and supplies rewards")]
     [SerializeField] private bool _isFinalBoss;
@@ -24,6 +25,7 @@ public class BossBreakpoint : Breakpoint
     [SerializeField] private Equipment _specificEquipmentReward;
 
     public Enemy BossPrefab => _bossPrefab;
+    public Upgrade BossUpgrade => _bossUpgrade;
 
     public bool IsFinalBoss => _isFinalBoss;
     public int MaxAbilitiesRewardCount => _maxAbilitiesRewardCount;
@@ -39,6 +41,7 @@ public class BossBreakpoint : Breakpoint
     protected BossBreakpoint (BossBreakpoint breakpoint) : base (breakpoint)
     {
         _bossPrefab = breakpoint._bossPrefab;
+        _bossUpgrade = breakpoint._bossUpgrade;
         
         _isFinalBoss = breakpoint._isFinalBoss;
         _maxAbilitiesRewardCount = breakpoint._maxAbilitiesRewardCount;

@@ -151,6 +151,13 @@ public class MainInventory : MonoBehaviour
 
             if (_isDebug) Debug.Log("Reset SpecialGift");
         }
+        
+        if (File.Exists(DataPath.Supplies))
+        {
+            File.Delete(DataPath.Supplies);
+
+            if (_isDebug) Debug.Log("Reset Supplies");
+        }
 
         foreach (LevelContext context in _levels)
         {
@@ -297,7 +304,7 @@ public class MainInventory : MonoBehaviour
 
     public void TripForSupplies()
     {
-        DataPath.Save(DataPath.Supplies, new SuppliesData());
+
     }
 
     #region test
@@ -361,11 +368,5 @@ public class MainInventory : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveData();
-    }
-
-    [System.Serializable]
-    private class SuppliesData : SerializableData 
-    { 
-
     }
 }

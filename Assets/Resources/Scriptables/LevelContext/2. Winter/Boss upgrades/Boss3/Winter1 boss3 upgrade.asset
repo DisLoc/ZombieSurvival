@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: Winter1 boss3 upgrade
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 0
+  _abilityMarker: {fileID: 11400000, guid: 3ba2f12903f8fb94c8ad600bb85ef498, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: c5857d889148094438a8562f09d2afd7, type: 2}
+  - {fileID: 11400000, guid: 7cbd95ee4e6da52439d9a7b20bc2db2e, type: 2}
+  - {fileID: 11400000, guid: 0904284cb31f43e478e6b41a54e74c3d, type: 2}

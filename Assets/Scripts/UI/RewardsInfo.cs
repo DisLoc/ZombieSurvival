@@ -33,13 +33,22 @@ public class RewardsInfo : UIMenu
                 continue;
             }
 
-            RewardSlot slot = Instantiate(_rewardSlotPrefab, _rewardSlotsParent);
+            RewardSlot findedSlot = _slots.Find(item => item.BaseReward.RewardIcon.Equals(reward.RewardIcon));
 
-            slot.Initialize(reward);
+            if (findedSlot != null)
+            {
+                findedSlot.Initialize(reward);
+            }
+            else
+            {
+                RewardSlot slot = Instantiate(_rewardSlotPrefab, _rewardSlotsParent);
+
+                slot.Initialize(reward);
+
+                _slots.Add(slot);
+            }
 
             reward.GetReward(_mainInventory);
-
-            _slots.Add(slot);
         }
     }
 }
