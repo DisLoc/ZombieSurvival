@@ -1389,6 +1389,13 @@ MonoBehaviour:
   _animator: {fileID: 7186432062943270245}
   _talents: {fileID: 2356609436697280265}
   _upgrades: {fileID: 215014332375749155}
+  _buildings:
+  - {fileID: 7186432062246157271}
+  - {fileID: 36755723064016732}
+  - {fileID: 1505459131089722362}
+  - {fileID: 5120843101509522213}
+  - {fileID: 4854360882439560475}
+  - {fileID: 2757245795167743420}
 --- !u!1 &7186432063421789104
 GameObject:
   m_ObjectHideFlags: 0

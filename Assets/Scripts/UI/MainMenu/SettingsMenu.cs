@@ -6,13 +6,13 @@ using UnityEngine;
 public class SettingsMenu : UIMenu 
 {
     [Header("Settings menu")]
-    [SerializeField] private AudioMixer _musicGroup;
+    [SerializeField] private AudioMixerGroup _musicGroup;
     [SerializeField] private Image _musicImage;
     [SerializeField] private Sprite _musicOnIcon;
     [SerializeField] private Sprite _musicOffIcon;
 
     [Space(5)]
-    [SerializeField] private List<AudioMixer> _soundGroups;
+    [SerializeField] private List<AudioMixerGroup> _soundGroups;
     [SerializeField] private Image _soundsImage;
     [SerializeField] private Sprite _soundsOnIcon;
     [SerializeField] private Sprite _soundsOffIcon;
@@ -38,7 +38,7 @@ public class SettingsMenu : UIMenu
     {
         float bounds = Load(MUSIC_VOLUME_VAR);
 
-        _musicGroup.SetFloat(MIXER_NAME, bounds);
+        _musicGroup.audioMixer.SetFloat(MIXER_NAME, bounds);
         _musicState = bounds == MIN_BOUNDS ? SoundsStates.Disabled : SoundsStates.Enabled;
 
         if (_musicState.Equals(SoundsStates.Enabled))
@@ -56,7 +56,7 @@ public class SettingsMenu : UIMenu
         
         foreach (var mixer in _soundGroups)
         {
-            mixer.SetFloat(MIXER_NAME, bounds);
+            mixer.audioMixer.SetFloat(MIXER_NAME, bounds);
         }
 
         if (_soundState.Equals(SoundsStates.Enabled))
@@ -77,7 +77,7 @@ public class SettingsMenu : UIMenu
         {
             foreach (var mixer in _soundGroups)
             {
-                mixer.SetFloat(MIXER_NAME, MIN_BOUNDS);
+                mixer.audioMixer.SetFloat(MIXER_NAME, MIN_BOUNDS);
             }
 
             _soundState = SoundsStates.Disabled;
@@ -89,7 +89,7 @@ public class SettingsMenu : UIMenu
         {
             foreach (var mixer in _soundGroups)
             {
-                mixer.SetFloat(MIXER_NAME, MAX_SOUNDS_BOUNDS);
+                mixer.audioMixer.SetFloat(MIXER_NAME, MAX_SOUNDS_BOUNDS);
             }
 
             _soundState = SoundsStates.Enabled;
@@ -107,7 +107,7 @@ public class SettingsMenu : UIMenu
 
         if (_musicState.Equals(SoundsStates.Enabled))
         {
-            _musicGroup.SetFloat(MIXER_NAME, MIN_BOUNDS);
+            _musicGroup.audioMixer.SetFloat(MIXER_NAME, MIN_BOUNDS);
 
             _musicState = SoundsStates.Disabled;
             _musicImage.sprite = _musicOffIcon;
@@ -116,7 +116,7 @@ public class SettingsMenu : UIMenu
         }
         else
         {
-            _musicGroup.SetFloat(MIXER_NAME, MAX_MUSIC_BOUNDS);
+            _musicGroup.audioMixer.SetFloat(MIXER_NAME, MAX_MUSIC_BOUNDS);
 
             _musicState = SoundsStates.Enabled;
             _musicImage.sprite = _musicOnIcon;

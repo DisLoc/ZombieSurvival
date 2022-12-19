@@ -52,19 +52,19 @@ MonoBehaviour:
   _mixers:
     _mixerTypes:
     - _mixerType: 0
-      _mixer: {fileID: 24300002, guid: 970a7e399c9107b47a297371795f0ad9, type: 2}
+      _mixer: {fileID: 1920592629016577803, guid: 12ffaa7be98292342b1d51b4b6f0e243, type: 2}
       _soundsCountLimit: 1
     - _mixerType: 1
-      _mixer: {fileID: 24300002, guid: 0a41439d4a1674742a10989e85ec4331, type: 2}
+      _mixer: {fileID: 355911127767679485, guid: 1d7b0465966dd3f409e111112b1e10e9, type: 2}
       _soundsCountLimit: 3
     - _mixerType: 2
-      _mixer: {fileID: 24300002, guid: 12ffaa7be98292342b1d51b4b6f0e243, type: 2}
+      _mixer: {fileID: -516704087191033005, guid: 1d7b0465966dd3f409e111112b1e10e9, type: 2}
       _soundsCountLimit: 3
     - _mixerType: 3
-      _mixer: {fileID: 24300002, guid: 79a262e2daac75a4a80e99f1c402ffaf, type: 2}
+      _mixer: {fileID: 2882954053984877400, guid: 1d7b0465966dd3f409e111112b1e10e9, type: 2}
       _soundsCountLimit: 10
     - _mixerType: 4
-      _mixer: {fileID: 24300002, guid: 0a5ef3c906c36f14d91c23450290975d, type: 2}
+      _mixer: {fileID: -4770695661615470614, guid: 1d7b0465966dd3f409e111112b1e10e9, type: 2}
       _soundsCountLimit: 10
 --- !u!1001 &8324171914410757740
 PrefabInstance:

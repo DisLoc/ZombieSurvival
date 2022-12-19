@@ -16,7 +16,7 @@ public class UpgradableBuilding : MonoBehaviour
 
     [Inject] private MainInventory _mainInventory;
 
-    private void Start()
+    public void CheckLocked()
     {
         if (_mainInventory.PlayerLevel.Value >= _unlockLevel)
         {

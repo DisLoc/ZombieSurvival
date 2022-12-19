@@ -129,6 +129,7 @@ MonoBehaviour:
   - {fileID: 8674660729028740388}
   - {fileID: 3785036065932679308}
   _settings: {fileID: 6112040066837615982}
+  _rewardsInfo: {fileID: 0}
   _message: {fileID: 9165185076554311012}
   _currencyCounter: {fileID: 1469835889124051267}
   _survivalTimeCounter: {fileID: 9167745375494244065}
@@ -801,14 +802,6 @@ PrefabInstance:
     - target: {fileID: 4465919408214556479, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5453496887512012865, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
-      propertyPath: m_CellSize.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5453496887512012865, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
-      propertyPath: m_CellSize.y
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6245505658800622610, guid: 13d3c75aa8d4cf44ab4fe8dd446a6748, type: 3}
       propertyPath: m_LocalPosition.y
