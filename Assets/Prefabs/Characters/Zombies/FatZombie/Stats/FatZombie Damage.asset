@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: FatZombie Damage
   m_EditorClassIdentifier: 
   _baseValue: 10
-  _minValue: 0
+  _minValue: 1
   _maxValue: 10
   _maxValueIsInfinite: 1
   _upgradeMarkers:
     _markers:
     - {fileID: 11400000, guid: a0e0f30d484da2d44a4cd168dcd9785f, type: 2}
+    - {fileID: 11400000, guid: e66f95be9fec31f41ae84bc9db4ac58e, type: 2}
     _minMatchesCount: 1

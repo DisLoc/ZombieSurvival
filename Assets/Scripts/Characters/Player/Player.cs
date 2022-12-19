@@ -45,7 +45,7 @@ public class Player : CharacterBase
     {
         transform.position = new Vector3(0, _levelContext.LevelBuilder.GridHeight + _collider.height * 0.5f, 0);
 
-        List<Upgrade> equipmentUpgrades = new List<Upgrade>();
+        List<Upgrade> customUpgrades = new List<Upgrade>();
 
         if (!_useBaseWeapon)
         {
@@ -62,11 +62,11 @@ public class Player : CharacterBase
                             _stats.SetBaseWeapon(weapon.BaseWeapon);
                         }
 
-                        equipmentUpgrades.Add(equipment.StatsUpgrade);
+                        customUpgrades.Add(equipment.StatsUpgrade);
 
                         foreach(Upgrade upgrade in equipment.RarityUpgrades)
                         {
-                            equipmentUpgrades.Add(upgrade);
+                            customUpgrades.Add(upgrade);
                         }
                     }
                     else continue;
@@ -85,6 +85,11 @@ public class Player : CharacterBase
             }
         }
         
+        foreach(var upgrade in _mainInventory.CampInventory.CampUpgrades)
+        {
+            customUpgrades.Add(upgrade);
+        }
+
         _stats.Initialize();
 
         if (_stats.BaseWeapon as Shotgun != null)
@@ -119,7 +124,7 @@ public class Player : CharacterBase
             GetUpgrade(upgrade);
         }
         
-        foreach (Upgrade upgrade in equipmentUpgrades)
+        foreach (Upgrade upgrade in customUpgrades)
         {
             GetUpgrade(upgrade);
         }

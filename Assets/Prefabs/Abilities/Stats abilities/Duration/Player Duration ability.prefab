@@ -47,6 +47,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: Duration
   _icon: {fileID: 21300000, guid: 62ffb02d0bd65854eb327c4a7c5dd005, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 62ffb02d0bd65854eb327c4a7c5dd005, type: 3}
   _upgradeData: {fileID: 11400000, guid: b09f78b3b13958648b4b0898db0997cd, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 0a66625a3f693064cad7b65ed0224095, type: 2}

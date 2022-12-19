@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Blade
-  _icon: {fileID: 21300000, guid: b3fb2d9a9225b5c478e8367e9807bc77, type: 3}
+  _icon: {fileID: 21300000, guid: 0181d76cae9bcaa4292e373daec8f83b, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 32bc9842b6d4fe54e864da3bef5f9085, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

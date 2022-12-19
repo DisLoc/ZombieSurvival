@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Aura
-  _icon: {fileID: 21300000, guid: 859ca405cdfcbdd43afdd5adc5f8cd59, type: 3}
+  _icon: {fileID: 21300000, guid: 4f8f6d9dabbc2354ca5c440e5c3bae94, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 489726c8f36d8444aa9e59b262406bdd, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

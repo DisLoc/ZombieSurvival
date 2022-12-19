@@ -15,6 +15,7 @@ public class MainInventory : MonoBehaviour
     [SerializeField] private CurrencyInventory _keysInventory;
     [SerializeField] private EnergyInventory _energyInventory;
     [SerializeField] private EquipmentInventory _equipmentInventory;
+    [SerializeField] private CampInventory _campInventory;
 
     [SerializeField] private PlayerExpLevel _playerLevel;
 
@@ -26,6 +27,7 @@ public class MainInventory : MonoBehaviour
     public CurrencyInventory KeysInventory => _keysInventory;
     public EnergyInventory EnergyInventory => _energyInventory;
     public EquipmentInventory EquipmentInventory => _equipmentInventory;
+    public CampInventory CampInventory => _campInventory;
     public EquipmentMaterialInventory MaterialsInventory => _materialsInventory;
     public PlayerExpLevel PlayerLevel => _playerLevel;
 
@@ -39,6 +41,7 @@ public class MainInventory : MonoBehaviour
 
         _equipmentInventory.Initialize();
         _equipmentInventory.EquipmentList.SetIDs();
+        _campInventory.Initialize();
 
         _materialsInventory = new EquipmentMaterialInventory();
 
@@ -60,6 +63,7 @@ public class MainInventory : MonoBehaviour
         _keysInventory.LoadData(DataPath.Load(DataPath.KeysInventory));
         _energyInventory.LoadData(DataPath.Load(DataPath.EnergyInventory));
         _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
+        _campInventory.LoadData(DataPath.Load(DataPath.CampInventory));
         _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
         _materialsInventory.LoadData(DataPath.Load(DataPath.MaterialsInventory));
 
@@ -77,6 +81,7 @@ public class MainInventory : MonoBehaviour
         DataPath.Save(DataPath.KeysInventory, _keysInventory.SaveData());
         DataPath.Save(DataPath.EnergyInventory, _energyInventory.SaveData());
         DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
+        DataPath.Save(DataPath.CampInventory, _campInventory.SaveData());
         DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
         DataPath.Save(DataPath.MaterialsInventory, _materialsInventory.SaveData());
         
@@ -129,14 +134,14 @@ public class MainInventory : MonoBehaviour
             if (_isDebug) Debug.Log("Reset EquipmentInventory");
         }
         
-        if (File.Exists(DataPath.PlayerLevel))
+        if (File.Exists(DataPath.CampInventory))
         {
-            File.Delete(DataPath.PlayerLevel);
-            _playerLevel.ResetData();
+            File.Delete(DataPath.CampInventory);
+            _campInventory.ResetData();
 
-            if (_isDebug) Debug.Log("Reset PlayerLevel");
+            if (_isDebug) Debug.Log("Reset CampInventory");
         }
-        
+
         if (File.Exists(DataPath.MaterialsInventory))
         {
             File.Delete(DataPath.MaterialsInventory);
@@ -144,6 +149,14 @@ public class MainInventory : MonoBehaviour
 
             if (_isDebug) Debug.Log("Reset MaterialsInventory");
         }
+        
+        if (File.Exists(DataPath.PlayerLevel))
+        {
+            File.Delete(DataPath.PlayerLevel);
+            _playerLevel.ResetData();
+
+            if (_isDebug) Debug.Log("Reset PlayerLevel");
+        }        
 
         if (File.Exists(DataPath.SpecialGift))
         {

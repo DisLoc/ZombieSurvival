@@ -49,6 +49,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: SUPER Fiery bottle
   _icon: {fileID: 21300000, guid: 3d0ad24f3c4b92e4cb284fe3df116d29, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 3d0ad24f3c4b92e4cb284fe3df116d29, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

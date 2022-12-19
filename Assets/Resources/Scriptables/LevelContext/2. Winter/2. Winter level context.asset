@@ -36,7 +36,7 @@ MonoBehaviour:
         _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
         _rewardAmount: 1
         _expirience:
-          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardIcon: {fileID: 21300000, guid: 96ce31ba448af61448f25f59c8965a68, type: 3}
           _rewardAmount: 350
         _currencyRewards:
         - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
@@ -77,7 +77,7 @@ MonoBehaviour:
         _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
         _rewardAmount: 1
         _expirience:
-          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardIcon: {fileID: 21300000, guid: 96ce31ba448af61448f25f59c8965a68, type: 3}
           _rewardAmount: 350
         _currencyRewards:
         - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}
@@ -118,7 +118,7 @@ MonoBehaviour:
         _rewardIcon: {fileID: 21300000, guid: 22bdeef170e132e4b94cd9c2cbae6d2b, type: 3}
         _rewardAmount: 1
         _expirience:
-          _rewardIcon: {fileID: 21300000, guid: 42b57dfbaa03fcf4c8c0379e9cae443d, type: 3}
+          _rewardIcon: {fileID: 21300000, guid: 96ce31ba448af61448f25f59c8965a68, type: 3}
           _rewardAmount: 350
         _currencyRewards:
         - _rewardIcon: {fileID: 21300000, guid: 6b059f583f0ed2646a19ab09cc3189e1, type: 3}

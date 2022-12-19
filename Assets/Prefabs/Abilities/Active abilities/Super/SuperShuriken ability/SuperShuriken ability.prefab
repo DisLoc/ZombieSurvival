@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: SUPER Shuriken
-  _icon: {fileID: 21300000, guid: 8319a14cd88503649ba65e8210441c8d, type: 3}
+  _icon: {fileID: 21300000, guid: 2987ba00ce1e4bf42b604b5256646d04, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 2987ba00ce1e4bf42b604b5256646d04, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

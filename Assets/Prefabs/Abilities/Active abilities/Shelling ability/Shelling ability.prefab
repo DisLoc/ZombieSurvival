@@ -110,7 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Shelling
-  _icon: {fileID: 21300000, guid: 677dff1562069df40bfa9d37665410ba, type: 3}
+  _icon: {fileID: 21300000, guid: 166e37bf1d8929e4c925b91c7f2fe6e0, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: a9cbea423f47de24ab93a331c1053883, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

@@ -460,6 +460,80 @@ MonoBehaviour:
   _equipmentInventory:
     _parent: {fileID: 749952935}
     _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+  _campInventory:
+    _campUpgrades:
+    - _upgradeIcon: {fileID: 21300000, guid: abbe6743c844d2047abe0692f404560e, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: d9bded8916df65a44a730407cd4359fd, type: 2}
+      _upgradeCost:
+        _currencyValue: 250
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
+    - _upgradeIcon: {fileID: 21300000, guid: a1e6becb31f6dd14d938ae435a8dc727, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: 92bb46b10b72d854688c07cb080dbd35, type: 2}
+      _upgradeCost:
+        _currencyValue: 300
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
+    - _upgradeIcon: {fileID: 21300000, guid: dbaee5143943dd645ab3474a7bd222a8, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: a506f80299864bf49a842cc3e5579402, type: 2}
+      _upgradeCost:
+        _currencyValue: 350
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
+    - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: 6aeeec5151ce8c74e949a496e539c48b, type: 2}
+      _upgradeCost:
+        _currencyValue: 400
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
+    - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: 9e9cc21d86612cd439bb16a0ed91820d, type: 2}
+      _upgradeCost:
+        _currencyValue: 450
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
+    - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
+      _level:
+        _baseValue: 0
+        _minValue: 0
+        _maxValue: 5
+        _maxValueIsInfinite: 0
+      _repeatingUpgrade: {fileID: 11400000, guid: 4870486a62b441f4685191c253803423, type: 2}
+      _upgradeCost:
+        _currencyValue: 500
+        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+      _costMultiplier: 4
+      _button: {fileID: 0}
   _playerLevel:
     _isDebug: 0
     _statData: {fileID: 11400000, guid: 30ae34d0df932d141a059f1bf25c91ae, type: 2}

@@ -47,6 +47,7 @@ MonoBehaviour:
   _isDebug: 0
   _name: Pick up range
   _icon: {fileID: 21300000, guid: 9be4a7aa41a364f46ab9e9e4587c2692, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: 9be4a7aa41a364f46ab9e9e4587c2692, type: 3}
   _upgradeData: {fileID: 11400000, guid: 7988cd48deb852843b10935cb405a2ac, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: a7defdf456d7ad74ca44d326ca39eb0b, type: 2}

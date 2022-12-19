@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EpicGunWeapon data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: d8153077142098d49a7dcc4f3ee2e6d8, type: 3}
+  _icon: {fileID: 21300000, guid: 2362205374da91c4fa36e831320b6a92, type: 3}
   _equipSlot: 3
   _rarity: 4
   _upgradingStat: 0

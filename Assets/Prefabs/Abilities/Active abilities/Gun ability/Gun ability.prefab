@@ -110,7 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Gun
-  _icon: {fileID: 21300000, guid: 12518aad1fe2b444a98545dcac3a786c, type: 3}
+  _icon: {fileID: 21300000, guid: 2362205374da91c4fa36e831320b6a92, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: ae796a5c38874fb43884cc88f5a54d9c, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Shotgun
-  _icon: {fileID: 21300000, guid: 241f84c9cda5f1c4a9f54fa02e37b120, type: 3}
+  _icon: {fileID: 21300000, guid: 455c565304d9ffd43a0bb10b2c0b42df, type: 3}
+  _upgradeIcon: {fileID: 21300000, guid: bb0e22d164828ed41a91200ffb680487, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

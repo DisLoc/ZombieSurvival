@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Health regeneration
-  _icon: {fileID: 21300000, guid: 45d821b1edfba9c419de9b99c4387a1d, type: 3}
+  _icon: {fileID: 21300000, guid: a1e6becb31f6dd14d938ae435a8dc727, type: 3}
   _upgradeData: {fileID: 11400000, guid: 98dd8060e37213b408bc69b58eea3bdf, type: 2}
   _stats:
     _abilityMarker: {fileID: 11400000, guid: 7698f0aec86e6f545814e8e7e8d77607, type: 2}

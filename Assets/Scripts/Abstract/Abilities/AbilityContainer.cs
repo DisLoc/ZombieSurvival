@@ -8,7 +8,6 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
 
     [Header("Settings")]
     [SerializeField] protected string _name;
-    [Tooltip("Icon displays in inventory and on choice")]
     [SerializeField] protected Sprite _icon;
 
     protected UpgradeList _upgrades;

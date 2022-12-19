@@ -320,7 +320,7 @@ MonoBehaviour:
   _healthBar: {fileID: 4335061329182879509}
   _hpCanvas: {fileID: 293990288021488862}
   _renderer: {fileID: 5483188766032839979}
-  _defaultViewSide: {x: 1, y: 0, z: 0}
+  _defaultViewSide: {x: -1, y: 0, z: 0}
   _selfCollider: {fileID: 5443555473341688878}
   _hasExpReward: 1
   _stats:
