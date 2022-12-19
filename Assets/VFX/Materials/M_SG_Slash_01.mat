@@ -32,13 +32,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Power: 0.62
-    - _Power_Mask: 2.8
+    - _Power: 1.52
+    - _Power_Mask: 1.67
     m_Colors:
-    - _Color: {r: 0, g: 0.08873497, b: 1.0592737, a: 1}
-    - _Spped_Noise_01: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Color: {r: 0, g: 0.09300073, b: 2.5375905, a: 1}
+    - _Spped_Noise_01: {r: 0, g: 0.8, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4431556426201182973
+--- !u!114 &2113434733729730705
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

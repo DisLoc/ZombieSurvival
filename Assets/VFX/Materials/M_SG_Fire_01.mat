@@ -32,11 +32,11 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Intensity: 1.5
-    - _Mask_Power: 1.53
-    - _Power: 1.5
+    - _Intensity: 4.47
+    - _Mask_Power: 0.79
+    - _Power: 10
     m_Colors:
-    - _Color: {r: 1.2075472, g: 0.07855182, b: 0, a: 1}
+    - _Color: {r: 2.4150944, g: 0.16437815, b: 0, a: 1}
     - _Speed_Noise_02: {r: 0, g: 0.8, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2678853060895798001
