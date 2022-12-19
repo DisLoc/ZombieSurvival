@@ -17,4 +17,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ab506fb553629134fb0cb32551224e45, type: 2}
     _minMatchesCount: 1
   _upgradeValue: 1500
-  _upgradeMultiplier: 1
+  _upgradeMultiplier: 1.5

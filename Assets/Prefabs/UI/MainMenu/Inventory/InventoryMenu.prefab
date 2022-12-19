@@ -659,6 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004279293514795559}
   - component: {fileID: 1004279293514795558}
+  - component: {fileID: 9157488229244796756}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -706,10 +707,29 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 120, y: 120}
-  m_Spacing: {x: 25, y: 25}
+  m_CellSize: {x: 150, y: 150}
+  m_Spacing: {x: 28.23, y: 28.23}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &9157488229244796756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004279293514795556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e6ec973185e58459fb3aad03ca2f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridTransform: {fileID: 1004279293514795559}
+  _changeHeight: 0
+  _delaultResolution: {x: 1080, y: 1920}
+  _grid: {fileID: 1004279293514795558}
+  _defaultCellSize: {x: 150, y: 150}
+  _defaultSpacing: {x: 28.23, y: 28.23}
+  _defaultPadding: {x: 35, y: 35, z: 35, w: 35}
 --- !u!1 &1004279294141932836
 GameObject:
   m_ObjectHideFlags: 0

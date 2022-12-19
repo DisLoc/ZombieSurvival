@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 909939845353082818}
   - component: {fileID: 3996618180343811369}
   - component: {fileID: 1772770836678111119}
+  - component: {fileID: 3109889975564815168}
   m_Layer: 5
   m_Name: PassiveAbilitiesParent
   m_TagString: Untagged
@@ -336,10 +337,29 @@ MonoBehaviour:
   m_ChildAlignment: 5
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 70, y: 70}
+  m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &3109889975564815168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026101225548928029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e6ec973185e58459fb3aad03ca2f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridTransform: {fileID: 3192869826809891209}
+  _changeHeight: 0
+  _delaultResolution: {x: 1080, y: 1920}
+  _grid: {fileID: 1772770836678111119}
+  _defaultCellSize: {x: 80, y: 80}
+  _defaultSpacing: {x: 20, y: 0}
+  _defaultPadding: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3263384668715110031
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +816,7 @@ GameObject:
   - component: {fileID: 5698021517894550195}
   - component: {fileID: 1114270146297000740}
   - component: {fileID: 7575427357012513829}
+  - component: {fileID: 4777791546677499293}
   m_Layer: 5
   m_Name: ActiveAbilitiesParent
   m_TagString: Untagged
@@ -882,9 +903,28 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 80, y: 80}
-  m_Spacing: {x: 20, y: 0}
+  m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &4777791546677499293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981726851639948324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e6ec973185e58459fb3aad03ca2f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridTransform: {fileID: 7993384216323406499}
+  _changeHeight: 0
+  _delaultResolution: {x: 1080, y: 1920}
+  _grid: {fileID: 7575427357012513829}
+  _defaultCellSize: {x: 80, y: 80}
+  _defaultSpacing: {x: 10, y: 0}
+  _defaultPadding: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7800735493577414210
 GameObject:
   m_ObjectHideFlags: 0

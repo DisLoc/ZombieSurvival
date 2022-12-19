@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class UpgradableBuilding : MonoBehaviour
 {
@@ -7,26 +7,24 @@ public class UpgradableBuilding : MonoBehaviour
     [SerializeField] private bool _isDebug;
 
     [Header("Building settings")]
-    [SerializeField] private Level _level;
-    [SerializeField] private List<CurrentUpgrade> _buildingUpgrade;
+    [SerializeField] private int _unlockLevel;
 
-    public Upgrade BuildingUpgrade
+    private bool _unlocked;
+
+    public int UnlockLevel => _unlockLevel;
+    public bool Unlocked => _unlocked;
+
+    [Inject] private MainInventory _mainInventory;
+
+    public void CheckLocked()
     {
-        get
+        if (_mainInventory.PlayerLevel.Value >= _unlockLevel)
         {
-            //Upgrade upgrade = new Upgrade();
-
-            return null;
+            _unlocked = true;
         }
-    }
-
-    public void LevelUp()
-    {
-        _level.LevelUp();
-    }
-
-    public void Unlock()
-    {
-
+        else
+        {
+            _unlocked = false;
+        }
     }
 }

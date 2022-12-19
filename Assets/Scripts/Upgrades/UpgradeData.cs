@@ -20,11 +20,11 @@ public class UpgradeData : ScriptableObject
 
     public static UpgradeData operator *(UpgradeData data, int multiplier)
     {
-        return new UpgradeData (data._upgradingMarkers, data._upgradeValue * multiplier, data._upgradeMultiplier * multiplier);
+        return new UpgradeData (data._upgradingMarkers, data._upgradeValue * multiplier, data._upgradeMultiplier);
     }
     
     public static UpgradeData operator *(UpgradeData data, float multiplier)
     {
-        return new UpgradeData (data._upgradingMarkers, data._upgradeValue * multiplier, data._upgradeMultiplier * multiplier);
+        return new UpgradeData (data._upgradingMarkers, data._upgradeValue * multiplier, data._upgradeMultiplier);
     }
 }

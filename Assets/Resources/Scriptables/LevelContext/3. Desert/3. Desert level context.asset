@@ -204,7 +204,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 93b7c7bc19ce8af48a598ee71d5408c2, type: 2}
-      _maxUnitsOnScene: 200
+      _maxUnitsOnScene: 30
     - _name: 11-30
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
-      _maxUnitsOnScene: 15
+      _maxUnitsOnScene: 40
     - _name: 30-60
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -252,7 +252,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
-      _maxUnitsOnScene: 20
+      _maxUnitsOnScene: 50
     - _name: 60-100
       _breakpointIcon: {fileID: 0}
       _breakpointLine: {fileID: 0}
@@ -282,7 +282,7 @@ MonoBehaviour:
         _spawnChance:
           _isDebug: 0
           _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
-      _maxUnitsOnScene: 30
+      _maxUnitsOnScene: 60
   _hordeBreakpoints:
     _breakpoints:
     - _name: 10% horde

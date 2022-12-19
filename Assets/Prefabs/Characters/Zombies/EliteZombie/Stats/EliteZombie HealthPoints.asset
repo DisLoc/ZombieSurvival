@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
   m_Name: EliteZombie HealthPoints
   m_EditorClassIdentifier: 
-  _baseValue: 500
+  _baseValue: 1000
   _minValue: 0
-  _maxValue: 500
+  _maxValue: 1000
   _maxValueIsInfinite: 1
   _upgradeMarkers:
     _markers:
