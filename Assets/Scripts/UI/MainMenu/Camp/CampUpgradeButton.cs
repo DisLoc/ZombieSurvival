@@ -4,6 +4,7 @@ using Zenject;
 
 public class CampUpgradeButton : MonoBehaviour
 {
+    [SerializeField] private UpgradableBuilding _requiredBuilding;
     [SerializeField] private Button _button;
     [SerializeField] private Image _iconImage;
     [SerializeField] private Image _lockedImage;
@@ -64,13 +65,20 @@ public class CampUpgradeButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (_mainInventory.Spend(_upgrade.CurrentUpgradeCost))
+        if (_requiredBuilding.Unlocked)
         {
-            _mainInventory.CampInventory.Upgrade(_upgrade);
+            if (_mainInventory.Spend(_upgrade.CurrentUpgradeCost))
+            {
+                _mainInventory.CampInventory.Upgrade(_upgrade);
+            }
+            else
+            {
+                _mainMenu.ShowPopupMessage("Not enough resources!");
+            }
         }
         else
         {
-            _mainMenu.ShowPopupMessage("Not enough resources!");
+            _mainMenu.ShowPopupMessage("This upgrade will be unlocked at level " + _requiredBuilding.UnlockLevel);
         }
     }
 }

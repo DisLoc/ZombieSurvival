@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1141771566484696285}
   - component: {fileID: 7900278313227665657}
   m_Layer: 9
-  m_Name: Desert cell
+  m_Name: Desert cell 2
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e34fdb0468705194cb0bdd86a82da821, type: 2}
+  - {fileID: 2100000, guid: 2bc9f784793f9e64aa539a6cf7650a1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
