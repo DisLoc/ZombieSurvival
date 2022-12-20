@@ -98,11 +98,6 @@ public sealed class InventoryMenu : UIMenu
         SetAnimatorBools();
     }
 
-    private void Start()
-    {
-        LoadEquipment();
-    }
-
     public override void Display(bool playAnimation = false)
     {
         LoadEquipment();
@@ -111,10 +106,7 @@ public sealed class InventoryMenu : UIMenu
         _heroListMenu.Hide();
         _mergeMenu.Hide();
 
-        if (_canvasGroup.alpha == 0)
-        {
-            base.Display(playAnimation);
-        }
+        base.Display(playAnimation);
 
         UpdateValues();
     }
@@ -216,9 +208,23 @@ public sealed class InventoryMenu : UIMenu
             slot.SetSlot(null);
 
             UpdateValues();
-            SetAnimatorBools();
+
+            if (equipment.EquipSlot.Equals(EquipSlot.Weapon))
+            {
+                SetAnimatorBools();
+            }
         }
         else return;
+    }
+
+    public void RemoveEquipment(Equipment equipment)
+    {
+        if (equipment.isEquiped)
+        {
+            Unequip(equipment);
+        }
+
+        _unequippedInventory.RemoveEquipment(equipment);
     }
 
     public void OnMergeClick()
@@ -239,15 +245,13 @@ public sealed class InventoryMenu : UIMenu
 
     private void LoadEquipment()
     {
-        if (_mainInventory == null || (_mainInventory != null && _mainInventory.EquipmentInventory.Equipment == null)) return; 
-        
         foreach (Equipment equipment in _mainInventory.EquipmentInventory.Equipment)
         {
             if (equipment.isEquiped && !_equipmentInventory.Contains(equipment))
             {
                 Equip(equipment);
             }
-            else if (!_unequippedInventory.Equipment.Contains(equipment) && !_equipmentInventory.Contains(equipment))
+            else if (!_unequippedInventory.Contains(equipment) && !_equipmentInventory.Contains(equipment))
             {
                 _unequippedInventory.AddEquipment(equipment);
             }

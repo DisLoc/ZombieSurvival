@@ -50,13 +50,15 @@ public class UnequippedEquipmentInventory
                 return false;
             }
 
-            _slots.Remove(slot);
-            Object.Destroy(slot.gameObject);
-
             bool removed = _equipment.Remove(equipment);
-           
-            if (removed) 
+
+            if (removed)
             {
+                slot.Button.onClick.RemoveAllListeners();
+
+                _slots.Remove(slot);
+                Object.Destroy(slot.gameObject);
+
                 UpdateInventory();
             }
 
@@ -64,25 +66,59 @@ public class UnequippedEquipmentInventory
         }
         else return false;
     }
-    
-    public void UpdateInventory()
+
+    public void Cleanup()
     {
-        foreach(var slot in _slots)
+        _equipment.RemoveAll(item => item == null);
+
+        for (int i = 0; i < _slots.Count; i++)
         {
-            if (slot.Equipment != null)
+            if (_slots[i] != null && (_slots[i].Equipment == null || !_equipment.Contains(_slots[i].Equipment)))
             {
-                slot.SetSlot(slot.Equipment);
-            }
-            else
-            {
-                Object.Destroy(slot);
+                Object.Destroy(_slots[i].gameObject);
+
+                _slots[i] = null;
             }
         }
 
+        _slots.RemoveAll(item => item == null);
+    }
+    
+    public void UpdateInventory()
+    {
+        Cleanup();
+
+        if (_slots.Count != _equipment.Count)
+        {
+            foreach(var slot in _slots)
+            {
+                Object.Destroy(slot.gameObject);
+            }
+
+            _slots.Clear();
+
+            foreach(var equipment in _equipment)
+            {
+                EquipmentSlot slot = Object.Instantiate(_slotPrefab, _equipmentParent);
+
+                slot.Initialize(_menu.EquipmentTypesData, equipment);
+                slot.Button.onClick.AddListener(new UnityEngine.Events.UnityAction(() => _menu.OnItemClick(slot)));
+
+                _slots.Add(slot);
+            }
+        }
+        else
+        {
+            foreach(var slot in _slots)
+            {
+                slot.SetSlot(slot.Equipment);
+            }
+        }
+        
         Sort();
     }
 
-    public void Sort() // buble sort...
+    public void Sort() // bubble sort...
     {
         // TODO normal sorting
 
@@ -108,5 +144,10 @@ public class UnequippedEquipmentInventory
         {
             _slots[i].SetSlot(equipment[i]);
         }
+    }
+
+    public bool Contains(Equipment equipment)
+    {
+        return _equipment.Find(item => equipment.Equals(item)) != null;
     }
 }

@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
+  _mergeResult: {fileID: 7228236411287217178, guid: 94907044528cee64c906615c26c01964, type: 3}
   _rarityDescription: +1 Gun penetration
   _rarityUpgrade: {fileID: 11400000, guid: 98747d43fa82d3347943dbf10ab7116b, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 0e92e26d0aa86324c89183d0fe5449f7, type: 2}

@@ -6,20 +6,20 @@ public static class DataPath
 {
     public static readonly string DefaultPath = Application.persistentDataPath + "/";
 
-    public static readonly string PlayerLevel = DefaultPath + "PlayerLevel.dat";
+    public static readonly string PlayerLevel = DefaultPath + "PlayerLevelTest.dat";
 
-    public static readonly string EquipmentInventory = DefaultPath + "EquipmentInventory.dat";
-    public static readonly string MaterialsInventory = DefaultPath + "MaterialsInventory.dat";
+    public static readonly string EquipmentInventory = DefaultPath + "EquipmentTest.dat";
+    public static readonly string MaterialsInventory = DefaultPath + "MaterialsTest.dat";
 
-    public static readonly string CampInventory = DefaultPath + "CampInventory.dat";
+    public static readonly string CampInventory = DefaultPath + "CampTest.dat";
 
-    public static readonly string CoinsInventory = DefaultPath + "CoinsInventory.dat";
-    public static readonly string GemsInvneotry = DefaultPath + "GemsInventory.dat";
-    public static readonly string KeysInventory = DefaultPath + "KeysInventory.dat";
-    public static readonly string EnergyInventory = DefaultPath + "EnergyInventory.dat";
+    public static readonly string CoinsInventory = DefaultPath + "CoinsTest.dat";
+    public static readonly string GemsInvneotry = DefaultPath + "GemsTest.dat";
+    public static readonly string KeysInventory = DefaultPath + "KeysTest.dat";
+    public static readonly string EnergyInventory = DefaultPath + "EnergyTest.dat";
 
-    public static readonly string Supplies = DefaultPath + "Supplies.dat";
-    public static readonly string SpecialGift = DefaultPath + "SpecialGift.dat";
+    public static readonly string Supplies = DefaultPath + "SuppliesTest.dat";
+    public static readonly string SpecialGift = DefaultPath + "SpecialGiftTest.dat";
 
     public static void Save(string path, SerializableData data)
     {

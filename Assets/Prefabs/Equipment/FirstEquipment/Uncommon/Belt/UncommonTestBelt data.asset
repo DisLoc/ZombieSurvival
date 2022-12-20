@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
+  _mergeResult: {fileID: 2565584387524054931, guid: 4ba1ea8c06728a94c90758a6745942ff, type: 3}
   _rarityDescription: +5% ATK
   _rarityUpgrade: {fileID: 11400000, guid: 7a0adbffeecfec343817e966bc9f76b6, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: f4d164c51cfc37e42bbe20cad83e2a17, type: 2}

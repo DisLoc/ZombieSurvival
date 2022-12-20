@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 100
         _requiredMaterialAmount: 2
+  _mergeResult: {fileID: 7228236411287217178, guid: 5e2a22e43b718dd4d823b684d42cc90f, type: 3}
   _rarityDescription: ' Masters Shotgun'
   _rarityUpgrade: {fileID: 11400000, guid: 5254fffd81d3a3a42bbd0fcb429d3338, type: 2}
   _previousRarityEquipment: {fileID: 0}

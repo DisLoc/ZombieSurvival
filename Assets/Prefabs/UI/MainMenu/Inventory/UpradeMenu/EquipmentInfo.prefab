@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1480911747178019472}
   - component: {fileID: 8572158525897895662}
   - component: {fileID: 7530637721729953697}
+  - component: {fileID: 3227081107110188420}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 03465f5aa90343548b59e82d069d5a78, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2.23
+--- !u!114 &3227081107110188420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883870504627533971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 1480911747178019472}
+  _defaultSize: {x: 45, y: 53}
 --- !u!1 &8077522369982659055
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +578,7 @@ GameObject:
   - component: {fileID: 8077522370813494270}
   - component: {fileID: 8077522370813494271}
   - component: {fileID: 6475604637735995365}
+  - component: {fileID: 6848056219086729356}
   m_Layer: 5
   m_Name: ResetUpgradesButton
   m_TagString: Untagged
@@ -587,9 +603,9 @@ RectTransform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8293255, y: 0.39600003}
-  m_AnchorMax: {x: 0.92800003, y: 0.69500005}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9294872, y: 0.69500005}
+  m_AnchoredPosition: {x: -0.49612427, y: -0.015138626}
+  m_SizeDelta: {x: -0.925845, y: 0.0021264553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8077522370813494241
 CanvasRenderer:
@@ -619,8 +635,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e433ee07fa3890488bc593d0b8600c7, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: fb15330a04e6592418df768b5b801c27, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -691,6 +707,20 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.05
+--- !u!114 &6848056219086729356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077522370813494269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 8077522370813494268}
+  _defaultSize: {x: 68, y: 68}
 --- !u!1 &8077522370815802610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1041,7 @@ GameObject:
   - component: {fileID: 8077522371670012053}
   - component: {fileID: 8077522371670012055}
   - component: {fileID: 8077522371670012052}
+  - component: {fileID: 7571513914221403613}
   m_Layer: 5
   m_Name: EquipmentInfoSlot
   m_TagString: Untagged
@@ -1078,6 +1109,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7571513914221403613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077522371670012050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 0}
+  _defaultSize: {x: 0, y: 0}
 --- !u!1 &8077522371734608967
 GameObject:
   m_ObjectHideFlags: 0

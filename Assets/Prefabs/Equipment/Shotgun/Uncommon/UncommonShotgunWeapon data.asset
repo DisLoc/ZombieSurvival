@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
+  _mergeResult: {fileID: 7228236411287217178, guid: 96b7e5babc9216740a6497a4911290be, type: 3}
   _rarityDescription: +10% Shotgun damage
   _rarityUpgrade: {fileID: 11400000, guid: 59dcc5dfb522c514887e792682d6a28f, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: c1e008feb9df653498e59b36eeafc646, type: 2}

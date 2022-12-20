@@ -37,7 +37,7 @@ public class EquipmentInventory : Inventory
             if (removingEquipment != null)
             {
                 _equipment.Remove(removingEquipment);
-                Object.Destroy(removingEquipment);
+                Object.Destroy(removingEquipment.gameObject);
 
                 return true;
             }
@@ -45,14 +45,12 @@ public class EquipmentInventory : Inventory
         }
         else
         {
-            List<Equipment> removingEquipments;
-
-            if (IsEnough(equipment, count, out removingEquipments))
+            if (IsEnough(equipment, count, out List <Equipment> removingEquipments))
             {
                 for(int i = 0; i < count; i++)
                 {
                     _equipment.Remove(removingEquipments[i]); 
-                    Object.Destroy(removingEquipments[i]);
+                    Object.Destroy(removingEquipments[i].gameObject);
                 }
 
                 return true;

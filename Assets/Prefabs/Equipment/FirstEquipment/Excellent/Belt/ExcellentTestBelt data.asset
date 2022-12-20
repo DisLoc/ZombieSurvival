@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 1500
         _requiredMaterialAmount: 10
+  _mergeResult: {fileID: 2565584387524054931, guid: c0828fd32a03c7240889414156b72987, type: 3}
   _rarityDescription: +1 ammo
   _rarityUpgrade: {fileID: 11400000, guid: a222404d96142c5418497fb5c5cee9d3, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 52f3863c2520b894490abde02e396e3b, type: 2}

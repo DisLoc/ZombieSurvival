@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 1500
         _requiredMaterialAmount: 10
+  _mergeResult: {fileID: 7228236411287217178, guid: 25326e78b314c514db797c1e8b68b32e, type: 3}
   _rarityDescription: -5% Gun attack interval
   _rarityUpgrade: {fileID: 11400000, guid: 68da5a871d861db4d940bd1ea396d157, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 6f8587fa67548714696efdfc9d22b648, type: 2}

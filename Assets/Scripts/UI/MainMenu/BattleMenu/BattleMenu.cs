@@ -109,11 +109,6 @@ public class BattleMenu : UIMenu
         UpdatePreview();
     }
 
-    public void TripForSupplies()
-    {
-        _mainInventory.TripForSupplies();
-    }
-
     private void UpdatePreview()
     {
         _levelIcon.sprite = _currentLevel.LevelIcon;

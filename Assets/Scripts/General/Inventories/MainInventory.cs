@@ -265,9 +265,14 @@ public class MainInventory : MonoBehaviour
         return false;
     }
 
+    public bool EnoughResources(Equipment equipment, int count = 1)
+    {
+        return _equipmentInventory.IsEnough(equipment, count);
+    }
+
     public void Add(Equipment equipment, int count = 1)
     {
-        if (_isDebug) Debug.Log("Add equipment: " + equipment.name);
+        if (_isDebug) Debug.Log("Add equipment: " + equipment.name + " x" + count);
 
         for (int i = 0; i < count; i++)
         {
@@ -279,7 +284,7 @@ public class MainInventory : MonoBehaviour
 
     public void Add(EquipmentMaterial material, int count = 1)
     {
-        if (_isDebug) Debug.Log("Add material: " + material.name);
+        if (_isDebug) Debug.Log("Add material: " + material.name + " x" + count);
 
         _materialsInventory.Add(material.ValidEquipment, count);
 
@@ -292,6 +297,8 @@ public class MainInventory : MonoBehaviour
         
         if (spended)
         {
+            if (_isDebug) Debug.Log("Removed equipment: " + equipment.name + " x" + count);
+
             SaveData();
 
             return true;
@@ -306,6 +313,8 @@ public class MainInventory : MonoBehaviour
         
         if (spended)
         {
+            if (_isDebug) Debug.Log("Removed material: " + material.name + " x" + count);
+
             SaveData();
 
             return true;
@@ -314,11 +323,6 @@ public class MainInventory : MonoBehaviour
         return false; 
     }
     #endregion
-
-    public void TripForSupplies()
-    {
-
-    }
 
     #region test
     [ContextMenu("Add coins")]

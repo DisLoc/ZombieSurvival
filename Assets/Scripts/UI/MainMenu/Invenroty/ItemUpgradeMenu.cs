@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -339,6 +340,24 @@ public class ItemUpgradeMenu : UIMenu
                 _mainMenu.ShowPopupMessage("Not enough resources!");
             }
         }
+    }
+
+    public void OnEquipmentDowngrade(Equipment equipment)
+    {
+        _equipment = null;
+
+        (_parentMenu as InventoryMenu).RemoveEquipment(equipment);
+
+        _mainInventory.Spend(equipment);
+
+        StartCoroutine(WaitDisplay());
+    }
+
+    private IEnumerator WaitDisplay()
+    {
+        yield return new WaitForEndOfFrame();
+
+        _parentMenu.Display();
     }
 
     public void UpdateInventory()

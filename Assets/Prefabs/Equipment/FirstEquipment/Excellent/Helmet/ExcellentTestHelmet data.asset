@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 1500
         _requiredMaterialAmount: 10
+  _mergeResult: {fileID: 2565584387524054931, guid: cc270b6d86b8c0448b3a9a3c93347c54, type: 3}
   _rarityDescription: +20% crit, + 5% crit rate
   _rarityUpgrade: {fileID: 11400000, guid: 4d755a50eb3734e4994f85b5f31cf739, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 61d60edf567822b48b3b7cccdd6d41bc, type: 2}

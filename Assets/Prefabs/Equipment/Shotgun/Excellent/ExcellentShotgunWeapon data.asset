@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 1500
         _requiredMaterialAmount: 10
+  _mergeResult: {fileID: 7228236411287217178, guid: 669e6d53b66023940872615c736027a2, type: 3}
   _rarityDescription: -5% Shotgun attack interval
   _rarityUpgrade: {fileID: 11400000, guid: 9c3c17db07f8fbd43b3f2d50a2f0b8cb, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 45e9d87cd3f0239418ea2524c94ebc97, type: 2}

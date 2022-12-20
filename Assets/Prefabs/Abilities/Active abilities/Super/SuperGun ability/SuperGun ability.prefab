@@ -111,12 +111,11 @@ MonoBehaviour:
   _isDebug: 0
   _name: SUPER Gun
   _icon: {fileID: 21300000, guid: ae796a5c38874fb43884cc88f5a54d9c, type: 3}
-  _upgradeIcon: {fileID: 21300000, guid: ae796a5c38874fb43884cc88f5a54d9c, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5
       _mixerType: 3
-      _sound: {fileID: 8300000, guid: e3bc349bb5d8c4e4c8525bb8f5ed3e7a, type: 3}
+      _sound: {fileID: 8300000, guid: 1dd300f52d99af24ca141e00573ddc07, type: 3}
       _playbackCooldown: 0.2
   _isSuperWeapon: 1
   _requiredAbilityToUpgradeToSuper: {fileID: 0}

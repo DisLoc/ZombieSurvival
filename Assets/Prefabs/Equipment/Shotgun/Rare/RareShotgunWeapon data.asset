@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 500
         _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 7228236411287217178, guid: 137e17adda9899c4aa644082019c0053, type: 3}
   _rarityDescription: +10% Shotgun projectile speed
   _rarityUpgrade: {fileID: 11400000, guid: 078f97d0d1183054b91df43ea9ec12cc, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 96bba055d12240e4f893523cff8f9d92, type: 2}

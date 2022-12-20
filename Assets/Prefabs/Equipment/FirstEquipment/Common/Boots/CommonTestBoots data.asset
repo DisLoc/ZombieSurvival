@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 100
         _requiredMaterialAmount: 2
+  _mergeResult: {fileID: 2565584387524054931, guid: bbd2e161081ba664298e0ac8164ed7c2, type: 3}
   _rarityDescription: ' just stats upgrade'
   _rarityUpgrade: {fileID: 11400000, guid: 72c674fe43d180e439b1208d50b1d9c0, type: 2}
   _previousRarityEquipment: {fileID: 0}

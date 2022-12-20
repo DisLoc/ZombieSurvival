@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 500
         _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 2565584387524054931, guid: 53f8cc337dc349d4ebd28d96e37ac47a, type: 3}
   _rarityDescription: -5% cooldown
   _rarityUpgrade: {fileID: 11400000, guid: 9a1edc0c11047c1409133accf05f6bd5, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: b81bc9262fcad914180a1d400209905f, type: 2}

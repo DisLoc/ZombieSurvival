@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
+  _mergeResult: {fileID: 2565584387524054931, guid: 6dc6fe0b5d43d6847946da54e8153824, type: 3}
   _rarityDescription: +1% exp accumulation
   _rarityUpgrade: {fileID: 11400000, guid: 783ba06cdf27cda48bfe524c7558be61, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: e4f617b6b4b73b74d80dfa81b461809c, type: 2}

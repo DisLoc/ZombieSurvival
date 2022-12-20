@@ -74,6 +74,6 @@ public class EquippedEquipmentInventory
 
     public bool Contains(Equipment equipment)
     {
-        return _equipment.ContainsKey(equipment.EquipSlot) && _equipment[equipment.EquipSlot].Equals(equipment);
+        return _equipment.ContainsKey(equipment.EquipSlot) && equipment.Equals(_equipment[equipment.EquipSlot]);
     }
 }

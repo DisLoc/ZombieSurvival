@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 500
         _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 2565584387524054931, guid: a6cb01c2cf50e47438361bfd9f47aed0, type: 3}
   _rarityDescription: +5% move speed
   _rarityUpgrade: {fileID: 11400000, guid: 453473418923651458c14392591e7ccf, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: f38ab0b4c7cfe254ca902247844d67e6, type: 2}

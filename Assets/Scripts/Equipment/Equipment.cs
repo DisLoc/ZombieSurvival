@@ -7,7 +7,7 @@ public class Equipment : MonoBehaviour
     [SerializeField] protected EquipmentData _equipmentData;
     [SerializeField] protected int _itemID;
 
-    //[HideInInspector] 
+    [HideInInspector] 
     public bool isEquiped;
 
     public EquipmentData EquipmentData => _equipmentData;

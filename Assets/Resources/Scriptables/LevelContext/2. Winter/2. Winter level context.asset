@@ -15,7 +15,7 @@ MonoBehaviour:
   _levelName: Winter
   _levelNumber: 2
   _levelIcon: {fileID: 21300000, guid: 024d2542cb21a6246afad7f72534b9c2, type: 3}
-  _levelPath: Winter1.dat
+  _levelPath: Level2_Winter.dat
   _levelLenght: 15
   _levelRewards:
     _breakpoint1:

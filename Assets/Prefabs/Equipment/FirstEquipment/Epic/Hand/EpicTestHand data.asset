@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
+  _mergeResult: {fileID: 2565584387524054931, guid: 3430338cd89c5c54bae2abca4abf69b6, type: 3}
   _rarityDescription: +10% skill duration
   _rarityUpgrade: {fileID: 11400000, guid: 46191c355171c694d8d9181b7393e32b, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 7e165ed86d4901a4d9e17bacc0d917ef, type: 2}

@@ -18,7 +18,7 @@ MonoBehaviour:
   _rarity: 2
   _upgradingStat: 0
   _equipmentUpgrades:
-    _requiredEquipment: {fileID: 0}
+    _requiredEquipment: {fileID: 2565584387524054931, guid: 90c9ddcaa33a60d48b20d4c8cbaaef86, type: 3}
     _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _requiredMaterial: {fileID: 11400000, guid: ee2361427c10e1744ac28c814ed0fac1, type: 2}
     _upgrades:
@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 500
         _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 2565584387524054931, guid: 0f2b6c495f177404b83c523e55519d37, type: 3}
   _rarityDescription: +3% crit rate, + 10% crit
   _rarityUpgrade: {fileID: 11400000, guid: 9d053b82740afca47bd9e558a0f50354, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 76d6e66995259fd49b33b24626af2284, type: 2}

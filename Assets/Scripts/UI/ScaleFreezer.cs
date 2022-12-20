@@ -8,8 +8,8 @@ public class ScaleFreezer : MonoBehaviour
 
     private void OnEnable()
     {       
-        float deltaX = _defaultSize.x / _transformToScale.rect.width;
-        float deltaY = _defaultSize.y / _transformToScale.rect.height;
+        float deltaX = _transformToScale.rect.width / _defaultSize.x;
+        float deltaY = _transformToScale.rect.height / _defaultSize.y;
 
         if (deltaX != deltaY)
         {

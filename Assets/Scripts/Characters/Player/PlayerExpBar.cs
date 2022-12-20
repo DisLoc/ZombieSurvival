@@ -37,6 +37,6 @@ public class PlayerExpBar : FillBar
 
         _maxFillValue = _expirience.ExpForLevel;
         _fillBar.maxValue = _maxFillValue;
-        _levelText.text = ((int)_expirience.Value).ToString();
+        _levelText.text = ((int)_expirience.Value).ToString() + " lvl";
     }
 }

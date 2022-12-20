@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 200
         _requiredMaterialAmount: 3
+  _mergeResult: {fileID: 2565584387524054931, guid: 53e3933dd85e7914b95943d2e216bdf4, type: 3}
   _rarityDescription: +5%  max health points
   _rarityUpgrade: {fileID: 11400000, guid: 6e16fc63a7d8c784eac1f7d217c612f2, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 3ff0202fffd5f124d8614263a3a64193, type: 2}

@@ -13,12 +13,16 @@ public class GridScaler : MonoBehaviour
     [SerializeField] private Vector2 _defaultSpacing;
     [SerializeField] private Vector4 _defaultPadding;
 
+    private float _min;
+
     private void OnEnable()
     {
-        float deltaX = _delaultResolution.x / Screen.width;
-        float deltaY = _delaultResolution.y / Screen.height;
+        float deltaX = Screen.width / _delaultResolution.x;
+        float deltaY = Screen.height / _delaultResolution.y;
 
         float min = deltaX > deltaY ? deltaY : deltaX;
+
+        _min = min;
 
         _grid.cellSize = new Vector2(_defaultCellSize.x * min, _defaultCellSize.y * min);
         _grid.spacing = new Vector2(_defaultSpacing.x * min, _defaultSpacing.y * min);

@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
+  _mergeResult: {fileID: 2565584387524054931, guid: 3e78404025d7ea04cbf579aaca92d691, type: 3}
   _rarityDescription: +3% radius
   _rarityUpgrade: {fileID: 11400000, guid: 60fca0dea99d5704498ffa3715e30db0, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 0299d40cffc1c884297e3a8e8e5d7b94, type: 2}

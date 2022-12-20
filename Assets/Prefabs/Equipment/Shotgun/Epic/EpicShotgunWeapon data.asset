@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
+  _mergeResult: {fileID: 7228236411287217178, guid: 82b7e0fc2521ebe43afadf8ccd1e1092, type: 3}
   _rarityDescription: +10% crit, +3% crit rate (Shotgun)
   _rarityUpgrade: {fileID: 11400000, guid: 91b4424e9459590439c91bd16d651854, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 6bc0c544fbb13f84aa55467cb7638bcb, type: 2}

@@ -18,7 +18,7 @@ MonoBehaviour:
   _rarity: 2
   _upgradingStat: 1
   _equipmentUpgrades:
-    _requiredEquipment: {fileID: 0}
+    _requiredEquipment: {fileID: 2565584387524054931, guid: 33a482990ca6c89409daca7815a17aba, type: 3}
     _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _requiredMaterial: {fileID: 11400000, guid: e955459969b84f744a8678082d6b1180, type: 2}
     _upgrades:
@@ -40,6 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 500
         _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 2565584387524054931, guid: d665954f8393d214684ba44e6b440b58, type: 3}
   _rarityDescription: +3 health regeneration
   _rarityUpgrade: {fileID: 11400000, guid: 00bca1b1f3393a34d83416202762a5ba, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 77b59f6d645188a47a48ebab43d79726, type: 2}

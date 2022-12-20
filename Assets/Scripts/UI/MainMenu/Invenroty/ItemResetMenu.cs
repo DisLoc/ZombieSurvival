@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public sealed class ItemResetMenu : UIMenu
 {
@@ -42,6 +43,8 @@ public sealed class ItemResetMenu : UIMenu
     private Equipment _equipment;
     private EquipmentTypesData _typesData;
     private MainButtonStates _currentButtonState;
+
+    [Inject] private MainInventory _mainInventory;
 
     public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
     {
@@ -123,6 +126,10 @@ public sealed class ItemResetMenu : UIMenu
     {
         if (_isDebug) Debug.Log("Reseting item level...");
 
+        _mainInventory.Add(new Currency(_equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency, _returnedCurrencyAmount));
+        _mainInventory.Add(_equipment.EquipmentData.EquipmentUpgrades.RequiredEquipment, _returnedEquipmentAmount);
+        _mainInventory.Add(_equipment.EquipmentData.EquipmentUpgrades.RequiredMaterial, _returnedMaterialsAmount);
+
         _equipment.Level.SetValue(1);
 
         SetEquipment(_equipment);
@@ -133,8 +140,22 @@ public sealed class ItemResetMenu : UIMenu
     {
         if (_isDebug) Debug.Log("Downgrade item quality...");
 
-        SetEquipment(_equipment);
-        (_parentMenu as ItemUpgradeMenu).UpdateInventory();
+        if (_mainInventory.EnoughResources(_equipment))
+        {
+            _mainInventory.Add(new Currency(_equipment.EquipmentData.EquipmentUpgrades.RequiredCurrency, _returnedCurrencyAmount));
+            _mainInventory.Add(_equipment.EquipmentData.EquipmentUpgrades.RequiredEquipment, _returnedEquipmentAmount);
+            _mainInventory.Add(_equipment.EquipmentData.EquipmentUpgrades.RequiredMaterial, _returnedMaterialsAmount);
+
+            Equipment equipment = _equipment;
+
+            _equipment = null;
+
+            (_parentMenu as ItemUpgradeMenu).OnEquipmentDowngrade(equipment);
+        }
+        else
+        {
+            _mainMenu.ShowPopupMessage("Downgrade error! Can't find this equipment");
+        }
     }
 
     private void SetButtonText()
@@ -235,6 +256,8 @@ public sealed class ItemResetMenu : UIMenu
             {
                 totalEquipment += upgrade.UpgradeMaterials.RequiredEquipmentAmount;
             }
+
+            _returnedEquipmentAmount = totalEquipment;
 
             _resultEquipmentBackground.sprite = _typesData[_equipment.EquipmentData.EquipmentUpgrades.RequiredEquipment.EquipRarity].RarityBackground;
             _resultEquipmentTypeIcon.sprite = _typesData[_equipment.EquipSlot].SlotIcon;
