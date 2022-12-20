@@ -15,11 +15,14 @@ public class AreaCleaner : PickableObject
 
         _explosionRadius.Initialize();
         _targetDetector.Initialize(_explosionRadius);
+        _pickUpCollider.enabled = true;
     }
 
     protected override void OnPickUp()
     {
         base.OnPickUp();
+
+        _pickUpCollider.enabled = false;
 
         _particle.Play();
 

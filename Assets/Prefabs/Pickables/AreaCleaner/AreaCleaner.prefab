@@ -245,7 +245,7 @@ MonoBehaviour:
     _statData: {fileID: 11400000, guid: f9fd04e7b6574df408fde5ed66ec8130, type: 2}
   _targetDetector: {fileID: 6333452450961645390}
   _particle: {fileID: 8782020105593318307}
-  _destroyDelay: 1
+  _destroyDelay: 0.55
 --- !u!1001 &971825640974454305
 PrefabInstance:
   m_ObjectHideFlags: 0
