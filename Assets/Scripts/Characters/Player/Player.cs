@@ -8,6 +8,7 @@ public class Player : CharacterBase
     [Header("Moving settings")]
     [SerializeField] protected PlayerMoveController _moveController;
     [SerializeField] protected Animator _animator;
+    [SerializeField] protected SpriteRenderer _moveDirectionArrow;
 
     [HideInInspector] public bool isMoving;
 
@@ -146,6 +147,7 @@ public class Player : CharacterBase
         _renderer.transform.LookAt(new Vector3(pos.x, pos.y + CameraDeltaPos.y, pos.z + CameraDeltaPos.z));
 
         _animator.SetBool(AnimatorBools.Walk.ToString(), isMoving);
+        _moveDirectionArrow.enabled = isMoving;
 
         foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
         {
