@@ -66,7 +66,7 @@ public sealed class PauseMenu : UIMenu
         (_mainMenu as GameMenu).SaveLevel();
 
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(GameData.MainMenuScene);
     }
 
     private void UpdateInventory()

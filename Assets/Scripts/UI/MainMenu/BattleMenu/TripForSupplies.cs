@@ -15,7 +15,7 @@ public class TripForSupplies : MonoBehaviour
 
     private void OnEnable()
     {
-        if (DataPath.Load(DataPath.Supplies) == null) // first launch
+        if (GameData.Load(GameData.Supplies) == null) // first launch
         {
             TripData data = new TripData();
 
@@ -23,7 +23,7 @@ public class TripForSupplies : MonoBehaviour
             data.lastMaterialRewardTime = DateTime.Now;
             data.lastEquipmentRewardTime = DateTime.Now;
 
-            DataPath.Save(DataPath.Supplies, data);
+            GameData.Save(GameData.Supplies, data);
         }
     }
 
@@ -33,7 +33,7 @@ public class TripForSupplies : MonoBehaviour
 
         List<Reward> rewards = new List<Reward>();
         
-        if (DataPath.Load(DataPath.Supplies) is TripData data)
+        if (GameData.Load(GameData.Supplies) is TripData data)
         {
             Debug.Log("Here");
             TripData newData = new TripData();
@@ -102,7 +102,7 @@ public class TripForSupplies : MonoBehaviour
                 newData.lastEquipmentRewardTime = DateTime.Now;
             }
 
-            DataPath.Save(DataPath.Supplies, newData);
+            GameData.Save(GameData.Supplies, newData);
         }
 
         if (rewards.Count > 0)

@@ -72,7 +72,7 @@ public class BattleMenu : UIMenu
         {
             _levelInstaller.SetLevel(_currentLevel);
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(GameData.MainGameScene);
         }
         else
         {

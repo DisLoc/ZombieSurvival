@@ -95,7 +95,7 @@ public sealed class GameOverMenu : UIMenu, IPlayerDieHandler
     public void OnContinueGameOver()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(GameData.MainMenuScene);
     }
     #endregion
 }

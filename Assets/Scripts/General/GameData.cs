@@ -2,8 +2,15 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public static class DataPath
+public static class GameData
 {
+    #region Scene IDs
+    public static readonly int LoadingScene = 0;
+    public static readonly int MainMenuScene = 1;
+    public static readonly int MainGameScene = 2;
+    #endregion
+
+    #region Serialization
     public static readonly string DefaultPath = Application.persistentDataPath + "/";
 
     public static readonly string PlayerLevel = DefaultPath + "PlayerLevelTest.dat";
@@ -61,4 +68,5 @@ public static class DataPath
             return null;
         }
     }
+    #endregion
 }

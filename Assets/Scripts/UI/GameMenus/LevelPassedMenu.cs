@@ -47,6 +47,7 @@ public sealed class LevelPassedMenu : UIMenu, ILevelPassedHandler
 
     public void OnContinue()
     {
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(GameData.MainMenuScene);
     }
 }

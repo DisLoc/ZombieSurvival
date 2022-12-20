@@ -58,14 +58,14 @@ public class MainInventory : MonoBehaviour
     [ContextMenu("Load data")]
     private void LoadData()
     {
-        _coinInventory.LoadData(DataPath.Load(DataPath.CoinsInventory));
-        _gemsInventory.LoadData(DataPath.Load(DataPath.GemsInvneotry));
-        _keysInventory.LoadData(DataPath.Load(DataPath.KeysInventory));
-        _energyInventory.LoadData(DataPath.Load(DataPath.EnergyInventory));
-        _equipmentInventory.LoadData(DataPath.Load(DataPath.EquipmentInventory));
-        _campInventory.LoadData(DataPath.Load(DataPath.CampInventory));
-        _playerLevel.LoadData(DataPath.Load(DataPath.PlayerLevel));
-        _materialsInventory.LoadData(DataPath.Load(DataPath.MaterialsInventory));
+        _coinInventory.LoadData(GameData.Load(GameData.CoinsInventory));
+        _gemsInventory.LoadData(GameData.Load(GameData.GemsInvneotry));
+        _keysInventory.LoadData(GameData.Load(GameData.KeysInventory));
+        _energyInventory.LoadData(GameData.Load(GameData.EnergyInventory));
+        _equipmentInventory.LoadData(GameData.Load(GameData.EquipmentInventory));
+        _campInventory.LoadData(GameData.Load(GameData.CampInventory));
+        _playerLevel.LoadData(GameData.Load(GameData.PlayerLevel));
+        _materialsInventory.LoadData(GameData.Load(GameData.MaterialsInventory));
 
         foreach (LevelContext context in _levels)
         {
@@ -76,14 +76,14 @@ public class MainInventory : MonoBehaviour
     [ContextMenu("Save data")]
     public void SaveData()
     {
-        DataPath.Save(DataPath.CoinsInventory, _coinInventory.SaveData());
-        DataPath.Save(DataPath.GemsInvneotry, _gemsInventory.SaveData());
-        DataPath.Save(DataPath.KeysInventory, _keysInventory.SaveData());
-        DataPath.Save(DataPath.EnergyInventory, _energyInventory.SaveData());
-        DataPath.Save(DataPath.EquipmentInventory, _equipmentInventory.SaveData());
-        DataPath.Save(DataPath.CampInventory, _campInventory.SaveData());
-        DataPath.Save(DataPath.PlayerLevel, _playerLevel.SaveData());
-        DataPath.Save(DataPath.MaterialsInventory, _materialsInventory.SaveData());
+        GameData.Save(GameData.CoinsInventory, _coinInventory.SaveData());
+        GameData.Save(GameData.GemsInvneotry, _gemsInventory.SaveData());
+        GameData.Save(GameData.KeysInventory, _keysInventory.SaveData());
+        GameData.Save(GameData.EnergyInventory, _energyInventory.SaveData());
+        GameData.Save(GameData.EquipmentInventory, _equipmentInventory.SaveData());
+        GameData.Save(GameData.CampInventory, _campInventory.SaveData());
+        GameData.Save(GameData.PlayerLevel, _playerLevel.SaveData());
+        GameData.Save(GameData.MaterialsInventory, _materialsInventory.SaveData());
         
         foreach (LevelContext context in _levels)
         {
@@ -94,80 +94,80 @@ public class MainInventory : MonoBehaviour
     [ContextMenu("Reset data")]
     private void ResetData()
     {
-        if (File.Exists(DataPath.CoinsInventory))
+        if (File.Exists(GameData.CoinsInventory))
         {
-            File.Delete(DataPath.CoinsInventory);
+            File.Delete(GameData.CoinsInventory);
             _coinInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset CoinsInventory");
         }
         
-        if (File.Exists(DataPath.GemsInvneotry))
+        if (File.Exists(GameData.GemsInvneotry))
         {
-            File.Delete(DataPath.GemsInvneotry);
+            File.Delete(GameData.GemsInvneotry);
             _gemsInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset GemsInvneotry");
         }
 
-        if (File.Exists(DataPath.KeysInventory))
+        if (File.Exists(GameData.KeysInventory))
         {
-            File.Delete(DataPath.KeysInventory);
+            File.Delete(GameData.KeysInventory);
             _keysInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset KeysInventory");
         }
 
-        if (File.Exists(DataPath.EnergyInventory))
+        if (File.Exists(GameData.EnergyInventory))
         {
-            File.Delete(DataPath.EnergyInventory);
+            File.Delete(GameData.EnergyInventory);
             _energyInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset EnergyInventory");
         }
         
-        if (File.Exists(DataPath.EquipmentInventory))
+        if (File.Exists(GameData.EquipmentInventory))
         {
-            File.Delete(DataPath.EquipmentInventory);
+            File.Delete(GameData.EquipmentInventory);
             _equipmentInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset EquipmentInventory");
         }
         
-        if (File.Exists(DataPath.CampInventory))
+        if (File.Exists(GameData.CampInventory))
         {
-            File.Delete(DataPath.CampInventory);
+            File.Delete(GameData.CampInventory);
             _campInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset CampInventory");
         }
 
-        if (File.Exists(DataPath.MaterialsInventory))
+        if (File.Exists(GameData.MaterialsInventory))
         {
-            File.Delete(DataPath.MaterialsInventory);
+            File.Delete(GameData.MaterialsInventory);
             //_materialsInventory.ResetData();
 
             if (_isDebug) Debug.Log("Reset MaterialsInventory");
         }
         
-        if (File.Exists(DataPath.PlayerLevel))
+        if (File.Exists(GameData.PlayerLevel))
         {
-            File.Delete(DataPath.PlayerLevel);
+            File.Delete(GameData.PlayerLevel);
             _playerLevel.ResetData();
 
             if (_isDebug) Debug.Log("Reset PlayerLevel");
         }        
 
-        if (File.Exists(DataPath.SpecialGift))
+        if (File.Exists(GameData.SpecialGift))
         {
-            File.Delete(DataPath.SpecialGift);
+            File.Delete(GameData.SpecialGift);
 
             if (_isDebug) Debug.Log("Reset SpecialGift");
         }
         
-        if (File.Exists(DataPath.Supplies))
+        if (File.Exists(GameData.Supplies))
         {
-            File.Delete(DataPath.Supplies);
+            File.Delete(GameData.Supplies);
 
             if (_isDebug) Debug.Log("Reset Supplies");
         }

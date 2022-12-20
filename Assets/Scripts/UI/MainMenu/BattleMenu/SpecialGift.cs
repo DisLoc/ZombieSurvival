@@ -14,7 +14,7 @@ public class SpecialGift : MonoBehaviour
         bool onCooldown;
         int cooldownTime = _giftCooldown;
 
-        if (DataPath.Load(DataPath.SpecialGift) is GiftData loadedData)
+        if (GameData.Load(GameData.SpecialGift) is GiftData loadedData)
         {
             onCooldown = (DateTime.Now - loadedData.time).TotalSeconds < _giftCooldown;
             cooldownTime = (int)(_giftCooldown - (DateTime.Now - loadedData.time).TotalSeconds);
@@ -30,7 +30,7 @@ public class SpecialGift : MonoBehaviour
 
             data.time = DateTime.Now;
 
-            DataPath.Save(DataPath.SpecialGift, data);
+            GameData.Save(GameData.SpecialGift, data);
 
             _mainMenu.ShowRewards(_reward.Rewards);
         } 

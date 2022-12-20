@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadingScreen : MonoBehaviour
@@ -12,28 +13,14 @@ public class LoadingScreen : MonoBehaviour
 
     [SerializeField] private LoadingBar _loadingBar;
 
+    private bool _onLoad;
+
     [Header("Test")]
     public int loadingTime;
     private float _timer;
 
     private void OnEnable()
     {
-        if (PlayerPrefs.HasKey("Loaded"))
-        {
-            int loaded = PlayerPrefs.GetInt("Loaded");
-
-            if (loaded == 1)
-            {
-                EventBus.Publish<IGameStartHandler>(handler => handler.OnGameStart());
-
-                gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Loaded", 1);
-        }
-
         _applicationVersionText.text = Application.version;
         _loadingBar.Initialize();
         _timer = 0;
@@ -66,17 +53,11 @@ public class LoadingScreen : MonoBehaviour
             _loadingDescription.text = "Loading...";
         }
 
-        if (_timer >= loadingTime + 1f)
+        if (_timer >= loadingTime && !_onLoad)
         {
-            EventBus.Publish<IGameStartHandler>(handler => handler.OnGameStart());
+            _onLoad = true;
 
-            gameObject.SetActive(false);
+            SceneManager.LoadSceneAsync(GameData.MainMenuScene);
         }
-    }
-
-    [ContextMenu("Reset data")]
-    private void ResetData()
-    {
-        PlayerPrefs.DeleteAll();
     }
 }

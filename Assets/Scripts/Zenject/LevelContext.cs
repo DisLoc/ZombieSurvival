@@ -178,12 +178,12 @@ public sealed class LevelContext : ScriptableObject
             data.Add(breakpoint);
         }
 
-        DataPath.Save(DataPath.DefaultPath + _levelPath, data);
+        GameData.Save(GameData.DefaultPath + _levelPath, data);
     }
 
     public void LoadData()
     {
-        LevelContextData data = DataPath.Load(DataPath.DefaultPath + _levelPath) as LevelContextData;
+        LevelContextData data = GameData.Load(GameData.DefaultPath + _levelPath) as LevelContextData;
 
         if (data == null) return;
 
@@ -208,9 +208,9 @@ public sealed class LevelContext : ScriptableObject
     [ContextMenu("Reset level")]
     public void ResetLevel()
     {
-        if (File.Exists(DataPath.DefaultPath + _levelPath))
+        if (File.Exists(GameData.DefaultPath + _levelPath))
         {
-            File.Delete(DataPath.DefaultPath + _levelPath);
+            File.Delete(GameData.DefaultPath + _levelPath);
         }
 
         wasPassed = false;
