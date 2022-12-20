@@ -48,6 +48,7 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
 
     [Inject] protected Player _player;
     [Inject] protected LevelContext _levelContext;
+    [Inject] protected MainInventory _mainInventory;
 
     protected override void OnEnable()
     {
@@ -271,6 +272,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     {
                         zombie?.GetUpgrade(levelUpgrade);
                     }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.GetUpgrade(campUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
@@ -280,6 +286,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     foreach (Upgrade levelUpgrade in _levelUpgrades)
                     {
                         zombie?.GetUpgrade(levelUpgrade);
+                    }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.GetUpgrade(campUpgrade);
                     }
                 }
             }
@@ -297,6 +308,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     {
                         zombie?.GetUpgrade(levelUpgrade);
                     }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.GetUpgrade(campUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
@@ -306,6 +322,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     foreach (Upgrade levelUpgrade in _levelUpgrades)
                     {
                         zombie?.GetUpgrade(levelUpgrade);
+                    }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.GetUpgrade(campUpgrade);
                     }
                 }
             }
@@ -331,6 +352,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     {
                         zombie?.DispelUpgrade(levelUpgrade);
                     }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.DispelUpgrade(campUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
@@ -340,6 +366,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     foreach (Upgrade levelUpgrade in _levelUpgrades)
                     {
                         zombie?.DispelUpgrade(levelUpgrade);
+                    }
+                    
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.DispelUpgrade(campUpgrade);
                     }
                 }
             }
@@ -357,6 +388,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     {
                         zombie?.DispelUpgrade(levelUpgrade);
                     }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.DispelUpgrade(campUpgrade);
+                    }
                 }
 
                 foreach (Enemy zombie in pool.SpawnedObjects.List)
@@ -366,6 +402,11 @@ public abstract class EnemySpawner : Spawner, IUpdatable, IFixedUpdatable
                     foreach (Upgrade levelUpgrade in _levelUpgrades)
                     {
                         zombie?.DispelUpgrade(levelUpgrade);
+                    }
+
+                    foreach (Upgrade campUpgrade in _mainInventory.CampInventory.CampUpgrades)
+                    {
+                        zombie?.DispelUpgrade(campUpgrade);
                     }
                 }
             }

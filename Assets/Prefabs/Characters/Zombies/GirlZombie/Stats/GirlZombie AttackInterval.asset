@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4de10bd6cb7e6454e89c52a3084213a3, type: 3}
-  m_Name: BirdZombie Velocity
+  m_Name: GirlZombie AttackInterval
   m_EditorClassIdentifier: 
-  _baseValue: 3.5
-  _minValue: 1
-  _maxValue: 3.5
-  _maxValueIsInfinite: 1
+  _baseValue: 1
+  _minValue: 0.1
+  _maxValue: 2
+  _maxValueIsInfinite: 0
   _upgradeMarkers:
     _markers:
-    - {fileID: 11400000, guid: a333123cedebbc043ad5593c64d59d68, type: 2}
+    - {fileID: 11400000, guid: 07c976f80c1139147a50fe92fa1622aa, type: 2}
     _minMatchesCount: 1
