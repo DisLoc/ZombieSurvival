@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 0
   _name: Fiery bottle
-  _icon: {fileID: 21300000, guid: 6b6abf2cefac7bb4bbd4f8fd27f50219, type: 3}
+  _icon: {fileID: 21300000, guid: 0d6a4583c85fbbb4993828294d1e87de, type: 3}
   _sounds:
     _sounds:
     - _soundType: 5

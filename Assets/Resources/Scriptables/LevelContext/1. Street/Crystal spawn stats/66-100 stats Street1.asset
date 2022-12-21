@@ -15,23 +15,23 @@ MonoBehaviour:
   _crystalPrefab: {fileID: 8038103952488939020, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
   _crystalSpawnParams:
   - _object:
-      _expValue: 50
-      _color: {r: 0, g: 1, b: 0, a: 1}
-    _spawnChance:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
-  - _object:
       _expValue: 150
       _color: {r: 0, g: 0.5019608, b: 1, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+      _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
   - _object:
       _expValue: 300
       _color: {r: 1, g: 0.5019608, b: 0, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+      _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+  - _object:
+      _expValue: 50
+      _color: {r: 0, g: 1, b: 0, a: 1}
+    _spawnChance:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
   - _object:
       _expValue: 500
       _color: {r: 1, g: 0, b: 0, a: 1}

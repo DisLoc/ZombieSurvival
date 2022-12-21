@@ -49,6 +49,13 @@ public class UpgradableBuilding : MonoBehaviour
 
     public void OnClick()
     {
-        _animator.SetTrigger("Click");
+        if (_unlocked)
+        {
+            _animator.SetTrigger("Click");
+        }
+        else
+        {
+            _mainMenu.ShowPopupMessage("This building will be unlocked at level " + _unlockLevel);
+        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CampInventory : Inventory
 {
     [SerializeField] private List<CampUpgrade> _campUpgrades;
+    [SerializeField] private List<Talent> _talents;
 
     public List<Upgrade> CampUpgrades
     {
@@ -22,6 +23,16 @@ public class CampInventory : Inventory
                 }
             }
 
+            foreach (var talent in _talents.FindAll(item => item.Unlocked == true))
+            {
+                Upgrade current = talent.Upgrade;
+                
+                if (current != null)
+                {
+                    upgrades.Add(current);
+                }
+            }
+
             return upgrades;
         }
     }
@@ -30,12 +41,21 @@ public class CampInventory : Inventory
     /// All available camp upgrades
     /// </summary>
     public List<CampUpgrade> Upgrades => _campUpgrades;
+    /// <summary>
+    /// All available camp talents
+    /// </summary>
+    public List<Talent> Talents => _talents;
 
     public void Initialize()
     {
         foreach(var upgrade in _campUpgrades)
         {
             upgrade.Initialize();
+        }
+        
+        foreach(var talent in _talents)
+        {
+            talent.Initialize(false);
         }
     }
 
@@ -54,6 +74,11 @@ public class CampInventory : Inventory
         foreach(var upgrade in _campUpgrades)
         {
             data.Add(upgrade);
+        }
+        
+        foreach(var talent in _talents)
+        {
+            data.Add(talent);
         }
 
         return data;
@@ -75,6 +100,18 @@ public class CampInventory : Inventory
                     _campUpgrades[i].UpdateValues();
                 }
             }
+            
+            if (loadedData.talents.Count != _talents.Count)
+            {
+                Debug.Log("Camp inventory load error!");
+            }
+            else
+            {
+                for (int i = 0; i < _talents.Count; i++)
+                {
+                    _talents[i].Initialize(loadedData.talents[i].unlocked);
+                }
+            }
         }
         else return;
     }
@@ -88,10 +125,12 @@ public class CampInventory : Inventory
     private class CampUpgradeData : SerializableData
     {
         public List<ConcreteUpgradeData> upgrades;
+        public List<ConcreteTalentData> talents;
 
         public CampUpgradeData() 
         {
             upgrades = new List<ConcreteUpgradeData>();
+            talents = new List<ConcreteTalentData>();
         }
 
         public void Add(CampUpgrade upgrade)
@@ -102,12 +141,26 @@ public class CampInventory : Inventory
 
             upgrades.Add(data);
         }
+        
+        public void Add(Talent talent)
+        {
+            ConcreteTalentData data = new ConcreteTalentData();
+
+            data.unlocked = talent.Unlocked;
+
+            talents.Add(data);
+        }
 
         [System.Serializable]
         public class ConcreteUpgradeData
         {
             public int level;
-
+        }
+        
+        [System.Serializable]
+        public class ConcreteTalentData
+        {
+            public bool unlocked;
         }
     }
 }

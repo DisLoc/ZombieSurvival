@@ -31,6 +31,14 @@ public class CampMenu : UIMenu
 
     [Inject] private MainInventory _mainInventory;
 
+    public override void Initialize(MainMenu mainMenu, UIMenu parentMenu = null)
+    {
+        base.Initialize(mainMenu, parentMenu);
+
+        _talents.Initialize(_mainMenu, this);
+        _upgrades.Initialize(_mainMenu, this);
+    }
+
     public override void Display(bool playAnimation = false)
     {
         _talents.Hide();
@@ -69,6 +77,8 @@ public class CampMenu : UIMenu
             if (_mainInventory.Spend(_currentCost))
             {
                 buildings[Random.Range(0, buildings.Count)].CampUpgrade.Upgrade();
+
+                _mainInventory.SaveInventory(_mainInventory.CampInventory);
 
                 UpdateUpgrades();
             }
@@ -124,7 +134,7 @@ public class CampMenu : UIMenu
                 _currentCost = new Currency
                     (
                         _requiredCurrency.CurrencyData, 
-                        _requiredCurrency.CurrencyValue * (currentLevel > 0 ? (int)((currentLevel + 1) * _currencyMultiplierPerLevel) : 1)
+                        _requiredCurrency.CurrencyValue * (currentLevel > 0 ? (int)(currentLevel * _currencyMultiplierPerLevel) : 1)
                     );
 
                 _requiredCurrencyAmountText.text = _currentCost.CurrencyValue.ToString();

@@ -15,7 +15,7 @@ public class StoneThrower : ProjectileWeapon
 
         else if (_spawnCount % 2 == 0)
         {
-            delta += transform.TransformDirection(Vector3.right) * _scatterMultiplier * _spawnCount;
+            delta += transform.TransformDirection(Vector3.right) * _scatterMultiplier * (_spawnCount - 1);
         }
         else
         {

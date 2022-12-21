@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using UnityEngine;
 
@@ -78,17 +77,63 @@ public class MainInventory : MonoBehaviour
     {
         GameData.Save(GameData.CoinsInventory, _coinInventory.SaveData());
         GameData.Save(GameData.GemsInvneotry, _gemsInventory.SaveData());
-        GameData.Save(GameData.KeysInventory, _keysInventory.SaveData());
         GameData.Save(GameData.EnergyInventory, _energyInventory.SaveData());
+        GameData.Save(GameData.KeysInventory, _keysInventory.SaveData());
         GameData.Save(GameData.EquipmentInventory, _equipmentInventory.SaveData());
         GameData.Save(GameData.CampInventory, _campInventory.SaveData());
-        GameData.Save(GameData.PlayerLevel, _playerLevel.SaveData());
         GameData.Save(GameData.MaterialsInventory, _materialsInventory.SaveData());
+        GameData.Save(GameData.PlayerLevel, _playerLevel.SaveData());
         
         foreach (LevelContext context in _levels)
         {
             context.SaveData();
         }
+    }
+
+    public bool SaveInventory(Inventory inventory)
+    {
+        if (inventory.Equals(_coinInventory))
+        {
+            GameData.Save(GameData.CoinsInventory, _coinInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_gemsInventory))
+        {
+            GameData.Save(GameData.GemsInvneotry, _gemsInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_energyInventory))
+        {
+            GameData.Save(GameData.EnergyInventory, _energyInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_keysInventory))
+        {
+            GameData.Save(GameData.KeysInventory, _keysInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_equipmentInventory))
+        {
+            GameData.Save(GameData.EquipmentInventory, _equipmentInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_campInventory))
+        {
+            GameData.Save(GameData.CampInventory, _campInventory.SaveData());
+            return true;
+        }
+        else if (inventory.Equals(_materialsInventory))
+        {
+            GameData.Save(GameData.MaterialsInventory, _materialsInventory.SaveData());
+            return true;
+        }
+
+        return false;
+    }
+
+    public void SavePlayer()
+    {
+        GameData.Save(GameData.PlayerLevel, _playerLevel.SaveData());
     }
 
     [ContextMenu("Reset data")]
@@ -204,7 +249,7 @@ public class MainInventory : MonoBehaviour
 
         inventory?.Add(currency);
 
-        SaveData();
+        SaveInventory(inventory);
     }
 
     public bool Spend(Currency currency)
@@ -213,7 +258,7 @@ public class MainInventory : MonoBehaviour
         {
             inventory.Spend(currency);
 
-            SaveData();
+            SaveInventory(inventory);
 
             return true;
         }
@@ -279,7 +324,7 @@ public class MainInventory : MonoBehaviour
             _equipmentInventory.Add(equipment);
         }
 
-        SaveData();
+        SaveInventory(_equipmentInventory);
     }
 
     public void Add(EquipmentMaterial material, int count = 1)
@@ -288,7 +333,7 @@ public class MainInventory : MonoBehaviour
 
         _materialsInventory.Add(material.ValidEquipment, count);
 
-        SaveData();
+        SaveInventory(_materialsInventory);
     }
     
     public bool Spend(Equipment equipment, int count = 1)
@@ -299,7 +344,7 @@ public class MainInventory : MonoBehaviour
         {
             if (_isDebug) Debug.Log("Removed equipment: " + equipment.name + " x" + count);
 
-            SaveData();
+            SaveInventory(_equipmentInventory);
 
             return true;
         }
@@ -315,7 +360,7 @@ public class MainInventory : MonoBehaviour
         {
             if (_isDebug) Debug.Log("Removed material: " + material.name + " x" + count);
 
-            SaveData();
+            SaveInventory(_materialsInventory);
 
             return true;
         }
@@ -330,12 +375,6 @@ public class MainInventory : MonoBehaviour
     {
         _coinInventory.Add(new Currency(_coinInventory.CurrencyData, 5000));
     }
-    
-    [ContextMenu("Spend coins")]
-    private void SpendCoins()
-    {
-        _coinInventory.Spend(new Currency(_coinInventory.CurrencyData, 312));
-    }
 
 
     [ContextMenu("Add gems")]
@@ -344,23 +383,11 @@ public class MainInventory : MonoBehaviour
         _gemsInventory.Add(new Currency(_gemsInventory.CurrencyData, 50));
     }
 
-    [ContextMenu("Spend gems")]
-    private void SpendGems()
-    {
-        _gemsInventory.Spend(new Currency(_gemsInventory.CurrencyData, 8));
-    }
-
 
     [ContextMenu("Add energy")]
     private void AddEnergy()
     {
-        _energyInventory.Add(new Currency(_energyInventory.CurrencyData, 5));
-    }
-
-    [ContextMenu("Spend energy")]
-    private void SpendEnergy()
-    {
-        _energyInventory.Spend(new Currency(_energyInventory.CurrencyData, 10));
+        _energyInventory.Add(new Currency(_energyInventory.CurrencyData, 20));
     }
 
     [ContextMenu("Add exp")]
@@ -378,12 +405,7 @@ public class MainInventory : MonoBehaviour
     [ContextMenu("Add equipment material")]
     private void AddRandomEquipmentMaterial()
     {
-        _materialsInventory.Add(_equipmentInventory.EquipmentList.GetRandomMaterial().ValidEquipment, 5);
+        _materialsInventory.Add(_equipmentInventory.EquipmentList.GetRandomMaterial().ValidEquipment, 20);
     }
     #endregion
-
-    private void OnApplicationQuit()
-    {
-        SaveData();
-    }
 }

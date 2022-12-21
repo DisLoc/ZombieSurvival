@@ -18,5 +18,6 @@ public class ExpirienceReward : Reward
     public override void GetReward(MainInventory inventory)
     {
         inventory.PlayerLevel.AddExp(_rewardAmount);
+        inventory.SavePlayer();
     }
 }
