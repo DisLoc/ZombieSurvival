@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: EliteZombieCollider ability data
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 32618903411071136, guid: f9450d6d29cbc754e9f56c4e61185992, type: 3}
+  _levelUpgrades:
+  - _description: '-'
+    _upgrade: {fileID: 11400000, guid: a3a6bdb2b0ac68b4fae72b5a4a17be74, type: 2}
+    _requiredLevel: 0

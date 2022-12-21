@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645888494350261580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7855256235738180039}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4180107282287703855
 SpriteRenderer:
@@ -135,7 +135,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7855256235738180039}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &4264686247093318388
 SpriteRenderer:
@@ -189,113 +189,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &813695180405514481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 239619360821849134}
-  - component: {fileID: 4455862380758211367}
-  - component: {fileID: 6916928023401610256}
-  - component: {fileID: 2656620164662432799}
-  m_Layer: 0
-  m_Name: ColliderAbility
-  m_TagString: EnemyWeapon
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &239619360821849134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813695180405514481}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7855256235738180039}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4455862380758211367
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813695180405514481}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6916928023401610256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813695180405514481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 4455862380758211367}
-  _triggerTags:
-    _tags: 00000000
-  _parent: {fileID: 7855256235738180032}
---- !u!114 &2656620164662432799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813695180405514481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3ab3279ca16a84f96a5f1d068fef79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _name: BossZombie collider
-  _icon: {fileID: 0}
-  _sounds:
-    _sounds: []
-  _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 6916928023401610256}
-  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
-  _stats:
-    _abilityMarker: {fileID: 0}
-    _level:
-      _baseValue: 1
-      _minValue: 1
-      _maxValue: 0
-      _maxValueIsInfinite: 1
-    _damage:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 4d74ec18663e79e429bbb8551851a2ad, type: 2}
-      _criticalDamage:
-        _isDebug: 0
-        _statData: {fileID: 11400000, guid: e68e45023fd4144428f407e95f1d56fa, type: 2}
-        _chance:
-          _isDebug: 0
-          _statData: {fileID: 11400000, guid: 55de5b06d2496004d98752c783cc47ba, type: 2}
-    _attackInterval:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: f125973d967074147bae736f0d5fb190, type: 2}
-    _attackRange:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 377e61a1664f5f941b28d28383aba68d, type: 2}
 --- !u!1 &1317498432250606362
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +592,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7855256235738180039}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &542108099303801745
 SpriteRenderer:
@@ -785,7 +678,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5252963861008415976}
-  - {fileID: 239619360821849134}
   - {fileID: 4726534546895409385}
   - {fileID: 648430470184968886}
   - {fileID: 1514390408663083177}
@@ -842,10 +734,14 @@ MonoBehaviour:
   _hpCanvas: {fileID: 5330277169062642404}
   _renderer: {fileID: 4180107282287703855}
   _defaultViewSide: {x: -1, y: 0, z: 0}
+  _abilityInventory:
+    _maxActiveAbilitiesCount: 5
+    _maxPassiveAbilitiesCount: 0
+    _abilitiesParent: {fileID: 7855256235738180039}
   _selfCollider: {fileID: 7855256235738180034}
   _hasExpReward: 0
   _stats:
-    _baseWeapon: {fileID: 2656620164662432799}
+    _baseWeapon: {fileID: 5144337735560292496, guid: 098977b7cdc557e4b9c71b20402ebadf, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: e12afb31dee26e544b88819c5a26040d, type: 2}

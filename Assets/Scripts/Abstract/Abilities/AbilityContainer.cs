@@ -46,7 +46,9 @@ public abstract class AbilityContainer : MonoBehaviour, IUpgradeable
     /// <returns>Return true if level up</returns>
     public virtual bool Upgrade(Upgrade upgrade)
     {
-        if (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(Stats.AbilityMarker) && upgrade.Equals(CurrentUpgrade.Upgrade))
+        if (upgrade == null) return false;
+
+        if (IsMaxLevel || (upgrade.IsAbilityUpgrade && upgrade.AbilityMarker.Equals(Stats.AbilityMarker) && upgrade.Equals(CurrentUpgrade.Upgrade)))
         {
             foreach (UpgradeData data in upgrade.Upgrades)
             {

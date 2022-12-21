@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: CommonZombieCollider ability data
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 4032572870793917761, guid: 0619e8c5e86cc5a4e8cd27072133d398, type: 3}
+  _levelUpgrades:
+  - _description: '-'
+    _upgrade: {fileID: 11400000, guid: 3c97839c8930a7e48a3c80635fc28eef, type: 2}
+    _requiredLevel: 0

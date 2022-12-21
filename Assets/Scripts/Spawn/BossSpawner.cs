@@ -28,7 +28,6 @@ public sealed class BossSpawner : EnemySpawner
     private BossBreakpoint _currentBreakpoint;
 
     [Inject] private AbilityGiver _abilityGiver;
-    [Inject] private MainInventory _mainInventory;
 
     protected override void OnEnable()
     {

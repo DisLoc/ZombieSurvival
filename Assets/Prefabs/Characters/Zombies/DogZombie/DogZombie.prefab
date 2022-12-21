@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6014635930849753479}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &1669039892331066488
 SpriteRenderer:
@@ -114,7 +114,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6014635930849753479}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &5155376757053352647
 SpriteRenderer:
@@ -199,7 +199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6014635930849753479}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4783904853107320777
 SpriteRenderer:
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 6014635930849753479}
   - component: {fileID: 6014635930849753474}
   - component: {fileID: 6014635930849753475}
-  - component: {fileID: 6014635930849753472}
+  - component: {fileID: 8362020280977346982}
   m_Layer: 8
   m_Name: DogZombie
   m_TagString: Enemy
@@ -305,7 +305,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2160005782200888993}
-  - {fileID: 6014635931554664406}
   - {fileID: 5581508832292548232}
   - {fileID: 5939999885189485315}
   - {fileID: 7754123690677302576}
@@ -342,7 +341,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &6014635930849753472
+--- !u!114 &8362020280977346982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -351,7 +350,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6014635930849753473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f855eb496881b4b8357d5717de9157, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e4c55811e403df4fbb6a7c0bd193bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebug: 0
@@ -362,10 +361,14 @@ MonoBehaviour:
   _hpCanvas: {fileID: 2082727654760108205}
   _renderer: {fileID: 4783904853107320777}
   _defaultViewSide: {x: 1, y: 0, z: 0}
+  _abilityInventory:
+    _maxActiveAbilitiesCount: 1
+    _maxPassiveAbilitiesCount: 0
+    _abilitiesParent: {fileID: 6014635930849753479}
   _selfCollider: {fileID: 6014635930849753474}
   _hasExpReward: 1
   _stats:
-    _baseWeapon: {fileID: 6014635931554664393}
+    _baseWeapon: {fileID: 9112415352682760335, guid: 038e4d5178a823d49b8cbcc376151f5e, type: 3}
     _health:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: bf371888380b38842aac4edbf84ec03d, type: 2}
@@ -378,113 +381,6 @@ MonoBehaviour:
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 37459d7d09903914395fdcf947cc378c, type: 2}
---- !u!1 &6014635931554664407
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6014635931554664406}
-  - component: {fileID: 6014635931554664395}
-  - component: {fileID: 6014635931554664392}
-  - component: {fileID: 6014635931554664393}
-  m_Layer: 0
-  m_Name: ColliderAbility
-  m_TagString: EnemyWeapon
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6014635931554664406
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6014635931554664407}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6014635930849753479}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6014635931554664395
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6014635931554664407}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6014635931554664392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6014635931554664407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _collider: {fileID: 6014635931554664395}
-  _triggerTags:
-    _tags: 00000000
-  _parent: {fileID: 6014635930849753473}
---- !u!114 &6014635931554664393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6014635931554664407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3ab3279ca16a84f96a5f1d068fef79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isDebug: 0
-  _name: DogZombie collider
-  _icon: {fileID: 0}
-  _sounds:
-    _sounds: []
-  _isSuperWeapon: 0
-  _requiredAbilityToUpgradeToSuper: {fileID: 0}
-  _targetDetector: {fileID: 6014635931554664392}
-  _abilityUpgradeData: {fileID: 11400000, guid: 3ccec041f92356d4497dc5f864dbf96d, type: 2}
-  _stats:
-    _abilityMarker: {fileID: 0}
-    _level:
-      _baseValue: 1
-      _minValue: 1
-      _maxValue: 0
-      _maxValueIsInfinite: 1
-    _damage:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 56cffba2cf2e911468573ddf8d6c083e, type: 2}
-      _criticalDamage:
-        _isDebug: 0
-        _statData: {fileID: 11400000, guid: af48b46c7ac9d6a47bf89f05f865aae8, type: 2}
-        _chance:
-          _isDebug: 0
-          _statData: {fileID: 11400000, guid: 14cd6235988bc3e4a819b16e997b8115, type: 2}
-    _attackInterval:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 06db60de970ee774eba65bcafcf31dec, type: 2}
-    _attackRange:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 8a5d8e17bb778fd4d823138ce23f4d22, type: 2}
 --- !u!1001 &6014635930533822938
 PrefabInstance:
   m_ObjectHideFlags: 0

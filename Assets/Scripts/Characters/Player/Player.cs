@@ -25,10 +25,7 @@ public class Player : CharacterBase
     [SerializeField] protected PlayerStats _stats;
 
     [Header("Inventory settings")]
-    [SerializeField] protected AbilityInventory _abilityInventory;
     [SerializeField] protected CurrencyInventory _coinInventory;
-
-    protected List<Upgrade> _upgrades;
 
     public override CharacterStats Stats => _stats;
 
@@ -36,7 +33,6 @@ public class Player : CharacterBase
     public AbilityInventory AbilityInventory => _abilityInventory;
     public CurrencyInventory CoinInventory => _coinInventory;
     public Vector3 CameraDeltaPos => _moveController.CameraDeltaPos;
-
 
     [Inject] protected LevelContext _levelContext;
     [Inject] protected AbilityGiver _abilityGiver;
@@ -135,7 +131,7 @@ public class Player : CharacterBase
 
     private void Update()
     {
-        Attack();
+        OnUpdate();
     }
 
     private void FixedUpdate()
@@ -148,11 +144,6 @@ public class Player : CharacterBase
 
         _animator.SetBool(AnimatorBools.Walk.ToString(), isMoving);
         _moveDirectionArrow.enabled = isMoving;
-
-        foreach (ProjectileWeapon weapon in _abilityInventory.ProjectileWeapons)
-        {
-            weapon.OnFixedUpdate();
-        }
     }
 
     public override void Move(Vector3 direction)
@@ -197,97 +188,6 @@ public class Player : CharacterBase
 
         _coinInventory.GetUpgrade(upgrade);
         _pickablesCatcher.UpdateRadius();
-
-        for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
-        {
-            _abilityInventory.Abilities[index].Upgrade(upgrade);
-        }
-
-        _upgrades.Add(upgrade);
-    }
-
-    /// <summary>
-    /// Get new ability or upgrade existing
-    /// </summary>
-    /// <param name="ability"></param>
-    /// <returns>Return added or upgraded ability</returns>
-    public AbilityContainer GetAbility(AbilityContainer ability)
-    {
-        if (ability as AdditionalAbility != null)
-        {
-            GetUpgrade((ability as AdditionalAbility).CurrentUpgrade.Upgrade);
-            return ability;
-        }
-
-        if (ability as Weapon != null && (ability as Weapon).IsSuper)
-        {
-            Weapon weapon = _abilityInventory.FindCombine(ability as Weapon);
-
-            if (weapon != null)
-            {
-                if (_isDebug) Debug.Log("Upgrade " + weapon.Name + " to super: " + ability.Name);
-
-                if (_abilityInventory.Remove(weapon))
-                {
-                    AbilityContainer newAbility = _abilityInventory.Add(ability);
-                    
-                    if (newAbility != null)
-                    {
-                        foreach(Upgrade upgrade in _upgrades)
-                        {
-                            newAbility.Upgrade(upgrade);
-                        }
-                    }
-                }
-            }
-        }
-
-        AbilityContainer abilityContainer = _abilityInventory.Find(ability);
-
-        if (abilityContainer != null)
-        {
-            if (abilityContainer.IsMaxLevel)
-            {
-                if (_isDebug) Debug.Log("This ability is max level!");
-
-                return abilityContainer;
-            }
-
-            if (_isDebug) Debug.Log("Ability already in inventory. Upgrade it");
-
-            GetUpgrade(abilityContainer.CurrentUpgrade.Upgrade);
-
-            return abilityContainer;
-        }
-        else
-        {
-            if (_isDebug) Debug.Log("Add new ability");
-
-            AbilityContainer newAbility = _abilityInventory.Add(ability);
-
-            if (newAbility != null)
-            {
-                foreach (Upgrade upgrade in _upgrades)
-                {
-                    newAbility.Upgrade(upgrade);
-                }
-                
-                GetUpgrade(newAbility.CurrentUpgrade.Upgrade);
-            }
-            else if (_isDebug) Debug.Log("Adding ability error!");
-
-            return newAbility;
-        }
-    }
-
-    public override void DispelUpgrade(Upgrade upgrade)
-    {
-        base.DispelUpgrade(upgrade);
-
-        foreach(AbilityContainer ability in _abilityInventory.Abilities)
-        {
-            ability.DispelUpgrade(upgrade);
-        }
     }
 
     [ContextMenu("Die")]
@@ -306,6 +206,4 @@ public class Player : CharacterBase
         WithShotgun,
         WithPistol,
     }
-
-    public class Factory: PlaceholderFactory<Player> { }
 }

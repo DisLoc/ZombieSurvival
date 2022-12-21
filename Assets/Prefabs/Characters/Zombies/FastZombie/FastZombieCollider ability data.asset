@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: FastZombieCollider ability data
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 2664931723573321464, guid: a1ce5dd77d99ac14784a0ee1d59f5e3d, type: 3}
+  _levelUpgrades:
+  - _description: '-'
+    _upgrade: {fileID: 11400000, guid: 344f5aa15ee0a934bafeef23b4369e74, type: 2}
+    _requiredLevel: 0

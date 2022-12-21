@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
+public abstract class Enemy : CharacterBase, IPoolable
 {
     [Header("Enemy settings")]
     [SerializeField] protected CapsuleCollider _selfCollider;
@@ -14,12 +15,16 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     public bool HasExpReward => _hasExpReward;
     public override CharacterStats Stats => _stats;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         _stats.Initialize();
         _healthBar.Initialize(_stats.Health);
 
-        _stats.BaseWeapon.Initialize(); // there will be ability inventory with weapons for bosses
+        _abilityInventory.Initialize();
+
+        _upgrades = new List<Upgrade>();
+
+        GetAbility(_stats.BaseWeapon);
     }
 
     /// <summary>
@@ -39,15 +44,12 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
     {
         _pool = null;
 
-        if (_stats.BaseWeapon as ZombieCollider != null)
+        if (_abilityInventory.Weapons[0] as ZombieCollider != null)
         {
-            (_stats.BaseWeapon as ZombieCollider).OnReset();
-        }
-    }
+            if (_isDebug) Debug.Log("Reseting collider");
 
-    public virtual void OnUpdate()
-    {
-        Attack();
+            (_abilityInventory.Weapons[0] as ZombieCollider).OnReset();
+        }
     }
 
     public override void OnFixedUpdate()
@@ -81,12 +83,6 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
         transform.position = Vector3.MoveTowards(pos, pos + direction * _stats.Velocity.Value, _stats.Velocity.Value * Time.fixedDeltaTime);
     }
 
-    protected override void Attack()
-    {
-        _stats.BaseWeapon.OnUpdate();
-        _stats.BaseWeapon.Attack();
-    }
-
     [ContextMenu("Die")]
     public override void Die()
     {
@@ -106,13 +102,6 @@ public abstract class Enemy : CharacterBase, IPoolable, IUpdatable
 
             Destroy(gameObject);
         }
-    }
-
-    public override void DispelUpgrade(Upgrade upgrade)
-    {
-        base.DispelUpgrade(upgrade);
-
-        _stats.BaseWeapon.DispelUpgrade(upgrade);
     }
 
     protected virtual void OnDisable()
