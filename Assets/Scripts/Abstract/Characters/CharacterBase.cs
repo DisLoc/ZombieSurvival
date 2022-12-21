@@ -149,6 +149,8 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable, IUpdata
     /// <param name="upgrade"></param>
     public virtual void GetUpgrade(Upgrade upgrade)
     {
+        if (upgrade == null) return;
+
         Stats.GetUpgrade(upgrade);
 
         for (int index = 0; index < _abilityInventory.Abilities.Count; index++)
@@ -171,6 +173,8 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable, IUpdata
         {
             ability.DispelUpgrade(upgrade);
         }
+
+        _upgrades.Remove(upgrade);
     }
 
     public virtual void DispelUpgrades(List<Upgrade> upgrades)
@@ -178,6 +182,17 @@ public abstract class CharacterBase : DamageableObject, IFixedUpdatable, IUpdata
         foreach(Upgrade upgrade in upgrades)
         {
             DispelUpgrade(upgrade);
+        }
+    }
+
+    public void DestroyAbilities()
+    {
+        if (_abilityInventory != null && _abilityInventory.Abilities.Count > 0)
+        {
+            foreach(var ability in _abilityInventory.Abilities)
+            {
+                ability.DestroyAbility();
+            }
         }
     }
 }

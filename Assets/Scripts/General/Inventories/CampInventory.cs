@@ -26,6 +26,11 @@ public class CampInventory : Inventory
         }
     }
 
+    /// <summary>
+    /// All available camp upgrades
+    /// </summary>
+    public List<CampUpgrade> Upgrades => _campUpgrades;
+
     public void Initialize()
     {
         foreach(var upgrade in _campUpgrades)
@@ -34,9 +39,12 @@ public class CampInventory : Inventory
         }
     }
 
-    public void Upgrade(CampUpgrade upgrade)
+    public void UpdateButtons()
     {
-        _campUpgrades.Find(item => item.Equals(upgrade)).Upgrade();
+        foreach (var upgrade in _campUpgrades)
+        {
+            upgrade.UpdateValues();
+        }
     }
 
     public override SerializableData SaveData()

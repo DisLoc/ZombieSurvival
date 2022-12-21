@@ -58,12 +58,4 @@ public abstract class Weapon : AbilityContainer, IUpdatable
             _isReady = true;
         } 
     }
-
-    public virtual void UpgradeToSuper(Weapon super)
-    {
-        if (IsMaxLevel && super.CurrentUpgrade.Upgrade.Equals(CurrentUpgrade.Upgrade))
-        {
-            _isSuperWeapon = true;
-        }
-    }
 }

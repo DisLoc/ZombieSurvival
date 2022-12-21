@@ -110,4 +110,9 @@ public abstract class Enemy : CharacterBase, IPoolable
         
         if (_isDebug) Debug.Log(name + " disabled");
     }
+
+    protected virtual void OnDestroy()
+    {
+        DestroyAbilities();
+    }
 }

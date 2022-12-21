@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4156869487238230544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537459922897022080}
+  - component: {fileID: 5256789597092060021}
+  - component: {fileID: 6191149836104601320}
+  - component: {fileID: 1903915091833839419}
+  m_Layer: 0
+  m_Name: StoneThrower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537459922897022080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5256789597092060021
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6191149836104601320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 5256789597092060021}
+  _triggerTags:
+    _tags: 00000000
+  _parent: {fileID: 4156869487238230544}
+--- !u!114 &1903915091833839419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0355a43a829c3be4a8a2a1b1e020482d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: Stone thrower
+  _icon: {fileID: 21300000, guid: 7cc2f0cf7224e6e40ab56367097cb307, type: 3}
+  _sounds:
+    _sounds: []
+  _isSuperWeapon: 0
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 6191149836104601320}
+  _abilityUpgradeData: {fileID: 11400000, guid: 43d129832be11744c850ce845430d67e, type: 2}
+  _scatterMultiplier: 0.3
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 15f3b8e10c46a4b459025e16eb3f942d, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 0
+      _maxValue: 1
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: b9875975d85b81b45a17da6647b46633, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 62f85d54286f36247842c6c9c74c2057, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: b1cd6c46c7b2d164faac66103a590511, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 8e9517e6afbcf834faded4b1bc20e1ed, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: ddd6fca5ce2c345488c6576e7900c356, type: 2}
+    _projectilePrefab: {fileID: 6665430492451225927, guid: 2def18f47eb82a8438a8cd020df80490, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: e20235585d909d74cb109005b925de74, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: b30dc38db451ba541a8770ba3b336c8b, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 221d6a3a0c4c72b49b90768e0427fdbb, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 5b5968cfc86c5ec4397b771e44fb3d0b, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: ee2745056e3124c47a9cad77767eeed3, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 4aca67d549eeab54f94adb3a07e90e3f, type: 2}
+      _valueIsInfinite: 1

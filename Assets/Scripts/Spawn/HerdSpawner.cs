@@ -7,6 +7,10 @@ public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
     [Header("Herd spawner settings")]
     [SerializeField][Range(0f, 10f)] private float _deltaSpawnPosition = 10f;
     [SerializeField][Range(5f, 15f)] private float _directionRotationDelay = 10f;
+    [SerializeField] private float _minMoveSpeed = 10f;
+    [SerializeField] private MarkerList _moveSpeedMarkers;
+
+    private Upgrade _moveSpeedUpgrade;
 
     private BreakpointList<HerdBreakpoint> _breakpoints;
     private HerdBreakpoint _currentBreakpoint;
@@ -66,6 +70,19 @@ public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
 
             _spawners.Add(new ObjectSpawner<Enemy>(_currentBreakpoint.EnemyToSpawnPrefab, _maxUnitsOnScene, transform));
 
+            _moveSpeedUpgrade = new Upgrade
+                (
+                    new UpgradeData
+                        (
+                            _moveSpeedMarkers,
+                            (_currentBreakpoint.EnemyToSpawnPrefab.Stats.Velocity.BaseValue >= _minMoveSpeed ? 0 :
+                                    _minMoveSpeed - _currentBreakpoint.EnemyToSpawnPrefab.Stats.Velocity.BaseValue),
+                            1f
+                        ),
+                    abilityMarker: null,
+                    isAbilityUpgrade: false
+                );
+
             Spawn(GetSpawnPosition());
 
             GetUpgrade();
@@ -101,9 +118,30 @@ public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
     {
         yield return new WaitForSeconds(_directionRotationDelay);
 
-        _currentSide = (SpawnSide)Mathf.Abs((int)_currentSide - 3);
+        Respawn();
 
         StartCoroutine(WaitRotation());
+    }
+
+    private void Respawn()
+    {
+        if (_spawners != null && _spawners.Count > 0)
+        {
+            Vector3 spawnPos = GetSpawnPosition();
+
+            for (int i = 0; i < _spawners[0].SpawnCount; i++)
+            {
+                if (_spawners[0].SpawnedObjects[i] != null)
+                {
+                    _spawners[0].SpawnedObjects[i].transform.position = spawnPos + new Vector3
+                                                                                    (
+                                                                                        Random.Range(-_deltaSpawnPosition, _deltaSpawnPosition),
+                                                                                        0f,
+                                                                                        Random.Range(-_deltaSpawnPosition, _deltaSpawnPosition)
+                                                                                    );
+                }
+            }
+        }
     }
 
     protected override Vector3 GetSpawnPosition()
@@ -202,6 +240,80 @@ public sealed class HerdSpawner : EnemySpawner, IBossEventHandler
             StopAllCoroutines();
 
             ClearPools();
+        }
+    }
+
+    protected override void GetUpgrade()
+    {
+        base.GetUpgrade();
+
+        if (_spawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _spawners)
+            {
+                foreach (Enemy zombie in pool.Objects)
+                {
+                    zombie?.GetUpgrade(_moveSpeedUpgrade);
+                }
+
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.GetUpgrade(_moveSpeedUpgrade);
+                }
+            }
+        }
+
+        if (_prevSpawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _prevSpawners)
+            {
+                foreach (Enemy zombie in pool.Objects)
+                {
+                    zombie?.GetUpgrade(_moveSpeedUpgrade);
+                }
+
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.GetUpgrade(_moveSpeedUpgrade);
+                }
+            }
+        }
+    }
+
+    protected override void DispelUpgrades()
+    {
+        base.DispelUpgrades(); 
+
+        if (_spawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _spawners)
+            {
+                foreach (Enemy zombie in pool.Objects)
+                {
+                    zombie?.DispelUpgrade(_moveSpeedUpgrade);
+                }
+
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.DispelUpgrade(_moveSpeedUpgrade);
+                }
+            }
+        }
+
+        if (_prevSpawners != null)
+        {
+            foreach (ObjectSpawner<Enemy> pool in _prevSpawners)
+            {
+                foreach (Enemy zombie in pool.Objects)
+                {
+                    zombie?.DispelUpgrade(_moveSpeedUpgrade);
+                }
+
+                foreach (Enemy zombie in pool.SpawnedObjects.List)
+                {
+                    zombie?.DispelUpgrade(_moveSpeedUpgrade);
+                }
+            }
         }
     }
 }

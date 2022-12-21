@@ -526,10 +526,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: d9bded8916df65a44a730407cd4359fd, type: 2}
-      _upgradeCost:
-        _currencyValue: 250
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1881461383}
     - _upgradeIcon: {fileID: 21300000, guid: a1e6becb31f6dd14d938ae435a8dc727, type: 3}
       _level:
@@ -538,10 +534,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: 92bb46b10b72d854688c07cb080dbd35, type: 2}
-      _upgradeCost:
-        _currencyValue: 300
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1797775671}
     - _upgradeIcon: {fileID: 21300000, guid: dbaee5143943dd645ab3474a7bd222a8, type: 3}
       _level:
@@ -550,10 +542,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: a506f80299864bf49a842cc3e5579402, type: 2}
-      _upgradeCost:
-        _currencyValue: 350
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1797775670}
     - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
       _level:
@@ -562,10 +550,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: 6aeeec5151ce8c74e949a496e539c48b, type: 2}
-      _upgradeCost:
-        _currencyValue: 400
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1797775669}
     - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
       _level:
@@ -574,10 +558,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: 9e9cc21d86612cd439bb16a0ed91820d, type: 2}
-      _upgradeCost:
-        _currencyValue: 450
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1797775668}
     - _upgradeIcon: {fileID: 21300000, guid: 2378fef29ad6bd3429c857995d741238, type: 3}
       _level:
@@ -586,10 +566,6 @@ MonoBehaviour:
         _maxValue: 5
         _maxValueIsInfinite: 0
       _repeatingUpgrade: {fileID: 11400000, guid: 4870486a62b441f4685191c253803423, type: 2}
-      _upgradeCost:
-        _currencyValue: 500
-        _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
-      _costMultiplier: 4
       _button: {fileID: 1797775667}
   _playerLevel:
     _isDebug: 0
@@ -942,6 +918,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1016239968785859375, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1016239968912346611, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: _musicGroup
       value: 
@@ -1013,10 +993,6 @@ PrefabInstance:
     - target: {fileID: 1016239969536966658, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07220459
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016239969654603265, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1016239969724550219, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1422,10 +1398,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3076484763855623923, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 3271353582272785516, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1445,10 +1417,6 @@ PrefabInstance:
     - target: {fileID: 3301239156915954488, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 5.7500076
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386454840973760717, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3395874925678091460, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1738,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4323571584176960148, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.68237305
+      objectReference: {fileID: 0}
     - target: {fileID: 4353908292698605346, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -1882,9 +1854,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5468083864307083370, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 20
+    - target: {fileID: 5524025456502451989, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524025456502451989, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.20339966
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784287857924080951, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5881556436083322343, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2086,10 +2066,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7864314222023899786, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8080557920705228574, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -4.039795
@@ -2157,10 +2133,6 @@ PrefabInstance:
     - target: {fileID: 8622088226149031532, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8738472182826442284, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
-      propertyPath: _unlockLevel
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8796407577112547569, guid: 6fa8e020077cbc04a88e5a5589cebbfd, type: 3}
       propertyPath: m_AnchorMax.y

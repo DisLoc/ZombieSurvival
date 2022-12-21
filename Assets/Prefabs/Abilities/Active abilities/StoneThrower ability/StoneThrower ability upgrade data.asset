@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: StoneThrower ability upgrade data
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 1903915091833839419, guid: f5d30f3ec82e6384fa274edb662659f6, type: 3}
+  _levelUpgrades:
+  - _description: '-'
+    _upgrade: {fileID: 11400000, guid: f7f3420c158c54d4b9cc252c5e59fa7e, type: 2}
+    _requiredLevel: 0

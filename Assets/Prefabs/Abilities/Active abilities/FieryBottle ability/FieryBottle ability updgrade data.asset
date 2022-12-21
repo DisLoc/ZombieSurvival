@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapon: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
   _levelUpgrades:
-  - _description: Throws fire bottle around player
+  - _description: Throws fire bottles around player
     _upgrade: {fileID: 11400000, guid: ebaccaa8956775146bc08c3e289fe5b8, type: 2}
     _requiredLevel: 0
   - _description: +1 projectile & +25% damage

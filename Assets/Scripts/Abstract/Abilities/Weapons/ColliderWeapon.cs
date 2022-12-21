@@ -40,6 +40,8 @@ public abstract class ColliderWeapon : Weapon
     {
         _stats.GetUpgrade(upgrade);
 
+        _targetDetector.UpdateRadius();
+
         return base.Upgrade(upgrade);
     }
 }

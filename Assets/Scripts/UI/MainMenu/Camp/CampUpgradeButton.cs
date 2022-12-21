@@ -15,11 +15,12 @@ public class CampUpgradeButton : MonoBehaviour
     private CampUpgrade _upgrade;
 
     [Inject] private MainMenu _mainMenu;
-    [Inject] private MainInventory _mainInventory;
 
     public void Initialize(CampUpgrade upgrade)
     {
         _upgrade = upgrade;
+
+        _requiredBuilding.Initialize(upgrade);
 
         UpdateValues();
     }
@@ -32,31 +33,36 @@ public class CampUpgradeButton : MonoBehaviour
 
         if (_upgrade.Level.Value == _upgrade.Level.MaxValue)
         {
-            _button.interactable = false;
             _levelText.text = "MAX";
         }
         else
         {
-            _button.interactable = true;
-            _levelText.text = _upgrade.Level.Value == 0 ? "Unlock" : ("Level " + (int)_upgrade.Level.Value);
+            _levelText.text = "Level " + (int)_upgrade.Level.Value;
         }
 
-        if (_upgrade.Level.Value == 0)
+        if (!_requiredBuilding.Unlocked)
         {
+            _button.interactable = true;
             _lockedImage.enabled = true;
             _iconImage.enabled = false;
             _valueText.enabled = false;
+            _levelText.enabled = false;
         }
         else
         {
+            _button.interactable = false;
             _lockedImage.enabled = false;
             _iconImage.enabled = true; 
-            _valueText.enabled = true; 
-            
+            _valueText.enabled = true;
+            _levelText.enabled = true;
+
             int value = 0;
-            foreach (var data in _upgrade.CurrentUpgrade.Upgrades)
+            if (_upgrade.Level.Value > 0)
             {
-                value += (int)data.UpgradeValue;
+                foreach (var data in _upgrade.CurrentUpgrade.Upgrades)
+                {
+                    value += (int)data.UpgradeValue;
+                }
             }
 
             _valueText.text = (value > 0 ? "+ " : "") + value;
@@ -65,20 +71,9 @@ public class CampUpgradeButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (_requiredBuilding.Unlocked)
+        if (!_requiredBuilding.Unlocked)
         {
-            if (_mainInventory.Spend(_upgrade.CurrentUpgradeCost))
-            {
-                _mainInventory.CampInventory.Upgrade(_upgrade);
-            }
-            else
-            {
-                _mainMenu.ShowPopupMessage("Not enough resources!");
-            }
-        }
-        else
-        {
-                _mainMenu.ShowPopupMessage("This upgrade will be unlocked at level " + _requiredBuilding.UnlockLevel);
+            _mainMenu.ShowPopupMessage("This upgrade will be unlocked at level " + _requiredBuilding.UnlockLevel);
         }
     }
 }

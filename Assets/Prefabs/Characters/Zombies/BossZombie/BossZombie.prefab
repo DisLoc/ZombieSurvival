@@ -756,3 +756,5 @@ MonoBehaviour:
     _regeneration:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 2494a704c477c59478eb92e4f3f50507, type: 2}
+  _additionalAbilities:
+  - {fileID: 1903915091833839419, guid: f5d30f3ec82e6384fa274edb662659f6, type: 3}

@@ -99,7 +99,12 @@ MonoBehaviour:
   _spawnDeltaDistance: 30
   _maxDistanceForRespawn: 0
   _deltaSpawnPosition: 6
-  _directionRotationDelay: 12
+  _directionRotationDelay: 10
+  _minMoveSpeed: 12
+  _moveSpeedMarkers:
+    _markers:
+    - {fileID: 11400000, guid: a333123cedebbc043ad5593c64d59d68, type: 2}
+    _minMatchesCount: 1
 --- !u!114 &742492564938912030
 MonoBehaviour:
   m_ObjectHideFlags: 0

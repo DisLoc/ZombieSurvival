@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4156869487238230544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537459922897022080}
+  - component: {fileID: 5256789597092060021}
+  - component: {fileID: 6191149836104601320}
+  - component: {fileID: 4870093208378423969}
+  m_Layer: 0
+  m_Name: RoadSignThrower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537459922897022080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5256789597092060021
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6191149836104601320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 5256789597092060021}
+  _triggerTags:
+    _tags: 00000000
+  _parent: {fileID: 4156869487238230544}
+--- !u!114 &4870093208378423969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156869487238230544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e317f84f701b454a9d64e0ddf7f2449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: Road sign thrower
+  _icon: {fileID: 0}
+  _sounds:
+    _sounds: []
+  _isSuperWeapon: 0
+  _requiredAbilityToUpgradeToSuper: {fileID: 0}
+  _targetDetector: {fileID: 6191149836104601320}
+  _abilityUpgradeData: {fileID: 11400000, guid: 019cda25828ff8a4f99e58840765e0b2, type: 2}
+  _scatterMultiplier: 0.2
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 0d5dfbd2fa0a245448d0e5ac27f520b0, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 0
+      _maxValue: 1
+      _maxValueIsInfinite: 0
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: bdc1fba6157a361468bc8be601de42ef, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: c29714ec5af2b8f46b0dea32c9c06b60, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: c177c73b91fc5ff48b915178747d7902, type: 2}
+    _attackInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: bbc88d5cd6b0d0e4caae5e2b4e4d53f5, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 7c5739dd596fd7842a6ca74f2875aba2, type: 2}
+    _projectilePrefab: {fileID: 6665430492451225927, guid: d60e8c1f0db37644d98dd5685526c3df, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: d1ae473c1b39faa4f9353a790f7c69a6, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: bf02aa0845e034243aad5a59cf05ef40, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: a8666fd7680c8ec43806ddbd7d6b5269, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 7b0ce468657b8354bb80fb2d9bbf7b85, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 93aaa558a9d10614c8aac69374963546, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 8087aa1f2cad0b546889c917c3bc5377, type: 2}
+      _valueIsInfinite: 1
