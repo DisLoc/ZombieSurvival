@@ -717,6 +717,12 @@ MonoBehaviour:
   _hpCanvas: {fileID: 7799900224490454433}
   _renderer: {fileID: 1448123843326196526}
   _defaultViewSide: {x: 1, y: 0, z: 0}
+  _abilityInventory:
+    _maxActiveAbilitiesCount: 5
+    _maxPassiveAbilitiesCount: 5
+    _abilitiesParent: {fileID: 4441788838641939132}
+    _weaponsTargetTags:
+      _tags: 010000000a000000
   _moveController: {fileID: 5057284736669028852}
   _animator: {fileID: 2956812378847984679}
   _moveDirectionArrow: {fileID: 4551167950261136234}
@@ -779,10 +785,6 @@ MonoBehaviour:
     _abilitiesRerollCount:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8794446aa052ce94e9965f3fb6fb3c52, type: 2}
-  _abilityInventory:
-    _maxActiveAbilitiesCount: 5
-    _maxPassiveAbilitiesCount: 5
-    _abilitiesParent: {fileID: 4441788838641939132}
   _coinInventory:
     _currencyData: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _counter: {fileID: 0}

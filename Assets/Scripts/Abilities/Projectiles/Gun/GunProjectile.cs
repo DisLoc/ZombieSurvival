@@ -5,9 +5,9 @@ public class GunProjectile : Projectile
     [SerializeField] private ParticleSystem _sparkParticle;
     [SerializeField] private TrailRenderer _trail;
 
-    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
+    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon, TagList targetTags = null)
     {
-        base.Initialize(stats, weapon);
+        base.Initialize(stats, weapon, targetTags);
 
         if (_sparkParticle != null)
         {

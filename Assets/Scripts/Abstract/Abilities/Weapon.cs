@@ -16,7 +16,7 @@ public abstract class Weapon : AbilityContainer, IUpdatable
 
     protected float _attackIntervalTimer;
     protected bool _isReady;
-
+    
     public bool IsSuper => _isSuperWeapon;
     public PassiveAbility RequiredAbilityToUpgradeToSuper => _requiredAbilityToUpgradeToSuper;
     public override AbilityUpgradeData UpgradeData => _abilityUpgradeData;
@@ -29,6 +29,11 @@ public abstract class Weapon : AbilityContainer, IUpdatable
         _isReady = true;
 
         _targetDetector.Initialize((Stats as WeaponAbilityStats).AttackRange);
+    }
+
+    public virtual void SetTargetTags(TagList tags)
+    {
+        _targetDetector.SetTargetTags(tags);
     }
 
     /// <summary>

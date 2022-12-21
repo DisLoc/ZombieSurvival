@@ -6,6 +6,8 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     [SerializeField][Range(0, 2)] protected float _scatterMultiplier;
     [SerializeField] protected ProjectileAbilityStats _stats;
 
+    protected TagList _targetTags;
+
     protected ObjectSpawner<Projectile> _projectilePool;
 
     protected float _spawnIntervalTimer;
@@ -23,6 +25,13 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
         _spawnCount = 0;
         _spawnIntervalTimer = _stats.ProjectilesSpawnInterval.Value;
         _spawning = false;
+    }
+
+    public override void SetTargetTags(TagList tags)
+    {
+        base.SetTargetTags(tags);
+
+        _targetTags = tags;
     }
 
     public override void Attack()
@@ -81,7 +90,7 @@ public abstract class ProjectileWeapon : Weapon, IFixedUpdatable
     {
         Projectile projectile = _projectilePool.SpawnDisabled(GetProjectilePosition());
         
-        projectile.Initialize(_stats, this);
+        projectile.Initialize(_stats, this, _targetTags);
         projectile.Throw(GetProjectileMoveDirection());
         projectile.gameObject.SetActive(true);
 

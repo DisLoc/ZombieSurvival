@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 7855256235738180036}
   m_Layer: 8
   m_Name: BossZombie2
-  m_TagString: Enemy
+  m_TagString: EnemyBoss
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,6 +738,8 @@ MonoBehaviour:
     _maxActiveAbilitiesCount: 5
     _maxPassiveAbilitiesCount: 0
     _abilitiesParent: {fileID: 7855256235738180039}
+    _weaponsTargetTags:
+      _tags: 00000000
   _selfCollider: {fileID: 7855256235738180034}
   _hasExpReward: 0
   _stats:

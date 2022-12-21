@@ -30,9 +30,9 @@ public sealed class ShurikenProjectile : Projectile
         _moveForward = false;
     }
 
-    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
+    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon, TagList targetTags = null)
     {
-        base.Initialize(stats, weapon);
+        base.Initialize(stats, weapon, targetTags);
 
         if (_sparkParticle != null)
         {

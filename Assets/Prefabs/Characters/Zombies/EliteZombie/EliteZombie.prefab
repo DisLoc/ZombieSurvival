@@ -282,6 +282,8 @@ MonoBehaviour:
     _maxActiveAbilitiesCount: 1
     _maxPassiveAbilitiesCount: 0
     _abilitiesParent: {fileID: 2300272471008107743}
+    _weaponsTargetTags:
+      _tags: 00000000
   _selfCollider: {fileID: 2300272471008107736}
   _hasExpReward: 0
   _stats:

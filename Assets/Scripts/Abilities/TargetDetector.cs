@@ -38,6 +38,11 @@ public class TargetDetector : TriggerDetector, IObjectDisableHandler
         _targets = new List<GameObject>();
     }
 
+    public void SetTargetTags(TagList tags)
+    {
+        _triggerTags = tags;
+    }
+
     public void OnObjectDisable(GameObject obj)
     {
         if (obj == null) return;

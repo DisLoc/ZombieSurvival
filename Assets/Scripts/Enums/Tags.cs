@@ -9,5 +9,6 @@ public enum Tags
     PlayerProjectile,
     EnemyProjectile,
     PlayerWeapon,
-    EnemyWeapon
+    EnemyWeapon,
+    EnemyBoss
 }

@@ -10,11 +10,9 @@ public sealed class FieryBottleProjectile : Projectile
 
     private const float EPSILON = 0.125f;
 
-    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
+    public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon, TagList tags = null)
     {
-        base.Initialize(stats, weapon);
-
-        base.Initialize(stats, weapon);
+        base.Initialize(stats, weapon, tags);
 
         if (_sparkParticle != null)
         {

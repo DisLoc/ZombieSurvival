@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         _weapon = null;
     }
 
-    public virtual void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon)
+    public virtual void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon, TagList targetTags = null)
     {
         _releaseDelay = stats.ProjectileLifeDuration;
         _speed = stats.ProjectileSpeed;
@@ -71,6 +71,11 @@ public class Projectile : MonoBehaviour, IPoolable, IFixedUpdatable
         else if (_isDebug) Debug.Log("Missing particle");
 
         transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+
+        if (targetTags != null)
+        {
+            _targetTags = targetTags;
+        }
     }
 
     /// <summary>

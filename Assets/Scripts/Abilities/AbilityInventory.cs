@@ -8,6 +8,7 @@ public sealed class AbilityInventory
     [SerializeField] private int _maxPassiveAbilitiesCount;
 
     [SerializeField] private Transform _abilitiesParent;
+    [SerializeField] private TagList _weaponsTargetTags;
 
     private List<Weapon> _weapons;
     private List<ProjectileWeapon> _projectileWeapons;
@@ -77,6 +78,8 @@ public sealed class AbilityInventory
 
         if (newAbility as Weapon != null) // add to weapon list
         {
+            (newAbility as Weapon).SetTargetTags(_weaponsTargetTags);
+
             _weapons.Add(newAbility as Weapon); 
 
             if (newAbility as ProjectileWeapon != null)
