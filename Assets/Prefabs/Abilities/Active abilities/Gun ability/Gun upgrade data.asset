@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Gun upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Gun
   _weapon: {fileID: 1463812404313771700, guid: 1f7717a38ad404342b2877ea14391800, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Shoots in nearest enemies
     _upgrade: {fileID: 11400000, guid: 45083323727e4cd49a06315812909219, type: 2}
     _requiredLevel: 0
   - _description: Projectiles +1 & increase damage

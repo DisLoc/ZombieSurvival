@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: FieryBottle ability updgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Fiery bottle
   _weapon: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Throws fire bottle around player
     _upgrade: {fileID: 11400000, guid: ebaccaa8956775146bc08c3e289fe5b8, type: 2}
     _requiredLevel: 0
   - _description: +1 projectile & +25% damage

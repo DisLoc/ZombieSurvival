@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Aura upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Aura
   _weapon: {fileID: 7494275413525525377, guid: 6f683db9e81f4ba46b85e11a1855c481, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Deals damage around player
     _upgrade: {fileID: 11400000, guid: 4d0d95aaea3f05742826b5ba5ffed717, type: 2}
     _requiredLevel: 0
   - _description: Increase attack range

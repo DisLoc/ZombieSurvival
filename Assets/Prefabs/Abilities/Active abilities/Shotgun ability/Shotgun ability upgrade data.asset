@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Shotgun ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Shotgun
   _weapon: {fileID: 1944041913503626030, guid: 7414eb6587950674e93560d927c65700, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Shoots at the sides at an angle of 45dg
     _upgrade: {fileID: 11400000, guid: 926ed1aedc547374488239df5833f82e, type: 2}
     _requiredLevel: 0
   - _description: +50% damage, +25% attack range

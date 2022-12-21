@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Shuriken ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Shuriken
   _weapon: {fileID: 2334115174524616616, guid: e99273ba113161f489916258ce943b4c, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Throws shurikens at nearest enemies
     _upgrade: {fileID: 11400000, guid: 54f7dd5b44b96134881d924275d71264, type: 2}
     _requiredLevel: 0
   - _description: +1 projectile & +25% damage

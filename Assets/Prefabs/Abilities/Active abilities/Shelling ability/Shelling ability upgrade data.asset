@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Shelling ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Shelling
   _weapon: {fileID: 3292791445449446341, guid: 3c52f6bb14b194b4bb5b69ff9f00acd5, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Launches rockets at random enemies
     _upgrade: {fileID: 11400000, guid: c742c5ea7016373478b108b3464eef7e, type: 2}
     _requiredLevel: 0
   - _description: +1 projectile & +25% damage & +25% radius

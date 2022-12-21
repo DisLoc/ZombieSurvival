@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
   m_Name: Blade ability upgrade data
   m_EditorClassIdentifier: 
-  _upgradeName: Blade
   _weapon: {fileID: 2618570239982194877, guid: f267d458ebdb5154cb37d78ff6f36ed9, type: 3}
   _levelUpgrades:
-  - _description: New ability
+  - _description: Throws slashes into move direction
     _upgrade: {fileID: 11400000, guid: c01d0d713a3107b4b859a44f5c751376, type: 2}
     _requiredLevel: 0
   - _description: +1 projectile
