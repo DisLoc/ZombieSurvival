@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: SuperiorShurikenWeapon data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 0f45635be7d78bd4baf8d7f079167ed6, type: 3}
+  _equipSlot: 3
+  _rarity: 5
+  _upgradingStat: 0
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 7228236411287217178, guid: a063ecedccc7d4b49bac3097936e532d, type: 3}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: ebab81a8b0b2a2f4cb63d7306b99f619, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 3
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: 839107949abbb1347b7ab116c36cc7d5, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5000
+        _requiredMaterialAmount: 15
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: d4b120df8b3759f4aa252356479277b1, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 7500
+        _requiredMaterialAmount: 20
+  _mergeResult: {fileID: 0}
+  _rarityDescription: Masters Shuriken lvl.2
+  _rarityUpgrade: {fileID: 11400000, guid: 7a40b4e107261654b86eddb5c4dfdf5b, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: 847ecd73fcae4c648b0855a95b66fb32, type: 2}
+  _nextRarityEquipment: {fileID: 0}

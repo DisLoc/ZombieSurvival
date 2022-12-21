@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: RareShurikenWeapon data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _icon: {fileID: 21300000, guid: 0f45635be7d78bd4baf8d7f079167ed6, type: 3}
+  _equipSlot: 3
+  _rarity: 2
+  _upgradingStat: 0
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 7228236411287217178, guid: 9dcf3f16abdf8a04983239d3b8dd1c4c, type: 3}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: fd701b95b9d95fa4dbbbb1ce345467ad, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 3
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: b52b3c08e6fd0f64d8c46b59e6452710, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 250
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: 75922b6bfa08ecd438359b43abdfc0d2, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 500
+        _requiredMaterialAmount: 7
+  _mergeResult: {fileID: 7228236411287217178, guid: b0e4f0d4ce9368744a9317801c8483bc, type: 3}
+  _rarityDescription: +10% Shuriken projectile speed
+  _rarityUpgrade: {fileID: 11400000, guid: 6b7f74b53b7724248a26d4319b05bdcd, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: 51211a619f1d3514fb2f7d9ea92ad9e5, type: 2}
+  _nextRarityEquipment: {fileID: 11400000, guid: 75146008564528b478021dca4661a3ac, type: 2}

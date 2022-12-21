@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1064082329891387649}
   - component: {fileID: 8617377451425409794}
   - component: {fileID: 4922399595237212646}
+  - component: {fileID: 1846690480178458750}
   m_Layer: 5
   m_Name: BuyCurrencyButton
   m_TagString: Untagged
@@ -195,10 +196,10 @@ RectTransform:
   m_Father: {fileID: 8334037130184236355}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.019444443, y: 0.07416095}
-  m_AnchorMax: {x: 0.272, y: 0.92862046}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.019444443, y: 0.07658754}
+  m_AnchorMax: {x: 0.27547768, y: 0.92862046}
+  m_AnchoredPosition: {x: -0.45147705, y: -0.093006134}
+  m_SizeDelta: {x: -0.020621404, y: -0.61546946}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1347750950231235895
 CanvasRenderer:
@@ -324,6 +325,20 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.05
+--- !u!114 &1846690480178458750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451011927916789229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 884695353093696833}
+  _defaultSize: {x: 68, y: 68}
 --- !u!1 &6772020667166134905
 GameObject:
   m_ObjectHideFlags: 0

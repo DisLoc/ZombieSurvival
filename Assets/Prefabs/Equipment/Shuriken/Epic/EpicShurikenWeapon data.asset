@@ -10,38 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
-  m_Name: EpicShotgunWeapon data
+  m_Name: EpicShurikenWeapon data
   m_EditorClassIdentifier: 
   _isDebug: 0
-  _icon: {fileID: 21300000, guid: 455c565304d9ffd43a0bb10b2c0b42df, type: 3}
+  _icon: {fileID: 21300000, guid: 0f45635be7d78bd4baf8d7f079167ed6, type: 3}
   _equipSlot: 3
   _rarity: 4
   _upgradingStat: 0
   _equipmentUpgrades:
-    _requiredEquipment: {fileID: 7228236411287217178, guid: 137e17adda9899c4aa644082019c0053, type: 3}
+    _requiredEquipment: {fileID: 7228236411287217178, guid: b0e4f0d4ce9368744a9317801c8483bc, type: 3}
     _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
     _requiredMaterial: {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
     _upgrades:
     - _requiredLevel: 1
-      _upgradeData: {fileID: 11400000, guid: cddb9ed2200acc143b299fe4d6dcb033, type: 2}
+      _upgradeData: {fileID: 11400000, guid: 0caaa7cf9399e15459f6c88805f138d4, type: 2}
       _upgradeMaterials:
         _requiredEquipmentAmount: 3
         _requiredCurrencyAmount: 0
         _requiredMaterialAmount: 0
     - _requiredLevel: 2
-      _upgradeData: {fileID: 11400000, guid: 9187f4f47b3b18d4fb9ee63c28107afc, type: 2}
+      _upgradeData: {fileID: 11400000, guid: 799cde2b959378c43b67500526d17e84, type: 2}
       _upgradeMaterials:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 2000
         _requiredMaterialAmount: 10
     - _requiredLevel: 3
-      _upgradeData: {fileID: 11400000, guid: 576c4d74492dab14a90ffb418410e04a, type: 2}
+      _upgradeData: {fileID: 11400000, guid: bc511a1b3338dd5408ea0f85e02c9d94, type: 2}
       _upgradeMaterials:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
   _mergeResult: {fileID: 7228236411287217178, guid: 82b7e0fc2521ebe43afadf8ccd1e1092, type: 3}
-  _rarityDescription: +10% crit, +3% crit rate (Shotgun)
-  _rarityUpgrade: {fileID: 11400000, guid: 91b4424e9459590439c91bd16d651854, type: 2}
-  _previousRarityEquipment: {fileID: 11400000, guid: 6bc0c544fbb13f84aa55467cb7638bcb, type: 2}
-  _nextRarityEquipment: {fileID: 11400000, guid: 30ec294c6ebf79945b151e9949d15514, type: 2}
+  _rarityDescription: +10% crit, +3% crit rate (Shuriken)
+  _rarityUpgrade: {fileID: 11400000, guid: 2302c424d5400f842b6404c1474c4353, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: 75146008564528b478021dca4661a3ac, type: 2}
+  _nextRarityEquipment: {fileID: 11400000, guid: ffad11af9131f564baffb9f0df4cffc9, type: 2}
