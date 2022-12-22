@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e62cef517fe906d4389c6140a3cd7d23, type: 3}
-  m_Name: 31-65 stats Desert
+  m_Name: 30-60 stats 2Wintrer
   m_EditorClassIdentifier: 
   _crystalPrefab: {fileID: 8038103952488939020, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
   _crystalSpawnParams:
@@ -25,16 +25,10 @@ MonoBehaviour:
       _color: {r: 0, g: 0.5019608, b: 1, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: 15b7331bb348fa44cb205d9a6f078a56, type: 2}
+      _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
   - _object:
       _expValue: 300
       _color: {r: 1, g: 0.5019608, b: 0, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: aa696114e5030d947b21415c507f1cc2, type: 2}
-  - _object:
-      _expValue: 500
-      _color: {r: 1, g: 0, b: 0, a: 1}
-    _spawnChance:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: d8765b9dbad83b845bd406478f3e10a3, type: 2}
+      _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}

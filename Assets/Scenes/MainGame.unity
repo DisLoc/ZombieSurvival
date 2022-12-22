@@ -557,6 +557,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _useBaseWeapon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
+      propertyPath: _stats._baseWeapon
+      value: 
+      objectReference: {fileID: 8751664031472139236, guid: f619d65d4e0ee8945aa9993c4f073780, type: 3}
+    - target: {fileID: 1800959968247124480, guid: 378e11768a05da147b15b5fbc43d74cc, type: 3}
       propertyPath: _coinInventory._counter
       value: 
       objectReference: {fileID: 24631180}
@@ -722,6 +730,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964344052306266370, guid: 2ec69db15838a874daef26f73a598846, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._limitIsInfinite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964344052306266371, guid: 2ec69db15838a874daef26f73a598846, type: 3}
+      propertyPath: _mixers._mixerTypes.Array.data[3]._soundsCountLimit
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 3456033693366988707}
   - component: {fileID: 7029000562222125129}
   - component: {fileID: 4773288928845227697}
+  - component: {fileID: 8466281120798340645}
   m_Layer: 5
   m_Name: SoundsButton
   m_TagString: Untagged
@@ -395,10 +396,10 @@ RectTransform:
   m_Father: {fileID: 9126854224912776883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19544841, y: 0}
-  m_AnchorMax: {x: 0.41787377, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.18300001, y: 0}
+  m_AnchorMax: {x: 0.43070334, y: 1}
+  m_AnchoredPosition: {x: -0.08808899, y: 0.009231567}
+  m_SizeDelta: {x: 0.3324468, y: -2.2627544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &833174021204241552
 CanvasRenderer:
@@ -524,6 +525,20 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.1
+--- !u!114 &8466281120798340645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263384668715110031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 5735389933863105564}
+  _defaultSize: {x: 140, y: 140}
 --- !u!1 &3700003710096829767
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +630,7 @@ GameObject:
   - component: {fileID: 9116893286058538649}
   - component: {fileID: 2960183155998990785}
   - component: {fileID: 3885706169232405531}
+  - component: {fileID: 8308043431569078197}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -637,10 +653,10 @@ RectTransform:
   m_Father: {fileID: 9126854224912776883}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5968513, y: 0}
-  m_AnchorMax: {x: 0.82400006, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5856083, y: 0}
+  m_AnchorMax: {x: 0.83500004, y: 1}
+  m_AnchoredPosition: {x: 0.059188843, y: 0.004737854}
+  m_SizeDelta: {x: -0.50137246, y: -2.2333488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9034784711731377139
 CanvasRenderer:
@@ -766,6 +782,20 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.1
+--- !u!114 &8308043431569078197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709000451143921467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 4453774364709637965}
+  _defaultSize: {x: 140, y: 140}
 --- !u!1 &4335843726985695603
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,6 +78,8 @@ public class FieryBottle : ProjectileWeapon
         FirePuddle puddle = _puddlesSpawner.Spawn(new Vector3(pos.x, 0.05f, pos.z));
         puddle.Initialize(_stats, this, _targetTags);
 
+        _sounds.PlaySound(SoundTypes.ProjectileDestroy);
+
         base.OnProjectileRelease(projectile);
     }
 

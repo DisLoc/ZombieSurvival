@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioPool : MonoBehaviour, ISoundPlayHandler//, IGameStartHandler
+public class AudioPool : MonoBehaviour, ISoundPlayHandler
 {
     [Header("Debug settings")]
     [SerializeField] private bool _isDebug;
@@ -30,18 +30,14 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler//, IGameStartHandler
         EventBus.Unsubscribe(this);
     }
 
-    public void OnGameStart()
-    {
-        _musicPlayer.PlayMusic();
-    }
-
     private void Start()
     {
         int maxCapacity = 0;
 
         foreach (MixerType mixer in _mixers.Mixers)
         {
-            maxCapacity += mixer.SoundsCountLimit;
+            if (!mixer.LimitIsInfinite)
+                maxCapacity += mixer.SoundsCountLimit;
         }
 
         _playingSounds = new Dictionary<MixerTypes, int>();
@@ -54,7 +50,7 @@ public class AudioPool : MonoBehaviour, ISoundPlayHandler//, IGameStartHandler
         _players = new MonoPool<AudioPlayer>(_playerPrefab, maxCapacity, transform);
         _currentPlayers = new List<AudioPlayer>();
 
-        OnGameStart();
+        _musicPlayer.PlayMusic();
     }
 
     public void OnSoundPlay(SoundType sound)

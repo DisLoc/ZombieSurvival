@@ -5,6 +5,7 @@ using Zenject;
 public class RewardsInfo : UIMenu
 {
     [Header("RewardInfo settings")]
+    [SerializeField] private SoundList _sounds;
     [SerializeField] private RewardSlot _rewardSlotPrefab;
     [SerializeField] private Transform _rewardSlotsParent;
 
@@ -50,5 +51,7 @@ public class RewardsInfo : UIMenu
 
             reward.GetReward(_mainInventory);
         }
+
+        _sounds.PlaySound(SoundTypes.GetReward);
     }
 }

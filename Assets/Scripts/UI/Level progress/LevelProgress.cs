@@ -60,10 +60,10 @@ public sealed class LevelProgress : FillBar, IGameStartHandler, IBossEventHandle
 
                 _alertBreakpoints.Add(new AlertBreakpoint
                     (
-                    _levelContext.LevelLenght * breakpoint.RequiredProgress * 0.01f - breakpoint.DisplayTime,
-                    breakpoint.DisplayTime,
-                    breakpoint.Description, 
-                    breakpoint.Sound
+                        _levelContext.LevelLenght * breakpoint.RequiredProgress * 0.01f - breakpoint.DisplayTime,
+                        breakpoint.DisplayTime,
+                        breakpoint.Description, 
+                        breakpoint.Sound
                     ));
             }
         }

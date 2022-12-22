@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 1500
         _requiredMaterialAmount: 10
-  _mergeResult: {fileID: 7228236411287217178, guid: 669e6d53b66023940872615c736027a2, type: 3}
+  _mergeResult: {fileID: 7228236411287217178, guid: a063ecedccc7d4b49bac3097936e532d, type: 3}
   _rarityDescription: -5% Shuriken attack interval
   _rarityUpgrade: {fileID: 11400000, guid: 9f3ee30db9d5e2b498e610967c5810f2, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 5f622e61f617e934ea926156293c70bf, type: 2}

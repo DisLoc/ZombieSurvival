@@ -116,8 +116,8 @@ public sealed class BossSpawner : EnemySpawner
             ZombieChest chest = Instantiate(_chestPrefab, pickablesPos + Vector3.up * _rewardsSpawnDistanceMultiplier,
                                             _chestPrefab.transform.localRotation, transform);
 
-            heart.Initialize(_player);
             magnet.Initialize();
+            heart.Initialize(_player);
             chest.Initialize(_player, _abilityGiver, _currentBreakpoint.MaxAbilitiesRewardCount);
         }
         else

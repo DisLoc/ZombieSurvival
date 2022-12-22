@@ -10,19 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e62cef517fe906d4389c6140a3cd7d23, type: 3}
-  m_Name: 0-30 stats Street1
+  m_Name: 60-100 stats 1Street
   m_EditorClassIdentifier: 
   _crystalPrefab: {fileID: 8038103952488939020, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
   _crystalSpawnParams:
+  - _object:
+      _expValue: 150
+      _color: {r: 0, g: 0.5019608, b: 1, a: 1}
+    _spawnChance:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+  - _object:
+      _expValue: 300
+      _color: {r: 1, g: 0.5019608, b: 0, a: 1}
+    _spawnChance:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
   - _object:
       _expValue: 50
       _color: {r: 0, g: 1, b: 0, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: d2c0ed1cedfe10840ba3deb3c4df401b, type: 2}
+      _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
   - _object:
-      _expValue: 150
-      _color: {r: 0, g: 0.5019608, b: 1, a: 1}
+      _expValue: 500
+      _color: {r: 1, g: 0, b: 0, a: 1}
     _spawnChance:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}

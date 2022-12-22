@@ -9,7 +9,7 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
     [Header("Settings")]
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private TargetDetector _targetDetector;
-    [SerializeField] private SoundList _sounds;
+    //[SerializeField] private SoundList _sounds;
 
     private FieryBottle _weapon;
 
@@ -58,7 +58,7 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
         }
         else if (_isDebug) Debug.Log("Missing particle!");
 
-        _sounds.PlaySound(SoundTypes.Shoot);
+        //_sounds.PlaySound(SoundTypes.Shoot);
     }
 
     public void OnUpdate()

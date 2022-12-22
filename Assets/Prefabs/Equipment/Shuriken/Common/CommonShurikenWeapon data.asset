@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 100
         _requiredMaterialAmount: 2
-  _mergeResult: {fileID: 7228236411287217178, guid: 5e2a22e43b718dd4d823b684d42cc90f, type: 3}
+  _mergeResult: {fileID: 7228236411287217178, guid: 9dcf3f16abdf8a04983239d3b8dd1c4c, type: 3}
   _rarityDescription: ' Masters Shuriken'
   _rarityUpgrade: {fileID: 11400000, guid: d93405b3aec9f7b46be39d0762fb7385, type: 2}
   _previousRarityEquipment: {fileID: 0}

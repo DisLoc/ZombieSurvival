@@ -40,7 +40,7 @@ MonoBehaviour:
         _requiredEquipmentAmount: 0
         _requiredCurrencyAmount: 3000
         _requiredMaterialAmount: 13
-  _mergeResult: {fileID: 7228236411287217178, guid: 82b7e0fc2521ebe43afadf8ccd1e1092, type: 3}
+  _mergeResult: {fileID: 7228236411287217178, guid: 5f32edfafb17cdc4c9ac3bb61007f5af, type: 3}
   _rarityDescription: +10% crit, +3% crit rate (Shuriken)
   _rarityUpgrade: {fileID: 11400000, guid: 2302c424d5400f842b6404c1474c4353, type: 2}
   _previousRarityEquipment: {fileID: 11400000, guid: 75146008564528b478021dca4661a3ac, type: 2}

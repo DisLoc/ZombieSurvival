@@ -32,7 +32,7 @@ public class MixerList
 
             if (mixer == null) return -1;
 
-            else return mixer.SoundsCountLimit;
+            else return mixer.LimitIsInfinite ? int.MaxValue : mixer.SoundsCountLimit;
         }
     }
 }

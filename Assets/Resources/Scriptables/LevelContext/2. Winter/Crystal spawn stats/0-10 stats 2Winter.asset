@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e62cef517fe906d4389c6140a3cd7d23, type: 3}
-  m_Name: 0-30 stats Winter
+  m_Name: 0-10 stats 2Winter
   m_EditorClassIdentifier: 
   _crystalPrefab: {fileID: 8038103952488939020, guid: 437be8d26fc4f7b4598d9e223bf65539, type: 3}
   _crystalSpawnParams:
@@ -19,10 +19,4 @@ MonoBehaviour:
       _color: {r: 0, g: 1, b: 0, a: 1}
     _spawnChance:
       _isDebug: 0
-      _statData: {fileID: 11400000, guid: d2c0ed1cedfe10840ba3deb3c4df401b, type: 2}
-  - _object:
-      _expValue: 150
-      _color: {r: 0, g: 0.5019608, b: 1, a: 1}
-    _spawnChance:
-      _isDebug: 0
-      _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+      _statData: {fileID: 11400000, guid: 93b7c7bc19ce8af48a598ee71d5408c2, type: 2}

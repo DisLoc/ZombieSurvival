@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3602522335874639109}
   - component: {fileID: 3602522335874639106}
   - component: {fileID: 2515276733136221194}
+  - component: {fileID: 5816480683739367766}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -164,3 +165,17 @@ MonoBehaviour:
       _mixerType: 1
       _sound: {fileID: 8300000, guid: 1a6dbc072847ad74881495df704f8745, type: 3}
       _playbackCooldown: 0.05
+--- !u!114 &5816480683739367766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3602522335874639104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1a561b0ea82948991eaf630b138ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformToScale: {fileID: 3602522335874639107}
+  _defaultSize: {x: 120, y: 120}
