@@ -80,7 +80,7 @@ public class Shelling : ProjectileWeapon
     {
         Vector3 pos = projectile.transform.position;
         ShellingExplosion explosion = _explosionsSpawner.Spawn(new Vector3(pos.x, 0.05f, pos.z));
-        explosion.Initialize(_stats, this);
+        explosion.Initialize(_stats, this, _targetTags);
 
         base.OnProjectileRelease(projectile);
     }

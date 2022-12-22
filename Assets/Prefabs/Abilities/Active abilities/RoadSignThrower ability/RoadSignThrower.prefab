@@ -128,4 +128,4 @@ MonoBehaviour:
     _penetrationNumber:
       _isDebug: 0
       _statData: {fileID: 11400000, guid: 8087aa1f2cad0b546889c917c3bc5377, type: 2}
-      _valueIsInfinite: 1
+      _valueIsInfinite: 0

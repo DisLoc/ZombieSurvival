@@ -28,8 +28,13 @@ public sealed class FirePuddle : MonoBehaviour, IPoolable, IUpdatable
         _releaseTimer = 0;
     }
 
-    public void Initialize(ProjectileAbilityStats stats, FieryBottle weapon)
+    public void Initialize(ProjectileAbilityStats stats, FieryBottle weapon, TagList targetTags)
     {
+        if (targetTags != null)
+        {
+            _targetDetector.SetTargetTags(targetTags);
+        }
+
         _weapon = weapon;
         _targetDetector.Initialize(_weapon.PuddleRadius);
 

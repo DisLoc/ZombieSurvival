@@ -28,7 +28,12 @@ public class AreaCleaner : PickableObject
 
         List<GameObject> targets = _targetDetector.Targets;
 
-        if (targets.Count == 0) return;
+        Destroy(gameObject, _destroyDelay);
+        
+        if (targets.Count == 0)
+        {
+            return;
+        }
 
         for (int i = 0; i < targets.Count; i++)
         {
@@ -41,7 +46,5 @@ public class AreaCleaner : PickableObject
                 target.Die();
             }
         }
-
-        Destroy(gameObject, _destroyDelay);
     }
 }

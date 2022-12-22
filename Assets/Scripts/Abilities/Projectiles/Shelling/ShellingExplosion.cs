@@ -28,8 +28,13 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
         _releaseTimer = 0;
     }
 
-    public void Initialize(ProjectileAbilityStats stats, Shelling weapon)
+    public void Initialize(ProjectileAbilityStats stats, Shelling weapon, TagList targetTags)
     {
+        if (targetTags != null)
+        {
+            _targetTags = targetTags;
+        }
+
         _weapon = weapon;
 
         _releaseTimer = _weapon.ExplosionLifeDuration.Value;
@@ -94,6 +99,8 @@ public sealed class ShellingExplosion : MonoBehaviour, IPoolable
 
         transform.localScale = new Vector3(_weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value, _weapon.ExplosionRadius.Value);
     }
+
+
 
     public void OnUpdate()
     {
