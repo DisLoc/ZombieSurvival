@@ -594,4 +594,4 @@ MonoBehaviour:
   _playerUpgrades: []
   _enemiesUpgrades: []
   wasPassed: 0
-  maxSurvivalTime: 6
+  maxSurvivalTime: -1
